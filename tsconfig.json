@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "src/types/company.type.ts"  ]
 }
