@@ -4,6 +4,7 @@ import AuthLoadingPage from "../pages/Auth/AuthLoadingPage";
 import LoginPage from "../pages/Auth/Login";
 import UserPage from "../pages/UserPage";
 import NotFound from "../components/Common/NotFound";
+import RegisterPage from "../pages/RegisterPage";
 
 export default function Router() {
   return (
@@ -13,6 +14,7 @@ export default function Router() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/mypage" element={<UserPage />} />
       <Route path="*" element={<NotFound />} />
+      <Route path="/register" element={<RegisterPage />} />
     </Routes>
   );
 }
