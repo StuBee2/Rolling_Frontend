@@ -17,5 +17,5 @@ export interface Res {
 }
 
 export interface CompanyListType {
-  companyList : CompanyType[];
+  companyList: CompanyType[];
 }
