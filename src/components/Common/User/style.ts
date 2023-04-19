@@ -17,7 +17,7 @@ export const UserContainer = styled.div`
 export const UserNameContainer = styled.div`
   width: 100%;
   height: 238px;
-  background-color: #00ba91;
+  background-color: #d9d9d9;
 
   display: flex;
   flex-direction: column;
@@ -65,7 +65,7 @@ export const SkillsContainer = styled.div`
   height: 130px;
 
   background-color: #ffffff;
-  border: 2px solid #00ba91;
+  border: 2px solid #d9d9d9;
 
   border-radius: 10px;
 `;
@@ -75,7 +75,7 @@ export const RevieListContainer = styled.div`
   height: 240px;
 
   background-color: #ffffff;
-  border: 2px solid #00ba91;
+  border: 2px solid #d9d9d9;
 
   border-radius: 10px;
 
@@ -89,7 +89,7 @@ export const RegisterContainer = styled.div`
   height: 100px;
 
   background-color: #ffffff;
-  border: 2px solid #00ba91;
+  border: 2px solid #d9d9d9;
 
   border-radius: 10px;
 
@@ -103,19 +103,19 @@ export const RegisterContainer = styled.div`
     width: 150px;
     height: 50px;
 
-    border: 1px solid #00ba91;
+    border: 1px solid #d9d9d9;
     border-radius: 15px;
 
     text-align: center;
     line-height: 50px;
 
-    color: #00ba91;
+    color: black;
     cursor: pointer;
 
     transition: background-color 0.5s ease, color 0.5s ease;
 
     &:hover {
-      background-color: #00ba91;
+      background-color: #d9d9d9;
       color: #ffffff;
     }
   }
@@ -169,7 +169,7 @@ export const Lists = styled.div<{ isReview: boolean }>`
         `}
 
   background-color: white;
-  border: 2px solid #00ba91;
+  border: 2px solid #d9d9d9;
 
   border-radius: 10px;
   margin-top: 10px;

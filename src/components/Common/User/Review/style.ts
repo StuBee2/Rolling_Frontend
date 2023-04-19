@@ -38,5 +38,6 @@ export const InfoContainer = styled.div`
 `;
 
 export const StarIcon = styled(AiFillStar)`
-  color: #f0e924;
+  color: #ff7f23;
+  
 `;

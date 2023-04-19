@@ -32,12 +32,11 @@ export const Profile = styled.img`
 export const CompanyName = styled.div`
   margin-left: 10px;
   line-height: 40px;
-  text-overflow: ellipsis;
 `;
 
 export const CompanyDescription = styled.div`
-  text-overflow: ellipsis;
   cursor: pointer;
+  padding-left: 5px;
 `;
 
 export const CompanyAddress = styled.div`
