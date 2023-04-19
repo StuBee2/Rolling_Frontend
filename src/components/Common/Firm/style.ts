@@ -1,27 +1,23 @@
 import styled from "styled-components";
 
-export const FirmReviewBox = styled.div`
+export const FirmBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-export const FirmReviewTitle = styled.div`
+export const FirmTitle = styled.div`
   display: flex;
   justify-content: center;
   font-size: 26px;
   padding: 50px;
 `;
-export const FirmReviewList = styled.div`
+export const FirmList = styled.div`
   display: flex;
   flex-direction: column;
   width: 22%;
-  text {
-  }
   input {
     height: 50px;
-    margin: 3px;
-    margin-left: 0px;
-    margin-bottom: 30px;
+    margin: 3px 0 30px 0;
     border-radius: 5px;
     border-color: #c3c3c3;
     border: 1px solid #c3c3c3;
@@ -29,8 +25,8 @@ export const FirmReviewList = styled.div`
   }
 `;
 
-export const Explanation = styled.div`
+export const Explanation = styled.div<{ isRegister: boolean }>`
   font-size: 13px;
   color: #9a9a9a;
-  margin-bottom: 5px;
+  margin-bottom: ${(props) => (props.isRegister ? "" : "5px")};
 `;

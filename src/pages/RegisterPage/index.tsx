@@ -1,16 +1,13 @@
-import FirmRegister from "../../components/Common/Register/FirmRegister";
-import FirmReview from "../../components/Common/Register/FirmReview";
-// import StarRating from "../../components/Common/Register/test";
-// import App from "../../components/Common/Register/test";
-// import StarIcon from "../../components/Common/Register/test/Star";
-import App from "../../components/Common/Register/ReviewStarScope/index";
+import FirmRegister from "../../components/Common/Firm/Register";
+import FirmReview from "../../components/Common/Firm/Review";
+import StarScope from "../../components/Common/Firm/ReviewStarScope/index";
 
 export default function RegisterPage() {
   return (
     <>
       <FirmRegister />
       <FirmReview />
-      <App />
+      <StarScope />
     </>
   );
 }
