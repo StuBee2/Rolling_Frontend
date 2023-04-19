@@ -9,7 +9,7 @@ export const FirmTitle = styled.div`
   display: flex;
   justify-content: center;
   font-size: 26px;
-  padding: 50px;
+  padding: 3%;
 `;
 export const FirmList = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ export const FirmList = styled.div`
   width: 22%;
   input {
     height: 50px;
-    margin: 3px 0 30px 0;
+    margin: 1% 0 6% 0;
     border-radius: 5px;
     border-color: #c3c3c3;
     border: 1px solid #c3c3c3;
