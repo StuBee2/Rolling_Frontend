@@ -1,26 +1,24 @@
 import * as S from "./style";
-import google from "../../../../assets/google.svg";
-import github from "../../../../assets/github.svg";
-import CONFIG from "../../../.././config/config.json";
+import { AUTH_ITEM } from "../../../../constants/Auth/auth.constant";
+
 export default function Login() {
-  const githubURL = `https://github.com/login/oauth/authorize?client_id=${CONFIG.ClientId}&redirect_uri=${window.location.origin}/callback`;
   return (
     <S.LoginContainer>
       <S.LoginBox>
-        <S.Logo />
+        <S.Logo
+          src="https://yt3.googleusercontent.com/ytc/AGIKgqOrkC7r6eXnPTlJlve9Ts_5zrXafqZN3a9acbYDOA=s900-c-k-c0x00ffffff-no-rj"
+          alt=""
+        />
         <div>
-          <S.LoginBtn
-            isGoogle={false}
-            onClick={() => (window.location.href = githubURL)}
-          >
-            <img src={github} alt="" />
-            <span>GitHub 계정으로 로그인</span>
-          </S.LoginBtn>
-          
-          <S.LoginBtn isGoogle={true}>
-            <img src={google} alt="" />
-            <span>Google 계정으로 로그인</span>
-          </S.LoginBtn>
+          {AUTH_ITEM.map((item) => (
+            <S.LoginBtn
+              isGoogle={item.isGoogle}
+              onClick={()=>window.location.href = item.loginUrl}
+            >
+              <img src={item.loginProfile} alt="" />
+              <span>{item.text}</span>
+            </S.LoginBtn>
+          ))}
         </div>
       </S.LoginBox>
     </S.LoginContainer>
