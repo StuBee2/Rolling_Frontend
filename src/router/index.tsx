@@ -13,8 +13,8 @@ export default function Router() {
       <Route path="/callback" element={<AuthLoadingPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/mypage" element={<UserPage />} />
-      <Route path="*" element={<NotFound />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

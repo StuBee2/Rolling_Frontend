@@ -12,5 +12,6 @@ export const StarIndexList = styled.div`
     font-size: 20px;
     width: 50px;
     height: 50px;
+    cursor: pointer;
   }
 `;
