@@ -1,13 +1,5 @@
-import FirmRegister from "../../components/Common/Firm/Register";
-import FirmReview from "../../components/Common/Firm/Review";
-import StarScope from "../../components/Common/Firm/ReviewStarScope/index";
+import Firm from "../../components/Common/Firm";
 
 export default function RegisterPage() {
-  return (
-    <>
-      <FirmRegister />
-      <FirmReview />
-      <StarScope />
-    </>
-  );
+  return <Firm />;
 }

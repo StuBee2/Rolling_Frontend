@@ -34,7 +34,7 @@ const errorInterceptor = async ({
         }
       );
 
-      localStorage.setItem(ACCESS_KEY, data.data.accessToken);
+      Token.setToken(ACCESS_KEY, data.data.accessToken);
 
       customAxios.defaults.headers[
         REQUEST_KEY
