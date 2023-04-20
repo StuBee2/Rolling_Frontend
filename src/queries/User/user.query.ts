@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "react-query";
 import userRepository from "../../repositories/User/user.repository";
-import { NickNameType } from "../../repositories/User/user.param";
+import { NickNameParamType } from "../../repositories/User/user.param";
 
 export const useGetMyInfo = () =>
   useQuery("/member/my", () => userRepository.getMyInfo(), {
@@ -9,7 +9,7 @@ export const useGetMyInfo = () =>
   });
 
 export const usePatchMyNickName = () => {
-  const mutation = useMutation("/patch/nickName", (nickName: NickNameType) =>
+  const mutation = useMutation("/patch/nickName", (nickName: NickNameParamType) =>
     userRepository.patchMyNickName(nickName)
   );
   return mutation;
