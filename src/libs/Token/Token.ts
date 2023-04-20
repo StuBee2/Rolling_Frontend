@@ -7,6 +7,10 @@ class Token {
     localStorage.setItem(key, token);
   }
 
+  public removeToken(key: string): void {
+    localStorage.removeItem(key);
+  };
+
   public clearToken() {
     localStorage.clear();
   }

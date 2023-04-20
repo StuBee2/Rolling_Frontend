@@ -11,7 +11,7 @@ export interface CompanyType {
   modifiedAt: string;
 }
 
-export interface Res {
+export interface Response {
   company: CompanyType;
   reviewList: ReviewResType[];
 }
