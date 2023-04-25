@@ -3,11 +3,11 @@ import { AiFillStar } from "react-icons/ai";
 
 export const AbleContainer = styled.div`
   width: 730px;
-  height: 80px;
+  height: 90px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 
   div {
     margin-top: 5px;
@@ -22,18 +22,13 @@ export const CompanyName = styled.div`
 
 export const InfoContainer = styled.div`
   width: 730px;
-  height: 100px;
-  padding-top: 10px;
+  height: 55%;
 
   overflow: hidden;
   overflow-y: scroll;
 
   div {
     margin-top: 10px;
-  }
-
-  &::-webkit-scrollbar {
-    display: none;
   }
 `;
 
