@@ -177,5 +177,5 @@ export const Lists = styled.div<{ isReview: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
 `;

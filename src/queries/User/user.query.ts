@@ -9,8 +9,9 @@ export const useGetMyInfo = () =>
   });
 
 export const usePatchMyNickName = () => {
-  const mutation = useMutation("/patch/nickName", (nickName: NickNameParamType) =>
-    userRepository.patchMyNickName(nickName)
+  const mutation = useMutation(
+    "/patch/nickName",
+    (nickName: NickNameParamType) => userRepository.patchMyNickName(nickName)
   );
   return mutation;
 };

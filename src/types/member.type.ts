@@ -17,5 +17,5 @@ export interface MemberType {
 export interface MyMemberType {
   member: MemberType;
   companyList: CompanyType[];
-  reviewRist: ReviewResType[];
+  reviewList: ReviewResType[];
 }
