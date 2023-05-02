@@ -1,5 +1,5 @@
-import Firm from "../../components/Common/Firm";
+import FirmRegister from "../../components/Common/Company/Register";
 
 export default function RegisterPage() {
-  return <Firm />;
+  return <FirmRegister />;
 }
