@@ -5,6 +5,7 @@ import {
   companyNameAtom,
 } from "../../store/company/companyStore";
 import { useCallback } from "react";
+import { useRef, MutableRefObject } from "react";
 
 export const useCompany = () => {
   const [firmaddress, setFrimAddress] =
@@ -33,9 +34,31 @@ export const useCompany = () => {
     [setFrimName]
   );
 
+  const imgRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
+
+  const onClickImg = () => {
+    if (imgRef.current) {
+      imgRef.current.click();
+    }
+  };
+
+  const uploadImg = async (e: any) => {
+    const files = e.target.files;
+    const formData = new FormData();
+    for (let i = 0; i < files; i++) {
+      formData.append("file", files[i]);
+    }
+
+    try {
+    } catch (e) {}
+  };
+
   return {
     Addressregister,
     Inforegister,
     Nameregister,
+    onClickImg,
+    uploadImg,
+    imgRef,
   };
 };
