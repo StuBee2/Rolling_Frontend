@@ -6,7 +6,7 @@ import LogoImg from "../../../assets/Logo.png";
 
 export default function header() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const navigator = useNavigate();
+  const navigate = useNavigate();
   return (
     <S.header>
       <S.logo>
@@ -18,7 +18,7 @@ export default function header() {
           return (
             <S.categoryTitle key={idx}>
               <S.categoryLink
-                onClick={() => navigator(`${categories.categoryPath}`)}
+                onClick={() => navigate(`${categories.categoryPath}`)}
               >
                 {categories.categoryName}
               </S.categoryLink>
