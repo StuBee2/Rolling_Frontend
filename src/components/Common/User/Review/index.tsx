@@ -12,23 +12,25 @@ function ReviewList({ data }: Props) {
   return (
     <>
       {data?.map((review) => (
-        <Lists isReview={true} key={review.companyId}>
+        <Lists isReview={true}>
           <S.AbleContainer>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <S.CompanyName>{review.id}</S.CompanyName>
+              <S.CompanyInfoContainer>
+                <S.CompanyLogo src="" alt="" />
+                <S.CompanyName>{review.content}</S.CompanyName>
+              </S.CompanyInfoContainer>
               <div>{getDateText(new Date(review.createdAt))}</div>
             </div>
 
             <div>
-              {Array.from({ length: 5 }).map((idx) => (
+              {Array.from({ length: review.grade }).map((idx) => (
                 <S.StarIcon size={30} />
               ))}
             </div>
           </S.AbleContainer>
           <S.InfoContainer>
-            <div>{review.content}</div>
-            <div>포지션 : {review.position} 개발자</div>
-            <div>경력 : {review.grade}년</div>
+            <div>리뷰어 : </div>
+            <div>포지션 : {review.position}</div>
             <div>입사경로 : {review.careerPath}</div>
           </S.InfoContainer>
         </Lists>

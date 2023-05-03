@@ -14,7 +14,6 @@ export default function User() {
       <S.UserNameContainer>
         <img src={myInfo?.member.imageUrl} alt="" />
       </S.UserNameContainer>
-
       <S.UserAbleContainer>
         <S.UserInfoContainer>
           <S.SkillsContainer>
@@ -22,8 +21,8 @@ export default function User() {
           </S.SkillsContainer>
 
           <S.RegisterContainer>
-            <div onClick={() => navigate("/register")}>회사 리뷰하기</div>
-            <div onClick={() => navigate("/register")}>회사 등록하기</div>
+            <div onClick={() => navigate(`/register`)}>기업 등록하기</div>
+            <div onClick={() => navigate("/register")}>기업 리뷰하기</div>
           </S.RegisterContainer>
 
           <S.RevieListContainer>
