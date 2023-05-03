@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { HiArrowUp } from "react-icons/hi";
+import { AiFillExclamationCircle } from "react-icons/ai";
 
 export const body = styled.body`
   width: 100vw;
@@ -42,7 +43,7 @@ export const categoryBox = styled.div`
 export const categoryTitle = styled.div`
   padding-right: 30%;
 `;
-export const categoryLink = styled(Link)`
+export const categoryLink = styled.div`
   color: white;
   text-decoration: none;
   font-family: "Inter";
@@ -70,14 +71,14 @@ export const ProfileContainer = styled.div`
   margin: 2% 0 0 85.5%;
 `;
 
-export const PrfilImg = styled.img`
+export const ProfilImg = styled.img`
   width: 25%;
   height: auto;
   margin-bottom: 3%;
   margin-right: 3%;
 `;
 
-export const PrfilName = styled.h3`
+export const ProfilName = styled.h3`
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
@@ -154,6 +155,9 @@ export const chattingInp = styled.input`
   color: white;
   font-size: 85%;
 `;
+
+export const HiArrowUpIcon = styled(HiArrowUp)``;
+
 export const chattingBtn = styled.button`
   width: 9%;
   height: 23px;
@@ -165,4 +169,12 @@ export const chattingBtn = styled.button`
 export const bottomItems = styled.div`
   display: flex;
   margin-top: 1%;
+`;
+
+export const AiFillExclamationCircleIcon = styled(AiFillExclamationCircle)`
+  width: 3.8vw;
+  height: 3.8vh;
+  color: #aaaaaa;
+  position: relative;
+  left: 95vw;
 `;
