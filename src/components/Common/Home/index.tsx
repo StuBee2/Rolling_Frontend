@@ -5,6 +5,7 @@ import LogoImg from "../../../assets/Logo.png";
 import UserProfileImg from "../../../assets/UserProfileImg.png";
 import RankingImg from "../../../assets/RankingImg.png";
 import kakaoMap from "./KakaoMapScrip";
+import { CATEGROY_ITEMS } from "../../../constants/Auth/Home.constant";
 
 export default function Index() {
   useEffect(() => {
@@ -12,21 +13,6 @@ export default function Index() {
   }, []);
 
   const navigator = useNavigate();
-
-  const categroy = [
-    {
-      categoryName: "Home",
-      categoryPath: "/",
-    },
-    {
-      categoryName: "profile",
-      categoryPath: "/",
-    },
-    {
-      categoryName: "Review",
-      categoryPath: "/",
-    },
-  ];
 
   const userProfile = {
     userNikeName: "chldkduds2",
@@ -49,7 +35,7 @@ export default function Index() {
           <S.logoName>Rolling</S.logoName>
         </S.logo>
         <S.categoryBox>
-          {categroy.map((categories, idx) => {
+          {CATEGROY_ITEMS.map((categories, idx) => {
             return (
               <S.categoryTitle key={idx}>
                 <S.categoryLink
