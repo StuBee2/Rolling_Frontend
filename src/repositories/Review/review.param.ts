@@ -1,4 +1,4 @@
-export interface ReviewParamType {
+export interface ReviewParam {
   companyId: string;
   content: string;
   position: string;
