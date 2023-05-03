@@ -1,18 +1,14 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import * as S from "./home.style";
-import LogoImg from "../../../assets/Logo.png";
 import UserProfileImg from "../../../assets/UserProfileImg.png";
 import RankingImg from "../../../assets/RankingImg.png";
 import kakaoMap from "./KakaoMapScrip";
-import { CATEGROY_ITEMS } from "../../../constants/Auth/Home.constant";
+import Header from "../Header/index";
 
 export default function Index() {
   useEffect(() => {
     kakaoMap();
   }, []);
-
-  const navigator = useNavigate();
 
   const userProfile = {
     userNikeName: "chldkduds2",
@@ -29,25 +25,7 @@ export default function Index() {
 
   return (
     <S.body>
-      <S.header>
-        <S.logo>
-          <S.logoImg src={LogoImg} />
-          <S.logoName>Rolling</S.logoName>
-        </S.logo>
-        <S.categoryBox>
-          {CATEGROY_ITEMS.map((categories, idx) => {
-            return (
-              <S.categoryTitle key={idx}>
-                <S.categoryLink
-                  onClick={() => navigator(`${categories.categoryPath}`)}
-                >
-                  {categories.categoryName}
-                </S.categoryLink>
-              </S.categoryTitle>
-            );
-          })}
-        </S.categoryBox>
-      </S.header>
+      <Header />
       <S.container>
         <S.ProfileContainer>
           <S.ProfilImg src={userProfile.userImgPath} alt="Error" />

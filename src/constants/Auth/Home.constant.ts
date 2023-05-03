@@ -1,8 +1,8 @@
-interface CATEGROY_ITEMS {
+interface Type {
   categoryName: string;
   categoryPath: string;
 }
-export const CATEGROY_ITEMS = [
+export const CATEGROY_ITEMS: Type[] = [
   {
     categoryName: "Home",
     categoryPath: "/",
