@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import * as S from "./home.style";
 import LogoImg from "./img/Logo.png";
 import UserProfileImg from "./img/UserProfileImg.png";
