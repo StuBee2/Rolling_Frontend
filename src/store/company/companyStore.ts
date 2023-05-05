@@ -5,6 +5,11 @@ export const companyNameAtom = atom<string>({
   default: "",
 });
 
+export const companyLogoAtom = atom<string[]>({
+  key: "companyLogoAtom",
+  default: [],
+});
+
 export const companyAddressAtom = atom<string>({
   key: "companyAddressAtom",
   default: "",

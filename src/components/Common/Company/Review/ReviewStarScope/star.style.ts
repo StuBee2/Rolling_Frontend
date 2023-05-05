@@ -4,7 +4,6 @@ import { AiFillStar } from "react-icons/ai";
 export const StarBox = styled.div`
   display: flex;
   justify-content: center;
-
   div {
     display: flex;
   }

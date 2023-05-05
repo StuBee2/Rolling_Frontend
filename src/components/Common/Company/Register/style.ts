@@ -68,8 +68,6 @@ export const Button = styled.button`
   border: none;
   border-radius: 5px;
   margin-bottom: 15px;
-  .Img-Icon {
-  }
 `;
 
 export const FileIcon = styled(BiImageAdd)`

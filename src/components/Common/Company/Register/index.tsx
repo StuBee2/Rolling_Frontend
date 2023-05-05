@@ -1,11 +1,21 @@
-import styled from "styled-components";
 import * as F from "./style";
 import { useCompany } from "../../../../hooks/Firm/useCompany";
-import { BiImageAdd } from "react-icons/bi";
+import { useRecoilState } from "recoil";
+import {
+  companyAddressAtom,
+  companyInfoAtom,
+  companyLogoAtom,
+  companyNameAtom,
+} from "../../../../store/company/companyStore";
 
 const FirmRegister = () => {
   const { onClickImg, uploadImg, imgRef } = useCompany();
-
+  const [firmlogo, setFrimLogo] = useRecoilState<string[]>(companyLogoAtom);
+  const [firmname, setFirmName] = useRecoilState<string>(companyNameAtom);
+  const [firmaddress, setFrimAddress] =
+    useRecoilState<string>(companyAddressAtom);
+  const [firminfo, setFrimInfo] = useRecoilState<string>(companyInfoAtom);
+  
   return (
     <F.FirmBox>
       <F.FirmTitle>기업 등록</F.FirmTitle>

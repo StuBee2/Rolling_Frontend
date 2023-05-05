@@ -3,6 +3,7 @@ import {
   companyAddressAtom,
   companyInfoAtom,
   companyNameAtom,
+  companyLogoAtom,
 } from "../../store/company/companyStore";
 import { useCallback } from "react";
 import { useRef, MutableRefObject } from "react";
@@ -11,7 +12,8 @@ export const useCompany = () => {
   const [firmaddress, setFrimAddress] =
     useRecoilState<string>(companyAddressAtom);
   const [firminfo, setFrimInfo] = useRecoilState<string>(companyInfoAtom);
-  const [firmName, setFrimName] = useRecoilState<string>(companyNameAtom);
+  const [firmname, setFrimName] = useRecoilState<string>(companyNameAtom);
+  const [firmlogo, setFirmLogo] = useRecoilState<string[]>(companyLogoAtom);
 
   const Addressregister = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,8 +50,8 @@ export const useCompany = () => {
     for (let i = 0; i < files; i++) {
       formData.append("file", files[i]);
     }
-
     try {
+      // setFirmLogo(arr)
     } catch (e) {}
   };
 
