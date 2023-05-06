@@ -1,5 +1,5 @@
-import { CompanyType } from "./company.type";
-import { ReviewResType } from "./review.type";
+import { CompanyListType } from "./company.type";
+import { ReviewListType } from "./review.type";
 
 export interface MemberType {
   id: string;
@@ -8,14 +8,14 @@ export interface MemberType {
   name: string;
   email: string;
   imageUrl: string;
-  memberRole: string;
-  loginType: string;
+  memberRole: "MEMBER";
+  loginType: "GITHUB";
   createdAt: string;
   modifiedAt: string;
 }
 
-export interface MyMemberType {
+export interface MemberUserInfoType {
   member: MemberType;
-  companyList: CompanyType[];
-  reviewList: ReviewResType[];
+  companyList: CompanyListType[];
+  reviewList: ReviewListType[];
 }

@@ -1,12 +1,4 @@
-export interface ReviewType {
-  companyId: string;
-  content: string;
-  position: string;
-  careerPath: string;
-  grade: number;
-}
-
-export interface ReviewResType {
+export interface ReviewListType {
   id: string;
   content: string;
   position: string;
@@ -16,4 +8,19 @@ export interface ReviewResType {
   companyId: string;
   createdAt: string;
   modifiedAt: string;
+}
+
+export interface ReviewInfoIdType {
+  reviewId: string;
+  reviewContent: string;
+  reviewPosition: string;
+  reviewCareerPath: string;
+  reviewGrade: number;
+  companyId: string;
+  reviewCreatedAt: string;
+  reviewModifiedAt: string;
+  writerId: string;
+  memberNickName: string;
+  memberSocialId: string;
+  memberImageUrl: string;
 }
