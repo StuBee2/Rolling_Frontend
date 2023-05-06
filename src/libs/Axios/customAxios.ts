@@ -25,15 +25,14 @@ const errorInterceptor = async ({
   if (status === 401 && refresh_token) {
     try {
       const { data } = await axios.get<{
-        data: { accessToken: string; refreshToken: string };
-      }>(`${CONFIG.SERVER}/auth/refreshToken`, {
+        data: { accessToken: string; };
+      }>(`${CONFIG.SERVER}/auth/refresh`, {
         headers: {
           [REQUEST_KEY]: `Bearer ${refresh_token}`,
         },
       });
 
       Token.setToken(ACCESS_KEY, data.data.accessToken);
-      Token.setToken(REFRESH_KEY, data.data.refreshToken);
 
       const newConfig = {
         ...config,

@@ -1,32 +1,41 @@
 import React from "react";
 import { Lists } from "../style";
 import * as S from "./style";
+import { ReviewResType } from "../../../../types/review.type";
+import { getDateText } from "../../../../libs/Date/getDateCounter";
 
-function ReviewList() {
+interface Props {
+  data: ReviewResType[];
+}
+
+function ReviewList({ data }: Props) {
   return (
-    <Lists isReview={true}>
-      <S.AbleContainer>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <S.CompanyName>무신사</S.CompanyName>
-          <div>5일전</div>
-        </div>
+    <>
+      {data?.map((review) => (
+        <Lists isReview={true}>
+          <S.AbleContainer>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <S.CompanyInfoContainer>
+                <S.CompanyLogo src="" alt="" />
+                <S.CompanyName>{review.content}</S.CompanyName>
+              </S.CompanyInfoContainer>
+              <div>{getDateText(new Date(review.createdAt))}</div>
+            </div>
 
-        <div>
-          {Array.from({ length: 5 }).map((idx) => (
-            <S.StarIcon size={30} />
-          ))}
-        </div>
-      </S.AbleContainer>
-      <S.InfoContainer>
-        <div>
-          무신사는 고객에게 최상의 쇼핑을 제공하고 입점 브랜드의 성장을 지원하는
-          것을 경영 목표로 하고 있습니다.
-        </div>
-        <div>포지션 : Front-End 개발자</div>
-        <div>경력 : 3년</div>
-        <div>입사경로 : 면접을 잘보았더니 회사에 들어갔습니다.</div>
-      </S.InfoContainer>
-    </Lists>
+            <div>
+              {Array.from({ length: review.grade }).map((idx) => (
+                <S.StarIcon size={30} />
+              ))}
+            </div>
+          </S.AbleContainer>
+          <S.InfoContainer>
+            <div>리뷰어 : </div>
+            <div>포지션 : {review.position}</div>
+            <div>입사경로 : {review.careerPath}</div>
+          </S.InfoContainer>
+        </Lists>
+      ))}
+    </>
   );
 }
 export default React.memo(ReviewList);

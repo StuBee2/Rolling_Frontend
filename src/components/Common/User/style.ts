@@ -48,6 +48,7 @@ export const UserAbleContainer = styled.div`
   background-color: #eff2f7;
 `;
 
+
 export const UserInfoContainer = styled.div`
   width: 374px;
   height: 560px;
@@ -112,7 +113,7 @@ export const RegisterContainer = styled.div`
     color: black;
     cursor: pointer;
 
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
       background-color: #d9d9d9;
@@ -177,5 +178,5 @@ export const Lists = styled.div<{ isReview: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
 `;

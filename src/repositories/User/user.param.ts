@@ -1,3 +1,3 @@
-export interface NickNameParamType {
+export interface NickNameParam {
   nickName: string;
 }

@@ -14,7 +14,21 @@ export const AbleContainer = styled.div`
   }
 `;
 
+export const CompanyInfoContainer = styled.div`
+  display: flex;
+  width: 150px;
+  height: 50px;
+`;
+
+export const CompanyLogo = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 4rem;
+`;
+
 export const CompanyName = styled.div`
+  line-height: 50px;
+  margin-left: 10px;
   font-size: 25px;
   font-weight: bold;
   cursor: pointer;
@@ -34,5 +48,4 @@ export const InfoContainer = styled.div`
 
 export const StarIcon = styled(AiFillStar)`
   color: #ff7f23;
-  
 `;
