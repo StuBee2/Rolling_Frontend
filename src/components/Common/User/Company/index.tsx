@@ -1,11 +1,11 @@
 import React from "react";
 import { Lists } from "../style";
 import * as S from "./style";
-import { CompanyType } from "../../../../types/company.type";
+import { CompanyListType } from "../../../../types/company.type";
 import { getDateText } from "../../../../libs/Date/getDateCounter";
 
 interface Props {
-  data: CompanyType[];
+  data: CompanyListType[];
 }
 
 function CompanyList({ data }: Props) {

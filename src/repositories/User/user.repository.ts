@@ -1,9 +1,9 @@
 import { customAxios } from "../../libs/Axios/customAxios";
-import { MyMemberType } from "../../types/member.type";
+import { MemberUserInfoType } from "../../types/member.type";
 import { NickNameParam } from "./user.param";
 
 class UserRepository {
-  public async getMyInfo(): Promise<MyMemberType> {
+  public async getMyInfo(): Promise<MemberUserInfoType> {
     const { data } = await customAxios.get("/member/my");
     return data;
   }

@@ -1,11 +1,11 @@
 import React from "react";
 import { Lists } from "../style";
 import * as S from "./style";
-import { ReviewResType } from "../../../../types/review.type";
+import { ReviewListType } from "../../../../types/review.type";
 import { getDateText } from "../../../../libs/Date/getDateCounter";
 
 interface Props {
-  data: ReviewResType[];
+  data: ReviewListType[];
 }
 
 function ReviewList({ data }: Props) {
