@@ -13,7 +13,9 @@ export default function Login() {
           {AUTH_ITEM.map((item) => (
             <S.LoginBtn
               isGoogle={item.isGoogle}
-              onClick={()=>window.location.href = item.loginUrl}
+              onClick={() => {
+                window.location.href = item.loginUrl;
+              }}
             >
               <img src={item.loginProfile} alt="" />
               <span>{item.text}</span>

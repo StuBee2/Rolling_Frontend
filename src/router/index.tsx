@@ -5,8 +5,10 @@ import LoginPage from "../pages/Auth/Login";
 import UserPage from "../pages/UserPage";
 import NotFound from "../components/Common/NotFound";
 import RegisterPage from "../pages/RegisterPage";
+import { useLogin } from "../hooks/Auth/useLogin";
 
 export default function Router() {
+  useLogin();
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />

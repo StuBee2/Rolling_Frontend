@@ -1,14 +1,13 @@
 interface Storage {
-  getToken(key: string): string | undefined;
+  getToken(key: string): string | null;
   setToken(key: string, value: string): void;
   removeToken(key: string): void;
   clearToken(): void;
 }
 
 class Token implements Storage {
-  public getToken(key: string): string | undefined {
-    if (localStorage.getItem(key) !== undefined)
-      return localStorage.getItem(key)!!;
+  public getToken(key: string): string | null {
+    return localStorage.getItem(key);
   }
 
   public setToken(key: string, value: string): void {
