@@ -1,13 +1,24 @@
-class Token {
+interface Storage {
+  getToken(key: string): string | null;
+  setToken(key: string, value: string): void;
+  removeToken(key: string): void;
+  clearToken(): void;
+}
+
+class Token implements Storage {
   public getToken(key: string): string | null {
     return localStorage.getItem(key);
   }
 
-  public setToken(key: string, token: string): void {
-    localStorage.setItem(key, token);
+  public setToken(key: string, value: string): void {
+    localStorage.setItem(key, value);
   }
 
-  public clearToken() {
+  public removeToken(key: string): void {
+    localStorage.removeItem(key);
+  }
+
+  public clearToken(): void {
     localStorage.clear();
   }
 }
