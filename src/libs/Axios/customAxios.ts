@@ -5,7 +5,7 @@ import {
   REQUEST_KEY,
 } from "../../constants/Auth/auth.constant";
 import Token from "../Token/Token";
-import CONFIG from "../config/config.json";
+import CONFIG from "../../config/config.json";
 
 export const customAxios = axios.create({
   baseURL: `${CONFIG.SERVER}`,
