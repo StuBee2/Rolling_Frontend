@@ -32,7 +32,7 @@ export default function Home() {
             <S.ProfilName>{userProfile.userNikeName}</S.ProfilName>
           </S.ProfileContainer>
         )}
-        <S.mainContainer>
+        <S.mainContainer isToken={Token.getToken(ACCESS_KEY) !== null}>
           <div style={{ width: "100%" }}>
             <S.rankingContainer>
               <S.rankingImg src={RankingImg} alt="Error" />
@@ -51,12 +51,10 @@ export default function Home() {
               </S.chettingInputContainer>
             </S.chattingContainer>
           </div>
-          <div style={{ width: "100%" }}>
-            <S.AiFillExclamationCircleIcon
-              onClick={() => window.alert("버그수정문의 ,팝업 구현 예정")}
-            />
-          </div>
         </S.mainContainer>
+        <S.AiFillExclamationCircleIcon
+          onClick={() => window.alert("버그수정문의 ,팝업 구현 예정")}
+        />
       </S.container>
     </S.body>
   );

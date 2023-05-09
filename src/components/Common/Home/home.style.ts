@@ -53,7 +53,7 @@ export const ProfilName = styled.h3`
   text-overflow: ellipsis;
 `;
 
-export const mainContainer = styled.div`
+export const mainContainer = styled.div<{ isToken: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +61,7 @@ export const mainContainer = styled.div`
 
   height: auto;
   overflow: hidden;
-  margin: 1%;
+  margin: ${({ isToken }) => (isToken ? "0" : "3%")};
 `;
 
 export const rankingContainer = styled.div`
@@ -133,7 +133,7 @@ export const chettingInputContainer = styled.div`
 
   input {
     width: 85%;
-    height: 70%;
+    height: 30px;
 
     background-color: #202026;
     border: 1px solid #00ba91;
@@ -173,7 +173,9 @@ export const AiFillExclamationCircleIcon = styled(AiFillExclamationCircle)`
 
   color: #aaaaaa;
   float: right;
-  margin-top: 20px;
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
 
   cursor: pointer;
 `;
