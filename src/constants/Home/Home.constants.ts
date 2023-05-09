@@ -1,18 +1,26 @@
 interface Type {
+  id: number;
   categoryName: string;
-  categoryPath: string;
+  categoryPath?: string;
 }
 export const CATEGROY_ITEMS: Type[] = [
   {
-    categoryName: "Home",
-    categoryPath: "/",
+    id: 1,
+    categoryName: "Login",
+    categoryPath: "/login",
   },
   {
-    categoryName: "profile",
-    categoryPath: "/",
+    id: 2,
+    categoryName: "MyPage",
+    categoryPath: "/mypage",
   },
   {
+    id: 3,
     categoryName: "Review",
-    categoryPath: "/",
+    categoryPath: "/register",
+  },
+  {
+    id: 4,
+    categoryName: "Logout",
   },
 ];

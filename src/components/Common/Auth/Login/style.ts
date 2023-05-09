@@ -30,11 +30,9 @@ export const LoginBox = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 150px;
-  height: 150px;
-
-  border-radius: 7rem;
-  border: 1px solid black;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 `;
 
 export const LoginBtn = styled.div<{ isGoogle: boolean }>`

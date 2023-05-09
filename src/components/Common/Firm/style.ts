@@ -25,6 +25,7 @@ export const FirmList = styled.div`
   }
 `;
 
+
 export const Explanation = styled.div<{ isRegister: boolean }>`
   font-size: 13px;
   color: #9a9a9a;

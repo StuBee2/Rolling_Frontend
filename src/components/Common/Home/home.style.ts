@@ -2,128 +2,178 @@ import styled from "styled-components";
 import { HiArrowUp } from "react-icons/hi";
 import { AiFillExclamationCircle } from "react-icons/ai";
 
-export const body = styled.body`
-  width: 100vw;
-  height: 100vh;
-  background: #101013;
+export const body = styled.div`
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: #101013;
   color: white;
+  overflow: hidden;
 `;
 
-export const container = styled.div``;
+export const container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+`;
 
 export const ProfileContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   background: #202026;
-  width: 10%;
-  height: auto;
+  width: 150px;
+  height: 50px;
+
   box-sizing: border-box;
   border-radius: 2%;
-  margin: 2% 0 0 85.5%;
+  margin-left: 85.5%;
+
+  cursor: pointer;
 `;
 
 export const ProfilImg = styled.img`
-  width: 25%;
-  height: auto;
-  margin-bottom: 3%;
-  margin-right: 3%;
+  width: 45px;
+  height: 45px;
+  margin: 0 3% 3% 0;
 `;
 
 export const ProfilName = styled.h3`
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
-  font-size: 100%;
+
   margin-right: 3%;
+  max-width: 105px;
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+export const mainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: auto;
+  overflow: hidden;
+  margin: 1%;
 `;
 
 export const rankingContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 8%;
+  width: 120px;
   height: 40px;
-  background: #18181d;
-  border: 1px solid #00ba91;
+
+  background-color: #18181d;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  line-height: 40px;
+
+  border: 1px solid #00ba91;
   border-radius: 5px;
-  margin: 1.5% 0 1% 15.5%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 10px;
+  margin: 0 0 10px 0;
+
+  cursor: pointer;
 `;
 
 export const rankingImg = styled.img`
   width: 25px;
   height: 25px;
-  margin: 0 5% 0 -10%;
+  object-fit: cover;
 `;
 
 export const rankerName = styled.h5`
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
-  font-size: 85%;
-`;
-
-export const mainContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 15px;
+  margin-left: 5px;
 `;
 
 export const mapBox = styled.div`
   border-radius: 5px;
+  width: 50vw;
+  height: 65vh;
 `;
 
-export const chattingBox = styled.div`
-  width: 18%;
+export const chattingContainer = styled.div`
+  width: 290px;
   height: 65vh;
-  background: #202026;
+
+  background-color: #202026;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
+
   margin-left: 1%;
+  display: flex;
+  flex-direction: column;
 `;
 
-export const chatting = styled.div`
-  position: relative;
-  top: 90%;
+export const chetting = styled.div`
+  width: 100%;
+  height: 60vh;
+`;
+
+export const chettingInputContainer = styled.div`
+  width: 100%;
+  height: 5vh;
+
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  input {
+    width: 85%;
+    height: 70%;
+
+    background-color: #202026;
+    border: 1px solid #00ba91;
+    border-radius: 5px;
+    outline: none;
+
+    color: #ffffff;
+    padding-left: 5px;
+  }
+
+  div {
+    width: 30px;
+    height: 30px;
+
+    background-color: #00ba91;
+    border-radius: 4rem;
+    margin-left: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+  }
 `;
 
-export const chattingInp = styled.input`
-  box-sizing: border-box;
-  width: 78%;
-  height: 30px;
-  background: #202026;
-  border: 1px solid #00ba91;
-  border-radius: 5px;
-  margin-right: 1%;
-  outline: 0;
-  padding-left: 4%;
-  color: white;
-  font-size: 85%;
-`;
-
-export const HiArrowUpIcon = styled(HiArrowUp)``;
-
-export const chattingBtn = styled.button`
-  width: 9%;
-  height: 23px;
-  background: rgba(0, 186, 145, 0.9);
-  border-radius: 100px;
-  border: 0;
-`;
-
-export const bottomItems = styled.div`
-  display: flex;
-  margin-top: 1%;
+export const HiArrowUpIcon = styled(HiArrowUp)`
+  width: 15px;
+  height: 15px;
+  color: #202026;
+  cursor: pointer;
 `;
 
 export const AiFillExclamationCircleIcon = styled(AiFillExclamationCircle)`
-  width: 3.8vw;
-  height: 3.8vh;
+  width: 30px;
+  height: 30px;
+
   color: #aaaaaa;
-  position: relative;
-  left: 95vw;
+  float: right;
+  margin-top: 20px;
+
+  cursor: pointer;
 `;

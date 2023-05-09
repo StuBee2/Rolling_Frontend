@@ -4,11 +4,20 @@ import CompanyList from "./Company";
 import MyInfo from "./MyInfo";
 import ReviewList from "./Review";
 import * as S from "./style";
+import { useTokenCheck } from "../../../hooks/Auth/useTokenCheck";
+import { useEffect } from "react";
 
 export default function User() {
   const { data: myInfo } = useGetMyInfo();
   const navigate = useNavigate();
+  const token = useTokenCheck();
 
+  useEffect(() => {
+    if (!token) {
+      window.alert("로그인해주세요!");
+      navigate("/");
+    }
+  }, [navigate, token]);
   return (
     <S.UserContainer>
       <S.UserNameContainer>
