@@ -4,9 +4,12 @@ import { CATEGROY_ITEMS } from "../../../constants/Home/Home.constants";
 import LogoImg from "../../../assets/Logo.png";
 import Token from "../../../libs/Token/Token";
 import { ACCESS_KEY } from "../../../constants/Auth/auth.constant";
+import { useLogging } from "../../../hooks/Log/useLogging";
+import { LOG_ITEM } from "../../../constants/Log/log.constants";
 
 export default function Header() {
   const navigate = useNavigate();
+  const { handleLoggingClick } = useLogging();
   return (
     <S.Header>
       <S.Logo onClick={() => navigate("/")}>
@@ -34,7 +37,9 @@ export default function Header() {
                         </S.CategoryLink>
                       ) : (
                         <S.CategoryLink
-                          onClick={() => navigate(category.categoryPath!!)}
+                          onClick={() =>
+                            handleLoggingClick(LOG_ITEM[category.id])
+                          }
                         >
                           {category.categoryName}
                         </S.CategoryLink>

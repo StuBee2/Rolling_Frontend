@@ -1,6 +1,6 @@
 interface Type {
   id: number;
-  categoryName: string;
+  categoryName?: string;
   categoryPath?: string;
 }
 export const CATEGROY_ITEMS: Type[] = [
@@ -12,12 +12,10 @@ export const CATEGROY_ITEMS: Type[] = [
   {
     id: 2,
     categoryName: "MyPage",
-    categoryPath: "/mypage",
   },
   {
     id: 3,
     categoryName: "Review",
-    categoryPath: "/register",
   },
   {
     id: 4,
