@@ -22,6 +22,7 @@ export function useLogging() {
           onError: (err) => {
             console.log(err);
             window.alert("알맞지 않는 토큰이 입니다. 다시 로그인해주세요!");
+            Token.clearToken();
             navigate("/login");
           },
         }
