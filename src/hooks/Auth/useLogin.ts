@@ -14,6 +14,7 @@ export function useLogin() {
       Token.setToken(ACCESS_KEY, accessToken.toString());
       Token.setToken(REFRESH_KEY, refreshToken.toString());
       navigate("/");
+      window.location.replace("/");
     }
   }, [accessToken, refreshToken, navigate]);
 }

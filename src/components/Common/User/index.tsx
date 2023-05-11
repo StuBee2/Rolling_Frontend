@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useGetMyInfo } from "../../../queries/User/user.query";
 import CompanyList from "./Company";
 import MyInfo from "./MyInfo";

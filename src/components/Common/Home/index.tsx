@@ -1,23 +1,18 @@
 import React, { useEffect } from "react";
 import * as S from "./home.style";
-import UserProfileImg from "../../../assets/UserProfileImg.png";
 import RankingImg from "../../../assets/RankingImg.png";
 import kakaoMap from "./KakaoMapScrip";
-import { useNavigate } from "react-router-dom";
 import Token from "../../../libs/Token/Token";
 import { ACCESS_KEY } from "../../../constants/Auth/auth.constant";
+import { useLogging } from "../../../hooks/Log/useLogging";
+import { LOG_ITEM } from "../../../constants/Log/log.constants";
 
 export default function Home() {
-  const navigate = useNavigate();
+  const { handleLoggingClick } = useLogging();
 
   useEffect(() => {
     kakaoMap();
   }, []);
-
-  const userProfile = {
-    userNikeName: "chldkduds2",
-    userImgPath: UserProfileImg,
-  };
 
   const companyLanking = {
     lanker: ["1. Google", "2. Naver", "3. Kakao"],
@@ -27,9 +22,9 @@ export default function Home() {
     <S.body>
       <S.container>
         {Token.getToken(ACCESS_KEY) && (
-          <S.ProfileContainer onClick={() => navigate("/mypage")}>
-            <S.ProfilImg src={userProfile.userImgPath} alt="Error" />
-            <S.ProfilName>{userProfile.userNikeName}</S.ProfilName>
+          <S.ProfileContainer onClick={() => handleLoggingClick(LOG_ITEM[1])}>
+            <S.ProfilImg src={""} alt="Error" />
+            <S.ProfilName>{}</S.ProfilName>
           </S.ProfileContainer>
         )}
         <S.mainContainer isToken={Token.getToken(ACCESS_KEY) !== null}>

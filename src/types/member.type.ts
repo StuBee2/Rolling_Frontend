@@ -14,6 +14,11 @@ export interface MemberType {
   modifiedAt: string;
 }
 
+export interface MemberProfileType {
+  socialId: string;
+  imgUrl: string;
+}
+
 export interface MemberUserInfoType {
   member: MemberType;
   companyList: CompanyListType[];
