@@ -1,5 +1,5 @@
 import * as T from "./star.style";
-import { useStarScope } from "../../../../hooks/Firm/useStarScope";
+import { useStarScope } from "../../../../../hooks/Firm/useStarScope";
 
 interface Props {
   setActive?: () => void;
