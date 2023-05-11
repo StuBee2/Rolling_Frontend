@@ -1,4 +1,3 @@
-import google from "../../assets/google.svg";
 import github from "../../assets/github.svg";
 import CONFIG from "../.././config/config.json";
 

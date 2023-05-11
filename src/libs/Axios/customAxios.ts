@@ -16,16 +16,17 @@ export const customAxios = axios.create({
 
 const errorInterceptor = async ({
   config,
-  response: { status },
+  response,
 }: {
   config: AxiosRequestConfig;
-  response: { status: number };
+  response?: { status: number };
 }) => {
+  const status = response?.status;
   const refresh_token = Token.getToken(REFRESH_KEY);
   if (status === 401 && refresh_token) {
     try {
       const { data } = await axios.get<{
-        data: { accessToken: string; };
+        data: { accessToken: string };
       }>(`${CONFIG.SERVER}/auth/refresh`, {
         headers: {
           [REQUEST_KEY]: `Bearer ${refresh_token}`,
