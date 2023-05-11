@@ -12,9 +12,9 @@ const FirmReview = () => {
           <br />
           ex 프론트엔드 개발자 홈페이지 개발
         </R.ReviewExplanation>
-        <R.Input></R.Input>
+        <R.Input />
         <R.Text>입사경로</R.Text>
-        <R.Input></R.Input>
+        <R.Input />
         <R.Text>회사 만족도(회사 평점)</R.Text>
         <R.ReviewExplanation>
           (워라벨,연봉 만족도, 기업 문화(복지)를 평가해주세요)

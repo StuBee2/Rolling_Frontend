@@ -45,7 +45,8 @@ const errorInterceptor = async ({
 
       return customAxios(newConfig);
     } catch (error) {
-      console.log(error);
+      window.alert("토큰이 만료되었습니다!");
+      window.location.href="/login";
       return Promise.reject(error);
     }
   }

@@ -68,6 +68,7 @@ export const Button = styled.button`
   border: none;
   border-radius: 5px;
   margin-bottom: 15px;
+  cursor: pointer;
 `;
 
 export const FileIcon = styled(BiImageAdd)`

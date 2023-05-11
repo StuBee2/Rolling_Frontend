@@ -15,7 +15,7 @@ const FirmRegister = () => {
   const [firmaddress, setFrimAddress] =
     useRecoilState<string>(companyAddressAtom);
   const [firminfo, setFrimInfo] = useRecoilState<string>(companyInfoAtom);
-  
+
   return (
     <F.FirmBox>
       <F.FirmTitle>기업 등록</F.FirmTitle>
@@ -33,9 +33,9 @@ const FirmRegister = () => {
           </F.Button>
         </F.LogoBox>
         <F.Text>기업 이름</F.Text>
-        <F.Input></F.Input>
+        <F.Input />
         <F.Text>기업 주소</F.Text>
-        <F.Input></F.Input>
+        <F.Input />
         <F.Text>기업 소개</F.Text>
         <F.Explanation>(회사의 서비스 목적을 적어주세요)</F.Explanation>
         <textarea required></textarea>

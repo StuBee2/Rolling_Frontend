@@ -1,7 +1,7 @@
 import Token from "../../libs/Token/Token";
 import { ACCESS_KEY } from "../../constants/Auth/auth.constant";
 import { usePostLogMutation } from "../../queries/Log/Log.query";
-import { LoggingParam } from "../../repositories/Logging/logging.param";
+import { LoggingParam } from "../../repositories/Logging/log.param";
 import { useNavigate } from "react-router-dom";
 
 export function useLogging() {

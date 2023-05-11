@@ -1,4 +1,4 @@
-export interface LoggingType {
+export interface LogType {
   id: number;
   description: string;
   module: string;

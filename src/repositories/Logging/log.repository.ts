@@ -1,12 +1,12 @@
 import { customAxios } from "../../libs/Axios/customAxios";
-import { LoggingType } from "../../types/logging.type";
-import { LoggingParam } from "./logging.param";
+import { LogType } from "../../types/log.type";
+import { LoggingParam } from "./log.param";
 
 class LogRepository {
   public async postLogging({
     description,
     module,
-  }: LoggingParam): Promise<LoggingType> {
+  }: LoggingParam): Promise<LogType> {
     const { data } = await customAxios.post("/logging", {
       description,
       module,
