@@ -1,40 +1,40 @@
+import { useNavigate } from "react-router-dom";
+import { useGetMyInfo } from "../../../queries/User/user.query";
 import CompanyList from "./Company";
+import MyInfo from "./MyInfo";
 import ReviewList from "./Review";
 import * as S from "./style";
 
 export default function User() {
+  const { data: myInfo } = useGetMyInfo();
+  const navigate = useNavigate();
+
   return (
     <S.UserContainer>
       <S.UserNameContainer>
-        <img
-          src="https://yt3.googleusercontent.com/ytc/AGIKgqOrkC7r6eXnPTlJlve9Ts_5zrXafqZN3a9acbYDOA=s900-c-k-c0x00ffffff-no-rj"
-          alt=""
-        />
+        <img src={myInfo?.member.imageUrl} alt="" />
       </S.UserNameContainer>
-
       <S.UserAbleContainer>
         <S.UserInfoContainer>
-          <S.SkillsContainer />
+          <S.SkillsContainer>
+            <MyInfo data={myInfo?.member!!} />
+          </S.SkillsContainer>
 
           <S.RegisterContainer>
-            <div>회사 리뷰하기</div>
-            <div>회사 등록하기</div>
+            <div onClick={() => navigate(`/register`)}>기업 등록하기</div>
+            <div onClick={() => navigate("/register")}>기업 리뷰하기</div>
           </S.RegisterContainer>
 
           <S.RevieListContainer>
             <S.Wrap isCompany={true}>
-              {Array.from({ length: 5 }).map((idx) => (
-                <CompanyList />
-              ))}
+              <CompanyList data={myInfo?.companyList!!} />
             </S.Wrap>
           </S.RevieListContainer>
         </S.UserInfoContainer>
 
         <S.UserReviewContainer>
           <S.Wrap isCompany={false}>
-            {Array.from({ length: 5 }).map((idx) => (
-              <ReviewList />
-            ))}
+            <ReviewList data={myInfo?.reviewList!!} />
           </S.Wrap>
         </S.UserReviewContainer>
       </S.UserAbleContainer>

@@ -1,14 +1,14 @@
 import { customAxios } from "../../libs/Axios/customAxios";
-import { MyMemberType } from "../../types/member.type";
-import { NickNameParamType } from "./user.param";
+import { MemberUserInfoType } from "../../types/member.type";
+import { NickNameParam } from "./user.param";
 
 class UserRepository {
-  public async getMyInfo(): Promise<MyMemberType> {
+  public async getMyInfo(): Promise<MemberUserInfoType> {
     const { data } = await customAxios.get("/member/my");
     return data;
   }
 
-  public async patchMyNickName(nickName: NickNameParamType): Promise<void> {
+  public async patchMyNickName(nickName: NickNameParam): Promise<void> {
     await customAxios.patch("/member/nickName", nickName);
   }
 }

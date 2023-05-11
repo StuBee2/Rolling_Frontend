@@ -1,4 +1,3 @@
-export interface AuthRefreshType {
+export interface AcessTokenType {
   accessToken: string;
-  refreshToken: string;
 }
