@@ -1,8 +1,8 @@
 import { customAxios } from "../../libs/Axios/customAxios";
-import { CompanyParamType } from "./company.param";
+import { CompanyParam } from "./company.param";
 
 class CompanyRepository {
-  public async postRegister(data: CompanyParamType): Promise<void> {
+  public async postRegister(data: CompanyParam): Promise<void> {
     await customAxios.post("/company", data);
   }
 }
