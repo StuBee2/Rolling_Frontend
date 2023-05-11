@@ -4,24 +4,15 @@ import CompanyList from "./Company";
 import MyInfo from "./MyInfo";
 import ReviewList from "./Review";
 import * as S from "./style";
-import { useTokenCheck } from "../../../hooks/Auth/useTokenCheck";
-import { useEffect } from "react";
+import useTokenCheck from "../../../hooks/Auth/useTokenCheck";
 import { useLogging } from "../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../constants/Log/log.constants";
 
 export default function User() {
   const { data: myInfo } = useGetMyInfo();
-  const navigate = useNavigate();
-  const token = useTokenCheck();
   const { handleLoggingClick } = useLogging();
 
-  useEffect(() => {
-    if (!token) {
-      window.alert("로그인해주세요!");
-      navigate("/");
-    }
-  }, [navigate, token]);
-
+  useTokenCheck();
   return (
     <S.UserContainer>
       <S.UserNameContainer>
