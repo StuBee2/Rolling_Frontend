@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const UserContainer = styled.div`
   width: calc(100% - 218px);
-  height: calc(100vh - 63px);
+  height: calc(100vh - 80px);
 
   position: absolute;
   bottom: 0;
