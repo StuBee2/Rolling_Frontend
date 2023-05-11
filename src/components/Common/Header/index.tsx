@@ -22,7 +22,7 @@ export default function Header() {
           return (
             <div key={category.id}>
               {Token.getToken(ACCESS_KEY)
-                ? category.id !== 1 && (
+                ? category.id !== 0 && (
                     <>
                       {category.id === 4 ? (
                         <S.CategoryLink
@@ -44,7 +44,7 @@ export default function Header() {
                       )}
                     </>
                   )
-                : category.id === 1 && (
+                : category.id === 0 && (
                     <S.CategoryLink onClick={() => navigate("/login")}>
                       {category.categoryName}
                     </S.CategoryLink>

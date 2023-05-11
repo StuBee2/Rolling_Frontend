@@ -4,15 +4,15 @@ interface Type {
 }
 export const CATEGROY_ITEMS: Type[] = [
   {
-    id: 1,
+    id: 0,
     categoryName: "Login",
   },
   {
-    id: 2,
+    id: 1,
     categoryName: "MyPage",
   },
   {
-    id: 0,
+    id: 2,
     categoryName: "Register",
   },
   {
