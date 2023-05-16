@@ -101,7 +101,7 @@ export const RegisterContainer = styled.div`
   align-items: center;
 
   div {
-    width: 150px;
+    width: 300px;
     height: 50px;
 
     border: 1px solid #d9d9d9;

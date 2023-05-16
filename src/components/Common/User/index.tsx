@@ -27,9 +27,6 @@ export default function User() {
             <div onClick={() => handleLoggingClick(LOG_ITEM[2])}>
               기업 등록하기
             </div>
-            <div onClick={() => handleLoggingClick(LOG_ITEM[3])}>
-              기업 리뷰하기
-            </div>
           </S.RegisterContainer>
 
           <S.RevieListContainer>
