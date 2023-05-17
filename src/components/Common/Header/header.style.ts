@@ -40,7 +40,10 @@ export const categoryLink = styled.div`
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
+<<<<<<< HEAD
   font-size: 100%;
+=======
+>>>>>>> a96b1926f475c4654b5bcd0d98fc58eee8f0b80a
   padding-right: 20%;
   cursor: pointer;
   &:hover {
