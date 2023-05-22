@@ -7,13 +7,16 @@ import { LOG_ITEM } from "../../../../constants/Log/log.constants";
 import { useLogout } from "../../../../hooks/Auth/useLogout";
 
 interface Props {
+  name: string;
+  email: string;
+  logo: string;
   selectIdObject: {
     selectId: number;
     setSelectId: Dispatch<SetStateAction<number>>;
   };
 }
 
-export default function Nav({ selectIdObject }: Props) {
+export default function Nav({ name, email, logo, selectIdObject }: Props) {
   const navigate = useNavigate();
   const { selectId, setSelectId } = selectIdObject;
   const { handleLoggingClick } = useLogging();
@@ -24,9 +27,9 @@ export default function Nav({ selectIdObject }: Props) {
       <S.UserLogo onClick={() => navigate("/")}>Rolling</S.UserLogo>
       <S.UserAbleWrap>
         <S.UserProfileContainer>
-          <S.UserImg />
-          <S.UserName>박상현</S.UserName>
-          <S.UserEmail>sanghyun9467@gmail.com</S.UserEmail>
+          <S.UserImg src={logo} />
+          <S.UserName>{name}</S.UserName>
+          <S.UserEmail>{email}</S.UserEmail>
         </S.UserProfileContainer>
         <S.CenterDiv>
           <S.UserAbleContainer isMiddle={true}>

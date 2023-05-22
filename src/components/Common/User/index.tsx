@@ -20,6 +20,9 @@ export default function User() {
       <S.UserContainer>
         <Nav
           selectIdObject={GroupingState("selectId", selectId, setSelectId)}
+          name={myInfo?.member.name!!}
+          email={myInfo?.member.email!!}
+          logo={myInfo?.member.imageUrl!!}
         />
         <S.UserListContainer>
           {selectId === 1 && <Profile data={myInfo?.member!!} />}
