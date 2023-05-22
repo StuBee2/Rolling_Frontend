@@ -10,4 +10,21 @@ export const ReviewBody = styled.div`
 
   font-size: 15px;
   font-weight: 500;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  img {
+    width: 76px;
+    height: 76px;
+
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  ul {
+    width: 79%;
+    list-style-type: none;
+  }
 `;

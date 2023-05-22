@@ -4,6 +4,10 @@ export interface CompanyListType {
   address: string;
   description: string;
   imgUrl: string;
+  totalGrade: number;
+  balanceGrade: number;
+  salaryGrade: number;
+  welfareGrade: number;
   registrantId: string;
   createdAt: string;
   modifiedAt: string;

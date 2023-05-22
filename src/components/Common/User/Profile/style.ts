@@ -9,7 +9,8 @@ export const ProfileContainer = styled.div`
   padding-bottom: 20px;
 
   border-radius: 12px;
-  box-shadow: 2px 2px 14px 0 rgba(0, 164, 73, 0.08);
+  /* box-shadow: 2px 2px 14px 0 rgba(0, 164, 73, 0.08); */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
   border: 1px solid rgba(3, 213, 128, 0.8);
 
   display: flex;
@@ -40,7 +41,6 @@ export const MyInfo = styled.div<{ isBottom?: boolean; isTop?: boolean }>`
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
 `;
 
 export const ProfileImg = styled.img`
@@ -78,20 +78,4 @@ export const ProfileGitId = styled.div`
   display: flex;
   margin-left: 10px;
   font-weight: 500;
-`;
-
-export const EditBtn = styled.button`
-  color: #7b8994;
-
-  font-size: 14px;
-  font-weight: 500;
-
-  text-align: center;
-  padding: 2px 9px 3px;
-
-  border-radius: 4px;
-  border: 1px solid rgba(212, 216, 229, 0.5);
-  background-color: rgba(212, 216, 229, 0.25);
-
-  cursor: pointer;
 `;
