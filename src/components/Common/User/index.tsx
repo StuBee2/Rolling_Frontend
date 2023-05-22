@@ -1,47 +1,32 @@
 import { useGetMyInfo } from "../../../queries/User/user.query";
-import CompanyList from "./Company";
-import MyInfo from "./MyInfo";
-import ReviewList from "./Review";
 import * as S from "./style";
 import useTokenCheck from "../../../hooks/Auth/useTokenCheck";
-import { useLogging } from "../../../hooks/Log/useLogging";
-import { LOG_ITEM } from "../../../constants/Log/log.constants";
+import Nav from "./Nav";
+import useShowHeader from "../../../hooks/User/useShowHeader";
+import Review from "./Company/Review";
+import { useState } from "react";
+import GroupingState from "../../../libs/Common/GroupingState";
+import Profile from "./Profile";
+import Regist from "./Company/Regist";
 
 export default function User() {
   const { data: myInfo } = useGetMyInfo();
-  const { handleLoggingClick } = useLogging();
+  const [selectId, setSelectId] = useState<number>(1);
 
   useTokenCheck();
+  useShowHeader();
   return (
-    <S.UserContainer>
-      <S.UserNameContainer>
-        <img src={myInfo?.member.imageUrl} alt="" />
-      </S.UserNameContainer>
-      <S.UserAbleContainer>
-        <S.UserInfoContainer>
-          <S.SkillsContainer>
-            <MyInfo data={myInfo?.member!!} />
-          </S.SkillsContainer>
-
-          <S.RegisterContainer>
-            <div onClick={() => handleLoggingClick(LOG_ITEM[2])}>
-              기업 등록하기
-            </div>
-          </S.RegisterContainer>
-
-          <S.RevieListContainer>
-            <S.Wrap isCompany={true}>
-              <CompanyList data={myInfo?.companyList!!} />
-            </S.Wrap>
-          </S.RevieListContainer>
-        </S.UserInfoContainer>
-
-        <S.UserReviewContainer>
-          <S.Wrap isCompany={false}>
-            <ReviewList data={myInfo?.reviewList!!} />
-          </S.Wrap>
-        </S.UserReviewContainer>
-      </S.UserAbleContainer>
-    </S.UserContainer>
+    <S.UserWrap>
+      <S.UserContainer>
+        <Nav
+          selectIdObject={GroupingState("selectId", selectId, setSelectId)}
+        />
+        <S.UserListContainer>
+          {selectId === 1 && <Profile data={myInfo?.member!!} />}
+          {selectId === 2 && <Regist data={myInfo?.companyList!!} />}
+          {selectId === 3 && <Review data={myInfo?.reviewList!!} />}
+        </S.UserListContainer>
+      </S.UserContainer>
+    </S.UserWrap>
   );
 }
