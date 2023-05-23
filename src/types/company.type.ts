@@ -20,6 +20,10 @@ export interface CompanyInfoType {
     companyAddress: string;
     companyDescription: string;
     companyImgUrl: string;
+    totalGrade: number;
+    balanceGrade: number;
+    salaryGrade: number;
+    welfareGrade: number;
     companyCreatedAt: string;
     companyModifiedAt: string;
     registrantId: string;
@@ -33,6 +37,10 @@ export interface CompanyInfoType {
       reviewContent: string;
       reviewPosition: string;
       reviewCareerPath: string;
+      totalGrade: number;
+      balanceGrade: number;
+      salaryGrade: number;
+      welfareGrade: number;
       reviewGrade: number;
       companyId: string;
       reviewCreatedAt: string;

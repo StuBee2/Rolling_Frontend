@@ -19,8 +19,10 @@ export interface ReviewInfoIdType {
   reviewContent: string;
   reviewPosition: string;
   reviewCareerPath: string;
-  reviewGrade: number;
-  companyId: string;
+  totalGrade: number;
+  balanceGrade: number;
+  salaryGrade: number;
+  welfareGrade: number;
   reviewCreatedAt: string;
   reviewModifiedAt: string;
   writerId: string;
