@@ -24,12 +24,13 @@ export const ScrollBox = styled.div`
 
 export const ListContainer = styled.div`
   width: 100%;
-  height: 199px;
+  height: 220px;
 
   margin-top: 20px;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 2px 2px 14px 0 rgba(0, 164, 73, 0.08);
+  border: 1px solid #d9d9d9;
 
   display: flex;
   flex-direction: column;
@@ -37,9 +38,11 @@ export const ListContainer = styled.div`
 
 export const Able = styled.div<{ isTop: boolean }>`
   width: 100%;
+  height: 50px;
 
   display: flex;
   align-items: center;
+  color: #999999;
 
   ${({ isTop }) =>
     isTop
@@ -66,4 +69,34 @@ export const Able = styled.div<{ isTop: boolean }>`
             outline: none;
           }
         `};
+`;
+
+export const Body = styled.div`
+  width: 100%;
+  height: 120px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+
+  img {
+    width: 80px;
+    height: 80px;
+
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  ul {
+    width: 79%;
+    list-style-type: none;
+    font-size: 15px;
+    color: #000000;
+    font-weight: 600;
+
+    li {
+      line-height: 22px;
+    }
+  }
 `;

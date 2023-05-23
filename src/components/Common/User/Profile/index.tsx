@@ -18,7 +18,7 @@ export default function Profile({ data }: Props) {
               <S.ProfileImg src={data?.imageUrl} alt="" />
               <S.ProfileAbleBox>
                 <S.ProfileInfo isName={true}>{data?.name}</S.ProfileInfo>
-                <S.ProfileInfo isName={false}>{data?.email}</S.ProfileInfo>
+                <S.ProfileInfo>{data?.email}</S.ProfileInfo>
               </S.ProfileAbleBox>
             </div>
           </S.MyInfo>

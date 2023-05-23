@@ -13,8 +13,8 @@ export default function User() {
   const { data: myInfo } = useGetMyInfo();
   const [selectId, setSelectId] = useState<number>(1);
 
-  useTokenCheck();
   useShowHeader();
+  useTokenCheck();
   return (
     <S.UserWrap>
       <S.UserContainer>

@@ -1,6 +1,5 @@
 import { FiX } from "react-icons/fi";
-import { Able, CommonWrap, ListContainer, ScrollBox } from "../style";
-import * as S from "./style";
+import { Able, Body, CommonWrap, ListContainer, ScrollBox } from "../style";
 import { AiFillStar } from "react-icons/ai";
 import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
 import { ReviewListType } from "../../../../../types/review.type";
@@ -18,24 +17,26 @@ export default function Review({ data }: Props) {
           data.map((review) => (
             <ListContainer>
               <Able isTop={true}>
-                <div>
-                  {Array.from({ length: review.totalGrade }).map((idx) => (
-                    <AiFillStar color="#FAF270" size={20} />
-                  ))}
+                <div style={{ fontSize: "13px" }}>
+                  {getDateText(new Date(review.reviewCreatedAt))} 등록
                 </div>
-                <FiX size={23} color="#999999" cursor="pointer" />
+                <FiX size={23} cursor="pointer" />
               </Able>
-              <S.ReviewBody>
-                <img src={review.companyImgUrl} alt="" />
+              <Body>
+                <img src="" alt="" />
                 <ul>
-                  <li style={{ color: "#999999", fontSize: "13px" }}>
-                    {getDateText(new Date(review.reviewCreatedAt))} 등록
+                  <li>
+                    {Array.from({ length: review.totalGrade }).map((idx) => (
+                      <AiFillStar color="#ff7f23" size={20} />
+                    ))}
                   </li>
-                  <li>{review.reviewPosition}</li>
+                  <li>
+                    {review.companyName} / {review.reviewPosition}
+                  </li>
                   <li>{stringEllipsis(review.reviewCareerPath, 30)}</li>
                   <li>{stringEllipsis(review.reviewContent, 30)}</li>
                 </ul>
-              </S.ReviewBody>
+              </Body>
               <Able isTop={false}>
                 <button>수정하기</button>
                 <button>상세보기</button>

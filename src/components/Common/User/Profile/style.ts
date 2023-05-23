@@ -9,9 +9,8 @@ export const ProfileContainer = styled.div`
   padding-bottom: 20px;
 
   border-radius: 12px;
-  /* box-shadow: 2px 2px 14px 0 rgba(0, 164, 73, 0.08); */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
-  border: 1px solid rgba(3, 213, 128, 0.8);
+  box-shadow: 2px 2px 14px 0 rgba(0, 164, 73, 0.08);
+  border: 1px solid #d9d9d9;
 
   display: flex;
   flex-direction: column;
@@ -62,7 +61,7 @@ export const ProfileAbleBox = styled.div`
   gap: 3px;
 `;
 
-export const ProfileInfo = styled.div<{ isName: boolean }>`
+export const ProfileInfo = styled.div<{ isName?: boolean }>`
   font-size: ${(props) => (props.isName ? "24px" : "14px")};
   font-weight: ${(props) => (props.isName ? "700" : "400")};
   color: ${(props) => (props.isName ? "#1e1e23" : "#7b8994CC")};
