@@ -24,4 +24,9 @@ export const UserListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;

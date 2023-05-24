@@ -1,32 +1,21 @@
 import styled, { css } from "styled-components";
 
 export const CommonWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-`;
-
-export const ScrollBox = styled.div`
-  width: 681px;
+  width: 80%;
   height: auto;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  overflow-y: scroll;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  gap: 20px;
+  margin-top: 20px;
 `;
 
 export const ListContainer = styled.div`
   width: 100%;
   height: 220px;
 
-  margin-top: 20px;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 2px 2px 14px 0 rgba(0, 164, 73, 0.08);
@@ -78,11 +67,11 @@ export const Body = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  cursor: pointer;
 
   img {
     width: 80px;
     height: 80px;
+    cursor: pointer;
 
     object-fit: cover;
     border-radius: 5px;
