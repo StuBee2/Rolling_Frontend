@@ -3,5 +3,7 @@ export interface ReviewParam {
   content: string;
   position: string;
   careerPath: string;
-  grade: number;
+  // balanceGrade: number;
+  // salaryGrade: number;
+  // welfareGrade: number;
 }

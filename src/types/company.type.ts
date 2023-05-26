@@ -40,3 +40,7 @@ export interface CompanyInfoType {
     }
   ];
 }
+
+export interface CompanyInfoId {
+  id: number;
+}
