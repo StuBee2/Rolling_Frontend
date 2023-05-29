@@ -1,6 +1,3 @@
-import { CompanyListType } from "./company.type";
-import { ReviewListType } from "./review.type";
-
 export interface MemberType {
   id: string;
   nickName: string;
@@ -17,10 +14,4 @@ export interface MemberType {
 export interface MemberProfileType {
   socialId: string;
   imgUrl: string;
-}
-
-export interface MemberUserInfoType {
-  member: MemberType;
-  companyList: CompanyListType[];
-  reviewList: ReviewListType[];
 }

@@ -59,7 +59,7 @@ export const LoginBtn = styled.div<{ isGoogle: boolean }>`
     margin-top: 18px;
   }
 
-  span {
+  div {
     color: ${(props) => (props.isGoogle ? "#000000" : "#FFFFFF")};
     font-size: 23px;
     font-weight: bold;

@@ -1,33 +1,28 @@
-import { useGetMyInfo } from "../../../queries/User/user.query";
 import * as S from "./style";
 import useTokenCheck from "../../../hooks/Auth/useTokenCheck";
-import Nav from "./Nav";
+import Nav from "./Common/Nav";
 import useShowHeader from "../../../hooks/User/useShowHeader";
-import Review from "./Company/Review";
-import { useState } from "react";
-import GroupingState from "../../../libs/Common/GroupingState";
-import Profile from "./Profile";
-import Regist from "./Company/Regist";
+import { ReactNode, Suspense } from "react";
+import UserHeader from "./Common/UserHeader";
+import ErrorBoundary from "../ErrorBoundary";
 
-export default function User() {
-  const { data: myInfo } = useGetMyInfo();
-  const [selectId, setSelectId] = useState<number>(1);
+interface Props {
+  children: ReactNode;
+}
 
+export default function User({ children }: Props) {
   useShowHeader();
   useTokenCheck();
   return (
     <S.UserWrap>
       <S.UserContainer>
-        <Nav
-          selectIdObject={GroupingState("selectId", selectId, setSelectId)}
-          name={myInfo?.member.name!!}
-          email={myInfo?.member.email!!}
-          logo={myInfo?.member.imageUrl!!}
-        />
+        <Nav />
+        {/* 1025px일 때 Nav컴포넌트는 사라지고 Header컴포넌트가 나온다. */}
+        <UserHeader />
         <S.UserListContainer>
-          {selectId === 1 && <Profile data={myInfo?.member!!} />}
-          {selectId === 2 && <Regist data={myInfo?.companyList!!} />}
-          {selectId === 3 && <Review data={myInfo?.reviewList!!} />}
+          <ErrorBoundary fallback={<>Error</>}>
+            <Suspense fallback={<>로딩중 ...</>}>{children}</Suspense>
+          </ErrorBoundary>
         </S.UserListContainer>
       </S.UserContainer>
     </S.UserWrap>

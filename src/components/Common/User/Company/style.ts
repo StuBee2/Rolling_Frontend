@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const CommonWrap = styled.div`
-  width: 80%;
+  width: 85%;
   height: auto;
 
   display: flex;
@@ -27,7 +27,6 @@ export const ListContainer = styled.div`
 
 export const Able = styled.div<{ isTop: boolean }>`
   width: 100%;
-  height: 50px;
 
   display: flex;
   align-items: center;
@@ -62,30 +61,48 @@ export const Able = styled.div<{ isTop: boolean }>`
 
 export const Body = styled.div`
   width: 100%;
-  height: 120px;
+  height: 100px;
 
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 
-  img {
-    width: 80px;
-    height: 80px;
-    cursor: pointer;
+  padding-left: 20px;
 
-    object-fit: cover;
-    border-radius: 5px;
+  div {
+    img {
+      width: 90px;
+      height: 90px;
+      cursor: pointer;
+
+      object-fit: cover;
+      border-radius: 5px;
+    }
   }
 
   ul {
-    width: 79%;
+    width: calc(100% - 95px);
+    height: 100px;
+
     list-style-type: none;
-    font-size: 15px;
     color: #000000;
+
+    font-size: 15px;
     font-weight: 600;
+    overflow-y: scroll;
+    padding-left: 20px;
 
     li {
       line-height: 22px;
+    }
+
+    @media screen and (max-width: 550px) {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media screen and (max-width: 394px) {
+      font-size: 10px;
     }
   }
 `;

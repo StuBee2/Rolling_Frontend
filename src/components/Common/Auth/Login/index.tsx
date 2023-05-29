@@ -16,7 +16,7 @@ export default function Login() {
               }}
             >
               <img src={item.loginProfile} alt="" />
-              <span>{item.text}</span>
+              <div>{item.text}</div>
             </S.LoginBtn>
           ))}
         </div>

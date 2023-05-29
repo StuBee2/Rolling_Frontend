@@ -14,6 +14,14 @@ export const UserContainer = styled.div`
   width: 1250px;
   height: 100%;
   display: flex;
+
+  @media screen and (max-width: 1250px) {
+    width: 1025px;
+  }
+
+  @media screen and (max-width: 1025px) {
+    flex-direction: column;
+  }
 `;
 
 export const UserListContainer = styled.div`
@@ -28,5 +36,10 @@ export const UserListContainer = styled.div`
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  @media screen and (max-width: 1025px) {
+    width: 100%;
+    height: calc(100% - 150px);
   }
 `;

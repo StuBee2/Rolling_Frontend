@@ -1,4 +1,8 @@
-export interface CompanyListType {
+interface Page {
+  nextPage: number;
+}
+
+export interface CompanyListType extends Page {
   id: string;
   name: string;
   address: string;

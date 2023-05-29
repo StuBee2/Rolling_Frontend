@@ -2,18 +2,16 @@ import { FiX } from "react-icons/fi";
 import { Able, Body, CommonWrap, ListContainer } from "../style";
 import { AiFillStar } from "react-icons/ai";
 import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
-import { ReviewListType } from "../../../../../types/review.type";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";
+import { useGetMyReview } from "../../../../../queries/review/review.query";
 
-interface Props {
-  data: ReviewListType[];
-}
+export default function Review() {
+  const { data: reviewList } = useGetMyReview({ suspense: true });
 
-export default function Review({ data }: Props) {
   return (
     <CommonWrap>
-      {data.length > 0 ? (
-        data.map((review) => (
+      {reviewList!!.length > 0 ? (
+        reviewList?.map((review) => (
           <ListContainer>
             <Able isTop={true}>
               <div style={{ fontSize: "13px" }}>
@@ -22,18 +20,20 @@ export default function Review({ data }: Props) {
               <FiX size={23} cursor="pointer" />
             </Able>
             <Body>
-              <img src="" alt="" />
+              <div>
+                <img src={review.companyImgUrl} alt="" />
+              </div>
               <ul>
                 <li>
-                  {Array.from({ length: review.totalGrade }).map((idx) => (
+                  {Array.from({ length: 5 }).map((idx) => (
                     <AiFillStar color="#ff7f23" size={20} />
                   ))}
                 </li>
                 <li>
                   {review.companyName} / {review.reviewPosition}
                 </li>
-                <li>{stringEllipsis(review.reviewCareerPath, 30)}</li>
-                <li>{stringEllipsis(review.reviewContent, 30)}</li>
+                <li>{stringEllipsis(review.reviewCareerPath, 20)}</li>
+                <li>{stringEllipsis(review.reviewContent, 20)}</li>
               </ul>
             </Body>
             <Able isTop={false}>

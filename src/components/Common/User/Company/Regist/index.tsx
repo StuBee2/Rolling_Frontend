@@ -1,18 +1,19 @@
 import { FiX } from "react-icons/fi";
 import { CommonWrap, Able, ListContainer, Body } from "../style";
-import { CompanyListType } from "../../../../../types/company.type";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";
 import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
+import { AiFillStar } from "react-icons/ai";
+import { useGetMyRegist } from "../../../../../queries/Company/company.query";
 
-interface Props {
-  data: CompanyListType[];
-}
-
-export default function Regist({ data }: Props) {
+export default function Regist() {
+  const { data: registList } = useGetMyRegist({
+    suspense: true,
+  });
+  
   return (
     <CommonWrap>
-      {data.length > 0 ? (
-        data.map((regist) => (
+      {registList!!.length > 0 ? (
+        registList?.map((regist) => (
           <ListContainer>
             <Able isTop={true}>
               <div style={{ fontSize: "13px" }}>
@@ -21,10 +22,17 @@ export default function Regist({ data }: Props) {
               <FiX size={23} cursor="pointer" />
             </Able>
             <Body>
-              <img src={regist.imgUrl} alt="" />
+              <div>
+                <img src={regist.imgUrl} alt="" />
+              </div>
               <ul>
-                <li>{regist.name}</li>
-                <li>{stringEllipsis(regist.description, 35)}</li>
+                <li>
+                  {Array.from({ length: regist.totalGrade }).map((idx) => (
+                    <AiFillStar color="#ff7f23" size={20} />
+                  ))}
+                </li>
+                <li>바인드</li>
+                <li>{stringEllipsis(regist.description, 20)}</li>
                 <li>{stringEllipsis(regist.address, 20)}</li>
               </ul>
             </Body>

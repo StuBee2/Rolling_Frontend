@@ -2,11 +2,15 @@ import styled from "styled-components";
 
 export const UserNavBar = styled.div`
   width: 395px;
-  height: 100%;
+  height: 100vh;
 
   background-color: #ffffff;
   border-left: 1px solid #d9d9d9;
   box-shadow: 5px 1px 8px 0 rgba(0, 0, 0, 0.06);
+
+  @media screen and (max-width: 1025px) {
+    display: none;
+  }
 `;
 
 export const UserLogo = styled.div`
@@ -28,18 +32,19 @@ export const UserAbleWrap = styled.div`
 
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const UserProfileContainer = styled.div`
-  width: 395px;
+  width: 100%;
   height: 200px;
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
+
   padding-top: 30px;
 `;
 
@@ -64,21 +69,20 @@ export const UserEmail = styled.div`
   margin-top: 5px;
 `;
 
-export const CenterDiv = styled.div`
+export const CenterDiv = styled.div<{ isLine?: boolean }>`
   display: flex;
-  justify-content: center;
-`;
-
-export const UserAbleContainer = styled.ul<{ isMiddle?: boolean }>`
   width: 300px;
   height: 200px;
+  border-bottom: ${(props) =>
+    props.isLine && "1px solid rgba(146, 146, 148, 0.3)"};
+`;
 
+export const UserAble = styled.ul<{ isSpaceEvenly?: boolean }>`
   display: flex;
   flex-direction: column;
-  justify-content: ${(props) => props.isMiddle && "space-evenly"};
+  justify-content: ${(props) => props.isSpaceEvenly && "space-evenly"};
 
-  border-bottom: ${(props) =>
-    props.isMiddle && "1px solid rgba(146, 146, 148, 0.3)"};
+  font-size: 18px;
   list-style-type: none;
 
   div {
@@ -92,11 +96,15 @@ export const UserAbleContainer = styled.ul<{ isMiddle?: boolean }>`
 `;
 
 export const UserCategory = styled.li<{ isSelect: boolean }>`
-  width: 93px;
-  font-size: 20px;
   color: #303038;
+  list-style-type: none;
 
   font-weight: ${(props) => props.isSelect && "800"};
   border-bottom: ${(props) => props.isSelect && "2px solid #303038"};
+  padding-bottom: 10px;
   cursor: pointer;
+
+  @media screen and (max-width: 1025px) {
+    color: ${(props) => (props.isSelect ? "#303038" : "#767678")};
+  }
 `;
