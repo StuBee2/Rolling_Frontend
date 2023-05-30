@@ -1,20 +1,33 @@
-import { useEffect } from "react";
-import { ACCESS_KEY, REFRESH_KEY } from "../../constants/Auth/auth.constant";
-import Token from "../../libs/Token/Token";
-import { useLocation, useNavigate } from "react-router-dom";
-import queryString from "query-string";
+import { useState } from "react";
 
 export function useLogin() {
-  const navigate = useNavigate();
-  const { search } = useLocation();
-  const { accessToken, refreshToken } = queryString.parse(search);
+  const [credentials, setCredentials] = useState<{ id: string; pw: string }>({
+    id: "",
+    pw: "",
+  });
 
-  useEffect(() => {
-    if (accessToken && refreshToken) {
-      Token.setToken(ACCESS_KEY, accessToken.toString());
-      Token.setToken(REFRESH_KEY, refreshToken.toString());
-      navigate("/");
-      window.location.replace("/");
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setCredentials((prevCredentials) => ({
+      ...prevCredentials,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { id, pw } = credentials;
+    if (id && pw) {
+      window.alert("성공");
+      setCredentials({ id: "", pw: "" });
+    } else if (!id && !pw) {
+      window.alert("아이디와 비밀번호를 입력해주세요!");
+    } else if (!id) {
+      window.alert("아이디를 입력해주세요!");
+    } else {
+      window.alert("비밀번호를 입력해주세요!");
     }
-  }, [accessToken, refreshToken, navigate]);
+  };
+
+  return { handleChange, handleSubmit, ...credentials };
 }
