@@ -12,27 +12,30 @@ export default function Login() {
   return (
     <S.LoginWrap>
       <S.LoginBox>
-        <S.AbleContainer isLogin={false}>
+        <S.AbleContainer isLoginText={false}>
           <S.Text isLogo={true} onClick={() => navigate("/")}>
             Rolling
           </S.Text>
         </S.AbleContainer>
-        <S.AbleContainer isLogin={true}>
+        <S.AbleContainer isLoginText={true}>
           <S.Text>로그인</S.Text>
-          <S.SocialLoginContainer isSocial={true}>
+          <S.LoginContainer isSocial={true}>
             <>
               {AUTH_ITEM.map((item) => (
                 <S.LoginBtn
                   key={item.id}
                   isGoogle={item.isGoogle}
-                  onClick={() => (window.location.href = item.loginUrl)}
+                  onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                    e.preventDefault();
+                    window.location.href = item.loginUrl;
+                  }}
                 >
                   <img src={item.loginImg} alt="" />
                   <div>{item.text}</div>
                 </S.LoginBtn>
               ))}
             </>
-          </S.SocialLoginContainer>
+          </S.LoginContainer>
           <S.LoginContainer onSubmit={handleSubmit}>
             <input
               placeholder="아이디"

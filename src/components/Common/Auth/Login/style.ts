@@ -20,11 +20,11 @@ export const LoginBox = styled.div`
   justify-content: center;
 `;
 
-export const AbleContainer = styled.div<{ isLogin: boolean }>`
-  width: ${(props) => (props.isLogin ? "90%" : "100%")};
-  height: ${(props) => (props.isLogin ? "500px" : "100px")};
-  ${({ isLogin }) =>
-    isLogin &&
+export const AbleContainer = styled.div<{ isLoginText: boolean }>`
+  width: ${(props) => (props.isLoginText ? "90%" : "100%")};
+  height: ${(props) => (props.isLoginText ? "500px" : "100px")};
+  ${({ isLoginText }) =>
+    isLoginText &&
     css`
       background-color: #ffffff;
       box-shadow: 0px 1px 4px rgba(30, 40, 58, 0.04);
@@ -41,21 +41,9 @@ export const Text = styled.div<{ isLogo?: boolean }>`
   cursor: ${(props) => props.isLogo && "pointer"};
 `;
 
-export const SocialLoginContainer = styled.div<{ isSocial?: boolean }>`
+export const LoginContainer = styled.form<{ isSocial?: boolean }>`
   width: 100%;
-  height: 35%;
-  border-bottom: 1px solid #e5e6e9;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-`;
-
-export const LoginContainer = styled.form`
-  width: 100%;
-  height: 45%;
+  height: ${(props) => (props.isSocial ? "35%" : "45%")};
   border-bottom: 1px solid #e5e6e9;
 
   display: flex;
@@ -64,29 +52,33 @@ export const LoginContainer = styled.form`
   justify-content: center;
   gap: 10px;
 
-  input {
-    width: 80%;
-    height: 48px;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-    border: 1px solid #e5e6e9;
-    padding-left: 10px;
-  }
+  ${({ isSocial }) =>
+    !isSocial &&
+    css`
+      input {
+        width: 80%;
+        height: 48px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        border: 1px solid #e5e6e9;
+        padding-left: 10px;
+      }
 
-  button {
-    width: 80%;
-    height: 48px;
+      button {
+        width: 80%;
+        height: 48px;
 
-    border-radius: 8px;
-    outline: none;
-    border: none;
+        border-radius: 8px;
+        outline: none;
+        border: none;
 
-    cursor: pointer;
-    background-color: #00ba91;
-    font-weight: bold;
-    color: #ffffff;
-  }
+        cursor: pointer;
+        background-color: #00ba91;
+        font-weight: bold;
+        color: #ffffff;
+      }
+    `}
 `;
 
 export const LoginBtn = styled.button<{ isGoogle: boolean }>`
