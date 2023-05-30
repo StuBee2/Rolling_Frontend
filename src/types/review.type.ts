@@ -1,13 +1,17 @@
 export interface ReviewListType {
-  id: string;
-  content: string;
-  position: string;
-  careerPath: string;
-  grade: number;
-  memberId: string;
+  reviewId: string;
+  reviewContent: string;
+  reviewPosition: string;
+  reviewCareerPath: string;
+  totalGrade: number;
+  balanceGrade: number;
+  salaryGrade: number;
+  welfareGrade: number;
+  reviewCreatedAt: string;
+  reviewModifiedAt: string;
   companyId: string;
-  createdAt: string;
-  modifiedAt: string;
+  companyName: string;
+  companyImgUrl: string;
 }
 
 export interface ReviewInfoIdType {
@@ -15,8 +19,10 @@ export interface ReviewInfoIdType {
   reviewContent: string;
   reviewPosition: string;
   reviewCareerPath: string;
-  reviewGrade: number;
-  companyId: string;
+  totalGrade: number;
+  balanceGrade: number;
+  salaryGrade: number;
+  welfareGrade: number;
   reviewCreatedAt: string;
   reviewModifiedAt: string;
   writerId: string;

@@ -1,6 +1,7 @@
-import { useLogin } from "../../../hooks/Auth/useLogin";
+import { useSocialLogin } from "../../../hooks/Auth/useSocialLogin";
+
 
 export default function AuthLoadingPage() {
-  useLogin();
+  useSocialLogin();
   return <div>로딩중</div>;
 }
