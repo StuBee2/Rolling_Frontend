@@ -38,6 +38,7 @@ export const Text = styled.div<{ isLogo?: boolean }>`
   color: ${(props) => props.isLogo && "#00ba91"};
   margin: ${(props) => !props.isLogo && "25px 0 0 35px"};
   text-align: ${(props) => props.isLogo && "center"};
+  cursor: ${(props) => props.isLogo && "pointer"};
 `;
 
 export const SocialLoginContainer = styled.div<{ isSocial?: boolean }>`
@@ -62,7 +63,7 @@ export const LoginContainer = styled.form`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  
+
   input {
     width: 80%;
     height: 48px;

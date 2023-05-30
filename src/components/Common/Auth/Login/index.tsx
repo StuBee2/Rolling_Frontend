@@ -13,7 +13,9 @@ export default function Login() {
     <S.LoginWrap>
       <S.LoginBox>
         <S.AbleContainer isLogin={false}>
-          <S.Text isLogo={true}>Rolling</S.Text>
+          <S.Text isLogo={true} onClick={() => navigate("/")}>
+            Rolling
+          </S.Text>
         </S.AbleContainer>
         <S.AbleContainer isLogin={true}>
           <S.Text>로그인</S.Text>
