@@ -6,6 +6,7 @@ import Token from "../../../libs/Token/Token";
 import { ACCESS_KEY } from "../../../constants/Auth/auth.constant";
 import { useLogging } from "../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../constants/Log/log.constants";
+import { useGetMyInfo } from "../../../queries/Member/Member.query";
 
 export default function Home() {
   const { handleLoggingClick } = useLogging();
