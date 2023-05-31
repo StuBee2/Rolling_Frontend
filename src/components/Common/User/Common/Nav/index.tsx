@@ -12,7 +12,7 @@ export default function Nav() {
   const { handleLogout } = useLogout();
   const { pathname } = useLocation();
   const { data } = useGetMyInfo();
-  
+
   return (
     <S.UserNavBar>
       <S.UserLogo onClick={() => navigate("/")}>Rolling</S.UserLogo>
