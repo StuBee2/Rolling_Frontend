@@ -3,13 +3,16 @@ import { CommonWrap, Able, ListContainer, Body } from "../style";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";
 import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
 import { AiFillStar } from "react-icons/ai";
-import { useGetMyRegist } from "../../../../../queries/Company/company.query";
+import { useGetMyCompanyList } from "../../../../../queries/Company/company.query";
 
 export default function Regist() {
-  const { data: registList } = useGetMyRegist({
-    suspense: true,
-  });
-  
+  const { data: registList } = useGetMyCompanyList(
+    { page: 1, size: 10 },
+    {
+      suspense: true,
+    }
+  );
+
   return (
     <CommonWrap>
       {registList!!.length > 0 ? (

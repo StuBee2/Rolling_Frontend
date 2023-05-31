@@ -6,6 +6,7 @@ import Token from "../../../libs/Token/Token";
 import { ACCESS_KEY } from "../../../constants/Auth/auth.constant";
 import { useLogging } from "../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../constants/Log/log.constants";
+import useTokenCheck from "../../../hooks/Auth/useTokenCheck";
 
 export default function Home() {
   const { handleLoggingClick } = useLogging();
@@ -17,7 +18,7 @@ export default function Home() {
   const companyLanking = {
     lanker: ["1. Google", "2. Naver", "3. Kakao"],
   };
-
+  useTokenCheck();
   return (
     <S.body>
       <S.container>

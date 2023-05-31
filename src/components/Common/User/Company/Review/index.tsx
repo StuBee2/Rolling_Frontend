@@ -6,7 +6,10 @@ import { getDateText } from "../../../../../libs/Date/getDateCounter";
 import { useGetMyReview } from "../../../../../queries/review/review.query";
 
 export default function Review() {
-  const { data: reviewList } = useGetMyReview({ suspense: true });
+  const { data: reviewList } = useGetMyReview(
+    { page: 1, size: 10 },
+    { suspense: true }
+  );
 
   return (
     <CommonWrap>
