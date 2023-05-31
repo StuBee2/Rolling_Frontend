@@ -35,9 +35,9 @@ export const ProfileContainer = styled.div`
 `;
 
 export const ProfilImg = styled.img`
-  width: 45px;
-  height: 45px;
-  margin-left:2px;
+  width: 38px;
+  height: 38px;
+  margin-left: 2px;
   border-radius: 4rem;
 `;
 
@@ -46,7 +46,7 @@ export const ProfilName = styled.h3`
   font-style: normal;
   font-weight: 600;
 
-  margin:0 3% 0 5px;
+  margin: 0 3% 0 7px;
   max-width: 105px;
   white-space: nowrap;
 
