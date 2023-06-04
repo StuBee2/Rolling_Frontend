@@ -2,9 +2,10 @@ import github from "../../assets/github.svg";
 import Google from "../../assets/Google.png";
 import CONFIG from "../.././config/config.json";
 
-export const ACCESS_KEY = "accessToken" as const;
-export const REFRESH_KEY = "refreshToken" as const;
-export const REQUEST_KEY = "Authorization" as const;
+export const ACCESS_TOKEN_KEY = "accessToken" as const;
+export const REFRESH_TOKEN_KEY = "refreshToken" as const;
+export const REQUEST_TOKEN_KEY = "Authorization" as const;
+export const REQUEST_REFRESH_TOKEN_KEY = "Refresh-Token" as const;
 export const AUTH_ITEM = [
   {
     id: 0,

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { CATEGORY_ITEMS } from "../../../constants/Home/Home.constants";
 import LogoImg from "../../../assets/Logo.png";
 import Token from "../../../libs/Token/Token";
-import { ACCESS_KEY } from "../../../constants/Auth/auth.constant";
+import { ACCESS_TOKEN_KEY } from "../../../constants/Auth/auth.constant";
 import { useLogging } from "../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../constants/Log/log.constants";
 
@@ -31,7 +31,7 @@ export default function Header() {
       <div>
         {CATEGORY_ITEMS.map((category) => (
           <div key={category.id}>
-            {Token.getToken(ACCESS_KEY)
+            {Token.getToken(ACCESS_TOKEN_KEY)
               ? category.id !== 0 && (
                   <S.CategoryLink
                     onClick={() => handleCategoryClick(category.id)}

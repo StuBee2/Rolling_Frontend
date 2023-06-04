@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ACCESS_KEY, REFRESH_KEY } from "../../constants/Auth/auth.constant";
+import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from "../../constants/Auth/auth.constant";
 import Token from "../../libs/Token/Token";
 import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
@@ -11,8 +11,8 @@ export function useSocialLogin() {
 
   useEffect(() => {
     if (accessToken && refreshToken) {
-      Token.setToken(ACCESS_KEY, accessToken.toString());
-      Token.setToken(REFRESH_KEY, refreshToken.toString());
+      Token.setToken(ACCESS_TOKEN_KEY, accessToken.toString());
+      Token.setToken(REFRESH_TOKEN_KEY, refreshToken.toString());
       navigate("/");
       window.location.replace("/");
     }
