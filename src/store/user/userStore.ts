@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-export const ShowHeader = atom<boolean>({
-  key: "showHeader",
-  default: true,
+export const HideHeader = atom<boolean>({
+  key: "hideHeader",
+  default: false,
 });

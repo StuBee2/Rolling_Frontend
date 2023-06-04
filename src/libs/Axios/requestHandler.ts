@@ -15,6 +15,7 @@ const requestHandler = (config: any) => {
       [REQUEST_KEY]: `Bearer ${Token.getToken(ACCESS_KEY)}`,
     };
   } else {
+    window.alert("토큰이 존재하지 않습니다!");
     window.location.href = "/login";
   }
   return config;

@@ -1,4 +1,4 @@
-import { LoggingParam } from "../../repositories/Logging/log.param";
+import { LoggingParam } from "../../repositories/Logging/log.repository";
 
 export const LOG_ITEM: LoggingParam[] = [
   {
@@ -9,7 +9,7 @@ export const LOG_ITEM: LoggingParam[] = [
   {
     description: "마이 페이지로 이동",
     module: "WEB",
-    page: "/mypage",
+    page: "/mypage/profile",
   },
   {
     description: "기업등록 페이지로 이동",

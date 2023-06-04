@@ -1,7 +1,6 @@
 import * as S from "./style";
-import useTokenCheck from "../../../hooks/Auth/useTokenCheck";
 import Nav from "./Common/Nav";
-import useShowHeader from "../../../hooks/User/useShowHeader";
+import useHideHeader from "../../../hooks/Common/useHideHeader";
 import { ReactNode, Suspense } from "react";
 import UserHeader from "./Common/UserHeader";
 import ErrorBoundary from "../ErrorBoundary";
@@ -11,8 +10,7 @@ interface Props {
 }
 
 export default function User({ children }: Props) {
-  useShowHeader();
-  useTokenCheck();
+  useHideHeader();
   return (
     <S.UserWrap>
       <S.UserContainer>
