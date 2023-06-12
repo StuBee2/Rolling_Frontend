@@ -7,15 +7,16 @@ import Token from "../../../libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "../../../constants/Auth/auth.constant";
 import { useLogging } from "../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../constants/Log/log.constants";
+import { useLogout } from "../../../hooks/Auth/useLogout";
 
 export default function Header() {
   const navigate = useNavigate();
   const { handleLoggingClick } = useLogging();
+  const { handleLogout } = useLogout();
 
   const handleCategoryClick = (categoryId: number) => {
     if (categoryId === 4) {
-      Token.clearToken();
-      navigate("/");
+      handleLogout();
     } else {
       handleLoggingClick(LOG_ITEM[categoryId]);
     }

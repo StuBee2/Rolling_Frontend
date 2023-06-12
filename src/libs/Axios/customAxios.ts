@@ -1,8 +1,11 @@
 import axios from "axios";
-import { ACCESS_TOKEN_KEY, REQUEST_TOKEN_KEY } from "../../constants/Auth/auth.constant";
+import {
+  ACCESS_TOKEN_KEY,
+  REQUEST_TOKEN_KEY,
+} from "../../constants/Auth/auth.constant";
 import Token from "../Token/Token";
 import CONFIG from "../../config/config.json";
-import requestHandler from "./requestHandler";
+import { requestHandler } from "./requestHandler";
 import { responseHandler } from "./responseHandler";
 
 export const customAxios = axios.create({
@@ -12,5 +15,5 @@ export const customAxios = axios.create({
   },
 });
 
-customAxios.interceptors.request.use(requestHandler, (response) => response);
+// customAxios.interceptors.request.use(requestHandler, (response) => response);
 customAxios.interceptors.response.use((response) => response, responseHandler);

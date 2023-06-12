@@ -1,4 +1,4 @@
-import { AxiosRequestConfig } from "axios";
+import { AxiosError } from "axios";
 import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
@@ -8,38 +8,31 @@ import Token from "../Token/Token";
 import { customAxios } from "./customAxios";
 import authRepositoryImpl from "../../repositories/Auth/auth.repositoryImpl";
 
-export const responseHandler = async ({
-  config,
-  response,
-}: {
-  config: AxiosRequestConfig;
-  response?: { status: number };
-}) => {
-  const status = response?.status;
-  const access_token = Token.getToken(ACCESS_TOKEN_KEY);
-  const refresh_token = Token.getToken(REFRESH_TOKEN_KEY);
+export const responseHandler = async (config: AxiosError) => {
+  if (config.response) {
+    const {
+      response: { status },
+    } = config;
 
-  if (status === 401 && access_token && refresh_token) {
-    try {
-      const { accessToken } = await authRepositoryImpl.postRefreshToken(
-        refresh_token
-      );
+    const access_token = Token.getToken(ACCESS_TOKEN_KEY);
+    const refresh_token = Token.getToken(REFRESH_TOKEN_KEY);
 
-      Token.setToken(ACCESS_TOKEN_KEY, accessToken);
+    if (access_token && refresh_token && status === 401) {
+      try {
+        const { accessToken } = await authRepositoryImpl.postRefreshToken(
+          refresh_token
+        );
 
-      const newConfig = {
-        ...config,
-        headers: {
-          ...config.headers,
-          [REQUEST_TOKEN_KEY]: `Bearer ${accessToken}`,
-        },
-      };
+        Token.setToken(ACCESS_TOKEN_KEY, accessToken);
 
-      return customAxios(newConfig);
-    } catch (error) {
-      window.alert("세션이 만료 되었습니다!");
-      window.location.href = "/login";
-      return Promise.reject(error);
+        customAxios.defaults.headers.common[
+          REQUEST_TOKEN_KEY
+        ] = `Bearer ${accessToken}`;
+      } catch (e) {
+        window.alert("세션이 만료 되었습니다!");
+        Token.clearToken();
+        window.location.href = "/login";
+      }
     }
   }
 

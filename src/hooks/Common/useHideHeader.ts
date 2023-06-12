@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSetRecoilState } from "recoil";
-import { HideHeader } from "../../store/user/userStore";
+import { HideHeader } from "../../store/common/common.store";
 
 const useHideHeader = () => {
   const setHideHeader = useSetRecoilState(HideHeader);

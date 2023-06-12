@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import GlobalStyle from "../../../styles/GlobalStyles";
 import Header from "../Header/index";
 import { useRecoilValue } from "recoil";
-import { HideHeader } from "../../../store/user/userStore";
+import { HideHeader } from "../../../store/common/common.store";
 interface Props {
   children: ReactNode;
 }
