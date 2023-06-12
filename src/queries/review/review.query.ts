@@ -1,82 +1,104 @@
-import { UseBaseQueryResult, UseQueryOptions, useQuery } from "react-query";
-import reviewRepositoryImpl from "../../repositories/Review/review.repositoryImpl";
-import { ReviewListType } from "../../types/review.type";
-import { AxiosError } from "axios";
 import {
-  CommonIdParam,
-  CommonPageParam,
-} from "../../repositories/common.param";
+  UseInfiniteQueryOptions,
+  UseInfiniteQueryResult,
+  UseQueryOptions,
+  UseQueryResult,
+  useInfiniteQuery,
+  useMutation,
+  useQuery,
+} from "react-query";
+import ReviewRepositoryImpl from "../../repositories/Review/review.repositoryImpl";
+import {
+  ReviewInfiniteScrollListType,
+  ReviewListType,
+} from "../../types/review.type";
+import { AxiosError } from "axios";
+import { CommonIdParam } from "../../repositories/common.param";
 import { QUERY_KEYS } from "../queryKey";
+import { ReviewParam } from "../../repositories/Review/review.repository";
 
-export const useGetMyReview = (
-  { page, size }: CommonPageParam,
-  options?: UseQueryOptions<
-    ReviewListType[],
+export const useGetMyReviewQuery = (
+  options?: UseInfiniteQueryOptions<
+    ReviewInfiniteScrollListType,
     AxiosError,
-    ReviewListType[],
+    ReviewInfiniteScrollListType,
+    ReviewInfiniteScrollListType,
     string
   >
-): UseBaseQueryResult<ReviewListType[], AxiosError> =>
-  useQuery(
+): UseInfiniteQueryResult<ReviewInfiniteScrollListType, AxiosError> =>
+  useInfiniteQuery(
     QUERY_KEYS.review.getMyReview,
-    () => reviewRepositoryImpl.getMyReviewList({ page, size }),
+    ({ pageParam = 1 }) =>
+      ReviewRepositoryImpl.getMyReviewList({ page: pageParam }),
     {
       ...options,
+      getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
 
-export const useGetRevieListwMemberId = (
+export const useGetReviewListwMemberIdQuery = (
   { id }: CommonIdParam,
-  { page, size }: CommonPageParam,
+  options?: UseInfiniteQueryOptions<
+    ReviewInfiniteScrollListType,
+    AxiosError,
+    ReviewInfiniteScrollListType,
+    ReviewInfiniteScrollListType,
+    (string | number)[]
+  >
+): UseInfiniteQueryResult<ReviewInfiniteScrollListType, AxiosError> =>
+  useInfiniteQuery(
+    QUERY_KEYS.review.getReviewListMemberId(id),
+    ({ pageParam = 1 }) =>
+      ReviewRepositoryImpl.getListReviewMemberId({ id }, { page: pageParam }),
+    {
+      enabled: !!id,
+      ...options,
+      getNextPageParam: (nextPage) => nextPage.nextPage,
+    }
+  );
+
+export const useGetReviewListCompanyIdQuery = (
+  { id }: CommonIdParam,
+  options?: UseInfiniteQueryOptions<
+    ReviewInfiniteScrollListType,
+    AxiosError,
+    ReviewInfiniteScrollListType,
+    ReviewInfiniteScrollListType,
+    (string | number)[]
+  >
+): UseInfiniteQueryResult<ReviewInfiniteScrollListType, AxiosError> =>
+  useInfiniteQuery(
+    QUERY_KEYS.review.getReviewListCompanyId(id),
+    ({ pageParam = 1 }) =>
+      ReviewRepositoryImpl.getListReviewCompanyId({ id }, { page: pageParam }),
+    {
+      ...options,
+      enabled: !!id,
+      getNextPageParam: (nextPage) => nextPage.nextPage,
+    }
+  );
+
+export const useGetReviewInfoIdQuery = (
+  { id }: CommonIdParam,
   options?: UseQueryOptions<
     ReviewListType[],
     AxiosError,
     ReviewListType[],
-    [string, number]
+    (string | number)[]
   >
-): UseBaseQueryResult<ReviewListType[], AxiosError> =>
+): UseQueryResult<ReviewListType[], AxiosError> =>
   useQuery(
-    [QUERY_KEYS.review.getReviewListMemberId, id],
-    () => reviewRepositoryImpl.getListReviewMemberId({ id }, { page, size }),
+    QUERY_KEYS.review.getReviewInfoId(id),
+    () => ReviewRepositoryImpl.getReviewInfoId({ id }),
     {
       enabled: !!id,
       ...options,
     }
   );
 
-export const useGetReviewListCompanyId = (
-  { id }: CommonIdParam,
-  { page, size }: CommonPageParam,
-  options?: UseQueryOptions<
-    ReviewListType[],
-    AxiosError,
-    ReviewListType[],
-    [string, number]
-  >
-): UseBaseQueryResult<ReviewListType[], AxiosError> =>
-  useQuery(
-    [QUERY_KEYS.review.getReviewListCompanyId, id],
-    () => reviewRepositoryImpl.getListReviewCompanyId({ id }, { page, size }),
-    {
-      enabled: !!id,
-      ...options,
-    }
+export const usePostReviewMutation = () => {
+  const mutation = useMutation((reviewInfo: ReviewParam) =>
+    ReviewRepositoryImpl.postReview(reviewInfo)
   );
-
-export const useGetReviewInfoId = (
-  { id }: CommonIdParam,
-  options?: UseQueryOptions<
-    ReviewListType[],
-    AxiosError,
-    ReviewListType[],
-    [string, number]
-  >
-): UseBaseQueryResult<ReviewListType[], AxiosError> =>
-  useQuery(
-    [QUERY_KEYS.review.getReviewInfoId, id],
-    () => reviewRepositoryImpl.getReviewInfoId({ id }),
-    {
-      enabled: !!id,
-      ...options,
-    }
-  );
+  return mutation;
+};

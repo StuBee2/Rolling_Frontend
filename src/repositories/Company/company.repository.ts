@@ -1,23 +1,39 @@
-import { CompanyInfoType, CompanyListType } from "../../types/company.type";
+import {
+  CompanyInfiniteScrollType,
+  CompanyInfoType,
+  CompanyListType,
+} from "../../types/company.type";
 import { CommonIdParam, CommonPageParam } from "../common.param";
-import { CompanyNameParam, CompanyParam } from "./company.param";
+
+export interface CompanyParam {
+  name: string;
+  address: string;
+  description: string;
+  imgUrl: string;
+}
+
+export interface CompanyNameParam {
+  name: string;
+}
 
 export interface CompanyRepository {
-  postRegister(data: CompanyParam): Promise<void>;
+  postRegister(companyData: CompanyParam): Promise<CompanyListType>;
 
-  getMyCompanyList(): Promise<CompanyListType[]>;
+  getMyCompanyList({
+    page,
+  }: CommonPageParam): Promise<CompanyInfiniteScrollType>;
 
   getCompanySearchList(
     { name }: CompanyNameParam,
-    { page, size }: CommonPageParam
-  ): Promise<CompanyListType[]>;
+    { page }: CommonPageParam
+  ): Promise<CompanyInfiniteScrollType>;
 
   getCompanyList(): Promise<CompanyListType[]>;
 
   getCompanyListId(
     { id }: CommonIdParam,
-    { page, size }: CommonPageParam
-  ): Promise<CompanyListType[]>;
+    { page }: CommonPageParam
+  ): Promise<CompanyInfiniteScrollType>;
 
   getCompanyInfoId({ id }: CommonIdParam): Promise<CompanyInfoType>;
 

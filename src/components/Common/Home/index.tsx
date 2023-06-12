@@ -3,15 +3,14 @@ import * as S from "./home.style";
 import RankingImg from "../../../assets/RankingImg.png";
 import kakaoMap from "./KakaoMapScrip";
 import Token from "../../../libs/Token/Token";
-import { ACCESS_KEY } from "../../../constants/Auth/auth.constant";
+import { ACCESS_TOKEN_KEY } from "../../../constants/Auth/auth.constant";
 import { useLogging } from "../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../constants/Log/log.constants";
-import { useGetMyInfo } from "../../../queries/Member/Member.query";
-import useTokenCheck from "../../../hooks/Auth/useTokenCheck";
+import { useGetMyInfoQuery } from "../../../queries/Member/Member.query";
 
 export default function Home() {
   const { handleLoggingClick } = useLogging();
-  const { data } = useGetMyInfo();
+  const { data } = useGetMyInfoQuery();
 
   interface companyDataType {
     id: number;
@@ -45,17 +44,16 @@ export default function Home() {
     lanker: ["1. Google", "2. Naver", "3. Kakao"],
   };
 
-  useTokenCheck();
   return (
     <S.body>
       <S.container>
-        {Token.getToken(ACCESS_KEY) && (
+        {Token.getToken(ACCESS_TOKEN_KEY) && (
           <S.ProfileContainer onClick={() => handleLoggingClick(LOG_ITEM[1])}>
-            <S.ProfilImg src={data?.imageUrl} alt="Error" />
-            <S.ProfilName>{data?.socialId}</S.ProfilName>
+            <S.ProfilImg src={data?.socialDetails.imageUrl} alt="Error" />
+            <S.ProfilName>{data?.socialDetails.socialId}</S.ProfilName>
           </S.ProfileContainer>
         )}
-        <S.mainContainer isToken={Token.getToken(ACCESS_KEY) !== null}>
+        <S.mainContainer isToken={Token.getToken(ACCESS_TOKEN_KEY) !== null}>
           <div style={{ width: "100%" }}>
             <S.rankingContainer>
               <S.rankingImg src={RankingImg} alt="Error" />

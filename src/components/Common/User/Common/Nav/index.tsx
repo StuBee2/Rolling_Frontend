@@ -4,26 +4,36 @@ import { USER_ITEMS } from "../../../../../constants/User/user.constants";
 import { useLogging } from "../../../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../../../constants/Log/log.constants";
 import { useLogout } from "../../../../../hooks/Auth/useLogout";
-import { useGetMyInfo } from "../../../../../queries/Member/Member.query";
+import { useGetMyInfoQuery } from "../../../../../queries/Member/Member.query";
+import { MemberType } from "../../../../../types/member.type";
+import { Dispatch, SetStateAction, useEffect } from "react";
 
-export default function Nav() {
+interface Props {
+  setMyInfo: Dispatch<SetStateAction<MemberType | null>>;
+}
+
+export default function Nav({ setMyInfo }: Props) {
   const navigate = useNavigate();
   const { handleLoggingClick } = useLogging();
   const { handleLogout } = useLogout();
   const { pathname } = useLocation();
-  const { data } = useGetMyInfo();
+  const { data } = useGetMyInfoQuery();
+
+  useEffect(() => {
+    setMyInfo(data!!);
+  }, [data]);
 
   return (
     <S.UserNavBar>
       <S.UserLogo onClick={() => navigate("/")}>Rolling</S.UserLogo>
       <S.UserAbleWrap>
         <S.UserProfileContainer>
-          <S.UserImg src={data?.imageUrl} />
-          <S.UserName>{data?.name}</S.UserName>
-          <S.UserEmail>{data?.email}</S.UserEmail>
+          <S.UserImg src={data?.socialDetails.imageUrl} />
+          <S.UserName>{data?.socialDetails.name}</S.UserName>
+          <S.UserEmail>{data?.socialDetails.email}</S.UserEmail>
         </S.UserProfileContainer>
-        <S.CenterDiv isLine={true}>
-          <S.UserAble isSpaceEvenly={true}>
+        <S.CenterDiv line={true}>
+          <S.UserAble spaceEvenly={true}>
             {USER_ITEMS.map((user) => (
               <S.UserCategory
                 key={user.id}

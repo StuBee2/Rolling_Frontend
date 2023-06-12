@@ -1,43 +1,51 @@
 import { customAxios } from "../../libs/Axios/customAxios";
-import { ReviewListType } from "../../types/review.type";
+import {
+  ReviewInfiniteScrollListType,
+  ReviewListType,
+  ReviewPostResponse,
+} from "../../types/review.type";
 import { CommonIdParam, CommonPageParam } from "../common.param";
-import { ReviewRepository } from "./review.repository";
+import { ReviewParam, ReviewRepository } from "./review.repository";
 
 class ReviewRepositoryImpl implements ReviewRepository {
   public async getMyReviewList({
     page,
-    size,
-  }: CommonPageParam): Promise<ReviewListType[]> {
-    const { data } = await customAxios.get(
-      `/review/my?page=${page}&size=${size}`
-    );
-    return data;
+  }: CommonPageParam): Promise<ReviewInfiniteScrollListType> {
+    const { data } = await customAxios.get(`/review/my?page=${page}&size=10`);
+    return { ...data, nextPage: page + 1 };
   }
 
   public async getListReviewMemberId(
     { id }: CommonIdParam,
-    { page, size }: CommonPageParam
-  ): Promise<ReviewListType[]> {
+    { page }: CommonPageParam
+  ): Promise<ReviewInfiniteScrollListType> {
     const { data } = await customAxios.get(
-      `/review/list/member/${id}?page=${page}&size=${size}`
+      `/review/list/member/${id}?page=${page}&size=10`
     );
-    return data;
+    return { ...data, nextPage: page + 1 };
   }
 
   public async getListReviewCompanyId(
     { id }: CommonIdParam,
-    { page, size }: CommonPageParam
-  ): Promise<ReviewListType[]> {
+    { page }: CommonPageParam
+  ): Promise<ReviewInfiniteScrollListType> {
     const { data } = await customAxios.get(
-      `/review/list/company/${id}?page=${page}&size=${size}`
+      `/review/list/company/${id}?page=${page}&size=10`
     );
-    return data;
+    return { ...data, nextPage: page + 1 };
   }
 
   public async getReviewInfoId({
     id,
   }: CommonIdParam): Promise<ReviewListType[]> {
     const { data } = await customAxios.get(`/review/info/${id}`);
+    return data;
+  }
+
+  public async postReview(
+    reviewInfo: ReviewParam
+  ): Promise<ReviewPostResponse> {
+    const { data } = await customAxios.post("/review", reviewInfo);
     return data;
   }
 }
