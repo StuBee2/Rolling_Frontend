@@ -20,7 +20,7 @@ export const container = styled.div`
 
 export const ProfileContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
   background: #202026;
