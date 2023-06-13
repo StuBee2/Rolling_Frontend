@@ -7,7 +7,7 @@ import { useLogin } from "../../../../hooks/Auth/useLogin";
 export default function Login() {
   const navigate = useNavigate();
   const { handleChange, handleSubmit, id, pw } = useLogin();
-  
+
   useHideHeader();
   return (
     <S.LoginWrap>

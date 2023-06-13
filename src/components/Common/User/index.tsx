@@ -6,6 +6,7 @@ import UserHeader from "./Common/UserHeader";
 import ErrorBoundary from "../ErrorBoundary";
 import Profile from "./Profile";
 import { MemberType } from "../../../types/member.type";
+import useTokenCheck from "../../../hooks/Auth/useTokenCheck";
 
 interface Props {
   page: number;
@@ -15,6 +16,7 @@ interface Props {
 export default function User({ page, children }: Props) {
   const [myInfo, setMyInfo] = useState<MemberType | null>(null);
   useHideHeader();
+  useTokenCheck();
   return (
     <S.UserWrap>
       <S.UserContainer>

@@ -6,6 +6,7 @@ import UserPage from "../pages/UserPage";
 import NotFound from "../components/Common/NotFound";
 import RegisterPage from "../pages/RegisterPage";
 import ReviewPage from "../pages/ReviewPage";
+import { ROUTE_ITEMS } from "../constants/Router/router.constant";
 
 export default function Router() {
   return (
@@ -13,9 +14,13 @@ export default function Router() {
       <Route path="/" element={<HomePage />} />
       <Route path="/callback" element={<AuthLoadingPage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/mypage/profile" element={<UserPage page={0} />} />
-      <Route path="/mypage/myregist" element={<UserPage page={1} />} />
-      <Route path="/mypage/myreview" element={<UserPage page={2} />} />
+      {ROUTE_ITEMS.map((item) => (
+        <Route
+          key={item.path}
+          path={item.path}
+          element={<UserPage page={item.page} />}
+        />
+      ))}
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/review" element={<ReviewPage />} />
       <Route path="*" element={<NotFound />} />

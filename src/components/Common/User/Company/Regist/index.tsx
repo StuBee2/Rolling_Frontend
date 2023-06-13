@@ -39,8 +39,10 @@ export default function Regist() {
                   <li>
                     {Array.from({
                       length: regist.companyGrades.totalGrade,
-                    }).map((idx) => (
-                      <AiFillStar color="#ff7f23" size={20} />
+                    }).map((_, idx) => (
+                      <span key={idx}>
+                        <AiFillStar color="#ff7f23" size={20} />
+                      </span>
                     ))}
                   </li>
                   <li>{regist.companyDetails.name}</li>
