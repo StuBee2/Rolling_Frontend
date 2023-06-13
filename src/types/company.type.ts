@@ -1,60 +1,49 @@
-interface Page {
+export interface CompanyInfiniteScrollType {
+  data: CompanyListType[];
   nextPage: number;
 }
 
-export interface CompanyListType extends Page {
-  id: string;
-  name: string;
-  address: string;
-  description: string;
-  imgUrl: string;
-  totalGrade: number;
-  balanceGrade: number;
-  salaryGrade: number;
-  welfareGrade: number;
-  registrantId: string;
-  createdAt: string;
-  modifiedAt: string;
-}
-
-export interface CompanyInfoType {
-  companyQueryResponse: {
-    companyId: string;
-    companyName: string;
-    companyAddress: string;
-    companyDescription: string;
-    companyImgUrl: string;
+export interface CompanyListType {
+  companyId: {
+    id: string;
+  };
+  companyDetails: {
+    name: string;
+    companyAddress: {
+      address: string;
+    };
+    description: string;
+    imgUrl: string;
+    createdAt: string;
+    modifiedAt: string;
+  };
+  companyGrades: {
     totalGrade: number;
     balanceGrade: number;
     salaryGrade: number;
     welfareGrade: number;
-    companyCreatedAt: string;
-    companyModifiedAt: string;
-    registrantId: string;
-    memberNickName: string;
-    memberSocialId: string;
-    memberImageUrl: string;
   };
-  reviewInfoList: [
-    {
-      reviewId: string;
-      reviewContent: string;
-      reviewPosition: string;
-      reviewCareerPath: string;
-      totalGrade: number;
-      balanceGrade: number;
-      salaryGrade: number;
-      welfareGrade: number;
-      reviewGrade: number;
-      companyId: string;
-      reviewCreatedAt: string;
-      reviewModifiedAt: string;
-      writerId: string;
-      memberNickName: string;
-      memberSocialId: string;
-      memberImageUrl: string;
-    }
-  ];
+  registrantId: {
+    id: string;
+  };
+}
+
+export interface CompanyInfoType {
+  companyId: string;
+  companyName: string;
+  companyAddress: string;
+  companyDescription: string;
+  companyImgUrl: string;
+  totalGrade: number;
+  balanceGrade: number;
+  salaryGrade: number;
+  welfareGrade: number;
+  companyCreatedAt: string;
+  companyModifiedAt: string;
+  registrantId: string;
+  memberNickName: string;
+  memberSocialId: string;
+  memberImageUrl: string;
 }
 
 export interface CompanyInfoId {

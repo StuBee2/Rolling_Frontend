@@ -4,19 +4,24 @@ import {
   useMutation,
   useQuery,
 } from "react-query";
-import { MemberNickNameParam } from "../../repositories/Member/member.param";
-import memberRepositoryImpl from "../../repositories/Member/member.repositoryImpl";
+import MemberRepositoryImpl from "../../repositories/Member/member.repositoryImpl";
 import { MemberType } from "../../types/member.type";
 import { AxiosError } from "axios";
+import { QUERY_KEYS } from "../queryKey";
+import { MemberNickNameParam } from "../../repositories/Member/member.repository";
 
-export const useGetMyInfo = (
-  options?: UseQueryOptions<MemberType, AxiosError, MemberType, "/member">
+export const useGetMyInfoQuery = (
+  options?: UseQueryOptions<MemberType, AxiosError, MemberType, string>
 ): UseQueryResult<MemberType, AxiosError> =>
-  useQuery("/member", () => memberRepositoryImpl.getMyInfo(), { ...options });
+  useQuery(
+    QUERY_KEYS.member.getMyMember,
+    () => MemberRepositoryImpl.getMyInfo(),
+    { ...options }
+  );
 
-export const usePatchMyNickName = () => {
+export const usePatchMyNickNameMutation = () => {
   const mutation = useMutation((nickName: MemberNickNameParam) =>
-    memberRepositoryImpl.patchMyNickName(nickName)
+    MemberRepositoryImpl.patchMyNickName(nickName)
   );
   return mutation;
 };

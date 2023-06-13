@@ -1,27 +1,39 @@
 import { customAxios } from "../../libs/Axios/customAxios";
-import { CompanyInfoType, CompanyListType } from "../../types/company.type";
+import {
+  CompanyInfiniteScrollType,
+  CompanyInfoType,
+  CompanyListType,
+} from "../../types/company.type";
 import { CommonIdParam, CommonPageParam } from "../common.param";
-import { CompanyNameParam, CompanyParam } from "./company.param";
-import { CompanyRepository } from "./company.repository";
+import {
+  CompanyNameParam,
+  CompanyParam,
+  CompanyRepository,
+} from "./company.repository";
 
 class CompanyRepositoryImpl implements CompanyRepository {
-  public async postRegister(data: CompanyParam): Promise<void> {
-    await customAxios.post("/company", data);
+  public async postRegister(
+    companyData: CompanyParam
+  ): Promise<CompanyListType> {
+    const { data } = await customAxios.post("/company", companyData);
+    return data;
   }
 
-  public async getMyCompanyList(): Promise<CompanyListType[]> {
-    const { data } = await customAxios.get("/company/my");
-    return data;
+  public async getMyCompanyList({
+    page,
+  }: CommonPageParam): Promise<CompanyInfiniteScrollType> {
+    const { data } = await customAxios.get(`/company/my?page=${page}&size=10`);
+    return { ...data, nextPage: page + 1 };
   }
 
   public async getCompanySearchList(
     { name }: CompanyNameParam,
-    { page, size }: CommonPageParam
-  ): Promise<CompanyListType[]> {
+    { page }: CommonPageParam
+  ): Promise<CompanyInfiniteScrollType> {
     const { data } = await customAxios.get(
-      `/company/search?name=${name}&page=${page}&size=${size}`
+      `/company/search?name=${name}&page=${page}&size=10`
     );
-    return data;
+    return { ...data, nextPage: page + 1 };
   }
 
   public async getCompanyList(): Promise<CompanyListType[]> {
@@ -31,12 +43,12 @@ class CompanyRepositoryImpl implements CompanyRepository {
 
   public async getCompanyListId(
     { id }: CommonIdParam,
-    { page, size }: CommonPageParam
-  ): Promise<CompanyListType[]> {
+    { page }: CommonPageParam
+  ): Promise<CompanyInfiniteScrollType> {
     const { data } = await customAxios.get(
-      `/company/list/${id}?page=${page}&size=${size}`
+      `/company/list/${id}?page=${page}&size=10`
     );
-    return data;
+    return { ...data, nextPage: page + 1 };
   }
 
   public async getCompanyInfoId({

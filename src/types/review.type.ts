@@ -1,3 +1,8 @@
+export interface ReviewInfiniteScrollListType {
+  data: ReviewListType[];
+  nextPage: number;
+}
+
 export interface ReviewListType {
   reviewId: string;
   reviewContent: string;
@@ -29,4 +34,29 @@ export interface ReviewInfoIdType {
   memberNickName: string;
   memberSocialId: string;
   memberImageUrl: string;
+}
+
+export interface ReviewPostResponse {
+  reviewId: {
+    id: string;
+  };
+  reviewDetails: {
+    content: string;
+    position: string;
+    careerPath: string;
+    createdAt: string;
+    modifiedAt: string;
+  };
+  reviewGrades: {
+    totalGrade: number;
+    balanceGrade: number;
+    salaryGrade: number;
+    welfareGrade: number;
+  };
+  memberId: {
+    id: string;
+  };
+  companyId: {
+    id: string;
+  };
 }

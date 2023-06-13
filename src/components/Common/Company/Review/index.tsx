@@ -27,7 +27,7 @@ const FirmReview = () => {
   const [salaryGrade, setsalaryGrade] = useRecoilState<number>(salaryGradeAtom);
   const [welfareGrade, setwelfareGrade] =
     useRecoilState<number>(welfareGradeAtom);
-  const { onReviewRegister } = useReview();
+  // const { onReviewRegister } = useReview();
 
   useEffect(() => {
     console.log(balanceGrade);

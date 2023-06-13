@@ -1,10 +1,10 @@
 export const QUERY_KEYS = Object.freeze({
   company: {
     getMyListCompany: "/company/my",
-    getListSearchCompany: "/company/search",
+    getListSearchCompany: (name: string) => ["/company/search", name],
     getListCompany: "/company/list",
-    getListCompanyId: "/company/list/id",
-    getListInfoCompanyId: "/company/info/id",
+    getListCompanyId: (id: number) => ["/company/list/id", id],
+    getListInfoCompanyId: (id: number) => ["/company/info/id", id],
     getCompanyRankWelfare: "/company/rank/welfare",
     getCompanyRankTotal: "/company/rank/total",
     getCompanyRankSalary: "/company/rank/Salary",
@@ -12,8 +12,11 @@ export const QUERY_KEYS = Object.freeze({
   },
   review: {
     getMyReview: "/review/my",
-    getReviewListMemberId: "/review/list/member/id",
-    getReviewListCompanyId: "/reivew/list/company/id",
-    getReviewInfoId: "/review/info/id",
+    getReviewListMemberId: (id: number) => ["/review/list/member/id", id],
+    getReviewListCompanyId: (id: number) => ["/reivew/list/company/id", id],
+    getReviewInfoId: (id: number) => ["/review/info/id", id],
+  },
+  member: {
+    getMyMember: "/member",
   },
 });
