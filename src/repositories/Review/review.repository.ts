@@ -1,11 +1,18 @@
-import { customAxios } from "../../libs/Axios/customAxios";
-import { ReviewInfoIdType } from "../../types/review.type";
-import { ReviewParam } from "./review.param";
+import { ReviewListType } from "../../types/review.type";
+import { CommonIdParam, CommonPageParam } from "../common.param";
 
-class ReviewRepository {
-  public async postReview(data: ReviewParam): Promise<void> {
-    await customAxios.post("/review", data);
-  }
+export interface ReviewRepository {
+  getMyReviewList({ page, size }: CommonPageParam): Promise<ReviewListType[]>;
+
+  getListReviewMemberId(
+    { id }: CommonIdParam,
+    { page, size }: CommonPageParam
+  ): Promise<ReviewListType[]>;
+
+  getListReviewCompanyId(
+    { id }: CommonIdParam,
+    { page, size }: CommonPageParam
+  ): Promise<ReviewListType[]>;
+
+  getReviewInfoId({ id }: CommonIdParam): Promise<ReviewListType[]>;
 }
-
-export default new ReviewRepository();

@@ -1,9 +1,17 @@
-export interface CompanyListType {
+interface Page {
+  nextPage: number;
+}
+
+export interface CompanyListType extends Page {
   id: string;
   name: string;
   address: string;
   description: string;
   imgUrl: string;
+  totalGrade: number;
+  balanceGrade: number;
+  salaryGrade: number;
+  welfareGrade: number;
   registrantId: string;
   createdAt: string;
   modifiedAt: string;
@@ -16,6 +24,10 @@ export interface CompanyInfoType {
     companyAddress: string;
     companyDescription: string;
     companyImgUrl: string;
+    totalGrade: number;
+    balanceGrade: number;
+    salaryGrade: number;
+    welfareGrade: number;
     companyCreatedAt: string;
     companyModifiedAt: string;
     registrantId: string;
@@ -29,6 +41,10 @@ export interface CompanyInfoType {
       reviewContent: string;
       reviewPosition: string;
       reviewCareerPath: string;
+      totalGrade: number;
+      balanceGrade: number;
+      salaryGrade: number;
+      welfareGrade: number;
       reviewGrade: number;
       companyId: string;
       reviewCreatedAt: string;

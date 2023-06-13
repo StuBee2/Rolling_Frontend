@@ -4,3 +4,11 @@ export interface CompanyParam {
   description: string;
   imgUrl: string;
 }
+
+export interface CompanyNameParam {
+  name: string;
+}
+
+export interface CompanyId {
+  companyId: string;
+}

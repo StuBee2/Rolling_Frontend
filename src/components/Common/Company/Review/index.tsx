@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as R from "./style";
 import StarScope from "./ReviewStarScope";
 import StarRating from "./ReviewStarScope";
-import { useGetCompanyInfo } from "../../../../queries/Company/company.query";
+// import { useGetCompanyInfo } from "../../../../queries/Company/company.query";
 
 import { useRecoilState } from "recoil";
 import {
@@ -12,23 +12,22 @@ import {
 } from "../../../../store/review/reviewStore";
 import { useReview } from "../../../../hooks/FirmReview/useReview";
 import {
-  reviewGrade1,
-  reviewGrade2,
-  reviewGrade3,
+  balanceGradeAtom,
+  salaryGradeAtom,
+  welfareGradeAtom,
 } from "../../../../store/review/reviewStore";
-console.log(reviewGrade1);
 
 const FirmReview = () => {
   const [position, setPosition] = useRecoilState<string>(reviewPosition);
   const [careerPath, setCarreerPath] = useRecoilState<string>(reviewCareerPath);
   const [etc, setEtc] = useRecoilState<string>(reviewEtc);
   const { onPositionChange, onCareerPathChange, onEtcChange } = useReview();
-  const [balanceGrade, setbalanceGrade] = useRecoilState<number>(reviewGrade1);
-  const [salaryGrade, setsalaryGrade] = useRecoilState<number>(reviewGrade2);
-  const [welfareGrade, setwelfareGrade] = useRecoilState<number>(reviewGrade3);
-  const [id, setId] = useState("");
-  // const { data: getCompanyId } = useGetCompanyInfo({id});
-  // console.log(getCompanyId);
+  const [balanceGrade, setbalanceGrade] =
+    useRecoilState<number>(balanceGradeAtom);
+  const [salaryGrade, setsalaryGrade] = useRecoilState<number>(salaryGradeAtom);
+  const [welfareGrade, setwelfareGrade] =
+    useRecoilState<number>(welfareGradeAtom);
+  const { onReviewRegister } = useReview();
 
   useEffect(() => {
     console.log(balanceGrade);
@@ -94,6 +93,8 @@ const FirmReview = () => {
 
         <R.Text>기타</R.Text>
         <R.Input value={etc} onChange={onEtcChange} />
+
+        {/* <button onClick={() => onReviewRegister()}></button> */}
       </R.ReviewList>
     </R.ReviewBox>
   );

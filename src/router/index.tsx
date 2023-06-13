@@ -13,7 +13,9 @@ export default function Router() {
       <Route path="/" element={<HomePage />} />
       <Route path="/callback" element={<AuthLoadingPage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/mypage" element={<UserPage />} />
+      <Route path="/mypage" element={<UserPage page={0} />} />
+      <Route path="/myregist" element={<UserPage page={1} />} />
+      <Route path="/myreview" element={<UserPage page={2} />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/review" element={<ReviewPage />} />
       <Route path="*" element={<NotFound />} />

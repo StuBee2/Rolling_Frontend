@@ -1,67 +1,123 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const LoginContainer = styled.div`
+export const LoginWrap = styled.div`
   width: 100%;
-  height: calc(100vh - 63px);
+  height: 100vh;
+  background-color: #ebecee;
 
-  position: absolute;
-  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const LoginBox = styled.div`
+  width: 400px;
+  height: 700px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const AbleContainer = styled.div<{ isLoginText: boolean }>`
+  width: ${(props) => (props.isLoginText ? "90%" : "100%")};
+  height: ${(props) => (props.isLoginText ? "500px" : "100px")};
+  ${({ isLoginText }) =>
+    isLoginText &&
+    css`
+      background-color: #ffffff;
+      box-shadow: 0px 1px 4px rgba(30, 40, 58, 0.04);
+      border-radius: 12px;
+    `};
+`;
+
+export const Text = styled.div<{ isLogo?: boolean }>`
+  font-size: ${(props) => (props.isLogo ? "40px" : "20px")};
+  font-weight: 700;
+  color: ${(props) => props.isLogo && "#00ba91"};
+  margin: ${(props) => !props.isLogo && "25px 0 0 35px"};
+  text-align: ${(props) => props.isLogo && "center"};
+  cursor: ${(props) => props.isLogo && "pointer"};
+`;
+
+export const LoginContainer = styled.form<{ isSocial?: boolean }>`
+  width: 100%;
+  height: ${(props) => (props.isSocial ? "35%" : "45%")};
+  border-bottom: 1px solid #e5e6e9;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  ${({ isSocial }) =>
+    !isSocial &&
+    css`
+      input {
+        width: 80%;
+        height: 48px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        border: 1px solid #e5e6e9;
+        padding-left: 10px;
+      }
+
+      button {
+        width: 80%;
+        height: 48px;
+
+        border-radius: 8px;
+        outline: none;
+        border: none;
+
+        cursor: pointer;
+        background-color: #00ba91;
+        font-weight: bold;
+        color: #ffffff;
+      }
+    `}
+`;
+
+export const LoginBtn = styled.button<{ isGoogle: boolean }>`
+  width: 80%;
+  height: 48px;
+
+  background-color: ${(props) => !props.isGoogle && "#000000"};
+  border: none;
+  outline: none;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  color: ${(props) => !props.isGoogle && "#ffffff"};
+  cursor: pointer;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+`;
+
+export const SuggestSignUpContainer = styled.div`
+  width: 100%;
+  height: 11%;
+  font-size: 14px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-`;
-
-export const LoginBox = styled.div`
-  width: 714px;
-  height: 737px;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: space-evenly;
-  margin-bottom: 50px;
-`;
-
-export const Logo = styled.img`
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-`;
-
-export const LoginBtn = styled.div<{ isGoogle: boolean }>`
-  width: 592px;
-  height: 72px;
-
-  background-color: ${(props) => (props.isGoogle ? "#D9D9D9" : "#000000")};
-
-  margin-top: 20px;
-  border-radius: 20px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  line-height: 80px;
-  padding: 0 20px 0 20px;
-  cursor: pointer;
-
-  img {
-    width: 33px;
-    height: 33px;
-    vertical-align: middle;
-    margin-top: 18px;
-  }
-
   span {
-    color: ${(props) => (props.isGoogle ? "#000000" : "#FFFFFF")};
-    font-size: 23px;
+    cursor: pointer;
     font-weight: bold;
+    color: #00ba91;
   }
 `;

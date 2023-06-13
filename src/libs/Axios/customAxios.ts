@@ -6,6 +6,7 @@ import {
 } from "../../constants/Auth/auth.constant";
 import Token from "../Token/Token";
 import CONFIG from "../../config/config.json";
+import requestHandler from "./requestHandler";
 
 export const customAxios = axios.create({
   baseURL: `${CONFIG.SERVER}`,
@@ -46,7 +47,7 @@ const errorInterceptor = async ({
       return customAxios(newConfig);
     } catch (error) {
       window.alert("토큰이 만료되었습니다!");
-      window.location.href="/login";
+      window.location.href = "/login";
       return Promise.reject(error);
     }
   }
@@ -54,4 +55,5 @@ const errorInterceptor = async ({
   return Promise.reject(config);
 };
 
+customAxios.interceptors.request.use(requestHandler, (response) => response);
 customAxios.interceptors.response.use((response) => response, errorInterceptor);

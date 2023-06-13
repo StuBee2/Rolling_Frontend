@@ -15,15 +15,15 @@ export const reviewEtc = atom<string>({
   default: "",
 });
 
-export const reviewGrade1 = atom<number>({
-  key: "reviewGrade1",
+export const balanceGradeAtom = atom<number>({
+  key: "balanceGrade",
   default: 0,
 });
-export const reviewGrade2 = atom<number>({
-  key: "reviewGrade2",
+export const salaryGradeAtom = atom<number>({
+  key: "salaryGrade",
   default: 0,
 });
-export const reviewGrade3 = atom<number>({
-  key: "reviewGrade3",
+export const welfareGradeAtom = atom<number>({
+  key: "welfareGrade",
   default: 0,
 });

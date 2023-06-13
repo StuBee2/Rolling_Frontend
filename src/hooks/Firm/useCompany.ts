@@ -9,7 +9,8 @@ import { useCallback } from "react";
 import { useRef, MutableRefObject } from "react";
 import { customAxios } from "../../libs/Axios/customAxios";
 import { QueryClient } from "react-query";
-import { usePostRegister } from "../../queries/Company/company.query";
+import { usePostCompanyRegister } from "../../queries/Company/company.query";
+// import {usePost}
 import { CompanyParam } from "../../repositories/Company/company.param";
 
 export const useCompany = () => {
@@ -20,7 +21,7 @@ export const useCompany = () => {
   const [firmlogo, setFirmLogo] = useRecoilState<string>(companyLogoAtom);
 
   const queryClient = new QueryClient();
-  const CompanyMutation = usePostRegister();
+  const CompanyMutation = usePostCompanyRegister();
 
   const onAddressChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
