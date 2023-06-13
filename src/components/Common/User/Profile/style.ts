@@ -32,12 +32,11 @@ export const CenterWrap = styled.div`
   justify-content: center;
 `;
 
-export const MyInfo = styled.div<{ isBottom?: boolean; isTop?: boolean }>`
+export const MyInfo = styled.div<{ isLastLine?: boolean; top?: string }>`
   width: 95%;
-  height: ${(props) => (props.isTop ? "80px" : "50px")};
+  height: ${({ top }) => top || "50px"};
   border-bottom: ${(props) =>
-    !props.isBottom && "1px solid rgba(146, 146, 148, 0.3);"};
-
+    !props.isLastLine && "1px solid rgba(146, 146, 148, 0.3);"};
   display: flex;
   align-items: center;
 `;
@@ -61,10 +60,10 @@ export const ProfileAbleBox = styled.div`
   gap: 3px;
 `;
 
-export const ProfileInfo = styled.div<{ isName?: boolean }>`
-  font-size: ${(props) => (props.isName ? "24px" : "14px")};
-  font-weight: ${(props) => (props.isName ? "700" : "400")};
-  color: ${(props) => (props.isName ? "#1e1e23" : "#7b8994CC")};
+export const ProfileInfo = styled.div<{ isNameInfo?: boolean }>`
+  font-size: ${(props) => (props.isNameInfo ? "24px" : "14px")};
+  font-weight: ${(props) => (props.isNameInfo ? "700" : "400")};
+  color: ${(props) => (props.isNameInfo ? "#1e1e23" : "#7b8994CC")};
 `;
 
 export const GitInfoContainer = styled.div`

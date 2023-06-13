@@ -69,18 +69,18 @@ export const UserEmail = styled.div`
   margin-top: 5px;
 `;
 
-export const CenterDiv = styled.div<{ isLine?: boolean }>`
+export const CenterDiv = styled.div<{ line?: boolean }>`
   display: flex;
   width: 300px;
   height: 200px;
   border-bottom: ${(props) =>
-    props.isLine && "1px solid rgba(146, 146, 148, 0.3)"};
+    props.line && "1px solid rgba(146, 146, 148, 0.3)"};
 `;
 
-export const UserAble = styled.ul<{ isSpaceEvenly?: boolean }>`
+export const UserAble = styled.ul<{ spaceEvenly?: boolean }>`
   display: flex;
   flex-direction: column;
-  justify-content: ${(props) => props.isSpaceEvenly && "space-evenly"};
+  justify-content: ${(props) => props.spaceEvenly && "space-evenly"};
 
   font-size: 18px;
   list-style-type: none;
@@ -97,7 +97,6 @@ export const UserAble = styled.ul<{ isSpaceEvenly?: boolean }>`
 
 export const UserCategory = styled.li<{ isSelect: boolean }>`
   color: #303038;
-  list-style-type: none;
 
   font-weight: ${(props) => props.isSelect && "800"};
   border-bottom: ${(props) => props.isSelect && "2px solid #303038"};

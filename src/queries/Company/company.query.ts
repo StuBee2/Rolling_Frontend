@@ -1,66 +1,73 @@
 import {
+  UseInfiniteQueryOptions,
+  UseInfiniteQueryResult,
   UseQueryOptions,
   UseQueryResult,
+  useInfiniteQuery,
   useMutation,
   useQuery,
 } from "react-query";
+import CompanyRepositoryImpl from "../../repositories/Company/company.repositoryImpl";
+import {
+  CompanyInfiniteScrollType,
+  CompanyInfoType,
+  CompanyListType,
+} from "../../types/company.type";
+import { AxiosError } from "axios";
+import { QUERY_KEYS } from "../queryKey";
+import { CommonIdParam } from "../../repositories/common.param";
 import {
   CompanyNameParam,
   CompanyParam,
-} from "../../repositories/Company/company.param";
-import companyRepositoryImpl from "../../repositories/Company/company.repositoryImpl";
-import { CompanyInfoType, CompanyListType } from "../../types/company.type";
-import { AxiosError } from "axios";
-import { QUERY_KEYS } from "../queryKey";
-import {
-  CommonIdParam,
-  CommonPageParam,
-} from "../../repositories/common.param";
+} from "../../repositories/Company/company.repository";
 
-export const usePostCompanyRegister = () => {
+export const usePostCompanyRegisterMutation = () => {
   const registermutation = useMutation((data: CompanyParam) =>
-    companyRepositoryImpl.postRegister(data)
+    CompanyRepositoryImpl.postRegister(data)
   );
-
   return registermutation;
 };
 
-export const useGetMyCompanyList = (
-  { page, size }: CommonPageParam,
-  options?: UseQueryOptions<
-    CompanyListType[],
+export const useGetMyCompanyListQuery = (
+  options?: UseInfiniteQueryOptions<
+    CompanyInfiniteScrollType,
     AxiosError,
-    CompanyListType[],
-    [string, number, number]
+    CompanyInfiniteScrollType,
+    CompanyInfiniteScrollType,
+    string
   >
-): UseQueryResult<CompanyListType[], AxiosError> =>
-  useQuery(
-    [QUERY_KEYS.company.getMyListCompany, page, size],
-    () => companyRepositoryImpl.getMyCompanyList(),
+): UseInfiniteQueryResult<CompanyInfiniteScrollType, AxiosError> =>
+  useInfiniteQuery(
+    QUERY_KEYS.company.getMyListCompany,
+    ({ pageParam = 1 }) =>
+      CompanyRepositoryImpl.getMyCompanyList({ page: pageParam }),
     {
       ...options,
+      getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
 
-export const useGetCompanySerachList = (
+export const useGetCompanySerachListQuery = (
   { name }: CompanyNameParam,
-  { page, size }: CommonPageParam,
-  options?: UseQueryOptions<
-    CompanyListType[],
+  options?: UseInfiniteQueryOptions<
+    CompanyInfiniteScrollType,
     AxiosError,
-    CompanyListType[],
-    [string, string, number, number]
+    CompanyInfiniteScrollType,
+    CompanyInfiniteScrollType,
+    string[]
   >
-): UseQueryResult<CompanyListType[], AxiosError> =>
-  useQuery(
-    [QUERY_KEYS.company.getListSearchCompany, name, page, size],
-    () => companyRepositoryImpl.getCompanySearchList({ name }, { page, size }),
+): UseInfiniteQueryResult<CompanyInfiniteScrollType, AxiosError> =>
+  useInfiniteQuery(
+    QUERY_KEYS.company.getListSearchCompany(name),
+    ({ pageParam = 1 }) =>
+      CompanyRepositoryImpl.getCompanySearchList({ name }, { page: pageParam }),
     {
       ...options,
+      getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
 
-export const useGetCompanyList = (
+export const useGetCompanyListQuery = (
   options?: UseQueryOptions<
     CompanyListType[],
     AxiosError,
@@ -70,50 +77,52 @@ export const useGetCompanyList = (
 ): UseQueryResult<CompanyListType[], AxiosError> =>
   useQuery(
     QUERY_KEYS.company.getListCompany,
-    () => companyRepositoryImpl.getCompanyList(),
+    () => CompanyRepositoryImpl.getCompanyList(),
     {
       ...options,
     }
   );
 
-export const useGetCompanyListId = (
+export const useGetCompanyListIdQuery = (
   { id }: CommonIdParam,
-  { page, size }: CommonPageParam,
-  options?: UseQueryOptions<
-    CompanyListType[],
+  options?: UseInfiniteQueryOptions<
+    CompanyInfiniteScrollType,
     AxiosError,
-    CompanyListType[],
-    [string, number, number, number]
+    CompanyInfiniteScrollType,
+    CompanyInfiniteScrollType,
+    (string | number)[]
   >
-): UseQueryResult<CompanyListType[], AxiosError> =>
-  useQuery(
-    [QUERY_KEYS.company.getListCompanyId, id, page, size],
-    () => companyRepositoryImpl.getCompanyListId({ id }, { page, size }),
+): UseInfiniteQueryResult<CompanyInfiniteScrollType, AxiosError> =>
+  useInfiniteQuery(
+    QUERY_KEYS.company.getListCompanyId(id),
+    ({ pageParam = 1 }) =>
+      CompanyRepositoryImpl.getCompanyListId({ id }, { page: pageParam }),
     {
       enabled: !!id,
       ...options,
+      getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
 
-export const useGetCompanyInfoId = (
+export const useGetCompanyInfoIdQuery = (
   { id }: CommonIdParam,
   options?: UseQueryOptions<
     CompanyInfoType,
     AxiosError,
     CompanyInfoType,
-    [string, number]
+    (string | number)[]
   >
 ): UseQueryResult<CompanyInfoType, AxiosError> =>
   useQuery(
-    [QUERY_KEYS.company.getListInfoCompanyId, id],
-    () => companyRepositoryImpl.getCompanyInfoId({ id }),
+    QUERY_KEYS.company.getListInfoCompanyId(id),
+    () => CompanyRepositoryImpl.getCompanyInfoId({ id }),
     {
       enabled: !!id,
       ...options,
     }
   );
 
-export const useGetCompanyRankWelfare = (
+export const useGetCompanyRankWelfareQuery = (
   options?: UseQueryOptions<
     CompanyListType[],
     AxiosError,
@@ -123,13 +132,13 @@ export const useGetCompanyRankWelfare = (
 ): UseQueryResult<CompanyListType[], AxiosError> =>
   useQuery(
     QUERY_KEYS.company.getCompanyRankWelfare,
-    () => companyRepositoryImpl.getCompanyRankWelfare(),
+    () => CompanyRepositoryImpl.getCompanyRankWelfare(),
     {
       ...options,
     }
   );
 
-export const useGetCompanyRankTotal = (
+export const useGetCompanyRankTotalQuery = (
   options?: UseQueryOptions<
     CompanyListType[],
     AxiosError,
@@ -139,13 +148,13 @@ export const useGetCompanyRankTotal = (
 ): UseQueryResult<CompanyListType[], AxiosError> =>
   useQuery(
     QUERY_KEYS.company.getCompanyRankTotal,
-    () => companyRepositoryImpl.getCompanyRankTotal(),
+    () => CompanyRepositoryImpl.getCompanyRankTotal(),
     {
       ...options,
     }
   );
 
-export const useGetCompanyRankSalary = (
+export const useGetCompanyRankSalaryQuery = (
   options?: UseQueryOptions<
     CompanyListType[],
     AxiosError,
@@ -155,13 +164,13 @@ export const useGetCompanyRankSalary = (
 ): UseQueryResult<CompanyListType[], AxiosError> =>
   useQuery(
     QUERY_KEYS.company.getCompanyRankSalary,
-    () => companyRepositoryImpl.getCompanyRankSalary(),
+    () => CompanyRepositoryImpl.getCompanyRankSalary(),
     {
       ...options,
     }
   );
 
-export const useGetCompanyRankBalance = (
+export const useGetCompanyRankBalanceQuery = (
   options?: UseQueryOptions<
     CompanyListType[],
     AxiosError,
@@ -171,7 +180,7 @@ export const useGetCompanyRankBalance = (
 ): UseQueryResult<CompanyListType[], AxiosError> =>
   useQuery(
     QUERY_KEYS.company.getCompanyRankWelfare,
-    () => companyRepositoryImpl.getCompanyRankBalance(),
+    () => CompanyRepositoryImpl.getCompanyRankBalance(),
     {
       ...options,
     }

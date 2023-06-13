@@ -1,19 +1,19 @@
 import * as S from "./style";
 import { AUTH_ITEM } from "../../../../constants/Auth/auth.constant";
-import useShowHeader from "../../../../hooks/User/useShowHeader";
+import useHideHeader from "../../../../hooks/Common/useHideHeader";
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../../../hooks/Auth/useLogin";
 
 export default function Login() {
   const navigate = useNavigate();
   const { handleChange, handleSubmit, id, pw } = useLogin();
-  useShowHeader();
 
+  useHideHeader();
   return (
     <S.LoginWrap>
       <S.LoginBox>
         <S.AbleContainer isLoginText={false}>
-          <S.Text isLogo={true} onClick={() => navigate("/")}>
+          <S.Text isLogoText={true} onClick={() => navigate("/")}>
             Rolling
           </S.Text>
         </S.AbleContainer>

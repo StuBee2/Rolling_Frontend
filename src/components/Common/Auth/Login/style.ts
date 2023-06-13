@@ -32,13 +32,13 @@ export const AbleContainer = styled.div<{ isLoginText: boolean }>`
     `};
 `;
 
-export const Text = styled.div<{ isLogo?: boolean }>`
-  font-size: ${(props) => (props.isLogo ? "40px" : "20px")};
+export const Text = styled.div<{ isLogoText?: boolean }>`
+  font-size: ${(props) => (props.isLogoText ? "40px" : "20px")};
   font-weight: 700;
-  color: ${(props) => props.isLogo && "#00ba91"};
-  margin: ${(props) => !props.isLogo && "25px 0 0 35px"};
-  text-align: ${(props) => props.isLogo && "center"};
-  cursor: ${(props) => props.isLogo && "pointer"};
+  color: ${(props) => props.isLogoText && "#00ba91"};
+  margin: ${(props) => !props.isLogoText && "25px 0 0 35px"};
+  text-align: ${(props) => props.isLogoText && "center"};
+  cursor: ${(props) => props.isLogoText && "pointer"};
 `;
 
 export const LoginContainer = styled.form<{ isSocial?: boolean }>`

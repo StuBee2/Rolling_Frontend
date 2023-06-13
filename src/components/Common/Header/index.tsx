@@ -1,15 +1,27 @@
+import React from "react";
 import * as S from "./header.style";
 import { useNavigate } from "react-router-dom";
-import { CATEGROY_ITEMS } from "../../../constants/Home/Home.constants";
+import { CATEGORY_ITEMS } from "../../../constants/Home/Home.constants";
 import LogoImg from "../../../assets/Logo.png";
 import Token from "../../../libs/Token/Token";
-import { ACCESS_KEY } from "../../../constants/Auth/auth.constant";
+import { ACCESS_TOKEN_KEY } from "../../../constants/Auth/auth.constant";
 import { useLogging } from "../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../constants/Log/log.constants";
+import { useLogout } from "../../../hooks/Auth/useLogout";
 
 export default function Header() {
   const navigate = useNavigate();
   const { handleLoggingClick } = useLogging();
+  const { handleLogout } = useLogout();
+
+  const handleCategoryClick = (categoryId: number) => {
+    if (categoryId === 4) {
+      handleLogout();
+    } else {
+      handleLoggingClick(LOG_ITEM[categoryId]);
+    }
+  };
+
   return (
     <S.Header>
       <S.Logo onClick={() => navigate("/")}>
@@ -18,40 +30,23 @@ export default function Header() {
       </S.Logo>
 
       <div>
-        {CATEGROY_ITEMS.map((category) => {
-          return (
-            <div key={category.id}>
-              {Token.getToken(ACCESS_KEY)
-                ? category.id !== 0 && (
-                    <>
-                      {category.id === 4 ? (
-                        <S.CategoryLink
-                          onClick={() => {
-                            Token.clearToken();
-                            navigate("/");
-                          }}
-                        >
-                          {category.categoryName}
-                        </S.CategoryLink>
-                      ) : (
-                        <S.CategoryLink
-                          onClick={() =>
-                            handleLoggingClick(LOG_ITEM[category.id])
-                          }
-                        >
-                          {category.categoryName}
-                        </S.CategoryLink>
-                      )}
-                    </>
-                  )
-                : category.id === 0 && (
-                    <S.CategoryLink onClick={() => navigate("/login")}>
-                      {category.categoryName}
-                    </S.CategoryLink>
-                  )}
-            </div>
-          );
-        })}
+        {CATEGORY_ITEMS.map((category) => (
+          <div key={category.id}>
+            {Token.getToken(ACCESS_TOKEN_KEY)
+              ? category.id !== 0 && (
+                  <S.CategoryLink
+                    onClick={() => handleCategoryClick(category.id)}
+                  >
+                    {category.categoryName}
+                  </S.CategoryLink>
+                )
+              : category.id === 0 && (
+                  <S.CategoryLink onClick={() => navigate("/login")}>
+                    {category.categoryName}
+                  </S.CategoryLink>
+                )}
+          </div>
+        ))}
       </div>
     </S.Header>
   );

@@ -1,7 +1,6 @@
 import { customAxios } from "../../libs/Axios/customAxios";
 import { LogType } from "../../types/log.type";
-import { LoggingParam } from "./log.param";
-import { LogRepository } from "./log.repository";
+import { LogRepository, LoggingParam } from "./log.repository";
 
 class LogRepositoryImpl implements LogRepository {
   public async postLogging({

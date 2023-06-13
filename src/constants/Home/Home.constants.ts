@@ -1,8 +1,8 @@
-interface Type {
+export interface Type {
   id: number;
   categoryName: string;
 }
-export const CATEGROY_ITEMS: Type[] = [
+export const CATEGORY_ITEMS: Type[] = [
   {
     id: 0,
     categoryName: "Login",
