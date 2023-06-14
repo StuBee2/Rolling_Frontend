@@ -27,7 +27,7 @@ export default function Review() {
           data.data.map((review) => (
             <ListContainer key={review.reviewId}>
               <Able isTop={true}>
-                <div style={{ fontSize: "13px" }}>
+                <div style={{ fontSize: "16px" }}>
                   {getDateText(new Date(review.reviewCreatedAt))} 등록
                 </div>
                 <FiX size={23} cursor="pointer" />

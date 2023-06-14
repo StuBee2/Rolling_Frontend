@@ -90,7 +90,7 @@ export const useGetCompanyListIdQuery = (
     AxiosError,
     CompanyInfiniteScrollType,
     CompanyInfiniteScrollType,
-    (string | number)[]
+    string[]
   >
 ): UseInfiniteQueryResult<CompanyInfiniteScrollType, AxiosError> =>
   useInfiniteQuery(
@@ -110,7 +110,7 @@ export const useGetCompanyInfoIdQuery = (
     CompanyInfoType,
     AxiosError,
     CompanyInfoType,
-    (string | number)[]
+    string[]
   >
 ): UseQueryResult<CompanyInfoType, AxiosError> =>
   useQuery(

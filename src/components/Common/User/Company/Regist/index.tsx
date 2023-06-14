@@ -6,19 +6,22 @@ import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
 import { AiFillStar } from "react-icons/ai";
 import { FiX } from "react-icons/fi";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";
+import { useNavigate } from "react-router-dom";
 
 export default function Regist() {
   const { data: registList, fetchNextPage } = useGetMyCompanyListQuery({
     suspense: true,
   });
   const { ref, inView } = useInView();
-
+  const navigate = useNavigate();
+  console.log(registList);
   useEffect(() => {
     if (inView) {
       fetchNextPage();
     }
   }, [inView]);
 
+  // const onC
   return (
     <CommonWrap>
       {registList!!.pages.length > 0 ? (
@@ -59,8 +62,13 @@ export default function Regist() {
               </Body>
               <Able isTop={false}>
                 <button>수정하기</button>
-                <button>상세보기</button>
+                <button
+                  onClick={() => navigate(`/registe/${regist.companyId.id}`)}
+                >
+                  상세보기
+                </button>
               </Able>
+              {/* <CompanyDetailList id={Number(id)} /> */}
             </ListContainer>
           ))
         )

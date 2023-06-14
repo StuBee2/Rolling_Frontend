@@ -3,5 +3,9 @@ export interface CommonPageParam {
 }
 
 export interface CommonIdParam {
-  id: number;
+  id: string;
+}
+
+export interface CompanyIdParam {
+  companyId: string;
 }

@@ -25,6 +25,7 @@ const FirmRegister = () => {
   const [firmaddress, setFrimAddress] =
     useRecoilState<string>(companyAddressAtom);
   const [firminfo, setFrimInfo] = useRecoilState<string>(companyInfoAtom);
+  
 
   return (
     <F.FirmBox>
@@ -37,6 +38,7 @@ const FirmRegister = () => {
           ref={imgRef}
           style={{ display: "none" }}
         />
+
         <F.LogoBox>
           <F.Button onClick={onClickImg}>
             <F.FileIcon />

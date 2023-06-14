@@ -44,7 +44,7 @@ export const useGetReviewListwMemberIdQuery = (
     AxiosError,
     ReviewInfiniteScrollListType,
     ReviewInfiniteScrollListType,
-    (string | number)[]
+    string[]
   >
 ): UseInfiniteQueryResult<ReviewInfiniteScrollListType, AxiosError> =>
   useInfiniteQuery(
@@ -65,7 +65,7 @@ export const useGetReviewListCompanyIdQuery = (
     AxiosError,
     ReviewInfiniteScrollListType,
     ReviewInfiniteScrollListType,
-    (string | number)[]
+    string[]
   >
 ): UseInfiniteQueryResult<ReviewInfiniteScrollListType, AxiosError> =>
   useInfiniteQuery(
@@ -85,7 +85,7 @@ export const useGetReviewInfoIdQuery = (
     ReviewListType[],
     AxiosError,
     ReviewListType[],
-    (string | number)[]
+    string[]
   >
 ): UseQueryResult<ReviewListType[], AxiosError> =>
   useQuery(

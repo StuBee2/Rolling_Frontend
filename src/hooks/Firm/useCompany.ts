@@ -9,10 +9,9 @@ import { useCallback } from "react";
 import { useRef, MutableRefObject } from "react";
 import { customAxios } from "../../libs/Axios/customAxios";
 import { QueryClient } from "react-query";
-// import { usePostCompanyRegister } from "../../queries/Company/company.query";
 import { usePostCompanyRegisterMutation } from "../../queries/Company/company.query";
-// import {usePost}
 import { CompanyParam } from "../../repositories/Company/company.param";
+import { useNavigate } from "react-router-dom";
 
 export const useCompany = () => {
   const [firmaddress, setFrimAddress] =
@@ -23,6 +22,7 @@ export const useCompany = () => {
 
   const queryClient = new QueryClient();
   const CompanyMutation = usePostCompanyRegisterMutation();
+  const navigate = useNavigate();
 
   const onAddressChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,6 +65,7 @@ export const useCompany = () => {
       onSuccess: () => {
         queryClient.invalidateQueries("/company");
         console.log(data);
+        navigate("/");
       },
       onError: (e: any) => {
         console.log(e);
