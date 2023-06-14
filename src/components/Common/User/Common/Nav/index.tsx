@@ -5,23 +5,13 @@ import { useLogging } from "../../../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../../../constants/Log/log.constants";
 import { useLogout } from "../../../../../hooks/Auth/useLogout";
 import { useGetMyInfoQuery } from "../../../../../queries/Member/Member.query";
-import { MemberType } from "../../../../../types/member.type";
-import { Dispatch, SetStateAction, useEffect } from "react";
 
-interface Props {
-  setMyInfo: Dispatch<SetStateAction<MemberType | null>>;
-}
-
-export default function Nav({ setMyInfo }: Props) {
+export default function Nav() {
   const navigate = useNavigate();
   const { handleLoggingClick } = useLogging();
   const { handleLogout } = useLogout();
   const { pathname } = useLocation();
   const { data } = useGetMyInfoQuery();
-
-  useEffect(() => {
-    setMyInfo(data!!);
-  }, [data]);
 
   return (
     <S.UserNavBar>

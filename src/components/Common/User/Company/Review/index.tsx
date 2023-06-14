@@ -37,7 +37,7 @@ export default function Review() {
                 </div>
                 <ul>
                   <li>
-                    {Array.from({ length: 5 }).map((_, idx) => (
+                    {Array.from({ length: review.totalGrade }).map((_, idx) => (
                       <span key={idx}>
                         <AiFillStar color="#ff7f23" size={20} />
                       </span>

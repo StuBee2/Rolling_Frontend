@@ -1,18 +1,12 @@
 import * as S from "./style";
-import { MemberType } from "../../../../types/member.type";
-import React from "react";
 import Skill from "./Skill";
 import MyInfo from "./MyInfo";
 
-interface Props {
-  myInfo: MemberType;
-}
-
-function Profile({ myInfo }: Props) {
+function Profile() {
   return (
     <>
       <S.ProfileContainer>
-        <MyInfo data={myInfo} />
+        <MyInfo />
       </S.ProfileContainer>
       <S.ProfileContainer>
         <Skill />
@@ -20,4 +14,4 @@ function Profile({ myInfo }: Props) {
     </>
   );
 }
-export default React.memo(Profile);
+export default Profile;
