@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { Able, Body, CommonWrap, ListContainer } from "../style";
 import { FiX } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
-import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
+import stringEllipsis from "../../../../../libs/Common/stringEllipsis";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";
 
 export default function Review() {

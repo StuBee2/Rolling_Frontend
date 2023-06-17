@@ -22,3 +22,8 @@ export interface NavMemberProfileType {
   name: string;
   email: string;
 }
+
+export interface MemberImgNameType {
+  imageUrl: string;
+  name: string;
+}

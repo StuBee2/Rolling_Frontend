@@ -28,7 +28,7 @@ export interface CompanyRepository {
     { page }: CommonPageParam
   ): Promise<CompanyInfiniteScrollType>;
 
-  getCompanyList(): Promise<CompanyListType[]>;
+  getCompanyList({ page }: CommonPageParam): Promise<CompanyInfiniteScrollType>;
 
   getCompanyListId(
     { id }: CommonIdParam,
