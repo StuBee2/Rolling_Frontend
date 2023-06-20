@@ -1,5 +1,6 @@
 import { customAxios } from "../../libs/Axios/customAxios";
 import {
+  CompanyID,
   CompanyInfiniteScrollType,
   CompanyInfoType,
   CompanyListType,
@@ -77,6 +78,20 @@ class CompanyRepositoryImpl implements CompanyRepository {
     const { data } = await customAxios.get("/company/rank/balance");
     return data;
   }
+
+  // public async deleteCompany({ companyId }: CompanyID): Promise<Response> {
+  //   const { data } = await customAxios.delete("/company", {
+  //     companyId,
+  //   });
+  // }
+
+  // public async deleteCompany({
+  //   companyId,
+  // }: CompanyID): Promise<CompanyInfoType> {
+  //   const { data } = await customAxios.delete("/company", companyId);
+  //   console.log(data);
+  //   return data;
+  // }
 }
 
 export default new CompanyRepositoryImpl();

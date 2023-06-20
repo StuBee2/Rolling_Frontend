@@ -4,7 +4,7 @@ import { CommonIdParam } from "../../../repositories/common.param";
 
 const CompanyDetail = () => {
   const { id } = useParams();
-  console.log(id);
+
   return (
     <>
       <CompanyDetailList id={id!!} />

@@ -101,4 +101,5 @@ export const usePostReviewMutation = () => {
   const mutation = useMutation((reviewInfo: ReviewParam) =>
     ReviewRepositoryImpl.postReview(reviewInfo)
   );
+  return mutation;
 };

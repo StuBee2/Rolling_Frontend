@@ -8,9 +8,10 @@ import {
   reviewEtc,
 } from "../../store/review/reviewStore";
 import { useCallback } from "react";
-// import { ReviewParam } from "../../repositories/Review/review.param";
+import { ReviewParam } from "../../repositories/Review/review.repository";
 import { QueryClient } from "react-query";
-// import { usePostReview } from "../../queries/Review/review.query";
+import { usePostReviewMutation } from "../../queries/Review/review.query";
+import { companyIdAtom } from "../../store/review/reviewStore";
 
 export const useReview = () => {
   const [position, setPosition] = useRecoilState<string>(reviewPosition);
@@ -21,9 +22,11 @@ export const useReview = () => {
   const [salaryGrade, setsalaryGrade] = useRecoilState<number>(salaryGradeAtom);
   const [welfareGrade, setwelfareGrade] =
     useRecoilState<number>(welfareGradeAtom);
+  const [companyidatom, setCompanyIdAtom] =
+    useRecoilState<string>(companyIdAtom);
 
   const queryClient = new QueryClient();
-  // const ReviewMutation = usePostReview();
+  const ReviewMutation = usePostReviewMutation();
 
   const onPositionChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,31 +49,31 @@ export const useReview = () => {
     [setEtc]
   );
 
-  // const onReviewRegister = useCallback((companyId: string) => {
-  //   const data: ReviewParam = {
-  //     companyId: companyId,
-  //     content: etc,
-  //     position: position,
-  //     careerPath: careerPath,
-  //     balanceGrade: balanceGrade,
-  //     salaryGrade: salaryGrade,
-  //     welfareGrade: welfareGrade,
-  //   };
-  //   ReviewMutation.mutate(data, {
-  //     onSuccess: () => {
-  //       queryClient.invalidateQueries("/review");
-  //       console.log(data);
-  //     },
-  //     onError: (e: any) => {
-  //       console.log(e);
-  //     },
-  //   });
-  // }, []);
+  const onReviewRegister = useCallback((companyId: string) => {
+    const data: ReviewParam = {
+      companyId: companyId,
+      content: etc,
+      position: position,
+      careerPath: careerPath,
+      balanceGrade: balanceGrade,
+      salaryGrade: salaryGrade,
+      welfareGrade: welfareGrade,
+    };
+    ReviewMutation.mutate(data, {
+      onSuccess: () => {
+        queryClient.invalidateQueries("/review");
+        console.log(data);
+      },
+      onError: (e: any) => {
+        console.log(e);
+      },
+    });
+  }, []);
 
   return {
     onPositionChange,
     onCareerPathChange,
     onEtcChange,
-    // onReviewRegister,
+    onReviewRegister,
   };
 };
