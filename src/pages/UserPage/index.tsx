@@ -1,7 +1,7 @@
-import User from "../../components/Common/User";
-import Regist from "../../components/Common/User/Company/Regist";
-import Review from "../../components/Common/User/Company/Review";
-import Profile from "../../components/Common/User/Profile";
+import User from "../../components/User";
+import Regist from "../../components/User/Company/Regist";
+import Review from "../../components/User/Company/Review";
+import Profile from "../../components/User/Profile";
 
 interface Props {
   page: number;

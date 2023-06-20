@@ -6,11 +6,11 @@ import { ModalWrap } from "../style";
 import { useLogout } from "../../../../hooks/Auth/useLogout";
 import { useLogging } from "../../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../../constants/Log/log.constants";
-import { MemberImgName } from "../../../../store/member/member.store";
+import { MyMemberInfo } from "../../../../store/member/member.store";
 
-export default function SimpleInfo() {
+export default function Info() {
   const setSimpleInfo = useSetRecoilState(SimpleInfoModal);
-  const memberImgName = useRecoilValue(MemberImgName);
+  const myMemberInfo = useRecoilValue(MyMemberInfo);
   const { handleLogout } = useLogout();
   const { handleLoggingClick } = useLogging();
 
@@ -19,9 +19,9 @@ export default function SimpleInfo() {
     <ModalWrap onClick={() => setSimpleInfo(false)}>
       <S.SimpleInfoContainer onClick={(e) => e.stopPropagation()}>
         <S.Profile>
-          <img src={memberImgName.imageUrl} alt="" />
+          <img src={myMemberInfo?.socialDetails.imageUrl} alt="" />
           <div>
-            <S.Name>{memberImgName.name}</S.Name>
+            <S.Name>{myMemberInfo?.socialDetails.name}</S.Name>
             <S.EditProfile>롤링 프로필 수정하기</S.EditProfile>
           </div>
         </S.Profile>

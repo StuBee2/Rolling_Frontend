@@ -4,10 +4,12 @@ export const Header = styled.div`
   width: 100%;
   height: 108px;
   font-size: 19px;
+  background-color: #f9fafb;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 export const HeaderWrap = styled.div`
@@ -17,6 +19,10 @@ export const HeaderWrap = styled.div`
   align-items: center;
   justify-content: space-between;
   white-space: nowrap;
+  overflow-x: scroll;
+  @media screen and (max-width: 573px) {
+    width: 95%;
+  }
 `;
 
 export const PageContainer = styled.div`
@@ -34,10 +40,6 @@ export const PageContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 25px;
-
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
 `;
 
