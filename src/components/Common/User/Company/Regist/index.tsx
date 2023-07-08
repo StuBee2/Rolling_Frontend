@@ -14,7 +14,7 @@ export default function Regist() {
   });
   const { ref, inView } = useInView();
   const navigate = useNavigate();
-  console.log(registList);
+  // console.log(registList);
   useEffect(() => {
     if (inView) {
       fetchNextPage();

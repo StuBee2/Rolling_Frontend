@@ -68,18 +68,21 @@ export const useGetCompanySerachListQuery = (
   );
 
 export const useGetCompanyListQuery = (
-  options?: UseQueryOptions<
-    CompanyListType[],
+  options?: UseInfiniteQueryOptions<
+    CompanyInfiniteScrollType,
     AxiosError,
-    CompanyListType[],
+    CompanyInfiniteScrollType,
+    CompanyInfiniteScrollType,
     string
   >
-): UseQueryResult<CompanyListType[], AxiosError> =>
-  useQuery(
+): UseInfiniteQueryResult<CompanyInfiniteScrollType, AxiosError> =>
+  useInfiniteQuery(
     QUERY_KEYS.company.getListCompany,
-    () => CompanyRepositoryImpl.getCompanyList(),
+    ({ pageParam = 1 }) =>
+      CompanyRepositoryImpl.getCompanyList({ page: pageParam }),
     {
       ...options,
+      getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
 

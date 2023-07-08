@@ -12,6 +12,7 @@ import { ReviewParam } from "../../repositories/Review/review.repository";
 import { QueryClient } from "react-query";
 import { usePostReviewMutation } from "../../queries/Review/review.query";
 import { companyIdAtom } from "../../store/review/reviewStore";
+import useModal from "../util/useModal";
 
 export const useReview = () => {
   const [position, setPosition] = useRecoilState<string>(reviewPosition);
@@ -22,8 +23,11 @@ export const useReview = () => {
   const [salaryGrade, setsalaryGrade] = useRecoilState<number>(salaryGradeAtom);
   const [welfareGrade, setwelfareGrade] =
     useRecoilState<number>(welfareGradeAtom);
-  const [companyidatom, setCompanyIdAtom] =
-    useRecoilState<string>(companyIdAtom);
+  const [companyidatom, setCompanyIdAtom] = useRecoilState<string | undefined>(
+    companyIdAtom
+  );
+
+  const { close } = useModal();
 
   const queryClient = new QueryClient();
   const ReviewMutation = usePostReviewMutation();
@@ -49,9 +53,9 @@ export const useReview = () => {
     [setEtc]
   );
 
-  const onReviewRegister = useCallback((companyId: string) => {
+  const onReviewRegister = useCallback(() => {
     const data: ReviewParam = {
-      companyId: companyId,
+      companyId: "68648334-7eed-4975-a7db-0056a447b1f9",
       content: etc,
       position: position,
       careerPath: careerPath,
@@ -63,6 +67,15 @@ export const useReview = () => {
       onSuccess: () => {
         queryClient.invalidateQueries("/review");
         console.log(data);
+        setCarreerPath("");
+        setCompanyIdAtom("");
+        setEtc("");
+        setPosition("");
+        setbalanceGrade(0);
+        setsalaryGrade(0);
+        setwelfareGrade(0);
+
+        close();
       },
       onError: (e: any) => {
         console.log(e);

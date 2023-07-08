@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const CompanyDetailBox = styled.div`
   display: flex;
-  /* flex-direction: column; */
+  /* background-color: gr; */
 `;
 
 export const CompanySidebarBox = styled.div``;
 export const CompanySidebar = styled.div`
   display: flex;
 
-  margin-top: 100px;
+  margin-top: 10%;
 `;
 
 export const CompanySidebarList = styled.div`
@@ -44,9 +44,13 @@ export const CompanyStar = styled.div`
 export const CompanyProfileInfoBox = styled.div`
   display: flex;
   flex-direction: column;
+
+  /* .test22 {
+    opacity: 0.5;
+  } */
 `;
 export const CompanyText = styled.div`
-  margin-top: 90px;
+  margin-top: 1%;
   .title {
     font-size: 34px;
     font-weight: bold;
@@ -60,9 +64,8 @@ export const CompanyText = styled.div`
 `;
 export const StarTitleBox = styled.div`
   display: flex;
-
   margin-top: 30px;
-  margin-left: 10px;
+  margin-left: 22px;
 
   .StarTitleIcon {
     display: flex;
@@ -100,7 +103,6 @@ export const ProfileImgBox = styled.div`
   width: 125px;
   height: 125px;
 
-  z-index: 2;
   .ProfileImg {
     display: flex;
     justify-content: center;
@@ -110,7 +112,7 @@ export const ProfileImgBox = styled.div`
 export const ProfileNameBox = styled.div`
   display: flex;
   align-items: center;
-  z-index: 1;
+  z-index: -1;
 `;
 
 export const ProfileNamelist = styled.div`
@@ -137,9 +139,8 @@ export const ProfileNamelist = styled.div`
 
 export const CompanyInfoBox = styled.div`
   display: flex;
-
   flex-direction: column;
-  /* border-radius: 10px; */
+  z-index: -2;
 `;
 export const CompanyInfoList = styled.div`
   background-color: #f3f4f5;
@@ -148,6 +149,7 @@ export const CompanyInfoList = styled.div`
   width: 60vw;
   height: 50vh;
   margin-top: -5%;
+  margin-bottom: 2%;
 `;
 export const CompanyBasicInfo = styled.div`
   margin-top: 7%;
@@ -211,3 +213,23 @@ export const CompanyDetailContent = styled.div`
 `;
 
 export const CompanyImg = styled.div``;
+
+export const ReviewRegister = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const ReviewButton = styled.button`
+  width: 120px;
+  height: 40px;
+  background-color: #1d1e5a;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 1px 1px #bfc0c0;
+  font-weight: bold;
+`;
+
+// export const tlqkf = styled.div`
+//   background-color: gray;
+//   height: 100vh;
+// `;

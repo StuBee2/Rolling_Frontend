@@ -1,7 +1,5 @@
-import { useGetReviewInfoIdQuery } from "../../../../queries/Review/review.query";
+import { useState, useEffect } from "react";
 import { useGetCompanyInfoIdQuery } from "../../../../queries/Company/company.query";
-import { CommonIdParam } from "../../../../repositories/common.param";
-import { useReview } from "../../../../hooks/FirmReview/useReview";
 import { companyIdAtom } from "../../../../store/review/reviewStore";
 import { useRecoilState } from "recoil";
 import useModal from "../../../../hooks/util/useModal";
@@ -9,6 +7,7 @@ import FirmReview from "../../Company/Review";
 import * as D from "./style";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { AiTwotoneMedicineBox } from "react-icons/ai";
+import { useReview } from "../../../../hooks/FirmReview/useReview";
 
 interface Props {
   id: string;
@@ -17,17 +16,21 @@ interface Props {
 const CompanyDetailList = ({ id }: Props) => {
   //디자인을 아직 하고있어서 대충 데이터만 해놓은거니 만지지 마시오
   const { data: getCompanyInfo } = useGetCompanyInfoIdQuery({ id });
-  const [companyidatom, setCompanyIdAtom] =
-    useRecoilState<string>(companyIdAtom);
+  const [companyidatom, setCompanyIdAtom] = useRecoilState<string | undefined>(
+    companyIdAtom
+  );
+  console.log(companyidatom);
   const { open } = useModal();
+
+  const { onReviewRegister } = useReview();
   // const navgate = useNavigate();
 
-  // useEffect(() => {
-  //   if (getCompanyInfo?.companyId) {
-  //     setCompanyIdAtom(getCompanyInfo.companyId);
-  //   }
-  // }, [getCompanyInfo]);
-
+  const [modalBackground, getModalBackground] = useState("false");
+  useEffect(() => {
+    if (getCompanyInfo?.companyId) {
+      setCompanyIdAtom(getCompanyInfo.companyId);
+    }
+  }, [getCompanyInfo]);
   return (
     <D.CompanyDetailBox>
       <D.CompanySidebarBox>
@@ -71,6 +74,7 @@ const CompanyDetailList = ({ id }: Props) => {
               className="ProfileImg"
             />
           </D.ProfileImgBox>
+
           <D.ProfileNameBox>
             <D.ProfileNamelist>
               <div className="ProfileName">
@@ -116,11 +120,25 @@ const CompanyDetailList = ({ id }: Props) => {
             <D.CompanyImg></D.CompanyImg>
           </D.CompanyInfoList>
         </D.CompanyInfoBox>
+        <D.ReviewRegister>
+          <D.ReviewButton
+            onClick={() => {
+              open();
+              // setCompanyIdAtom(getCompanyInfo?.companyId);
+            }}
+          >
+            리뷰 쓰기
+          </D.ReviewButton>
+        </D.ReviewRegister>
+        <div className="test22">
+          <FirmReview
+            value={modalBackground}
+            getModalBackground={getModalBackground}
+          />
+        </div>
       </D.CompanyProfileInfoBox>
 
-      <div>
-        <button>리뷰 등록</button>
-      </div>
+      {/* <Review /> */}
 
       {/* <div>
        <img

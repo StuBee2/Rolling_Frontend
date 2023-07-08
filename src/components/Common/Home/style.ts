@@ -1,10 +1,11 @@
 import styled from "styled-components";
+
 import { HiArrowUp } from "react-icons/hi";
 import { AiFillExclamationCircle } from "react-icons/ai";
 
 export const body = styled.div`
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 108px);
   background-color: #101013;
   color: white;
   overflow: hidden;

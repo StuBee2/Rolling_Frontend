@@ -24,7 +24,7 @@ export default function Router() {
         />
       ))}
       <Route path="/register" element={<RegisterPage />} />
-      {/* <Route path="/review" element={<ReviewPage />} /> */}
+      <Route path="/review" element={<ReviewPage />} />
       <Route path="*" element={<NotFound />} />
       <Route path="/registe/:id" element={<CompanyDetail />} />
     </Routes>

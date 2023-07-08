@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, ChangeEvent } from "react";
 import * as R from "./style";
-import StarScope from "./ReviewStarScope";
 import StarRating from "./ReviewStarScope";
-// import { useGetCompanyInfo } from "../../../../queries/Company/company.query";
-
 import { useRecoilState } from "recoil";
 import {
   reviewCareerPath,
@@ -19,10 +16,12 @@ import {
 import { companyIdAtom } from "../../../../store/review/reviewStore";
 import Modal from "../../Modal";
 import useModal from "../../../../hooks/util/useModal";
+import { FaPen } from "react-icons/fa";
 
-const FirmReview = () => {
-  const [companyidatom, setCompanyIdAtom] =
-    useRecoilState<string>(companyIdAtom);
+const FirmReview = (props: any) => {
+  const [companyidatom, setCompanyIdAtom] = useRecoilState<string | undefined>(
+    companyIdAtom
+  );
   const [position, setPosition] = useRecoilState<string>(reviewPosition);
   const [careerPath, setCarreerPath] = useRecoilState<string>(reviewCareerPath);
   const [etc, setEtc] = useRecoilState<string>(reviewEtc);
@@ -37,7 +36,12 @@ const FirmReview = () => {
   const [salaryGrade, setsalaryGrade] = useRecoilState<number>(salaryGradeAtom);
   const [welfareGrade, setwelfareGrade] =
     useRecoilState<number>(welfareGradeAtom);
-  const { close, isOpen } = useModal();
+  const { close, isOpen, open } = useModal();
+
+  console.log(position);
+  console.log(careerPath);
+  console.log(etc);
+  // const { open } = useModal();
 
   useEffect(() => {
     console.log(balanceGrade);
@@ -64,52 +68,87 @@ const FirmReview = () => {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={close}>
-      <R.ReviewBox>
-        <R.ReviewTitle>기업 리뷰</R.ReviewTitle>
+    <R.Container>
+      <Modal isOpen={isOpen} onClose={close}>
+        <R.CompanyReview
+          onClick={(e: ChangeEvent<any>) => {
+            e.stopPropagation();
+          }}
+        >
+          <R.ReviewBox>
+            <R.ReviewTitleBox>
+              <R.ReviewTitle>
+                리뷰 작성
+                <FaPen style={{ marginLeft: "10px", fontSize: "22px" }} />
+              </R.ReviewTitle>
+              <R.CloseIcons onClick={close} />
+            </R.ReviewTitleBox>
+            <div></div>
+            <R.ReviewRegisterBox>
+              <div className="test">
+                <R.Text isText={true}>
+                  포지션<div style={{ color: "#EC6A5E" }}>*</div>
+                </R.Text>
+                <R.Input
+                  onChange={(e) => onPositionChange(e)}
+                  value={position}
+                />
 
-        <R.ReviewList>
-          <R.Text>포지션</R.Text>
-          <R.ReviewExplanation>
-            (회사에서 자신이 어떤 직무를 맡고 있는지 자세하게 써주세요)
-            <br />
-            ex 프론트엔드 개발자 홈페이지 개발
-          </R.ReviewExplanation>
-          <R.Input value={position} onChange={onPositionChange} />
-          <R.Text>입사경로</R.Text>
-          <R.Input value={careerPath} onChange={onCareerPathChange} />
-          <R.Text>회사 만족도(워라벨)</R.Text>
-          <R.ReviewExplanation>(워라벨를 평가해주세요)</R.ReviewExplanation>
-          <StarRating
-            totalStars={5}
-            initialRating={balanceGrade}
-            onChangeRating={balanceGradeChange}
-          />
-          <R.Text>회사 만족도(연봉)</R.Text>
-          <R.ReviewExplanation>(연봉을 평가해주세요)</R.ReviewExplanation>
-          <StarRating
-            totalStars={5}
-            initialRating={salaryGrade}
-            onChangeRating={salaryGradeChange}
-          />
-          <R.Text>회사 만족도(복지)</R.Text>
-          <R.ReviewExplanation>(복지를 평가해주세요)</R.ReviewExplanation>
-          <StarRating
-            totalStars={5}
-            initialRating={welfareGrade}
-            onChangeRating={welfareChange}
-          />
+                <R.Text isText={true}>
+                  입사경로<div style={{ color: "#EC6A5E" }}>*</div>
+                </R.Text>
+                <R.Input
+                  onChange={(e) => onCareerPathChange(e)}
+                  value={careerPath}
+                />
 
-          <R.Text>기타</R.Text>
-          <R.Input value={etc} onChange={onEtcChange} />
+                <R.Text isText={true}>
+                  회사 만족도<div style={{ color: "#EC6A5E" }}>*</div>
+                </R.Text>
 
-          <button onClick={() => onReviewRegister(companyidatom)}>
-            리뷰등록하기
-          </button>
-        </R.ReviewList>
-      </R.ReviewBox>
-      {/* 모달테스트 */}
-    </Modal>
+                <R.Text isText={false}>워라벨별점</R.Text>
+                <R.ReviewExplanation>
+                  (워라벨를 평가해주세요)
+                </R.ReviewExplanation>
+                <StarRating
+                  totalStars={5}
+                  initialRating={balanceGrade}
+                  onChangeRating={balanceGradeChange}
+                />
+
+                <R.Text isText={false}>연봉별점</R.Text>
+                <R.ReviewExplanation>(연봉을 평가해주세요)</R.ReviewExplanation>
+                <StarRating
+                  totalStars={5}
+                  initialRating={salaryGrade}
+                  onChangeRating={salaryGradeChange}
+                />
+
+                <R.Text isText={false}>복지별점</R.Text>
+                <R.ReviewExplanation>(복지를 평가해주세요)</R.ReviewExplanation>
+                <StarRating
+                  totalStars={5}
+                  initialRating={welfareGrade}
+                  onChangeRating={welfareChange}
+                />
+
+                <R.Text isText={true}>
+                  기타<div style={{ color: "#EC6A5E" }}>*</div>
+                </R.Text>
+                <R.Input onChange={(e) => onEtcChange(e)} value={etc} />
+              </div>
+            </R.ReviewRegisterBox>
+            <R.ReviewButtonBox>
+              <R.ReviewButton onClick={() => onReviewRegister()}>
+                리뷰 등록
+              </R.ReviewButton>
+            </R.ReviewButtonBox>
+          </R.ReviewBox>
+        </R.CompanyReview>
+
+        {/* 모달테스트 */}
+      </Modal>
+    </R.Container>
   );
 };
 

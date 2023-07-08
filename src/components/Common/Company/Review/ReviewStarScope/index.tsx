@@ -31,7 +31,7 @@ const StarRating: React.FC<RatingProps> = ({
             onClick={() => handleStarClick(starValue)}
             style={{
               cursor: "pointer",
-              color: starValue <= rating ? "gold" : "gray",
+              color: starValue <= rating ? "gold" : "#D9D9D9",
               fontSize: "30pxs",
             }}
           >

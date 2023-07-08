@@ -1,53 +1,74 @@
-import React from "react";
-import * as S from "./header.style";
+import * as S from "./style";
 import { useNavigate } from "react-router-dom";
-import { CATEGORY_ITEMS } from "../../../constants/Home/Home.constants";
-import LogoImg from "../../../assets/Logo.png";
-import Token from "../../../libs/Token/Token";
+import Logo from "../../../assets/Logo.svg";
+import Search1 from "../../../assets/Search1.svg";
+import { useState } from "react";
+import { HEADER_ITEMS } from "../../../constants/Common/common.constant";
+import token from "../../../libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "../../../constants/Auth/auth.constant";
-import { useLogging } from "../../../hooks/Log/useLogging";
-import { LOG_ITEM } from "../../../constants/Log/log.constants";
-import { useLogout } from "../../../hooks/Auth/useLogout";
+import { useGetMyInfoQuery } from "../../../queries/Member/Member.query";
+import { useSetRecoilState } from "recoil";
+import {
+  SearchModal,
+  SimpleInfoModal,
+} from "../../../store/common/common.store";
+import { MemberImgName } from "../../../store/member/member.store";
 
 export default function Header() {
   const navigate = useNavigate();
-  const { handleLoggingClick } = useLogging();
-  const { handleLogout } = useLogout();
+  const setSearch = useSetRecoilState<boolean>(SearchModal);
+  const setSimpleInfo = useSetRecoilState<boolean>(SimpleInfoModal);
+  const setMemberImgName = useSetRecoilState(MemberImgName);
+  const [select, setSelect] = useState<string>("홈 피드");
+  const { data } = useGetMyInfoQuery();
 
-  const handleCategoryClick = (categoryId: number) => {
-    if (categoryId === 4) {
-      handleLogout();
-    } else {
-      handleLoggingClick(LOG_ITEM[categoryId]);
-    }
+  const handlePageClick = (name: string, link: string) => {
+    setSelect(name);
+    navigate(link);
   };
 
   return (
     <S.Header>
-      <S.Logo onClick={() => navigate("/")}>
-        <img src={LogoImg} alt="" />
-        <div>Rolling</div>
-      </S.Logo>
+      <S.HeaderWrap>
+        <S.PageContainer>
+          <img
+            src={Logo}
+            onClick={() => {
+              handlePageClick("홈 피드", "/");
+            }}
+            alt=""
+          />
+          <ul>
+            {HEADER_ITEMS.map((item) => (
+              <S.PageList
+                key={item.id}
+                onClick={() => handlePageClick(item.name, item.link)}
+                isSelect={select === item.name}
+              >
+                {item.name}
+              </S.PageList>
+            ))}
+          </ul>
+        </S.PageContainer>
 
-      <div>
-        {CATEGORY_ITEMS.map((category) => (
-          <div key={category.id}>
-            {Token.getToken(ACCESS_TOKEN_KEY)
-              ? category.id !== 0 && (
-                  <S.CategoryLink
-                    onClick={() => handleCategoryClick(category.id)}
-                  >
-                    {category.categoryName}
-                  </S.CategoryLink>
-                )
-              : category.id === 0 && (
-                  <S.CategoryLink onClick={() => navigate("/login")}>
-                    {category.categoryName}
-                  </S.CategoryLink>
-                )}
-          </div>
-        ))}
-      </div>
+        <S.LoginSearchContainer>
+          <S.Search src={Search1} onClick={() => setSearch(true)} />
+          {token.getToken(ACCESS_TOKEN_KEY) ? (
+            <S.ProfileImg
+              src={data?.socialDetails.imageUrl}
+              onClick={() => {
+                setSimpleInfo(true);
+                setMemberImgName({
+                  imageUrl: data?.socialDetails.imageUrl!!,
+                  name: data?.socialDetails.name!!,
+                });
+              }}
+            />
+          ) : (
+            <div onClick={() => navigate("/login")}>로그인</div>
+          )}
+        </S.LoginSearchContainer>
+      </S.HeaderWrap>
     </S.Header>
   );
 }

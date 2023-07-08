@@ -12,12 +12,12 @@ export const USER_ITEMS: Type[] = [
   },
   {
     id: 2,
-    link: "/mypage/myregist",
+    link: "/mypage/regist",
     title: "등록한 기업",
   },
   {
     id: 3,
-    link: "/mypage/myreview",
+    link: "/mypage/review",
     title: "리뷰한 기업",
   },
 ];

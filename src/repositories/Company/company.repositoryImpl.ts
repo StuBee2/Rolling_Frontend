@@ -37,9 +37,13 @@ class CompanyRepositoryImpl implements CompanyRepository {
     return { ...data, nextPage: page + 1 };
   }
 
-  public async getCompanyList(): Promise<CompanyListType[]> {
-    const { data } = await customAxios.get("/company/list");
-    return data;
+  public async getCompanyList({
+    page,
+  }: CommonPageParam): Promise<CompanyInfiniteScrollType> {
+    const { data } = await customAxios.get(
+      `/company/list&page=${page}&size=10`
+    );
+    return { ...data, nextPage: page + 1 };
   }
 
   public async getCompanyListId(

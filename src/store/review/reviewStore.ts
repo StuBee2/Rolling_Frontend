@@ -30,7 +30,7 @@ export const welfareGradeAtom = atom<number>({
   default: 0,
 });
 
-export const companyIdAtom = atom<string>({
+export const companyIdAtom = atom<string | undefined>({
   key: "companyIdAtom",
   default: "",
 });

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import * as S from "./home.style";
+import * as S from "./style";
 import RankingImg from "../../../assets/RankingImg.png";
 import kakaoMap from "./KakaoMapScrip";
 import Token from "../../../libs/Token/Token";
