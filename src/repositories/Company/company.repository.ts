@@ -16,6 +16,10 @@ export interface CompanyNameParam {
   name: string;
 }
 
+export interface CompanyIdParam {
+  companyId: string;
+}
+
 export interface CompanyRepository {
   postRegister(companyData: CompanyParam): Promise<CompanyListType>;
 
@@ -37,11 +41,15 @@ export interface CompanyRepository {
 
   getCompanyInfoId({ id }: CommonIdParam): Promise<CompanyInfoType>;
 
-  getCompanyRankWelfare(): Promise<CompanyListType[]>;
+  getCompanyRankSalaryBenefits(): Promise<CompanyListType[]>;
 
   getCompanyRankTotal(): Promise<CompanyListType[]>;
 
-  getCompanyRankSalary(): Promise<CompanyListType[]>;
+  getCompanyRankCulture(): Promise<CompanyListType[]>;
+
+  getCompanyRankCareer(): Promise<CompanyListType[]>;
 
   getCompanyRankBalance(): Promise<CompanyListType[]>;
+
+  deleteCompany(companyId: CompanyIdParam): Promise<void>;
 }

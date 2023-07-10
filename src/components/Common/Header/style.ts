@@ -31,8 +31,8 @@ export const PageContainer = styled.div`
   align-items: center;
 
   img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
   }
 
@@ -59,15 +59,15 @@ export const LoginSearchContainer = styled.div`
 `;
 
 export const Search = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
 `;
 
 export const ProfileImg = styled.img`
-  width: 55px;
-  height: 55px;
-
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
   cursor: pointer;
   border-radius: 8px;
 `;

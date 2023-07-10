@@ -23,7 +23,8 @@ export const UserListContainer = styled.div`
   width: calc(100% - 330px);
   height: 100%;
   padding-top: 40px;
-
+  
+  padding-left:20px;
   display: flex;
   flex-direction: column;
   align-items: center;

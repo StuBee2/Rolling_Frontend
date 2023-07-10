@@ -39,9 +39,11 @@ export default function Review() {
           >
             <div style={{ fontSize: "20px", fontWeight: "bold" }}>Write</div>
             <div style={{ fontSize: "11px" }}>
-              {getTimeAgo(
-                new Date(reviewList?.pages[0].data[0].reviewCreatedAt!!)
-              )}{" "}
+              {reviewList?.pages[0].data[0]
+                ? getTimeAgo(
+                    new Date(reviewList?.pages[0].data[0].reviewCreatedAt!!)
+                  )
+                : "0"}{" "}
               업데이트 · 갯수 2
             </div>
           </div>
@@ -49,52 +51,48 @@ export default function Review() {
       </div>
 
       <S.ListWrap>
-        {reviewList!!.pages.length > 0 ? (
-          reviewList?.pages.map((data) =>
-            data.data.map((review) => (
-              <div
-                style={{ display: "flex", width: "100%", gap: "20px" }}
-                key={review.reviewId}
-                onMouseEnter={() => setMouseEnterEvent(review.reviewId)}
-                onMouseLeave={() => setMouseEnterEvent("")}
-              >
-                <S.ListContainer>
-                  <S.ListRegistDate>
-                    {getDateText(new Date(review.reviewCreatedAt))} 등록
-                  </S.ListRegistDate>
-                  <S.CompanyContainer>
-                    <S.CompanyImg src={review.companyImgUrl} />
-                    <S.CompanyAbleContainer>
-                      <S.CompanyName>{review.companyName}</S.CompanyName>
-                      <S.CompanyPostitionCareerPathContainer>
-                        <div>
-                          <S.CompanyPostitionCareerPath>
-                            포지션
-                          </S.CompanyPostitionCareerPath>{" "}
-                          · {review.reviewPosition}
-                        </div>
-                        <div>
-                          <S.CompanyPostitionCareerPath>
-                            입사경로
-                          </S.CompanyPostitionCareerPath>{" "}
-                          · {stringEllipsis(review.reviewCareerPath, 15)}
-                        </div>
-                      </S.CompanyPostitionCareerPathContainer>
-                    </S.CompanyAbleContainer>
-                  </S.CompanyContainer>
-                  <div>{stringEllipsis(review.reviewContent, 20)}</div>
-                </S.ListContainer>
-                {mouseEnterEvent === review.reviewId && (
-                  <div style={{ cursor: "pointer" }}>
-                    <img src={edit} alt="" />
-                    <img src={del} alt="" />
-                  </div>
-                )}
-              </div>
-            ))
-          )
-        ) : (
-          <div>리뷰한 회사가 없습니다.</div>
+        {reviewList?.pages.map((data) =>
+          data.data.map((review) => (
+            <div
+              style={{ display: "flex", width: "100%", gap: "20px" }}
+              key={review.reviewId}
+              onMouseEnter={() => setMouseEnterEvent(review.reviewId)}
+              onMouseLeave={() => setMouseEnterEvent("")}
+            >
+              <S.ListContainer>
+                <S.ListRegistDate>
+                  {getDateText(new Date(review.reviewCreatedAt))} 등록
+                </S.ListRegistDate>
+                <S.CompanyContainer>
+                  <S.CompanyImg src={review.companyImgUrl} />
+                  <S.CompanyAbleContainer>
+                    <S.CompanyName>{review.companyName}</S.CompanyName>
+                    <S.CompanyPostitionCareerPathContainer>
+                      <div>
+                        <S.CompanyPostitionCareerPath>
+                          포지션
+                        </S.CompanyPostitionCareerPath>{" "}
+                        · {review.reviewPosition}
+                      </div>
+                      <div>
+                        <S.CompanyPostitionCareerPath>
+                          입사경로
+                        </S.CompanyPostitionCareerPath>{" "}
+                        · {stringEllipsis(review.reviewCareerPath, 15)}
+                      </div>
+                    </S.CompanyPostitionCareerPathContainer>
+                  </S.CompanyAbleContainer>
+                </S.CompanyContainer>
+                <div>{stringEllipsis(review.reviewContent, 20)}</div>
+              </S.ListContainer>
+              {mouseEnterEvent === review.reviewId && (
+                <div style={{ cursor: "pointer" }}>
+                  <img src={edit} alt="" />
+                  <img src={del} alt="" />
+                </div>
+              )}
+            </div>
+          ))
         )}
       </S.ListWrap>
       <div ref={ref} />

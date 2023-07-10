@@ -14,7 +14,6 @@ const useTokenCheck = () => {
         !Token.getToken(ACCESS_TOKEN_KEY) ||
         !Token.getToken(REFRESH_TOKEN_KEY)
       ) {
-        window.alert("토큰이 없습니다");
         navigate("/");
       }
     };

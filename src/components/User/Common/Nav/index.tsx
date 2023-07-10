@@ -9,7 +9,6 @@ import { MyMemberInfo } from "../../../../store/member/member.store";
 
 export default function Nav() {
   const navigate = useNavigate();
-  const { handleLoggingClick } = useLogging();
   const { handleLogout } = useLogout();
   const { pathname } = useLocation();
   const myMemberInfo = useRecoilValue(MyMemberInfo);
