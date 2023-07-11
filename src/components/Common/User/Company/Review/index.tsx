@@ -1,10 +1,11 @@
-import { useGetMyReviewQuery } from "../../../../../queries/review/review.query";
+// import { useGetMyReviewQuery } from "../../../../../queries/review/review.query";
+import { useGetMyReviewQuery } from "../../../../../queries/Review/review.query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Able, Body, CommonWrap, ListContainer } from "../style";
 import { FiX } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
-import stringEllipsis from "../../../../../libs/Common/stringEllipsis";
+import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";
 
 export default function Review() {
@@ -26,7 +27,7 @@ export default function Review() {
           data.data.map((review) => (
             <ListContainer key={review.reviewId}>
               <Able isTop={true}>
-                <div style={{ fontSize: "13px" }}>
+                <div style={{ fontSize: "16px" }}>
                   {getDateText(new Date(review.reviewCreatedAt))} 등록
                 </div>
                 <FiX size={23} cursor="pointer" />

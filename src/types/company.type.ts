@@ -45,3 +45,11 @@ export interface CompanyInfoType {
   memberSocialId: string;
   memberImageUrl: string;
 }
+
+export interface CompanyInfoId {
+  id: number;
+}
+
+export interface CompanyID {
+  companyId: string;
+}
