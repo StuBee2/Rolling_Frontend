@@ -77,7 +77,7 @@ export const useReview = () => {
 
         close();
       },
-      onError: (e: any) => {
+      onError: (e) => {
         console.log(e);
       },
     });

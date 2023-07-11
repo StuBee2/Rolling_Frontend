@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const CompanyDetailBox = styled.div`
   display: flex;
-  /* background-color: gr; */
 `;
 
 export const CompanySidebarBox = styled.div``;
@@ -44,10 +43,6 @@ export const CompanyStar = styled.div`
 export const CompanyProfileInfoBox = styled.div`
   display: flex;
   flex-direction: column;
-
-  /* .test22 {
-    opacity: 0.5;
-  } */
 `;
 export const CompanyText = styled.div`
   margin-top: 1%;
@@ -61,6 +56,17 @@ export const CompanyText = styled.div`
   .text {
     color: #61677e;
   }
+`;
+
+export const Title = styled.div`
+  font-size: 34px;
+  font-weight: bold;
+
+  margin-bottom: 8px;
+`;
+
+export const Text = styled.div`
+  color: #61677e;
 `;
 export const StarTitleBox = styled.div`
   display: flex;
@@ -228,8 +234,3 @@ export const ReviewButton = styled.button`
   box-shadow: 3px 3px 1px 1px #bfc0c0;
   font-weight: bold;
 `;
-
-// export const tlqkf = styled.div`
-//   background-color: gray;
-//   height: 100vh;
-// `;

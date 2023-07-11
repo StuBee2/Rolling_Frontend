@@ -1,5 +1,11 @@
 import { Portal } from "../../Portal";
-import { ModalProps } from "./modal.type";
+import { CommonComponentProps } from "../common.type";
+// import { ModalProps } from "./modal.type";
+
+interface ModalProps extends CommonComponentProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
 const Modal = ({ isOpen, onClose, customStyle, children }: ModalProps) => {
   return (

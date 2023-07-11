@@ -14,7 +14,6 @@ interface Props {
 }
 
 const CompanyDetailList = ({ id }: Props) => {
-  //디자인을 아직 하고있어서 대충 데이터만 해놓은거니 만지지 마시오
   const { data: getCompanyInfo } = useGetCompanyInfoIdQuery({ id });
   const [companyidatom, setCompanyIdAtom] = useRecoilState<string | undefined>(
     companyIdAtom
@@ -23,7 +22,6 @@ const CompanyDetailList = ({ id }: Props) => {
   const { open } = useModal();
 
   const { onReviewRegister } = useReview();
-  // const navgate = useNavigate();
 
   const [modalBackground, getModalBackground] = useState("false");
   useEffect(() => {
@@ -60,10 +58,10 @@ const CompanyDetailList = ({ id }: Props) => {
 
       <D.CompanyProfileInfoBox>
         <D.CompanyText>
-          <div className="title">That's 기업 정보</div>
-          <div className="text">
+          <D.Title>That's 기업 정보</D.Title>
+          <D.Text>
             해당 기업의 세세한 정보를 빠르고 쉽게 알아볼 수 있어요
-          </div>
+          </D.Text>
         </D.CompanyText>
 
         <D.CompanyProfileBox>
@@ -97,12 +95,10 @@ const CompanyDetailList = ({ id }: Props) => {
             </D.CompanyBasicInfo>
             <D.CompanyDetailInfo>
               <D.CompanyDetailList>
-                {/* <div> */}
                 <img
                   src={getCompanyInfo?.companyImgUrl}
                   style={{ width: "70px", borderRadius: "5px" }}
                 />
-                {/* </div> */}
 
                 <D.CompanyDetailContent>
                   <div className="company-name">
