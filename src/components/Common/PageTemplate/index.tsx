@@ -8,7 +8,7 @@ import {
   SimpleInfoModal,
 } from "../../../store/common/common.store";
 import Search from "../Modal/Search";
-import SimpleInfo from "../Modal/SimpleInfo";
+import Info from "../Modal/Info";
 
 interface Props {
   children: ReactNode;
@@ -23,7 +23,7 @@ export default function PageTemplate({ children }: Props) {
       <GlobalStyle />
       {!hideHeader && <Header />}
       {searchModal && <Search />}
-      {simpleInfoModal && <SimpleInfo />}
+      {simpleInfoModal && <Info />}
       {children}
     </>
   );

@@ -19,9 +19,10 @@ export interface CompanyListType {
   };
   companyGrades: {
     totalGrade: number;
-    balanceGrade: number;
-    salaryGrade: number;
-    welfareGrade: number;
+    salaryAndBenefits: number;
+    workLifeBalance: number;
+    organizationalCulture: number;
+    careerAdvancement: number;
   };
   registrantId: {
     id: string;

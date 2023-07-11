@@ -9,9 +9,10 @@ export interface ReviewListType {
   reviewPosition: string;
   reviewCareerPath: string;
   totalGrade: number;
-  balanceGrade: number;
-  salaryGrade: number;
-  welfareGrade: number;
+  salaryAndBenefits: number;
+  workLifeBalance: number;
+  organizationalCulture: number;
+  careerAdvancement: number;
   reviewCreatedAt: string;
   reviewModifiedAt: string;
   companyId: string;
@@ -25,9 +26,10 @@ export interface ReviewInfoIdType {
   reviewPosition: string;
   reviewCareerPath: string;
   totalGrade: number;
-  balanceGrade: number;
-  salaryGrade: number;
-  welfareGrade: number;
+  salaryAndBenefits: number;
+  workLifeBalance: number;
+  organizationalCulture: number;
+  careerAdvancement: number;
   reviewCreatedAt: string;
   reviewModifiedAt: string;
   writerId: string;
@@ -49,9 +51,10 @@ export interface ReviewPostResponse {
   };
   reviewGrades: {
     totalGrade: number;
-    balanceGrade: number;
-    salaryGrade: number;
-    welfareGrade: number;
+    salaryAndBenefits: number;
+    workLifeBalance: number;
+    organizationalCulture: number;
+    careerAdvancement: number;
   };
   memberId: {
     id: string;

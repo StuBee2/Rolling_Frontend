@@ -12,8 +12,9 @@ export const SimpleInfoContainer = styled.div`
   z-index: 2;
   border-radius: 15px;
 
-  display: flex;
-  flex-direction: column;
+  @media screen and (max-width: 350px) {
+    width:280px;
+  }
 `;
 
 export const Profile = styled.div`
@@ -33,18 +34,13 @@ export const Profile = styled.div`
     height: 60px;
     border-radius: 10px;
   }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
 `;
 
 export const Name = styled.div`
   color: #ffffff;
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 5px;
 `;
 
 export const EditProfile = styled.div`

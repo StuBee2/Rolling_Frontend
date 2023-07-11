@@ -125,22 +125,6 @@ export const useGetCompanyInfoIdQuery = (
     }
   );
 
-export const useGetCompanyRankWelfareQuery = (
-  options?: UseQueryOptions<
-    CompanyListType[],
-    AxiosError,
-    CompanyListType[],
-    string
-  >
-): UseQueryResult<CompanyListType[], AxiosError> =>
-  useQuery(
-    QUERY_KEYS.company.getCompanyRankWelfare,
-    () => CompanyRepositoryImpl.getCompanyRankWelfare(),
-    {
-      ...options,
-    }
-  );
-
 export const useGetCompanyRankTotalQuery = (
   options?: UseQueryOptions<
     CompanyListType[],
@@ -157,7 +141,7 @@ export const useGetCompanyRankTotalQuery = (
     }
   );
 
-export const useGetCompanyRankSalaryQuery = (
+export const useGetCompanyRankSalaryBenefitsQuery = (
   options?: UseQueryOptions<
     CompanyListType[],
     AxiosError,
@@ -166,11 +150,37 @@ export const useGetCompanyRankSalaryQuery = (
   >
 ): UseQueryResult<CompanyListType[], AxiosError> =>
   useQuery(
-    QUERY_KEYS.company.getCompanyRankSalary,
-    () => CompanyRepositoryImpl.getCompanyRankSalary(),
-    {
-      ...options,
-    }
+    QUERY_KEYS.company.getCompanyRankSalaryBenefits,
+    () => CompanyRepositoryImpl.getCompanyRankSalaryBenefits(),
+    { ...options }
+  );
+
+export const useGetCompanyRankCulture = (
+  options?: UseQueryOptions<
+    CompanyListType[],
+    AxiosError,
+    CompanyListType[],
+    string
+  >
+): UseQueryResult<CompanyListType[], AxiosError> =>
+  useQuery(
+    QUERY_KEYS.company.getCompanyRankCulture,
+    () => CompanyRepositoryImpl.getCompanyRankCulture(),
+    { ...options }
+  );
+
+export const useGetCompanyRankCareer = (
+  options?: UseQueryOptions<
+    CompanyListType[],
+    AxiosError,
+    CompanyListType[],
+    string
+  >
+): UseQueryResult<CompanyListType[], AxiosError> =>
+  useQuery(
+    QUERY_KEYS.company.getCompanyRankCareer,
+    () => CompanyRepositoryImpl.getCompanyRankCareer(),
+    { ...options }
   );
 
 export const useGetCompanyRankBalanceQuery = (
@@ -182,7 +192,7 @@ export const useGetCompanyRankBalanceQuery = (
   >
 ): UseQueryResult<CompanyListType[], AxiosError> =>
   useQuery(
-    QUERY_KEYS.company.getCompanyRankWelfare,
+    QUERY_KEYS.company.getCompanyRankBalnce,
     () => CompanyRepositoryImpl.getCompanyRankBalance(),
     {
       ...options,
