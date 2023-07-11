@@ -1,39 +1,46 @@
+import React, { useState } from "react";
 import * as T from "./star.style";
-import { useStarScope } from "../../../../../hooks/Firm/useStarScope";
 
-interface Props {
-  setActive?: () => void;
-  //onClick?:
+interface RatingProps {
+  totalStars: number;
+  initialRating?: number;
+  onChangeRating?: (rating: number) => void;
 }
 
-export default function StarScope(/*{ onClick }: Props*/) {
-  const {
-    setClickedStarIndex,
-    setHoveredStarIndex,
-    fillStarOfIndex,
-    hoveredStarIndex,
-  } = useStarScope();
+const StarRating: React.FC<RatingProps> = ({
+  totalStars,
+  initialRating = 0,
+  onChangeRating,
+}) => {
+  const [rating, setRating] = useState(initialRating);
+
+  const handleStarClick = (selectedRating: number) => {
+    setRating(selectedRating);
+    if (onChangeRating) {
+      onChangeRating(selectedRating);
+    }
+  };
 
   return (
     <T.StarBox>
-      {[1, 2, 3, 4, 5].map((num) => (
-        <div
-          key={num}
-          onMouseEnter={() => setHoveredStarIndex(num)}
-          onMouseLeave={() => setHoveredStarIndex(0)}
-          onClick={() => {
-            setClickedStarIndex(num);
-            //onClick?.();
-          }}
-        >
+      {[...Array(totalStars)].map((_, index) => {
+        const starValue = index + 1;
+        return (
           <T.StarIcon
-            fill={fillStarOfIndex(
-              num,
-              hoveredStarIndex === 0 ? "leave" : "enter"
-            )}
-          />
-        </div>
-      ))}
+            key={starValue}
+            onClick={() => handleStarClick(starValue)}
+            style={{
+              cursor: "pointer",
+              color: starValue <= rating ? "gold" : "#D9D9D9",
+              fontSize: "30pxs",
+            }}
+          >
+            ★
+          </T.StarIcon>
+        );
+      })}
     </T.StarBox>
   );
-}
+};
+
+export default StarRating;

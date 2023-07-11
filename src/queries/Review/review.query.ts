@@ -10,7 +10,6 @@ import {
 import ReviewRepositoryImpl from "../../repositories/Review/review.repositoryImpl";
 import {
   ReviewInfiniteScrollListType,
-  ReviewInfoIdType,
   ReviewListType,
 } from "../../types/review.type";
 import { AxiosError } from "axios";
@@ -83,12 +82,12 @@ export const useGetReviewListCompanyIdQuery = (
 export const useGetReviewInfoIdQuery = (
   { id }: CommonIdParam,
   options?: UseQueryOptions<
-    ReviewInfoIdType,
+    ReviewListType[],
     AxiosError,
-    ReviewInfoIdType,
+    ReviewListType[],
     string[]
   >
-): UseQueryResult<ReviewInfoIdType, AxiosError> =>
+): UseQueryResult<ReviewListType[], AxiosError> =>
   useQuery(
     QUERY_KEYS.review.getReviewInfoId(id),
     () => ReviewRepositoryImpl.getReviewInfoId({ id }),
