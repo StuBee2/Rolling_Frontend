@@ -6,7 +6,7 @@ import {
   HideHeader,
   SearchModal,
   SimpleInfoModal,
-} from "../../../store/common/common.store";
+} from "../../../stores/common/common.store";
 import Search from "../Modal/Search";
 import SimpleInfo from "../Modal/SimpleInfo";
 

@@ -11,8 +11,8 @@ import { useSetRecoilState } from "recoil";
 import {
   SearchModal,
   SimpleInfoModal,
-} from "../../../store/common/common.store";
-import { MemberImgName } from "../../../store/member/member.store";
+} from "../../../stores/common/common.store";
+import { MemberImgName } from "../../../stores/member/member.store";
 
 export default function Header() {
   const navigate = useNavigate();

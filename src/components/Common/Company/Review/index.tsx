@@ -2,29 +2,29 @@ import { useEffect, ChangeEvent } from "react";
 import * as R from "./style";
 import StarRating from "./ReviewStarScope";
 import { useRecoilState } from "recoil";
-import {
-  reviewCareerPath,
-  reviewPosition,
-  reviewEtc,
-} from "../../../../store/review/reviewStore";
+
 import { useReview } from "../../../../hooks/FirmReview/useReview";
 import {
   balanceGradeAtom,
   salaryGradeAtom,
   welfareGradeAtom,
-} from "../../../../store/review/reviewStore";
-import { companyIdAtom } from "../../../../store/review/reviewStore";
+} from "../../../../stores/review/reviewStore";
+import { companyIdAtom } from "../../../../stores/review/reviewStore";
 import Modal from "../../Modal";
 import useModal from "../../../../hooks/util/useModal";
 import { FaPen } from "react-icons/fa";
+import { ReviewParam } from "../../../../repositories/Review/review.repository";
 
-const FirmReview = (props: any) => {
+interface Props {
+  reviewData: ReviewParam;
+  value?: any;
+  getModalBackground?: any;
+}
+
+const FirmReview = ({ reviewData }: Props) => {
   const [companyidatom, setCompanyIdAtom] = useRecoilState<string | undefined>(
     companyIdAtom
   );
-  const [position, setPosition] = useRecoilState<string>(reviewPosition);
-  const [careerPath, setCarreerPath] = useRecoilState<string>(reviewCareerPath);
-  const [etc, setEtc] = useRecoilState<string>(reviewEtc);
   const {
     onPositionChange,
     onCareerPathChange,
@@ -37,11 +37,6 @@ const FirmReview = (props: any) => {
   const [welfareGrade, setwelfareGrade] =
     useRecoilState<number>(welfareGradeAtom);
   const { close, isOpen, open } = useModal();
-
-  console.log(position);
-  console.log(careerPath);
-  console.log(etc);
-  // const { open } = useModal();
 
   useEffect(() => {
     console.log(balanceGrade);
@@ -90,16 +85,20 @@ const FirmReview = (props: any) => {
                   포지션<div style={{ color: "#EC6A5E" }}>*</div>
                 </R.Text>
                 <R.Input
-                  onChange={(e) => onPositionChange(e)}
-                  value={position}
+                  onChange={onPositionChange}
+                  // value={reviewData.position}
+                  id="position"
+                  name="position"
                 />
 
                 <R.Text isText={true}>
                   입사경로<div style={{ color: "#EC6A5E" }}>*</div>
                 </R.Text>
                 <R.Input
-                  onChange={(e) => onCareerPathChange(e)}
-                  value={careerPath}
+                  onChange={onCareerPathChange}
+                  // value={reviewData.careerPath}
+                  id="careerpath"
+                  name="careerpath"
                 />
 
                 <R.Text isText={true}>
@@ -135,11 +134,16 @@ const FirmReview = (props: any) => {
                 <R.Text isText={true}>
                   기타<div style={{ color: "#EC6A5E" }}>*</div>
                 </R.Text>
-                <R.Input onChange={(e) => onEtcChange(e)} value={etc} />
+                <R.Input
+                  onChange={onEtcChange}
+                  // value={reviewData.content}
+                  id="content"
+                  name="content"
+                />
               </div>
             </R.ReviewRegisterBox>
             <R.ReviewButtonBox>
-              <R.ReviewButton onClick={() => onReviewRegister()}>
+              <R.ReviewButton onClick={onReviewRegister}>
                 리뷰 등록
               </R.ReviewButton>
             </R.ReviewButtonBox>

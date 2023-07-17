@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useGetCompanyInfoIdQuery } from "../../../../queries/Company/company.query";
-import { companyIdAtom } from "../../../../store/review/reviewStore";
+import { companyIdAtom } from "../../../../stores/review/reviewStore";
 import { useRecoilState } from "recoil";
 import useModal from "../../../../hooks/util/useModal";
 import FirmReview from "../../Company/Review";
@@ -10,6 +10,7 @@ import { AiTwotoneMedicineBox } from "react-icons/ai";
 import { useReview } from "../../../../hooks/FirmReview/useReview";
 
 interface Props {
+  // companyid: string;
   id: string;
 }
 
@@ -18,17 +19,22 @@ const CompanyDetailList = ({ id }: Props) => {
   const [companyidatom, setCompanyIdAtom] = useRecoilState<string | undefined>(
     companyIdAtom
   );
-  console.log(companyidatom);
+  // console.log(companyidatom);
+  // const [companyid, setCompanyId] = useState<string | undefined>();
+
   const { open } = useModal();
 
+  const { reviewData } = useReview();
+
+  // const { reviewData } = onReviewRegister();
   const { onReviewRegister } = useReview();
 
   const [modalBackground, getModalBackground] = useState("false");
-  useEffect(() => {
-    if (getCompanyInfo?.companyId) {
-      setCompanyIdAtom(getCompanyInfo.companyId);
-    }
-  }, [getCompanyInfo]);
+  // useEffect(() => {
+  //   if (getCompanyInfo?.companyId) {
+  //     setCompanyIdAtom(getCompanyInfo.companyId);
+  //   }
+  // }, [getCompanyInfo]);
   return (
     <D.CompanyDetailBox>
       <D.CompanySidebarBox>
@@ -120,7 +126,7 @@ const CompanyDetailList = ({ id }: Props) => {
           <D.ReviewButton
             onClick={() => {
               open();
-              // setCompanyIdAtom(getCompanyInfo?.companyId);
+              setCompanyIdAtom(getCompanyInfo?.companyId);
             }}
           >
             리뷰 쓰기
@@ -128,38 +134,13 @@ const CompanyDetailList = ({ id }: Props) => {
         </D.ReviewRegister>
         <div className="test22">
           <FirmReview
+            reviewData={reviewData}
             value={modalBackground}
             getModalBackground={getModalBackground}
           />
         </div>
       </D.CompanyProfileInfoBox>
-
-      {/* <Review /> */}
-
-      {/* <div>
-       <img
-          src={getCompanyInfo?.memberImageUrl}
-          style={{ width: "150px", borderRadius: "100px" }}
-        />
-        <img
-          src={getCompanyInfo?.memberImageUrl}
-          style={{ width: "150px", borderRadius: "100px" }}
-        />
-        <div>{getCompanyInfo?.memberNickName}</div>
-        <div>{getCompanyInfo?.memberSocialId}</div>
-      </div>
-
-      <div>
-        <img src={getCompanyInfo?.companyImgUrl} style={{ width: "200px" }} />
-        <br />
-        {getCompanyInfo?.companyName}
-        <br />
-        {getCompanyInfo?.companyAddress}
-        <br />
-        {getCompanyInfo?.companyDescription}
-      </div>
-      <FirmReview />
-      <button onClick={open}>회사리뷰하기</button> */}
+      {/* <useReview /> */}
     </D.CompanyDetailBox>
   );
 };
