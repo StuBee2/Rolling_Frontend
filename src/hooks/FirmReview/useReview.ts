@@ -10,7 +10,7 @@ import {
 import { useCallback } from "react";
 import { ReviewParam } from "../../repositories/Review/review.repository";
 import { QueryClient } from "react-query";
-import { usePostReviewMutation } from "../../queries/Review/review.query";
+import { usePostReviewMutation } from "../../queries/review/review.query";
 import { companyIdAtom } from "../../store/review/reviewStore";
 import useModal from "../util/useModal";
 
@@ -59,9 +59,10 @@ export const useReview = () => {
       content: etc,
       position: position,
       careerPath: careerPath,
-      balanceGrade: balanceGrade,
-      salaryGrade: salaryGrade,
-      welfareGrade: welfareGrade,
+      salaryAndBenefits: 0,
+      workLifeBalance: 0,
+      organizationalCulture: 0,
+      careerAdvancement: 0,
     };
     ReviewMutation.mutate(data, {
       onSuccess: () => {
