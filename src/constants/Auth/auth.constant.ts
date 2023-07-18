@@ -9,15 +9,21 @@ export const REQUEST_REFRESH_TOKEN_KEY = "Refresh-Token" as const;
 export const AUTH_ITEM = [
   {
     id: 0,
-    isGoogle: false,
-    text: "Github 로그인",
+    customStyle: {
+      backgroundColor: "#000000",
+      color: "#ffffff",
+    },
+    text: "Github 간편 로그인",
     loginUrl: `${CONFIG.SERVER}/oauth2/authorization/github`,
     loginImg: github,
   },
   {
     id: 1,
-    isGoogle: true,
-    text: "Google 로그인",
+    customStyle: {
+      backgroundColor: "#ffffff",
+      color: "#000000",
+    },
+    text: "Google 간편 로그인",
     loginUrl: "",
     loginImg: Google,
   },

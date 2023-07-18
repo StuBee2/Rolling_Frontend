@@ -37,6 +37,7 @@ const CompanyDetailList = ({ id }: Props) => {
             <img
               src={getCompanyInfo?.companyImgUrl}
               style={{ width: "100px" }}
+              alt=""
             />
             <div className="company-Name">{getCompanyInfo?.companyName}</div>
           </D.CompanySidebarList>
