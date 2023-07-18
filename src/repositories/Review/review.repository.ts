@@ -30,8 +30,8 @@ export interface ReviewParam {
   content: string;
   position: string;
   careerPath: string;
-  salaryAndBenefits: number;
-  workLifeBalance: number;
-  organizationalCulture: number;
-  careerAdvancement: number;
+    salaryAndBenefits: number;
+    workLifeBalance: number;
+    organizationalCulture: number;
+    careerAdvancement: number;
 }

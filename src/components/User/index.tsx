@@ -1,9 +1,9 @@
 import * as S from "./style";
-import Nav from "./Common/Nav";
+import Nav from "./Nav";
 import { ReactNode, Suspense } from "react";
 import ErrorBoundary from "../Common/ErrorBoundary";
 import useTokenCheck from "../../hooks/Auth/useTokenCheck";
-import UserBottom from "./Common/NavBottom";
+import UserBottom from "./Nav/NavBottom";
 
 interface Props {
   children: ReactNode;

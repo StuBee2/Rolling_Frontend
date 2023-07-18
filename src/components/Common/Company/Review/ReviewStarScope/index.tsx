@@ -4,7 +4,7 @@ import * as T from "./star.style";
 interface RatingProps {
   totalStars: number;
   initialRating?: number;
-  onChangeRating?: (rating: number) => void;
+  onChangeRating: (rating: number) => void;
 }
 
 const StarRating: React.FC<RatingProps> = ({
@@ -16,9 +16,7 @@ const StarRating: React.FC<RatingProps> = ({
 
   const handleStarClick = (selectedRating: number) => {
     setRating(selectedRating);
-    if (onChangeRating) {
-      onChangeRating(selectedRating);
-    }
+    onChangeRating(selectedRating);
   };
 
   return (
