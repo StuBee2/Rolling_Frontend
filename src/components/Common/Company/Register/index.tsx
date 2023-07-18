@@ -7,7 +7,6 @@ import {
   companyLogoAtom,
   companyNameAtom,
 } from "../../../../stores/company/companyStore";
-// import { InfoContainer } from "../../User/Company/style";
 
 const FirmRegister = () => {
   const {
@@ -20,7 +19,6 @@ const FirmRegister = () => {
     onNameChange,
   } = useCompany();
 
-  const [firmlogo, setFrimLogo] = useRecoilState<string>(companyLogoAtom);
   const [firmname, setFirmName] = useRecoilState<string>(companyNameAtom);
   const [firmaddress, setFrimAddress] =
     useRecoilState<string>(companyAddressAtom);

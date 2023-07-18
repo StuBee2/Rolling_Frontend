@@ -1,17 +1,22 @@
 import { atom } from "recoil";
 
-export const balanceGradeAtom = atom<number>({
-  key: "balanceGrade",
+export const salaryAndBenefitsdAtom = atom<number>({
+  key: "salaryAndBenefitsdAtom",
   default: 0,
 });
 
-export const salaryGradeAtom = atom<number>({
-  key: "salaryGrade",
+export const workLifeBalancedAtom = atom<number>({
+  key: "workLifeBalancedAtom",
   default: 0,
 });
 
-export const welfareGradeAtom = atom<number>({
-  key: "welfareGrade",
+export const organizationalCulturedAtom = atom<number>({
+  key: "organizationalCulturedAtom",
+  default: 0,
+});
+
+export const careerAdvancementAtom = atom<number>({
+  key: "careerAdvancementAtom",
   default: 0,
 });
 
