@@ -9,7 +9,7 @@ import {
   workLifeBalancedAtom,
   organizationalCulturedAtom,
   careerAdvancementAtom,
-} from "../../../../stores/review/reviewStore";
+} from "../../../../stores/review/review.store";
 
 import Modal from "../../Modal";
 import useModal from "../../../../hooks/util/useModal";

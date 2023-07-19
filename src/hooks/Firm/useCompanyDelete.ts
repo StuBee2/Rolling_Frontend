@@ -1,11 +1,11 @@
 import { useCallback } from "react";
-import { QueryClient } from "react-query";
+import { QueryClient, useQueryClient } from "react-query";
 import { useDeleteCompanyQuery } from "../../queries/Company/company.query";
 import { QUERY_KEYS } from "../../queries/queryKey";
 
 export function useCompanyDelete() {
   const deleteCompanyMutation = useDeleteCompanyQuery();
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
 
   const onDeleteCompany = useCallback((companyId: string) => {
     const answer = window.confirm("회사를 삭제하시겠습니까?");
@@ -16,7 +16,7 @@ export function useCompanyDelete() {
         },
         {
           onSuccess: () => {
-            queryClient.invalidateQueries([QUERY_KEYS.company.deleteCompany]);
+            queryClient.invalidateQueries([QUERY_KEYS.company.getListCompany]);
             console.log("회사 삭제 성공");
           },
           onError: () => {

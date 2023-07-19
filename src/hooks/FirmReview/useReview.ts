@@ -5,7 +5,7 @@ import {
   organizationalCulturedAtom,
   careerAdvancementAtom,
   companyIdAtom,
-} from "../../stores/review/reviewStore";
+} from "../../stores/review/review.store";
 
 import { ChangeEvent, FormEvent, useState } from "react";
 import { ReviewParam } from "../../repositories/Review/review.repository";

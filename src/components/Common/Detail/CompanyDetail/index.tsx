@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useGetCompanyInfoIdQuery } from "../../../../queries/Company/company.query";
-import { companyIdAtom } from "../../../../stores/review/reviewStore";
+import { companyIdAtom } from "../../../../stores/review/review.store";
 import { useRecoilState } from "recoil";
 import useModal from "../../../../hooks/util/useModal";
 import FirmReview from "../../Company/Review";
