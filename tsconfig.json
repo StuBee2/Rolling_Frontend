@@ -16,5 +16,9 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "src/stores/company/.ts"]
+  "include": [
+    "src",
+    "src/store/company/.ts",
+    "src/components/User/Profile/style.ts"
+  ]
 }

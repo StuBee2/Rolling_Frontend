@@ -1,8 +1,8 @@
 import { useGetMyCompanyListQuery } from "../../../../../queries/Company/company.query";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import { Able, Body, CommonWrap, ListContainer } from "../style";
-import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
+// import { Able, Body, CommonWrap, ListContainer } from "../style";
+import stringEllipsis from "../../../../../libs/Common/stringEllipsis";
 import { AiFillStar } from "react-icons/ai";
 import { FiX } from "react-icons/fi";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";
@@ -25,12 +25,12 @@ export default function Regist() {
 
   // const onC
   return (
-    <CommonWrap>
+    <div>
       {registList!!.pages.length > 0 ? (
         registList?.pages.map((data) =>
           data.data.map((regist) => (
-            <ListContainer key={regist.companyId.id}>
-              <Able isTop={true}>
+            <div key={regist.companyId.id}>
+              <div>
                 <div style={{ fontSize: "13px" }}>
                   {getDateText(new Date(regist.companyDetails.createdAt))} 등록
                 </div>
@@ -39,8 +39,8 @@ export default function Regist() {
                   cursor="pointer"
                   onClick={() => onDeleteCompany(regist.companyId.id)}
                 />
-              </Able>
-              <Body>
+              </div>
+              <div>
                 <div>
                   <img src={regist.companyDetails.imgUrl} alt="" />
                 </div>
@@ -65,23 +65,23 @@ export default function Regist() {
                     )}
                   </li>
                 </ul>
-              </Body>
-              <Able isTop={false}>
+              </div>
+              <div>
                 <button>수정하기</button>
                 <button
                   onClick={() => navigate(`/registe/${regist.companyId.id}`)}
                 >
                   상세보기
                 </button>
-              </Able>
+              </div>
               {/* <CompanyDetailList id={Number(id)} /> */}
-            </ListContainer>
+            </div>
           ))
         )
       ) : (
         <div>등록한 회사가 없습니다</div>
       )}
       <div ref={ref} />
-    </CommonWrap>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import {
   ReviewInfiniteScrollListType,
-  ReviewListType,
+  ReviewInfoIdType,
   ReviewPostResponse,
 } from "../../types/review.type";
 import { CommonIdParam, CommonPageParam } from "../common.param";
@@ -20,7 +20,7 @@ export interface ReviewRepository {
     { page }: CommonPageParam
   ): Promise<ReviewInfiniteScrollListType>;
 
-  getReviewInfoId({ id }: CommonIdParam): Promise<ReviewListType[]>;
+  getReviewInfoId({ id }: CommonIdParam): Promise<ReviewInfoIdType>;
 
   postReview(reviewInfo: ReviewParam): Promise<ReviewPostResponse>;
 }

@@ -10,7 +10,7 @@ import {
 import { ChangeEvent, FormEvent, useState } from "react";
 import { ReviewParam } from "../../repositories/Review/review.repository";
 import { QueryClient, useQueryClient } from "react-query";
-import { usePostReviewMutation } from "../../queries/Review/review.query";
+import { usePostReviewMutation } from "../../queries/review/review.query";
 
 import useModal from "../util/useModal";
 

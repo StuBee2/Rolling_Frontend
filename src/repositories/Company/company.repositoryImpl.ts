@@ -1,16 +1,17 @@
 import { customAxios } from "../../libs/Axios/customAxios";
 import {
-  CompanyID,
   CompanyInfiniteScrollType,
   CompanyInfoType,
   CompanyListType,
 } from "../../types/company.type";
 import { CommonIdParam, CommonPageParam } from "../common.param";
 import {
+  CompanyIdParam,
   CompanyNameParam,
   CompanyParam,
   CompanyRepository,
 } from "./company.repository";
+import { CompanyID } from "../../types/company.type";
 
 class CompanyRepositoryImpl implements CompanyRepository {
   public async postRegister(
@@ -63,8 +64,8 @@ class CompanyRepositoryImpl implements CompanyRepository {
     return data;
   }
 
-  public async getCompanyRankWelfare(): Promise<CompanyListType[]> {
-    const { data } = await customAxios.get("/company/rank/welfare");
+  public async getCompanyRankSalaryBenefits(): Promise<CompanyListType[]> {
+    const { data } = await customAxios.get("/company/rank/salary-benefits");
     return data;
   }
 
@@ -73,8 +74,13 @@ class CompanyRepositoryImpl implements CompanyRepository {
     return data;
   }
 
-  public async getCompanyRankSalary(): Promise<CompanyListType[]> {
-    const { data } = await customAxios.get("/company/rank/salary");
+  public async getCompanyRankCulture(): Promise<CompanyListType[]> {
+    const { data } = await customAxios.get("/company/rank/culture");
+    return data;
+  }
+
+  public async getCompanyRankCareer(): Promise<CompanyListType[]> {
+    const { data } = await customAxios.get("/company/rank/career");
     return data;
   }
 

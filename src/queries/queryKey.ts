@@ -5,11 +5,11 @@ export const QUERY_KEYS = Object.freeze({
     getListCompany: "/company/list",
     getListCompanyId: (id: string) => ["/company/list/id", id],
     getListInfoCompanyId: (id: string) => ["/company/info/id", id],
-    getCompanyRankWelfare: "/company/rank/welfare",
     getCompanyRankTotal: "/company/rank/total",
-    getCompanyRankSalary: "/company/rank/Salary",
-    getCompanyRankBalnce: "/company/rank/Balnce",
-    deleteCompany: (id: string) => ["/company/companyId", id],
+    getCompanyRankSalaryBenefits: "/company/rank/salary-benefit",
+    getCompanyRankCulture: "company/rank/culture",
+    getCompanyRankCareer: "company/rank/career",
+    getCompanyRankBalnce: "/company/rank/balnce",
   },
   review: {
     getMyReview: "/review/my",
@@ -19,5 +19,8 @@ export const QUERY_KEYS = Object.freeze({
   },
   member: {
     getMyMember: "/member",
+  },
+  news: {
+    getNews: (companyName: string) => ["/news/companyName", companyName],
   },
 });

@@ -1,11 +1,11 @@
 // import { useGetMyReviewQuery } from "../../../../../queries/review/review.query";
-import { useGetMyReviewQuery } from "../../../../../queries/Review/review.query";
+import { useGetMyReviewQuery } from "../../../../../queries/review/review.query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { Able, Body, CommonWrap, ListContainer } from "../style";
+// import { Able, Body, CommonWrap, ListContainer } from "../style";
 import { FiX } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
-import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
+import stringEllipsis from "../../../../../libs/Common/stringEllipsis";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";
 import { useReviewDelete } from "../../../../../hooks/FirmReview/useDeleteReview";
 
@@ -24,12 +24,12 @@ export default function Review() {
   }, [inView]);
 
   return (
-    <CommonWrap>
+    <div>
       {reviewList!!.pages.length > 0 ? (
         reviewList?.pages.map((data) =>
           data.data.map((review) => (
-            <ListContainer key={review.reviewId}>
-              <Able isTop={true}>
+            <div key={review.reviewId}>
+              <div>
                 <div style={{ fontSize: "16px" }}>
                   {getDateText(new Date(review.reviewCreatedAt))} 등록
                 </div>
@@ -38,8 +38,8 @@ export default function Review() {
                   cursor="pointer"
                   onClick={() => onDeleteReview(review.reviewId)}
                 />
-              </Able>
-              <Body>
+              </div>
+              <div>
                 <div>
                   <img src={review.companyImgUrl} alt="" />
                 </div>
@@ -57,18 +57,18 @@ export default function Review() {
                   <li>{stringEllipsis(review.reviewCareerPath, 20)}</li>
                   <li>{stringEllipsis(review.reviewContent, 20)}</li>
                 </ul>
-              </Body>
-              <Able isTop={false}>
+              </div>
+              <div>
                 <button>수정하기</button>
                 <button>상세보기</button>
-              </Able>
-            </ListContainer>
+              </div>
+            </div>
           ))
         )
       ) : (
         <div>리뷰한 회사가 없습니다.</div>
       )}
       <div ref={ref} />
-    </CommonWrap>
+    </div>
   );
 }

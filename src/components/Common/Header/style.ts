@@ -4,10 +4,12 @@ export const Header = styled.div`
   width: 100%;
   height: 108px;
   font-size: 19px;
+  background-color: #f9fafb;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 export const HeaderWrap = styled.div`
@@ -17,6 +19,10 @@ export const HeaderWrap = styled.div`
   align-items: center;
   justify-content: space-between;
   white-space: nowrap;
+  overflow-x: scroll;
+  @media screen and (max-width: 573px) {
+    width: 95%;
+  }
 `;
 
 export const PageContainer = styled.div`
@@ -25,8 +31,8 @@ export const PageContainer = styled.div`
   align-items: center;
 
   img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
   }
 
@@ -34,10 +40,6 @@ export const PageContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 25px;
-
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
 `;
 
@@ -57,15 +59,15 @@ export const LoginSearchContainer = styled.div`
 `;
 
 export const Search = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
 `;
 
 export const ProfileImg = styled.img`
-  width: 55px;
-  height: 55px;
-
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
   cursor: pointer;
   border-radius: 8px;
 `;

@@ -57,4 +57,24 @@ export const InputContainer = styled.div`
       color: #737b98;
     }
   }
+
+  @media screen and (max-width: 825px) {
+    img {
+      width: 70px;
+      height: 70px;
+    }
+    input {
+      font-size: 30px;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    img {
+      width: 50px;
+      height: 50px;
+    }
+    input {
+      font-size: 24px;
+    }
+  }
 `;

@@ -2,7 +2,7 @@ import { customAxios } from "../../libs/Axios/customAxios";
 import {
   ReviewID,
   ReviewInfiniteScrollListType,
-  ReviewListType,
+  ReviewInfoIdType,
   ReviewPostResponse,
 } from "../../types/review.type";
 import { CommonIdParam, CommonPageParam } from "../common.param";
@@ -38,7 +38,7 @@ class ReviewRepositoryImpl implements ReviewRepository {
 
   public async getReviewInfoId({
     id,
-  }: CommonIdParam): Promise<ReviewListType[]> {
+  }: CommonIdParam): Promise<ReviewInfoIdType> {
     const { data } = await customAxios.get(`/review/info/${id}`);
     return data;
   }
