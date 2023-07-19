@@ -11,6 +11,7 @@ import {
   CompanyParam,
   CompanyRepository,
 } from "./company.repository";
+import { CompanyID } from "../../types/company.type";
 
 class CompanyRepositoryImpl implements CompanyRepository {
   public async postRegister(
@@ -88,8 +89,9 @@ class CompanyRepositoryImpl implements CompanyRepository {
     return data;
   }
 
-  public async deleteCompany(companyId: CompanyIdParam): Promise<void> {
-    await customAxios.delete(`/company/${companyId}`);
+  public async deleteCompany({ companyId }: CompanyID): Promise<void> {
+    const { data } = await customAxios.delete(`/company/${companyId}`);
+    return data;
   }
 }
 

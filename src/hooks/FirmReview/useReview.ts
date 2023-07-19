@@ -1,93 +1,103 @@
 import { useRecoilState } from "recoil";
 import {
-  reviewPosition,
-  reviewCareerPath,
-  balanceGradeAtom,
-  salaryGradeAtom,
-  welfareGradeAtom,
-  reviewEtc,
-} from "../../store/review/reviewStore";
-import { useCallback } from "react";
+  salaryAndBenefitsdAtom,
+  workLifeBalancedAtom,
+  organizationalCulturedAtom,
+  careerAdvancementAtom,
+  companyIdAtom,
+} from "../../stores/review/review.store";
+
+import { ChangeEvent, FormEvent, useState } from "react";
 import { ReviewParam } from "../../repositories/Review/review.repository";
-import { QueryClient } from "react-query";
+import { QueryClient, useQueryClient } from "react-query";
 import { usePostReviewMutation } from "../../queries/review/review.query";
-import { companyIdAtom } from "../../store/review/reviewStore";
+
 import useModal from "../util/useModal";
 
 export const useReview = () => {
-  const [position, setPosition] = useRecoilState<string>(reviewPosition);
-  const [careerPath, setCarreerPath] = useRecoilState<string>(reviewCareerPath);
-  const [etc, setEtc] = useRecoilState<string>(reviewEtc);
-  const [balanceGrade, setbalanceGrade] =
-    useRecoilState<number>(balanceGradeAtom);
-  const [salaryGrade, setsalaryGrade] = useRecoilState<number>(salaryGradeAtom);
-  const [welfareGrade, setwelfareGrade] =
-    useRecoilState<number>(welfareGradeAtom);
+  const [salaryGrade, setsalaryGrade] = useRecoilState<number>(
+    salaryAndBenefitsdAtom
+  );
+  const [workLifeGrade, setworkLifeGrade] =
+    useRecoilState<number>(workLifeBalancedAtom);
+  const [organizationalGrade, setorganizationalGrade] = useRecoilState<number>(
+    organizationalCulturedAtom
+  );
+  const [careerGrade, setcareerGrade] = useRecoilState<number>(
+    careerAdvancementAtom
+  );
   const [companyidatom, setCompanyIdAtom] = useRecoilState<string | undefined>(
     companyIdAtom
   );
 
+  const [reviewData, setReviewData] = useState<ReviewParam>({
+    companyId: companyidatom,
+    content: "",
+    position: "",
+    careerPath: "",
+    salaryAndBenefits: 0,
+    workLifeBalance: 0,
+    organizationalCulture: 0,
+    careerAdvancement: 0,
+  });
+
   const { close } = useModal();
 
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
   const ReviewMutation = usePostReviewMutation();
 
-  const onPositionChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setPosition(e.target.value);
-    },
-    [setPosition]
-  );
+  const onPositionChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setReviewData((prve) => ({ ...prve, [name]: value }));
+  };
 
-  const onCareerPathChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setCarreerPath(e.target.value);
-    },
-    [setCarreerPath]
-  );
+  const onCareerPathChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setReviewData((prve) => ({ ...prve, [name]: value }));
+  };
 
-  const onEtcChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setEtc(e.target.value);
-    },
-    [setEtc]
-  );
+  const onEtcChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setReviewData((prve) => ({ ...prve, [name]: value }));
+  };
 
-  const onReviewRegister = useCallback(() => {
-    const data: ReviewParam = {
-      companyId: "68648334-7eed-4975-a7db-0056a447b1f9",
-      content: etc,
-      position: position,
-      careerPath: careerPath,
-      salaryAndBenefits: 0,
-      workLifeBalance: 0,
-      organizationalCulture: 0,
-      careerAdvancement: 0,
-    };
-    ReviewMutation.mutate(data, {
-      onSuccess: () => {
-        queryClient.invalidateQueries("/review");
-        console.log(data);
-        setCarreerPath("");
-        setCompanyIdAtom("");
-        setEtc("");
-        setPosition("");
-        setbalanceGrade(0);
-        setsalaryGrade(0);
-        setwelfareGrade(0);
+  const onReviewRegister = (e: FormEvent) => {
+    e.preventDefault();
 
-        close();
+    ReviewMutation.mutate(
+      {
+        companyId: companyidatom,
+        content: reviewData.content,
+        position: reviewData.position,
+        careerPath: reviewData.careerPath,
+        salaryAndBenefits: salaryGrade, //연봉
+        workLifeBalance: workLifeGrade, //워라벨
+        organizationalCulture: organizationalGrade, //조직 문화
+        careerAdvancement: careerGrade, //커리어 향상에 도움
       },
-      onError: (e) => {
-        console.log(e);
-      },
-    });
-  }, []);
+      {
+        onSuccess: () => {
+          setcareerGrade(0);
+          setorganizationalGrade(0);
+          setsalaryGrade(0);
+          setworkLifeGrade(0);
+          setCompanyIdAtom("");
+          close();
+        },
+        onError: (e) => {
+          console.log(e);
+        },
+      }
+    );
+  };
 
   return {
+    reviewData,
     onPositionChange,
     onCareerPathChange,
     onEtcChange,
     onReviewRegister,
   };
 };
+
+export default useReview;

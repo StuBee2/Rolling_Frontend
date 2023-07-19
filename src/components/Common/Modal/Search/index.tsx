@@ -1,6 +1,6 @@
 import { useSetRecoilState } from "recoil";
 import * as S from "./style";
-import { SearchModal } from "../../../../store/common/common.store";
+import { SearchModal } from "../../../../stores/common/common.store";
 import semicircle2 from "../../../../assets/semicircle2.svg";
 import semicircle1 from "../../../../assets/semicircle1.svg";
 import Search2 from "../../../../assets/Search2.svg";

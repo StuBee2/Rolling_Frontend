@@ -20,6 +20,7 @@ import {
   CompanyNameParam,
   CompanyParam,
 } from "../../repositories/Company/company.repository";
+import { CompanyID } from "../../types/company.type";
 
 export const usePostCompanyRegisterMutation = () => {
   const registermutation = useMutation((data: CompanyParam) =>
@@ -178,7 +179,7 @@ export const useGetCompanyRankCareer = (
   >
 ): UseQueryResult<CompanyListType[], AxiosError> =>
   useQuery(
-    QUERY_KEYS.company.getCompanyRankCareer,
+    QUERY_KEYS.company.getCompanyRankSalary,
     () => CompanyRepositoryImpl.getCompanyRankCareer(),
     { ...options }
   );
@@ -198,3 +199,10 @@ export const useGetCompanyRankBalanceQuery = (
       ...options,
     }
   );
+
+export const useDeleteCompanyQuery = () => {
+  const mutation = useMutation(({ companyId }: CompanyID) =>
+    CompanyRepositoryImpl.deleteCompany({ companyId })
+  );
+  return mutation;
+};

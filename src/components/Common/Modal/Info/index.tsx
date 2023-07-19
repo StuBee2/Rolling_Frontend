@@ -1,12 +1,12 @@
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import * as S from "./style";
 import { useCloseModal } from "../../../../hooks/Common/useCloseModal";
-import { SimpleInfoModal } from "../../../../store/common/common.store";
+import { SimpleInfoModal } from "../../../../stores/common/common.store";
 import { ModalWrap } from "../style";
 import { useLogout } from "../../../../hooks/Auth/useLogout";
 import { useLogging } from "../../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../../constants/Log/log.constants";
-import { MyMemberInfo } from "../../../../store/member/member.store";
+import { MyMemberInfo } from "../../../../stores/member/member.store";
 
 export default function Info() {
   const setSimpleInfo = useSetRecoilState(SimpleInfoModal);
