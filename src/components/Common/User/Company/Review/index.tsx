@@ -7,11 +7,14 @@ import { FiX } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
 import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";
+import { useReviewDelete } from "../../../../../hooks/FirmReview/useDeleteReview";
 
 export default function Review() {
   const { data: reviewList, fetchNextPage } = useGetMyReviewQuery({
     suspense: true,
   });
+
+  const { onDeleteReview } = useReviewDelete();
   const [ref, inView] = useInView();
 
   useEffect(() => {
@@ -30,7 +33,11 @@ export default function Review() {
                 <div style={{ fontSize: "16px" }}>
                   {getDateText(new Date(review.reviewCreatedAt))} 등록
                 </div>
-                <FiX size={23} cursor="pointer" />
+                <FiX
+                  size={23}
+                  cursor="pointer"
+                  onClick={() => onDeleteReview(review.reviewId)}
+                />
               </Able>
               <Body>
                 <div>

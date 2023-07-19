@@ -60,3 +60,7 @@ export interface ReviewPostResponse {
     id: string;
   };
 }
+
+export interface ReviewID {
+  reviewId: string;
+}

@@ -1,5 +1,6 @@
 import { customAxios } from "../../libs/Axios/customAxios";
 import {
+  ReviewID,
   ReviewInfiniteScrollListType,
   ReviewListType,
   ReviewPostResponse,
@@ -46,6 +47,11 @@ class ReviewRepositoryImpl implements ReviewRepository {
     reviewInfo: ReviewParam
   ): Promise<ReviewPostResponse> {
     const { data } = await customAxios.post("/review", reviewInfo);
+    return data;
+  }
+
+  public async deleteReview({ reviewId }: ReviewID): Promise<void> {
+    const { data } = await customAxios.delete(`/review/${reviewId}`);
     return data;
   }
 }
