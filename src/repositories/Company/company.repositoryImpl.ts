@@ -83,19 +83,10 @@ class CompanyRepositoryImpl implements CompanyRepository {
     return data;
   }
 
-  // public async deleteCompany({ companyId }: CompanyID): Promise<Response> {
-  //   const { data } = await customAxios.delete("/company", {
-  //     companyId,
-  //   });
-  // }
-
-  // public async deleteCompany({
-  //   companyId,
-  // }: CompanyID): Promise<CompanyInfoType> {
-  //   const { data } = await customAxios.delete("/company", companyId);
-  //   console.log(data);
-  //   return data;
-  // }
+  public async deleteCompany({ companyId }: CompanyID): Promise<void> {
+    const { data } = await customAxios.delete(`/company/${companyId}`);
+    return data;
+  }
 }
 
 export default new CompanyRepositoryImpl();

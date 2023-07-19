@@ -7,11 +7,13 @@ import { AiFillStar } from "react-icons/ai";
 import { FiX } from "react-icons/fi";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";
 import { useNavigate } from "react-router-dom";
+import { useCompanyDelete } from "../../../../../hooks/Firm/useCompanyDelete";
 
 export default function Regist() {
   const { data: registList, fetchNextPage } = useGetMyCompanyListQuery({
     suspense: true,
   });
+  const { onDeleteCompany } = useCompanyDelete();
   const { ref, inView } = useInView();
   const navigate = useNavigate();
   // console.log(registList);
@@ -32,7 +34,11 @@ export default function Regist() {
                 <div style={{ fontSize: "13px" }}>
                   {getDateText(new Date(regist.companyDetails.createdAt))} 등록
                 </div>
-                <FiX size={23} cursor="pointer" />
+                <FiX
+                  size={23}
+                  cursor="pointer"
+                  onClick={() => onDeleteCompany(regist.companyId.id)}
+                />
               </Able>
               <Body>
                 <div>

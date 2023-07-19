@@ -9,6 +9,7 @@ export const QUERY_KEYS = Object.freeze({
     getCompanyRankTotal: "/company/rank/total",
     getCompanyRankSalary: "/company/rank/Salary",
     getCompanyRankBalnce: "/company/rank/Balnce",
+    deleteCompany: (id: string) => ["/company/companyId", id],
   },
   review: {
     getMyReview: "/review/my",
