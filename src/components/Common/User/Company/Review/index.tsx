@@ -1,11 +1,11 @@
 // import { useGetMyReviewQuery } from "../../../../../queries/review/review.query";
-import { useGetMyReviewQuery } from "../../../../../queries/review/review.query";
+import { useGetMyReviewQuery } from "../../../../../queries/Review/review.query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 // import { Able, Body, CommonWrap, ListContainer } from "../style";
 import { FiX } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
-import stringEllipsis from "../../../../../libs/Common/stringEllipsis";
+import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";
 import { useReviewDelete } from "../../../../../hooks/FirmReview/useDeleteReview";
 

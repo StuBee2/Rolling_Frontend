@@ -16,7 +16,9 @@ export function useCompanyDelete() {
         },
         {
           onSuccess: () => {
-            queryClient.invalidateQueries([QUERY_KEYS.company.getListCompany]);
+            queryClient.invalidateQueries([
+              QUERY_KEYS.company.getMyListCompany,
+            ]);
             console.log("회사 삭제 성공");
           },
           onError: () => {

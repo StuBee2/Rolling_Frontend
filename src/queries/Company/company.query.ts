@@ -179,7 +179,7 @@ export const useGetCompanyRankCareer = (
   >
 ): UseQueryResult<CompanyListType[], AxiosError> =>
   useQuery(
-    QUERY_KEYS.company.getCompanyRankSalary,
+    QUERY_KEYS.company.getCompanyRankCareer,
     () => CompanyRepositoryImpl.getCompanyRankCareer(),
     { ...options }
   );
