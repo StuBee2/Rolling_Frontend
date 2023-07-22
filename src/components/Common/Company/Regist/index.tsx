@@ -1,12 +1,5 @@
 import * as F from "./style";
 import { useCompany } from "../../../../hooks/Firm/useCompany";
-import { useRecoilState } from "recoil";
-import {
-  companyAddressAtom,
-  companyInfoAtom,
-  companyLogoAtom,
-  companyNameAtom,
-} from "../../../../stores/company/companyStore";
 
 const FirmRegister = () => {
   const {
@@ -18,11 +11,6 @@ const FirmRegister = () => {
     onInfoChange,
     onNameChange,
   } = useCompany();
-
-  const [firmname, setFirmName] = useRecoilState<string>(companyNameAtom);
-  const [firmaddress, setFrimAddress] =
-    useRecoilState<string>(companyAddressAtom);
-  const [firminfo, setFrimInfo] = useRecoilState<string>(companyInfoAtom);
 
   return (
     <F.FirmBox>
@@ -42,12 +30,17 @@ const FirmRegister = () => {
           </F.Button>
         </F.LogoBox>
         <F.Text>기업 이름</F.Text>
-        <F.Input value={firmname} onChange={onNameChange} />
+        <F.Input onChange={onNameChange} id="name" name="name" />
         <F.Text>기업 주소</F.Text>
-        <F.Input value={firmaddress} onChange={onAddressChange} />
+        <F.Input onChange={onAddressChange} id="address" name="address" />
         <F.Text>기업 소개</F.Text>
         <F.Explanation>(회사의 서비스 목적을 적어주세요)</F.Explanation>
-        <textarea required value={firminfo} onChange={onInfoChange}></textarea>
+        <textarea
+          required
+          onChange={onInfoChange}
+          id="description"
+          name="description"
+        ></textarea>
         <button onClick={onFirmRegister}>임시등록버튼</button>
       </F.FirmList>
     </F.FirmBox>
