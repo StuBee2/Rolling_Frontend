@@ -1,7 +1,7 @@
-import { useGetMyReviewQuery } from "../../../../queries/review/review.query";
+import { useGetMyReviewQuery } from "../../../../queries/Review/review.query";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import stringEllipsis from "../../../../libs/Common/stringEllipsis";
+import stringEllipsis from "../../../../libs/Common/StringEllipsis";
 import write from "../../../../assets/write.svg";
 import { getDateText } from "../../../../libs/Date/getDateCounter";
 import { Container, Explain, Title } from "../../Profile/style";
@@ -9,6 +9,8 @@ import edit from "../../../../assets/edit.svg";
 import del from "../../../../assets/del.svg";
 import { getTimeAgo } from "../../../../libs/Date/getTimeAgo";
 import * as S from "../style";
+import { useReviewDelete } from "../../../../hooks/FirmReview/useDeleteReview";
+import { useNavigate } from "react-router-dom";
 
 export default function Review() {
   const { data: reviewList, fetchNextPage } = useGetMyReviewQuery({
@@ -16,6 +18,8 @@ export default function Review() {
   });
   const [ref, inView] = useInView();
   const [mouseEnterEvent, setMouseEnterEvent] = useState("");
+  const { onDeleteReview } = useReviewDelete();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (inView) {
@@ -26,7 +30,7 @@ export default function Review() {
   return (
     <Container>
       <Title>
-        <div style={{ fontSize: "30px" }}>내 기업 History</div>
+        <div style={{ fontSize: "30px" }}>내 리뷰 Story</div>
         <Explain>
           기본 정보와 서비스에서 이용되는 프로필을 설정할 수 있어요
         </Explain>
@@ -88,7 +92,11 @@ export default function Review() {
               {mouseEnterEvent === review.reviewId && (
                 <div style={{ cursor: "pointer" }}>
                   <img src={edit} alt="" />
-                  <img src={del} alt="" />
+                  <img
+                    src={del}
+                    alt=""
+                    onClick={() => onDeleteReview(review.reviewId)}
+                  />
                 </div>
               )}
             </div>

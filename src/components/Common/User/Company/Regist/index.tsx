@@ -2,7 +2,7 @@ import { useGetMyCompanyListQuery } from "../../../../../queries/Company/company
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 // import { Able, Body, CommonWrap, ListContainer } from "../style";
-import stringEllipsis from "../../../../../libs/Common/stringEllipsis";
+import stringEllipsis from "../../../../../libs/Common/StringEllipsis";
 import { AiFillStar } from "react-icons/ai";
 import { FiX } from "react-icons/fi";
 import { getDateText } from "../../../../../libs/Date/getDateCounter";

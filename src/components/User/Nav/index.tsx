@@ -3,7 +3,9 @@ import * as S from "./style";
 import { USER_ITEMS } from "../../../constants/User/user.constants";
 import { useLogout } from "../../../hooks/Auth/useLogout";
 import { useRecoilValue } from "recoil";
-import { MyMemberInfo } from "../../../store/member/member.store";
+// import { MyInfoContainer } from "../Profile/MyInfo/style";
+import { MyMemberInfo } from "../../../stores/member/member.store";
+// import { MyMemberInfo } from "../../../store/member/member.store";
 import { useEditNickName } from "../../../hooks/Common/useEditNickName";
 
 export default function Nav() {

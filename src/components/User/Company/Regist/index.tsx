@@ -2,13 +2,15 @@ import { useGetMyCompanyListQuery } from "../../../../queries/Company/company.qu
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import * as S from "../style";
-import stringEllipsis from "../../../../libs/Common/stringEllipsis";
+import stringEllipsis from "../../../../libs/Common/StringEllipsis";
 import { getDateText } from "../../../../libs/Date/getDateCounter";
 import { Container, Explain, Title } from "../../Profile/style";
 import company from "../../../../assets/company.svg";
 import { getTimeAgo } from "../../../../libs/Date/getTimeAgo";
 import edit from "../../../../assets/edit.svg";
 import del from "../../../../assets/del.svg";
+import { useNavigate } from "react-router-dom";
+import { useCompanyDelete } from "../../../../hooks/Firm/useCompanyDelete";
 
 export default function Regist() {
   const { data: registList, fetchNextPage } = useGetMyCompanyListQuery({
@@ -16,6 +18,8 @@ export default function Regist() {
   });
   const { ref, inView } = useInView();
   const [mouseEvent, setMouseEvent] = useState("");
+  const navigate = useNavigate();
+  const { onDeleteCompany } = useCompanyDelete();
 
   useEffect(() => {
     if (inView) {
@@ -26,7 +30,7 @@ export default function Regist() {
   return (
     <Container>
       <Title>
-        <div style={{ fontSize: "30px" }}>내 리뷰 Story</div>
+        <div style={{ fontSize: "30px" }}>내 기업 History</div>
         <Explain>
           기본 정보와 서비스에서 이용되는 프로필을 설정할 수 있어요
         </Explain>
@@ -61,7 +65,9 @@ export default function Regist() {
               onMouseEnter={() => setMouseEvent(regist.companyId.id)}
               onMouseLeave={() => setMouseEvent("")}
             >
-              <S.ListContainer>
+              <S.ListContainer
+                onClick={() => navigate(`/registe/${regist.companyId.id}`)}
+              >
                 <S.ListRegistDate>
                   {getDateText(new Date(regist.companyDetails.createdAt))} 등록
                 </S.ListRegistDate>
@@ -80,8 +86,16 @@ export default function Regist() {
               </S.ListContainer>
               {mouseEvent === regist.companyId.id && (
                 <div style={{ cursor: "pointer" }}>
-                  <img src={edit} alt="" />
-                  <img src={del} alt="" />
+                  <img
+                    src={edit}
+                    alt=""
+                    onClick={() => navigate("/register")}
+                  />
+                  <img
+                    src={del}
+                    alt=""
+                    onClick={() => onDeleteCompany(regist.companyId.id)}
+                  />
                 </div>
               )}
             </div>
