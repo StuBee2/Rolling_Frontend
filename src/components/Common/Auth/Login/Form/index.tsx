@@ -1,7 +1,7 @@
 import { useLogin } from "../../../../../hooks/Auth/useLogin";
 import * as S from "./style";
-import idImg from "../../../../../assets/idImg.svg";
-import pwImg from "../../../../../assets/pwImg.svg";
+import idImg from "../../../../../assets/Auth/idImg.svg";
+import pwImg from "../../../../../assets/Auth/pwImg.svg";
 
 export default function Form() {
   const { handleChange, handleSubmit, id, pw } = useLogin();

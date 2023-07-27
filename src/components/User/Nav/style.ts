@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const UserNavBar = styled.div`
-  width: 330px;
+  width: 420px;
   height: calc(100vh - 108px);
-  @media screen and (max-width: 1025px) {
+  @media screen and (max-width: 1040px) {
     display: none;
   }
 `;

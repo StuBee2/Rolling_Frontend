@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const CompanyStatusWrap = styled.div`
   width: 90%;
   display: flex;
-  gap: 10px;
+  column-gap: 10px;
 
-  @media screen and (max-width: 1025px) {
+  @media screen and (max-width: 565px) {
     flex-direction: column;
+    column-gap: 0;
+    row-gap: 25px;
   }
 `;
 
@@ -18,6 +20,13 @@ export const CompanyStatusContainer = styled.div`
 
   padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.03);
+  }
 `;
 
 export const CompanyStatus = styled.div`

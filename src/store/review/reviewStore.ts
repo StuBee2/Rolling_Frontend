@@ -34,3 +34,8 @@ export const companyIdAtom = atom<string | undefined>({
   key: "companyIdAtom",
   default: "",
 });
+
+export const reviewModalOpenAtom = atom<boolean>({
+  key: "reviewModalOpenAtom",
+  default: false,
+});

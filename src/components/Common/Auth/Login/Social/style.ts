@@ -5,12 +5,12 @@ export const LoginBtnCotainer = styled.div`
   height: 171px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 export const LoginBtn = styled.button`
   width: 100%;
-  height: 75px;
+  height: 65px;
 
   border-radius: 40px;
   border: none;

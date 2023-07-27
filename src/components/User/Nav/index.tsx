@@ -2,15 +2,18 @@ import { useLocation, useNavigate } from "react-router-dom";
 import * as S from "./style";
 import { USER_ITEMS } from "../../../constants/User/user.constants";
 import { useLogout } from "../../../hooks/Auth/useLogout";
-import { useRecoilValue } from "recoil";
-import { MyMemberInfo } from "../../../store/member/member.store";
 import { useEditNickName } from "../../../hooks/Common/useEditNickName";
+import { useGetMyInfoQuery } from "../../../queries/Member/Member.query";
+import { MyMemberInfo } from "../../../store/member/member.store";
+import { useSetRecoilState } from "recoil";
+import { useEffect } from "react";
 
 export default function Nav() {
   const navigate = useNavigate();
   const { handleLogout } = useLogout();
   const { pathname } = useLocation();
-  const myMemberInfo = useRecoilValue(MyMemberInfo);
+  const { data: myInfo } = useGetMyInfoQuery();
+
   const {
     handleEditNickNameQuestion,
     handleEditNickNameChange,
@@ -18,13 +21,19 @@ export default function Nav() {
     hanldeEditNickNameCancel,
     isEditNickName,
     editNickName,
-  } = useEditNickName(myMemberInfo?.memberDetails.nickName!!);
+  } = useEditNickName(myInfo?.memberDetails.nickName!!);
+
+  const setMyMemberInfo = useSetRecoilState(MyMemberInfo);
+
+  useEffect(() => {
+    setMyMemberInfo(myInfo!!);
+  }, [myInfo]);
 
   return (
     <S.UserNavBar>
       <S.MemberInfoContainer>
-        <S.UserImg src={myMemberInfo?.socialDetails.imageUrl} />
-        <S.UserName>{myMemberInfo?.socialDetails.name}</S.UserName>
+        <S.UserImg src={myInfo?.socialDetails.imageUrl} />
+        <S.UserName>{myInfo?.socialDetails.name}</S.UserName>
         <S.UserNickName>
           {isEditNickName ? (
             <form onSubmit={handleNickNameSubmit}>
@@ -41,13 +50,13 @@ export default function Nav() {
             </form>
           ) : (
             <div onClick={handleEditNickNameQuestion}>
-              {myMemberInfo?.memberDetails.nickName
-                ? myMemberInfo?.memberDetails.nickName
+              {myInfo?.memberDetails.nickName
+                ? myInfo?.memberDetails.nickName
                 : "닉네임 추가하기"}
             </div>
           )}
         </S.UserNickName>
-        <S.UserEmail>{myMemberInfo?.socialDetails.email}</S.UserEmail>
+        <S.UserEmail>{myInfo?.socialDetails.email}</S.UserEmail>
       </S.MemberInfoContainer>
       <S.PageSelectContainer>
         <S.PageSelect>

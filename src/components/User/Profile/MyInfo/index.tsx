@@ -36,9 +36,7 @@ export default function MyInfo({ data }: Props) {
           }
         >
           <AiFillGithub size={25} />
-          <div style={{ fontWeight: "500" }}>
-            {data?.socialDetails.socialId}
-          </div>
+          <p style={{ fontWeight: "500" }}>{data?.socialDetails.socialId}</p>
         </S.GitLink>
         <S.GitLoginType>
           {data?.socialDetails.loginType} 로그인 중

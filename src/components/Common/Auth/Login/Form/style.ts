@@ -23,7 +23,7 @@ export const Title = styled.div`
 
 export const InputContainer = styled.div`
   width: 100%;
-  height: 75px;
+  height: 65px;
   display: flex;
   border-radius: 5px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);

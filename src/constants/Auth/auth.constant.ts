@@ -1,5 +1,5 @@
-import github from "../../assets/github.svg";
-import Google from "../../assets/Google.png";
+import github from "../../assets/Auth/github.svg";
+import Google from "../../assets/Auth/google.png";
 import CONFIG from "../.././config/config.json";
 
 export const ACCESS_TOKEN_KEY = "accessToken" as const;

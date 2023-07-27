@@ -7,7 +7,7 @@ export default function UserBottom() {
   const { pathname } = useLocation();
 
   return (
-    <S.UserHeader>
+    <S.UserFooter>
       <S.UserListWrap>
         {USER_ITEMS.map((user) => (
           <S.UserCategory
@@ -19,6 +19,6 @@ export default function UserBottom() {
           </S.UserCategory>
         ))}
       </S.UserListWrap>
-    </S.UserHeader>
+    </S.UserFooter>
   );
 }

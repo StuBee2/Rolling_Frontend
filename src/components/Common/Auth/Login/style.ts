@@ -10,8 +10,8 @@ export const LoginContainer = styled.div`
 `;
 
 export const LoginFormContainer = styled.div`
-  width: 615px;
-  height: 770px;
+  width: 553px;
+  height: 740px;
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
@@ -32,5 +32,4 @@ export const LoginLogo = styled.img`
 export const LoginFormBox = styled.div`
   width: 75%;
   height: 322px;
-  background-color: red;
 `;

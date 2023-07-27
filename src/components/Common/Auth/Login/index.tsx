@@ -1,6 +1,6 @@
 import * as S from "./style";
 import useHideHeader from "../../../../hooks/Common/useHideHeader";
-import loginLogo from "../../../../assets/loginLogo.svg";
+import loginLogo from "../../../../assets/Auth/loginLogo.svg";
 import Form from "./Form";
 import Social from "./Social";
 import { useNavigate } from "react-router-dom";

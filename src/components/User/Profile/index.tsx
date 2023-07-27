@@ -1,10 +1,11 @@
-import { useGetMyInfoQuery } from "../../../queries/Member/Member.query";
+import { useRecoilValue } from "recoil";
 import CompanyCount from "./CompanyCount";
 import MyInfo from "./MyInfo";
 import * as S from "./style";
+import { MyMemberInfo } from "../../../store/member/member.store";
 
 function Profile() {
-  const { data } = useGetMyInfoQuery();
+  const myInfo = useRecoilValue(MyMemberInfo);
   return (
     <S.Container>
       <S.Title>
@@ -14,7 +15,7 @@ function Profile() {
         </S.Explain>
       </S.Title>
       <CompanyCount />
-      <MyInfo data={data!!} />
+      <MyInfo data={myInfo!!} />
     </S.Container>
   );
 }

@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+export const SearchModalWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 3;
+`;
+
 export const SearchContainer = styled.div`
   width: 100%;
   height: 442px;
