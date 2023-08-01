@@ -9,13 +9,15 @@ import {
 export default function Nav() {
   return (
     <S.NavContainer>
-      <S.InterestCategoryBox>
-        <div>
-          <img src={category} alt="이미지 없음" />
-          <p>관심 카테고리</p>
-        </div>
-        <img src={more} alt="이미지 없음" />
-      </S.InterestCategoryBox>
+      <div>
+        <S.InterestCategoryBox>
+          <div>
+            <img src={category} alt="이미지 없음" />
+            <p>관심 카테고리</p>
+          </div>
+          <img src={more} alt="이미지 없음" />
+        </S.InterestCategoryBox>
+      </div>
 
       <S.CompanyCategoryListContainer>
         {HOME_NAV_COMPANY_ITEMS.map((item) => (

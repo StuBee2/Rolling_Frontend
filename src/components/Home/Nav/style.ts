@@ -6,9 +6,11 @@ export const NavContainer = styled.div`
 
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 50px;
+  @media screen and (max-width: 740px) {
+    display: none;
+  }
 `;
-
 export const InterestCategoryBox = styled.div`
   width: 100%;
   height: 60px;
@@ -42,7 +44,7 @@ export const CompanyCategoryListContainer = styled.ul`
   padding-left: 60px;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 30px;
 
   font-size: 18px;
   font-weight: bold;

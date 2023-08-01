@@ -20,6 +20,7 @@ export const HeaderWrap = styled.div`
 
   display: flex;
   align-items: center;
+  column-gap: 20px;
   justify-content: space-between;
 
   white-space: nowrap;
@@ -65,7 +66,7 @@ export const PageList = styled.li<{ isSelect: boolean }>`
 export const LoginSearchContainer = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 10px;
 
   div {
     cursor: pointer;

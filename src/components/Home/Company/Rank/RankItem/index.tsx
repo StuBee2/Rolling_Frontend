@@ -1,23 +1,30 @@
+import { useGetCompanyRankSelectQuery } from "../../../../../queries/Company/company.query";
 import * as S from "./style";
 
 interface Props {
-  ranking: number;
+  rankCategory: string;
 }
 
-export default function RankItem({ ranking }: Props) {
+export default function RankItem({ rankCategory }: Props) {
+  const { data: rankInfo } = useGetCompanyRankSelectQuery(rankCategory, {
+    suspense: true,
+  });
   return (
-    <S.RankItem>
-      <S.CompanyRanking>{ranking}</S.CompanyRanking>
-      <S.CompanyContent>
-        <S.CompanyLogo
-          src="https://image.msscdn.net/mfile_s01/fb/share_musinsa.png"
-          alt="이미지 없음"
-        />
-        <div>
-          <S.CompanyName>MUSINSA</S.CompanyName>
-          <S.CompanyFeatures>sns 플랫폼</S.CompanyFeatures>
-        </div>
-      </S.CompanyContent>
-    </S.RankItem>
+    <>
+      {rankInfo?.map((data, idx) => (
+        <S.RankItem key={data.companyId.id}>
+          <S.CompanyRanking>{idx + 1}</S.CompanyRanking>
+          <S.CompanyContent>
+            <S.CompanyLogo src={data.companyDetails.imgUrl} alt="이미지 없음" />
+            <div>
+              <S.CompanyName>{data.companyDetails.name}</S.CompanyName>
+              <S.CompanyFeatures>
+                {data.companyDetails.description}
+              </S.CompanyFeatures>
+            </div>
+          </S.CompanyContent>
+        </S.RankItem>
+      ))}
+    </>
   );
 }

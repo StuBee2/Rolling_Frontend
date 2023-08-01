@@ -4,6 +4,8 @@ import Nav from "./Nav";
 import Cms from "./Company/Cms";
 import Rank from "./Company/Rank";
 import HomeItem from "./HomeItem";
+import ErrorBoundary from "../Common/ErrorBoundary";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -11,16 +13,19 @@ export default function Home() {
       <S.HomeWrapper>
         <S.NavAndHomeItemContainer>
           <Nav />
+
           <S.HomeItemContainer>
             <S.HomeItemWrapper>
-              <S.Title>
-                <img src={recommand} alt="이미지 없음" />
-                <p>선배들이 추천해요!</p>
-              </S.Title>
               <S.HomeItemBox>
-                {Array.from({ length: 21 }).map((item, idx) => (
-                  <HomeItem key={idx} />
-                ))}
+                <S.Title>
+                  <img src={recommand} alt="이미지 없음" />
+                  <p>선배들이 추천해요!</p>
+                </S.Title>
+                <ErrorBoundary fallback={<>Error</>}>
+                  <Suspense fallback={<>로딩 중...</>}>
+                    <HomeItem />
+                  </Suspense>
+                </ErrorBoundary>
               </S.HomeItemBox>
             </S.HomeItemWrapper>
           </S.HomeItemContainer>

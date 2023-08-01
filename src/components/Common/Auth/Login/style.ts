@@ -9,7 +9,7 @@ export const LoginContainer = styled.div`
   justify-content: center;
 `;
 
-export const LoginFormContainer = styled.div`
+export const LoginWrapper = styled.div`
   width: 553px;
   height: 740px;
   background-color: rgba(255, 255, 255, 0.75);
@@ -21,6 +21,10 @@ export const LoginFormContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   row-gap: 50px;
+
+  @media screen and (max-width: 620px) {
+    width: 500px;
+  }
 `;
 
 export const LoginLogo = styled.img`

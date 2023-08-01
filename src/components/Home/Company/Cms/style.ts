@@ -5,6 +5,7 @@ export const CmsBox = styled.div`
   height: 310px;
   border-radius: 20px;
   position: relative;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 `;
 
 export const CmsImg = styled.div<{ image: string }>`

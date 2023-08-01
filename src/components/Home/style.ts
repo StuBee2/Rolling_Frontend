@@ -19,10 +19,10 @@ export const HomeWrapper = styled.div`
     width: 1270px;
   }
   @media screen and (max-width: 1355px) {
-    width: 1000px;
+    width: 730px;
   }
-  @media screen and (max-width: 1040px) {
-    width: 90%;
+  @media screen and (max-width: 740px) {
+    width: 370px;
   }
 `;
 
@@ -41,6 +41,9 @@ export const HomeItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: 740px) {
+    width: 100%;
+  }
 `;
 
 export const HomeItemWrapper = styled.div`
@@ -50,6 +53,9 @@ export const HomeItemWrapper = styled.div`
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;
+  }
+  @media screen and (max-width: 1355px) {
+    width: 100%;
   }
 `;
 
@@ -66,7 +72,6 @@ export const HomeItemBox = styled.div`
 export const Title = styled.div`
   width: 100%;
   height: 30px;
-  margin-bottom: 10px;
 
   font-size: 25px;
   font-weight: bold;

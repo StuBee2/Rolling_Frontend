@@ -15,11 +15,16 @@ export const CompanyImageContainer = styled.div`
 export const CompanyImage = styled.div<{ image: string }>`
   width: 100%;
   height: 90%;
-  background-color: blue;
   background: url(${(props) => props.image}) no-repeat;
   background-size: cover;
   border-radius: 15px;
   box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.2);
+  background-color: yellow;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.03);
+  }
 `;
 
 export const CompanyRegister = styled.img`

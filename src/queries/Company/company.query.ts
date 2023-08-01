@@ -198,3 +198,21 @@ export const useGetCompanyRankBalanceQuery = (
       ...options,
     }
   );
+
+export const useGetCompanyRankSelectQuery = (
+  rankCategory: string,
+  options?: UseQueryOptions<
+    CompanyListType[],
+    AxiosError,
+    CompanyListType[],
+    string
+  >
+): UseQueryResult<CompanyListType[], AxiosError> =>
+  useQuery(
+    QUERY_KEYS.company.getCompanyRank,
+    () => CompanyRepositoryImpl.getCompanyRankSelect(rankCategory),
+    {
+      enabled: !!rankCategory,
+      ...options,
+    }
+  );

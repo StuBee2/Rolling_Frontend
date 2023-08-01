@@ -4,7 +4,7 @@ export const RankListTextContainer = styled.ul`
   display: flex;
   column-gap: 20px;
   color: #1d1e5a;
-  font-size: 18px;
+  font-size: 15px;
 `;
 
 export const RankWrapper = styled.div`

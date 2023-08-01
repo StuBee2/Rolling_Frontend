@@ -3,11 +3,13 @@ import rank from "../../../../assets/Home/rank.svg";
 import smile from "../../../../assets/User/smile.svg";
 import { CompanyContainer, Title } from "../style";
 import { HOME_COMPANY_RANK_ITMES } from "../../../../constants/Home/Home.constants";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import RankItem from "./RankItem";
+import ErrorBoundary from "../../../Common/ErrorBoundary";
 
 export default function Rank() {
-  const [select, setSelect] = useState("총합순위");
+  const [rankCategorySelect, setRankCategorySelect] = useState("total");
+
   return (
     <CompanyContainer gap="30px">
       <Title>
@@ -22,8 +24,8 @@ export default function Rank() {
           {HOME_COMPANY_RANK_ITMES.map((item) => (
             <S.RankListText
               key={item.id}
-              onClick={() => setSelect(item.name!!)}
-              isselect={select === item.name}
+              onClick={() => setRankCategorySelect(item.categoryName!!)}
+              isselect={rankCategorySelect === item.categoryName}
             >
               {item.name}
             </S.RankListText>
@@ -36,9 +38,11 @@ export default function Rank() {
             <p>우리들은 직원복지를 최우선으로 합니다.</p>
           </S.Introduce>
           <S.RankListItemContainer>
-            {Array.from({ length: 15 }).map((item, idx) => (
-              <RankItem key={idx} ranking={idx + 1} />
-            ))}
+            <ErrorBoundary fallback={<>Error</>}>
+              <Suspense fallback={<>로딩 중...</>}>
+                <RankItem rankCategory={rankCategorySelect} />
+              </Suspense>
+            </ErrorBoundary>
             <S.More>+ 더보기</S.More>
           </S.RankListItemContainer>
         </S.RankListItemWrapper>

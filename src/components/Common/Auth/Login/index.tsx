@@ -10,7 +10,7 @@ export default function Login() {
   useHideHeader();
   return (
     <S.LoginContainer>
-      <S.LoginFormContainer>
+      <S.LoginWrapper>
         <S.LoginLogo
           src={loginLogo}
           onClick={() => navigate("/")}
@@ -18,7 +18,7 @@ export default function Login() {
         />
         <Form />
         <Social />
-      </S.LoginFormContainer>
+      </S.LoginWrapper>
     </S.LoginContainer>
   );
 }

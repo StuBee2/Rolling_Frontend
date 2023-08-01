@@ -23,7 +23,7 @@ class CompanyRepositoryImpl implements CompanyRepository {
   public async getMyCompanyList({
     page,
   }: CommonPageParam): Promise<CompanyInfiniteScrollType> {
-    const { data } = await customAxios.get(`/company/my?page=${page}&size=10`);
+    const { data } = await customAxios.get(`/company/list/my?page=${page}&size=10`);
     return { ...data, nextPage: page + 1 };
   }
 
@@ -41,7 +41,7 @@ class CompanyRepositoryImpl implements CompanyRepository {
     page,
   }: CommonPageParam): Promise<CompanyInfiniteScrollType> {
     const { data } = await customAxios.get(
-      `/company/list&page=${page}&size=10`
+      `/company/list/all&page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
   }
@@ -85,6 +85,13 @@ class CompanyRepositoryImpl implements CompanyRepository {
 
   public async getCompanyRankBalance(): Promise<CompanyListType[]> {
     const { data } = await customAxios.get("/company/rank/balance");
+    return data;
+  }
+
+  public async getCompanyRankSelect(
+    rankCategory: string
+  ): Promise<CompanyListType[]> {
+    const { data } = await customAxios.get(`/company/rank/${rankCategory}`);
     return data;
   }
 

@@ -36,23 +36,15 @@ export const CATEGORY_ITEMS: Type[] = [
 export const HOME_NAV_COMPANY_ITEMS: Type[] = [
   {
     id: 0,
-    name: "total",
+    name: "스타트업",
   },
   {
     id: 1,
-    name: "salary-benefits",
+    name: "요즘 뜨는 기업",
   },
   {
     id: 2,
-    name: "culture",
-  },
-  {
-    id: 3,
-    name: "career",
-  },
-  {
-    id: 4,
-    name: "balance",
+    name: "내 주변 기업",
   },
 ];
 
@@ -83,17 +75,26 @@ export const HOME_COMPANY_RANK_ITMES: Type[] = [
   {
     id: 0,
     name: "총합순위",
+    categoryName: "total",
   },
   {
     id: 1,
     name: "균형순위",
+    categoryName: "balance",
   },
   {
     id: 2,
     name: "연봉순위",
+    categoryName: "salary-benefits",
   },
   {
     id: 3,
-    name: "복지순위",
+    name: "경력순위",
+    categoryName: "career",
+  },
+  {
+    id: 4,
+    name: "문화순위",
+    categoryName: "culture",
   },
 ];

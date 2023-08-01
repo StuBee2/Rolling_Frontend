@@ -10,6 +10,7 @@ export const QUERY_KEYS = Object.freeze({
     getCompanyRankCulture: "company/rank/culture",
     getCompanyRankCareer: "company/rank/career",
     getCompanyRankBalnce: "/company/rank/balnce",
+    getCompanyRank: "/company/rank",
   },
   review: {
     getMyReview: "/review/my",
