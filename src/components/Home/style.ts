@@ -2,11 +2,15 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 108px);
+  height: calc(100% - 108px);
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f9fafb;
+  @media screen and (max-width: 740px) {
+    flex-direction: column;
+  }
+  white-space: nowrap;
 `;
 
 export const HomeWrapper = styled.div`
@@ -23,6 +27,9 @@ export const HomeWrapper = styled.div`
   }
   @media screen and (max-width: 740px) {
     width: 370px;
+  }
+  @media screen and (max-width: 380px) {
+    width: 100%;
   }
 `;
 
@@ -49,11 +56,6 @@ export const HomeItemContainer = styled.div`
 export const HomeItemWrapper = styled.div`
   width: 90%;
   height: 100%;
-
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    display: none;
-  }
   @media screen and (max-width: 1355px) {
     width: 100%;
   }
@@ -82,11 +84,17 @@ export const Title = styled.div`
     width: 30px;
     height: 30px;
   }
+
+  @media screen and (max-width: 1355px) and (min-width: 740px) {
+    padding-left: 20px;
+  }
 `;
 
 export const CmsContainer = styled.div`
   width: 390px;
   height: 100%;
+  position: sticky;
+  top: 10px;
 
   display: flex;
   flex-direction: column;

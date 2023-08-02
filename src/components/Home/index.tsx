@@ -6,10 +6,12 @@ import Rank from "./Company/Rank";
 import HomeItem from "./HomeItem";
 import ErrorBoundary from "../Common/ErrorBoundary";
 import { Suspense } from "react";
+import NavTop from "./Nav/NavTop";
 
 export default function Home() {
   return (
     <S.HomeContainer>
+      <NavTop />
       <S.HomeWrapper>
         <S.NavAndHomeItemContainer>
           <Nav />

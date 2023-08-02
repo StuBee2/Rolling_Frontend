@@ -51,7 +51,11 @@ export default function HomeItem() {
       {Array.from({ length: 14 }).map((item, idx) => (
         <S.CompanyItemContainer key={idx}>
           <S.CompanyImageContainer>
-            <S.CompanyImage image={""} />
+            <S.CompanyImage
+              image={
+                "https://cdn.aitimes.kr/news/photo/202006/16654_18066_932.jpg"
+              }
+            />
             <S.CompanyRegister
               src="https://img.seoul.co.kr//img/upload/2023/06/02/SSC_20230602152204.jpg"
               alt="이미지 없음"

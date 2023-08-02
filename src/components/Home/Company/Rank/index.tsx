@@ -31,12 +31,11 @@ export default function Rank() {
             </S.RankListText>
           ))}
         </S.RankListTextContainer>
-
+        <S.Introduce>
+          <img src={smile} alt="이미지 없음" />
+          <p>우리들은 직원복지를 최우선으로 합니다.</p>
+        </S.Introduce>
         <S.RankListItemWrapper>
-          <S.Introduce>
-            <img src={smile} alt="이미지 없음" />
-            <p>우리들은 직원복지를 최우선으로 합니다.</p>
-          </S.Introduce>
           <S.RankListItemContainer>
             <ErrorBoundary fallback={<>Error</>}>
               <Suspense fallback={<>로딩 중...</>}>

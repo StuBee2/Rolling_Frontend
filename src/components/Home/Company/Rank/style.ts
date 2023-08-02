@@ -42,7 +42,6 @@ export const Introduce = styled.div`
   display: flex;
   align-items: center;
   column-gap: 5px;
-  margin-bottom: 10px;
 `;
 
 export const RankListItemContainer = styled.div`

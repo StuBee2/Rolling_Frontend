@@ -12,7 +12,7 @@ export const LoginBtn = styled.button`
   width: 100%;
   height: 65px;
 
-  border-radius: 40px;
+  border-radius: 10px;
   border: none;
   outline: none;
 
@@ -23,7 +23,7 @@ export const LoginBtn = styled.button`
   padding: 0 20px 0 20px;
   font-size: 18px;
   font-weight: 600;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
+
   cursor: pointer;
 
   img {
