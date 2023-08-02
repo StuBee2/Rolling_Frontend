@@ -11,7 +11,7 @@ import authRepositoryImpl from "../../repositories/Auth/auth.repositoryImpl";
 export const responseHandler = async (config: AxiosError) => {
   const access_token = Token.getToken(ACCESS_TOKEN_KEY);
   const refresh_token = Token.getToken(REFRESH_TOKEN_KEY);
-  console.log(config.response?.status);
+
   if (access_token && refresh_token && config.response?.status === 401) {
     try {
       const { accessToken } = await authRepositoryImpl.postRefreshToken(
