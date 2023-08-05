@@ -4,6 +4,7 @@ export interface MemberType {
   };
   socialDetails: {
     socialId: string;
+    socialLoginId: string;
     loginType: string;
     name: string;
     email: string;
