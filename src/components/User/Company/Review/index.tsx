@@ -22,10 +22,8 @@ export default function Review() {
   return (
     <Container>
       <Title>
-        <S.FontSize fontSize="30px">내 기업 History</S.FontSize>
-        <Explain>
-          기본 정보와 서비스에서 이용되는 프로필을 설정할 수 있어요
-        </Explain>
+        <S.FontSize fontSize="30px">내 리뷰 Story</S.FontSize>
+        <Explain>자신이 직접 롤링한 회사를 보여줘요</Explain>
       </Title>
       <S.CompanyStatus>
         <img src={write} alt="" />

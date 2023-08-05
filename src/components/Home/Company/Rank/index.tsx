@@ -6,6 +6,7 @@ import { HOME_COMPANY_RANK_ITMES } from "../../../../constants/Home/Home.constan
 import { Suspense, useState } from "react";
 import RankItem from "./RankItem";
 import ErrorBoundary from "../../../Common/ErrorBoundary";
+import { getCompanyRankIntroduce } from "../../../../util/getCompanyRankIntroduce";
 
 export default function Rank() {
   const [rankCategorySelect, setRankCategorySelect] = useState("total");
@@ -31,12 +32,12 @@ export default function Rank() {
             </S.RankListText>
           ))}
         </S.RankListTextContainer>
-        <S.Introduce>
-          <img src={smile} alt="이미지 없음" />
-          <p>우리들은 직원복지를 최우선으로 합니다.</p>
-        </S.Introduce>
         <S.RankListItemWrapper>
           <S.RankListItemContainer>
+            <S.Introduce>
+              <img src={smile} alt="이미지 없음" />
+              <p>{getCompanyRankIntroduce(rankCategorySelect)}</p>
+            </S.Introduce>
             <ErrorBoundary fallback={<>Error</>}>
               <Suspense fallback={<>로딩 중...</>}>
                 <RankItem rankCategory={rankCategorySelect} />

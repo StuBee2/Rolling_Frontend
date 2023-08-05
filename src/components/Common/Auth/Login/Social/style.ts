@@ -23,14 +23,10 @@ export const LoginBtn = styled.button`
   padding: 0 20px 0 20px;
   font-size: 18px;
   font-weight: 600;
-
   cursor: pointer;
 
   img {
     width: 29px;
     height: 29px;
-  }
-
-  div {
   }
 `;

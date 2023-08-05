@@ -19,7 +19,13 @@ export const UserListWrap = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  column-gap: 15px;
   font-size: 18px;
+  overflow-x: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const UserCategory = styled.li<{ isSelect: boolean }>`

@@ -12,7 +12,7 @@ import {
   CompanyInfiniteScrollType,
   CompanyInfoType,
   CompanyListType,
-} from "../../types/company.type";
+} from "../../types/Company/company.type";
 import { AxiosError } from "axios";
 import { QUERY_KEYS } from "../queryKey";
 import { CommonIdParam } from "../../repositories/common.param";
@@ -216,3 +216,10 @@ export const useGetCompanyRankSelectQuery = (
       ...options,
     }
   );
+
+export const useDeleteCompanyMutation = () => {
+  const mutation = useMutation((param: string) =>
+    CompanyRepositoryImpl.deleteCompany({ companyId: param })
+  );
+  return mutation;
+};

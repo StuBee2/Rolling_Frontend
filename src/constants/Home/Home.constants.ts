@@ -89,7 +89,7 @@ export const HOME_COMPANY_RANK_ITMES: Type[] = [
   },
   {
     id: 3,
-    name: "경력순위",
+    name: "커리어순위",
     categoryName: "career",
   },
   {

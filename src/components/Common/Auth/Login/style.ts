@@ -25,7 +25,7 @@ export const LoginWrapper = styled.div`
 
   margin: 10px;
   background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
 
   display: flex;

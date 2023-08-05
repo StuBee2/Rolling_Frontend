@@ -1,7 +1,7 @@
 import { AiFillGithub } from "react-icons/ai";
 import { Explain, Title } from "../style";
 import * as S from "./style";
-import { MemberType } from "../../../../types/member.type";
+import { MemberType } from "../../../../types/Member/member.type";
 
 interface Props {
   data: MemberType;
@@ -17,6 +17,7 @@ export default function MyInfo({ data }: Props) {
             롤링에서 제공되는 맞춤 콘텐츠의 기본 데이터로 활용됩니다
           </Explain>
         </Title>
+
         <S.GitUserContainer>
           <S.GitUserLogo src={data?.socialDetails.imageUrl} />
           <S.GitUserInfo>
@@ -36,7 +37,9 @@ export default function MyInfo({ data }: Props) {
           }
         >
           <AiFillGithub size={25} />
-          <p style={{ fontWeight: "500" }}>{data?.socialDetails.socialId}</p>
+          <p style={{ fontWeight: "500" }}>
+            {data?.socialDetails.socialLoginId}
+          </p>
         </S.GitLink>
         <S.GitLoginType>
           {data?.socialDetails.loginType} 로그인 중

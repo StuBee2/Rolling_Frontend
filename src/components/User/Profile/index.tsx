@@ -1,8 +1,8 @@
 import { useRecoilValue } from "recoil";
-import CompanyCount from "./CompanyCount";
 import MyInfo from "./MyInfo";
 import * as S from "./style";
 import { MyMemberInfo } from "../../../store/member/member.store";
+import CompanyStatus from "./CompanyStatus";
 
 function Profile() {
   const myInfo = useRecoilValue(MyMemberInfo);
@@ -14,7 +14,7 @@ function Profile() {
           기본 정보와 서비스에서 이용되는 프로필을 설정할 수 있어요
         </S.Explain>
       </S.Title>
-      <CompanyCount />
+      <CompanyStatus />
       <MyInfo data={myInfo!!} />
     </S.Container>
   );

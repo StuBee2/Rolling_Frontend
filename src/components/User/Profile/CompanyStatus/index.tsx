@@ -2,7 +2,7 @@ import * as S from "./style";
 import regist from "../../../../assets/User/regist.svg";
 import review from "../../../../assets/User/review.svg";
 
-export default function CompanyCount() {
+export default function CompanyStatus() {
   return (
     <S.CompanyStatusWrap>
       <S.CompanyStatusContainer>
