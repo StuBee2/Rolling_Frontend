@@ -1,5 +1,5 @@
 import { customAxios } from "../../libs/Axios/customAxios";
-import { MemberType } from "../../types/member.type";
+import { MemberType } from "../../types/Member/member.type";
 import { MemberNickNameParam, MemberRepository } from "./member.repository";
 
 class MemberRepositoryImpl implements MemberRepository {

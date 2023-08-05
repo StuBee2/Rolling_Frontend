@@ -1,5 +1,5 @@
 import { customAxios } from "../../libs/Axios/customAxios";
-import { NewsInfiniteScrollType } from "../../types/news.type";
+import { NewsInfiniteScrollType } from "../../types/News/news.type";
 import { CommonPageParam } from "../common.param";
 import { NewsCompanyNameParam, NewsRepository } from "./news.repository";
 

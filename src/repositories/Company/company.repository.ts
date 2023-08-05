@@ -2,7 +2,7 @@ import {
   CompanyInfiniteScrollType,
   CompanyInfoType,
   CompanyListType,
-} from "../../types/company.type";
+} from "../../types/Company/company.type";
 import { CommonIdParam, CommonPageParam } from "../common.param";
 
 export interface CompanyParam {

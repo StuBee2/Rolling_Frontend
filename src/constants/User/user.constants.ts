@@ -18,7 +18,7 @@ export const USER_ITEMS: Type[] = [
   },
   {
     id: 2,
-    link: "/mypage/regist",
+    link: "/mypage/employment",
     image: regist,
     title: "등록한 기업",
   },

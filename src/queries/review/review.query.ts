@@ -12,7 +12,7 @@ import {
   ReviewInfiniteScrollListType,
   ReviewInfoIdType,
   ReviewListType,
-} from "../../types/review.type";
+} from "../../types/Review/review.type";
 import { AxiosError } from "axios";
 import { CommonIdParam } from "../../repositories/common.param";
 import { QUERY_KEYS } from "../queryKey";

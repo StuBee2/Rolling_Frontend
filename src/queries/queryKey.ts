@@ -24,4 +24,7 @@ export const QUERY_KEYS = Object.freeze({
   news: {
     getNews: (companyName: string) => ["/news/companyName", companyName],
   },
+  employment: {
+    getMyEmploymentList: "/employment/my",
+  },
 });

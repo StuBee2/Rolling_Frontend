@@ -3,7 +3,7 @@ import {
   CompanyInfiniteScrollType,
   CompanyInfoType,
   CompanyListType,
-} from "../../types/company.type";
+} from "../../types/Company/company.type";
 import { CommonIdParam, CommonPageParam } from "../common.param";
 import {
   CompanyIdParam,
@@ -23,7 +23,9 @@ class CompanyRepositoryImpl implements CompanyRepository {
   public async getMyCompanyList({
     page,
   }: CommonPageParam): Promise<CompanyInfiniteScrollType> {
-    const { data } = await customAxios.get(`/company/list/my?page=${page}&size=10`);
+    const { data } = await customAxios.get(
+      `/company/list/my?page=${page}&size=10`
+    );
     return { ...data, nextPage: page + 1 };
   }
 
