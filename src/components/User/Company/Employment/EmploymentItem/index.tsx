@@ -21,6 +21,11 @@ export default function EmploymentItem({ employment }: Props) {
       onMouseLeave={() => setMouseEvent("")}
     >
       <S.ListContainer>
+        <p style={{ fontWeight: "bold" }}>
+          {employment.employmentStatus === "HOLD"
+            ? "재직 중인 기업"
+            : "퇴직한 기업"}
+        </p>
         <S.CompanyContainer>
           <S.CompanyImg src={employment.employerImgUrl} />
           <S.CompanyAbleContainer>

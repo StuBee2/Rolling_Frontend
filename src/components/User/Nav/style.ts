@@ -37,7 +37,7 @@ export const UserEmail = styled.p`
   color: #61677e;
 `;
 
-export const UserNickName = styled.p`
+export const UserNickName = styled.div`
   font-size: 15px;
   cursor: pointer;
 

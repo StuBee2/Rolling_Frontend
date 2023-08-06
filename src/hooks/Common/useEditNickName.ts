@@ -2,8 +2,6 @@ import { useState } from "react";
 import { usePatchMyNickNameMutation } from "../../queries/Member/Member.query";
 import { useQueryClient } from "react-query";
 import { QUERY_KEYS } from "../../queries/queryKey";
-import { AxiosError } from "axios";
-import memberRepositoryImpl from "../../repositories/Member/member.repositoryImpl";
 
 export const useEditNickName = (nickName: string) => {
   const patchNickNameMutation = usePatchMyNickNameMutation();
@@ -49,8 +47,8 @@ export const useEditNickName = (nickName: string) => {
           queryClient.invalidateQueries(QUERY_KEYS.member.getMyMember);
           setIsEditNickName(false);
         },
-        onError: (err, query) => {
-          console.log(query, err);
+        onError: () => {
+          window.alert("에러가 발생했습니다");
         },
       }
     );

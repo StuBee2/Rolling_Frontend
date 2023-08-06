@@ -1,5 +1,5 @@
 import * as S from "./style";
-import regist from "../../../../assets/User/regist.svg";
+import employment from "../../../../assets/User/employment.svg";
 import review from "../../../../assets/User/review.svg";
 
 export default function CompanyStatus() {
@@ -7,7 +7,7 @@ export default function CompanyStatus() {
     <S.CompanyStatusWrap>
       <S.CompanyStatusContainer>
         <S.CompanyStatus>
-          <img src={regist} alt="" />
+          <img src={employment} alt="" />
           <S.CompanyNumber>2</S.CompanyNumber>
         </S.CompanyStatus>
         <div>
