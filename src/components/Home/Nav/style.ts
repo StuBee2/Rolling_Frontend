@@ -2,10 +2,7 @@ import styled from "styled-components";
 
 export const NavContainer = styled.div`
   width: 320px;
-  height: 100%;
-  position: sticky;
-  top: 10px;
-
+  height: 100vh;
   display: flex;
   flex-direction: column;
   row-gap: 50px;

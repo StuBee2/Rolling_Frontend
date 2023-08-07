@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
   width: 100%;
-  height: calc(100% - 108px);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,12 +44,16 @@ export const NavAndHomeItemContainer = styled.div`
 
 export const HomeItemContainer = styled.div`
   width: calc(100% - 320px);
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   @media screen and (max-width: 740px) {
     width: 100%;
+  }
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
   }
 `;
 
@@ -92,9 +96,7 @@ export const Title = styled.div`
 
 export const CmsContainer = styled.div`
   width: 390px;
-  height: 100%;
-  position: sticky;
-  top: 10px;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;

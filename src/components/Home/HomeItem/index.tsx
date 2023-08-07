@@ -2,6 +2,7 @@ import { useInView } from "react-intersection-observer";
 import { useGetCompanyListQuery } from "../../../queries/Company/company.query";
 import * as S from "./style";
 import { useEffect } from "react";
+import HomeSkeleton from "../../Common/Skeleton/Home";
 
 export default function HomeItem() {
   // const { data: allList, fetchNextPage } = useGetCompanyListQuery({
@@ -48,7 +49,7 @@ export default function HomeItem() {
         ))
       )}
       <div ref={ref} /> */}
-      {Array.from({ length: 14 }).map((item, idx) => (
+      {Array.from({ length: 15 }).map((item, idx) => (
         <S.CompanyItemContainer key={idx}>
           <S.CompanyImageContainer>
             <S.CompanyImage

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const CompanyItemContainer = styled.div`
   width: 370px;
   height: 380px;
+  margin: 0 5px 0 5px;
 `;
 
 export const CompanyImageContainer = styled.div`

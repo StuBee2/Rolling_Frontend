@@ -7,6 +7,7 @@ import HomeItem from "./HomeItem";
 import ErrorBoundary from "../Common/ErrorBoundary";
 import { Suspense } from "react";
 import NavTop from "./Nav/NavTop";
+import HomeSkeleton from "../Common/Skeleton/Home";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
                   <p>선배들이 추천해요!</p>
                 </S.Title>
                 <ErrorBoundary fallback={<>Error</>}>
-                  <Suspense fallback={<>로딩 중...</>}>
+                  <Suspense fallback={<HomeSkeleton />}>
                     <HomeItem />
                   </Suspense>
                 </ErrorBoundary>

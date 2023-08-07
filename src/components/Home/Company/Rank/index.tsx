@@ -7,6 +7,7 @@ import { Suspense, useState } from "react";
 import RankItem from "./RankItem";
 import ErrorBoundary from "../../../Common/ErrorBoundary";
 import { getCompanyRankIntroduce } from "../../../../util/getCompanyRankIntroduce";
+import RankSkeleton from "../../../Common/Skeleton/Rank";
 
 export default function Rank() {
   const [rankCategorySelect, setRankCategorySelect] = useState("total");
@@ -39,7 +40,7 @@ export default function Rank() {
               <p>{getCompanyRankIntroduce(rankCategorySelect)}</p>
             </S.Introduce>
             <ErrorBoundary fallback={<>Error</>}>
-              <Suspense fallback={<>로딩 중...</>}>
+              <Suspense fallback={<RankSkeleton />}>
                 <RankItem rankCategory={rankCategorySelect} />
               </Suspense>
             </ErrorBoundary>
