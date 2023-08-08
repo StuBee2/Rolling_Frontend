@@ -88,6 +88,7 @@ export const SocailSignInBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  column-gap: 10px;
   padding: 1rem 2rem;
   cursor: pointer;
 
