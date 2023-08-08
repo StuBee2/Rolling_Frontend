@@ -53,7 +53,7 @@ export default function Header() {
           {token.getToken(ACCESS_TOKEN_KEY) ? (
             <S.UserIcon size={30} onClick={() => setSimpleInfo(true)} />
           ) : (
-            <div onClick={() => navigate("/login")}>로그인</div>
+            <div onClick={() => navigate("/signin")}>로그인</div>
           )}
         </S.LoginSearchContainer>
       </S.HeaderWrap>

@@ -26,7 +26,7 @@ export const responseHandler = async (config: AxiosError) => {
     } catch (e) {
       window.alert("세션이 만료되었습니다!");
       Token.clearToken();
-      window.location.href = "/login";
+      window.location.href = "/signin";
     }
   }
   if (config.response?.status === 500) {

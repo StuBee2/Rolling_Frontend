@@ -18,7 +18,7 @@ export function useLogin() {
     e.preventDefault();
     const { id, pw } = credentials;
     if (id && pw) {
-      window.alert("성공");
+      window.alert("깃허브 로그인을 이용해주세요!");
       setCredentials({ id: "", pw: "" });
     } else if (!id && !pw) {
       window.alert("아이디와 비밀번호를 입력해주세요!");

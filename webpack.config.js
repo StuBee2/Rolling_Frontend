@@ -23,17 +23,12 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,
-        use: ["babel-loader"],
+        use: ["babel-loader", "ts-loader"],
         exclude: /node_modules/,
       },
       {
         test: /\.svg|png|jpg|gif$/,
         type: "asset/inline",
-      },
-      {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
       },
       {
         test: /\.css$/,

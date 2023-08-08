@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import AuthLoadingPage from "../pages/Auth/AuthLoadingPage";
-import LoginPage from "../pages/Auth/Login";
+import SignInPage from "../pages/Auth/SignInPage";
 import UserPage from "../pages/UserPage";
 import NotFound from "../components/Common/NotFound";
 import RegisterPage from "../pages/RegisterPage";
@@ -15,7 +15,7 @@ export default function Router() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/callback" element={<AuthLoadingPage />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signin" element={<SignInPage />} />
       {ROUTE_ITEMS.map((item) => (
         <Route
           key={item.path}
