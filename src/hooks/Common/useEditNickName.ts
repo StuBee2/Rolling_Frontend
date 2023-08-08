@@ -2,6 +2,7 @@ import { useState } from "react";
 import { usePatchMyNickNameMutation } from "../../queries/Member/Member.query";
 import { useQueryClient } from "react-query";
 import { QUERY_KEYS } from "../../queries/queryKey";
+import { AxiosError } from "axios";
 
 export const useEditNickName = (nickName: string) => {
   const patchNickNameMutation = usePatchMyNickNameMutation();
@@ -43,12 +44,15 @@ export const useEditNickName = (nickName: string) => {
       { nickName: editNickName },
       {
         onSuccess: () => {
-          window.alert("닉네임이 수정되었습니다.");
+          window.alert("닉네임이 수정되었습니다");
           queryClient.invalidateQueries(QUERY_KEYS.member.getMyMember);
           setIsEditNickName(false);
         },
-        onError: () => {
-          window.alert("에러가 발생했습니다");
+        onError: (error: unknown) => {
+          const axiosError = error as AxiosError;
+          if (axiosError.response?.status === 500) {
+            window.alert("닉네임이 중복되었습니다.");
+          }
         },
       }
     );

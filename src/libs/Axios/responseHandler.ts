@@ -29,6 +29,8 @@ export const responseHandler = async (config: AxiosError) => {
       window.location.href = "/login";
     }
   }
-
-  return config;
+  if (config.response?.status === 500) {
+    return Promise.reject(config);
+  }
+  return Promise.resolve(config);
 };
