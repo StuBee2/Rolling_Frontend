@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const RefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -15,7 +16,7 @@ module.exports = {
   },
   devServer: {
     port: 3000,
-    // hot: true,
+    hot: true,
     historyApiFallback: true,
   },
   module: {
@@ -46,6 +47,7 @@ module.exports = {
       filename: "index.html",
     }),
     new CleanWebpackPlugin({ cleanAfterEveryBuildPatterns: ["dist"] }),
+    new RefreshWebpackPlugin(),
   ],
   resolve: {
     modules: [path.resolve(__dirname, "src"), "node_modules"],

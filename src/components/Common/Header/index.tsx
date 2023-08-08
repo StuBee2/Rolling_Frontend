@@ -6,13 +6,11 @@ import { useState } from "react";
 import { HEADER_ITEMS } from "../../../constants/Common/common.constant";
 import token from "../../../libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "../../../constants/Auth/auth.constant";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import {
   SearchModal,
   SimpleInfoModal,
 } from "../../../store/common/common.store";
-import { AiOutlineUser } from "react-icons/ai";
-import Info from "../Modal/Info";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -20,7 +18,6 @@ export default function Header() {
   const setSimpleInfo = useSetRecoilState<boolean>(SimpleInfoModal);
   const [select, setSelect] = useState<string>("홈 피드");
   const { pathname } = useLocation();
-  const simpleInfoModal = useRecoilValue(SimpleInfoModal);
 
   const handlePageClick = (name: string, link: string) => {
     setSelect(name);
@@ -52,19 +49,12 @@ export default function Header() {
         </S.PageContainer>
 
         <S.LoginSearchContainer>
-          <>
-            <S.Search src={Search1} onClick={() => setSearch(true)} />
-            {token.getToken(ACCESS_TOKEN_KEY) ? (
-              <>
-                <S.UserIcon
-                  size={30}
-                  onClick={() => setSimpleInfo(true)}
-                ></S.UserIcon>
-              </>
-            ) : (
-              <div onClick={() => navigate("/login")}>로그인</div>
-            )}
-          </>
+          <S.Search src={Search1} onClick={() => setSearch(true)} />
+          {token.getToken(ACCESS_TOKEN_KEY) ? (
+            <S.UserIcon size={30} onClick={() => setSimpleInfo(true)} />
+          ) : (
+            <div onClick={() => navigate("/login")}>로그인</div>
+          )}
         </S.LoginSearchContainer>
       </S.HeaderWrap>
     </S.Header>

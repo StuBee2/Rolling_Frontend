@@ -5,6 +5,7 @@ import ErrorBoundary from "../Common/ErrorBoundary";
 import useTokenCheck from "../../hooks/Auth/useTokenCheck";
 import UserBottom from "./Nav/NavBottom";
 import UserSkeleton from "../Common/Skeleton/User";
+import NavSkeleton from "../Common/Skeleton/Nav";
 
 interface Props {
   children: ReactNode;
@@ -15,7 +16,12 @@ export default function User({ children }: Props) {
   return (
     <S.UserWrap>
       <S.UserContainer>
-        <Nav />
+        <ErrorBoundary fallback={<>Error</>}>
+          <Suspense fallback={<NavSkeleton />}>
+            <Nav />
+          </Suspense>
+        </ErrorBoundary>
+
         <S.UserListContainer>
           <ErrorBoundary fallback={<>Error</>}>
             <Suspense fallback={<UserSkeleton />}>{children}</Suspense>

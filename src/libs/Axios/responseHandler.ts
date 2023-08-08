@@ -1,4 +1,4 @@
-import { AxiosResponse, AxiosError } from "axios";
+import { AxiosError } from "axios";
 import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
@@ -29,5 +29,6 @@ export const responseHandler = async (config: AxiosError) => {
       window.location.href = "/login";
     }
   }
+
   return config;
 };

@@ -12,7 +12,7 @@ export default function Nav() {
   const navigate = useNavigate();
   const { handleLogout } = useLogout();
   const { pathname } = useLocation();
-  const { data: myInfo } = useGetMyInfoQuery();
+  const { data: myInfo } = useGetMyInfoQuery({ suspense: true });
 
   const setMyMemberInfo = useSetRecoilState(MyMemberInfo);
 
