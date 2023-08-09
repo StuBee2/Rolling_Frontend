@@ -32,9 +32,9 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "webpack serve --mode development",
+    "start": "webpack serve --config webpack.dev.js --progress",
     "prebuild": "rimraf dist",
-    "build": "webpack --progress --mode production",
+    "build": "webpack --config webpack.prod.js --progress",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "webpack serve --env development"
@@ -71,6 +71,7 @@
     "typescript": "^5.1.6",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.9.0"
   }
 }
