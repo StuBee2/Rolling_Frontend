@@ -2,10 +2,13 @@ import styled from "styled-components";
 
 export const SignInItemForm = styled.form`
   width: 515px;
-  height: auto;
+  height: 630px;
   display: flex;
   flex-direction: column;
   row-gap: 50px;
+  @media screen and (max-height: 730px) {
+    padding-top: 40px;
+  }
 `;
 
 export const SubTitle = styled.p`

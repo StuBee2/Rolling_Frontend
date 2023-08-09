@@ -26,15 +26,23 @@ export const SignInItemContainer = styled.div`
   width: calc(100% - 780px);
   height: 100%;
   display: flex;
-  align-items: center;
+
   justify-content: center;
+  padding: 0 10px 0 10px;
+  overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   @media screen and (max-width: 1400px) {
     width: calc(100% - 580px);
   }
   @media screen and (max-width: 1150px) {
     width: 100%;
   }
-  padding: 0 10px 0 10px;
+  @media screen and (min-height: 730px) {
+    align-items: center;
+  }
 `;
 
 export const SignInSideBackground = styled.div`
