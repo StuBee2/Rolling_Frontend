@@ -37,9 +37,7 @@ export default function SignInItem() {
         </div>
         <ul>
           <li>회원가입</li>
-          <>|</>
           <li>아이디 찾기</li>
-          <>|</>
           <li>비밀번호 찾기</li>
         </ul>
         <button type="submit">Sign In</button>

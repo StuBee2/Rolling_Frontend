@@ -57,6 +57,10 @@ export const SignInBox = styled.div`
     color: #1d1e5a;
     li {
       cursor: pointer;
+      &:not(:last-child)::after {
+        content: "|";
+        margin-left: 10px;
+      }
     }
   }
 
