@@ -1,3 +1,4 @@
+import { AiOutlineUser } from "react-icons/ai";
 import styled from "styled-components";
 
 export const Header = styled.div`
@@ -13,15 +14,29 @@ export const Header = styled.div`
 `;
 
 export const HeaderWrap = styled.div`
-  width: 75%;
+  width: 1570px;
   height: 100%;
+  position: relative;
+
   display: flex;
   align-items: center;
+  column-gap: 20px;
   justify-content: space-between;
+
   white-space: nowrap;
   overflow-x: scroll;
-  @media screen and (max-width: 573px) {
-    width: 95%;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media screen and (max-width: 1620px) {
+    width: 1270px;
+  }
+  @media screen and (max-width: 1355px) {
+    width: 1000px;
+  }
+  @media screen and (max-width: 1040px) {
+    width: 90%;
   }
 `;
 
@@ -51,7 +66,7 @@ export const PageList = styled.li<{ isSelect: boolean }>`
 export const LoginSearchContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
+  column-gap: 10px;
 
   div {
     cursor: pointer;
@@ -64,10 +79,7 @@ export const Search = styled.img`
   cursor: pointer;
 `;
 
-export const ProfileImg = styled.img`
-  width: 45px;
-  height: 45px;
-  object-fit: cover;
+export const UserIcon = styled(AiOutlineUser)`
   cursor: pointer;
-  border-radius: 8px;
+  position: relative;
 `;

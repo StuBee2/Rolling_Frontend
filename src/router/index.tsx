@@ -1,11 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import AuthLoadingPage from "../pages/Auth/AuthLoadingPage";
-import LoginPage from "../pages/Auth/Login";
+import SignInPage from "../pages/Auth/SignInPage";
 import UserPage from "../pages/UserPage";
 import NotFound from "../components/Common/NotFound";
 import RegisterPage from "../pages/RegisterPage";
+import ReviewPage from "../pages/ReviewPage";
 import { ROUTE_ITEMS } from "../constants/Router/router.constant";
+import CompanyDetailList from "../components/Common/Detail/CompanyDetail";
 import CompanyDetail from "../components/Common/Detail";
 
 export default function Router() {
@@ -13,7 +15,7 @@ export default function Router() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/callback" element={<AuthLoadingPage />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signin" element={<SignInPage />} />
       {ROUTE_ITEMS.map((item) => (
         <Route
           key={item.path}
@@ -22,6 +24,7 @@ export default function Router() {
         />
       ))}
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/review" element={<ReviewPage />} />
       <Route path="*" element={<NotFound />} />
       <Route path="/registe/:id" element={<CompanyDetail />} />
     </Routes>

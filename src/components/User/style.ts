@@ -10,21 +10,28 @@ export const UserWrap = styled.div`
 `;
 
 export const UserContainer = styled.div`
-  width: 75%;
+  width: 1570px;
   height: 100%;
   display: flex;
 
-  @media screen and (max-width: 1250px) {
-    width: 90%;
+  @media screen and (max-width: 1620px) {
+    width: 1270px;
+  }
+  @media screen and (max-width: 1355px) {
+    width: 1000px;
+  }
+  @media screen and (max-width: 1040px) {
+    width: 100%;
+    flex-direction: column;
   }
 `;
 
 export const UserListContainer = styled.div`
-  width: calc(100% - 330px);
+  width: calc(100% - 420px);
   height: 100%;
   padding-top: 40px;
-  
-  padding-left:20px;
+
+  padding-left: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,9 +40,7 @@ export const UserListContainer = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
-
-  @media screen and (max-width: 1025px) {
+  @media screen and (max-width: 1040px) {
     width: 100%;
-    height: calc(100% - 80px);
   }
 `;

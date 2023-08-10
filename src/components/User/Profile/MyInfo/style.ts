@@ -7,21 +7,15 @@ export const MyInfoContainer = styled.div`
   border-radius: 15px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   padding: 20px;
-
-  @media screen and (max-width: 400px) {
-    height: 240px;
-  }
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 `;
 
 export const BasicInfoContainer = styled.div`
   width: 100%;
   height: 170px;
-  border-bottom: 2px solid #dee0e6;
   color: #61677e;
-
-  @media screen and (max-width: 400px) {
-    height: 150px;
-  }
 `;
 
 export const GitUserContainer = styled.div`
@@ -38,11 +32,6 @@ export const GitUserLogo = styled.img`
   height: 85px;
   border-radius: 100%;
   object-fit: cover;
-
-  @media screen and (max-width: 520px) {
-    width: 70px;
-    height: 70px;
-  }
 `;
 
 export const GitUserInfo = styled.div`
@@ -51,13 +40,13 @@ export const GitUserInfo = styled.div`
   row-gap: 6px;
 `;
 
-export const GitUserEmail = styled.div`
-  @media screen and (max-width: 520px) {
-    font-size: 10px;
+export const GitUserEmail = styled.p`
+  @media screen and (max-width: 385px) {
+    font-size: 11px;
   }
 `;
 
-export const GitUserName = styled.div`
+export const GitUserName = styled.p`
   font-size: 25px;
   font-weight: bold;
   color: #000;
@@ -67,17 +56,19 @@ export const GitContainer = styled.div`
   width: 100%;
   height: 90px;
   margin-top: 10px;
+  border-top: 2px solid #dee0e6;
 `;
 
 export const GitLink = styled.div`
   display: flex;
   align-items: center;
-  gap: 5px;
+  column-gap: 5px;
   cursor: pointer;
   margin-bottom: 10px;
+  margin-top: 10px;
 `;
 
-export const GitLoginType = styled.div`
+export const GitLoginType = styled.p`
   color: #737b98;
   font-size: 14px;
   font-weight: 600;

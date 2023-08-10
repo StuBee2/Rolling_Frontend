@@ -1,5 +1,5 @@
 import User from "../../components/User";
-import Regist from "../../components/User/Company/Regist";
+import Regist from "../../components/User/Company/Employment";
 import Review from "../../components/User/Company/Review";
 import Profile from "../../components/User/Profile";
 

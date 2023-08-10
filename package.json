@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -13,6 +14,7 @@
     "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.3.5",
+    "css-loader": "^6.8.1",
     "js-cookie": "^3.0.5",
     "query-string": "^8.1.0",
     "react": "^18.2.0",
@@ -20,19 +22,22 @@
     "react-icons": "^4.9.0",
     "react-intersection-observer": "^9.4.3",
     "react-query": "^3.39.3",
+    "react-refresh": "^0.14.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
     "recoil": "^0.7.7",
+    "style-loader": "^3.3.3",
     "styled-components": "^5.3.9",
     "styled-reset": "^4.4.6",
-    "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "webpack serve --config webpack.dev.js --progress",
+    "prebuild": "rimraf dist",
+    "build": "webpack --config webpack.prod.js --progress",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "webpack serve --env development"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +58,20 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26"
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@types/styled-components": "^5.1.26",
+    "babel-loader": "^9.1.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.3",
+    "rimraf": "^5.0.1",
+    "svg-url-loader": "^8.0.0",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.9.0"
   }
 }

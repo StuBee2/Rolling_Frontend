@@ -1,10 +1,11 @@
-import { useGetMyInfoQuery } from "../../../queries/Member/Member.query";
-import CompanyCount from "./CompanyCount";
+import { useRecoilValue } from "recoil";
 import MyInfo from "./MyInfo";
 import * as S from "./style";
+import { MyMemberInfo } from "../../../store/member/member.store";
+import CompanyStatus from "./CompanyStatus";
 
 function Profile() {
-  const { data } = useGetMyInfoQuery();
+  const myInfo = useRecoilValue(MyMemberInfo);
   return (
     <S.Container>
       <S.Title>
@@ -13,8 +14,8 @@ function Profile() {
           기본 정보와 서비스에서 이용되는 프로필을 설정할 수 있어요
         </S.Explain>
       </S.Title>
-      <CompanyCount />
-      <MyInfo data={data!!} />
+      <CompanyStatus />
+      <MyInfo data={myInfo!!} />
     </S.Container>
   );
 }

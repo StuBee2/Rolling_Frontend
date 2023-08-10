@@ -46,6 +46,16 @@ export const CompanyProfileInfoBox = styled.div`
 `;
 export const CompanyText = styled.div`
   margin-top: 1%;
+  .title {
+    font-size: 34px;
+    font-weight: bold;
+
+    margin-bottom: 8px;
+  }
+
+  .text {
+    color: #61677e;
+  }
 `;
 
 export const Title = styled.div`

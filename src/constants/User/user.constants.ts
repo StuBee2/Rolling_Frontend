@@ -1,6 +1,6 @@
-import regist from "../../assets/regist.svg";
-import review from "../../assets/review.svg";
-import smile from "../../assets/smile.svg";
+import employment from "../../assets/User/employment.svg";
+import review from "../../assets/User/review.svg";
+import smile from "../../assets/User/smile.svg";
 
 interface Type {
   id: number;
@@ -18,9 +18,9 @@ export const USER_ITEMS: Type[] = [
   },
   {
     id: 2,
-    link: "/mypage/regist",
-    image: regist,
-    title: "등록한 기업",
+    link: "/mypage/employment",
+    image: employment,
+    title: "고용관계인 기업",
   },
   {
     id: 3,

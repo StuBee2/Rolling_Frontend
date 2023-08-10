@@ -1,6 +1,11 @@
 import { useRecoilState } from "recoil";
-import { companyLogoAtom } from "../../stores/company/companyStore";
-import { ChangeEvent, FormEvent, useCallback, useState } from "react";
+import {
+  companyAddressAtom,
+  companyInfoAtom,
+  companyNameAtom,
+  companyLogoAtom,
+} from "../../store/company/company.store";
+import { useCallback } from "react";
 import { useRef, MutableRefObject } from "react";
 import { customAxios } from "../../libs/Axios/customAxios";
 import { QueryClient } from "react-query";
@@ -9,33 +14,36 @@ import { CompanyParam } from "../../repositories/Company/company.param";
 import { useNavigate } from "react-router-dom";
 
 export const useCompany = () => {
+  const [firmaddress, setFrimAddress] =
+    useRecoilState<string>(companyAddressAtom);
+  const [firminfo, setFrimInfo] = useRecoilState<string>(companyInfoAtom);
+  const [firmname, setFrimName] = useRecoilState<string>(companyNameAtom);
   const [firmlogo, setFirmLogo] = useRecoilState<string>(companyLogoAtom);
 
   const queryClient = new QueryClient();
   const CompanyMutation = usePostCompanyRegisterMutation();
   const navigate = useNavigate();
 
-  const [companyData, setCompanyData] = useState<CompanyParam>({
-    name: "",
-    address: "",
-    description: "",
-    imgUrl: firmlogo,
-  });
+  const onAddressChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFrimAddress(e.target.value);
+    },
+    [setFrimAddress]
+  );
 
-  const onAddressChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setCompanyData((prev) => ({ ...prev, [name]: value }));
-  };
+  const onInfoChange = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setFrimInfo(e.target.value);
+    },
+    [setFrimInfo]
+  );
 
-  const onInfoChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setCompanyData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const onNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setCompanyData((prev) => ({ ...prev, [name]: value }));
-  };
+  const onNameChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFrimName(e.target.value);
+    },
+    [setFrimName]
+  );
 
   const imgRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
 
@@ -45,47 +53,25 @@ export const useCompany = () => {
     }
   };
 
-  const onFirmRegister = (e: FormEvent) => {
-    e.preventDefault();
-
-    CompanyMutation.mutate(
-      {
-        name: companyData.name,
-        address: companyData.address,
-        description: companyData.description,
-        imgUrl: firmlogo,
+  const onFirmRegister = useCallback(() => {
+    const data: CompanyParam = {
+      name: firmname,
+      address: firmaddress,
+      description: firminfo,
+      imgUrl: firmlogo,
+    };
+    console.log(firmlogo);
+    CompanyMutation.mutate(data, {
+      onSuccess: () => {
+        queryClient.invalidateQueries("/company");
+        console.log(data);
+        navigate("/");
       },
-      {
-        onSuccess: () => {
-          console.log(companyData);
-          navigate("/");
-        },
-        onError: (e: any) => {
-          console.log(e);
-        },
-      }
-    );
-  };
-
-  // const onFirmRegister = useCallback(() => {
-  //   const data: CompanyParam = {
-  //     name: firmname,
-  //     address: firmaddress,
-  //     description: firminfo,
-  //     imgUrl: firmlogo,
-  //   };
-  //   console.log(firmlogo);
-  //   CompanyMutation.mutate(data, {
-  //     onSuccess: () => {
-  //       queryClient.invalidateQueries("/company");
-  //       console.log(data);
-  //       navigate("/");
-  //     },
-  //     onError: (e: any) => {
-  //       console.log(e);
-  //     },
-  //   });
-  // }, [firmaddress, firmname, firminfo, firmlogo]);
+      onError: (e: any) => {
+        console.log(e);
+      },
+    });
+  }, [firmaddress, firmname, firminfo, firmlogo]);
 
   const uploadImg = useCallback(
     async (e: any) => {

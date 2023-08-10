@@ -1,25 +1,17 @@
-import { useGetMyReviewQuery } from "../../../../queries/Review/review.query";
-import { useEffect, useState } from "react";
+import { useGetMyReviewQuery } from "../../../../queries/review/review.query";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import stringEllipsis from "../../../../libs/Common/StringEllipsis";
-import write from "../../../../assets/write.svg";
-import { getDateText } from "../../../../libs/Date/getDateCounter";
+import write from "../../../../assets/User/write.svg";
 import { Container, Explain, Title } from "../../Profile/style";
-import edit from "../../../../assets/edit.svg";
-import del from "../../../../assets/del.svg";
 import { getTimeAgo } from "../../../../libs/Date/getTimeAgo";
 import * as S from "../style";
-import { useReviewDelete } from "../../../../hooks/FirmReview/useDeleteReview";
-import { useNavigate } from "react-router-dom";
+import ReviewItem from "./ReviewItem";
 
 export default function Review() {
   const { data: reviewList, fetchNextPage } = useGetMyReviewQuery({
     suspense: true,
   });
   const [ref, inView] = useInView();
-  const [mouseEnterEvent, setMouseEnterEvent] = useState("");
-  const { onDeleteReview } = useReviewDelete();
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (inView) {
@@ -30,76 +22,28 @@ export default function Review() {
   return (
     <Container>
       <Title>
-        <div style={{ fontSize: "30px" }}>내 리뷰 Story</div>
-        <Explain>
-          기본 정보와 서비스에서 이용되는 프로필을 설정할 수 있어요
-        </Explain>
+        <S.FontSize fontSize="30px">내 리뷰 Story</S.FontSize>
+        <Explain>자신이 직접 롤링한 회사를 보여줘요</Explain>
       </Title>
-      <div style={{ width: "90%" }}>
-        <S.CompanyStatus>
-          <img src={write} alt="" />
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-          >
-            <div style={{ fontSize: "20px", fontWeight: "bold" }}>Write</div>
-            <div style={{ fontSize: "11px" }}>
-              {reviewList?.pages[0].data[0]
-                ? getTimeAgo(
-                    new Date(reviewList?.pages[0].data[0].reviewCreatedAt!!)
-                  )
-                : "0"}{" "}
-              업데이트 · 갯수 2
-            </div>
-          </div>
-        </S.CompanyStatus>
-      </div>
+      <S.CompanyStatus>
+        <img src={write} alt="" />
+        <S.ContentGap>
+          <S.CompanyAndWriteText>Write</S.CompanyAndWriteText>
+          <S.FontSize fontSize="11px">
+            {reviewList?.pages[0].data[0]
+              ? getTimeAgo(
+                  new Date(reviewList?.pages[0].data[0].reviewCreatedAt!!)
+                )
+              : "0"}{" "}
+            업데이트 · 갯수 2
+          </S.FontSize>
+        </S.ContentGap>
+      </S.CompanyStatus>
 
       <S.ListWrap>
         {reviewList?.pages.map((data) =>
           data.data.map((review) => (
-            <div
-              style={{ display: "flex", width: "100%", gap: "20px" }}
-              key={review.reviewId}
-              onMouseEnter={() => setMouseEnterEvent(review.reviewId)}
-              onMouseLeave={() => setMouseEnterEvent("")}
-            >
-              <S.ListContainer>
-                <S.ListRegistDate>
-                  {getDateText(new Date(review.reviewCreatedAt))} 등록
-                </S.ListRegistDate>
-                <S.CompanyContainer>
-                  <S.CompanyImg src={review.companyImgUrl} />
-                  <S.CompanyAbleContainer>
-                    <S.CompanyName>{review.companyName}</S.CompanyName>
-                    <S.CompanyPostitionCareerPathContainer>
-                      <div>
-                        <S.CompanyPostitionCareerPath>
-                          포지션
-                        </S.CompanyPostitionCareerPath>{" "}
-                        · {review.reviewPosition}
-                      </div>
-                      <div>
-                        <S.CompanyPostitionCareerPath>
-                          입사경로
-                        </S.CompanyPostitionCareerPath>{" "}
-                        · {stringEllipsis(review.reviewCareerPath, 15)}
-                      </div>
-                    </S.CompanyPostitionCareerPathContainer>
-                  </S.CompanyAbleContainer>
-                </S.CompanyContainer>
-                <div>{stringEllipsis(review.reviewContent, 20)}</div>
-              </S.ListContainer>
-              {mouseEnterEvent === review.reviewId && (
-                <div style={{ cursor: "pointer" }}>
-                  <img src={edit} alt="" />
-                  <img
-                    src={del}
-                    alt=""
-                    onClick={() => onDeleteReview(review.reviewId)}
-                  />
-                </div>
-              )}
-            </div>
+            <ReviewItem review={review} key={review.reviewId} />
           ))
         )}
       </S.ListWrap>

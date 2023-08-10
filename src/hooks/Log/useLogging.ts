@@ -15,7 +15,7 @@ export function useLogging() {
     if (!Token.getToken(ACCESS_TOKEN_KEY)) {
       window.alert("토큰이 없습니다! 다시 로그인해주세요!");
       Token.clearToken();
-      navigate("/login");
+      navigate("/signin");
       return;
     }
     postLogging.mutateAsync(
@@ -27,7 +27,7 @@ export function useLogging() {
         onError: () => {
           window.alert("알맞지 않는 토큰이 입니다. 다시 로그인해주세요!");
           Token.clearToken();
-          navigate("/login");
+          navigate("/signin");
         },
       }
     );

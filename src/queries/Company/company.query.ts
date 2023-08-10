@@ -12,7 +12,7 @@ import {
   CompanyInfiniteScrollType,
   CompanyInfoType,
   CompanyListType,
-} from "../../types/company.type";
+} from "../../types/Company/company.type";
 import { AxiosError } from "axios";
 import { QUERY_KEYS } from "../queryKey";
 import { CommonIdParam } from "../../repositories/common.param";
@@ -20,7 +20,6 @@ import {
   CompanyNameParam,
   CompanyParam,
 } from "../../repositories/Company/company.repository";
-import { CompanyID } from "../../types/company.type";
 
 export const usePostCompanyRegisterMutation = () => {
   const registermutation = useMutation((data: CompanyParam) =>
@@ -200,9 +199,27 @@ export const useGetCompanyRankBalanceQuery = (
     }
   );
 
-export const useDeleteCompanyQuery = () => {
-  const mutation = useMutation(({ companyId }: CompanyID) =>
-    CompanyRepositoryImpl.deleteCompany({ companyId })
+export const useGetCompanyRankSelectQuery = (
+  rankCategory: string,
+  options?: UseQueryOptions<
+    CompanyListType[],
+    AxiosError,
+    CompanyListType[],
+    string
+  >
+): UseQueryResult<CompanyListType[], AxiosError> =>
+  useQuery(
+    QUERY_KEYS.company.getCompanyRank,
+    () => CompanyRepositoryImpl.getCompanyRankSelect(rankCategory),
+    {
+      enabled: !!rankCategory,
+      ...options,
+    }
+  );
+
+export const useDeleteCompanyMutation = () => {
+  const mutation = useMutation((param: string) =>
+    CompanyRepositoryImpl.deleteCompany({ companyId: param })
   );
   return mutation;
 };

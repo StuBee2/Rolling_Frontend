@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const UserNavBar = styled.div`
-  width: 330px;
+  width: 420px;
   height: calc(100vh - 108px);
-  @media screen and (max-width: 1025px) {
+  @media screen and (max-width: 1040px) {
     display: none;
   }
 `;
@@ -27,12 +27,12 @@ export const UserImg = styled.img`
   box-shadow: 0 3px 6px 0 rgba(29, 34, 53, 0.08);
 `;
 
-export const UserName = styled.div`
+export const UserName = styled.p`
   font-size: 27px;
   font-weight: 700;
 `;
 
-export const UserEmail = styled.div`
+export const UserEmail = styled.p`
   font-size: 15px;
   color: #61677e;
 `;
@@ -97,7 +97,7 @@ export const PageSelectContainer = styled.div`
 
 export const PageSelect = styled.div`
   width: 100%;
-  height: 80%;
+  height: auto;
 
   display: flex;
   flex-direction: column;

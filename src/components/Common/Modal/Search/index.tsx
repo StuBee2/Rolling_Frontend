@@ -1,18 +1,17 @@
 import { useSetRecoilState } from "recoil";
 import * as S from "./style";
-import { SearchModal } from "../../../../stores/common/common.store";
-import semicircle2 from "../../../../assets/semicircle2.svg";
-import semicircle1 from "../../../../assets/semicircle1.svg";
-import Search2 from "../../../../assets/Search2.svg";
+import { SearchModal } from "../../../../store/common/common.store";
+import semicircle2 from "../../../../assets/Search/semicircle2.svg";
+import semicircle1 from "../../../../assets/Search/semicircle1.svg";
+import Search2 from "../../../../assets/Search/Search2.svg";
 import { useCloseModal } from "../../../../hooks/Common/useCloseModal";
-import { ModalWrap } from "../style";
 
 export default function Search() {
   const setSearch = useSetRecoilState(SearchModal);
 
   useCloseModal(setSearch);
   return (
-    <ModalWrap onClick={() => setSearch(false)} background="rgba(0, 0, 0, 0.4)">
+    <S.SearchModalWrapper onClick={() => setSearch(false)}>
       <S.SearchContainer onClick={(e) => e.stopPropagation()}>
         <S.Semicircle src={semicircle2} top={true} />
         <S.InputContainer>
@@ -21,6 +20,6 @@ export default function Search() {
         </S.InputContainer>
         <S.Semicircle src={semicircle1} top={false} />
       </S.SearchContainer>
-    </ModalWrap>
+    </S.SearchModalWrapper>
   );
 }

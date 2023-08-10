@@ -1,13 +1,10 @@
 import styled from "styled-components";
 
-export const UserHeader = styled.div`
+export const UserFooter = styled.div`
   display: none;
-  @media screen and (max-width: 1025px) {
+  @media screen and (max-width: 1040px) {
     width: 100%;
     height: 80px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
 
     background-color: #ffffff;
     box-shadow: 5px 1px 8px 0 rgba(0, 0, 0, 0.3);
@@ -22,7 +19,13 @@ export const UserListWrap = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  column-gap: 15px;
   font-size: 18px;
+  overflow-x: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const UserCategory = styled.li<{ isSelect: boolean }>`

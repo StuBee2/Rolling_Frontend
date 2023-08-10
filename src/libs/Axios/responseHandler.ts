@@ -1,4 +1,4 @@
-import { AxiosResponse, AxiosError } from "axios";
+import { AxiosError } from "axios";
 import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
@@ -26,8 +26,8 @@ export const responseHandler = async (config: AxiosError) => {
     } catch (e) {
       window.alert("세션이 만료되었습니다!");
       Token.clearToken();
-      window.location.href = "/login";
+      window.location.href = "/signin";
     }
   }
-  return config;
+  return Promise.reject(config);
 };

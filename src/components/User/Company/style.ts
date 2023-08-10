@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const FontSize = styled.p<{ fontSize: string }>`
+  font-size: ${(props) => props.fontSize};
+`;
+
 export const CompanyStatus = styled.div`
   width: 45%;
   height: 125px;
@@ -17,10 +21,20 @@ export const CompanyStatus = styled.div`
     width: 45px;
     height: 45px;
   }
-
-  @media screen and (max-width: 650px) {
-    width: 100%;
+  @media screen and (max-width: 1355px) {
+    width: 80%;
   }
+`;
+
+export const ContentGap = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+`;
+
+export const CompanyAndWriteText = styled.p`
+  font-size: 20px;
+  font-weight: bold;
 `;
 
 export const ListWrap = styled.div`
@@ -31,10 +45,12 @@ export const ListWrap = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+`;
 
-  @media screen and (max-width: 1025px) {
-    width: 90%;
-  }
+export const ListItem = styled.div`
+  display: flex;
+  width: 100%;
+  column-gap: 20px;
 `;
 
 export const ListContainer = styled.div`
@@ -50,24 +66,21 @@ export const ListContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 0 40px 0 40px;
-  gap: 20px;
-
-  @media screen and (max-width: 650px) {
-    height: 300px;
-  }
+  row-gap: 20px;
 `;
 
-export const ListRegistDate = styled.div`
+export const ListRegistDate = styled.p`
   font-weight: bold;
 `;
 
 export const CompanyContainer = styled.div`
   display: flex;
-  gap: 20px;
+  column-gap: 20px;
   width: 100%;
-
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 535px) {
     flex-direction: column;
+    row-gap: 10px;
+    column-gap: 0;
   }
 `;
 
@@ -77,21 +90,16 @@ export const CompanyImg = styled.img`
 
   border-radius: 5px;
   object-fit: cover;
-
-  @media screen and (max-width: 650px) {
-    width: 80px;
-    height: 80px;
-  }
 `;
 
 export const CompanyAbleContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  row-gap: 10px;
 `;
 
-export const CompanyName = styled.div`
+export const CompanyName = styled.p`
   font-weight: bold;
   font-size: 22px;
   color: #000;
@@ -105,11 +113,6 @@ export const CompanyPostitionCareerPathContainer = styled.div`
   display: flex;
   gap: 20px;
   color: #000;
-
-  @media screen and (max-width: 650px) {
-    flex-direction: column;
-    gap: 5px;
-  }
 `;
 
 export const CompanyPostitionCareerPath = styled.span`
