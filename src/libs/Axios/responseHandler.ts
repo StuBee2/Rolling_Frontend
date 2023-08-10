@@ -29,8 +29,5 @@ export const responseHandler = async (config: AxiosError) => {
       window.location.href = "/signin";
     }
   }
-  if (config.response?.status === 500) {
-    return Promise.reject(config);
-  }
-  return Promise.resolve(config);
+  return Promise.reject(config);
 };
