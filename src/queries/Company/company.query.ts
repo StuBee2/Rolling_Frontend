@@ -67,7 +67,7 @@ export const useGetCompanySerachListQuery = (
     }
   );
 
-export const useGetCompanyListQuery = (
+export const useGetAllCompanyListQuery = (
   options?: UseInfiniteQueryOptions<
     CompanyInfiniteScrollType,
     AxiosError,
@@ -79,7 +79,7 @@ export const useGetCompanyListQuery = (
   useInfiniteQuery(
     QUERY_KEYS.company.getListCompany,
     ({ pageParam = 1 }) =>
-      CompanyRepositoryImpl.getCompanyList({ page: pageParam }),
+      CompanyRepositoryImpl.getAllCompanyList({ page: pageParam }),
     {
       ...options,
       getNextPageParam: (nextPage) => nextPage.nextPage,

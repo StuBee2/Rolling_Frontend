@@ -39,11 +39,11 @@ class CompanyRepositoryImpl implements CompanyRepository {
     return { ...data, nextPage: page + 1 };
   }
 
-  public async getCompanyList({
+  public async getAllCompanyList({
     page,
   }: CommonPageParam): Promise<CompanyInfiniteScrollType> {
     const { data } = await customAxios.get(
-      `/company/list/all&page=${page}&size=10`
+      `/company/list/all?page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
   }
