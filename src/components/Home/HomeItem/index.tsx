@@ -3,6 +3,7 @@ import { useGetAllCompanyListQuery } from "../../../queries/Company/company.quer
 import * as S from "./style";
 import { useEffect } from "react";
 import HomeSkeleton from "../../Common/Skeleton/Home";
+import { getDateText } from "../../../util/Date/getDateCounter";
 
 export default function HomeItem() {
   const { data: allList, fetchNextPage } = useGetAllCompanyListQuery({
@@ -29,7 +30,8 @@ export default function HomeItem() {
             </S.CompanyImageContainer>
             <S.CompanyEtcContainer>
               <S.RegisterNameAndCreatedAt>
-                7기 최아영 | 2023.05.10
+                {item.companyDetails.name} |{" "}
+                {getDateText(new Date(item.companyDetails.createdAt))}
               </S.RegisterNameAndCreatedAt>
               <div>
                 <S.CompanyIntroduce>

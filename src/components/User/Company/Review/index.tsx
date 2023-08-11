@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import write from "../../../../assets/User/write.svg";
 import { Container, Explain, Title } from "../../Profile/style";
-import { getTimeAgo } from "../../../../libs/Date/getTimeAgo";
+import { getTimeAgo } from "../../../../util/Date/getTimeAgo";
 import * as S from "../style";
 import ReviewItem from "./ReviewItem";
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getDateText } from "../../../../../libs/Date/getDateCounter";
+import { getDateText } from "../../../../../util/Date/getDateCounter";
 import { ReviewListType } from "../../../../../types/Review/review.type";
 import * as S from "../../style";
 import stringEllipsis from "../../../../../libs/Common/stringEllipsis";

@@ -1,5 +1,5 @@
 import stringEllipsis from "../../../../../libs/Common/stringEllipsis";
-import { getDateText } from "../../../../../libs/Date/getDateCounter";
+import { getDateText } from "../../../../../util/Date/getDateCounter";
 import { CompanyListType } from "../../../../../types/Company/company.type";
 import * as S from "../../style";
 import edit from "../../../../../assets/User/edit.svg";
