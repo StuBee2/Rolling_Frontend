@@ -23,10 +23,7 @@ export default function HomeItem() {
           <S.CompanyItemContainer key={item.companyId.id}>
             <S.CompanyImageContainer>
               <S.CompanyImage image={item.companyDetails.imgUrl} />
-              <S.CompanyRegister
-                src="https://img.seoul.co.kr//img/upload/2023/06/02/SSC_20230602152204.jpg"
-                alt="이미지 없음"
-              />
+              <S.CompanyRegister src="" alt="이미지 없음" />
             </S.CompanyImageContainer>
             <S.CompanyEtcContainer>
               <S.RegisterNameAndCreatedAt>

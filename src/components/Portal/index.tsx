@@ -1,4 +1,4 @@
-// import { PortalProps } from "./portal.type";
+
 import ReactDom from "react-dom";
 
 interface PortalProps {

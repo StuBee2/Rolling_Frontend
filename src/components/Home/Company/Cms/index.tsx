@@ -11,10 +11,10 @@ export default function Cms() {
         <p>개발 채용 공고</p>
       </Title>
       <S.CmsBox>
-        <S.CmsImg image="https://dimg.donga.com/wps/NEWS/IMAGE/2021/01/05/104767925.1.jpg" />
+        <S.CmsImg image="" />
         <S.CmsEtcContainer>
           <img
-            src="https://cdn.dynews.co.kr/news/photo/201804/403722_64988_08.jpg"
+            src=""
             alt="이미지 없음"
           />
           <div>

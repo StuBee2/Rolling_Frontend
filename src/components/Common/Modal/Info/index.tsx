@@ -1,7 +1,7 @@
 import { useSetRecoilState } from "recoil";
 import * as S from "./style";
 import { useCloseModal } from "../../../../hooks/Common/useCloseModal";
-import { SimpleInfoModal } from "../../../../store/common/common.store";
+import { SimpleInfoModal } from "../../../../stores/common/common.store";
 import { useLogout } from "../../../../hooks/Auth/useLogout";
 import { useLogging } from "../../../../hooks/Log/useLogging";
 import { LOG_ITEM } from "../../../../constants/Log/log.constants";
@@ -17,7 +17,7 @@ export default function Info() {
   return (
     <S.SimpleInfoWrapper onClick={() => setSimpleInfo(false)}>
       <S.SimpleInfoParentBox>
-        <S.SimpleInfoModal onClick={(e) => e.stopPropagation()}>
+        <S.SimpleInfoModalContainer onClick={(e) => e.stopPropagation()}>
           <S.Profile>
             <img src={myInfo?.socialDetails.imageUrl} alt="" />
             <div>
@@ -43,7 +43,7 @@ export default function Info() {
               🫥 로그아웃
             </div>
           </S.MyPageLogout>
-        </S.SimpleInfoModal>
+        </S.SimpleInfoModalContainer>
       </S.SimpleInfoParentBox>
     </S.SimpleInfoWrapper>
   );

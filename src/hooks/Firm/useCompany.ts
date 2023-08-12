@@ -2,9 +2,9 @@ import { useRecoilState } from "recoil";
 import {
   companyAddressAtom,
   companyInfoAtom,
-  companyNameAtom,
   companyLogoAtom,
-} from "../../store/company/company.store";
+  companyNameAtom,
+} from "../../stores/company/companyStore";
 import { useCallback } from "react";
 import { useRef, MutableRefObject } from "react";
 import { customAxios } from "../../libs/Axios/customAxios";

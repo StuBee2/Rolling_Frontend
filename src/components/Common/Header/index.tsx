@@ -10,7 +10,7 @@ import { useSetRecoilState } from "recoil";
 import {
   SearchModal,
   SimpleInfoModal,
-} from "../../../store/common/common.store";
+} from "../../../stores/common/common.store";
 
 export default function Header() {
   const navigate = useNavigate();

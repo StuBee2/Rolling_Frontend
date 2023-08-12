@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BiImageAdd } from "react-icons/bi";
+import { BiImageAdd } from "@react-icons/all-files/bi/BiImageAdd";
 
 export const FirmBox = styled.div`
   display: flex;

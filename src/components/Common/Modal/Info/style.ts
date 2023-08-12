@@ -28,7 +28,7 @@ export const SimpleInfoParentBox = styled.div`
   }
 `;
 
-export const SimpleInfoModal = styled.div`
+export const SimpleInfoModalContainer = styled.div`
   width: 337px;
   height: 224px;
   background-color: #2b2c30;

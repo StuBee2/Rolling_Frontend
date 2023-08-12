@@ -2,21 +2,20 @@ import { useEffect, ChangeEvent } from "react";
 import * as R from "./style";
 import StarRating from "./ReviewStarScope";
 import { useRecoilState } from "recoil";
-import {
-  reviewCareerPath,
-  reviewPosition,
-  reviewEtc,
-} from "../../../../store/review/reviewStore";
-import { useReview } from "../../../../hooks/FirmReview/useReview";
-import {
-  balanceGradeAtom,
-  salaryGradeAtom,
-  welfareGradeAtom,
-} from "../../../../store/review/reviewStore";
-import { companyIdAtom } from "../../../../store/review/reviewStore";
+
 import Modal from "../../Modal";
 import useModal from "../../../../hooks/util/useModal";
-import { FaPen } from "react-icons/fa";
+import { FaPen } from "@react-icons/all-files/fa/FaPen";
+import {
+  balanceGradeAtom,
+  companyIdAtom,
+  reviewCareerPath,
+  reviewEtc,
+  reviewPosition,
+  salaryGradeAtom,
+  welfareGradeAtom,
+} from "../../../../stores/review/review.store";
+import { useReview } from "../../../../hooks/FirmReview/useReview";
 
 const FirmReview = (props: any) => {
   const [companyidatom, setCompanyIdAtom] = useRecoilState<string | undefined>(
@@ -41,7 +40,6 @@ const FirmReview = (props: any) => {
   console.log(position);
   console.log(careerPath);
   console.log(etc);
-  // const { open } = useModal();
 
   useEffect(() => {
     console.log(balanceGrade);
@@ -145,8 +143,6 @@ const FirmReview = (props: any) => {
             </R.ReviewButtonBox>
           </R.ReviewBox>
         </R.CompanyReview>
-
-        {/* 모달테스트 */}
       </Modal>
     </R.Container>
   );

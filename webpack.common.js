@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const RefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
@@ -9,7 +10,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist/"),
-    filename: "index.js",
+    filename: "[name].bundle.js",
     publicPath: "/",
   },
   module: {
@@ -36,6 +37,7 @@ module.exports = {
     }),
     new CleanWebpackPlugin({ cleanAfterEveryBuildPatterns: ["dist"] }),
     new RefreshWebpackPlugin(),
+    new MiniCssExtractPlugin(),
   ],
   resolve: {
     modules: [path.resolve(__dirname, "src"), "node_modules"],

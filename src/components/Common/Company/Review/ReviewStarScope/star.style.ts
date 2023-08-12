@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar } from "@react-icons/all-files/ai/AiFillStar";
 
 export const StarBox = styled.div`
   display: flex;

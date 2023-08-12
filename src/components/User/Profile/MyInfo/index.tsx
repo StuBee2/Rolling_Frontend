@@ -1,4 +1,4 @@
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import { Explain, Title } from "../style";
 import * as S from "./style";
 import { MemberType } from "../../../../types/Member/member.type";

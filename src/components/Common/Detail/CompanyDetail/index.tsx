@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useGetCompanyInfoIdQuery } from "../../../../queries/Company/company.query";
-import { companyIdAtom } from "../../../../store/review/reviewStore";
+import { companyIdAtom } from "../../../../stores/review/review.store";
 import { useRecoilState } from "recoil";
 import useModal from "../../../../hooks/util/useModal";
 import FirmReview from "../../Company/Review";
@@ -71,6 +71,7 @@ const CompanyDetailList = ({ id }: Props) => {
               src={getCompanyInfo?.memberImageUrl}
               style={{ width: "110px", borderRadius: "100px", height: "110px" }}
               className="ProfileImg"
+              alt="이미지 없음"
             />
           </D.ProfileImgBox>
 
@@ -99,6 +100,7 @@ const CompanyDetailList = ({ id }: Props) => {
                 <img
                   src={getCompanyInfo?.companyImgUrl}
                   style={{ width: "70px", borderRadius: "5px" }}
+                  alt="이미지 없음"
                 />
 
                 <D.CompanyDetailContent>

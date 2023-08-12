@@ -1,17 +1,17 @@
 import { useRecoilState } from "recoil";
 import {
-  reviewPosition,
-  reviewCareerPath,
   balanceGradeAtom,
+  companyIdAtom,
+  reviewCareerPath,
+  reviewEtc,
+  reviewPosition,
   salaryGradeAtom,
   welfareGradeAtom,
-  reviewEtc,
-} from "../../store/review/reviewStore";
+} from "../../stores/review/review.store";
 import { useCallback } from "react";
 import { ReviewParam } from "../../repositories/Review/review.repository";
 import { QueryClient } from "react-query";
 import { usePostReviewMutation } from "../../queries/review/review.query";
-import { companyIdAtom } from "../../store/review/reviewStore";
 import useModal from "../util/useModal";
 
 export const useReview = () => {

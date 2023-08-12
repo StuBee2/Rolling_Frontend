@@ -1,4 +1,4 @@
-import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser } from "@react-icons/all-files/ai/AiOutlineUser";
 import styled from "styled-components";
 
 export const Header = styled.div`

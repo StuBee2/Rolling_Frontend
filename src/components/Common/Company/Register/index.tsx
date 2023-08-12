@@ -6,8 +6,7 @@ import {
   companyInfoAtom,
   companyLogoAtom,
   companyNameAtom,
-} from "../../../../store/company/company.store";
-// import { InfoContainer } from "../../User/Company/style";
+} from "../../../../stores/company/companyStore";
 
 const FirmRegister = () => {
   const {

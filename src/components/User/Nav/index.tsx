@@ -3,7 +3,7 @@ import * as S from "./style";
 import { USER_ITEMS } from "../../../constants/User/user.constants";
 import { useLogout } from "../../../hooks/Auth/useLogout";
 import { useGetMyInfoQuery } from "../../../queries/Member/Member.query";
-import { MyMemberInfo } from "../../../store/member/member.store";
+import { MyMemberInfo } from "../../../stores/member/member.store";
 import { useSetRecoilState } from "recoil";
 import { useEffect } from "react";
 import EditNickname from "./EditNickname";

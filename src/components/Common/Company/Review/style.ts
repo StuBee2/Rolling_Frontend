@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { AiFillCloseCircle } from "@react-icons/all-files/ai/AiFillCloseCircle";
 
 export const ReviewRegisterBox = styled.div`
   display: flex;
@@ -61,22 +61,15 @@ export const CompanyReview = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: -45%;
-  /* z-index: 1; */
-  /* width: 100%; */
-  /* height: 100vh; */
-  /* background-color: #3a3a3a; */
-  /* height: 1080px; */
 `;
 
 export const testtt = styled.div`
   background-color: gray;
-  /* color: black; */
 `;
 
 export const ReviewBox = styled.div`
   width: 45%;
   height: 900px;
-  /* height: 100vh; */
 
   border-radius: 10px;
 

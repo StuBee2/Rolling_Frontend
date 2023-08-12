@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { reviewModalOpenAtom } from "../../store/review/reviewStore";
+import { reviewModalOpenAtom } from "../../stores/review/review.store";
 
 const useModal = () => {
   const [isOpen, setIsOpen] = useRecoilState(reviewModalOpenAtom);
