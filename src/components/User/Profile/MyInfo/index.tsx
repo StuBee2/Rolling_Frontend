@@ -1,7 +1,7 @@
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import { Explain, Title } from "../style";
 import * as S from "./style";
-import { MemberType } from "../../../../types/Member/member.type";
+import { MemberType } from "@src/types/Member/member.type";
 
 interface Props {
   data: MemberType;
@@ -19,7 +19,7 @@ export default function MyInfo({ data }: Props) {
         </Title>
 
         <S.GitUserContainer>
-          <S.GitUserLogo src={data?.socialDetails.imageUrl} />
+          <S.GitUserLogo src={data?.socialDetails.imageUrl} alt="이미지 없음" />
           <S.GitUserInfo>
             <S.GitUserName>{data?.socialDetails.name}</S.GitUserName>
             <S.GitUserEmail>{data?.socialDetails.email}</S.GitUserEmail>

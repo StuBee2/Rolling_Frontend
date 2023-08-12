@@ -1,12 +1,13 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import * as S from "./style";
-import { USER_ITEMS } from "../../../constants/User/user.constants";
-import { useLogout } from "../../../hooks/Auth/useLogout";
-import { useGetMyInfoQuery } from "../../../queries/Member/Member.query";
-import { MyMemberInfo } from "../../../stores/member/member.store";
+import { USER_ITEMS } from "@src/constants/User/user.constants";
+import { useLogout } from "@src/hooks/Auth/useLogout";
+import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
+import { MyMemberInfo } from "@src/stores/member/member.store";
 import { useSetRecoilState } from "recoil";
 import { useEffect } from "react";
 import EditNickname from "./EditNickname";
+import logout from "@src/assets/Auth/logout.svg";
 
 export default function Nav() {
   const navigate = useNavigate();
@@ -44,7 +45,10 @@ export default function Nav() {
             </S.PageSelectItem>
           ))}
         </S.PageSelect>
-        <S.Logout onClick={handleLogout}>🫥 로그아웃</S.Logout>
+        <S.Logout onClick={handleLogout}>
+          <img src={logout} alt="이미지 없음" />
+          <p>로그아웃</p>
+        </S.Logout>
       </S.PageSelectContainer>
     </S.UserNavBar>
   );

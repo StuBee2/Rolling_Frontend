@@ -1,10 +1,10 @@
 import { useSetRecoilState } from "recoil";
 import * as S from "./style";
-import { SearchModal } from "../../../../stores/common/common.store";
-import semicircle2 from "../../../../assets/Search/semicircle2.svg";
-import semicircle1 from "../../../../assets/Search/semicircle1.svg";
-import Search2 from "../../../../assets/Search/Search2.svg";
-import { useCloseModal } from "../../../../hooks/Common/useCloseModal";
+import { SearchModal } from "@src/stores/common/common.store";
+import semicircle2 from "@src/assets/Search/semicircle2.svg";
+import semicircle1 from "@src/assets/Search/semicircle1.svg";
+import Search2 from "@src/assets/Search/Search2.svg";
+import { useCloseModal } from "@src/hooks/Common/useCloseModal";
 
 export default function Search() {
   const setSearch = useSetRecoilState(SearchModal);

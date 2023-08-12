@@ -4,11 +4,11 @@ import {
   useMutation,
   useQuery,
 } from "react-query";
-import MemberRepositoryImpl from "../../repositories/Member/member.repositoryImpl";
-import { MemberType } from "../../types/Member/member.type";
+import MemberRepositoryImpl from "@src/repositories/Member/member.repositoryImpl";
+import { MemberType } from "@src/types/Member/member.type";
 import { AxiosError } from "axios";
 import { QUERY_KEYS } from "../queryKey";
-import { MemberNickNameParam } from "../../repositories/Member/member.repository";
+import { MemberNickNameParam } from "@src/repositories/Member/member.repository";
 
 export const useGetMyInfoQuery = (
   options?: UseQueryOptions<MemberType, AxiosError, MemberType, string>

@@ -2,7 +2,7 @@ import * as S from "./style";
 import Nav from "./Nav";
 import { ReactNode, Suspense } from "react";
 import ErrorBoundary from "../Common/ErrorBoundary";
-import useTokenCheck from "../../hooks/Auth/useTokenCheck";
+import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import UserBottom from "./Nav/NavBottom";
 import UserSkeleton from "../Common/Skeleton/User";
 import NavSkeleton from "../Common/Skeleton/Nav";

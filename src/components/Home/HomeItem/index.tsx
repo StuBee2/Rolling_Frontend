@@ -1,9 +1,8 @@
 import { useInView } from "react-intersection-observer";
-import { useGetAllCompanyListQuery } from "../../../queries/Company/company.query";
+import { useGetAllCompanyListQuery } from "@src/queries/Company/company.query";
 import * as S from "./style";
 import { useEffect } from "react";
-import HomeSkeleton from "../../Common/Skeleton/Home";
-import { getDateText } from "../../../util/Date/getDateCounter";
+import { getDateText } from "@src/util/Date/getDateCounter";
 
 export default function HomeItem() {
   const { data: allList, fetchNextPage } = useGetAllCompanyListQuery({

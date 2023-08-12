@@ -1,5 +1,5 @@
-import { useSocialLogin } from "../../../hooks/Auth/useSocialLogin";
-import useHideHeader from "../../../hooks/Common/useHideHeader";
+import { useSocialLogin } from "@src/hooks/Auth/useSocialLogin";
+import useHideHeader from "@src/hooks/Common/useHideHeader";
 
 export default function AuthLoadingPage() {
   useHideHeader();

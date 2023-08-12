@@ -1,6 +1,6 @@
 import axios from "axios";
 import { AuthRepository, newAccessTokenParam } from "./auth.repository";
-import CONFIG from "../../config/config.json";
+import CONFIG from "@src/config/config.json";
 
 class AuthRepositoryImpl implements AuthRepository {
   public async postRefreshToken(token: string): Promise<newAccessTokenParam> {

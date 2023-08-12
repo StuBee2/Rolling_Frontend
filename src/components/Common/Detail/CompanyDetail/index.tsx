@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { useGetCompanyInfoIdQuery } from "../../../../queries/Company/company.query";
-import { companyIdAtom } from "../../../../stores/review/review.store";
+import { useGetCompanyInfoIdQuery } from "@src/queries/Company/company.query";
+import { companyIdAtom } from "@src/stores/review/review.store";
 import { useRecoilState } from "recoil";
-import useModal from "../../../../hooks/util/useModal";
+import useModal from "@src/hooks/util/useModal";
 import FirmReview from "../../Company/Review";
 import * as D from "./style";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { AiTwotoneMedicineBox } from "react-icons/ai";
-import { useReview } from "../../../../hooks/FirmReview/useReview";
+import { useReview } from "@src/hooks/FirmReview/useReview";
 
 interface Props {
   id: string;

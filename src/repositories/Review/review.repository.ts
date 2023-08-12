@@ -2,7 +2,7 @@ import {
   ReviewInfiniteScrollListType,
   ReviewInfoIdType,
   ReviewPostResponse,
-} from "../../types/Review/review.type";
+} from "@src/types/Review/review.type";
 import { CommonIdParam, CommonPageParam } from "../common.param";
 
 export interface ReviewRepository {

@@ -4,7 +4,6 @@ export const CompanyStatusWrap = styled.div`
   width: 90%;
   display: flex;
   column-gap: 10px;
-
   @media screen and (max-width: 565px) {
     flex-direction: column;
     column-gap: 0;
@@ -17,11 +16,9 @@ export const CompanyStatusContainer = styled.div`
   height: 183px;
   background-color: #4869f6;
   border-radius: 10px;
-
   padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-
   transform: scale(1);
   transition: all 0.3s ease-in-out;
   &:hover {
@@ -33,6 +30,11 @@ export const CompanyStatus = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+
+  img {
+    width: 53px;
+    height: 53px;
+  }
 `;
 
 export const CompanyNumber = styled.div`

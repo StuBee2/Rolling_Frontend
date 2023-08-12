@@ -1,7 +1,7 @@
-import design from "../../assets/Home/design.svg";
-import marketing from "../../assets/Home/marketing.svg";
-import develop from "../../assets/Home/develop.svg";
-import plan from "../../assets/Home/plan.svg";
+import design from "@src/assets/Home/design.svg";
+import marketing from "@src/assets/Home/marketing.svg";
+import develop from "@src/assets/Home/develop.svg";
+import plan from "@src/assets/Home/plan.svg";
 
 export interface Type {
   id: number;

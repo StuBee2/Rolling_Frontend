@@ -7,11 +7,11 @@ import {
   reviewPosition,
   salaryGradeAtom,
   welfareGradeAtom,
-} from "../../stores/review/review.store";
+} from "@src/stores/review/review.store";
 import { useCallback } from "react";
-import { ReviewParam } from "../../repositories/Review/review.repository";
+import { ReviewParam } from "@src/repositories/Review/review.repository";
 import { QueryClient } from "react-query";
-import { usePostReviewMutation } from "../../queries/review/review.query";
+import { usePostReviewMutation } from "@src/queries/review/review.query";
 import useModal from "../util/useModal";
 
 export const useReview = () => {

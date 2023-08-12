@@ -2,9 +2,9 @@ import axios from "axios";
 import {
   ACCESS_TOKEN_KEY,
   REQUEST_TOKEN_KEY,
-} from "../../constants/Auth/auth.constant";
+} from "@src/constants/Auth/auth.constant";
 import Token from "../Token/Token";
-import CONFIG from "../../config/config.json";
+import CONFIG from "@src/config/config.json";
 import { responseHandler } from "./responseHandler";
 
 export const customAxios = axios.create({
@@ -13,6 +13,5 @@ export const customAxios = axios.create({
     [REQUEST_TOKEN_KEY]: `Bearer ${Token.getToken(ACCESS_TOKEN_KEY)}`,
   },
 });
-
 
 customAxios.interceptors.response.use((response) => response, responseHandler);

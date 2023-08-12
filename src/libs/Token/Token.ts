@@ -1,7 +1,7 @@
 import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
-} from "../../constants/Auth/auth.constant";
+} from "@src/constants/Auth/auth.constant";
 import cookie from "../Cookie/cookie";
 
 interface Storage {

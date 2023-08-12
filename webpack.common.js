@@ -1,8 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const RefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const svgToMiniDataURI = require("mini-svg-data-uri");
 
 module.exports = {
   entry: {
@@ -10,23 +9,47 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist/"),
-    filename: "[name].bundle.js",
+    filename: "[name].[chunkhash].js",
     publicPath: "/",
+    clean: true,
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,
-        use: ["babel-loader", "ts-loader"],
-        exclude: /node_modules/,
+        loader: "esbuild-loader",
+        options: {
+          loader: "tsx",
+          target: "es2015",
+        },
       },
       {
-        test: /\.svg|png|jpg|gif$/,
-        type: "asset/inline",
+        test: /\.(png|jpg|gif|mp4|jpeg)$/,
+        type: "asset",
+      },
+      {
+        test: /\.svg/,
+        type: "asset",
+        generator: {
+          dataUrl: (content) => {
+            content = content.toString();
+            return svgToMiniDataURI(content);
+          },
+        },
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "esbuild-loader",
+            options: {
+              loader: "css",
+              minify: true,
+            },
+          },
+        ],
       },
     ],
   },
@@ -35,12 +58,12 @@ module.exports = {
       template: "./public/index.html",
       filename: "index.html",
     }),
-    new CleanWebpackPlugin({ cleanAfterEveryBuildPatterns: ["dist"] }),
     new RefreshWebpackPlugin(),
-    new MiniCssExtractPlugin(),
   ],
   resolve: {
-    modules: [path.resolve(__dirname, "src"), "node_modules"],
     extensions: [".js", ".ts", ".jsx", ".tsx"],
+    alias: {
+      "@src": path.resolve(__dirname, "./src"),
+    },
   },
 };

@@ -11,7 +11,6 @@ export const UserNavBar = styled.div`
 export const MemberInfoContainer = styled.div`
   width: 100%;
   height: 300px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,11 +39,9 @@ export const UserEmail = styled.p`
 export const UserNickName = styled.div`
   font-size: 15px;
   cursor: pointer;
-
   form {
     display: flex;
     column-gap: 10px;
-
     input {
       border: 1px solid #4869f6;
       outline: none;
@@ -53,7 +50,6 @@ export const UserNickName = styled.div`
       color: #1d1e5a;
     }
   }
-
   &:hover {
     color: #1d1e5a;
   }
@@ -62,7 +58,6 @@ export const UserNickName = styled.div`
 export const EditAndCancelContainer = styled.div`
   display: flex;
   column-gap: 2px;
-
   button {
     width: 35px;
     height: 20px;
@@ -83,11 +78,9 @@ export const PageSelectContainer = styled.div`
   height: 300px;
   font-weight: bold;
   color: #61677e;
-
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-
   -webkit-touch-callout: none;
   user-select: none;
   -moz-user-select: none;
@@ -98,11 +91,9 @@ export const PageSelectContainer = styled.div`
 export const PageSelect = styled.div`
   width: 100%;
   height: auto;
-
   display: flex;
   flex-direction: column;
   gap: 10px;
-
   border-bottom: 2px solid #dee0e6;
   font-size: 20px;
 `;
@@ -113,7 +104,6 @@ export const PageSelectItem = styled.div<{ isSelect?: boolean }>`
   background-color: ${(props) => props.isSelect && "#1d1e5a"};
   color: ${(props) => props.isSelect && "#ffffff"};
   border-radius: 8px;
-
   line-height: 60px;
   padding-left: 10px;
   cursor: pointer;
@@ -133,4 +123,11 @@ export const Logout = styled.div`
   line-height: 60px;
   padding-left: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
 `;

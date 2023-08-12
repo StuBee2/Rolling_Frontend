@@ -7,17 +7,17 @@ import {
   useMutation,
   useQuery,
 } from "react-query";
-import ReviewRepositoryImpl from "../../repositories/Review/review.repositoryImpl";
+import ReviewRepositoryImpl from "@src/repositories/Review/review.repositoryImpl";
 import {
   ReviewInfiniteScrollListType,
   ReviewInfoIdType,
   ReviewListType,
-} from "../../types/Review/review.type";
+} from "@src/types/Review/review.type";
 import { AxiosError } from "axios";
-import { CommonIdParam } from "../../repositories/common.param";
+import { CommonIdParam } from "@src/repositories/common.param";
 import { QUERY_KEYS } from "../queryKey";
 
-import { ReviewParam } from "../../repositories/Review/review.repository";
+import { ReviewParam } from "@src/repositories/Review/review.repository";
 
 export const useGetMyReviewQuery = (
   options?: UseInfiniteQueryOptions<

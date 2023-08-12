@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { usePatchMyNickNameMutation } from "../../queries/Member/Member.query";
+import { usePatchMyNickNameMutation } from "@src/queries/Member/Member.query";
 import { useQueryClient } from "react-query";
-import { QUERY_KEYS } from "../../queries/queryKey";
+import { QUERY_KEYS } from "@src/queries/queryKey";
 import { AxiosError } from "axios";
 
 export const useEditNickName = (nickName: string) => {

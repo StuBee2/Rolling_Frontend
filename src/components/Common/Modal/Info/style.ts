@@ -43,15 +43,12 @@ export const SimpleInfoModalContainer = styled.div`
 export const Profile = styled.div`
   width: 100%;
   height: 52%;
-
   border-radius: 15px 15px 0 0;
   border-bottom: 2px solid rgba(222, 224, 230, 0.3);
-
   display: flex;
   align-items: center;
   gap: 10px;
   padding-left: 20px;
-
   img {
     width: 60px;
     height: 60px;
@@ -69,7 +66,6 @@ export const Name = styled.div`
 export const EditProfile = styled.div`
   color: #4869f6;
   cursor: pointer;
-
   &:hover {
     border-bottom: 1px solid #4869f6;
   }
@@ -79,17 +75,21 @@ export const MyPageLogout = styled.div`
   width: 100%;
   height: 48%;
   border-radius: 0 0 15px 15px;
-
   color: #ffffff;
   font-size: 18px;
   padding-left: 20px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
-
+  row-gap: 20px;
   div {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
     cursor: pointer;
+    img {
+      width: 18px;
+      height: 20px;
+    }
   }
 `;

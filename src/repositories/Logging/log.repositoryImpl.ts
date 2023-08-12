@@ -1,5 +1,5 @@
-import { customAxios } from "../../libs/Axios/customAxios";
-import { LogType } from "../../types/log/log.type";
+import { customAxios } from "@src/libs/Axios/customAxios";
+import { LogType } from "@src/types/log/log.type";
 import { LogRepository, LoggingParam } from "./log.repository";
 
 class LogRepositoryImpl implements LogRepository {

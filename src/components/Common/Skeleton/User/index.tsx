@@ -1,4 +1,4 @@
-import { Container } from "../../../User/Profile/style";
+import { Container } from "@src/components/User/Profile/style";
 import { SkeletonBox } from "../Common/style";
 import * as S from "./style";
 

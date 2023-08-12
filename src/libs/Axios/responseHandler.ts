@@ -3,10 +3,10 @@ import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
   REQUEST_TOKEN_KEY,
-} from "../../constants/Auth/auth.constant";
+} from "@src/constants/Auth/auth.constant";
 import Token from "../Token/Token";
 import { customAxios } from "./customAxios";
-import authRepositoryImpl from "../../repositories/Auth/auth.repositoryImpl";
+import authRepositoryImpl from "@src/repositories/Auth/auth.repositoryImpl";
 
 export const responseHandler = async (config: AxiosError) => {
   const access_token = Token.getToken(ACCESS_TOKEN_KEY);

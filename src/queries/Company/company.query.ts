@@ -7,19 +7,19 @@ import {
   useMutation,
   useQuery,
 } from "react-query";
-import CompanyRepositoryImpl from "../../repositories/Company/company.repositoryImpl";
+import CompanyRepositoryImpl from "@src/repositories/Company/company.repositoryImpl";
 import {
   CompanyInfiniteScrollType,
   CompanyInfoType,
   CompanyListType,
-} from "../../types/Company/company.type";
+} from "@src/types/Company/company.type";
 import { AxiosError } from "axios";
 import { QUERY_KEYS } from "../queryKey";
-import { CommonIdParam } from "../../repositories/common.param";
+import { CommonIdParam } from "@src/repositories/common.param";
 import {
   CompanyNameParam,
   CompanyParam,
-} from "../../repositories/Company/company.repository";
+} from "@src/repositories/Company/company.repository";
 
 export const usePostCompanyRegisterMutation = () => {
   const registermutation = useMutation((data: CompanyParam) =>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEditNickName } from "../../../../hooks/Common/useEditNickName";
+import { useEditNickName } from "@src/hooks/Common/useEditNickName";
 import { EditAndCancelContainer } from "../style";
 
 interface Props {

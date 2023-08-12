@@ -20,14 +20,11 @@ export const CmsEtcContainer = styled.div`
   width: 100%;
   height: 30%;
   padding-left: 20px;
-
   border-radius: 0 0 20px 20px;
   background-color: #ffffff;
-
   display: flex;
   align-items: center;
   column-gap: 10px;
-
   img {
     width: 60px;
     height: 60px;

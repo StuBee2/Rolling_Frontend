@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { getDateText } from "../../../../../util/Date/getDateCounter";
-import { ReviewListType } from "../../../../../types/Review/review.type";
+import { getDateText } from "@src/util/Date/getDateCounter";
+import { ReviewListType } from "@src/types/Review/review.type";
 import * as S from "../../style";
-import stringEllipsis from "../../../../../libs/Common/stringEllipsis";
-import edit from "../../../../../assets/User/edit.svg";
-import del from "../../../../../assets/User/del.svg";
+import stringEllipsis from "@src/libs/Common/stringEllipsis";
+import edit from "@src/assets/User/edit.svg";
+import del from "@src/assets/User/del.svg";
 
 interface Props {
   review: ReviewListType;

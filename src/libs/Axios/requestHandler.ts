@@ -3,7 +3,7 @@ import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
   REQUEST_TOKEN_KEY,
-} from "../../constants/Auth/auth.constant";
+} from "@src/constants/Auth/auth.constant";
 import Token from "../Token/Token";
 import { customAxios } from "./customAxios";
 

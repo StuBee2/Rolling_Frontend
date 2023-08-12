@@ -1,13 +1,13 @@
 import * as S from "./style";
-import recommand from "../../assets/Home/recommand.svg";
+import recommand from "@src/assets/Home/recommand.svg";
 import Nav from "./Nav";
 import Cms from "./Company/Cms";
 import Rank from "./Company/Rank";
-import HomeItem from "./HomeItem";
 import ErrorBoundary from "../Common/ErrorBoundary";
 import { Suspense } from "react";
 import NavTop from "./Nav/NavTop";
 import HomeSkeleton from "../Common/Skeleton/Home";
+import HomeItem from "./HomeItem";
 
 export default function Home() {
   return (

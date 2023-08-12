@@ -15,11 +15,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "@src/*": ["src/*"]
+    },
+    "baseUrl": "."
   },
-  "include": [
-    "src",
-    "src/store/company/.ts",
-    "src/components/User/Profile/style.ts"
-  ]
+  "include": ["src"]
 }

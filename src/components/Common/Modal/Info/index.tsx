@@ -1,11 +1,13 @@
 import { useSetRecoilState } from "recoil";
 import * as S from "./style";
-import { useCloseModal } from "../../../../hooks/Common/useCloseModal";
-import { SimpleInfoModal } from "../../../../stores/common/common.store";
-import { useLogout } from "../../../../hooks/Auth/useLogout";
-import { useLogging } from "../../../../hooks/Log/useLogging";
-import { LOG_ITEM } from "../../../../constants/Log/log.constants";
-import { useGetMyInfoQuery } from "../../../../queries/Member/Member.query";
+import { useCloseModal } from "@src/hooks/Common/useCloseModal";
+import { SimpleInfoModal } from "@src/stores/common/common.store";
+import { useLogout } from "@src/hooks/Auth/useLogout";
+import { useLogging } from "@src/hooks/Log/useLogging";
+import { LOG_ITEM } from "@src/constants/Log/log.constants";
+import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
+import logout from "@src/assets/Auth/logout.svg";
+import profile from "@src/assets/User/profile.svg";
 
 export default function Info() {
   const setSimpleInfo = useSetRecoilState(SimpleInfoModal);
@@ -19,7 +21,7 @@ export default function Info() {
       <S.SimpleInfoParentBox>
         <S.SimpleInfoModalContainer onClick={(e) => e.stopPropagation()}>
           <S.Profile>
-            <img src={myInfo?.socialDetails.imageUrl} alt="" />
+            <img src={myInfo?.socialDetails.imageUrl} alt="이미지 없음" />
             <div>
               <S.Name>{myInfo?.socialDetails.name}</S.Name>
               <S.EditProfile>롤링 프로필 수정하기</S.EditProfile>
@@ -32,7 +34,8 @@ export default function Info() {
                 handleLoggingClick(LOG_ITEM[1]);
               }}
             >
-              😊 내 프로필
+              <img src={profile} alt="이미지 없음" />
+              <p>내 프로필</p>
             </div>
             <div
               onClick={() => {
@@ -40,7 +43,8 @@ export default function Info() {
                 setSimpleInfo(false);
               }}
             >
-              🫥 로그아웃
+              <img src={logout} alt="이미지 없음" />
+              <p>로그아웃</p>
             </div>
           </S.MyPageLogout>
         </S.SimpleInfoModalContainer>

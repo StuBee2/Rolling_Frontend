@@ -1,10 +1,10 @@
 import * as S from "../style";
 import { Container, Explain, Title } from "../../Profile/style";
-import company from "../../../../assets/User/company.svg";
-import { useGetMyEmploymenyListQuery } from "../../../../queries/Employment/employment.query";
+import company from "@src/assets/User/company.svg";
+import { useGetMyEmploymenyListQuery } from "@src/queries/Employment/employment.query";
 import EmploymentItem from "./EmploymentItem";
 
-export default function Regist() {
+export default function Employment() {
   const { data: employmentList } = useGetMyEmploymenyListQuery({
     suspense: true,
   });

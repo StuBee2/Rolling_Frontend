@@ -1,4 +1,4 @@
-import { LoggingParam } from "../../repositories/Logging/log.repository";
+import { LoggingParam } from "@src/repositories/Logging/log.repository";
 
 export const LOG_ITEM: LoggingParam[] = [
   {

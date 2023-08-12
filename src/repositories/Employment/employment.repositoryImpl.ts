@@ -1,6 +1,6 @@
-import { customAxios } from "../../libs/Axios/customAxios";
+import { customAxios } from "@src/libs/Axios/customAxios";
 import { EmployRepository } from "./employment.repository";
-import { EmploymentResponse } from "../../types/Employment/employment.type";
+import { EmploymentResponse } from "@src/types/Employment/employment.type";
 
 class EmployRepositoryImpl implements EmployRepository {
   public async getMyEmployList(): Promise<EmploymentResponse[]> {

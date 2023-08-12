@@ -1,8 +1,8 @@
 import * as S from "./style";
-import github from "../../../../../assets/Auth/github.svg";
-import CONFIG from "../../../../../config/config.json";
+import github from "@src/assets/Auth/github.svg";
+import CONFIG from "@src/config/config.json";
 import { useNavigate } from "react-router-dom";
-import { useLogin } from "../../../../../hooks/Auth/useLogin";
+import { useLogin } from "@src/hooks/Auth/useLogin";
 
 export default function SignInItem() {
   const gitSignInUrl = `${CONFIG.SERVER}/oauth2/authorization/github`;

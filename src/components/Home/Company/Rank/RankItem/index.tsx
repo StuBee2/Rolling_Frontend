@@ -1,4 +1,4 @@
-import { useGetCompanyRankSelectQuery } from "../../../../../queries/Company/company.query";
+import { useGetCompanyRankSelectQuery } from "@src/queries/Company/company.query";
 import * as S from "./style";
 
 interface Props {

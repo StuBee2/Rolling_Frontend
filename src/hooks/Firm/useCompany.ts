@@ -4,13 +4,13 @@ import {
   companyInfoAtom,
   companyLogoAtom,
   companyNameAtom,
-} from "../../stores/company/companyStore";
+} from "@src/stores/company/companyStore";
 import { useCallback } from "react";
 import { useRef, MutableRefObject } from "react";
-import { customAxios } from "../../libs/Axios/customAxios";
+import { customAxios } from "@src/libs/Axios/customAxios";
 import { QueryClient } from "react-query";
-import { usePostCompanyRegisterMutation } from "../../queries/Company/company.query";
-import { CompanyParam } from "../../repositories/Company/company.param";
+import { usePostCompanyRegisterMutation } from "@src/queries/Company/company.query";
+import { CompanyParam } from "@src/repositories/Company/company.param";
 import { useNavigate } from "react-router-dom";
 
 export const useCompany = () => {

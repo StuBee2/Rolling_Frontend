@@ -1,7 +1,7 @@
 import { useRecoilValue } from "recoil";
 import MyInfo from "./MyInfo";
 import * as S from "./style";
-import { MyMemberInfo } from "../../../stores/member/member.store";
+import { MyMemberInfo } from "@src/stores/member/member.store";
 import CompanyStatus from "./CompanyStatus";
 
 function Profile() {

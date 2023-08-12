@@ -1,12 +1,12 @@
 import * as F from "./style";
-import { useCompany } from "../../../../hooks/Firm/useCompany";
+import { useCompany } from "@src/hooks/Firm/useCompany";
 import { useRecoilState } from "recoil";
 import {
   companyAddressAtom,
   companyInfoAtom,
   companyLogoAtom,
   companyNameAtom,
-} from "../../../../stores/company/companyStore";
+} from "@src/stores/company/companyStore";
 
 const FirmRegister = () => {
   const {

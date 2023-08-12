@@ -1,7 +1,7 @@
 import {
   HOME_NAV_COMPANY_ITEMS,
   HOME_NAV_FIELD_ITEMS,
-} from "../../../../constants/Home/Home.constants";
+} from "@src/constants/Home/Home.constants";
 import * as S from "./style";
 
 export default function NavTop() {

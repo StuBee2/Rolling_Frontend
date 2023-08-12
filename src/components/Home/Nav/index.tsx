@@ -1,10 +1,10 @@
 import * as S from "./style";
-import category from "../../../assets/Home/category.svg";
-import more from "../../../assets/Home/more.svg";
+import category from "@src/assets/Home/category.svg";
+import more from "@src/assets/Home/more.svg";
 import {
   HOME_NAV_COMPANY_ITEMS,
   HOME_NAV_FIELD_ITEMS,
-} from "../../../constants/Home/Home.constants";
+} from "@src/constants/Home/Home.constants";
 
 export default function Nav() {
   return (

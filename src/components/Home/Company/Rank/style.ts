@@ -26,10 +26,8 @@ export const RankListText = styled.li<{ isselect: boolean }>`
 export const RankListItemWrapper = styled.div`
   width: 100%;
   height: 20vh;
-
   display: flex;
   flex-wrap: wrap;
-
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;
@@ -42,6 +40,10 @@ export const Introduce = styled.div`
   display: flex;
   align-items: center;
   column-gap: 5px;
+  img {
+    width: 23px;
+    height: 23px;
+  }
 `;
 
 export const RankListItemContainer = styled.div`

@@ -1,6 +1,6 @@
 import * as S from "./style";
-import cms from "../../../../assets/Home/cms.svg";
-import arrow from "../../../../assets/Home/arrow.svg";
+import cms from "@src/assets/Home/cms.svg";
+import arrow from "@src/assets/Home/arrow.svg";
 import { CompanyContainer, Title } from "../style";
 
 export default function Cms() {
@@ -13,10 +13,7 @@ export default function Cms() {
       <S.CmsBox>
         <S.CmsImg image="" />
         <S.CmsEtcContainer>
-          <img
-            src=""
-            alt="이미지 없음"
-          />
+          <img src="" alt="이미지 없음" />
           <div>
             <S.CmsPosterPosition>Backend Engineer</S.CmsPosterPosition>
             <S.CmsCompany>무신사</S.CmsCompany>

@@ -1,6 +1,6 @@
-import employment from "../../assets/User/employment.svg";
-import review from "../../assets/User/review.svg";
-import smile from "../../assets/User/smile.svg";
+import employment from "@src/assets/User/employment.svg";
+import review from "@src/assets/User/review.svg";
+import smile from "@src/assets/User/smile.svg";
 
 interface Type {
   id: number;

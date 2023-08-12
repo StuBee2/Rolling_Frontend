@@ -1,9 +1,9 @@
-import { customAxios } from "../../libs/Axios/customAxios";
+import { customAxios } from "@src/libs/Axios/customAxios";
 import {
   CompanyInfiniteScrollType,
   CompanyInfoType,
   CompanyListType,
-} from "../../types/Company/company.type";
+} from "@src/types/Company/company.type";
 import { CommonIdParam, CommonPageParam } from "../common.param";
 import {
   CompanyIdParam,

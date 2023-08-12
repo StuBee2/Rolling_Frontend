@@ -1,7 +1,7 @@
 import { UseQueryOptions, UseQueryResult, useQuery } from "react-query";
 import { QUERY_KEYS } from "../queryKey";
-import employmentRepositoryImpl from "../../repositories/Employment/employment.repositoryImpl";
-import { EmploymentResponse } from "../../types/Employment/employment.type";
+import employmentRepositoryImpl from "@src/repositories/Employment/employment.repositoryImpl";
+import { EmploymentResponse } from "@src/types/Employment/employment.type";
 import { AxiosError } from "axios";
 
 export const useGetMyEmploymenyListQuery = (

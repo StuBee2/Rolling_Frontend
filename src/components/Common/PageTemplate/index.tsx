@@ -1,12 +1,12 @@
 import { ReactNode, useEffect } from "react";
-import GlobalStyle from "../../../styles/GlobalStyles";
+import GlobalStyle from "@src/styles/GlobalStyles";
 import Header from "../Header/index";
 import { useRecoilValue } from "recoil";
 import {
   HideHeader,
   SearchModal,
   SimpleInfoModal,
-} from "../../../stores/common/common.store";
+} from "@src/stores/common/common.store";
 import Search from "../Modal/Search";
 import Info from "../Modal/Info";
 

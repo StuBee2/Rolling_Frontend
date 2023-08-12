@@ -4,7 +4,7 @@ import StarRating from "./ReviewStarScope";
 import { useRecoilState } from "recoil";
 
 import Modal from "../../Modal";
-import useModal from "../../../../hooks/util/useModal";
+import useModal from "@src/hooks/util/useModal";
 import { FaPen } from "@react-icons/all-files/fa/FaPen";
 import {
   balanceGradeAtom,
@@ -14,8 +14,8 @@ import {
   reviewPosition,
   salaryGradeAtom,
   welfareGradeAtom,
-} from "../../../../stores/review/review.store";
-import { useReview } from "../../../../hooks/FirmReview/useReview";
+} from "@src/stores/review/review.store";
+import { useReview } from "@src/hooks/FirmReview/useReview";
 
 const FirmReview = (props: any) => {
   const [companyidatom, setCompanyIdAtom] = useRecoilState<string | undefined>(

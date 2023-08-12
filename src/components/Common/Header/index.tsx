@@ -1,16 +1,13 @@
 import * as S from "./style";
 import { useLocation, useNavigate } from "react-router-dom";
-import Logo from "../../../assets/Common/Logo.svg";
-import Search1 from "../../../assets/Search/Search1.svg";
+import Logo from "@src/assets/Common/Logo.svg";
+import Search1 from "@src/assets/Search/Search1.svg";
 import { useState } from "react";
-import { HEADER_ITEMS } from "../../../constants/Common/common.constant";
-import token from "../../../libs/Token/Token";
-import { ACCESS_TOKEN_KEY } from "../../../constants/Auth/auth.constant";
+import { HEADER_ITEMS } from "@src/constants/Common/common.constant";
+import token from "@src/libs/Token/Token";
+import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import { useSetRecoilState } from "recoil";
-import {
-  SearchModal,
-  SimpleInfoModal,
-} from "../../../stores/common/common.store";
+import { SearchModal, SimpleInfoModal } from "@src/stores/common/common.store";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -49,7 +46,11 @@ export default function Header() {
         </S.PageContainer>
 
         <S.LoginSearchContainer>
-          <S.Search src={Search1} onClick={() => setSearch(true)} />
+          <S.Search
+            src={Search1}
+            onClick={() => setSearch(true)}
+            alt="이미지 없음"
+          />
           {token.getToken(ACCESS_TOKEN_KEY) ? (
             <S.UserIcon size={30} onClick={() => setSimpleInfo(true)} />
           ) : (

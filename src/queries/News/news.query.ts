@@ -3,11 +3,11 @@ import {
   UseInfiniteQueryResult,
   useInfiniteQuery,
 } from "react-query";
-import { NewsCompanyNameParam } from "../../repositories/News/news.repository";
+import { NewsCompanyNameParam } from "@src/repositories/News/news.repository";
 import { AxiosError } from "axios";
 import { QUERY_KEYS } from "../queryKey";
-import NewsRepositoryImpl from "../../repositories/News/news.repositoryImpl";
-import { NewsInfiniteScrollType } from "../../types/News/news.type";
+import NewsRepositoryImpl from "@src/repositories/News/news.repositoryImpl";
+import { NewsInfiniteScrollType } from "@src/types/News/news.type";
 
 export const useGetNewsQuery = (
   { companyName }: NewsCompanyNameParam,

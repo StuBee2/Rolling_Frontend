@@ -1,13 +1,13 @@
 import * as S from "./style";
-import rank from "../../../../assets/Home/rank.svg";
-import smile from "../../../../assets/User/smile.svg";
+import rank from "@src/assets/Home/rank.svg";
+import smile from "@src/assets/User/smile.svg";
 import { CompanyContainer, Title } from "../style";
-import { HOME_COMPANY_RANK_ITMES } from "../../../../constants/Home/Home.constants";
+import { HOME_COMPANY_RANK_ITMES } from "@src/constants/Home/Home.constants";
 import { Suspense, useState } from "react";
 import RankItem from "./RankItem";
-import ErrorBoundary from "../../../Common/ErrorBoundary";
-import { getCompanyRankIntroduce } from "../../../../util/getCompanyRankIntroduce";
-import RankSkeleton from "../../../Common/Skeleton/Rank";
+import ErrorBoundary from "@src/components/Common/ErrorBoundary";
+import { getCompanyRankIntroduce } from "@src/util/getCompanyRankIntroduce";
+import RankSkeleton from "@src/components/Common/Skeleton/Rank";
 
 export default function Rank() {
   const [rankCategorySelect, setRankCategorySelect] = useState("total");

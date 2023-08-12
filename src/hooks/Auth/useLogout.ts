@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Token from "../../libs/Token/Token";
+import Token from "@src/libs/Token/Token";
 
 export const useLogout = () => {
   const navigate = useNavigate();

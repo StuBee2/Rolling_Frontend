@@ -1,4 +1,4 @@
-import { NewsInfiniteScrollType } from "../../types/News/news.type";
+import { NewsInfiniteScrollType } from "@src/types/News/news.type";
 import { CommonPageParam } from "../common.param";
 
 export interface NewsCompanyNameParam {

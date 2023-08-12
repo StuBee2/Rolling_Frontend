@@ -1,4 +1,4 @@
-import { LogType } from "../../types/log/log.type";
+import { LogType } from "@src/types/log/log.type";
 
 export interface LogRepository {
   postLogging({ description, module }: LoggingParam): Promise<LogType>;

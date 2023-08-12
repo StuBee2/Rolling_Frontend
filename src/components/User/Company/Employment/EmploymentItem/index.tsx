@@ -1,12 +1,10 @@
-import stringEllipsis from "../../../../../libs/Common/stringEllipsis";
-import { getDateText } from "../../../../../util/Date/getDateCounter";
-import { CompanyListType } from "../../../../../types/Company/company.type";
+import stringEllipsis from "@src/libs/Common/stringEllipsis";
 import * as S from "../../style";
-import edit from "../../../../../assets/User/edit.svg";
-import del from "../../../../../assets/User/del.svg";
+import edit from "@src/assets/User/edit.svg";
+import del from "@src/assets/User/del.svg";
 import { useState } from "react";
-import { useDeleteCompany } from "../../../../../hooks/Company/useDeleteCompany";
-import { EmploymentResponse } from "../../../../../types/Employment/employment.type";
+import { useDeleteCompany } from "@src/hooks/Company/useDeleteCompany";
+import { EmploymentResponse } from "@src/types/Employment/employment.type";
 
 interface Props {
   employment: EmploymentResponse;

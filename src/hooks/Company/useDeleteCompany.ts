@@ -1,6 +1,6 @@
-import { useDeleteCompanyMutation } from "../../queries/Company/company.query";
+import { useDeleteCompanyMutation } from "@src/queries/Company/company.query";
 import { useQueryClient } from "react-query";
-import { QUERY_KEYS } from "../../queries/queryKey";
+import { QUERY_KEYS } from "@src/queries/queryKey";
 
 export const useDeleteCompany = () => {
   const deleteCompany = useDeleteCompanyMutation();
@@ -15,7 +15,7 @@ export const useDeleteCompany = () => {
           queryClient.invalidateQueries(QUERY_KEYS.company.getMyListCompany);
         },
         onError: (e) => {
-          console.log(e);
+          window.alert("회사 삭제에 실패했습니다.");
         },
       });
     }
