@@ -13,6 +13,7 @@ export default function Home() {
   return (
     <S.HomeContainer>
       <NavTop />
+
       <S.HomeWrapper>
         <S.NavAndHomeItemContainer>
           <Nav />
@@ -24,7 +25,7 @@ export default function Home() {
                   <img src={recommand} alt="이미지 없음" />
                   <p>선배들이 추천해요!</p>
                 </S.Title>
-                <ErrorBoundary fallback={<>Error</>}>
+                <ErrorBoundary fallback={<>게시글을 불러오지 못했습니다 :)</>}>
                   <Suspense fallback={<HomeSkeleton />}>
                     <HomeItem />
                   </Suspense>

@@ -11,7 +11,7 @@ export const CmsBox = styled.div`
 export const CmsImg = styled.div<{ image: string }>`
   width: 100%;
   height: 70%;
-  background: url(${(props) => props.image}) no-repeat;
+  background: url(${(props) => props.image}) no-repeat #d9d9d9;
   background-size: cover;
   border-radius: 20px 20px 0 0;
 `;
@@ -30,6 +30,7 @@ export const CmsEtcContainer = styled.div`
     height: 60px;
     border-radius: 10px;
     object-fit: cover;
+    background-color: #d9d9d9;
   }
 `;
 

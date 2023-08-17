@@ -8,7 +8,6 @@ const useHideHeader = () => {
     setHideHeader(true);
     return () => setHideHeader(false);
   }, [setHideHeader]);
-  return {};
 };
 
 export default useHideHeader;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SimpleInfoWrapper = styled.div`
+export const InfoModalWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@ export const SimpleInfoWrapper = styled.div`
   z-index: 10;
 `;
 
-export const SimpleInfoParentBox = styled.div`
+export const InfoModalParentBox = styled.div`
   width: 1570px;
   height: calc(100% - 108px);
   position: absolute;
@@ -28,7 +28,7 @@ export const SimpleInfoParentBox = styled.div`
   }
 `;
 
-export const SimpleInfoModalContainer = styled.div`
+export const InfoModalContainer = styled.div`
   width: 337px;
   height: 224px;
   background-color: #2b2c30;
@@ -38,6 +38,10 @@ export const SimpleInfoModalContainer = styled.div`
   top: 0;
   right: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  @media screen and (max-width: 360px) {
+    width: 285px;
+  }
 `;
 
 export const Profile = styled.div`

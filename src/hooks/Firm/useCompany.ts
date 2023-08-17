@@ -4,7 +4,7 @@ import {
   companyInfoAtom,
   companyLogoAtom,
   companyNameAtom,
-} from "@src/stores/company/companyStore";
+} from "@src/stores/company/company.store";
 import { useCallback } from "react";
 import { useRef, MutableRefObject } from "react";
 import { customAxios } from "@src/libs/Axios/customAxios";

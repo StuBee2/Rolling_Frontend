@@ -11,7 +11,6 @@ import ReviewRepositoryImpl from "@src/repositories/Review/review.repositoryImpl
 import {
   ReviewInfiniteScrollListType,
   ReviewInfoIdType,
-  ReviewListType,
 } from "@src/types/Review/review.type";
 import { AxiosError } from "axios";
 import { CommonIdParam } from "@src/repositories/common.param";

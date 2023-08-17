@@ -17,7 +17,7 @@ import { AxiosError } from "axios";
 import { QUERY_KEYS } from "../queryKey";
 import { CommonIdParam } from "@src/repositories/common.param";
 import {
-  CompanyNameParam,
+  CompanyKeywordParam,
   CompanyParam,
 } from "@src/repositories/Company/company.repository";
 
@@ -48,7 +48,7 @@ export const useGetMyCompanyListQuery = (
   );
 
 export const useGetCompanySerachListQuery = (
-  { name }: CompanyNameParam,
+  { keyword }: CompanyKeywordParam,
   options?: UseInfiniteQueryOptions<
     CompanyInfiniteScrollType,
     AxiosError,
@@ -58,9 +58,12 @@ export const useGetCompanySerachListQuery = (
   >
 ): UseInfiniteQueryResult<CompanyInfiniteScrollType, AxiosError> =>
   useInfiniteQuery(
-    QUERY_KEYS.company.getListSearchCompany(name),
+    QUERY_KEYS.company.getListSearchCompany(keyword),
     ({ pageParam = 1 }) =>
-      CompanyRepositoryImpl.getCompanySearchList({ name }, { page: pageParam }),
+      CompanyRepositoryImpl.getCompanySearchList(
+        { keyword },
+        { page: pageParam }
+      ),
     {
       ...options,
       getNextPageParam: (nextPage) => nextPage.nextPage,
@@ -86,6 +89,29 @@ export const useGetAllCompanyListQuery = (
     }
   );
 
+export const useGetAllAndSearchCompanyListQuery = (
+  { keyword }: CompanyKeywordParam,
+  options?: UseInfiniteQueryOptions<
+    CompanyInfiniteScrollType,
+    AxiosError,
+    CompanyInfiniteScrollType,
+    CompanyInfiniteScrollType,
+    string[]
+  >
+): UseInfiniteQueryResult<CompanyInfiniteScrollType, AxiosError> =>
+  useInfiniteQuery(
+    QUERY_KEYS.company.getListAllAndSearchCompany(keyword),
+    ({ pageParam = 1 }) =>
+      CompanyRepositoryImpl.getAllAndSearchCompanyList(
+        { keyword: keyword },
+        { page: pageParam }
+      ),
+    {
+      ...options,
+      getNextPageParam: (nextPage) => nextPage.nextPage,
+    }
+  );
+  
 export const useGetCompanyListIdQuery = (
   { id }: CommonIdParam,
   options?: UseInfiniteQueryOptions<

@@ -1,5 +1,5 @@
-import { Portal } from "../../Portal";
-import { CommonComponentProps } from "../common.type";
+import { Portal } from "../Portal";
+import { CommonComponentProps } from "../Common/common.type";
 
 interface ModalProps extends CommonComponentProps {
   isOpen: boolean;

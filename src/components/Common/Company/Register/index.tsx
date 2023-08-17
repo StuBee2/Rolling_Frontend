@@ -6,7 +6,7 @@ import {
   companyInfoAtom,
   companyLogoAtom,
   companyNameAtom,
-} from "@src/stores/company/companyStore";
+} from "@src/stores/company/company.store";
 
 const FirmRegister = () => {
   const {

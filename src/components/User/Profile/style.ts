@@ -14,7 +14,6 @@ export const Title = styled.div`
 
 export const Explain = styled.div`
   font-size: 15px;
-  overflow: hidden;
   color: #61677e;
   margin-top: 10px;
 `;

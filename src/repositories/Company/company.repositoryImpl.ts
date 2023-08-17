@@ -7,7 +7,7 @@ import {
 import { CommonIdParam, CommonPageParam } from "../common.param";
 import {
   CompanyIdParam,
-  CompanyNameParam,
+  CompanyKeywordParam,
   CompanyParam,
   CompanyRepository,
 } from "./company.repository";
@@ -30,11 +30,11 @@ class CompanyRepositoryImpl implements CompanyRepository {
   }
 
   public async getCompanySearchList(
-    { name }: CompanyNameParam,
+    { keyword }: CompanyKeywordParam,
     { page }: CommonPageParam
   ): Promise<CompanyInfiniteScrollType> {
     const { data } = await customAxios.get(
-      `/company/search?name=${name}&page=${page}&size=10`
+      `/company/search?name=${keyword}&page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
   }
@@ -44,6 +44,16 @@ class CompanyRepositoryImpl implements CompanyRepository {
   }: CommonPageParam): Promise<CompanyInfiniteScrollType> {
     const { data } = await customAxios.get(
       `/company/list/all?page=${page}&size=10`
+    );
+    return { ...data, nextPage: page + 1 };
+  }
+
+  public async getAllAndSearchCompanyList(
+    { keyword }: CompanyKeywordParam,
+    { page }: CommonPageParam
+  ): Promise<CompanyInfiniteScrollType> {
+    const { data } = await customAxios.get(
+      `/company/${keyword}page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
   }

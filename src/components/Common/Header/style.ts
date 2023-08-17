@@ -10,24 +10,19 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  white-space: nowrap;
 `;
 
 export const HeaderWrap = styled.div`
   width: 1570px;
   height: 100%;
-  position: relative;
 
   display: flex;
   align-items: center;
   column-gap: 20px;
   justify-content: space-between;
 
-  white-space: nowrap;
   overflow-x: scroll;
-  ::-webkit-scrollbar {
-    display: none;
-  }
 
   @media screen and (max-width: 1620px) {
     width: 1270px;
@@ -37,6 +32,11 @@ export const HeaderWrap = styled.div`
   }
   @media screen and (max-width: 1040px) {
     width: 90%;
+  }
+  @media screen and (min-width: 430px) {
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;
 

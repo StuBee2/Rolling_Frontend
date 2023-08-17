@@ -20,10 +20,10 @@ export default function MyInfo({ data }: Props) {
 
         <S.GitUserContainer>
           <S.GitUserLogo src={data?.socialDetails.imageUrl} alt="이미지 없음" />
-          <S.GitUserInfo>
+          <div>
             <S.GitUserName>{data?.socialDetails.name}</S.GitUserName>
             <S.GitUserEmail>{data?.socialDetails.email}</S.GitUserEmail>
-          </S.GitUserInfo>
+          </div>
         </S.GitUserContainer>
       </S.BasicInfoContainer>
 

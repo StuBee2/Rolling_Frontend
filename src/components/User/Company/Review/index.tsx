@@ -1,4 +1,4 @@
-import { useGetMyReviewQuery } from "@src/queries/review/review.query";
+import { useGetMyReviewQuery } from "@src/queries/Review/review.query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import write from "@src/assets/User/write.svg";
@@ -41,10 +41,14 @@ export default function Review() {
       </S.CompanyStatus>
 
       <S.ListWrap>
-        {reviewList?.pages.map((data) =>
-          data.data.map((review) => (
-            <ReviewItem review={review} key={review.reviewId} />
-          ))
+        {reviewList?.pages[0].data.length!! > 0 ? (
+          reviewList?.pages.map((data) =>
+            data.data.map((review) => (
+              <ReviewItem review={review} key={review.reviewId} />
+            ))
+          )
+        ) : (
+          <div>리뷰가 없습니다.</div>
         )}
       </S.ListWrap>
       <div ref={ref} />

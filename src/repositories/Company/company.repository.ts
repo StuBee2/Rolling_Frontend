@@ -12,8 +12,8 @@ export interface CompanyParam {
   imgUrl: string;
 }
 
-export interface CompanyNameParam {
-  name: string;
+export interface CompanyKeywordParam {
+  keyword: string;
 }
 
 export interface CompanyIdParam {
@@ -28,13 +28,18 @@ export interface CompanyRepository {
   }: CommonPageParam): Promise<CompanyInfiniteScrollType>;
 
   getCompanySearchList(
-    { name }: CompanyNameParam,
+    { keyword}: CompanyKeywordParam,
     { page }: CommonPageParam
   ): Promise<CompanyInfiniteScrollType>;
 
   getAllCompanyList({
     page,
   }: CommonPageParam): Promise<CompanyInfiniteScrollType>;
+
+  getAllAndSearchCompanyList(
+    { keyword }: CompanyKeywordParam,
+    { page }: CommonPageParam
+  ): Promise<CompanyInfiniteScrollType>;
 
   getCompanyListId(
     { id }: CommonIdParam,

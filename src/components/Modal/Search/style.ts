@@ -35,7 +35,7 @@ export const Semicircle = styled.img<{ top: boolean }>`
   user-select: none;
 `;
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
   width: 80%;
   height: auto;
 
@@ -46,11 +46,16 @@ export const InputContainer = styled.div`
   border-bottom: 3px solid #737b98;
   height: 157px;
   z-index: 1;
-
-  img {
-    width: 100px;
-    height: 100px;
+  button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
     margin-bottom: 20px;
+    img {
+      width: 100px;
+      height: 100px;
+    }
   }
 
   input {

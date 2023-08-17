@@ -2,10 +2,14 @@ import styled from "styled-components";
 
 export const NavContainer = styled.div`
   width: 320px;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 50px;
+  overflow: scroll;
+  ::-webkit-scrollbar {
+    display: flex;
+  }
   @media screen and (max-width: 740px) {
     display: none;
   }

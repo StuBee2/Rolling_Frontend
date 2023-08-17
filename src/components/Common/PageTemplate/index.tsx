@@ -1,14 +1,15 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import GlobalStyle from "@src/styles/GlobalStyles";
 import Header from "../Header/index";
 import { useRecoilValue } from "recoil";
 import {
   HideHeader,
-  SearchModal,
-  SimpleInfoModal,
+  IsCloseModalAtom,
+  MyInfoModal,
 } from "@src/stores/common/common.store";
-import Search from "../Modal/Search";
-import Info from "../Modal/Info";
+import Search from "../../Modal/Search";
+import Info from "../../Modal/Info";
+import { useAuthTopScroll } from "@src/hooks/Common/useAutoTopScroll";
 
 interface Props {
   children: ReactNode;
@@ -16,19 +17,16 @@ interface Props {
 
 export default function PageTemplate({ children }: Props) {
   const hideHeader = useRecoilValue(HideHeader);
-  const searchModal = useRecoilValue(SearchModal);
-  const simpleInfoModal = useRecoilValue(SimpleInfoModal);
-  useEffect(() => {
-    window.onbeforeunload = () => {
-      window.scrollTo(0, 0);
-    };
-  }, []);
+  const isCloseModal = useRecoilValue(IsCloseModalAtom);
+  const myInfoModal = useRecoilValue(MyInfoModal);
+  useAuthTopScroll();
+
   return (
     <>
       <GlobalStyle />
       {!hideHeader && <Header />}
-      {searchModal && <Search />}
-      {simpleInfoModal && <Info />}
+      {isCloseModal && <Search />}
+      {myInfoModal && <Info />}
       {children}
     </>
   );

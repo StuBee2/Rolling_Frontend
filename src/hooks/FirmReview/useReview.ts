@@ -11,7 +11,7 @@ import {
 import { useCallback } from "react";
 import { ReviewParam } from "@src/repositories/Review/review.repository";
 import { QueryClient } from "react-query";
-import { usePostReviewMutation } from "@src/queries/review/review.query";
+import { usePostReviewMutation } from "@src/queries/Review/review.query";
 import useModal from "../util/useModal";
 
 export const useReview = () => {

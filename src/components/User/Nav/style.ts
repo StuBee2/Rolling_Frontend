@@ -96,6 +96,7 @@ export const PageSelect = styled.div`
   gap: 10px;
   border-bottom: 2px solid #dee0e6;
   font-size: 20px;
+  padding-bottom: 10px;
 `;
 
 export const PageSelectItem = styled.div<{ isSelect?: boolean }>`

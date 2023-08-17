@@ -3,7 +3,7 @@ import * as R from "./style";
 import StarRating from "./ReviewStarScope";
 import { useRecoilState } from "recoil";
 
-import Modal from "../../Modal";
+import Modal from "../../../Modal";
 import useModal from "@src/hooks/util/useModal";
 import { FaPen } from "@react-icons/all-files/fa/FaPen";
 import {

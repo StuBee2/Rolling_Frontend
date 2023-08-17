@@ -8,9 +8,9 @@ export default function NotFound() {
   return (
     <S.ErrorContainer>
       <S.ErrorBox>
-        <S.ErrorText isNumber={true}>404</S.ErrorText>
-        <S.ErrorText isNumber={false}>페이지를 찾을 수 없습니다!</S.ErrorText>
-        <S.Gohome onClick={() => navigate("/")}>홈으로</S.Gohome>
+        <S.ErrorText>404</S.ErrorText>
+        <p>페이지를 찾을 수 없음</p>
+        <S.GoHomeBtn onClick={() => navigate("/")}>홈으로</S.GoHomeBtn>
       </S.ErrorBox>
     </S.ErrorContainer>
   );

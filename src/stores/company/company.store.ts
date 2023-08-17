@@ -19,3 +19,8 @@ export const companyInfoAtom = atom<string>({
   key: "companyInfoAtom",
   default: "",
 });
+
+export const CompanyAllAndSearchAtom = atom<string>({
+  key: "companyAllAndSearchAtom",
+  default: "list/all?",
+});

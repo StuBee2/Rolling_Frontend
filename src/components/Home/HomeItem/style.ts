@@ -18,7 +18,7 @@ export const CompanyImage = styled.div<{ image: string }>`
   height: 90%;
   text-align: center;
 
-  background: url(${(props) => props.image}) no-repeat fixed center;
+  background: url(${(props) => props.image}) no-repeat fixed center #d9d9d9;
   background-size: cover;
   border-radius: 15px;
   box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.2);
@@ -38,6 +38,7 @@ export const CompanyRegister = styled.img`
   object-fit: cover;
   border-radius: 4rem;
   border: 5px solid #ffffff;
+  background-color: #d9d9d9;
 
   position: absolute;
   right: 20px;

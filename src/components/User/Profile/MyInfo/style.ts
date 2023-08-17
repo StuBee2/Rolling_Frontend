@@ -10,6 +10,7 @@ export const MyInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  margin-bottom: 20px;
 `;
 
 export const BasicInfoContainer = styled.div`
@@ -34,15 +35,11 @@ export const GitUserLogo = styled.img`
   object-fit: cover;
 `;
 
-export const GitUserInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 6px;
-`;
-
 export const GitUserEmail = styled.p`
+  margin-top: 5px;
   @media screen and (max-width: 385px) {
-    font-size: 11px;
+    font-size: 10px;
+    margin-top: 10px;
   }
 `;
 

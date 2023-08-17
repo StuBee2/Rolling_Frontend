@@ -5,12 +5,12 @@ export const HideHeader = atom<boolean>({
   default: false,
 });
 
-export const SearchModal = atom<boolean>({
-  key: "searchModal",
+export const MyInfoModal = atom<boolean>({
+  key: "myInfoModal",
   default: false,
 });
 
-export const SimpleInfoModal = atom<boolean>({
-  key: "SimpleInfoModal",
+export const IsCloseModalAtom = atom<boolean>({
+  key: "isCloseModalAtom",
   default: false,
 });

@@ -25,9 +25,13 @@ export default function Employment() {
       </S.CompanyStatus>
 
       <S.ListWrap>
-        {employmentList?.map((data) => (
-          <EmploymentItem employment={data} key={data.employerId} />
-        ))}
+        {employmentList?.length!! > 0 ? (
+          employmentList?.map((data) => (
+            <EmploymentItem employment={data} key={data.employerId} />
+          ))
+        ) : (
+          <div>고용관계인 기업이 없습니다.</div>
+        )}
       </S.ListWrap>
     </Container>
   );
