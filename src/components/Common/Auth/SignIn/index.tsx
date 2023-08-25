@@ -11,6 +11,7 @@ export default function SignIn() {
         <S.SignInItemContainer>
           <SignInItem />
         </S.SignInItemContainer>
+
         <S.SignInSideBackground>
           <img src={rollingImg} alt="이미지 없음" />
         </S.SignInSideBackground>

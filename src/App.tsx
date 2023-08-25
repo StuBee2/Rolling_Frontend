@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import PageTemplate from "./components/Common/PageTemplate";
 import Router from "./router";
+import { ToastProvider } from "react-toast-notifications";
 
 function App() {
   const queryClient: QueryClient = new QueryClient({
@@ -20,9 +21,11 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
         <BrowserRouter>
-          <PageTemplate>
-            <Router />
-          </PageTemplate>
+          <ToastProvider>
+            <PageTemplate>
+              <Router />
+            </PageTemplate>
+          </ToastProvider>
         </BrowserRouter>
       </RecoilRoot>
     </QueryClientProvider>

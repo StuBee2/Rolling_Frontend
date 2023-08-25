@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useToastAlert } from "../Common/useToastAlert";
 
 export function useLogin() {
+  const { toastAlert } = useToastAlert();
   const [credentials, setCredentials] = useState<{ id: string; pw: string }>({
     id: "",
     pw: "",
@@ -17,16 +19,13 @@ export function useLogin() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { id, pw } = credentials;
-    if (id && pw) {
-      window.alert("깃허브 로그인을 이용해주세요!");
-      setCredentials({ id: "", pw: "" });
-    } else if (!id && !pw) {
-      window.alert("아이디와 비밀번호를 입력해주세요!");
-    } else if (!id) {
-      window.alert("아이디를 입력해주세요!");
-    } else {
-      window.alert("비밀번호를 입력해주세요!");
+    if (id.trim() === "") {
+      return toastAlert("아이디를 입력해주세요", "warning");
     }
+    if (pw.trim() === "") {
+      return toastAlert("비밀헌호를 입력해주세요", "warning");
+    }
+    return toastAlert("깃허브를 로그인을 이용해주세요", "info");
   };
 
   return { handleChange, handleSubmit, ...credentials };

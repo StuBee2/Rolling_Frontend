@@ -24,7 +24,6 @@ export const responseHandler = async (config: AxiosError) => {
         REQUEST_TOKEN_KEY
       ] = `Bearer ${accessToken}`;
     } catch (e) {
-      window.alert("세션이 만료되었습니다!");
       Token.clearToken();
       window.location.href = "/signin";
     }

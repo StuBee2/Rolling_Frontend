@@ -27,10 +27,8 @@ export default function Header() {
         <S.PageContainer>
           <img
             src={Logo}
-            onClick={() => {
-              handlePageClick("홈 피드", "/");
-            }}
-            alt=""
+            onClick={() => handlePageClick("홈 피드", "/")}
+            alt="이미지 없음"
           />
           <ul>
             {HEADER_ITEMS.map((item) => (
