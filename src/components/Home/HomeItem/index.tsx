@@ -2,7 +2,7 @@ import { useInView } from "react-intersection-observer";
 import { useGetAllAndSearchCompanyListQuery } from "@src/queries/Company/company.query";
 import * as S from "./style";
 import { useEffect } from "react";
-import { getDateText } from "@src/util/Date/getDateCounter";
+import { getDateText } from "@src/utils/Date/getDateCounter";
 import { useRecoilValue } from "recoil";
 import { CompanyAllAndSearchAtom } from "@src/stores/company/company.store";
 

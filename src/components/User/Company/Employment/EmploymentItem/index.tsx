@@ -1,4 +1,4 @@
-import { stringEllipsis } from "@src/util/Common/stringEllipsis";
+import { stringEllipsis } from "@src/utils/Common/stringEllipsis";
 import * as S from "../../style";
 import edit from "@src/assets/User/edit.svg";
 import del from "@src/assets/User/del.svg";

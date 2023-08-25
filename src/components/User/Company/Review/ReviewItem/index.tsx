@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { getDateText } from "@src/util/Date/getDateCounter";
+import { getDateText } from "@src/utils/Date/getDateCounter";
 import { ReviewListType } from "@src/types/Review/review.type";
 import * as S from "../../style";
-import { stringEllipsis } from "@src/util/Common/stringEllipsis";
+import { stringEllipsis } from "@src/utils/Common/stringEllipsis";
 import edit from "@src/assets/User/edit.svg";
 import del from "@src/assets/User/del.svg";
 

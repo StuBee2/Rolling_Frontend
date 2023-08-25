@@ -6,7 +6,7 @@ import { HOME_COMPANY_RANK_ITMES } from "@src/constants/Home/Home.constants";
 import { Suspense, useState } from "react";
 import RankItem from "./RankItem";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
-import { getCompanyRankIntroduce } from "@src/util/getCompanyRankIntroduce";
+import { getCompanyRankIntroduce } from "@src/utils/Rank/getCompanyRankIntroduce";
 import RankSkeleton from "@src/components/Common/Skeleton/Rank";
 
 export default function Rank() {

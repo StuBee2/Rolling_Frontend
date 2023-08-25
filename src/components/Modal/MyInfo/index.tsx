@@ -3,17 +3,16 @@ import * as S from "./style";
 import { useCloseModal } from "@src/hooks/Common/useCloseModal";
 import { MyInfoModal } from "@src/stores/common/common.store";
 import { useLogout } from "@src/hooks/Auth/useLogout";
-import { useLogging } from "@src/hooks/Log/useLogging";
-import { LOG_ITEM } from "@src/constants/Log/log.constants";
 import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import logout from "@src/assets/Auth/logout.svg";
 import profile from "@src/assets/User/profile.svg";
+import { useNavigate } from "react-router-dom";
 
-export default function Info() {
+export default function MyInfo() {
   const setMyInfoModal = useSetRecoilState(MyInfoModal);
   const { handleLogout } = useLogout();
-  const { handleLoggingClick } = useLogging();
   const { data: myInfo } = useGetMyInfoQuery();
+  const navigate = useNavigate();
 
   useCloseModal(setMyInfoModal);
   return (
@@ -29,20 +28,15 @@ export default function Info() {
           </S.Profile>
           <S.MyPageLogout>
             <div
-              onClick={async () => {
-                await setMyInfoModal(false);
-                handleLoggingClick(LOG_ITEM[1]);
+              onClick={() => {
+                navigate("/mypage/profile");
+                setMyInfoModal(false);
               }}
             >
               <img src={profile} alt="이미지 없음" />
               <p>내 프로필</p>
             </div>
-            <div
-              onClick={() => {
-                handleLogout();
-                setMyInfoModal(false);
-              }}
-            >
+            <div onClick={handleLogout}>
               <img src={logout} alt="이미지 없음" />
               <p>로그아웃</p>
             </div>
