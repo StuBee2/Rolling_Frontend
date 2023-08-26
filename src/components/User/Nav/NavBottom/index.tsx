@@ -3,8 +3,8 @@ import { USER_ITEMS } from "@src/constants/User/user.constants";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function UserBottom() {
-  const navigate = useNavigate();
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   return (
     <S.UserFooter>

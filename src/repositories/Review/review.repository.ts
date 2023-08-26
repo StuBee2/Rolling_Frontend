@@ -26,7 +26,7 @@ export interface ReviewRepository {
 }
 
 export interface ReviewParam {
-  companyId: string | undefined;
+  companyId: string;
   content: string;
   position: string;
   careerPath: string;

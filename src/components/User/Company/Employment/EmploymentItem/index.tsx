@@ -1,10 +1,10 @@
 import { stringEllipsis } from "@src/utils/Common/stringEllipsis";
-import * as S from "../../style";
+import * as S from "./style";
 import edit from "@src/assets/User/edit.svg";
 import del from "@src/assets/User/del.svg";
 import { useState } from "react";
-import { useDeleteCompany } from "@src/hooks/Company/useDeleteCompany";
 import { EmploymentResponse } from "@src/types/Employment/employment.type";
+import { DelAndEditContainer } from "../../style";
 
 interface Props {
   employment: EmploymentResponse;
@@ -12,38 +12,39 @@ interface Props {
 
 export default function EmploymentItem({ employment }: Props) {
   const [mouseEvent, setMouseEvent] = useState("");
-  const { handleCompanyDeleteClick } = useDeleteCompany();
   return (
-    <S.ListItem
-      onMouseEnter={() => setMouseEvent(employment.employerId)}
-      onMouseLeave={() => setMouseEvent("")}
+    <S.EmploymentItemContainer
+      onMouseLeave={() => setMouseEvent(employment?.employerId)}
     >
-      <S.ListContainer>
-        <p style={{ fontWeight: "bold" }}>
-          {employment.employmentStatus === "HOLD"
-            ? "재직 중인 기업"
-            : "퇴직한 기업"}
-        </p>
-        <S.CompanyContainer>
-          <S.CompanyImg src={employment.employerImgUrl} />
-          <S.CompanyAbleContainer>
-            <S.CompanyName>{employment.employerName}</S.CompanyName>
-            <S.CompanyAddress>
-              {stringEllipsis(employment.employerAddress, 35)}
-            </S.CompanyAddress>
-          </S.CompanyAbleContainer>
-        </S.CompanyContainer>
-      </S.ListContainer>
-      {mouseEvent === employment.employerId && (
-        <div style={{ cursor: "pointer" }}>
-          <img src={edit} alt="" />
-          <img
-            src={del}
-            onClick={() => handleCompanyDeleteClick(employment.employerId)}
-            alt=""
-          />
-        </div>
+      <S.EmploymentItemWrapper onMouseEnter={() => setMouseEvent("")}>
+        <S.EmploymentItem>
+          <S.EmploymentStatusAndRegisteredContainer>
+            <S.EmploymenyCompanyAddress>
+              {employment.employerAddress}
+            </S.EmploymenyCompanyAddress>
+            <S.EmploymentStatusText>
+              {employment.employmentStatus === "HOLD"
+                ? "재직 중인 기업"
+                : "퇴직한 기업"}
+            </S.EmploymentStatusText>
+          </S.EmploymentStatusAndRegisteredContainer>
+          <S.EmplymentInfoContainer>
+            <img src={employment.employerImgUrl || ""} alt="이미지 없음" />
+            <div>
+              <S.EmployerName>{employment.employerName}</S.EmployerName>
+              <S.EmployerDescription>
+                {stringEllipsis(employment.employerDescription, 30)}
+              </S.EmployerDescription>
+            </div>
+          </S.EmplymentInfoContainer>
+        </S.EmploymentItem>
+      </S.EmploymentItemWrapper>
+      {mouseEvent === employment?.employerId && (
+        <DelAndEditContainer>
+          <img src={edit} alt="이미지 없음" />
+          <img src={del} alt="이미지 없음" />
+        </DelAndEditContainer>
       )}
-    </S.ListItem>
+    </S.EmploymentItemContainer>
   );
 }

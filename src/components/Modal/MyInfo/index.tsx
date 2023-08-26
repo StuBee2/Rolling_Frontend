@@ -7,6 +7,7 @@ import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import logout from "@src/assets/Auth/logout.svg";
 import profile from "@src/assets/User/profile.svg";
 import { useNavigate } from "react-router-dom";
+import { useLogging } from "@src/hooks/Logging/useLogging";
 
 export default function MyInfo() {
   const setMyInfoModal = useSetRecoilState(MyInfoModal);
@@ -28,9 +29,9 @@ export default function MyInfo() {
           </S.Profile>
           <S.MyPageLogout>
             <div
-              onClick={() => {
-                navigate("/mypage/profile");
+              onClick={async () => {
                 setMyInfoModal(false);
+                navigate("/mypage/profile");
               }}
             >
               <img src={profile} alt="이미지 없음" />

@@ -8,6 +8,7 @@ import token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import { useSetRecoilState } from "recoil";
 import { IsCloseModalAtom, MyInfoModal } from "@src/stores/common/common.store";
+import { useLogging } from "@src/hooks/Logging/useLogging";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ export default function Header() {
   const setMyInfoModal = useSetRecoilState<boolean>(MyInfoModal);
   const [select, setSelect] = useState<string>("홈 피드");
   const { pathname } = useLocation();
+  const {} = useLogging();
 
   const handlePageClick = (name: string, link: string) => {
     setSelect(name);
@@ -46,11 +48,20 @@ export default function Header() {
         <S.LoginSearchContainer>
           <S.Search
             src={Search1}
-            onClick={() => setIsCloseModal(true)}
+            onClick={() => {
+              setIsCloseModal(true);
+              document.body.style.overflow = "hidden";
+            }}
             alt="이미지 없음"
           />
           {token.getToken(ACCESS_TOKEN_KEY) ? (
-            <S.UserIcon size={30} onClick={() => setMyInfoModal(true)} />
+            <S.UserIcon
+              size={30}
+              onClick={() => {
+                setMyInfoModal(true);
+                document.body.style.overflow = "hidden";
+              }}
+            />
           ) : (
             <div onClick={() => navigate("/signin")}>로그인</div>
           )}

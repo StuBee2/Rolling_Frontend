@@ -1,55 +1,67 @@
-import { useState } from "react";
-import { getDateText } from "@src/utils/Date/getDateCounter";
 import { ReviewListType } from "@src/types/Review/review.type";
-import * as S from "../../style";
-import { stringEllipsis } from "@src/utils/Common/stringEllipsis";
 import edit from "@src/assets/User/edit.svg";
 import del from "@src/assets/User/del.svg";
+import * as S from "./style";
+import Star from "@src/components/Common/Star/Star";
+import { useState } from "react";
+import { stringEllipsis } from "@src/utils/Common/stringEllipsis";
+import { getDateText } from "@src/utils/Date/getDateCounter";
+import { DelAndEditContainer } from "../../style";
+import { changeRankStatusToArrayObject } from "@src/utils/Rank/changeRankStatusToArrayObject";
 
 interface Props {
   review: ReviewListType;
 }
 
 export default function ReviewItem({ review }: Props) {
-  const [mouseEnterEvent, setMouseEnterEvent] = useState("");
+  const [mouseEvent, setMouseEvent] = useState("");
+  const rankStatus = changeRankStatusToArrayObject(review);
+
   return (
-    <S.ListItem
-      key={review.reviewId}
-      onMouseEnter={() => setMouseEnterEvent(review.reviewId)}
-      onMouseLeave={() => setMouseEnterEvent("")}
-    >
-      <S.ListContainer>
-        <S.ListRegistDate>
-          {getDateText(new Date(review.reviewCreatedAt))} 등록
-        </S.ListRegistDate>
-        <S.CompanyContainer>
-          <S.CompanyImg src={review.companyImgUrl} />
-          <S.CompanyAbleContainer>
-            <S.CompanyName>{review.companyName}</S.CompanyName>
-            <S.CompanyPostitionCareerPathContainer>
-              <div>
-                <S.CompanyPostitionCareerPath>
-                  포지션
-                </S.CompanyPostitionCareerPath>{" "}
-                · {review.reviewPosition}
+    <S.ReviewItemContainer onMouseLeave={() => setMouseEvent(review.reviewId)}>
+      <S.ReviewItemWrapper onMouseEnter={() => setMouseEvent("")}>
+        <S.ReviewItem>
+          <S.ReviewCompanyInfoContainer>
+            <S.ReviewRegisteredDate>
+              {getDateText(new Date(review.reviewCreatedAt))} 등록
+            </S.ReviewRegisteredDate>
+            <S.ReviewCompanyContainer>
+              <img src={review.companyImgUrl || ""} alt="이미지 없음" />
+              <S.ReviewCompanyContentContainer>
+                <S.ReviewCompanyName>{review.companyName}</S.ReviewCompanyName>
+                <ul>
+                  <li>
+                    <span>포지션</span> · {review.reviewPosition}
+                  </li>
+                  <li>
+                    <span>입사경로</span>·{" "}
+                    {stringEllipsis(review.reviewCareerPath, 10)}
+                  </li>
+                </ul>
+                <S.ReviewCompanyContent>
+                  {stringEllipsis(review.reviewContent, 30)}
+                </S.ReviewCompanyContent>
+              </S.ReviewCompanyContentContainer>
+            </S.ReviewCompanyContainer>
+          </S.ReviewCompanyInfoContainer>
+
+          <S.ReviewCompanyCultureContainer>
+            {rankStatus.map((item) => (
+              <div key={item.id}>
+                <p>{item.title}</p>
+                <Star starCount={item.star!!} />
               </div>
-              <div>
-                <S.CompanyPostitionCareerPath>
-                  입사경로
-                </S.CompanyPostitionCareerPath>{" "}
-                · {stringEllipsis(review.reviewCareerPath, 15)}
-              </div>
-            </S.CompanyPostitionCareerPathContainer>
-          </S.CompanyAbleContainer>
-        </S.CompanyContainer>
-        <p>{stringEllipsis(review.reviewContent, 20)}</p>
-      </S.ListContainer>
-      {mouseEnterEvent === review.reviewId && (
-        <div style={{ cursor: "pointer" }}>
-          <img src={edit} alt="" />
-          <img src={del} alt="" />
-        </div>
+            ))}
+          </S.ReviewCompanyCultureContainer>
+        </S.ReviewItem>
+      </S.ReviewItemWrapper>
+
+      {mouseEvent === review.reviewId && (
+        <DelAndEditContainer>
+          <img src={edit} alt="이미지 없음" />
+          <img src={del} alt="이미지 없음" />
+        </DelAndEditContainer>
       )}
-    </S.ListItem>
+    </S.ReviewItemContainer>
   );
 }
