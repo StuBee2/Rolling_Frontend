@@ -35,6 +35,9 @@
     "styled-reset": "^4.4.6",
     "web-vitals": "^2.1.0"
   },
+  "overrides": {
+    "typescript": "^5.1.6"
+  },
   "scripts": {
     "start": "webpack serve --config webpack.dev.js --progress",
     "prebuild": "rimraf dist",
