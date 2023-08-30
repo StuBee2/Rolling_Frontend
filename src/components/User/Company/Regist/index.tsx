@@ -7,8 +7,10 @@ import { getDateText } from "../../../../libs/Date/getDateCounter";
 import { Container, Explain, Title } from "../../Profile/style";
 import company from "../../../../assets/company.svg";
 import { getTimeAgo } from "../../../../libs/Date/getTimeAgo";
-import edit from "../../../../assets/edit.svg";
-import del from "../../../../assets/del.svg";
+// import edit from "../../../../assets/img/edit.svg";
+// import del from "../../../../assets/img/del.svg";
+import edit from "../../../../assets/img/edit.svg";
+import del from "../../../../assets/img/del.svg";
 import { useNavigate } from "react-router-dom";
 import { useCompanyDelete } from "../../../../hooks/Firm/useCompanyDelete";
 

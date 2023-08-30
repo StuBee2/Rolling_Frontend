@@ -1,9 +1,10 @@
 import { useSetRecoilState } from "recoil";
 import * as S from "./style";
 import { SearchModal } from "../../../../stores/common/common.store";
-import semicircle2 from "../../../../assets/semicircle2.svg";
-import semicircle1 from "../../../../assets/semicircle1.svg";
-import Search2 from "../../../../assets/Search2.svg";
+
+import semicircle2 from "../../../../assets/img/semicircle2.svg";
+import semicircle1 from "../../../../assets/img/semicircle1.svg";
+import Search2 from "../../../../assets/img/Search2.svg";
 import { useCloseModal } from "../../../../hooks/Common/useCloseModal";
 import { ModalWrap } from "../style";
 

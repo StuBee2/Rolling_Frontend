@@ -1,6 +1,6 @@
-import github from "../../assets/github.svg";
-import Google from "../../assets/Google.png";
-import CONFIG from "../.././config/config.json";
+import github from "../../assets/img/github.svg";
+import Google from "../../assets/img/Google.png";
+import CONFIG from "../../config/config.json";
 
 export const ACCESS_TOKEN_KEY = "accessToken" as const;
 export const REFRESH_TOKEN_KEY = "refreshToken" as const;

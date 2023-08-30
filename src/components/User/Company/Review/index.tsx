@@ -5,8 +5,9 @@ import stringEllipsis from "../../../../libs/Common/StringEllipsis";
 import write from "../../../../assets/write.svg";
 import { getDateText } from "../../../../libs/Date/getDateCounter";
 import { Container, Explain, Title } from "../../Profile/style";
-import edit from "../../../../assets/edit.svg";
-import del from "../../../../assets/del.svg";
+
+import edit from "../../../../assets/img/edit.svg";
+import del from "../../../../assets/img/del.svg";
 import { getTimeAgo } from "../../../../libs/Date/getTimeAgo";
 import * as S from "../style";
 import { useReviewDelete } from "../../../../hooks/FirmReview/useDeleteReview";

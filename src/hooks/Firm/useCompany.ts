@@ -22,6 +22,8 @@ export const useCompany = () => {
     imgUrl: firmlogo,
   });
 
+  // const { name, address, description, imgUrl } = companyData;
+
   const onAddressChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setCompanyData((prev) => ({ ...prev, [name]: value }));

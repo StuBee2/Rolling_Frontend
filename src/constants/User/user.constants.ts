@@ -1,6 +1,6 @@
-import regist from "../../assets/regist.svg";
-import review from "../../assets/review.svg";
-import smile from "../../assets/smile.svg";
+import regist from "../../assets/img/regist.svg";
+import review from "../../assets/img/review.svg";
+import smile from "../../assets/img/smile.svg";
 
 interface Type {
   id: number;

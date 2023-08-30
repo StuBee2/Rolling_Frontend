@@ -1,6 +1,6 @@
 import * as S from "./style";
-import regist from "../../../../assets/regist.svg";
-import review from "../../../../assets/review.svg";
+import regist from "../../../../assets/img/regist.svg";
+import review from "../../../../assets/img/review.svg";
 
 export default function CompanyCount() {
   return (

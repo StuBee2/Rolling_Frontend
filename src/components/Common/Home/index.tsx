@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as S from "./style";
-import RankingImg from "../../../assets/RankingImg.png";
+import RankingImg from "../../../assets/img/RankingImg.png";
 import kakaoMap from "./KakaoMapScrip";
 import Token from "../../../libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "../../../constants/Auth/auth.constant";
