@@ -29,7 +29,6 @@
     "react-refresh": "^0.14.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
-    "react-toast-notifications": "^2.5.1",
     "recoil": "^0.7.7",
     "style-loader": "^3.3.3",
     "styled-components": "^5.3.9",
