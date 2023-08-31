@@ -4,7 +4,7 @@ import {
   REQUEST_TOKEN_KEY,
 } from "@src/constants/Auth/auth.constant";
 import Token from "../Token/Token";
-import CONFIG from "@src/config/config.json";
+import CONFIG from "../../config/config.json";
 import { responseHandler } from "./responseHandler";
 
 export const customAxios = axios.create({
