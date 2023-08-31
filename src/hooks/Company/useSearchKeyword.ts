@@ -3,10 +3,8 @@ import { CompanyAllAndSearchAtom } from "@src/stores/company/company.store";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
-import { useToastAlert } from "../Common/useToastAlert";
 
 export const useSearchKeyword = () => {
-  const { toastAlert } = useToastAlert();
   const [keyword, setKeyword] = useState("");
   const setIsCloseModal = useSetRecoilState(IsCloseModalAtom);
   const setSearchApiUrl = useSetRecoilState(CompanyAllAndSearchAtom);
@@ -18,7 +16,7 @@ export const useSearchKeyword = () => {
   const handleKeywordSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (keyword.trim() === "") {
-      return toastAlert("검색 키워드를 입력해주세요!", "warning");
+      return window.alert("검색 키워드를 입력해주세요!");
     }
 
     navigate("/");
