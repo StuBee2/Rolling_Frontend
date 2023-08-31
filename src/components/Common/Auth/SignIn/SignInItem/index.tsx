@@ -1,6 +1,6 @@
 import * as S from "./style";
 import github from "@src/assets/Auth/github.svg";
-import CONFIG from "../../../../../config/config.json";
+import CONFIG from "@src/config/config.json";
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "@src/hooks/Auth/useLogin";
 
