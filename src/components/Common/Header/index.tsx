@@ -1,6 +1,6 @@
 import * as S from "./style";
 import { useLocation, useNavigate } from "react-router-dom";
-import Logo from "@src/assets/Common/logo.svg";
+import logo from "@src/assets/Common/logo.svg";
 import Search1 from "@src/assets/Search/Search1.svg";
 import { useState } from "react";
 import { HEADER_ITEMS } from "@src/constants/Common/common.constant";
@@ -28,7 +28,7 @@ export default function Header() {
       <S.HeaderWrap>
         <S.PageContainer>
           <img
-            src={Logo}
+            src={logo}
             onClick={() => handlePageClick("홈 피드", "/")}
             alt="이미지 없음"
           />
