@@ -1,10 +1,11 @@
+import { HomeItemsContainer } from "@src/components/Home/HomeList/HomeItems/style";
 import { SkeletonBox } from "../Common/style";
 import * as S from "./style";
 
 export default function HomeSkeleton() {
   return (
-    <>
-      {Array.from({ length: 15 }).map((item, idx) => (
+    <HomeItemsContainer>
+      {Array.from({ length: 20 }).map((item, idx) => (
         <S.HomeSkeletonContainer key={idx}>
           <SkeletonBox width="100%" height="254px" />
           <SkeletonBox width="200px" height="18px" />
@@ -23,6 +24,6 @@ export default function HomeSkeleton() {
           </div>
         </S.HomeSkeletonContainer>
       ))}
-    </>
+    </HomeItemsContainer>
   );
 }

@@ -10,7 +10,7 @@ export const UserWrap = styled.div`
 `;
 
 export const UserContainer = styled.div`
-  width: 1570px;
+  width: 1370px;
   height: 100%;
   display: flex;
 

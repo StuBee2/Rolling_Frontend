@@ -13,18 +13,12 @@ export const InfoModalWrapper = styled.div`
 `;
 
 export const InfoModalParentBox = styled.div`
-  width: 1570px;
+  width: 1370px;
   height: calc(100% - 108px);
   position: absolute;
   bottom: 0;
-  @media screen and (max-width: 1620px) {
-    width: 1270px;
-  }
   @media screen and (max-width: 1355px) {
-    width: 1000px;
-  }
-  @media screen and (max-width: 1040px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 
@@ -36,7 +30,7 @@ export const InfoModalContainer = styled.div`
   border-radius: 15px;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
   @media screen and (max-width: 360px) {
@@ -58,6 +52,12 @@ export const Profile = styled.div`
     height: 60px;
     border-radius: 10px;
   }
+  div {
+    overflow-x: scroll;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `;
 
 export const Name = styled.div`
@@ -70,9 +70,6 @@ export const Name = styled.div`
 export const EditProfile = styled.div`
   color: #4869f6;
   cursor: pointer;
-  &:hover {
-    border-bottom: 1px solid #4869f6;
-  }
 `;
 
 export const MyPageLogout = styled.div`
