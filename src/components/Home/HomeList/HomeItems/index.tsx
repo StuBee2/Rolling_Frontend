@@ -26,164 +26,27 @@ export default function HomeItems() {
       {companyList?.pages[0].data.length ? (
         companyList.pages.map((data) =>
           data.data.map((item) => (
-            <>
-              <S.HomeItemWrapper key={item.companyId.id}>
-                <S.CompanyImage
-                  image={
-                    item.companyDetails.imgUrl ||
-                    "https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-                  }
-                />
-                <S.CompanyEtcContainer>
-                  <S.CompanyNameAndCreatedAt>
-                    {item.companyDetails.name} |{" "}
-                    {getDateText(new Date(item.companyDetails.createdAt))}
-                  </S.CompanyNameAndCreatedAt>
-                  <div>
-                    <S.CompanyDescription>
-                      {item.companyDetails.description}
-                    </S.CompanyDescription>
-                    <S.CompanyAddress>
-                      {item.companyDetails.companyAddress.address}
-                    </S.CompanyAddress>
-                  </div>
-                  <S.CompanyTagUl>
-                    <li>#대기업</li>
-                    <li>#워라벨 랭킹 3위</li>
-                  </S.CompanyTagUl>
-                </S.CompanyEtcContainer>
-              </S.HomeItemWrapper>
-              <S.HomeItemWrapper key={item.companyId.id}>
-                <S.CompanyImage
-                  image={
-                    item.companyDetails.imgUrl ||
-                    "https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-                  }
-                />
-                <S.CompanyEtcContainer>
-                  <S.CompanyNameAndCreatedAt>
-                    {item.companyDetails.name} |{" "}
-                    {getDateText(new Date(item.companyDetails.createdAt))}
-                  </S.CompanyNameAndCreatedAt>
-                  <div>
-                    <S.CompanyDescription>
-                      {item.companyDetails.description}
-                    </S.CompanyDescription>
-                    <S.CompanyAddress>
-                      {item.companyDetails.companyAddress.address}
-                    </S.CompanyAddress>
-                  </div>
-                  <S.CompanyTagUl>
-                    <li>#대기업</li>
-                    <li>#워라벨 랭킹 3위</li>
-                  </S.CompanyTagUl>
-                </S.CompanyEtcContainer>
-              </S.HomeItemWrapper>
-              <S.HomeItemWrapper key={item.companyId.id}>
-                <S.CompanyImage
-                  image={
-                    item.companyDetails.imgUrl ||
-                    "https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-                  }
-                />
-                <S.CompanyEtcContainer>
-                  <S.CompanyNameAndCreatedAt>
-                    {item.companyDetails.name} |{" "}
-                    {getDateText(new Date(item.companyDetails.createdAt))}
-                  </S.CompanyNameAndCreatedAt>
-                  <div>
-                    <S.CompanyDescription>
-                      {item.companyDetails.description}
-                    </S.CompanyDescription>
-                    <S.CompanyAddress>
-                      {item.companyDetails.companyAddress.address}
-                    </S.CompanyAddress>
-                  </div>
-                  <S.CompanyTagUl>
-                    <li>#대기업</li>
-                    <li>#워라벨 랭킹 3위</li>
-                  </S.CompanyTagUl>
-                </S.CompanyEtcContainer>
-              </S.HomeItemWrapper>
-              <S.HomeItemWrapper key={item.companyId.id}>
-                <S.CompanyImage
-                  image={
-                    item.companyDetails.imgUrl ||
-                    "https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-                  }
-                />
-                <S.CompanyEtcContainer>
-                  <S.CompanyNameAndCreatedAt>
-                    {item.companyDetails.name} |{" "}
-                    {getDateText(new Date(item.companyDetails.createdAt))}
-                  </S.CompanyNameAndCreatedAt>
-                  <div>
-                    <S.CompanyDescription>
-                      {item.companyDetails.description}
-                    </S.CompanyDescription>
-                    <S.CompanyAddress>
-                      {item.companyDetails.companyAddress.address}
-                    </S.CompanyAddress>
-                  </div>
-                  <S.CompanyTagUl>
-                    <li>#대기업</li>
-                    <li>#워라벨 랭킹 3위</li>
-                  </S.CompanyTagUl>
-                </S.CompanyEtcContainer>
-              </S.HomeItemWrapper>
-              <S.HomeItemWrapper key={item.companyId.id}>
-                <S.CompanyImage
-                  image={
-                    item.companyDetails.imgUrl ||
-                    "https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-                  }
-                />
-                <S.CompanyEtcContainer>
-                  <S.CompanyNameAndCreatedAt>
-                    {item.companyDetails.name} |{" "}
-                    {getDateText(new Date(item.companyDetails.createdAt))}
-                  </S.CompanyNameAndCreatedAt>
-                  <div>
-                    <S.CompanyDescription>
-                      {item.companyDetails.description}
-                    </S.CompanyDescription>
-                    <S.CompanyAddress>
-                      {item.companyDetails.companyAddress.address}
-                    </S.CompanyAddress>
-                  </div>
-                  <S.CompanyTagUl>
-                    <li>#대기업</li>
-                    <li>#워라벨 랭킹 3위</li>
-                  </S.CompanyTagUl>
-                </S.CompanyEtcContainer>
-              </S.HomeItemWrapper>
-              <S.HomeItemWrapper key={item.companyId.id}>
-                <S.CompanyImage
-                  image={
-                    item.companyDetails.imgUrl ||
-                    "https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-                  }
-                />
-                <S.CompanyEtcContainer>
-                  <S.CompanyNameAndCreatedAt>
-                    {item.companyDetails.name} |{" "}
-                    {getDateText(new Date(item.companyDetails.createdAt))}
-                  </S.CompanyNameAndCreatedAt>
-                  <div>
-                    <S.CompanyDescription>
-                      {item.companyDetails.description}
-                    </S.CompanyDescription>
-                    <S.CompanyAddress>
-                      {item.companyDetails.companyAddress.address}
-                    </S.CompanyAddress>
-                  </div>
-                  <S.CompanyTagUl>
-                    <li>#대기업</li>
-                    <li>#워라벨 랭킹 3위</li>
-                  </S.CompanyTagUl>
-                </S.CompanyEtcContainer>
-              </S.HomeItemWrapper>
-            </>
+            <S.HomeItemWrapper key={item.companyId.id}>
+              <S.CompanyImage image={item.companyDetails.imgUrl || ""} />
+              <S.CompanyEtcContainer>
+                <S.CompanyNameAndCreatedAt>
+                  {item.companyDetails.name} |{" "}
+                  {getDateText(new Date(item.companyDetails.createdAt))}
+                </S.CompanyNameAndCreatedAt>
+                <div>
+                  <S.CompanyDescription>
+                    {item.companyDetails.description}
+                  </S.CompanyDescription>
+                  <S.CompanyAddress>
+                    {item.companyDetails.companyAddress.address}
+                  </S.CompanyAddress>
+                </div>
+                <S.CompanyTagUl>
+                  <li>#대기업</li>
+                  <li>#워라벨 랭킹 3위</li>
+                </S.CompanyTagUl>
+              </S.CompanyEtcContainer>
+            </S.HomeItemWrapper>
           ))
         )
       ) : (

@@ -25,6 +25,7 @@ export const CompanyImage = styled.div<{ image: string }>`
   background: url(${(props) => props.image}) no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: #d9d9d9;
   cursor: pointer;
 `;
 

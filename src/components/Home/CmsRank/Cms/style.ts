@@ -41,6 +41,7 @@ export const CmsImg = styled.div<{ image: string }>`
   background: url(${(props) => props.image}) no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: #d9d9d9;
 `;
 
 export const ArrowImg = styled.img`
@@ -65,6 +66,7 @@ export const CmsEtc = styled.div`
     height: 43px;
     object-fit: cover;
     border-radius: 10px;
+    background-color: #d9d9d9;
   }
 `;
 

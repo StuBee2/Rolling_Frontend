@@ -11,12 +11,9 @@ export default function Cms() {
       </S.CmsTitle>
       <S.CmsBoxContanier>
         <S.CmsBox>
-          <S.CmsImg image="https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png" />
+          <S.CmsImg image="" />
           <S.CmsEtc>
-            <img
-              src="https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-              alt="이미지 없음"
-            />
+            <img src="" alt="이미지 없음" />
             <div>
               <S.CmsPosition>Backend Engineer</S.CmsPosition>
               <S.CmsCompany>무신사</S.CmsCompany>

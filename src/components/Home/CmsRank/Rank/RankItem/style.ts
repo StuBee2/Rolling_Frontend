@@ -67,6 +67,7 @@ export const RankingContentContainer = styled.div`
     height: 46px;
     object-fit: cover;
     border-radius: 10px;
+    background-color: #d9d9d9;
   }
 `;
 

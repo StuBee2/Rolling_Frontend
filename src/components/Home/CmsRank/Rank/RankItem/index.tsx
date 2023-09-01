@@ -21,108 +21,20 @@ function RankItem({ rankCategory }: Props) {
       </S.RankCategoryIntroduce>
       <S.RankItemWrapper>
         {rankInfo?.map((item, idx) => (
-          <>
-            <S.RankItemBox key={idx}>
-              <S.RankingNumber>{idx + 1}</S.RankingNumber>
-              <S.RankingContentContainer>
-                <img
-                  src={
-                    item.companyDetails.imgUrl ||
-                    "https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-                  }
-                  alt="이미지 없음"
-                />
-                <div>
-                  <S.RankingCompanyName>
-                    {item.companyDetails.name}
-                  </S.RankingCompanyName>
-                  <S.RankingCompanyDescription>
-                    {stringEllipsis(item.companyDetails.description, 30)}
-                  </S.RankingCompanyDescription>
-                </div>
-              </S.RankingContentContainer>
-            </S.RankItemBox>
-            <S.RankItemBox key={idx}>
-              <S.RankingNumber>{idx + 2}</S.RankingNumber>
-              <S.RankingContentContainer>
-                <img
-                  src={
-                    item.companyDetails.imgUrl ||
-                    "https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-                  }
-                  alt="이미지 없음"
-                />
-                <div>
-                  <S.RankingCompanyName>
-                    {item.companyDetails.name}
-                  </S.RankingCompanyName>
-                  <S.RankingCompanyDescription>
-                    {stringEllipsis(item.companyDetails.description, 30)}
-                  </S.RankingCompanyDescription>
-                </div>
-              </S.RankingContentContainer>
-            </S.RankItemBox>
-            <S.RankItemBox key={idx}>
-              <S.RankingNumber>{idx + 3}</S.RankingNumber>
-              <S.RankingContentContainer>
-                <img
-                  src={
-                    item.companyDetails.imgUrl ||
-                    "https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-                  }
-                  alt="이미지 없음"
-                />
-                <div>
-                  <S.RankingCompanyName>
-                    {item.companyDetails.name}
-                  </S.RankingCompanyName>
-                  <S.RankingCompanyDescription>
-                    {stringEllipsis(item.companyDetails.description, 30)}
-                  </S.RankingCompanyDescription>
-                </div>
-              </S.RankingContentContainer>
-            </S.RankItemBox>
-            <S.RankItemBox key={idx}>
-              <S.RankingNumber>{idx + 4}</S.RankingNumber>
-              <S.RankingContentContainer>
-                <img
-                  src={
-                    item.companyDetails.imgUrl ||
-                    "https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-                  }
-                  alt="이미지 없음"
-                />
-                <div>
-                  <S.RankingCompanyName>
-                    {item.companyDetails.name}
-                  </S.RankingCompanyName>
-                  <S.RankingCompanyDescription>
-                    {stringEllipsis(item.companyDetails.description, 30)}
-                  </S.RankingCompanyDescription>
-                </div>
-              </S.RankingContentContainer>
-            </S.RankItemBox>
-            <S.RankItemBox key={idx}>
-              <S.RankingNumber>{idx + 5}</S.RankingNumber>
-              <S.RankingContentContainer>
-                <img
-                  src={
-                    item.companyDetails.imgUrl ||
-                    "https://t1.kakaocdn.net/kakaocorp/corp_thumbnail/Kakao.png"
-                  }
-                  alt="이미지 없음"
-                />
-                <div>
-                  <S.RankingCompanyName>
-                    {item.companyDetails.name}
-                  </S.RankingCompanyName>
-                  <S.RankingCompanyDescription>
-                    {stringEllipsis(item.companyDetails.description, 30)}
-                  </S.RankingCompanyDescription>
-                </div>
-              </S.RankingContentContainer>
-            </S.RankItemBox>
-          </>
+          <S.RankItemBox key={idx}>
+            <S.RankingNumber>{idx + 1}</S.RankingNumber>
+            <S.RankingContentContainer>
+              <img src={item.companyDetails.imgUrl || ""} alt="이미지 없음" />
+              <div>
+                <S.RankingCompanyName>
+                  {item.companyDetails.name}
+                </S.RankingCompanyName>
+                <S.RankingCompanyDescription>
+                  {stringEllipsis(item.companyDetails.description, 30)}
+                </S.RankingCompanyDescription>
+              </div>
+            </S.RankingContentContainer>
+          </S.RankItemBox>
         ))}
       </S.RankItemWrapper>
     </S.RankItemContainer>
