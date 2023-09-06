@@ -14,7 +14,7 @@ export const SearchModalWrapper = styled.div`
 
 export const SearchContainer = styled.div`
   width: 100%;
-  height: 442px;
+  height: 342px;
   background-color: #1d1e5a;
   position: relative;
   display: flex;
@@ -67,7 +67,6 @@ export const InputContainer = styled.form`
 
     color: #737b98;
     font-size: 60px;
-    padding-left: 10px;
 
     ::placeholder {
       font-weight: bold;
@@ -76,19 +75,23 @@ export const InputContainer = styled.form`
   }
 
   @media screen and (max-width: 825px) {
-    img {
-      width: 70px;
-      height: 70px;
+    button {
+      img {
+        width: 70px;
+        height: 70px;
+      }
     }
     input {
-      font-size: 30px;
+      font-size: 40px;
     }
   }
 
   @media screen and (max-width: 420px) {
-    img {
-      width: 50px;
-      height: 50px;
+    button {
+      img {
+        width: 50px;
+        height: 50px;
+      }
     }
     input {
       font-size: 24px;
