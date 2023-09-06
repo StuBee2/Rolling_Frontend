@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeItemsContainer = styled.div`
   width: 100%;
-  height: 300px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   column-gap: 20px;
@@ -45,7 +45,7 @@ export const CompanyNameAndCreatedAt = styled.p`
 `;
 
 export const CompanyDescription = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
 `;

@@ -4,6 +4,7 @@ import { getCompanyRankIntroduce } from "@src/utils/Rank/getCompanyRankIntroduce
 import smile from "@src/assets/User/smile.svg";
 import { stringEllipsis } from "@src/utils/Common/stringEllipsis";
 import React from "react";
+import { HOME_ITEMS } from "@src/constants/Home/Home.constants";
 
 interface Props {
   rankCategory: string;
@@ -20,8 +21,8 @@ function RankItem({ rankCategory }: Props) {
         <p>{getCompanyRankIntroduce(rankCategory)}</p>
       </S.RankCategoryIntroduce>
       <S.RankItemWrapper>
-        {rankInfo?.map((item, idx) => (
-          <S.RankItemBox key={idx}>
+        {/* {rankInfo?.map((item, idx) => (
+          <S.RankItemBox key={item.companyId.id}>
             <S.RankingNumber>{idx + 1}</S.RankingNumber>
             <S.RankingContentContainer>
               <img src={item.companyDetails.imgUrl || ""} alt="이미지 없음" />
@@ -31,6 +32,20 @@ function RankItem({ rankCategory }: Props) {
                 </S.RankingCompanyName>
                 <S.RankingCompanyDescription>
                   {stringEllipsis(item.companyDetails.description, 30)}
+                </S.RankingCompanyDescription>
+              </div>
+            </S.RankingContentContainer>
+          </S.RankItemBox>
+        ))} */}
+        {HOME_ITEMS.map((item, idx) => (
+          <S.RankItemBox key={item.id}>
+            <S.RankingNumber>{idx + 1}</S.RankingNumber>
+            <S.RankingContentContainer>
+              <img src={item.imgUrl || ""} alt="이미지 없음" />
+              <div>
+                <S.RankingCompanyName>{item.name}</S.RankingCompanyName>
+                <S.RankingCompanyDescription>
+                  {stringEllipsis(item.description, 30)}
                 </S.RankingCompanyDescription>
               </div>
             </S.RankingContentContainer>

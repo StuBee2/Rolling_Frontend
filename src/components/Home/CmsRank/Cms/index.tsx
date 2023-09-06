@@ -11,9 +11,12 @@ export default function Cms() {
       </S.CmsTitle>
       <S.CmsBoxContanier>
         <S.CmsBox>
-          <S.CmsImg image="" />
+          <S.CmsImg image="https://image.musinsa.com/mfile_s01/2018/06/22/e015f5644b36527368c401e4073d633e144501.jpg" />
           <S.CmsEtc>
-            <img src="" alt="이미지 없음" />
+            <img
+              src="https://image.msscdn.net/mfile_s01/fb/share_musinsa.png"
+              alt="이미지 없음"
+            />
             <div>
               <S.CmsPosition>Backend Engineer</S.CmsPosition>
               <S.CmsCompany>무신사</S.CmsCompany>

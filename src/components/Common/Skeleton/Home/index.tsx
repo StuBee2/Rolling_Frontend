@@ -7,7 +7,7 @@ export default function HomeSkeleton() {
     <HomeItemsContainer>
       {Array.from({ length: 20 }).map((item, idx) => (
         <S.HomeSkeletonContainer key={idx}>
-          <SkeletonBox width="100%" height="254px" />
+          <SkeletonBox width="100%" height="60%" />
           <SkeletonBox width="200px" height="18px" />
           <div>
             <SkeletonBox width="220px" height="18px" />

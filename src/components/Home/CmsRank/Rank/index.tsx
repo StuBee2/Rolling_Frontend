@@ -1,10 +1,10 @@
 import * as S from "./style";
 import rank from "@src/assets/Home/rank.svg";
-import { HOME_COMPANY_RANK_ITMES } from "../../../../constants/Home/Home.constants";
 import { Suspense, useState } from "react";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import RankItem from "./RankItem";
 import RankSkeleton from "@src/components/Common/Skeleton/Rank";
+import { COMPANY_RANK_ITMES } from "@src/constants/Company/company.constant";
 
 export default function Rank() {
   const [rankCategorySelect, setRankCategorySelect] = useState("total");
@@ -17,7 +17,7 @@ export default function Rank() {
         </p>
       </S.RankTitle>
       <S.RankCategoriesUl>
-        {HOME_COMPANY_RANK_ITMES.map((item) => (
+        {COMPANY_RANK_ITMES.map((item) => (
           <S.RankCategoryLi
             key={item.id}
             onClick={() => setRankCategorySelect(item.categoryName!!)}
