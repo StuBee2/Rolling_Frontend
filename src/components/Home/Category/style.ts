@@ -1,71 +1,82 @@
 import styled from "styled-components";
 
-export const NavContainer = styled.div`
-  width: 320px;
+export const CategoryContainer = styled.div`
+  width: 270px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 25px;
   overflow: scroll;
   ::-webkit-scrollbar {
-    display: flex;
+    display: none;
   }
   @media screen and (max-width: 740px) {
     display: none;
   }
 `;
+
 export const InterestCategoryBox = styled.div`
   width: 100%;
-  height: 60px;
-  color: #fff;
-  padding: 0 20px 0 20px;
-  background-color: #1d1e5a;
+  height: 55px;
+  background-color: rgba(29, 30, 90, 1);
   border-radius: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 22px;
-  font-weight: bold;
+  padding: 0 20px 0 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
   div {
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    column-gap: 5px;
     img {
-      width: 30px;
-      height: 30px;
+      width: 25px;
+      height: 25px;
     }
+  }
+
+  img {
+    width: 25px;
+    height: 6px;
   }
 `;
 
-export const CompanyCategoryListContainer = styled.ul`
-  padding-left: 60px;
+export const CompanyCategoryUl = styled.ul`
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
-  font-size: 18px;
   font-weight: bold;
-  color: #737b98;
+  font-size: 17px;
+  color: rgba(115, 123, 152, 1);
+  row-gap: 25px;
+  padding: 1rem 2rem;
   li {
     cursor: pointer;
   }
 `;
 
-export const FieldCategoryListContainer = styled.ul`
-  font-size: 20px;
-  font-weight: bold;
-  padding-left: 20px;
+export const FieldCategoryUl = styled.ul`
   display: flex;
   flex-direction: column;
+  font-weight: bold;
+  font-size: 22px;
   row-gap: 25px;
+
   li {
     display: flex;
     align-items: center;
-    gap: 15px;
+    column-gap: 10px;
     cursor: pointer;
+
     img {
       width: 25px;
       height: 30px;
+    }
+    p {
+      margin-top: 5px;
     }
   }
 `;

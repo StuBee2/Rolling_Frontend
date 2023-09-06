@@ -14,7 +14,7 @@ export const Header = styled.div`
 `;
 
 export const HeaderWrap = styled.div`
-  width: 1570px;
+  width: 1370px;
   height: 100%;
 
   display: flex;
@@ -23,13 +23,7 @@ export const HeaderWrap = styled.div`
   justify-content: space-between;
 
   overflow-x: scroll;
-
-  @media screen and (max-width: 1620px) {
-    width: 1270px;
-  }
-  @media screen and (max-width: 1355px) {
-    width: 1000px;
-  }
+  padding: 0 10px 0 10px;
   @media screen and (max-width: 1040px) {
     width: 90%;
   }
