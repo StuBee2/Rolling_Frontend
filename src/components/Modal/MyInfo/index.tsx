@@ -23,7 +23,9 @@ export default function MyInfo() {
           <S.Profile>
             <img src={myInfo?.socialDetails.imageUrl} alt="이미지 없음" />
             <div>
-              <S.Name>{myInfo?.socialDetails.name}</S.Name>
+              <S.Name>
+                {myInfo?.memberDetails.nickName || myInfo?.socialDetails.name}
+              </S.Name>
               <S.EditProfile>롤링 프로필 수정하기</S.EditProfile>
             </div>
           </S.Profile>

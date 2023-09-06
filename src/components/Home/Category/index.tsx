@@ -6,9 +6,9 @@ import {
   HOME_NAV_FIELD_ITEMS,
 } from "@src/constants/Home/Home.constants";
 
-export default function Nav() {
+export default function Category() {
   return (
-    <S.NavContainer>
+    <S.CategoryContainer>
       <div>
         <S.InterestCategoryBox>
           <div>
@@ -18,21 +18,20 @@ export default function Nav() {
           <img src={more} alt="이미지 없음" />
         </S.InterestCategoryBox>
       </div>
-
-      <S.CompanyCategoryListContainer>
+      <S.CompanyCategoryUl>
         {HOME_NAV_COMPANY_ITEMS.map((item) => (
           <li key={item.id}>{item.name}</li>
         ))}
-      </S.CompanyCategoryListContainer>
+      </S.CompanyCategoryUl>
 
-      <S.FieldCategoryListContainer>
+      <S.FieldCategoryUl>
         {HOME_NAV_FIELD_ITEMS.map((item) => (
           <li key={item.id}>
-            <img src={item.image} alt="이미지 없음" />
+            <img src={item.image} alt="이미지없음" />
             <p>{item.name}</p>
           </li>
         ))}
-      </S.FieldCategoryListContainer>
-    </S.NavContainer>
+      </S.FieldCategoryUl>
+    </S.CategoryContainer>
   );
 }

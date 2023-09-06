@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const HomeSkeletonContainer = styled.div`
-  width: 370px;
-  height: 380px;
-  margin: 0 5px 0 5px;
+  width: 335px;
+  height: 335px;
   display: flex;
   flex-direction: column;
-  row-gap: 25px;
+  column-gap: 20px;
+  row-gap: 30px;
 `;
