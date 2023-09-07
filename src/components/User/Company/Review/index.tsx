@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import write from "@src/assets/User/write.svg";
 import { Container, Explain, Title } from "../../Profile/style";
-import { getTimeAgo } from "@src/utils/Date/getTimeAgo";
 import * as S from "../style";
 import ReviewItem from "./ReviewItem";
+import { getTimeAgo } from "@stubee2/stubee2-rolling-util";
 
 export default function Review() {
   const { data: reviewList, fetchNextPage } = useGetMyReviewQuery({

@@ -4,10 +4,9 @@ import del from "@src/assets/User/del.svg";
 import * as S from "./style";
 import Star from "@src/components/Common/Star/Star";
 import { useState } from "react";
-import { stringEllipsis } from "@src/utils/Common/stringEllipsis";
-import { getDateText } from "@src/utils/Date/getDateCounter";
 import { DelAndEditContainer } from "../../style";
 import { changeRankStatusToArrayObject } from "@src/utils/Rank/changeRankStatusToArrayObject";
+import { getDateText, stringEllipsis } from "@stubee2/stubee2-rolling-util";
 
 interface Props {
   review: ReviewListType;

@@ -1,10 +1,10 @@
-import { stringEllipsis } from "@src/utils/Common/stringEllipsis";
 import * as S from "./style";
 import edit from "@src/assets/User/edit.svg";
 import del from "@src/assets/User/del.svg";
 import { useState } from "react";
 import { EmploymentResponse } from "@src/types/Employment/employment.type";
 import { DelAndEditContainer } from "../../style";
+import { stringEllipsis } from "@stubee2/stubee2-rolling-util";
 
 interface Props {
   employment: EmploymentResponse;

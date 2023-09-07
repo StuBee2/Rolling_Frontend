@@ -2,8 +2,8 @@ import { useGetCompanyRankSelectQuery } from "@src/queries/Company/company.query
 import * as S from "./style";
 import { getCompanyRankIntroduce } from "@src/utils/Rank/getCompanyRankIntroduce";
 import smile from "@src/assets/User/smile.svg";
-import { stringEllipsis } from "@src/utils/Common/stringEllipsis";
 import React from "react";
+import { stringEllipsis } from "@stubee2/stubee2-rolling-util";
 
 interface Props {
   rankCategory: string;

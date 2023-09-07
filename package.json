@@ -5,6 +5,9 @@
   "dependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
     "@react-icons/all-files": "^4.1.0",
+    "@stubee2/stubee2-rolling-styled-components-util": "^0.1.0",
+    "@stubee2/stubee2-rolling-toastify": "^1.0.0",
+    "@stubee2/stubee2-rolling-util": "^0.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",

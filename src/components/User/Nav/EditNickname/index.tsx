@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useEditNickName } from "@src/hooks/Common/useEditNickName";
 import { EditAndCancelContainer } from "../style";
+import { BsPencilSquare } from "@react-icons/all-files/bs/BsPencilSquare";
 
 interface Props {
   nickName: string;
@@ -32,7 +33,14 @@ export default function EditNickname({ nickName }: Props) {
         </form>
       ) : (
         <AddNickNameBtn onClick={handleEditNickNameQuestion}>
-          {nickName ? nickName : "닉네임 추가하기"}
+          {nickName ? (
+            <div>
+              <p>{nickName}</p>
+              <BsPencilSquare size={15} />
+            </div>
+          ) : (
+            "닉네임 추가하기"
+          )}
         </AddNickNameBtn>
       )}
     </>
@@ -45,4 +53,10 @@ const AddNickNameBtn = styled.button`
   cursor: pointer;
   background-color: transparent;
   font-size: 15px;
+
+  div {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
 `;

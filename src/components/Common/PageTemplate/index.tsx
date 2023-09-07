@@ -9,7 +9,7 @@ import {
 } from "@src/stores/common/common.store";
 import Search from "../../Modal/Search";
 import Info from "../../Modal/MyInfo";
-import { useAuthTopScroll } from "@src/hooks/Common/useAutoTopScroll";
+import { useAuthTopScroll } from "@stubee2/stubee2-rolling-util";
 
 interface Props {
   children: ReactNode;
