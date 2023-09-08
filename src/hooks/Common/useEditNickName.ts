@@ -3,14 +3,12 @@ import { usePatchMyNickNameMutation } from "@src/queries/Member/Member.query";
 import { useQueryClient } from "react-query";
 import { QUERY_KEYS } from "@src/queries/queryKey";
 import { AxiosError } from "axios";
-import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 
 export const useEditNickName = (nickName: string) => {
   const patchNickNameMutation = usePatchMyNickNameMutation();
   const [isEditNickName, setIsEditNickName] = useState(false);
   const [editNickName, setEditNickName] = useState<string>(nickName);
   const queryClient = useQueryClient();
-  const { rollingToast } = useRollingToast();
 
   const handleEditNickNameQuestion = () => {
     const answer = window.confirm("닉네임을 수정하시겠습니까?");
@@ -35,25 +33,25 @@ export const useEditNickName = (nickName: string) => {
   const handleNickNameSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!editNickName) {
-      return rollingToast("닉네임을 입력해주세요.", "warning");
+      return window.alert("닉네임을 입력해주세요.");
     }
 
     if (nickName === editNickName) {
-      return rollingToast("닉네임을 수정해주세요.", "warning");
+      return window.alert("닉네임을 수정해주세요.");
     }
 
     patchNickNameMutation.mutate(
       { nickName: editNickName },
       {
         onSuccess: () => {
-          rollingToast("닉네임이 수정되었습니다", "success");
+          window.alert("닉네임이 수정되었습니다");
           queryClient.invalidateQueries(QUERY_KEYS.member.getMyMember);
           setIsEditNickName(false);
         },
         onError: (error: unknown) => {
           const axiosError = error as AxiosError;
           if (axiosError.response?.status === 500) {
-            rollingToast("닉네임이 중복되었습니다.", "error");
+            window.alert("닉네임이 중복되었습니다.");
           }
         },
       }
