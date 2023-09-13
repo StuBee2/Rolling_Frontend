@@ -1,33 +1,19 @@
-// import * as F from "./style";
 import * as C from "./style";
 import { useCompany } from "@src/hooks/Firm/useCompany";
-import { useRecoilState } from "recoil";
-import {
-  companyAddressAtom,
-  companyInfoAtom,
-  companyLogoAtom,
-  companyNameAtom,
-} from "@src/stores/company/company.store";
 import companybanner from "@src/assets/Company/CompanyBanner.png";
-import { MdOutlineAddPhotoAlternate } from "react-icons/md";
-// import companybanner from "@src/assets/Company/CompanyBanner.svg";
+import Photo from "@src/assets/Company/photo.png";
 
 const FirmRegister = () => {
   const {
     onClickImg,
     uploadImg,
     imgRef,
-    // onFirmRegister,
-    // onAddressChange,
-    // onInfoChange,
-    // onNameChange,
+    imgSrc,
+    onAddressChange,
+    onDescriptionChange,
+    onNameChange,
+    onUploadCompany,
   } = useCompany();
-
-  // const [firmlogo, setFrimLogo] = useRecoilState<string>(companyLogoAtom);
-  // const [firmname, setFirmName] = useRecoilState<string>(companyNameAtom);
-  // const [firmaddress, setFrimAddress] =
-  //   useRecoilState<string>(companyAddressAtom);
-  // const [firminfo, setFrimInfo] = useRecoilState<string>(companyInfoAtom);
 
   return (
     <>
@@ -47,30 +33,50 @@ const FirmRegister = () => {
                 ></input>
                 <C.Text>기업로고</C.Text>
                 <C.Img onClick={onClickImg}>
-                  <MdOutlineAddPhotoAlternate
-                    style={{ fontSize: 100, color: "#BDC2D0" }}
+                  <img
+                    src={imgSrc ? imgSrc : Photo}
+                    style={{
+                      width: imgSrc ? "201px" : "200px",
+                      height: imgSrc ? "201px" : "195px",
+                      borderRadius: "5px",
+                    }}
                   />
                 </C.Img>
               </C.CompanyImgBox>
               <C.CompanyInputWrap>
                 <C.CompanyInputBox>
                   <C.Text>기업명</C.Text>
-                  <C.Input placeholder="기업명을 입력해주세요"></C.Input>
+                  <C.Input
+                    placeholder="기업명을 입력해주세요"
+                    id="name"
+                    name="name"
+                    onChange={onNameChange}
+                  ></C.Input>
                 </C.CompanyInputBox>
                 <C.CompanyInputBox>
                   <C.Text>기업 주소</C.Text>
-                  <C.Input placeholder="기업 본사 도로명 주소를 입력해 주세요 "></C.Input>
+                  <C.Input
+                    placeholder="기업 본사 도로명 주소를 입력해 주세요 "
+                    id="address"
+                    name="address"
+                    onChange={onAddressChange}
+                  ></C.Input>
                 </C.CompanyInputBox>
                 <C.CompanyInputBox>
                   <C.Text>기업 소개</C.Text>
                   <textarea
+                    id="description"
+                    name="description"
+                    onChange={onDescriptionChange}
                     style={{ resize: "none" }}
                     placeholder=" 기업 소개글을 작성해 주세요
 (회사 서비스의 목적, 기업 문화 등)"
                   ></textarea>
                 </C.CompanyInputBox>
               </C.CompanyInputWrap>
-              <C.CompanyRegisteButton>요청하기</C.CompanyRegisteButton>
+              <C.CompanyRegisteButton onClick={onUploadCompany}>
+                요청하기
+              </C.CompanyRegisteButton>
             </C.CompanyRegisteBox>
           </C.CompanyRegisteWrap>
         </C.CompnayListWrap>
