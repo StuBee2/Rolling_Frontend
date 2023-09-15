@@ -1,7 +1,5 @@
-import styled from "styled-components";
 import { useEditNickName } from "@src/hooks/Common/useEditNickName";
-import { EditAndCancelContainer } from "../style";
-import { BsPencilSquare } from "@react-icons/all-files/bs/BsPencilSquare";
+import * as S from "./style";
 
 interface Props {
   nickName: string;
@@ -19,44 +17,30 @@ export default function EditNickname({ nickName }: Props) {
   return (
     <>
       {isEditNickName ? (
-        <form onSubmit={handleNickNameSubmit}>
+        <S.AddNickNameForm onSubmit={handleNickNameSubmit}>
           <input
             type="text"
             value={editNickName || ""}
             onChange={handleEditNickNameChange}
             placeholder="닉네임을 입력하세요."
           />
-          <EditAndCancelContainer>
+          <S.EditAndCancelContainer>
             <button type="submit">수정</button>
             <button onClick={hanldeEditNickNameCancel}>취소</button>
-          </EditAndCancelContainer>
-        </form>
+          </S.EditAndCancelContainer>
+        </S.AddNickNameForm>
       ) : (
-        <AddNickNameBtn onClick={handleEditNickNameQuestion}>
+        <S.AddNickNameBtn onClick={handleEditNickNameQuestion}>
           {nickName ? (
-            <div>
-              <p>{nickName}</p>
-              <BsPencilSquare size={15} />
-            </div>
+            <>
+              <S.NickName>{nickName}</S.NickName>
+              <S.EditNickIcon size={15} />
+            </>
           ) : (
             "닉네임 추가하기"
           )}
-        </AddNickNameBtn>
+        </S.AddNickNameBtn>
       )}
     </>
   );
 }
-
-const AddNickNameBtn = styled.button`
-  border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: transparent;
-  font-size: 15px;
-
-  div {
-    display: flex;
-    align-items: center;
-    column-gap: 5px;
-  }
-`;

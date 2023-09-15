@@ -36,43 +36,6 @@ export const UserEmail = styled.p`
   color: #61677e;
 `;
 
-export const UserNickName = styled.div`
-  font-size: 15px;
-  cursor: pointer;
-  form {
-    display: flex;
-    column-gap: 10px;
-    input {
-      border: 1px solid #4869f6;
-      outline: none;
-      padding-left: 5px;
-      border-radius: 5px;
-      color: #1d1e5a;
-    }
-  }
-  &:hover {
-    color: #1d1e5a;
-  }
-`;
-
-export const EditAndCancelContainer = styled.div`
-  display: flex;
-  column-gap: 2px;
-  button {
-    width: 35px;
-    height: 20px;
-    cursor: pointer;
-    color: #fff;
-    background-color: #4869f6;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    &:hover {
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-    }
-  }
-`;
-
 export const PageSelectContainer = styled.div`
   width: 100%;
   height: 300px;
@@ -93,10 +56,10 @@ export const PageSelect = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  row-gap: 15px;
   border-bottom: 2px solid #dee0e6;
   font-size: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 `;
 
 export const PageSelectItem = styled.div<{ isSelect?: boolean }>`
