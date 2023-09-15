@@ -2,16 +2,22 @@ import styled from "styled-components";
 
 export const ReviewItemContainer = styled.div`
   width: 100%;
-  height: 500px;
+  height: 350px;
   display: flex;
   column-gap: 5px;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
   @media screen and (max-width: 495px) {
-    height: auto;
+    height: 280px;
+  }
+
+  @media screen and (max-width: 330px) {
   }
 `;
 
 export const ReviewItemWrapper = styled.div`
-  width: calc(100% - 40px);
+  width: 100%;
   height: 100%;
   border-radius: 15px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
@@ -39,7 +45,7 @@ export const ReviewCompanyInfoContainer = styled.div`
   height: 60%;
   display: flex;
   flex-direction: column;
-  row-gap: 3rem;
+  row-gap: 2rem;
   @media screen and (max-width: 495px) {
     row-gap: 1rem;
     height: auto;
@@ -56,15 +62,15 @@ export const ReviewCompanyContainer = styled.div`
   width: 100%;
   height: 130px;
   display: flex;
+  align-items: center;
   column-gap: 2rem;
   cursor: pointer;
-  white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
 
   img {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
     object-fit: cover;
   }
@@ -77,8 +83,9 @@ export const ReviewCompanyContentContainer = styled.div`
 
   ul {
     display: flex;
-    flex-direction: column;
-    row-gap: 10px;
+    column-gap: 10px;
+    font-size: 15px;
+    white-space: nowrap;
 
     li {
       span {
@@ -90,8 +97,10 @@ export const ReviewCompanyContentContainer = styled.div`
 `;
 
 export const ReviewCompanyName = styled.p`
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
+  margin-top: 3px;
+  white-space: nowrap;
 `;
 
 export const ReviewCompanyContent = styled.p`
@@ -119,7 +128,7 @@ export const ReviewCompanyCultureContainer = styled.div`
   div {
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
+    row-gap: 1rem;
     p {
       text-align: center;
     }

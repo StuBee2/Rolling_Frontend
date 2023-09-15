@@ -1,35 +1,38 @@
 import styled from "styled-components";
 
-export const FontSize = styled.p<{ fontSize: string }>`
-  font-size: ${(props) => props.fontSize};
-`;
-
-export const CompanyStatus = styled.div`
-  width: 45%;
+export const CompanyStatusContainer = styled.div`
+  width: 312px;
   height: 125px;
-  background-color: #4869f6;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: rgba(72, 105, 246, 1);
   border-radius: 10px;
-
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
-
-  color: #f9fafb;
+  column-gap: 20px;
+  white-space: nowrap;
+  padding-left: 1.5rem;
   img {
     width: 45px;
     height: 45px;
   }
-  @media screen and (max-width: 1355px) {
-    width: 80%;
+  div {
+    color: rgba(247, 249, 250, 1);
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  @media screen and (max-width: 410px) {
+    width: 100%;
   }
 `;
 
-export const ContentGap = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
+export const WriteText = styled.p`
+  font-weight: bold;
+  font-size: 20px;
+`;
+
+export const UpdateAtListCount = styled.p`
+  font-size: 14px;
 `;
 
 export const CompanyAndWriteText = styled.p`
@@ -58,5 +61,11 @@ export const DelAndEditContainer = styled.div`
     cursor: pointer;
     width: 90%;
     height: 40px;
+  }
+
+  @media screen and (max-width: 640px) {
+    flex-direction: row;
+    column-gap: 5px;
+    margin-top: 10px;
   }
 `;
