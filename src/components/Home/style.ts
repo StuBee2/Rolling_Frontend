@@ -13,8 +13,8 @@ export const HomeContainer = styled.div`
 
 export const HomeWrapper = styled.div`
   width: 1370px;
-  padding-top: 2rem;
   height: 100%;
+  padding-top: 2rem;
   padding-bottom: 20px;
   display: flex;
   @media screen and (max-width: 1040px) {

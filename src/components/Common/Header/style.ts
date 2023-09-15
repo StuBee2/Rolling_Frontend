@@ -21,7 +21,6 @@ export const HeaderWrap = styled.div`
   align-items: center;
   column-gap: 20px;
   justify-content: space-between;
-
   overflow-x: scroll;
   padding: 0 10px 0 10px;
   @media screen and (max-width: 1040px) {

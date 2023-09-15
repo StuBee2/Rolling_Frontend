@@ -65,6 +65,5 @@ export const DelAndEditContainer = styled.div`
   @media screen and (max-width: 640px) {
     flex-direction: row;
     column-gap: 5px;
-    margin-top: 10px;
   }
 `;

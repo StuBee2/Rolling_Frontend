@@ -2,11 +2,11 @@ import { ReviewListType } from "@src/types/Review/review.type";
 import edit from "@src/assets/User/edit.svg";
 import del from "@src/assets/User/del.svg";
 import * as S from "./style";
-import Star from "@src/components/Common/Star/Star";
 import { useState } from "react";
 import { DelAndEditContainer } from "../../style";
 import { changeRankStatusToArrayObject } from "@src/utils/Rank/changeRankStatusToArrayObject";
 import { getDateText, stringEllipsis } from "@stubee2/stubee2-rolling-util";
+import { StarRating } from "@stubee2/stubee2-rolling-ui";
 
 interface Props {
   review: ReviewListType;
@@ -48,7 +48,11 @@ export default function ReviewItem({ review }: Props) {
             {rankStatus.map((item) => (
               <div key={item.id}>
                 <p>{item.title}</p>
-                <Star starCount={item.star!!} />
+                <StarRating
+                  starRatingCount={item.star}
+                  width={20}
+                  height={20}
+                />
               </div>
             ))}
           </S.ReviewCompanyCultureContainer>

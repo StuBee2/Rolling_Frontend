@@ -7,9 +7,7 @@ export const ReviewItemContainer = styled.div`
   column-gap: 5px;
   @media screen and (max-width: 640px) {
     flex-direction: column;
-  }
-  @media screen and (max-width: 495px) {
-    height: 280px;
+    height: 390px;
   }
 `;
 

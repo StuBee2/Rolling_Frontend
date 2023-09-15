@@ -22,7 +22,7 @@ export default function Review() {
   return (
     <Container>
       <Title>
-        {/* <S.FontSize fontSize="30px">내 리뷰 Story</S.FontSize> */}
+        <FontSize fontSize="30px">내 리뷰 Story</FontSize>
         <Explain>자신이 직접 롤링한 회사를 보여줘요</Explain>
       </Title>
       <S.CompanyStatusContainer>

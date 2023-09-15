@@ -9,14 +9,12 @@ import UserInfo from "./UserInfo";
 
 export default function Home() {
   return (
-    <>
-      <S.HomeContainer>
-        <S.HomeWrapper>
-          <CmsRank />
-          <HomeList />
-          {Token.getToken(ACCESS_TOKEN_KEY) && <UserInfo />}
-        </S.HomeWrapper>
-      </S.HomeContainer>
-    </>
+    <S.HomeContainer>
+      <S.HomeWrapper>
+        <CmsRank />
+        <HomeList />
+        {Token.getToken(ACCESS_TOKEN_KEY) && <UserInfo />}
+      </S.HomeWrapper>
+    </S.HomeContainer>
   );
 }

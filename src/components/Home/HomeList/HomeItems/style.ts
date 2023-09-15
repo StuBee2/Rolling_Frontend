@@ -12,9 +12,6 @@ export const HomeItemsContainer = styled.div`
 export const HomeItemWrapper = styled.div`
   width: 335px;
   height: 380px;
-  @media screen and (max-width: 320px) {
-    height: 290px;
-  }
 `;
 
 export const CompanyImage = styled.div<{ image: string }>`
