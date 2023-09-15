@@ -27,8 +27,8 @@ export default function User({ children }: Props) {
             <Suspense fallback={<UserSkeleton />}>{children}</Suspense>
           </ErrorBoundary>
         </S.UserListContainer>
-        <UserBottom />
       </S.UserContainer>
+      <UserBottom />
     </S.UserWrap>
   );
 }

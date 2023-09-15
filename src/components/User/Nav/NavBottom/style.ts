@@ -4,14 +4,11 @@ export const UserFooter = styled.div`
   display: none;
   @media screen and (max-width: 1040px) {
     width: 100%;
-    height: 80px;
+    height: 60px;
 
     background-color: #ffffff;
-    box-shadow: 5px 1px 8px 0 rgba(0, 0, 0, 0.3);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border-top: 1px solid #d9d9d9;
+    display: inline;
   }
 `;
 
@@ -22,7 +19,7 @@ export const UserListWrap = styled.ul`
   column-gap: 15px;
   font-size: 18px;
   overflow-x: scroll;
-
+  height: 100%;
   ::-webkit-scrollbar {
     display: none;
   }
