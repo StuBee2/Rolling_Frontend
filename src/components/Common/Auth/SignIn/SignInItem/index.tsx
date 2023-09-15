@@ -3,11 +3,12 @@ import github from "@src/assets/Auth/github.svg";
 import CONFIG from "@src/config/config.json";
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "@src/hooks/Auth/useLogin";
+import { Button, TextInput } from "@stubee2/stubee2-rolling-ui";
 
 export default function SignInItem() {
   const gitSignInUrl = `${CONFIG.SERVER}/oauth2/authorization/github`;
   const navigate = useNavigate();
-  const { handleChange, handleSubmit, id, pw } = useLogin();
+  const { handleSubmit, credentials, setCredentials } = useLogin();
   return (
     <S.SignInItemForm onSubmit={handleSubmit}>
       <div>
@@ -16,23 +17,27 @@ export default function SignInItem() {
       </div>
       <S.SignInBox>
         <div>
-          <p>ID</p>
-          <input
-            value={id}
+          <S.IdPwText>ID</S.IdPwText>
+          <TextInput
+            value={credentials.id}
             placeholder="아이디를 입력해주세요"
             type="text"
             name="id"
-            onChange={handleChange}
+            textType="input"
+            customStyle={S.InputStyle}
+            handleObjectChange={setCredentials}
           />
         </div>
         <div>
-          <p>Password</p>
-          <input
-            value={pw}
+          <S.IdPwText>Password</S.IdPwText>
+          <TextInput
+            value={credentials.pw}
             placeholder="비밀번호를 입력해주세요"
             type="password"
             name="pw"
-            onChange={handleChange}
+            textType="input"
+            customStyle={S.InputStyle}
+            handleObjectChange={setCredentials}
           />
         </div>
         <ul>
@@ -40,18 +45,21 @@ export default function SignInItem() {
           <li>아이디 찾기</li>
           <li>비밀번호 찾기</li>
         </ul>
-        <button type="submit">Sign In</button>
+        <Button ButtonType="default" type="submit">
+          Sign In
+        </Button>
       </S.SignInBox>
 
-      <S.SocailSignInBtn
+      <Button
+        ButtonType="github"
         onClick={(e) => {
-          e.preventDefault();
+          e?.preventDefault();
           window.location.href = gitSignInUrl;
         }}
       >
         <img src={github} alt="이미지 없음" />
         <p>Github 간편 로그인</p>
-      </S.SocailSignInBtn>
+      </Button>
     </S.SignInItemForm>
   );
 }
