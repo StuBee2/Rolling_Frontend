@@ -32,7 +32,7 @@ export default function MyInfo() {
           </S.Profile>
           <S.MyPageLogout>
             <div
-              onClick={async () => {
+              onClick={() => {
                 setMyInfoModal(false);
                 navigate("/mypage/profile");
               }}

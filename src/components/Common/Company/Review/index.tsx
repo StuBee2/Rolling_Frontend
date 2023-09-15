@@ -19,7 +19,7 @@ import { useReview } from "@src/hooks/FirmReview/useReview";
 
 const FirmReview = (props: any) => {
   const [companyidatom, setCompanyIdAtom] = useRecoilState<string | undefined>(
-    companyIdAtom
+    companyIdAtom,
   );
   const [position, setPosition] = useRecoilState<string>(reviewPosition);
   const [careerPath, setCarreerPath] = useRecoilState<string>(reviewCareerPath);
