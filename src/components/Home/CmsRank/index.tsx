@@ -1,18 +1,16 @@
 import styled from "styled-components";
-import Cms from "./Cms";
 import Rank from "./Rank";
 
 export default function CmsRank() {
   return (
     <CmsRankContainer>
-      <Cms />
       <Rank />
     </CmsRankContainer>
   );
 }
 
 export const CmsRankContainer = styled.div`
-  width: 360px;
+  width: 340px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -22,7 +20,7 @@ export const CmsRankContainer = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
-  @media screen and (max-width: 1040px) {
+  @media screen and (max-width: 740px) {
     display: none;
   }
 `;

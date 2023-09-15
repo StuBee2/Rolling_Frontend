@@ -6,12 +6,12 @@ export const HomeItemsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   column-gap: 20px;
-  row-gap: 30px;
+  row-gap: 40px;
 `;
 
 export const HomeItemWrapper = styled.div`
   width: 335px;
-  height: 335px;
+  height: 380px;
   @media screen and (max-width: 320px) {
     height: 290px;
   }
@@ -35,7 +35,7 @@ export const CompanyEtcContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 20px;
+  padding-top: 30px;
 `;
 
 export const CompanyNameAndCreatedAt = styled.p`

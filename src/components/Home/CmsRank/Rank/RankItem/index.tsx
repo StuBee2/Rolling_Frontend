@@ -13,6 +13,7 @@ function RankItem({ rankCategory }: Props) {
   const { data: rankInfo } = useGetCompanyRankSelectQuery(rankCategory, {
     suspense: true,
   });
+
   return (
     <S.RankItemContainer>
       <S.RankCategoryIntroduce>

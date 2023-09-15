@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const RankItemContainer = styled.div`
   width: 100%;
-  height: 270px;
+  height: 490px;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -32,12 +32,12 @@ export const RankItemWrapper = styled.div`
 `;
 
 export const RankItemBox = styled.div`
-  width: 100%;
+  width: 98%;
   height: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
-  border: 1px solid #d9d9d9;
   display: flex;
 `;
 
