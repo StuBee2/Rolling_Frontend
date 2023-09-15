@@ -20,6 +20,16 @@ export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 1393px) {
+    height: 300px;
+  }
+  @media screen and (max-width: 740px) {
+    height: 250px;
+  }
+  @media screen and (max-width: 400px) {
+    height: 200px;
+  }
 `;
 
 export const Semicircle = styled.img<{ top: boolean }>`
@@ -42,9 +52,7 @@ export const InputContainer = styled.form`
   display: flex;
   align-items: center;
   justify-content: space-around;
-
   border-bottom: 3px solid #737b98;
-  height: 157px;
   z-index: 1;
   button {
     background-color: transparent;
@@ -65,7 +73,7 @@ export const InputContainer = styled.form`
     background-color: transparent;
     font-weight: bold;
 
-    color: #737b98;
+    color: #f9fafb;
     font-size: 60px;
 
     ::placeholder {
