@@ -9,7 +9,6 @@ export const Container = styled.div`
 
 export const Title = styled.div`
   font-weight: bold;
-  width: 90%;
 `;
 
 export const Explain = styled.div`

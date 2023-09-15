@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CompanyStatusWrap = styled.div`
-  width: 90%;
+  width: 100%;
   display: flex;
   column-gap: 10px;
   @media screen and (max-width: 565px) {
