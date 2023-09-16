@@ -18,9 +18,6 @@ export const HomeListContainer = styled.div`
 export const HomeListWrapper = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;
@@ -47,4 +44,5 @@ export const HomeItemContainer = styled.div`
   width: 100%;
   height: 100%;
   padding-left: 5px;
+  margin-top: 10px;
 `;

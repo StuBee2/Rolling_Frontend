@@ -20,24 +20,26 @@ function RankItem({ rankCategory }: Props) {
         <img src={smile} alt="이미지 없음" />
         <p>{getCompanyRankIntroduce(rankCategory)}</p>
       </S.RankCategoryIntroduce>
-      <S.RankItemWrapper>
-        {rankInfo?.map((item, idx) => (
-          <S.RankItemBox key={item.companyId.id}>
-            <S.RankingNumber>{idx + 1}</S.RankingNumber>
-            <S.RankingContentContainer>
-              <img src={item.companyDetails.imgUrl || ""} alt="이미지 없음" />
-              <div>
-                <S.RankingCompanyName>
-                  {item.companyDetails.name}
-                </S.RankingCompanyName>
-                <S.RankingCompanyDescription>
-                  {stringEllipsis(item.companyDetails.description, 30)}
-                </S.RankingCompanyDescription>
-              </div>
-            </S.RankingContentContainer>
-          </S.RankItemBox>
-        ))}
-      </S.RankItemWrapper>
+      <S.RankItemListContainer>
+        <S.RankItemWrapper>
+          {rankInfo?.map((item, idx) => (
+            <S.RankItemBox key={item.companyId.id}>
+              <S.RankingNumber>{idx + 1}</S.RankingNumber>
+              <S.RankingContentContainer>
+                <img src={item.companyDetails.imgUrl || ""} alt="이미지 없음" />
+                <div>
+                  <S.RankingCompanyName>
+                    {item.companyDetails.name}
+                  </S.RankingCompanyName>
+                  <S.RankingCompanyDescription>
+                    {stringEllipsis(item.companyDetails.description, 30)}
+                  </S.RankingCompanyDescription>
+                </div>
+              </S.RankingContentContainer>
+            </S.RankItemBox>
+          ))}
+        </S.RankItemWrapper>
+      </S.RankItemListContainer>
     </S.RankItemContainer>
   );
 }
