@@ -13,6 +13,7 @@ export default function Review() {
     suspense: true,
   });
   const [ref, inView] = useInView();
+  const reviewListData = reviewList?.pages[0].data!!;
 
   useEffect(() => {
     if (inView) {
@@ -29,14 +30,19 @@ export default function Review() {
         <img src={write} alt="이미지 없음" />
         <div>
           <S.WriteText>Write</S.WriteText>
+
           <S.UpdateAtListCount>
-            5개월 전 업데이트 · 갯수 {reviewList?.pages[0].data.length!!}
+            {reviewListData.length > 0
+              ? getTimeAgo(reviewListData[0].reviewCreatedAt) +
+                " 업데이트 · 갯수 " +
+                reviewListData?.length
+              : "리뷰를 등록해주세요!"}
           </S.UpdateAtListCount>
         </div>
       </S.CompanyStatusContainer>
 
       <S.ListWrap>
-        {reviewList?.pages[0].data.length!! > 0 ? (
+        {reviewListData?.length!! > 0 ? (
           reviewList?.pages.map((data) =>
             data.data.map((review) => (
               <ReviewItem review={review} key={review.reviewId} />

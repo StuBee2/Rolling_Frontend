@@ -5,9 +5,8 @@ export const ReviewItemContainer = styled.div`
   height: 350px;
   display: flex;
   column-gap: 5px;
-  @media screen and (max-width: 640px) {
-    flex-direction: column;
-    height: 390px;
+  @media screen and (max-width: 450px) {
+    height: 320px;
   }
 `;
 
@@ -15,7 +14,7 @@ export const ReviewItemWrapper = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 15px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
   background-color: rgba(247, 249, 250, 1);
   display: flex;
   align-items: center;
@@ -45,6 +44,14 @@ export const ReviewCompanyInfoContainer = styled.div`
     row-gap: 1rem;
     height: auto;
   }
+`;
+
+export const ReviewRegisteredAtAndDelEditContainer = styled.div`
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const ReviewRegisteredDate = styled.p`
