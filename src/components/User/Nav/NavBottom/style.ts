@@ -8,18 +8,23 @@ export const UserFooter = styled.div`
 
     background-color: #ffffff;
     border-top: 1px solid #d9d9d9;
-    display: inline;
+    border-bottom: 1px solid #d9d9d9;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
   }
 `;
 
 export const UserListWrap = styled.ul`
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  column-gap: 15px;
   font-size: 18px;
   overflow-x: scroll;
-  height: 100%;
   ::-webkit-scrollbar {
     display: none;
   }

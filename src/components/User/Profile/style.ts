@@ -12,7 +12,7 @@ export const Title = styled.div`
 `;
 
 export const Explain = styled.div`
-  font-size: 15px;
+  font-size: 14.7px;
   color: #61677e;
   margin-top: 10px;
 `;

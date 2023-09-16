@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const UserNavBar = styled.div`
   width: 420px;
   height: calc(100vh - 108px);
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   @media screen and (max-width: 1040px) {
     display: none;
   }

@@ -6,30 +6,25 @@ export const Header = styled.div`
   height: 108px;
   font-size: 19px;
   background-color: #f9fafb;
-
   display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+  @media screen and (max-width: 450px) {
+    width: 450px;
+  }
 `;
 
 export const HeaderWrap = styled.div`
   width: 1370px;
   height: 100%;
-
   display: flex;
   align-items: center;
   column-gap: 20px;
   justify-content: space-between;
-  overflow-x: scroll;
   padding: 0 10px 0 10px;
   @media screen and (max-width: 1040px) {
     width: 90%;
-  }
-  @media screen and (min-width: 430px) {
-    ::-webkit-scrollbar {
-      display: none;
-    }
   }
 `;
 

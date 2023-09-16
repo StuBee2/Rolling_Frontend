@@ -33,6 +33,7 @@ export const NickName = styled.span`
   font-weight: bold;
   color: #000;
   font-size: 25px;
+  margin-right: 5px;
 `;
 
 export const EditNickIcon = styled(BsPencilSquare)`

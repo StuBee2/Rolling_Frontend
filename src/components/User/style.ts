@@ -4,11 +4,15 @@ export const UserWrap = styled.div`
   width: 100%;
   height: calc(100vh - 108px);
   background-color: #f9fafb;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 2rem;
+  @media screen and (max-width: 450px) {
+    width: 450px;
+    height: 100%;
+  }
 `;
 
 export const UserContainer = styled.div`

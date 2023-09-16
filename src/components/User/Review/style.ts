@@ -21,7 +21,7 @@ export const CompanyStatusContainer = styled.div`
     flex-direction: column;
     row-gap: 10px;
   }
-  @media screen and (max-width: 410px) {
+  @media screen and (max-width: 450px) {
     width: 100%;
   }
 `;
@@ -42,24 +42,22 @@ export const CompanyAndWriteText = styled.p`
 
 export const ListWrap = styled.div`
   width: 100%;
-  padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  row-gap: 20px;
   justify-content: center;
+  padding-bottom: 2rem;
 `;
 
 export const DelAndEditContainer = styled.div`
-  width: 40px;
-  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  row-gap: 5px;
+  column-gap: 5px;
+  margin-left: 10px;
   img {
     cursor: pointer;
-    width: 90%;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
 
   @media screen and (max-width: 640px) {
