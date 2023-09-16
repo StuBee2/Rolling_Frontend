@@ -11,7 +11,12 @@ export default function Search() {
   useCloseModal(setIsCloseModal);
 
   return (
-    <S.SearchModalWrapper onClick={() => setIsCloseModal(false)}>
+    <S.SearchModalWrapper
+      onClick={() => {
+        setIsCloseModal(false);
+        document.body.style.overflow = "unset";
+      }}
+    >
       <S.SearchContainer onClick={(e) => e.stopPropagation()}>
         <S.Semicircle src={semicircle2} top={true} alt="이미지 없음" />
         <S.InputContainer onSubmit={handleKeywordSubmit}>
