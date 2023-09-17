@@ -5,7 +5,7 @@ export const MyInfoContainer = styled.div`
   height: 250px;
   background-color: #f3f4f5;
   border-radius: 15px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
   padding: 20px;
   display: flex;
   flex-direction: column;
