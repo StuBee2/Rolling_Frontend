@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./style";
 import { CompanyInfoType } from "../../../types/Company/company.type";
 
@@ -7,6 +7,8 @@ export default function Description({
 }: {
   companyInfo: CompanyInfoType;
 }) {
+  const [reviewModalOpen, isReviewModalOpen] = useState<Boolean>(false);
+
   var companyModifiedAt = companyInfo.companyModifiedAt;
   var companyModifiedAtYear = companyModifiedAt.substring(0, 4);
   var companyModifiedAtMonth = companyModifiedAt.substring(5, 7);
@@ -62,8 +64,14 @@ export default function Description({
               ></S.CompanyFacilitiesImage>
             ))}
           </S.CompanyFacilitiesImageList>
+          <S.CompanyReviewBtn
+            onClick={() => {
+              isReviewModalOpen(true);
+            }}
+          >
+            {"리뷰 작성 ✍🏻"}
+          </S.CompanyReviewBtn>
         </S.CompanyInfoMainContainer>
-        <S.CompanyReviewBtn>{"리뷰 작성 ✍🏻"}</S.CompanyReviewBtn>
       </S.CompanyInfoContainer>
     </>
   );

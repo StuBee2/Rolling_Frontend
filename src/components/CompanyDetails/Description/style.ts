@@ -236,7 +236,7 @@ export const CompanyFacilitiesImageList = styled.div`
 export const CompanyFacilitiesImage = styled.img`
   background-color: #d9d9d9;
   width: 295px;
-  height: 150px;
+  height: 165px;
   border-radius: 5px;
   margin: 30px 18px 10px 1px;
   @media screen and (max-width: 1221px) {
@@ -255,7 +255,7 @@ export const CompanyFacilitiesImage = styled.img`
 
 export const CompanyReviewBtn = styled.button`
   padding: 10px 19px 10px 19px;
-  margin-top: 25px;
+  margin: 50px -20px 0 0;
   float: right;
   border-radius: 5px;
   border: none;
@@ -267,17 +267,5 @@ export const CompanyReviewBtn = styled.button`
   font-weight: 500;
   :hover {
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  }
-  margin-right: 6%;
-  @media screen and (max-width: 1221px) {
-    margin-right: 10.8%;
-  }
-  @media screen and (max-width: 1170px) {
-    margin-right: 11.5%;
-  }
-  @media screen and (max-width: 1040px) {
-    margin-right: 11.5%;
-  }
-  @media screen and (max-width: 740px) {
   }
 `;
