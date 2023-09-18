@@ -40,10 +40,10 @@ export default function Nav() {
             </S.PageSelectItem>
           ))}
         </S.PageSelect>
-        <S.Logout onClick={handleLogout}>
+        <S.PageSelectItem onClick={handleLogout}>
           <img src={logout} alt="이미지 없음" />
           <p>로그아웃</p>
-        </S.Logout>
+        </S.PageSelectItem>
       </S.PageSelectContainer>
     </S.UserNavBar>
   );

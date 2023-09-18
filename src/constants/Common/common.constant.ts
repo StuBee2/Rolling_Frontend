@@ -5,6 +5,7 @@ interface Type {
   id: number;
   name: string;
   link: string;
+  requiredToken?: boolean;
 }
 
 export const HEADER_ITEMS: Type[] = [
@@ -20,7 +21,8 @@ export const HEADER_ITEMS: Type[] = [
   },
   {
     id: 2,
-    name: Token.getToken(ACCESS_TOKEN_KEY) ? "기업 등록" : "",
-    link: Token.getToken(ACCESS_TOKEN_KEY) ? "/register" : "",
+    name: "기업등록",
+    link: "/regist",
+    requiredToken: Token.getToken(ACCESS_TOKEN_KEY) ? true : false,
   },
 ];

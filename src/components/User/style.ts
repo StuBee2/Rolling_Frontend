@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const UserWrap = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ export const UserWrap = styled.div`
   justify-content: center;
   padding-bottom: 2rem;
   @media screen and (max-width: 450px) {
-    min-width: 450px;
+    width: 450px;
     height: 100%;
   }
 `;
@@ -49,4 +49,14 @@ export const UserListContainer = styled.div`
 
 export const FontSize = styled.p<{ fontSize: string }>`
   font-size: ${({ fontSize }) => fontSize};
+`;
+
+export const CompanyStatusCommonHover = css`
+  transform: scale(1);
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #5a78f7;
+    transform: scale(0.99);
+  }
 `;

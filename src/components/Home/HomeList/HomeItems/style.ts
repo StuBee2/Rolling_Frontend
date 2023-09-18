@@ -17,12 +17,11 @@ export const HomeItemWrapper = styled.div`
 export const CompanyImage = styled.div<{ image: string }>`
   width: 100%;
   height: 60%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   background: url(${(props) => props.image}) no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: #d9d9d9;
+  background-color: #fff;
   cursor: pointer;
 `;
 

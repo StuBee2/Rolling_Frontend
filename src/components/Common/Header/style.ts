@@ -1,4 +1,5 @@
 import { AiOutlineUser } from "@react-icons/all-files/ai/AiOutlineUser";
+import { HoverAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const Header = styled.div`
@@ -20,18 +21,19 @@ export const HeaderWrap = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  column-gap: 20px;
-  /* overflow-y: scroll; */
+  column-gap: 10px;
   justify-content: space-between;
-  padding: 0 10px 0 10px;
   @media screen and (max-width: 1040px) {
     width: 90%;
+  }
+  @media screen and (min-width: 450px) {
+    padding: 0 10px 0 10px;
   }
 `;
 
 export const PageContainer = styled.div`
   display: flex;
-  gap: 25px;
+  gap: 10px;
   align-items: center;
 
   img {
@@ -42,23 +44,31 @@ export const PageContainer = styled.div`
   ul {
     display: flex;
     align-items: center;
-    gap: 25px;
+    column-gap: 5px;
   }
 `;
 
-export const PageList = styled.li<{ isSelect: boolean }>`
+export const PageList = styled.li<{
+  isSelect: boolean;
+  requiredToken?: boolean;
+}>`
   cursor: pointer;
   font-weight: ${(props) => props.isSelect && "bold"};
+  width: 80px;
+  height: 45px;
+  display: ${(props) => !props.requiredToken && "none"};
+  ${HoverAnimation};
 `;
 
 export const LoginSearchContainer = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 10px;
+`;
 
-  div {
-    cursor: pointer;
-  }
+export const HoverIconContainer = styled.div`
+  width: 40px;
+  height: 40px;
+  ${HoverAnimation};
 `;
 
 export const Search = styled.img`
@@ -69,5 +79,13 @@ export const Search = styled.img`
 
 export const UserIcon = styled(AiOutlineUser)`
   cursor: pointer;
-  position: relative;
+`;
+
+export const SignInText = styled.p`
+  cursor: pointer;
+  margin-left: 5px;
+  transition: 
+  &:hover {
+    font-weight: bold;
+  }
 `;

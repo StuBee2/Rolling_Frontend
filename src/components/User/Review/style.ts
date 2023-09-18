@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import { CompanyStatusCommonHover } from "../style";
 
 export const CompanyStatusContainer = styled.div`
   width: 312px;
   height: 125px;
   background-color: rgba(72, 105, 246, 1);
   border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   column-gap: 20px;
@@ -21,6 +21,7 @@ export const CompanyStatusContainer = styled.div`
     flex-direction: column;
     row-gap: 10px;
   }
+  ${CompanyStatusCommonHover}
   @media screen and (max-width: 450px) {
     width: 100%;
   }
@@ -47,21 +48,4 @@ export const ListWrap = styled.div`
   row-gap: 20px;
   justify-content: center;
   padding-bottom: 2rem;
-`;
-
-export const DelAndEditContainer = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
-  margin-left: 10px;
-  img {
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-  }
-
-  @media screen and (max-width: 640px) {
-    flex-direction: row;
-    column-gap: 5px;
-  }
 `;

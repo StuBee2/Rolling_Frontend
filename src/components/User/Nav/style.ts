@@ -92,19 +92,3 @@ export const PageSelectItem = styled.div<{ isSelect?: boolean }>`
     background-color: ${(props) => (props.isSelect ? "#2b3f94" : "#dddddd")};
   }
 `;
-
-export const Logout = styled.div`
-  width: 100%;
-  height: 20%;
-  font-size: 18px;
-  line-height: 60px;
-  padding-left: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  img {
-    width: 24px;
-    height: 24px;
-  }
-`;

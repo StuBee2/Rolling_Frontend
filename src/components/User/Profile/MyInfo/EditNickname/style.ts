@@ -14,12 +14,6 @@ export const AddNickNameForm = styled.form`
     outline: none;
     background-color: #f3f4f5;
   }
-
-  @media screen and (max-width: 450px) {
-    flex-direction: column;
-    row-gap: 5px;
-    align-items: normal;
-  }
 `;
 
 export const AddNickNameBtn = styled.button`
@@ -34,6 +28,9 @@ export const NickName = styled.span`
   color: #000;
   font-size: 25px;
   margin-right: 5px;
+  &:hover {
+    color: rgba(72, 105, 246, 1);
+  }
 `;
 
 export const EditNickIcon = styled(BsPencilSquare)`

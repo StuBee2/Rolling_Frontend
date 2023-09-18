@@ -42,4 +42,8 @@ export const RankCategoryLi = styled.li<{ isSelect: boolean }>`
   font-size: 14.4px;
   color: ${(props) => props.isSelect && "#1d1e5a"};
   cursor: pointer;
+  &:hover {
+    color: #1d1e5a;
+    font-weight: bold;
+  }
 `;

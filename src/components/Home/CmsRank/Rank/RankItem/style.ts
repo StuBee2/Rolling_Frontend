@@ -39,11 +39,11 @@ export const RankItemWrapper = styled.div`
 export const RankItemBox = styled.div`
   width: 98%;
   height: 80px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
   display: flex;
+  border: 1px solid #dddddd;
 `;
 
 export const RankingNumber = styled.div`

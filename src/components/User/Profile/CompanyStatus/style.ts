@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CompanyStatusCommonHover } from "../../style";
 
 export const CompanyStatusWrap = styled.div`
   width: 100%;
@@ -17,12 +18,7 @@ export const CompanyStatusContainer = styled.div`
   background-color: #4869f6;
   border-radius: 10px;
   padding: 30px;
-  transform: scale(1);
-  transition: all 0.1s ease-in-out;
-  &:hover {
-    background-color: #5a78f7;
-    transform: scale(0.99);
-  }
+  ${CompanyStatusCommonHover}
 `;
 
 export const CompanyStatus = styled.div`

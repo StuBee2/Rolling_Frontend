@@ -8,7 +8,7 @@ import CONFIG from "@src/config/config.json";
 import { responseHandler } from "./responseHandler";
 
 export const customAxios = axios.create({
-  baseURL: process.env.API_KEY,
+  baseURL: CONFIG.SERVER,
 });
 
 const accessToken = Token.getToken(ACCESS_TOKEN_KEY);

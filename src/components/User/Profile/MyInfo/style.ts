@@ -1,3 +1,4 @@
+import { HoverAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const MyInfoContainer = styled.div`

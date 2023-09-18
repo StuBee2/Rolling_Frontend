@@ -1,7 +1,6 @@
 import { ReviewListType } from "@src/types/Review/review.type";
 import * as S from "./style";
 import { useState } from "react";
-import { DelAndEditContainer } from "../style";
 import { changeRankStatusToArrayObject } from "@src/utils/Rank/changeRankStatusToArrayObject";
 import { getDateText, stringEllipsis } from "@stubee2/stubee2-rolling-util";
 import { StarRating } from "@stubee2/stubee2-rolling-ui";
@@ -28,7 +27,7 @@ export default function ReviewItem({ review }: Props) {
                 {getDateText(new Date(review?.reviewCreatedAt))} 등록
               </S.ReviewRegisteredDate>
               {isClickDots && reviewId === review?.reviewId ? (
-                <DelAndEditContainer>
+                <S.DelAndEditContainer>
                   {USER_REVIEW_SETUP_ITEMS.map((item) => (
                     <img
                       key={item.id}
@@ -37,16 +36,18 @@ export default function ReviewItem({ review }: Props) {
                       alt="이미지 없음"
                     />
                   ))}
-                </DelAndEditContainer>
+                </S.DelAndEditContainer>
               ) : (
-                <BiDotsVerticalRounded
-                  size={25}
-                  cursor="pointer"
-                  onClick={() => {
-                    setIsClickDots(true);
-                    setRevieId(review?.reviewId);
-                  }}
-                />
+                <S.SetUpIconContainer>
+                  <BiDotsVerticalRounded
+                    size={25}
+                    cursor="pointer"
+                    onClick={() => {
+                      setIsClickDots(true);
+                      setRevieId(review?.reviewId);
+                    }}
+                  />
+                </S.SetUpIconContainer>
               )}
             </S.ReviewRegisteredAtAndDelEditContainer>
             <S.ReviewCompanyContainer>

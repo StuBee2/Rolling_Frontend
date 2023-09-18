@@ -1,3 +1,4 @@
+import { HoverAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const ReviewItemContainer = styled.div`
@@ -14,8 +15,7 @@ export const ReviewItemWrapper = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  background-color: rgba(247, 249, 250, 1);
+  border: 1px solid #dddddd;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,6 +58,29 @@ export const ReviewRegisteredDate = styled.p`
   font-size: 1.1rem;
   font-weight: bold;
   color: #61677e;
+`;
+
+export const DelAndEditContainer = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  margin-left: 10px;
+  img {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+
+  @media screen and (max-width: 640px) {
+    flex-direction: row;
+    column-gap: 5px;
+  }
+`;
+
+export const SetUpIconContainer = styled.div`
+  width: 30px;
+  height: 30px;
+  ${HoverAnimation};
 `;
 
 export const ReviewCompanyContainer = styled.div`
