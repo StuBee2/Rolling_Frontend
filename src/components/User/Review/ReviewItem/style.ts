@@ -41,7 +41,7 @@ export const ReviewCompanyInfoContainer = styled.div`
   flex-direction: column;
   row-gap: 2rem;
   @media screen and (max-width: 495px) {
-    row-gap: 1rem;
+    row-gap: 0;
     height: auto;
   }
 `;

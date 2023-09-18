@@ -78,9 +78,18 @@ export const PageSelectItem = styled.div<{ isSelect?: boolean }>`
   display: flex;
   align-items: center;
   column-gap: 10px;
+  transform: scale(1);
+  transition: all 0.1s ease-in-out;
   img {
     width: 24px;
     height: 24px;
+  }
+  &:hover {
+    background-color: ${(props) => (props.isSelect ? "#24357b" : "#eeeeee")};
+    transform: scale(0.98);
+  }
+  &:active {
+    background-color: ${(props) => (props.isSelect ? "#2b3f94" : "#dddddd")};
   }
 `;
 

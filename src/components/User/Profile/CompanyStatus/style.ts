@@ -17,11 +17,11 @@ export const CompanyStatusContainer = styled.div`
   background-color: #4869f6;
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transform: scale(1);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   &:hover {
-    transform: scale(1.03);
+    background-color: #5a78f7;
+    transform: scale(0.99);
   }
 `;
 

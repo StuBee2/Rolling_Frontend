@@ -21,6 +21,7 @@ export const HeaderWrap = styled.div`
   display: flex;
   align-items: center;
   column-gap: 20px;
+  /* overflow-y: scroll; */
   justify-content: space-between;
   padding: 0 10px 0 10px;
   @media screen and (max-width: 1040px) {
@@ -38,7 +39,6 @@ export const PageContainer = styled.div`
     height: 50px;
     cursor: pointer;
   }
-
   ul {
     display: flex;
     align-items: center;

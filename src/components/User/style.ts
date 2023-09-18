@@ -10,7 +10,7 @@ export const UserWrap = styled.div`
   justify-content: center;
   padding-bottom: 2rem;
   @media screen and (max-width: 450px) {
-    width: 450px;
+    min-width: 450px;
     height: 100%;
   }
 `;
