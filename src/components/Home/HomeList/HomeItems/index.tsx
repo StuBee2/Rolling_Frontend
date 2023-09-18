@@ -5,15 +5,19 @@ import { useInView } from "react-intersection-observer";
 import { useRecoilValue } from "recoil";
 import * as S from "./style";
 import { getDateText } from "@src/utils/Date/getDateCounter";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function HomeItems() {
+  const [ref, inView] = useInView();
+  const navigate = useNavigate();
+  const { id: companyId } = useParams();
+
   const searchApiUrl = useRecoilValue(CompanyAllAndSearchAtom);
   const { data: companyList, fetchNextPage } =
     useGetAllAndSearchCompanyListQuery(
       { keyword: searchApiUrl },
       { suspense: true }
     );
-  const [ref, inView] = useInView();
 
   useEffect(() => {
     if (inView) {
@@ -26,7 +30,10 @@ export default function HomeItems() {
       {companyList?.pages[0].data.length ? (
         companyList.pages.map((data) =>
           data.data.map((item) => (
-            <S.HomeItemWrapper key={item.companyId.id}>
+            <S.HomeItemWrapper
+              key={item.companyId.id}
+              onClick={() => navigate(`/companyDetails/${item.companyId.id}`)}
+            >
               <S.CompanyImage image={item.companyDetails.imgUrl || ""} />
               <S.CompanyEtcContainer>
                 <S.CompanyNameAndCreatedAt>

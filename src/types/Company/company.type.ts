@@ -36,14 +36,15 @@ export interface CompanyInfoType {
   companyDescription: string;
   companyImgUrl: string;
   totalGrade: number;
-  balanceGrade: number;
-  salaryGrade: number;
-  welfareGrade: number;
+  salaryAndBenefits: number;
+  workLifeBalance: number;
+  organizationalCulture: number;
+  careerAdvancement: number;
   companyCreatedAt: string;
   companyModifiedAt: string;
   registrantId: string;
   memberNickName: string;
-  memberSocialId: string;
+  memberSocialLoginId: string;
   memberImageUrl: string;
 }
 
