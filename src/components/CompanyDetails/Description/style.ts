@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface StyleProps {
+  NickNameStringSize: boolean;
+}
+
 export const CompanyInfoContainer = styled.div`
   display: block;
 
@@ -46,7 +50,7 @@ export const MemberProfile = styled.img`
   }
 `;
 
-export const MemberNameBox = styled.div`
+export const MemberNameBox = styled.div<StyleProps>`
   width: 250px;
   height: 90px;
   background-color: #4869f6;
@@ -54,7 +58,8 @@ export const MemberNameBox = styled.div`
   border-radius: 4px;
   margin: 15px 0 0 -100px;
   z-index: 2;
-  padding: 20px 0 20px 115px;
+  padding: ${(props) =>
+    props.NickNameStringSize ? "10px 0 20px 115px" : "20px 0 20px 115px"};
   @media screen and (max-width: 1221px) {
     width: 200px;
     height: 80px;
@@ -195,6 +200,7 @@ export const CompanyImage = styled.img`
   height: 60px;
   background-color: #d9d9d9;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: white;
 `;
 
 export const CompanyName = styled.p`
@@ -217,9 +223,10 @@ export const CompanyAddress = styled.p`
 export const CompanyDescription = styled.p`
   color: #080c2b;
   font-family: "Pretendard";
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 550;
   margin-top: 20px;
+  line-height: 1.7;
 `;
 
 export const CompanyInfoContentLine = styled.div`
@@ -268,4 +275,8 @@ export const CompanyReviewBtn = styled.button`
   :hover {
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
+`;
+
+export const FirmReviewModalZPosition = styled.div`
+  position: relative;
 `;

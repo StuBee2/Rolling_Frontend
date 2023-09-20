@@ -3,7 +3,7 @@ import * as R from "./style";
 import StarRating from "./ReviewStarScope";
 import { useRecoilState } from "recoil";
 
-import Modal from "../../../Modal";
+import Modal from "../../Modal/index";
 import useModal from "@src/hooks/util/useModal";
 import { FaPen } from "@react-icons/all-files/fa/FaPen";
 import {
@@ -36,22 +36,6 @@ const FirmReview = (props: any) => {
   const [welfareGrade, setwelfareGrade] =
     useRecoilState<number>(welfareGradeAtom);
   const { close, isOpen, open } = useModal();
-
-  console.log(position);
-  console.log(careerPath);
-  console.log(etc);
-
-  useEffect(() => {
-    console.log(balanceGrade);
-  }, [balanceGrade]);
-
-  useEffect(() => {
-    console.log(salaryGrade);
-  }, [salaryGrade]);
-
-  useEffect(() => {
-    console.log(welfareGrade);
-  }, [welfareGrade]);
 
   const balanceGradeChange = (rating: number) => {
     setbalanceGrade(rating);
