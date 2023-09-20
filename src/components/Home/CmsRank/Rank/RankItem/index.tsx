@@ -32,7 +32,7 @@ function RankItem({ rankCategory }: Props) {
                     {item.companyDetails.name}
                   </S.RankingCompanyName>
                   <S.RankingCompanyDescription>
-                    {stringEllipsis(item.companyDetails.description, 30)}
+                    {stringEllipsis(item.companyDetails.description, 18)}
                   </S.RankingCompanyDescription>
                 </div>
               </S.RankingContentContainer>
