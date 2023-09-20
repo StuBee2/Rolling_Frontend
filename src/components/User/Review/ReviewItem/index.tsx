@@ -14,7 +14,7 @@ interface Props {
 }
 
 export default function ReviewItem({ review }: Props) {
-  const [reviewId, setRevieId] = useState("");
+  const [reviewId, setReviewId] = useState("");
   const rankStatus = changeRankStatusToArrayObject(review);
   const { isClickDots, setIsClickDots, hanldeSetUpClick } = useSetUpReview();
   return (
@@ -44,20 +44,14 @@ export default function ReviewItem({ review }: Props) {
                     cursor="pointer"
                     onClick={() => {
                       setIsClickDots(true);
-                      setRevieId(review?.reviewId);
+                      setReviewId(review?.reviewId);
                     }}
                   />
                 </S.SetUpIconContainer>
               )}
             </S.ReviewRegisteredAtAndDelEditContainer>
             <S.ReviewCompanyContainer>
-              <img
-                src={
-                  review?.companyImgUrl ||
-                  "https://cdn.dynews.co.kr/news/photo/201804/403722_64988_08.jpg"
-                }
-                alt="이미지 없음"
-              />
+              <img src={review?.companyImgUrl || ""} alt="이미지 없음" />
               <S.ReviewCompanyContentContainer>
                 <S.ReviewCompanyName>{review?.companyName}</S.ReviewCompanyName>
                 <ul>

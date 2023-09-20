@@ -1,49 +1,35 @@
-import { useRecoilState } from "recoil";
-import {
-  companyAddressAtom,
-  companyInfoAtom,
-  companyLogoAtom,
-  companyNameAtom,
-} from "@src/stores/company/company.store";
-import { useCallback } from "react";
-import { useRef, MutableRefObject } from "react";
+import { ChangeEvent, useCallback } from "react";
+import { useRef, MutableRefObject, useState } from "react";
 import { customAxios } from "@src/libs/Axios/customAxios";
-import { QueryClient } from "react-query";
-import { usePostCompanyRegisterMutation } from "@src/queries/Company/company.query";
 import { CompanyParam } from "@src/repositories/Company/company.param";
 import { useNavigate } from "react-router-dom";
 
 export const useCompany = () => {
-  const [firmaddress, setFrimAddress] =
-    useRecoilState<string>(companyAddressAtom);
-  const [firminfo, setFrimInfo] = useRecoilState<string>(companyInfoAtom);
-  const [firmname, setFrimName] = useRecoilState<string>(companyNameAtom);
-  const [firmlogo, setFirmLogo] = useRecoilState<string>(companyLogoAtom);
-
-  const queryClient = new QueryClient();
-  const CompanyMutation = usePostCompanyRegisterMutation();
+  const [formData, setFormData] = useState(new FormData());
+  const [imgSrc, setImgSrc] = useState<any>(null);
   const navigate = useNavigate();
 
-  const onAddressChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setFrimAddress(e.target.value);
-    },
-    [setFrimAddress]
-  );
+  const [companyData, setCompanyData] = useState<CompanyParam>({
+    name: "",
+    address: "",
+    description: "",
+    imgUrl: "",
+  });
 
-  const onInfoChange = useCallback(
-    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      setFrimInfo(e.target.value);
-    },
-    [setFrimInfo]
-  );
+  const onNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setCompanyData((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const onNameChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setFrimName(e.target.value);
-    },
-    [setFrimName]
-  );
+  const onAddressChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setCompanyData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const onDescriptionChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setCompanyData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const imgRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
 
@@ -53,51 +39,45 @@ export const useCompany = () => {
     }
   };
 
-  const onFirmRegister = useCallback(() => {
-    const data: CompanyParam = {
-      name: firmname,
-      address: firmaddress,
-      description: firminfo,
-      imgUrl: firmlogo,
-    };
-    console.log(firmlogo);
-    CompanyMutation.mutate(data, {
-      onSuccess: () => {
-        queryClient.invalidateQueries("/company");
-        console.log(data);
-        navigate("/");
-      },
-      onError: (e: any) => {
-        console.log(e);
-      },
+  const uploadImg = useCallback(async (e: any) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    return new Promise<void>((resolve) => {
+      reader.onload = () => {
+        setImgSrc(reader.result || null);
+        formData.append("file", file);
+      };
     });
-  }, [firmaddress, firmname, firminfo, firmlogo]);
+  }, []);
 
-  const uploadImg = useCallback(
-    async (e: any) => {
-      const file = e.target.files[0];
-      const formData = new FormData();
-      formData.append("file", file);
+  const onUploadCompany = async () => {
+    try {
+      const FileImg = await customAxios.post("/file", formData);
 
-      try {
-        const { data } = await customAxios.post("/file", formData);
+      const CompnayDatas = {
+        name: companyData.name,
+        address: companyData.description,
+        description: companyData.description,
+        imgUrl: FileImg.data,
+      };
 
-        setFirmLogo(data);
-        console.log(data);
-      } catch (e) {
-        console.log("파일 업로드 실패");
-      }
-    },
-    [setFirmLogo]
-  );
+      await customAxios.post("/company", CompnayDatas);
+      navigate("/");
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return {
-    onAddressChange,
-    onInfoChange,
-    onNameChange,
     onClickImg,
     uploadImg,
     imgRef,
-    onFirmRegister,
+    onAddressChange,
+    onDescriptionChange,
+    onNameChange,
+    imgSrc,
+    onUploadCompany,
   };
 };

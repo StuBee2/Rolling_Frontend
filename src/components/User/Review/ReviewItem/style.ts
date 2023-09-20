@@ -99,6 +99,7 @@ export const ReviewCompanyContainer = styled.div`
     height: 100px;
     border-radius: 10px;
     object-fit: cover;
+    border: 1px solid #dddddd;
   }
 `;
 

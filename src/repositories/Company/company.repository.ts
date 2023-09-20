@@ -28,7 +28,7 @@ export interface CompanyRepository {
   }: CommonPageParam): Promise<CompanyInfiniteScrollType>;
 
   getCompanySearchList(
-    { keyword}: CompanyKeywordParam,
+    { keyword }: CompanyKeywordParam,
     { page }: CommonPageParam
   ): Promise<CompanyInfiniteScrollType>;
 
