@@ -27,10 +27,10 @@ export const AddNickNameBtn = styled.button`
   column-gap: 2px;
 `;
 
-export const NickName = styled.span`
+export const NickName = styled.span<{ isHaveNickName: boolean }>`
   font-weight: bold;
   color: #000;
-  font-size: 25px;
+  font-size: ${({ isHaveNickName }) => (isHaveNickName ? "25px" : "20px")};
 `;
 
 export const EditNickNameHoverContainer = styled.div`
