@@ -7,7 +7,7 @@ export interface MemberType {
     socialLoginId: string;
     loginType: string;
     name: string;
-    email: string;
+    email?: string;
     imageUrl: string;
   };
   memberDetails: {
@@ -21,5 +21,5 @@ export interface MemberType {
 export interface NavMemberProfileType {
   imgUrl: string;
   name: string;
-  email: string;
+  email?: string;
 }

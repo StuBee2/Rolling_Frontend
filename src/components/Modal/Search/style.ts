@@ -51,7 +51,7 @@ export const InputContainer = styled.form`
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  column-gap: 10px;
   border-bottom: 3px solid #737b98;
   z-index: 1;
   button {
