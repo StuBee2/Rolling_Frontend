@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./style";
 import { ImStarHalf, ImStarFull } from "react-icons/im";
-import { CompanyInfoType } from "@src/types/Company/company.type";
+import { CompanyInfoType } from "../../../types/Company/company.type";
 
 export default function Horoscope({
   companyInfo,

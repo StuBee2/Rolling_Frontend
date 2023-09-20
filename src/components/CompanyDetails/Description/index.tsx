@@ -33,6 +33,7 @@ export default function Description({
             </S.MemberSocialLoginId>
           </S.MemberNameBox>
         </S.MemberInfoContainer>
+
         <S.CompanyInfoMainContainer>
           <S.CompanyInfoMemberWritingDay>
             {companyModifiedAtYear}

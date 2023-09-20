@@ -19,7 +19,7 @@ export const CompanyInfoContainer = styled.div`
 
 export const MemberInfoContainer = styled.div`
   display: flex;
-  margin: 70px 0 0 190px;
+  padding: 70px 0 0 200px;
   width: 100%;
   height: 100%;
 `;
@@ -29,10 +29,9 @@ export const MemberProfile = styled.img`
   width: 120px;
   height: 120px;
   border-radius: 100%;
-  overflow: hidden;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   z-index: 3;
-
+  background-color: white;
   @media screen and (max-width: 1221px) {
     width: 100px;
     height: 100px;
@@ -198,7 +197,6 @@ export const CompanyImage = styled.img`
   border-radius: 5px;
   width: 60px;
   height: 60px;
-  background-color: #d9d9d9;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: white;
 `;
