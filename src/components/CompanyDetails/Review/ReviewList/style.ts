@@ -3,6 +3,27 @@ import styled from "styled-components";
 export const CompanyReviewListContainer = styled.div`
   margin-top: 13%;
   margin-left: 8%;
+  @media screen and (max-width: 1393px) {
+    margin-left: 9%;
+  }
+  @media screen and (max-width: 1221px) {
+    margin-left: 4%;
+  }
+  @media screen and (max-width: 1170px) {
+    margin-left: 5%;
+  }
+  @media screen and (max-width: 1045px) {
+    margin-left: 7%;
+  }
+  @media screen and (max-width: 800px) {
+    margin-left: 10%;
+  }
+  @media screen and (max-width: 670px) {
+    margin-left: 12%;
+  }
+  @media screen and (max-width: 610px) {
+    margin-left: 17%;
+  }
 `;
 
 export const CompanyReviewListTitleBox = styled.div`
@@ -31,6 +52,34 @@ export const CompanyRevieBox = styled.div`
   background: #f7f9fa;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 30px 30px 30px 30px;
+  @media screen and (max-width: 1393px) {
+    width: 900px;
+    height: 100%;
+  }
+  @media screen and (max-width: 1221px) {
+    width: 850px;
+    height: 100%;
+  }
+  @media screen and (max-width: 1170px) {
+    width: 750px;
+    height: 100%;
+  }
+  @media screen and (max-width: 1045px) {
+    width: 700px;
+    height: 100%;
+  }
+  @media screen and (max-width: 800px) {
+    width: 580px;
+    height: 100%;
+  }
+  @media screen and (max-width: 670px) {
+    width: 500px;
+    height: 100%;
+  }
+  @media screen and (max-width: 610px) {
+    width: 400px;
+    height: 100%;
+  }
 `;
 
 export const RevieMemberProfileImage = styled.img`
@@ -45,8 +94,8 @@ export const ReviewMemberName = styled.p`
   font-family: "Pretendard";
   font-size: 1rem;
   font-weight: 400;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 2%;
+  margin-left: 2%;
 `;
 
 export const MemberCompanyReviewContent = styled.pre`
@@ -57,11 +106,18 @@ export const MemberCompanyReviewContent = styled.pre`
   line-height: 1.5;
   margin-left: 200px;
   margin-top: 12px;
+
+  @media screen and (max-width: 1221px) {
+    display: none;
+  }
 `;
 
 export const MemberCompanyContentBox = styled.div`
   margin-top: -40px;
   margin-left: 10px;
+  @media screen and (max-width: 1221px) {
+    display: none;
+  }
 `;
 
 export const MemberCompanyContentTitle = styled.h1`
