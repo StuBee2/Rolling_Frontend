@@ -45,7 +45,7 @@ function UserInfoItem() {
           <img src={wonderIcon} alt="이미지 없음" />
           <p>내 기업이 등록되어있나요?</p>
         </S.RegistTextContainer>
-        <S.CompanyRegistBtn onClick={() => navigate("/")}>
+        <S.CompanyRegistBtn onClick={() => navigate("/register")}>
           내 기업 등록하기
         </S.CompanyRegistBtn>
       </div>
