@@ -111,7 +111,7 @@ export const useGetAllAndSearchCompanyListQuery = (
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
-  
+
 export const useGetCompanyListIdQuery = (
   { id }: CommonIdParam,
   options?: UseInfiniteQueryOptions<

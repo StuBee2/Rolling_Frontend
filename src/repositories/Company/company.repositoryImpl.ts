@@ -4,6 +4,7 @@ import {
   CompanyInfoType,
   CompanyListType,
 } from "@src/types/Company/company.type";
+import { useState } from "react";
 import { CommonIdParam, CommonPageParam } from "../common.param";
 import {
   CompanyIdParam,
