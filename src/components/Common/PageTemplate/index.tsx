@@ -9,7 +9,8 @@ import {
 } from "@src/stores/common/common.store";
 import Search from "../../Modal/Search";
 import Info from "../../Modal/MyInfo";
-import { useAuthTopScroll } from "@src/hooks/Common/useAutoTopScroll";
+import { useAuthTopScroll } from "@stubee2/stubee2-rolling-util";
+import styled from "styled-components";
 
 interface Props {
   children: ReactNode;
@@ -27,7 +28,7 @@ export default function PageTemplate({ children }: Props) {
       {!hideHeader && <Header />}
       {isCloseModal && <Search />}
       {myInfoModal && <Info />}
-      {children}
+      <>{children}</>
     </>
   );
 }

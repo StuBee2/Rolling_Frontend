@@ -10,3 +10,15 @@ export const UserSkeletonStatus = styled.div`
   }
   ${SkeletonAnimation};
 `;
+
+export const UserInfoSkeletonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+`;

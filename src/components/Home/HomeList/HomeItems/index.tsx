@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useRecoilValue } from "recoil";
 import * as S from "./style";
-import { getDateText } from "@src/utils/Date/getDateCounter";
+import { getDateText, stringEllipsis } from "@stubee2/stubee2-rolling-util";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function HomeItems() {
@@ -42,10 +42,13 @@ export default function HomeItems() {
                 </S.CompanyNameAndCreatedAt>
                 <div>
                   <S.CompanyDescription>
-                    {item.companyDetails.description}
+                    {stringEllipsis(item.companyDetails.description, 20)}
                   </S.CompanyDescription>
                   <S.CompanyAddress>
-                    {item.companyDetails.companyAddress.address}
+                    {stringEllipsis(
+                      item.companyDetails.companyAddress.address,
+                      28
+                    )}
                   </S.CompanyAddress>
                 </div>
                 <S.CompanyTagUl>

@@ -5,7 +5,14 @@ export const RankContainer = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 20px;
+  overflow-y: hidden;
+`;
+
+export const RankCategoriesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
 `;
 
 export const RankTitle = styled.div`
@@ -27,16 +34,23 @@ export const RankTitle = styled.div`
 
 export const RankCategoriesUl = styled.ul`
   display: flex;
-  column-gap: 20px;
-  font-size: 15px;
+  column-gap: 15px;
   overflow-x: scroll;
+  padding-top: 20px;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const RankCategoryLi = styled.li<{ isSelect: boolean }>`
   font-weight: ${(props) => props.isSelect && "bold"};
   border-bottom: ${(props) => props.isSelect && "2px solid #1d1e5a"};
   padding-bottom: ${(props) => props.isSelect && "3px"};
-  font-size: 15px;
+  font-size: 14.4px;
   color: ${(props) => props.isSelect && "#1d1e5a"};
   cursor: pointer;
+  &:hover {
+    color: #1d1e5a;
+    font-weight: bold;
+  }
 `;

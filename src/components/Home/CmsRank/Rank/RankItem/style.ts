@@ -2,10 +2,7 @@ import styled from "styled-components";
 
 export const RankItemContainer = styled.div`
   width: 100%;
-  height: 270px;
-  display: flex;
-  position: relative;
-  flex-direction: column;
+  height: 90%;
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;
@@ -20,25 +17,33 @@ export const RankCategoryIntroduce = styled.div`
   display: flex;
   align-items: center;
   column-gap: 5px;
+  img {
+    width: 24px;
+    headers: 24px;
+  }
+`;
+
+export const RankItemListContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const RankItemWrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   row-gap: 12px;
-  position: relative;
 `;
 
 export const RankItemBox = styled.div`
-  width: 100%;
+  width: 98%;
   height: 80px;
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
-  border: 1px solid #d9d9d9;
   display: flex;
+  border: 1px solid #dddddd;
 `;
 
 export const RankingNumber = styled.div`

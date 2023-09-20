@@ -8,6 +8,7 @@ interface Storage {
   getToken(key: string): string | undefined;
   setToken(key: string, value: string): void;
   clearToken(): void;
+  removeToken(key: string): void;
 }
 
 class Token implements Storage {
@@ -22,6 +23,10 @@ class Token implements Storage {
   public clearToken() {
     cookie.removeCookie(ACCESS_TOKEN_KEY);
     cookie.removeCookie(REFRESH_TOKEN_KEY);
+  }
+
+  public removeToken(key: string) {
+    cookie.removeCookie(key);
   }
 }
 

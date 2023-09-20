@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const HomeListContainer = styled.div`
-  width: calc(100% - 630px);
+  width: calc(100% - 620px);
   height: 100%;
-  padding-left: 12px;
   display: flex;
   @media screen and (max-width: 1393px) {
     justify-content: center;
@@ -17,17 +16,22 @@ export const HomeListContainer = styled.div`
 `;
 
 export const HomeListWrapper = styled.div`
-  width: 98%;
+  width: 100%;
   height: 100%;
+
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;
   }
   @media screen and (max-width: 1393px) {
     width: 335px;
+  }
+  @media screen and (min-width: 740px) {
+    padding-left: 20px;
   }
 `;
 
@@ -45,4 +49,5 @@ export const HomeItemContainer = styled.div`
   width: 100%;
   height: 100%;
   padding-left: 5px;
+  margin-top: 10px;
 `;

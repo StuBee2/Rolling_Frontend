@@ -6,26 +6,22 @@ export const HomeItemsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   column-gap: 20px;
-  row-gap: 30px;
+  row-gap: 40px;
 `;
 
 export const HomeItemWrapper = styled.div`
   width: 335px;
-  height: 335px;
-  @media screen and (max-width: 320px) {
-    height: 290px;
-  }
+  height: 380px;
 `;
 
 export const CompanyImage = styled.div<{ image: string }>`
   width: 100%;
   height: 60%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   background: url(${(props) => props.image}) no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: #d9d9d9;
+  background-color: #fff;
   cursor: pointer;
 `;
 
@@ -35,7 +31,7 @@ export const CompanyEtcContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 20px;
+  padding-top: 30px;
 `;
 
 export const CompanyNameAndCreatedAt = styled.p`

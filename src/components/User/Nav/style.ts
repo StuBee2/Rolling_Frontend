@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const UserNavBar = styled.div`
   width: 420px;
   height: calc(100vh - 108px);
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   @media screen and (max-width: 1040px) {
     display: none;
   }
@@ -36,43 +40,6 @@ export const UserEmail = styled.p`
   color: #61677e;
 `;
 
-export const UserNickName = styled.div`
-  font-size: 15px;
-  cursor: pointer;
-  form {
-    display: flex;
-    column-gap: 10px;
-    input {
-      border: 1px solid #4869f6;
-      outline: none;
-      padding-left: 5px;
-      border-radius: 5px;
-      color: #1d1e5a;
-    }
-  }
-  &:hover {
-    color: #1d1e5a;
-  }
-`;
-
-export const EditAndCancelContainer = styled.div`
-  display: flex;
-  column-gap: 2px;
-  button {
-    width: 35px;
-    height: 20px;
-    cursor: pointer;
-    color: #fff;
-    background-color: #4869f6;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    &:hover {
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-    }
-  }
-`;
-
 export const PageSelectContainer = styled.div`
   width: 100%;
   height: 300px;
@@ -93,10 +60,10 @@ export const PageSelect = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  row-gap: 15px;
   border-bottom: 2px solid #dee0e6;
   font-size: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 `;
 
 export const PageSelectItem = styled.div<{ isSelect?: boolean }>`
@@ -111,24 +78,17 @@ export const PageSelectItem = styled.div<{ isSelect?: boolean }>`
   display: flex;
   align-items: center;
   column-gap: 10px;
+  transform: scale(1);
+  transition: all 0.1s ease-in-out;
   img {
     width: 24px;
     height: 24px;
   }
-`;
-
-export const Logout = styled.div`
-  width: 100%;
-  height: 20%;
-  font-size: 18px;
-  line-height: 60px;
-  padding-left: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  img {
-    width: 24px;
-    height: 24px;
+  &:hover {
+    background-color: ${(props) => (props.isSelect ? "#24357b" : "#eeeeee")};
+    transform: scale(0.98);
+  }
+  &:active {
+    background-color: ${(props) => (props.isSelect ? "#2b3f94" : "#dddddd")};
   }
 `;

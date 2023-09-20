@@ -55,3 +55,7 @@ export interface CompanyInfoId {
 export interface CompanyID {
   companyId: string;
 }
+
+export interface CompanyStarRaingProps {
+  rankStatus: { id: number; title: string; star: number }[];
+}

@@ -103,3 +103,10 @@ export const usePostReviewMutation = () => {
   );
   return mutation;
 };
+
+export const useDeleteMyReviewMutation = () => {
+  const mutation = useMutation((reviewId: string) =>
+    ReviewRepositoryImpl.deleteMyReview(reviewId)
+  );
+  return mutation;
+};

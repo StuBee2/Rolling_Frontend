@@ -2,8 +2,8 @@ import * as S from "./style";
 import semicircle2 from "@src/assets/Search/semicircle2.svg";
 import semicircle1 from "@src/assets/Search/semicircle1.svg";
 import Search2 from "@src/assets/Search/Search2.svg";
-import { useCloseModal } from "@src/hooks/Common/useCloseModal";
 import { useSearchKeyword } from "@src/hooks/Company/useSearchKeyword";
+import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 
 export default function Search() {
   const { handleKeywordChange, handleKeywordSubmit, keyword, setIsCloseModal } =
@@ -11,7 +11,12 @@ export default function Search() {
   useCloseModal(setIsCloseModal);
 
   return (
-    <S.SearchModalWrapper onClick={() => setIsCloseModal(false)}>
+    <S.SearchModalWrapper
+      onClick={() => {
+        setIsCloseModal(false);
+        document.body.style.overflow = "unset";
+      }}
+    >
       <S.SearchContainer onClick={(e) => e.stopPropagation()}>
         <S.Semicircle src={semicircle2} top={true} alt="이미지 없음" />
         <S.InputContainer onSubmit={handleKeywordSubmit}>

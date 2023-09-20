@@ -48,6 +48,10 @@ class ReviewRepositoryImpl implements ReviewRepository {
     const { data } = await customAxios.post("/review", reviewInfo);
     return data;
   }
+
+  public async deleteMyReview(reviewId: string): Promise<void> {
+    await customAxios.delete(`/review/${reviewId}`);
+  }
 }
 
 export default new ReviewRepositoryImpl();

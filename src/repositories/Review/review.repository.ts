@@ -23,6 +23,7 @@ export interface ReviewRepository {
   getReviewInfoId({ id }: CommonIdParam): Promise<ReviewInfoIdType>;
 
   postReview(reviewInfo: ReviewParam): Promise<ReviewPostResponse>;
+  deleteMyReview(reviewId: string): Promise<void>;
 }
 
 export interface ReviewParam {

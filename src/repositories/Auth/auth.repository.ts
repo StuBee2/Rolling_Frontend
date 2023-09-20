@@ -1,7 +1,13 @@
 export interface AuthRepository {
-  postRefreshToken(token: string): Promise<newAccessTokenParam>;
+  postRefreshToken(
+    refreshToken: RefreshTokenParam
+  ): Promise<newAccessTokenResponse>;
 }
 
-export interface newAccessTokenParam {
+export interface newAccessTokenResponse {
   accessToken: string;
+}
+
+export interface RefreshTokenParam {
+  refreshToken: string;
 }

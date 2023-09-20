@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { CompanyStatusCommonHover } from "../../style";
 
 export const CompanyStatusWrap = styled.div`
-  width: 90%;
+  width: 100%;
   display: flex;
   column-gap: 10px;
   @media screen and (max-width: 565px) {
@@ -17,20 +18,11 @@ export const CompanyStatusContainer = styled.div`
   background-color: #4869f6;
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transform: scale(1);
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    transform: scale(1.03);
-  }
+  ${CompanyStatusCommonHover}
 `;
 
 export const CompanyStatus = styled.div`
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 20px;
-
   img {
     width: 53px;
     height: 53px;
@@ -38,18 +30,17 @@ export const CompanyStatus = styled.div`
 `;
 
 export const CompanyNumber = styled.div`
-  width: 45px;
-  height: 45px;
   background-color: #ffffff;
   border-radius: 4rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: #4869f6;
-  text-align: center;
-  line-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 22px;
 `;
 
-export const CompanyNumberText = styled.div`
+export const CompanyNumberText = styled.p`
   color: #f9fafb;
   font-size: 18px;
   font-weight: bold;

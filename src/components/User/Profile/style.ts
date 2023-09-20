@@ -9,11 +9,10 @@ export const Container = styled.div`
 
 export const Title = styled.div`
   font-weight: bold;
-  width: 90%;
 `;
 
 export const Explain = styled.div`
-  font-size: 15px;
+  font-size: 14.7px;
   color: #61677e;
   margin-top: 10px;
 `;

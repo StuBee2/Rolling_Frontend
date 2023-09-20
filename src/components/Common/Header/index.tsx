@@ -27,17 +27,14 @@ export default function Header() {
     <S.Header>
       <S.HeaderWrap>
         <S.PageContainer>
-          <img
-            src={logo}
-            onClick={() => handlePageClick("홈 피드", "/")}
-            alt="이미지 없음"
-          />
+          <img src={logo} onClick={() => navigate("/")} alt="이미지 없음" />
           <ul>
             {HEADER_ITEMS.map((item) => (
               <S.PageList
                 key={item.id}
                 onClick={() => handlePageClick(item.name, item.link)}
                 isSelect={item.link === pathname}
+                requiredToken={item.requiredToken}
               >
                 {item.name}
               </S.PageList>
@@ -46,24 +43,27 @@ export default function Header() {
         </S.PageContainer>
 
         <S.LoginSearchContainer>
-          <S.Search
-            src={Search1}
+          <S.HoverIconContainer
             onClick={() => {
               setIsCloseModal(true);
               document.body.style.overflow = "hidden";
             }}
-            alt="이미지 없음"
-          />
+          >
+            <S.Search src={Search1} alt="이미지 없음" />
+          </S.HoverIconContainer>
           {token.getToken(ACCESS_TOKEN_KEY) ? (
-            <S.UserIcon
-              size={30}
+            <S.HoverIconContainer
               onClick={() => {
                 setMyInfoModal(true);
                 document.body.style.overflow = "hidden";
               }}
-            />
+            >
+              <S.UserIcon size={30} />
+            </S.HoverIconContainer>
           ) : (
-            <div onClick={() => navigate("/signin")}>로그인</div>
+            <S.SignInText onClick={() => navigate("/signin")}>
+              로그인
+            </S.SignInText>
           )}
         </S.LoginSearchContainer>
       </S.HeaderWrap>

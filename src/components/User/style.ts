@@ -1,28 +1,31 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const UserWrap = styled.div`
   width: 100%;
   height: calc(100vh - 108px);
   background-color: #f9fafb;
-
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  padding-bottom: 2rem;
+  @media screen and (max-width: 450px) {
+    width: 450px;
+    height: 100%;
+  }
 `;
 
 export const UserContainer = styled.div`
   width: 1370px;
   height: 100%;
   display: flex;
-
-  @media screen and (max-width: 1620px) {
-    width: 1270px;
-  }
-  @media screen and (max-width: 1355px) {
-    width: 1000px;
+  @media screen and (max-width: 1385px) {
+    width: 100%;
+    padding: 0 10px 0 10px;
   }
   @media screen and (max-width: 1040px) {
-    width: 100%;
     flex-direction: column;
+    height: calc(100% - 60px);
   }
 `;
 
@@ -31,7 +34,6 @@ export const UserListContainer = styled.div`
   height: 100%;
   padding-top: 40px;
 
-  padding-left: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,5 +44,19 @@ export const UserListContainer = styled.div`
   }
   @media screen and (max-width: 1040px) {
     width: 100%;
+  }
+`;
+
+export const FontSize = styled.p<{ fontSize: string }>`
+  font-size: ${({ fontSize }) => fontSize};
+`;
+
+export const CompanyStatusCommonHover = css`
+  transform: scale(1);
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #5a78f7;
+    transform: scale(0.99);
   }
 `;
