@@ -31,16 +31,12 @@ export default function EditNickname({ nickName }: Props) {
         </S.AddNickNameForm>
       ) : (
         <S.AddNickNameBtn onClick={handleEditNickNameQuestion}>
-          {nickName ? (
-            <>
-              <S.NickName>{nickName}</S.NickName>
-              <S.EditNickNameHoverContainer>
-                <S.EditNickIcon size={15} />
-              </S.EditNickNameHoverContainer>
-            </>
-          ) : (
-            "닉네임 추가하기"
-          )}
+          <S.NickName isHaveNickName={nickName !== ""}>
+            {nickName || "닉네임 추가하기"}
+          </S.NickName>
+          <S.EditNickNameHoverContainer>
+            <S.EditNickIcon size={15} />
+          </S.EditNickNameHoverContainer>
         </S.AddNickNameBtn>
       )}
     </>
