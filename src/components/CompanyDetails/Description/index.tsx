@@ -18,15 +18,14 @@ export default function Description({
   var companyModifiedAtDay = companyModifiedAt.substring(8, 10);
 
   const companyFacilitiesList = ["", "", ""];
+  const memberNickNameLength: number = companyInfo?.memberNickName.length;
 
   return (
     <>
       <S.CompanyInfoContainer>
         <S.MemberInfoContainer>
           <S.MemberProfile src={companyInfo.memberImageUrl} alt="Error" />
-          <S.MemberNameBox
-            NickNameStringSize={companyInfo.memberNickName.length > 8}
-          >
+          <S.MemberNameBox NickNameStringSize={memberNickNameLength > 8}>
             <S.MemberNickName>{companyInfo.memberNickName}</S.MemberNickName>
             <S.MemberSocialLoginId>
               {companyInfo.memberSocialLoginId}
