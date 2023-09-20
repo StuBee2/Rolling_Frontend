@@ -4,25 +4,27 @@ export const UserFooter = styled.div`
   display: none;
   @media screen and (max-width: 1040px) {
     width: 100%;
-    height: 80px;
+    height: 60px;
 
     background-color: #ffffff;
-    box-shadow: 5px 1px 8px 0 rgba(0, 0, 0, 0.3);
-
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
   }
 `;
 
 export const UserListWrap = styled.ul`
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  column-gap: 15px;
   font-size: 18px;
   overflow-x: scroll;
-
   ::-webkit-scrollbar {
     display: none;
   }

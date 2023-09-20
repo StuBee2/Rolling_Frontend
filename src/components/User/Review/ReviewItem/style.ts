@@ -1,21 +1,22 @@
+import { HoverAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const ReviewItemContainer = styled.div`
   width: 100%;
-  height: 500px;
+  height: 350px;
   display: flex;
   column-gap: 5px;
-  @media screen and (max-width: 495px) {
-    height: auto;
+  @media screen and (max-width: 450px) {
+    height: 320px;
   }
 `;
 
 export const ReviewItemWrapper = styled.div`
-  width: calc(100% - 40px);
+  width: 100%;
   height: 100%;
+  background-color: #f9fafb;
   border-radius: 15px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-  background-color: rgba(247, 249, 250, 1);
+  border: 1px solid #dddddd;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,11 +40,19 @@ export const ReviewCompanyInfoContainer = styled.div`
   height: 60%;
   display: flex;
   flex-direction: column;
-  row-gap: 3rem;
+  row-gap: 2rem;
   @media screen and (max-width: 495px) {
-    row-gap: 1rem;
+    row-gap: 0;
     height: auto;
   }
+`;
+
+export const ReviewRegisteredAtAndDelEditContainer = styled.div`
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const ReviewRegisteredDate = styled.p`
@@ -52,19 +61,42 @@ export const ReviewRegisteredDate = styled.p`
   color: #61677e;
 `;
 
+export const DelAndEditContainer = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  margin-left: 10px;
+  img {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+
+  @media screen and (max-width: 640px) {
+    flex-direction: row;
+    column-gap: 5px;
+  }
+`;
+
+export const SetUpIconContainer = styled.div`
+  width: 30px;
+  height: 30px;
+  ${HoverAnimation};
+`;
+
 export const ReviewCompanyContainer = styled.div`
   width: 100%;
   height: 130px;
   display: flex;
+  align-items: center;
   column-gap: 2rem;
   cursor: pointer;
-  white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
 
   img {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
     object-fit: cover;
   }
@@ -77,8 +109,9 @@ export const ReviewCompanyContentContainer = styled.div`
 
   ul {
     display: flex;
-    flex-direction: column;
-    row-gap: 10px;
+    column-gap: 10px;
+    font-size: 15px;
+    white-space: nowrap;
 
     li {
       span {
@@ -90,8 +123,10 @@ export const ReviewCompanyContentContainer = styled.div`
 `;
 
 export const ReviewCompanyName = styled.p`
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
+  margin-top: 3px;
+  white-space: nowrap;
 `;
 
 export const ReviewCompanyContent = styled.p`
@@ -119,7 +154,7 @@ export const ReviewCompanyCultureContainer = styled.div`
   div {
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
+    row-gap: 1rem;
     p {
       text-align: center;
     }

@@ -9,14 +9,18 @@ export const HomeContainer = styled.div`
   background-color: #f9fafb;
   padding: 0 15px 0 15px;
   white-space: nowrap;
+  @media screen and (max-width: 450px) {
+    width: 450px;
+    height: 100%;
+  }
 `;
 
 export const HomeWrapper = styled.div`
   width: 1370px;
   height: 100%;
+  padding-top: 2rem;
   padding-bottom: 20px;
   display: flex;
-  column-gap: 11px;
   @media screen and (max-width: 1040px) {
     width: 90%;
   }

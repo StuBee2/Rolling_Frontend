@@ -32,10 +32,6 @@ export const InfoModalContainer = styled.div`
   top: 0;
   right: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-
-  @media screen and (max-width: 360px) {
-    width: 285px;
-  }
 `;
 
 export const Profile = styled.div`

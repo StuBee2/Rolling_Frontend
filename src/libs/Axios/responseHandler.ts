@@ -14,10 +14,9 @@ export const responseHandler = async (config: AxiosError) => {
 
   if (access_token && refresh_token && config.response?.status === 401) {
     try {
-      const { accessToken } = await authRepositoryImpl.postRefreshToken(
-        refresh_token
-      );
-
+      const { accessToken } = await authRepositoryImpl.postRefreshToken({
+        refreshToken: refresh_token,
+      });
       Token.setToken(ACCESS_TOKEN_KEY, accessToken);
 
       customAxios.defaults.headers.common[

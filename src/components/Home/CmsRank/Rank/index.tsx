@@ -10,23 +10,26 @@ export default function Rank() {
   const [rankCategorySelect, setRankCategorySelect] = useState("total");
   return (
     <S.RankContainer>
-      <S.RankTitle>
-        <img src={rank} alt="이미지 없음" />
-        <p>
-          <span>BEST</span> 기업 랭킹
-        </p>
-      </S.RankTitle>
-      <S.RankCategoriesUl>
-        {COMPANY_RANK_ITMES.map((item) => (
-          <S.RankCategoryLi
-            key={item.id}
-            onClick={() => setRankCategorySelect(item.categoryName!!)}
-            isSelect={rankCategorySelect === item.categoryName}
-          >
-            {item.name}
-          </S.RankCategoryLi>
-        ))}
-      </S.RankCategoriesUl>
+      <S.RankCategoriesContainer>
+        <S.RankTitle>
+          <img src={rank} alt="이미지 없음" />
+          <p>
+            <span>BEST</span> 기업 랭킹
+          </p>
+        </S.RankTitle>
+        <S.RankCategoriesUl>
+          {COMPANY_RANK_ITMES.map((item) => (
+            <S.RankCategoryLi
+              key={item.id}
+              onClick={() => setRankCategorySelect(item.categoryName!!)}
+              isSelect={rankCategorySelect === item.categoryName}
+            >
+              {item.name}
+            </S.RankCategoryLi>
+          ))}
+        </S.RankCategoriesUl>
+      </S.RankCategoriesContainer>
+
       <ErrorBoundary fallback={<>Error :)</>}>
         <Suspense fallback={<RankSkeleton />}>
           <RankItem rankCategory={rankCategorySelect} />

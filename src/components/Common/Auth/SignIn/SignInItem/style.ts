@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SignInItemForm = styled.form`
-  width: 515px;
+  width: 530px;
   height: 630px;
   display: flex;
   flex-direction: column;
@@ -26,30 +26,11 @@ export const Title = styled.p`
 `;
 
 export const SignInBox = styled.div`
-  height: 350px;
+  height: 370px;
   display: flex;
   flex-direction: column;
   row-gap: 40px;
   position: relative;
-
-  div {
-    p {
-      font-weight: 500;
-      font-size: 25px;
-      margin-bottom: 5px;
-    }
-    input {
-      width: 100%;
-      height: 55px;
-      outline: none;
-      border-radius: 5px;
-      color: rgba(114, 119, 122, 1);
-      border: 1px solid rgba(189, 194, 208, 1);
-      font-size: 18px;
-      padding-left: 20px;
-      font-weight: 350;
-    }
-  }
 
   ul {
     display: flex;
@@ -65,22 +46,29 @@ export const SignInBox = styled.div`
   }
 
   button {
-    width: 130px;
-    height: 55px;
-    background-color: #1d1e5a;
-    color: #fff;
-    font-weight: 400;
-    font-size: 18px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     position: absolute;
     bottom: 0;
     right: 0;
   }
 `;
+
+export const IdPwText = styled.p`
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 5px;
+`;
+
+export const InputStyle = {
+  width: "100%",
+  height: "55px",
+  outline: "none",
+  borderRadius: "5px",
+  color: "rgba(114, 119, 122, 1)",
+  border: "1px solid rgba(189, 194, 208, 1)",
+  fontSize: "18px",
+  paddingLeft: " 20px",
+  fontWeight: "350",
+};
 
 export const SocailSignInBtn = styled.button`
   width: 100%;

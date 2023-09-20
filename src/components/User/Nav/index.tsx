@@ -6,7 +6,6 @@ import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import { MyMemberInfo } from "@src/stores/member/member.store";
 import { useSetRecoilState } from "recoil";
 import { useEffect } from "react";
-import EditNickname from "./EditNickname";
 import logout from "@src/assets/Auth/logout.svg";
 
 export default function Nav() {
@@ -25,9 +24,6 @@ export default function Nav() {
       <S.MemberInfoContainer>
         <S.UserImg src={myInfo?.socialDetails.imageUrl} />
         <S.UserName>{myInfo?.socialDetails.name}</S.UserName>
-        <S.UserNickName>
-          <EditNickname nickName={myInfo?.memberDetails.nickName!!} />
-        </S.UserNickName>
         <S.UserEmail>{myInfo?.socialDetails.email}</S.UserEmail>
       </S.MemberInfoContainer>
 
@@ -44,10 +40,10 @@ export default function Nav() {
             </S.PageSelectItem>
           ))}
         </S.PageSelect>
-        <S.Logout onClick={handleLogout}>
+        <S.PageSelectItem onClick={handleLogout}>
           <img src={logout} alt="이미지 없음" />
           <p>로그아웃</p>
-        </S.Logout>
+        </S.PageSelectItem>
       </S.PageSelectContainer>
     </S.UserNavBar>
   );

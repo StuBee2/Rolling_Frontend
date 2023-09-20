@@ -1,7 +1,9 @@
+import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { useState } from "react";
 
 export function useLogin() {
-  const [credentials, setCredentials] = useState<{ id: string; pw: string }>({
+  const { rollingToast } = useRollingToast();
+  const [credentials, setCredentials] = useState<Record<string, string>>({
     id: "",
     pw: "",
   });
@@ -18,13 +20,13 @@ export function useLogin() {
     e.preventDefault();
     const { id, pw } = credentials;
     if (id.trim() === "") {
-      return window.alert("아이디를 입력해주세요");
+      return rollingToast("아이디를 입력해주세요", "info");
     }
     if (pw.trim() === "") {
-      return window.alert("비밀헌호를 입력해주세요");
+      return rollingToast("비밀번호를 입력해주세요", "info");
     }
-    return window.alert("깃허브를 로그인을 이용해주세요");
+    return rollingToast("깃허브를 로그인을 이용해주세요", "info");
   };
 
-  return { handleChange, handleSubmit, ...credentials };
+  return { handleChange, handleSubmit, credentials, setCredentials };
 }

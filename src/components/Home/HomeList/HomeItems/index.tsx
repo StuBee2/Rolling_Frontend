@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useRecoilValue } from "recoil";
 import * as S from "./style";
-import { getDateText } from "@src/utils/Date/getDateCounter";
+import { getDateText } from "@stubee2/stubee2-rolling-util";
 
 export default function HomeItems() {
   const searchApiUrl = useRecoilValue(CompanyAllAndSearchAtom);

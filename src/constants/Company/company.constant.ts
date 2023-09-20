@@ -6,7 +6,7 @@ export const COMPANY_RANK_ITMES = [
   },
   {
     id: 1,
-    name: "균형순위",
+    name: "워라벨순위",
     categoryName: "balance",
   },
   {

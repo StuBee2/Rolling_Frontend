@@ -1,4 +1,5 @@
 import { AiOutlineUser } from "@react-icons/all-files/ai/AiOutlineUser";
+import { HoverAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const Header = styled.div`
@@ -6,37 +7,33 @@ export const Header = styled.div`
   height: 108px;
   font-size: 19px;
   background-color: #f9fafb;
-
   display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+  @media screen and (max-width: 450px) {
+    width: 450px;
+  }
 `;
 
 export const HeaderWrap = styled.div`
   width: 1370px;
   height: 100%;
-
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 10px;
   justify-content: space-between;
-
-  overflow-x: scroll;
-  padding: 0 10px 0 10px;
   @media screen and (max-width: 1040px) {
     width: 90%;
   }
-  @media screen and (min-width: 430px) {
-    ::-webkit-scrollbar {
-      display: none;
-    }
+  @media screen and (min-width: 450px) {
+    padding: 0 10px 0 10px;
   }
 `;
 
 export const PageContainer = styled.div`
   display: flex;
-  gap: 25px;
+  gap: 10px;
   align-items: center;
 
   img {
@@ -44,27 +41,34 @@ export const PageContainer = styled.div`
     height: 50px;
     cursor: pointer;
   }
-
   ul {
     display: flex;
     align-items: center;
-    gap: 25px;
+    column-gap: 5px;
   }
 `;
 
-export const PageList = styled.li<{ isSelect: boolean }>`
+export const PageList = styled.li<{
+  isSelect: boolean;
+  requiredToken?: boolean;
+}>`
   cursor: pointer;
   font-weight: ${(props) => props.isSelect && "bold"};
+  width: 80px;
+  height: 45px;
+  display: ${(props) => !props.requiredToken && "none"};
+  ${HoverAnimation};
 `;
 
 export const LoginSearchContainer = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 10px;
+`;
 
-  div {
-    cursor: pointer;
-  }
+export const HoverIconContainer = styled.div`
+  width: 40px;
+  height: 40px;
+  ${HoverAnimation};
 `;
 
 export const Search = styled.img`
@@ -75,5 +79,13 @@ export const Search = styled.img`
 
 export const UserIcon = styled(AiOutlineUser)`
   cursor: pointer;
-  position: relative;
+`;
+
+export const SignInText = styled.p`
+  cursor: pointer;
+  margin-left: 5px;
+  transition: 
+  &:hover {
+    font-weight: bold;
+  }
 `;

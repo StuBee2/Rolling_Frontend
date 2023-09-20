@@ -36,9 +36,10 @@ export interface CompanyInfoType {
   companyDescription: string;
   companyImgUrl: string;
   totalGrade: number;
-  balanceGrade: number;
-  salaryGrade: number;
-  welfareGrade: number;
+  salaryAndBenefits: number;
+  workLifeBalance: number;
+  organizationalCulture: number;
+  careerAdvancement: number;
   companyCreatedAt: string;
   companyModifiedAt: string;
   registrantId: string;
@@ -53,4 +54,8 @@ export interface CompanyInfoId {
 
 export interface CompanyID {
   companyId: string;
+}
+
+export interface CompanyStarRaingProps {
+  rankStatus: { id: number; title: string; star: number }[];
 }
