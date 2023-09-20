@@ -51,7 +51,9 @@ export default function ReviewItem({ review }: Props) {
               )}
             </S.ReviewRegisteredAtAndDelEditContainer>
             <S.ReviewCompanyContainer>
-              <img src={review?.companyImgUrl || ""} alt="이미지 없음" />
+              <S.ReviewCompanyImgContainer>
+                <img src={review?.companyImgUrl || ""} alt="이미지 없음" />
+              </S.ReviewCompanyImgContainer>
               <S.ReviewCompanyContentContainer>
                 <S.ReviewCompanyName>{review?.companyName}</S.ReviewCompanyName>
                 <ul>

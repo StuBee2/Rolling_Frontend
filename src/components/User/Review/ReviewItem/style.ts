@@ -92,14 +92,18 @@ export const ReviewCompanyContainer = styled.div`
   column-gap: 2rem;
   cursor: pointer;
   overflow-x: scroll;
-  overflow-y: hidden;
+`;
 
+export const ReviewCompanyImgContainer = styled.div`
+  width: 100px;
+  height: 100px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
   img {
     width: 100px;
     height: 100px;
-    border-radius: 10px;
     object-fit: cover;
-    border: 1px solid #dddddd;
+    overflow: hidden;
   }
 `;
 
