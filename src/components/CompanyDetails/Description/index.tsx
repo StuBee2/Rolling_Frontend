@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import * as S from "./style";
 import { CompanyInfoType } from "../../../types/Company/company.type";
+import useModal from "@src/hooks/util/useModal";
+import FirmReview from "@src/components/Common/Company/Review";
 
 export default function Description({
   companyInfo,
 }: {
   companyInfo: CompanyInfoType;
 }) {
-  const [reviewModalOpen, isReviewModalOpen] = useState<Boolean>(false);
+  const { open } = useModal();
 
   var companyModifiedAt = companyInfo.companyModifiedAt;
   var companyModifiedAtYear = companyModifiedAt.substring(0, 4);
@@ -28,6 +30,7 @@ export default function Description({
             </S.MemberSocialLoginId>
           </S.MemberNameBox>
         </S.MemberInfoContainer>
+
         <S.CompanyInfoMainContainer>
           <S.CompanyInfoMemberWritingDay>
             {companyModifiedAtYear}
@@ -66,11 +69,14 @@ export default function Description({
           </S.CompanyFacilitiesImageList>
           <S.CompanyReviewBtn
             onClick={() => {
-              isReviewModalOpen(true);
+              open();
             }}
           >
             {"리뷰 작성 ✍🏻"}
           </S.CompanyReviewBtn>
+          <div>
+            <FirmReview />
+          </div>
         </S.CompanyInfoMainContainer>
       </S.CompanyInfoContainer>
     </>

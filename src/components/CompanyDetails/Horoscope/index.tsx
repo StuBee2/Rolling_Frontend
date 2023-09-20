@@ -2,7 +2,6 @@ import React from "react";
 import * as S from "./style";
 import { ImStarHalf, ImStarFull } from "react-icons/im";
 import { CompanyInfoType } from "../../../types/Company/company.type";
-import CompanyTestImage from "../../../assets/testImage/CompanyTestImage.png";
 
 export default function Horoscope({
   companyInfo,
@@ -30,7 +29,7 @@ export default function Horoscope({
     <>
       <S.CompanyHoroscopeContainer>
         <S.CompanyTitle>
-          <S.CompanyImage src={CompanyTestImage} alt="Error" />
+          <S.CompanyImage src={companyInfo.companyImgUrl}></S.CompanyImage>
           <S.CompanyName>{companyInfo.companyName}</S.CompanyName>
         </S.CompanyTitle>
         <S.HoroscopeContainer>

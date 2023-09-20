@@ -13,6 +13,7 @@ export const RatingBox = styled.div`
 
 export const CompanyTitle = styled.div`
   width: 100%;
+  height: auto;
   text-align: center;
 `;
 
@@ -21,13 +22,7 @@ export const CompanyImage = styled.img`
   height: 100px;
   border-radius: 5px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-  @media screen and (max-width: 1040px) {
-    width: 90px;
-    height: 90px;
-  }
-  @media screen and (max-width: 740px) {
-  }
+  background-color: white;
 `;
 
 export const CompanyName = styled.h1`

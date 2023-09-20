@@ -1,11 +1,5 @@
-import { useEffect, ChangeEvent } from "react";
-import * as R from "./style";
-import StarRating from "./ReviewStarScope";
+import React, { useEffect, ChangeEvent } from "react";
 import { useRecoilState } from "recoil";
-
-import Modal from "../../../Modal";
-import useModal from "@src/hooks/util/useModal";
-import { FaPen } from "@react-icons/all-files/fa/FaPen";
 import {
   balanceGradeAtom,
   companyIdAtom,
@@ -15,55 +9,38 @@ import {
   salaryGradeAtom,
   welfareGradeAtom,
 } from "@src/stores/review/review.store";
+import useModal from "@src/hooks/util/useModal";
+import { FaPen } from "@react-icons/all-files/fa/FaPen";
+import StarRating from "./ReviewStarScope";
+import Modal from "../../../Modal";
+import * as R from "./style";
 import { useReview } from "@src/hooks/FirmReview/useReview";
 
 const FirmReview = (props: any) => {
-  const [companyidatom, setCompanyIdAtom] = useRecoilState<string | undefined>(
-    companyIdAtom
-  );
+  const [companyIdAtomValue, setCompanyIdAtom] = useRecoilState<
+    string | undefined
+  >(companyIdAtom);
   const [position, setPosition] = useRecoilState<string>(reviewPosition);
-  const [careerPath, setCarreerPath] = useRecoilState<string>(reviewCareerPath);
+  const [careerPath, setCareerPath] = useRecoilState<string>(reviewCareerPath);
   const [etc, setEtc] = useRecoilState<string>(reviewEtc);
+  const [balanceGrade, setBalanceGrade] =
+    useRecoilState<number>(balanceGradeAtom);
+  const [salaryGrade, setSalaryGrade] = useRecoilState<number>(salaryGradeAtom);
+  const [welfareGrade, setWelfareGrade] =
+    useRecoilState<number>(welfareGradeAtom);
+  const { close, isOpen } = useModal();
   const {
     onPositionChange,
     onCareerPathChange,
     onEtcChange,
     onReviewRegister,
   } = useReview();
-  const [balanceGrade, setbalanceGrade] =
-    useRecoilState<number>(balanceGradeAtom);
-  const [salaryGrade, setsalaryGrade] = useRecoilState<number>(salaryGradeAtom);
-  const [welfareGrade, setwelfareGrade] =
-    useRecoilState<number>(welfareGradeAtom);
-  const { close, isOpen, open } = useModal();
 
-  console.log(position);
-  console.log(careerPath);
-  console.log(etc);
-
-  useEffect(() => {
-    console.log(balanceGrade);
-  }, [balanceGrade]);
-
-  useEffect(() => {
-    console.log(salaryGrade);
-  }, [salaryGrade]);
-
-  useEffect(() => {
-    console.log(welfareGrade);
-  }, [welfareGrade]);
-
-  const balanceGradeChange = (rating: number) => {
-    setbalanceGrade(rating);
-  };
-
-  const salaryGradeChange = (rating: number) => {
-    setsalaryGrade(rating);
-  };
-
-  const welfareChange = (rating: number) => {
-    setwelfareGrade(rating);
-  };
+  const handleRatingChange =
+    (ratingStateSetter: React.Dispatch<React.SetStateAction<number>>) =>
+    (rating: number) => {
+      ratingStateSetter(rating);
+    };
 
   return (
     <R.Container>
@@ -111,7 +88,7 @@ const FirmReview = (props: any) => {
                 <StarRating
                   totalStars={5}
                   initialRating={balanceGrade}
-                  onChangeRating={balanceGradeChange}
+                  onChangeRating={handleRatingChange(setBalanceGrade)}
                 />
 
                 <R.Text isText={false}>연봉별점</R.Text>
@@ -119,7 +96,7 @@ const FirmReview = (props: any) => {
                 <StarRating
                   totalStars={5}
                   initialRating={salaryGrade}
-                  onChangeRating={salaryGradeChange}
+                  onChangeRating={handleRatingChange(setSalaryGrade)}
                 />
 
                 <R.Text isText={false}>복지별점</R.Text>
@@ -127,7 +104,7 @@ const FirmReview = (props: any) => {
                 <StarRating
                   totalStars={5}
                   initialRating={welfareGrade}
-                  onChangeRating={welfareChange}
+                  onChangeRating={handleRatingChange(setWelfareGrade)}
                 />
 
                 <R.Text isText={true}>
