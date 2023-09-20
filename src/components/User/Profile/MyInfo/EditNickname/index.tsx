@@ -34,7 +34,9 @@ export default function EditNickname({ nickName }: Props) {
           {nickName ? (
             <>
               <S.NickName>{nickName}</S.NickName>
-              <S.EditNickIcon size={15} />
+              <S.EditNickNameHoverContainer>
+                <S.EditNickIcon size={15} />
+              </S.EditNickNameHoverContainer>
             </>
           ) : (
             "닉네임 추가하기"

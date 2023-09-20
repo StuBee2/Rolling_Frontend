@@ -19,7 +19,7 @@ export const UserContainer = styled.div`
   width: 1370px;
   height: 100%;
   display: flex;
-  @media screen and (max-width: 1355px) {
+  @media screen and (max-width: 1385px) {
     width: 100%;
     padding: 0 10px 0 10px;
   }

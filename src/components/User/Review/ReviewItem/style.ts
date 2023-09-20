@@ -14,6 +14,7 @@ export const ReviewItemContainer = styled.div`
 export const ReviewItemWrapper = styled.div`
   width: 100%;
   height: 100%;
+  background-color: #f9fafb;
   border-radius: 15px;
   border: 1px solid #dddddd;
   display: flex;

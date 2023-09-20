@@ -44,6 +44,7 @@ export const MyInfoAbleContainer = styled.div`
     height: 85px;
     border-radius: 4rem;
     object-fit: cover;
+    border: 1px solid #dddddd;
   }
 `;
 

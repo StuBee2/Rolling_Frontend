@@ -5,7 +5,14 @@ export const RankContainer = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 20px;
+  overflow-y: hidden;
+`;
+
+export const RankCategoriesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
 `;
 
 export const RankTitle = styled.div`

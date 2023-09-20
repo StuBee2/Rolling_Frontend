@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BsPencilSquare } from "@react-icons/all-files/bs/BsPencilSquare";
+import { HoverAnimation } from "@src/styles/common.style";
 
 export const AddNickNameForm = styled.form`
   display: flex;
@@ -21,22 +22,26 @@ export const AddNickNameBtn = styled.button`
   outline: none;
   cursor: pointer;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  column-gap: 2px;
 `;
 
 export const NickName = styled.span`
   font-weight: bold;
   color: #000;
   font-size: 25px;
-  margin-right: 5px;
-  &:hover {
-    color: rgba(72, 105, 246, 1);
-  }
+`;
+
+export const EditNickNameHoverContainer = styled.div`
+  width: 40px;
+  height: 40px;
+  ${HoverAnimation};
 `;
 
 export const EditNickIcon = styled(BsPencilSquare)`
   width: 20px;
   height: 20px;
-  margin-left: 3px;
 `;
 
 export const EditAndCancelContainer = styled.div`

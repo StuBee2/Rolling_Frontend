@@ -6,6 +6,7 @@ import {
 import Token from "../Token/Token";
 import CONFIG from "@src/config/config.json";
 import { responseHandler } from "./responseHandler";
+import { requestHandler } from "./requestHandler";
 
 export const customAxios = axios.create({
   baseURL: CONFIG.SERVER,
@@ -21,4 +22,5 @@ if (accessToken) {
   delete customAxios.defaults.headers.common[REQUEST_TOKEN_KEY];
 }
 
+customAxios.interceptors.request.use(requestHandler, (response) => response);
 customAxios.interceptors.response.use((response) => response, responseHandler);

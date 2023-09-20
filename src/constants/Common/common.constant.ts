@@ -22,7 +22,7 @@ export const HEADER_ITEMS: Type[] = [
   {
     id: 2,
     name: "기업등록",
-    link: "/regist",
+    link: "/register",
     requiredToken: Token.getToken(ACCESS_TOKEN_KEY) ? true : false,
   },
 ];

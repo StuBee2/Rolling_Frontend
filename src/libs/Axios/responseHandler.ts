@@ -17,8 +17,6 @@ export const responseHandler = async (config: AxiosError) => {
       const { accessToken } = await authRepositoryImpl.postRefreshToken({
         refreshToken: refresh_token,
       });
-      console.log(accessToken);
-      Token.removeToken(ACCESS_TOKEN_KEY);
       Token.setToken(ACCESS_TOKEN_KEY, accessToken);
 
       customAxios.defaults.headers.common[
