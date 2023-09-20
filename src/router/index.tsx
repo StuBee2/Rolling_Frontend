@@ -4,10 +4,8 @@ import AuthLoadingPage from "../pages/Auth/AuthLoadingPage";
 import SignInPage from "../pages/Auth/SignInPage";
 import UserPage from "../pages/UserPage";
 import NotFound from "../components/Common/NotFound";
-import RegisterPage from "../pages/RegisterPage";
-import ReviewPage from "../pages/ReviewPage";
 import { ROUTE_ITEMS } from "../constants/Router/router.constant";
-import CompanyDetail from "../components/Common/Detail";
+import CompanyDetailPage from "../pages/CompanyDetailPage/index";
 
 export default function Router() {
   return (
@@ -22,10 +20,8 @@ export default function Router() {
           element={<UserPage page={item.page} />}
         />
       ))}
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/review" element={<ReviewPage />} />
+      <Route path="/companyDetails/:id" element={<CompanyDetailPage />} />
       <Route path="*" element={<NotFound />} />
-      <Route path="/registe/:id" element={<CompanyDetail />} />
     </Routes>
   );
 }

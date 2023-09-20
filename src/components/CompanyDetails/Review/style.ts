@@ -5,7 +5,6 @@ export const ReviewRegisterBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   margin-top: 3%;
 
   .test {
@@ -52,6 +51,7 @@ export const ReviewExplanation = styled.div`
   font-size: 13px;
   color: #9a9a9a;
   margin-bottom: "30px";
+  z-index: 4;
 `;
 
 export const Container = styled.div``;
@@ -60,7 +60,7 @@ export const CompanyReview = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -45%;
+  margin-top: -50%;
 `;
 
 export const testtt = styled.div`
@@ -69,11 +69,12 @@ export const testtt = styled.div`
 
 export const ReviewBox = styled.div`
   width: 45%;
-  height: 900px;
+  height: 800px;
 
   border-radius: 10px;
 
   background-color: white;
+  z-index: 4;
 `;
 
 export const ReviewTitleBox = styled.div`

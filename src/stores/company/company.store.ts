@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import { CompanyInfoType } from "../../types/Company/company.type";
 
 export const companyNameAtom = atom<string>({
   key: "companyNameAtom",
@@ -19,7 +20,6 @@ export const companyInfoAtom = atom<string>({
   key: "companyInfoAtom",
   default: "",
 });
-
 export const CompanyAllAndSearchAtom = atom<string>({
   key: "companyAllAndSearchAtom",
   default: "list/all?",

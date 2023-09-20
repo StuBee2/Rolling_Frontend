@@ -44,7 +44,7 @@ export interface CompanyInfoType {
   companyModifiedAt: string;
   registrantId: string;
   memberNickName: string;
-  memberSocialId: string;
+  memberSocialLoginId: string;
   memberImageUrl: string;
 }
 
