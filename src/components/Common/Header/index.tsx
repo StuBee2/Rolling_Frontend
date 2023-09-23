@@ -6,17 +6,21 @@ import { useState } from "react";
 import { HEADER_ITEMS } from "@src/constants/Common/common.constant";
 import token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
-import { useSetRecoilState } from "recoil";
-import { IsCloseModalAtom, MyInfoModal } from "@src/stores/common/common.store";
-import { useLogging } from "@src/hooks/Logging/useLogging";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import {
+  CustomResponsive,
+  IsCloseModalAtom,
+  MyInfoModal,
+} from "@src/stores/common/common.store";
+import { CSSObject } from "styled-components";
 
 export default function Header() {
   const navigate = useNavigate();
   const setIsCloseModal = useSetRecoilState<boolean>(IsCloseModalAtom);
   const setMyInfoModal = useSetRecoilState<boolean>(MyInfoModal);
+  const customResponsive = useRecoilValue<CSSObject | null>(CustomResponsive);
   const [select, setSelect] = useState<string>("홈 피드");
   const { pathname } = useLocation();
-  const {} = useLogging();
 
   const handlePageClick = (name: string, link: string) => {
     setSelect(name);
@@ -24,17 +28,20 @@ export default function Header() {
   };
 
   return (
-    <S.Header>
+    <S.Header customResponsive={customResponsive!!}>
       <S.HeaderWrap>
         <S.PageContainer>
-          <img src={logo} onClick={() => navigate("/")} alt="이미지 없음" />
+          <img
+            src={logo}
+            onClick={() => (window.location.href = "/")}
+            alt="이미지 없음"
+          />
           <ul>
             {HEADER_ITEMS.map((item) => (
               <S.PageList
                 key={item.id}
                 onClick={() => handlePageClick(item.name, item.link)}
                 isSelect={item.link === pathname}
-                requiredToken={item.requiredToken}
               >
                 {item.name}
               </S.PageList>

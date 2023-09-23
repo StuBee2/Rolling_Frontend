@@ -6,6 +6,7 @@ import UserPage from "../pages/UserPage";
 import NotFound from "../components/Common/NotFound";
 import { ROUTE_ITEMS } from "../constants/Router/router.constant";
 import CompanyDetailPage from "../pages/CompanyDetailPage/index";
+import FirmRegister from "@src/components/Register";
 
 export default function Router() {
   return (
@@ -20,7 +21,8 @@ export default function Router() {
           element={<UserPage page={item.page} />}
         />
       ))}
-      <Route path="/companyDetails/:id" element={<CompanyDetailPage />} />
+      <Route path="/company/:id" element={<CompanyDetailPage />} />
+      <Route path="/register" element={<FirmRegister />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
