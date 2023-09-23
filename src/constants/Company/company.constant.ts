@@ -19,6 +19,7 @@ export const COMPANY_RANK_ITMES = [
     name: "커리어순위",
     categoryName: "career",
   },
+
   {
     id: 4,
     name: "문화순위",
