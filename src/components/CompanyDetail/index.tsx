@@ -1,4 +1,4 @@
-import { CustomResponsive } from "@src/stores/common/common.store";
+import { CustomResponseHeaderAtom } from "@src/stores/common/common.store";
 import { CompanyReviewRegisterModalAtom } from "@src/stores/company/company.store";
 import { ReviewCompanyInfoType } from "@src/types/Review/review.type";
 import { Suspense, useEffect, useState } from "react";
@@ -25,15 +25,15 @@ export default function CompanyDetail({ id }: Props) {
 
   const [isCompanyReviewRegisterModal, setIsCompanyReviewRegisterModal] =
     useRecoilState(CompanyReviewRegisterModalAtom);
-  const setCustomResponsive = useSetRecoilState<CSSObject | null>(
-    CustomResponsive
+  const setCustomResponseHeader = useSetRecoilState<CSSObject | null>(
+    CustomResponseHeaderAtom
   );
 
   //커스텀 헤더
   useEffect(() => {
-    setCustomResponsive(S.CustomHeader);
-    return () => setCustomResponsive(null);
-  }, [setCustomResponsive]);
+    setCustomResponseHeader(S.CustomHeader);
+    return () => setCustomResponseHeader(null);
+  }, [setCustomResponseHeader]);
 
   return (
     <>

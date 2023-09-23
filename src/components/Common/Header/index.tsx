@@ -8,7 +8,7 @@ import token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import {
-  CustomResponsive,
+  CustomResponseHeaderAtom,
   IsCloseModalAtom,
   MyInfoModal,
 } from "@src/stores/common/common.store";
@@ -18,7 +18,9 @@ export default function Header() {
   const navigate = useNavigate();
   const setIsCloseModal = useSetRecoilState<boolean>(IsCloseModalAtom);
   const setMyInfoModal = useSetRecoilState<boolean>(MyInfoModal);
-  const customResponsive = useRecoilValue<CSSObject | null>(CustomResponsive);
+  const customResponsiveHeader = useRecoilValue<CSSObject | null>(
+    CustomResponseHeaderAtom
+  );
   const [select, setSelect] = useState<string>("홈 피드");
   const { pathname } = useLocation();
 
@@ -28,7 +30,7 @@ export default function Header() {
   };
 
   return (
-    <S.Header customResponsive={customResponsive!!}>
+    <S.Header customResponsiveHeader={customResponsiveHeader!!}>
       <S.HeaderWrap>
         <S.PageContainer>
           <img

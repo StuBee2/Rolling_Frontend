@@ -2,7 +2,7 @@ import { AiOutlineUser } from "@react-icons/all-files/ai/AiOutlineUser";
 import { HoverAnimation } from "@src/styles/common.style";
 import styled, { CSSObject } from "styled-components";
 
-export const Header = styled.div<{ customResponsive?: CSSObject }>`
+export const Header = styled.div<{ customResponsiveHeader?: CSSObject }>`
   width: 100%;
   height: 80px;
   font-size: 19px;
@@ -12,7 +12,7 @@ export const Header = styled.div<{ customResponsive?: CSSObject }>`
   justify-content: center;
   min-width: 450px;
   white-space: nowrap;
-  ${({ customResponsive }) => customResponsive}
+  ${({ customResponsiveHeader }) => customResponsiveHeader}
 `;
 
 export const HeaderWrap = styled.div`
