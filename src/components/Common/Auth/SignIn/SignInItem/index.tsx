@@ -8,7 +8,7 @@ import { Button, TextInput } from "@stubee2/stubee2-rolling-ui";
 export default function SignInItem() {
   const gitSignInUrl = `${CONFIG.SERVER}/oauth2/authorization/github`;
   const navigate = useNavigate();
-  const { handleSubmit, credentials, setCredentials } = useLogin();
+  const { handleSubmit, credentials, handleChange } = useLogin();
   return (
     <S.SignInItemForm onSubmit={handleSubmit}>
       <div>
@@ -25,7 +25,7 @@ export default function SignInItem() {
             name="id"
             textType="input"
             customStyle={S.InputStyle}
-            handleObjectChange={setCredentials}
+            handleChange={handleChange}
           />
         </div>
         <div>
@@ -37,7 +37,7 @@ export default function SignInItem() {
             name="pw"
             textType="input"
             customStyle={S.InputStyle}
-            handleObjectChange={setCredentials}
+            handleChange={handleChange}
           />
         </div>
         <ul>
