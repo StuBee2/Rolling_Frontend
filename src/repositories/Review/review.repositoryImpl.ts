@@ -1,6 +1,7 @@
 import { customAxios } from "@src/libs/Axios/customAxios";
 import {
   ReviewInfiniteScrollListType,
+  ReviewInfoIdInfiniteScrollListType,
   ReviewInfoIdType,
   ReviewPostResponse,
 } from "@src/types/Review/review.type";
@@ -28,7 +29,7 @@ class ReviewRepositoryImpl implements ReviewRepository {
   public async getListReviewCompanyId(
     { id }: CommonIdParam,
     { page }: CommonPageParam
-  ): Promise<ReviewInfiniteScrollListType> {
+  ): Promise<ReviewInfoIdInfiniteScrollListType> {
     const { data } = await customAxios.get(
       `/review/list/company/${id}?page=${page}&size=10`
     );
