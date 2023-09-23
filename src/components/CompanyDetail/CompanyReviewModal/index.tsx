@@ -1,6 +1,6 @@
 import { ReviewCompanyInfoType } from "@src/types/Review/review.type";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import * as S from "./style";
 import logo from "@src/assets/Common/Logo.svg";
 import close from "@src/assets/Review/close.svg";
@@ -15,6 +15,7 @@ export default function CompanyReviewModal({
   setReviewModal,
   reviewCompanyInfo,
 }: Props) {
+  const [showPositionList, setShowPositionList] = useState(false);
   useCloseModal(setReviewModal);
 
   return (
@@ -22,6 +23,7 @@ export default function CompanyReviewModal({
       <S.ReviewModalWrapper
         onClick={(e) => {
           e.stopPropagation();
+          setShowPositionList(false);
         }}
       >
         <S.ReviewCloseIcon onClick={() => setReviewModal(false)}>
@@ -33,7 +35,11 @@ export default function CompanyReviewModal({
           <p>{reviewCompanyInfo.companyName}</p>
         </S.ReviewCompanyInfo>
 
-        <ReviewForm companyId={reviewCompanyInfo.companyId} />
+        <ReviewForm
+          companyId={reviewCompanyInfo.companyId}
+          showPositionList={showPositionList}
+          setShowPositionList={setShowPositionList}
+        />
       </S.ReviewModalWrapper>
     </S.ReviewModalContainer>
   );

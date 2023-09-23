@@ -5,16 +5,17 @@ import PositionList from "./PositonList";
 import regist from "@src/assets/Review/regist.svg";
 import * as S from "./style";
 import StarGrade from "./StarGrades";
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 interface Props {
   companyId: string;
+  showPositionList: boolean;
+  setShowPositionList: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function ReviewForm({ companyId }: Props) {
-  const { ...hooks } = useRegistReview(companyId);
-  const positionList = searchPosition(hooks.reviewContents.position);
-  const [showPositionList, setShowPositionList] = useState(false);
+export default function ReviewForm({ ...attr }: Props) {
+  const { ...hooks } = useRegistReview(attr.companyId);
+  const positionList = searchPosition(hooks.reviewContents.position.trim());
 
   return (
     <S.ReviewForm onSubmit={hooks.handleCompanyReviewSubmit}>
@@ -30,16 +31,15 @@ export default function ReviewForm({ companyId }: Props) {
           placeholder="포지션을 입력해주세요. ex) 프론트엔드 개발자..."
           handleChange={(e) => {
             hooks.handleCompanyReviewChange(e);
-            setShowPositionList(true);
+            attr.setShowPositionList(true);
           }}
         />
-        {showPositionList && // 입력할 때 등장, 포지션 선택하면 사라짐
-          hooks.reviewContents.position.trim().length > 0 && //내가 입력한 포지션의 길이가 0 초과면 등장
+        {attr.showPositionList && // 입력할 때 등장, 포지션 선택하면 사라짐
           positionList.length > 0 && ( //내가 입력한 포지션이 포지션리스트에 있을때 등장
             <PositionList
               positionList={positionList}
               setReviewContents={hooks.setReviewContents}
-              setShowPositionList={setShowPositionList}
+              setShowPositionList={attr.setShowPositionList}
             />
           )}
       </S.ReviewInputContainer>
