@@ -1,9 +1,9 @@
 import { useGetCompanyInfoIdQuery } from "@src/queries/Company/company.query";
 import { ReviewCompanyInfoType } from "@src/types/Review/review.type";
-import { tieStarRatingToObject } from "@src/utils/StarRating/tieStarRatingToObject";
+import { tieStarGradeToObject } from "@src/utils/StarGrade/tieStarGradeToObject";
 import { Dispatch, SetStateAction, useEffect } from "react";
 import CompanyDetailInfo from "./CompanyDetailInfo";
-import CompanyStarRating from "./CompanyStarGrades";
+import CompanyStarGrades from "./CompanyStarGrades";
 
 interface Props {
   id: string;
@@ -23,6 +23,7 @@ export default function CompanyDetailItem({ id, setReviewCompanyInfo }: Props) {
       companyLogo: companyInfo?.companyImgUrl!!,
     });
   }, [
+    setReviewCompanyInfo,
     companyInfo?.companyName,
     companyInfo?.companyImgUrl,
     companyInfo?.companyId,
@@ -30,9 +31,7 @@ export default function CompanyDetailItem({ id, setReviewCompanyInfo }: Props) {
 
   return (
     <>
-      <CompanyStarRating
-        starGradeInfo={tieStarRatingToObject(companyInfo!!)}
-      />
+      <CompanyStarGrades starGradeInfo={tieStarGradeToObject(companyInfo!!)} />
       <CompanyDetailInfo companyInfo={companyInfo!!} />
     </>
   );

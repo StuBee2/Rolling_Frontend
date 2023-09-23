@@ -1,5 +1,5 @@
 import average from "@src/assets/Company/average.svg";
-import { changeStarRatingToArrayObjcet } from "@src/utils/StarRating/changeStarRatingToArrayObjcet";
+import { changeStarGradeToArrayObjcet } from "@src/utils/StarGrade/changeStarGradeToArrayObjcet";
 import { StarRating } from "@stubee2/stubee2-rolling-ui";
 import * as S from "./style";
 import Logo from "@src/assets/Common/Logo.svg";
@@ -24,7 +24,7 @@ export default function CompanyStarGrades({ starGradeInfo }: Props) {
             <p>평균 평점</p>
           </S.CompanyGradeText>
           <S.CompanyStarGradesItemUl>
-            {changeStarRatingToArrayObjcet(attr).map((item) => (
+            {changeStarGradeToArrayObjcet(attr).map((item) => (
               <li key={item.id}>
                 <S.StarGradeContainer>
                   <S.StarGradeText>{item.name}</S.StarGradeText>
