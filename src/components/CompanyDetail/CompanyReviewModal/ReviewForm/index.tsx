@@ -28,6 +28,7 @@ export default function ReviewForm({ ...attr }: Props) {
           value={hooks.reviewContents.position}
           customStyle={S.InputStyle}
           name="position"
+          autocomplete="off"
           placeholder="포지션을 입력해주세요. ex) 프론트엔드 개발자..."
           handleChange={(e) => {
             hooks.handleCompanyReviewChange(e);
@@ -52,8 +53,9 @@ export default function ReviewForm({ ...attr }: Props) {
         <TextInput
           value={hooks.reviewContents.careerPath}
           customStyle={S.InputStyle}
-          handleChange={hooks.handleCompanyReviewChange}
           name="careerPath"
+          autocomplete="off"
+          handleChange={hooks.handleCompanyReviewChange}
           placeholder="입사경로를 입력해주세요."
         />
       </S.ReviewInputContainer>
