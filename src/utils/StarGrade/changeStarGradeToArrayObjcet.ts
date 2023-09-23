@@ -1,7 +1,7 @@
-import { CompanyAllStarGrade } from "@src/types/Company/company.type";
+import { CompanyStarGrade } from "@src/types/Company/company.type";
 
 export const changeStarGradeToArrayObjcet = (
-  starRating: CompanyAllStarGrade
+  starRating: CompanyStarGrade
 ) => {
   return [
     {
