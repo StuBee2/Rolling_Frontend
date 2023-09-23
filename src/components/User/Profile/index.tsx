@@ -8,7 +8,7 @@ import { FontSize } from "../style";
 function Profile() {
   const myInfo = useRecoilValue(MyMemberInfo);
   return (
-    <S.Container>
+    <S.ProfileContainer>
       <S.Title>
         <FontSize fontSize="30px">롤링 Profile</FontSize>
         <S.Explain>
@@ -17,7 +17,7 @@ function Profile() {
       </S.Title>
       <CompanyStatus />
       <MyInfo data={myInfo!!} />
-    </S.Container>
+    </S.ProfileContainer>
   );
 }
 export default Profile;

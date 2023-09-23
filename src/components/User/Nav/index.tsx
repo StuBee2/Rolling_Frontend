@@ -24,7 +24,7 @@ export default function Nav() {
       <S.MemberInfoContainer>
         <S.UserImg src={myInfo?.socialDetails.imageUrl} />
         <S.UserName>{myInfo?.socialDetails.name}</S.UserName>
-        <S.UserEmail>{myInfo?.socialDetails.email}</S.UserEmail>
+        <S.UserEmail>{myInfo?.socialDetails.email || ""}</S.UserEmail>
       </S.MemberInfoContainer>
 
       <S.PageSelectContainer>
