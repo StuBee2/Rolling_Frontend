@@ -17,29 +17,18 @@ export interface CompanyListType {
     createdAt: string;
     modifiedAt: string;
   };
-  companyGrades: {
-    totalGrade: number;
-    salaryAndBenefits: number;
-    workLifeBalance: number;
-    organizationalCulture: number;
-    careerAdvancement: number;
-  };
+  companyGrades: CompanyAllStarGrade;
   registrantId: {
     id: string;
   };
 }
 
-export interface CompanyInfoType {
+export interface CompanyInfoType extends CompanyAllStarGrade {
   companyId: string;
   companyName: string;
   companyAddress: string;
   companyDescription: string;
   companyImgUrl: string;
-  totalGrade: number;
-  salaryAndBenefits: number;
-  workLifeBalance: number;
-  organizationalCulture: number;
-  careerAdvancement: number;
   companyCreatedAt: string;
   companyModifiedAt: string;
   registrantId: string;
@@ -56,6 +45,22 @@ export interface CompanyID {
   companyId: string;
 }
 
-export interface CompanyStarRaingProps {
-  rankStatus: { id: number; title: string; star: number }[];
+export interface CompanyAllStarGrade extends CompanyStarGrade {
+  totalGrade: number;
+  salaryAndBenefits: number;
+  workLifeBalance: number;
+  organizationalCulture: number;
+  careerAdvancement: number;
+}
+
+export interface CompanyStarGrade {
+  salaryAndBenefits: number;
+  workLifeBalance: number;
+  organizationalCulture: number;
+  careerAdvancement: number;
+}
+
+export interface CompanyStarGradeInfo extends CompanyAllStarGrade {
+  companyImgUrl: string;
+  companyName: string;
 }
