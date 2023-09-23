@@ -5,12 +5,12 @@ import { useInView } from "react-intersection-observer";
 import { useRecoilValue } from "recoil";
 import * as S from "./style";
 import { getDateText, stringEllipsis } from "@stubee2/stubee2-rolling-util";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import logo from "@src/assets/Common/Logo.svg";
 
 export default function HomeItems() {
   const [ref, inView] = useInView();
   const navigate = useNavigate();
-  const { id: companyId } = useParams();
 
   const searchApiUrl = useRecoilValue(CompanyAllAndSearchAtom);
   const { data: companyList, fetchNextPage } =
@@ -32,9 +32,9 @@ export default function HomeItems() {
           data.data.map((item) => (
             <S.HomeItemWrapper
               key={item.companyId.id}
-              onClick={() => navigate(`/companyDetails/${item.companyId.id}`)}
+              onClick={() => navigate(`/company/${item.companyId.id}`)}
             >
-              <S.CompanyImage image={item.companyDetails.imgUrl || ""} />
+              <S.CompanyImage image={item.companyDetails.imgUrl || logo} />
               <S.CompanyEtcContainer>
                 <S.CompanyNameAndCreatedAt>
                   {item.companyDetails.name} |{" "}
@@ -47,14 +47,10 @@ export default function HomeItems() {
                   <S.CompanyAddress>
                     {stringEllipsis(
                       item.companyDetails.companyAddress.address,
-                      28
+                      20
                     )}
                   </S.CompanyAddress>
                 </div>
-                <S.CompanyTagUl>
-                  <li>#대기업</li>
-                  <li>#워라벨 랭킹 3위</li>
-                </S.CompanyTagUl>
               </S.CompanyEtcContainer>
             </S.HomeItemWrapper>
           ))

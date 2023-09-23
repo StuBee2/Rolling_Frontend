@@ -35,7 +35,7 @@ function UserInfoItem() {
             {userInfo?.memberDetails.nickName || userInfo?.socialDetails.name}
           </S.UserInfoNickName>
           <S.UserInfoEmail>
-            {stringEllipsis(userInfo?.socialDetails.email!!, 22)}
+            {stringEllipsis(userInfo?.socialDetails.email!! || "", 22)}
           </S.UserInfoEmail>
         </div>
       </S.UserInfoBox>
