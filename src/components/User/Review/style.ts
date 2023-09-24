@@ -1,6 +1,18 @@
 import styled from "styled-components";
 import { CompanyStatusCommonHover } from "../style";
 
+export const ReviewContainer = styled.div`
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
 export const CompanyStatusContainer = styled.div`
   width: 312px;
   height: 125px;

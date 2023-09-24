@@ -19,8 +19,8 @@ export const HomeWrapper = styled.div`
   width: 1370px;
   height: 100%;
   padding-top: 2rem;
-  padding-bottom: 20px;
   display: flex;
+  column-gap: 10px;
   @media screen and (max-width: 1040px) {
     width: 90%;
   }

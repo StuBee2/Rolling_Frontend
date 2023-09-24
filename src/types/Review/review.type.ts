@@ -3,6 +3,11 @@ export interface ReviewInfiniteScrollListType {
   nextPage: number;
 }
 
+export interface ReviewInfoIdInfiniteScrollListType {
+  data: ReviewInfoIdType[];
+  nextPage: number;
+}
+
 export interface ReviewListType {
   reviewId: string;
   reviewContent: string;
@@ -18,6 +23,7 @@ export interface ReviewListType {
   companyId: string;
   companyName: string;
   companyImgUrl: string;
+  employmentStatus: "HOLD" | "QUIT";
 }
 
 export interface ReviewInfoIdType {
@@ -62,4 +68,16 @@ export interface ReviewPostResponse {
   companyId: {
     id: string;
   };
+}
+
+export interface ReviewCompanyInfoType {
+  companyName: string;
+  companyLogo: string;
+  companyId: string;
+}
+
+export interface ReviewCompanyContentsType {
+  content: string;
+  position: string;
+  careerPath: string;
 }

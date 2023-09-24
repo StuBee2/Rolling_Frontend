@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const ProfileContainer = styled.div`
   width: 90%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 30px;

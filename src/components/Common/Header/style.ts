@@ -1,19 +1,18 @@
 import { AiOutlineUser } from "@react-icons/all-files/ai/AiOutlineUser";
 import { HoverAnimation } from "@src/styles/common.style";
-import styled from "styled-components";
+import styled, { CSSObject } from "styled-components";
 
-export const Header = styled.div`
+export const Header = styled.div<{ customResponsiveHeader?: CSSObject }>`
   width: 100%;
-  height: 108px;
+  height: 80px;
   font-size: 19px;
   background-color: #f9fafb;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 450px;
   white-space: nowrap;
-  @media screen and (max-width: 450px) {
-    width: 450px;
-  }
+  ${({ customResponsiveHeader }) => customResponsiveHeader}
 `;
 
 export const HeaderWrap = styled.div`
@@ -81,11 +80,9 @@ export const UserIcon = styled(AiOutlineUser)`
   cursor: pointer;
 `;
 
-export const SignInText = styled.p`
+export const SignInText = styled.div`
   cursor: pointer;
-  margin-left: 5px;
-  transition: 
-  &:hover {
-    font-weight: bold;
-  }
+  width: 65px;
+  height: 40px;
+  ${HoverAnimation};
 `;

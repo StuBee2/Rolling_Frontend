@@ -10,7 +10,7 @@ export const useSetUpReview = () => {
   const deleteMyReview = useDeleteMyReviewMutation();
   const { rollingToast } = useRollingToast();
 
-  const hanldeSetUpClick = (id: number, reviewId: string) => {
+  const hanldeReviewSetUpClick = (id: number, reviewId: string) => {
     switch (id) {
       case 0:
         return;
@@ -38,5 +38,5 @@ export const useSetUpReview = () => {
     }
   };
 
-  return { isClickDots, setIsClickDots, hanldeSetUpClick };
+  return { isClickDots, setIsClickDots, hanldeReviewSetUpClick };
 };

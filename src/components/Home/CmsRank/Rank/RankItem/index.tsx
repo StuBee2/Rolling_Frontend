@@ -4,6 +4,8 @@ import { getCompanyRankIntroduce } from "@src/utils/Rank/getCompanyRankIntroduce
 import smile from "@src/assets/User/smile.svg";
 import React from "react";
 import { stringEllipsis } from "@stubee2/stubee2-rolling-util";
+import { useNavigate } from "react-router-dom";
+import logo from "@src/assets/Common/Logo.svg";
 
 interface Props {
   rankCategory: string;
@@ -13,6 +15,7 @@ function RankItem({ rankCategory }: Props) {
   const { data: rankInfo } = useGetCompanyRankSelectQuery(rankCategory, {
     suspense: true,
   });
+  const navigate = useNavigate();
 
   return (
     <S.RankItemContainer>
@@ -23,10 +26,16 @@ function RankItem({ rankCategory }: Props) {
       <S.RankItemListContainer>
         <S.RankItemWrapper>
           {rankInfo?.map((item, idx) => (
-            <S.RankItemBox key={item.companyId.id}>
+            <S.RankItemBox
+              key={item.companyId.id}
+              onClick={() => navigate(`/company/${item.companyId.id}`)}
+            >
               <S.RankingNumber>{idx + 1}</S.RankingNumber>
               <S.RankingContentContainer>
-                <img src={item.companyDetails.imgUrl || ""} alt="이미지 없음" />
+                <img
+                  src={item.companyDetails.imgUrl || logo}
+                  alt="이미지 없음"
+                />
                 <div>
                   <S.RankingCompanyName>
                     {item.companyDetails.name}

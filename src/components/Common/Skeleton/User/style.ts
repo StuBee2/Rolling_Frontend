@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { SkeletonAnimation } from "../Common/style";
 
+export const UserSkeletonContainer = styled.div`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+`;
+
 export const UserSkeletonStatus = styled.div`
   width: 45%;
   height: 125px;

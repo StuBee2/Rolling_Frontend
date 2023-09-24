@@ -7,11 +7,18 @@ export const HomeItemsContainer = styled.div`
   flex-wrap: wrap;
   column-gap: 20px;
   row-gap: 40px;
+  @media screen and (max-width: 1393px) {
+    row-gap: 0;
+  }
 `;
 
 export const HomeItemWrapper = styled.div`
   width: 335px;
   height: 380px;
+  /* @media screen and (max-width: 1393px) {
+    width: 410px;
+    height: 505px;
+  } */
 `;
 
 export const CompanyImage = styled.div<{ image: string }>`
@@ -30,7 +37,7 @@ export const CompanyEtcContainer = styled.div`
   height: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  row-gap: 2rem;
   padding-top: 30px;
 `;
 
@@ -50,6 +57,8 @@ export const CompanyAddress = styled.p`
   font-size: 15px;
   font-weight: bold;
   color: rgba(189, 194, 208, 1);
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const CompanyTagUl = styled.ul`

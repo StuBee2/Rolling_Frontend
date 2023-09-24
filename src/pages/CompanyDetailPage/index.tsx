@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import CompanyDetails from "../../components/CompanyDetails/index";
+import CompanyDetail from "../../components/CompanyDetail/index";
 
 const CompanyDetailPage = () => {
   const { id } = useParams();
 
-  return <CompanyDetails id={id!!} />;
+  return <CompanyDetail id={id!!} />;
 };
 
 export default CompanyDetailPage;
