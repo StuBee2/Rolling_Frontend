@@ -16,7 +16,7 @@ export const IsCloseModalAtom = atom<boolean>({
   default: false,
 });
 
-export const CustomResponseHeaderAtom = atom<CSSObject | null>({
+export const CustomResponsiveHeaderAtom = atom<CSSObject | null>({
   key: "customResponsiveHeaderAtom",
   default: null,
 });

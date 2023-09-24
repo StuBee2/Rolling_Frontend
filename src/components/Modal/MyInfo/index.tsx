@@ -8,7 +8,7 @@ import profile from "@src/assets/User/profile.svg";
 import { useNavigate } from "react-router-dom";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 import github from "@src/assets/Auth/github.svg";
-import { converToGithubLink } from "@src/utils/github/converToGithubLink";
+import { converToGithubLink } from "@src/utils/Github/converToGithubLink";
 
 export default function MyInfo() {
   const setMyInfoModal = useSetRecoilState(MyInfoModal);

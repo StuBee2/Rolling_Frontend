@@ -56,8 +56,5 @@ export const EditAndCancelContainer = styled.div`
     outline: none;
     border: none;
     border-radius: 5px;
-    &:hover {
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-    }
   }
 `;

@@ -8,7 +8,7 @@ import token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import {
-  CustomResponseHeaderAtom,
+  CustomResponsiveHeaderAtom,
   IsCloseModalAtom,
   MyInfoModal,
 } from "@src/stores/common/common.store";
@@ -19,7 +19,7 @@ export default function Header() {
   const setIsCloseModal = useSetRecoilState<boolean>(IsCloseModalAtom);
   const setMyInfoModal = useSetRecoilState<boolean>(MyInfoModal);
   const customResponsiveHeader = useRecoilValue<CSSObject | null>(
-    CustomResponseHeaderAtom
+    CustomResponsiveHeaderAtom
   );
   const [select, setSelect] = useState<string>("홈 피드");
   const { pathname } = useLocation();
@@ -71,7 +71,7 @@ export default function Header() {
             </S.HoverIconContainer>
           ) : (
             <S.SignInText onClick={() => navigate("/signin")}>
-              로그인
+              <p>로그인</p>
             </S.SignInText>
           )}
         </S.LoginSearchContainer>

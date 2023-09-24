@@ -33,7 +33,7 @@ export const RankTitle = styled.div`
 
 export const RankCategoriesUl = styled.ul`
   display: flex;
-  column-gap: 15px;
+  column-gap: 12px;
   overflow-x: scroll;
   padding: 20px 0 20px 0;
 `;

@@ -80,11 +80,9 @@ export const UserIcon = styled(AiOutlineUser)`
   cursor: pointer;
 `;
 
-export const SignInText = styled.p`
+export const SignInText = styled.div`
   cursor: pointer;
-  margin-left: 5px;
-  transition: 
-  &:hover {
-    font-weight: bold;
-  }
+  width: 65px;
+  height: 40px;
+  ${HoverAnimation};
 `;
