@@ -16,7 +16,7 @@ export const CompanyStarGradesContainer = styled.div`
 export const CompanyStarGradesWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  row-gap: 1.5rem;
   align-items: center;
   @media screen and (max-width: 1005px) {
     flex-direction: row;
@@ -36,6 +36,7 @@ export const CompanyBasicInfo = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 15px;
+  margin-bottom: 8px;
 
   img {
     object-fit: cover;
@@ -43,6 +44,7 @@ export const CompanyBasicInfo = styled.div`
     height: 110px;
     border-radius: 5px;
     border: 1px solid #dddddd;
+    background-color: #fff;
   }
 
   p {
@@ -65,6 +67,8 @@ export const CompanyStarGradesItemContainer = styled.div`
   row-gap: 1rem;
   @media screen and (max-width: 1005px) {
     overflow: hidden;
+    height: 90%;
+    padding: 1rem;
   }
 `;
 

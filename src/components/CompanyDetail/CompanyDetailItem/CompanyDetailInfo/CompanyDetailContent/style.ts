@@ -54,6 +54,7 @@ export const CompanyDetailContentInfo = styled.div`
     border-radius: 5px;
     object-fit: cover;
     border: 1px solid #dddddd;
+    background-color: #fff;
   }
 
   div {
