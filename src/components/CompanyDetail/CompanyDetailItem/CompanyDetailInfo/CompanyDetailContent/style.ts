@@ -32,7 +32,7 @@ export const CompanyDetailContentTitle = styled.div`
 
 export const CompanyDetailContentSubTitle = styled.p`
   color: #737b98;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 `;
 
@@ -87,11 +87,8 @@ export const CompanyDetailContentDescription = styled.div`
   }
   p {
     color: #000;
-    max-height: 180px;
+    max-height: 140px;
     overflow-y: scroll;
-    ::-webkit-scrollbar {
-      display: none;
-    }
   }
 `;
 

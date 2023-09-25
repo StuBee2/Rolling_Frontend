@@ -28,7 +28,7 @@ export const CompanyDetailUserProfileImgContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   z-index: 1;
   position: absolute;
-  left: 1.2rem;
+  left: 0;
 
   img {
     width: 105px;
@@ -41,9 +41,9 @@ export const CompanyDetailUserProfileImgContainer = styled.div`
 export const CompanyDetailUserProfileContent = styled.div<{
   nameLength: number;
 }>`
-  width: ${({ nameLength }) => (nameLength >= 13 ? "auto" : "330px")};
-  padding-right: ${({ nameLength }) => nameLength && "20px"};
-  height: 100px;
+  width: ${({ nameLength }) => (nameLength >= 13 ? "auto" : "300px")};
+  height: 105px;
+  padding-right: ${({ nameLength }) => nameLength >= 13 && "15px"};
   background-color: rgba(72, 105, 246, 1);
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -53,13 +53,13 @@ export const CompanyDetailUserProfileContent = styled.div<{
   flex-direction: column;
   row-gap: 12px;
   justify-content: center;
-  padding-left: 7rem;
+  padding-left: 5.5rem;
   white-space: nowrap;
 `;
 
 export const CompanyDetailNickName = styled.p`
   color: #f9fafb;
-  font-size: 23px;
+  font-size: 18px;
   font-weight: 700;
 `;
 
@@ -80,16 +80,4 @@ export const CompanyDetailGithubId = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
   }
-`;
-
-export const Test = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`;
-
-export const CompanyDetailRegistAt = styled.p`
-  color: #737b98;
-  font-size: 15px;
-  font-weight: 500;
-  padding-right: 20px;
 `;

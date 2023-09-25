@@ -2,6 +2,7 @@ import * as S from "./style";
 import github from "@src/assets/Auth/github.svg";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { converToGithubLink } from "@src/utils/Github/converToGithubLink";
+import { CompanyDetailRegistAt } from "../style";
 
 interface Props {
   memberImageUrl: string;
@@ -38,9 +39,9 @@ export default function CompanyDetailUserProfile({ ...attr }: Props) {
         </S.CompanyDetailUserProfileContent>
       </S.CompanyDetailUserProfileWrapper>
 
-      <S.CompanyDetailRegistAt>
+      <CompanyDetailRegistAt widthType={"max-width"}>
         {getDateText(new Date(attr.companyCreatedAt))} 작성
-      </S.CompanyDetailRegistAt>
+      </CompanyDetailRegistAt>
     </S.CompanyDetailUserProfileContainer>
   );
 }

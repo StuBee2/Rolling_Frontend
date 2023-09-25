@@ -3,6 +3,8 @@ import basicInfo from "@src/assets/Company/basicInfo.svg";
 import description from "@src/assets/Company/description.svg";
 import { CompanyInfoType } from "@src/types/Company/company.type";
 import logo from "@src/assets/Common/Logo.svg";
+import { getDateText } from "@stubee2/stubee2-rolling-util";
+import { CompanyDetailRegistAt } from "../style";
 
 interface Props {
   companyInfo: CompanyInfoType;
@@ -22,6 +24,9 @@ export default function CompanyDetailContent({ companyInfo }: Props) {
       </S.CompanyDetailContentTitle>
 
       <S.CompanyDetailContentInfoContainer>
+        <CompanyDetailRegistAt widthType={"min-width"}>
+          {getDateText(new Date(companyInfo.companyCreatedAt))} 작성
+        </CompanyDetailRegistAt>
         <S.CompanyDetailContentInfo>
           <img src={companyInfo.companyImgUrl || logo} alt="이미지 없음" />
           <div>

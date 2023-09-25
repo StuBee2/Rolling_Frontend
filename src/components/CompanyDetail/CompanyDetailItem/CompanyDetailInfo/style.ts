@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const CompanyDetailInfoContainer = styled.div`
   width: calc(100% - 250px);
@@ -88,4 +88,26 @@ export const CompanyReviewButton = styled.button`
     background-color: rgba(29, 30, 90, 0.87);
     transform: scale(0.985);
   }
+`;
+
+export const CompanyDetailRegistAt = styled.p<{
+  widthType: "min-width" | "max-width";
+}>`
+  color: #737b98;
+  font-size: 15px;
+  font-weight: 500;
+  padding-right: 12px;
+
+  ${({ widthType }) =>
+    widthType === "min-width"
+      ? css`
+          @media screen and (min-width: 580px) {
+            display: none;
+          }
+        `
+      : css`
+          @media screen and (max-width: 580px) {
+            display: none;
+          }
+        `}
 `;

@@ -79,9 +79,9 @@ function ReviewItem({ ...attr }: ReviewInfoIdType) {
         <S.ReviewItemStarRatingContainer>
           <Star
             rankStatus={changeReviewStatusToArrayObject(attr)}
-            width={25}
-            height={25}
-            fontSize={"15.5px"}
+            width={20}
+            height={20}
+            fontSize={"15px"}
           />
         </S.ReviewItemStarRatingContainer>
       </S.ReviewItemBox>

@@ -27,7 +27,7 @@ export const CompanyDetailReviewWrapper = styled.div`
 
 export const ReviewItemBoxContainer = styled.div`
   width: 100%;
-  height: 400px;
+  height: 350px;
   background-color: #fff;
   border: 1px solid #dddddd;
   border-radius: 20px;
@@ -41,7 +41,7 @@ export const ReviewItemBox = styled.div`
   height: 85%;
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: 15px;
 `;
 
 export const ReviewItemProfileInfo = styled.div`
@@ -80,6 +80,8 @@ export const ReviewItemNickName = styled.p`
 export const ReviewItemPositionAndCareerPath = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-height: 100px;
   row-gap: 5px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -99,12 +101,13 @@ export const ReviewItemDescription = styled.div`
   height: 100%;
   overflow-y: scroll;
   line-height: 22px;
+  font-size: 14px;
   color: #72777a;
 `;
 
 export const ReviewItemStarRatingContainer = styled.div`
   width: 100%;
-  height: 125px;
+  height: 115px;
   background-color: #f2f4f5;
   border-radius: 10px;
   display: flex;

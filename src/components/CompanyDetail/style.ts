@@ -7,8 +7,8 @@ export const CompanyDetailContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 15px 15px 15px;
-  @media screen and (max-width: 635px) {
-    width: 635px;
+  @media screen and (max-width: 500px) {
+    width: 500px;
   }
 `;
 
@@ -26,7 +26,7 @@ export const CompanyDetailWrapper = styled.div`
     row-gap: 3rem;
   }
 
-  @media screen and (min-width: 635px) {
+  @media screen and (min-width: 500px) {
     overflow-y: scroll;
     ::-webkit-scrollbar {
       display: none;
@@ -35,7 +35,7 @@ export const CompanyDetailWrapper = styled.div`
 `;
 
 export const CustomHeader = {
-  minWidth: "635px",
+  minWidth: "500px",
   heigth: "85px",
   borderBottom: "1px solid #dddddd",
 };

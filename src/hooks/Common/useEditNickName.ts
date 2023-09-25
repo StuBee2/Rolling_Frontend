@@ -2,7 +2,7 @@ import { useState } from "react";
 import { usePatchMyNickNameMutation } from "@src/queries/Member/Member.query";
 import { useQueryClient } from "react-query";
 import { QUERY_KEYS } from "@src/queries/queryKey";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { memberErrorHandler } from "@src/utils/Error/Member/memberErrorHandler";
 
@@ -54,6 +54,9 @@ export const useEditNickName = (nickName: string) => {
           rollingToast("닉네임이 수정되었습니다", "success");
           queryClient.invalidateQueries(QUERY_KEYS.member.getMyMember);
           setIsEditNickName(false);
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
         },
         onError: (error) => {
           if (axios.isAxiosError(error)) {
