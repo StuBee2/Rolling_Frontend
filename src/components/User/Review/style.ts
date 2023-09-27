@@ -34,8 +34,9 @@ export const CompanyStatusContainer = styled.div`
     row-gap: 10px;
   }
   ${CompanyStatusCommonHover}
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1040px) {
     width: 100%;
+    height: 140px;
   }
 `;
 

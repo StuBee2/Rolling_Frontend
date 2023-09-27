@@ -4,7 +4,7 @@ import styled, { CSSObject } from "styled-components";
 
 export const Header = styled.div<{ customResponsiveHeader?: CSSObject }>`
   width: 100%;
-  height: 80px;
+  height: 108px;
   font-size: 19px;
   background-color: #f9fafb;
   display: flex;

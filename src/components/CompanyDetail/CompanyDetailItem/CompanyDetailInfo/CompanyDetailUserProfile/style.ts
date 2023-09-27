@@ -48,7 +48,7 @@ export const CompanyDetailUserProfileContent = styled.div<{
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   position: absolute;
-  left: 3rem;
+  left: 3.5rem;
   display: flex;
   flex-direction: column;
   row-gap: 12px;

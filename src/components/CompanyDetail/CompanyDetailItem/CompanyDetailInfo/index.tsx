@@ -65,7 +65,7 @@ export default function CompanyDetailInfo({ companyInfo }: Props) {
 
         <ErrorBoundary fallback={<>리뷰를 가지고 오지 못했습니다.</>}>
           <Suspense fallback={<ReviewSkeleton />}>
-            <CompanyDetailReview reviewId={companyInfo.companyId} />
+            <CompanyDetailReview companyId={companyInfo.companyId} />
           </Suspense>
         </ErrorBoundary>
       </S.CompanyDetailInfoContentContainer>

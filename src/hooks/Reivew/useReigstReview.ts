@@ -82,6 +82,10 @@ export const useRegistReview = (companyId: string) => {
           queryClient.invalidateQueries(
             QUERY_KEYS.review.getReviewListCompanyId(companyId)
           );
+          queryClient.invalidateQueries(QUERY_KEYS.review.getMyReview);
+          console.log(
+            queryClient.invalidateQueries(QUERY_KEYS.review.getMyReview)
+          );
           setIsCompanyReviewRegisterModal(false);
           rollingToast("리뷰를 등록하였습니다.", "success");
         },

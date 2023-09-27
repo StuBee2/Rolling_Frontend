@@ -3,7 +3,7 @@ import {
   ReviewListType,
 } from "@src/types/Review/review.type";
 
-export const changeReviewStatusToArrayObject = (
+export const changeReviewStarGradesToArrayObject = (
   review: ReviewListType | ReviewInfoIdType
 ) => {
   return [

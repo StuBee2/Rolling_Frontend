@@ -71,11 +71,6 @@ export const DelAndEditContainer = styled.div`
     width: 30px;
     height: 30px;
   }
-
-  @media screen and (max-width: 640px) {
-    flex-direction: row;
-    column-gap: 5px;
-  }
 `;
 
 export const SetUpIconContainer = styled.div`

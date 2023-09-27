@@ -58,7 +58,7 @@ export const Profile = styled.div`
 
 export const Name = styled.p`
   color: #ffffff;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
 `;
 

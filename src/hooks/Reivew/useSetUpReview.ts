@@ -10,12 +10,16 @@ export const useSetUpReview = () => {
   const deleteMyReview = useDeleteMyReviewMutation();
   const { rollingToast } = useRollingToast();
 
-  const hanldeReviewSetUpClick = (id: number, reviewId: string) => {
+  const hanldeReviewSetUpClick = (
+    id: number,
+    reviewId: string,
+    companyId: string
+  ) => {
     switch (id) {
       case 0:
         return;
       case 1:
-        return hanldeDeleteMyReview(reviewId);
+        return hanldeDeleteMyReview(reviewId, companyId);
       case 2:
         return setIsClickDots(false);
       default:
@@ -23,12 +27,15 @@ export const useSetUpReview = () => {
     }
   };
 
-  const hanldeDeleteMyReview = (reviewId: string) => {
+  const hanldeDeleteMyReview = (reviewId: string, companyId: string) => {
     const answer = window.confirm("리뷰한 회사를 삭제하시겠습니까?");
     if (answer) {
       deleteMyReview.mutate(reviewId, {
         onSuccess: () => {
           queryClient.invalidateQueries(QUERY_KEYS.review.getMyReview);
+          queryClient.invalidateQueries(
+            QUERY_KEYS.review.getReviewListCompanyId(companyId)
+          );
           rollingToast("리뷰를 삭제하였습니다.", "success");
         },
         onError: () => {

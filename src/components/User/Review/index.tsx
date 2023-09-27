@@ -14,12 +14,12 @@ export default function Review() {
   });
   const [ref, inView] = useInView();
   const reviewListData = reviewList?.pages[0].data!!;
-
   useEffect(() => {
     if (inView) {
       fetchNextPage();
     }
   }, [inView]);
+
   return (
     <S.ReviewContainer>
       <Title>
@@ -34,7 +34,7 @@ export default function Review() {
 
             <S.UpdateAtListCount>
               {reviewListData.length > 0
-                ? getTimeAgo(reviewListData[0].reviewCreatedAt) +
+                ? getTimeAgo(reviewListData[0].reviewModifiedAt) +
                   " 업데이트 · 갯수 " +
                   reviewListData?.length
                 : "리뷰를 등록해주세요!"}

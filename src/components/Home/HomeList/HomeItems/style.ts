@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const HomeItemsContainer = styled.div`
   width: 100%;
   height: auto;
+
   display: flex;
   flex-wrap: wrap;
   column-gap: 20px;
   row-gap: 40px;
+
   @media screen and (max-width: 1393px) {
     row-gap: 0;
   }
@@ -15,29 +17,38 @@ export const HomeItemsContainer = styled.div`
 export const HomeItemWrapper = styled.div`
   width: 335px;
   height: 380px;
-  /* @media screen and (max-width: 1393px) {
-    width: 410px;
-    height: 505px;
-  } */
+
+  @media screen and (max-width: 740px) {
+    width: 500px;
+    height: 555px;
+  }
+  @media screen and (max-width: 450px) {
+    width: 335px;
+    height: 380px;
+  }
 `;
 
 export const CompanyImage = styled.div<{ image: string }>`
   width: 100%;
   height: 60%;
+
   border-radius: 15px;
+  cursor: pointer;
+
   background: url(${(props) => props.image}) no-repeat;
   background-size: cover;
   background-position: center;
   background-color: #fff;
-  cursor: pointer;
 `;
 
 export const CompanyEtcContainer = styled.div`
   width: 100%;
   height: 40%;
+
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+
   padding-top: 30px;
 `;
 

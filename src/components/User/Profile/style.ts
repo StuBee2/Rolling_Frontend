@@ -6,6 +6,10 @@ export const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Title = styled.div`

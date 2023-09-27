@@ -42,6 +42,8 @@ export interface ReviewInfoIdType {
   memberNickName: string;
   memberSocialId: string;
   memberImageUrl: string;
+
+  companyId?: string;
 }
 
 export interface ReviewPostResponse {

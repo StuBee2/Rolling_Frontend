@@ -54,10 +54,10 @@ export const ReviewItemContentContainer = styled.div`
   width: 100%;
   height: calc(100% - 125px);
   display: flex;
-  column-gap: 2.5rem;
+  column-gap: 15px;
 `;
 
-export const ReviewItemContent = styled.div`
+export const ReviewItemUserInfo = styled.div`
   width: 220px;
   height: 100%;
   display: flex;
@@ -70,6 +70,7 @@ export const ReviewItemImgUrl = styled.img`
   height: 70px;
   object-fit: cover;
   border-radius: 4rem;
+  border: 1px solid #dddddd;
 `;
 
 export const ReviewItemNickName = styled.p`
@@ -96,13 +97,30 @@ export const ReviewItemPositionAndCareerPath = styled.div`
   }
 `;
 
+export const ReviewItemContent = styled.div<{
+  isCoincideMemberId: boolean;
+}>`
+  width: ${({ isCoincideMemberId }) =>
+    isCoincideMemberId ? "calc(100% - 250px)" : "calc(100% - 220px)"};
+  display: flex;
+  column-gap: 10px;
+`;
+
 export const ReviewItemDescription = styled.div`
-  width: calc(100% - 220px);
+  width: 100%;
   height: 100%;
   overflow-y: scroll;
   line-height: 22px;
   font-size: 14px;
   color: #72777a;
+`;
+
+export const ReviewItemSetUp = styled.div`
+  width: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
 `;
 
 export const ReviewItemStarRatingContainer = styled.div`

@@ -4,15 +4,19 @@ import { useInView } from "react-intersection-observer";
 import { ReviewInfoIdType } from "@src/types/Review/review.type";
 import * as S from "./style";
 import Star from "@src/components/Common/Star";
-import { changeReviewStatusToArrayObject } from "@src/utils/Review/changeRankStatusToArrayObject";
+import { changeReviewStarGradesToArrayObject } from "@src/utils/Review/changeReviewStarGradesToArrayObject";
+import ReviewSetUp from "@src/components/Common/ReviewSetUp";
+import Token from "@src/libs/Token/Token";
+import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
+import { jwtDecodeMemberId } from "@src/utils/Auth/jwtDecodeMemberId";
 
 interface Props {
-  reviewId: string;
+  companyId: string;
 }
 
-export default function CompanyDetailReview({ reviewId }: Props) {
+export default function CompanyDetailReview({ companyId }: Props) {
   const { data: reviewList, fetchNextPage } = useGetReviewListCompanyIdQuery(
-    { id: reviewId },
+    { id: companyId },
     { suspense: true }
   );
   const [ref, inView] = useInView();
@@ -34,7 +38,7 @@ export default function CompanyDetailReview({ reviewId }: Props) {
         {reviewListData?.length!! > 0 ? (
           reviewList?.pages.map((list) =>
             list.data.map((item) => (
-              <ReviewItem key={item.reviewId} {...item} />
+              <ReviewItem key={item.reviewId} companyId={companyId} {...item} />
             ))
           )
         ) : (
@@ -47,11 +51,12 @@ export default function CompanyDetailReview({ reviewId }: Props) {
 }
 
 function ReviewItem({ ...attr }: ReviewInfoIdType) {
+  const isCoincideMemberId = jwtDecodeMemberId() === attr.writerId;
   return (
     <S.ReviewItemBoxContainer>
       <S.ReviewItemBox>
         <S.ReviewItemContentContainer>
-          <S.ReviewItemContent>
+          <S.ReviewItemUserInfo>
             <S.ReviewItemProfileInfo>
               <S.ReviewItemImgUrl src={attr.memberImageUrl} alt="이미지 없음" />
               <S.ReviewItemNickName>
@@ -69,16 +74,26 @@ function ReviewItem({ ...attr }: ReviewInfoIdType) {
                 {attr.reviewCareerPath}
               </p>
             </S.ReviewItemPositionAndCareerPath>
-          </S.ReviewItemContent>
+          </S.ReviewItemUserInfo>
 
-          <S.ReviewItemDescription>
-            {attr.reviewContent}
-          </S.ReviewItemDescription>
+          <S.ReviewItemContent isCoincideMemberId={isCoincideMemberId}>
+            <S.ReviewItemDescription>
+              {attr.reviewContent}
+            </S.ReviewItemDescription>
+            {Token.getToken(ACCESS_TOKEN_KEY) && isCoincideMemberId && (
+              <S.ReviewItemSetUp>
+                <ReviewSetUp
+                  reviewId={attr.reviewId}
+                  companyId={attr.companyId!!}
+                />
+              </S.ReviewItemSetUp>
+            )}
+          </S.ReviewItemContent>
         </S.ReviewItemContentContainer>
 
         <S.ReviewItemStarRatingContainer>
           <Star
-            rankStatus={changeReviewStatusToArrayObject(attr)}
+            rankStatus={changeReviewStarGradesToArrayObject(attr)}
             width={20}
             height={20}
             fontSize={"15px"}

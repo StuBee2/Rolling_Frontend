@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CompanyDetailContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 85px);
+  height: calc(100vh - 90px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,6 +36,6 @@ export const CompanyDetailWrapper = styled.div`
 
 export const CustomHeader = {
   minWidth: "500px",
-  heigth: "85px",
+  height: "90px",
   borderBottom: "1px solid #dddddd",
 };

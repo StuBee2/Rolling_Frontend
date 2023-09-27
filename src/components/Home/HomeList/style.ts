@@ -27,11 +27,15 @@ export const HomeListWrapper = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
+
   @media screen and (max-width: 1393px) {
     width: 335px;
   }
-  @media screen and (min-width: 740px) {
-    padding-left: 20px;
+  @media screen and (max-width: 740px) {
+    width: 500px;
+  }
+  @media screen and (max-width: 450px) {
+    width: 335px;
   }
 `;
 
