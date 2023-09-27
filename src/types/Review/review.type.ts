@@ -43,6 +43,7 @@ export interface ReviewInfoIdType {
   memberSocialId: string;
   memberImageUrl: string;
 
+  //reivew를 삭제할 때 필요한 companyId를 옵셔널로 지정함
   companyId?: string;
 }
 
@@ -70,6 +71,11 @@ export interface ReviewPostResponse {
   companyId: {
     id: string;
   };
+}
+
+export interface ReviewMyStatusResponse {
+  count: number;
+  lastModifiedDate: string;
 }
 
 export interface ReviewCompanyInfoType {

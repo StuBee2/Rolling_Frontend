@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import { USER_ITEMS } from "@src/constants/User/user.constants";
 import { useLogout } from "@src/hooks/Auth/useLogout";
@@ -8,9 +8,12 @@ import { useSetRecoilState } from "recoil";
 import { useEffect } from "react";
 import logout from "@src/assets/Auth/logout.svg";
 
-export default function Nav() {
+interface Props {
+  pathName: string;
+}
+
+export default function Nav({ pathName }: Props) {
   const { handleLogout } = useLogout();
-  const { pathname } = useLocation();
   const { data: myInfo } = useGetMyInfoQuery({ suspense: true });
   const setMyMemberInfo = useSetRecoilState(MyMemberInfo);
   const navigate = useNavigate();
@@ -33,7 +36,7 @@ export default function Nav() {
             <S.PageSelectItem
               key={item.id}
               onClick={() => navigate(item.link)}
-              isSelect={pathname === item.link}
+              isSelect={pathName === item.link}
             >
               <img src={item.image} alt="이미지 없음" />
               <p>{item.title}</p>

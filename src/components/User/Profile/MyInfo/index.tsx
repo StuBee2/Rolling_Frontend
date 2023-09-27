@@ -1,8 +1,8 @@
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
-import { Explain, Title } from "../style";
 import * as S from "./style";
 import { MemberType } from "@src/types/Member/member.type";
 import EditNickname from "./EditNickname";
+import { Explain, Title } from "../../style";
 
 interface Props {
   data: MemberType;

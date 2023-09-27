@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { CompanyStatusCommonHover } from "../../style";
+import { ReviewStatusCommonHover } from "../style";
 
-export const CompanyStatusWrap = styled.div`
+export const ReviewStatusWrap = styled.div`
   width: 100%;
   display: flex;
   column-gap: 10px;
@@ -12,16 +12,16 @@ export const CompanyStatusWrap = styled.div`
   }
 `;
 
-export const CompanyStatusContainer = styled.div`
+export const ReviewStatusContainer = styled.div`
   width: 100%;
   height: 183px;
   background-color: #4869f6;
   border-radius: 10px;
   padding: 30px;
-  ${CompanyStatusCommonHover}
+  ${ReviewStatusCommonHover}
 `;
 
-export const CompanyStatus = styled.div`
+export const ReviewStatus = styled.div`
   margin-bottom: 20px;
   img {
     width: 53px;
@@ -29,7 +29,7 @@ export const CompanyStatus = styled.div`
   }
 `;
 
-export const CompanyNumber = styled.div`
+export const ReviewNumber = styled.div`
   background-color: #ffffff;
   border-radius: 4rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -40,7 +40,7 @@ export const CompanyNumber = styled.div`
   font-size: 22px;
 `;
 
-export const CompanyNumberText = styled.p`
+export const ReviewNumberText = styled.p`
   color: #f9fafb;
   font-size: 18px;
   font-weight: bold;

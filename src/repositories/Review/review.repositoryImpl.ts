@@ -3,6 +3,7 @@ import {
   ReviewInfiniteScrollListType,
   ReviewInfoIdInfiniteScrollListType,
   ReviewInfoIdType,
+  ReviewMyStatusResponse,
   ReviewPostResponse,
 } from "@src/types/Review/review.type";
 import { CommonIdParam, CommonPageParam } from "../common.param";
@@ -40,6 +41,11 @@ class ReviewRepositoryImpl implements ReviewRepository {
     id,
   }: CommonIdParam): Promise<ReviewInfoIdType> {
     const { data } = await customAxios.get(`/review/info/${id}`);
+    return data;
+  }
+
+  public async getReviewMyStatus(): Promise<ReviewMyStatusResponse> {
+    const { data } = await rollingAxios.get("/review/my/status");
     return data;
   }
 

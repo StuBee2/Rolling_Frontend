@@ -4,9 +4,6 @@ import * as S from "./style";
 export default function UserSkeleton() {
   return (
     <S.UserSkeletonContainer>
-      <SkeletonBox width="250px" height="30px" />
-      <SkeletonBox width="270px" height="22px" />
-      <S.UserSkeletonStatus />
       {Array.from({
         length: 15,
       }).map((item, idx) => (

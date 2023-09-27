@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const ReviewItemContainer = styled.div`
   width: 100%;
-  height: 350px;
+  height: 340px;
   display: flex;
   column-gap: 5px;
   @media screen and (max-width: 450px) {
@@ -26,13 +26,9 @@ export const ReviewItem = styled.div`
   width: 95%;
   height: 88%;
   display: flex;
+  row-gap: 0.5rem;
   flex-direction: column;
-  row-gap: 1rem;
-  padding: 0.5rem;
   justify-content: space-between;
-  @media screen and (max-width: 495px) {
-    padding: 0.5rem;
-  }
 `;
 
 export const ReviewCompanyInfoContainer = styled.div`
@@ -40,11 +36,6 @@ export const ReviewCompanyInfoContainer = styled.div`
   height: 60%;
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
-  @media screen and (max-width: 495px) {
-    row-gap: 0;
-    height: auto;
-  }
 `;
 
 export const ReviewRegisteredAtAndDelEditContainer = styled.div`

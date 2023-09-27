@@ -21,7 +21,7 @@ export default function ReviewItem({ review }: Props) {
           <S.ReviewCompanyInfoContainer>
             <S.ReviewRegisteredAtAndDelEditContainer>
               <S.ReviewRegisteredDate>
-                {getDateText(new Date(review?.reviewCreatedAt))} 등록
+                {getDateText(new Date(review?.reviewModifiedAt))} 등록
               </S.ReviewRegisteredDate>
               <S.DelAndEditContainer>
                 <ReviewSetUp
@@ -58,9 +58,9 @@ export default function ReviewItem({ review }: Props) {
 
           <CompanyStarRating
             rankStatus={rankStatus}
-            width={15}
-            height={15}
-            fontSize={"13px"}
+            width={20}
+            height={20}
+            fontSize={"15px"}
           />
         </S.ReviewItem>
       </S.ReviewItemWrapper>

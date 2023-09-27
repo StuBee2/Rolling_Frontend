@@ -21,6 +21,7 @@ export const QUERY_KEYS = Object.freeze({
     getReviewListMemberId: (id: string) => ["/review/list/member/id", id],
     getReviewListCompanyId: (id: string) => ["/reivew/list/company/id", id],
     getReviewInfoId: (id: string) => ["/review/info/id", id],
+    getReviewMyStatus: "/review/my/status",
   },
   member: {
     getMyMember: "/member",

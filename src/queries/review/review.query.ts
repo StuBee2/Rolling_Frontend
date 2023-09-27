@@ -12,6 +12,7 @@ import {
   ReviewInfiniteScrollListType,
   ReviewInfoIdInfiniteScrollListType,
   ReviewInfoIdType,
+  ReviewMyStatusResponse,
 } from "@src/types/Review/review.type";
 import { AxiosError } from "axios";
 import { CommonIdParam } from "@src/repositories/common.param";
@@ -94,6 +95,21 @@ export const useGetReviewInfoIdQuery = (
     () => ReviewRepositoryImpl.getReviewInfoId({ id }),
     {
       enabled: !!id,
+      ...options,
+    }
+  );
+
+export const useGetReviewMyStatusQuery = (
+  options?: UseQueryOptions<
+    ReviewMyStatusResponse,
+    AxiosError,
+    ReviewMyStatusResponse
+  >
+): UseQueryResult<ReviewMyStatusResponse, AxiosError> =>
+  useQuery(
+    QUERY_KEYS.review.getReviewMyStatus,
+    () => ReviewRepositoryImpl.getReviewMyStatus(),
+    {
       ...options,
     }
   );
