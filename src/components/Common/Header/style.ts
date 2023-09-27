@@ -40,10 +40,11 @@ export const PageContainer = styled.div`
     height: 50px;
     cursor: pointer;
   }
+
   ul {
     display: flex;
     align-items: center;
-    column-gap: 5px;
+    column-gap: 3px;
   }
 `;
 

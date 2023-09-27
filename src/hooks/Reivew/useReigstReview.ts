@@ -48,9 +48,7 @@ export const useRegistReview = (companyId: string) => {
     setReviewStarRating((prev) => ({ ...prev, [name]: grade }));
   };
 
-  const handleCompanyReviewSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
+  const handleCompanyReviewSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const answer = window.confirm("리뷰를 등록하시겠습니까?");
     if (answer) {
@@ -77,22 +75,21 @@ export const useRegistReview = (companyId: string) => {
         ...reviewStarRating,
       };
 
-      postReview.mutateAsync(param as unknown as ReviewParam, {
+      postReview.mutate(param as unknown as ReviewParam, {
         onSuccess: () => {
           queryClient.invalidateQueries(
             QUERY_KEYS.review.getReviewListCompanyId(companyId)
           );
-          queryClient.invalidateQueries(QUERY_KEYS.review.getMyReview);
-          console.log(
-            queryClient.invalidateQueries(QUERY_KEYS.review.getMyReview)
-          );
+          queryClient.invalidateQueries("/review/my", {
+            refetchInactive: true,
+          });
           setIsCompanyReviewRegisterModal(false);
           rollingToast("리뷰를 등록하였습니다.", "success");
         },
         onError: (error) => {
           if (axios.isAxiosError(error)) {
             const { status, message } = error.response?.data;
-            reviewErrorHanlder(status, message);
+            rollingToast(reviewErrorHanlder(status, message), "error");
           }
         },
       });

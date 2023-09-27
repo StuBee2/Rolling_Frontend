@@ -1,4 +1,4 @@
-import { customAxios } from "@src/libs/Axios/customAxios";
+import { customAxios, rollingAxios } from "@src/libs/Axios/customAxios";
 import {
   ReviewInfiniteScrollListType,
   ReviewInfoIdInfiniteScrollListType,
@@ -12,7 +12,7 @@ class ReviewRepositoryImpl implements ReviewRepository {
   public async getMyReviewList({
     page,
   }: CommonPageParam): Promise<ReviewInfiniteScrollListType> {
-    const { data } = await customAxios.get(`/review/my?page=${page}&size=10`);
+    const { data } = await rollingAxios.get(`/review/my?page=${page}&size=10`);
     return { ...data, nextPage: page + 1 };
   }
 
@@ -20,7 +20,7 @@ class ReviewRepositoryImpl implements ReviewRepository {
     { id }: CommonIdParam,
     { page }: CommonPageParam
   ): Promise<ReviewInfiniteScrollListType> {
-    const { data } = await customAxios.get(
+    const { data } = await rollingAxios.get(
       `/review/list/member/${id}?page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
@@ -46,12 +46,12 @@ class ReviewRepositoryImpl implements ReviewRepository {
   public async postReview(
     reviewInfo: ReviewParam
   ): Promise<ReviewPostResponse> {
-    const { data } = await customAxios.post("/review", reviewInfo);
+    const { data } = await rollingAxios.post("/review", reviewInfo);
     return data;
   }
 
   public async deleteMyReview(reviewId: string): Promise<void> {
-    await customAxios.delete(`/review/${reviewId}`);
+    await rollingAxios.delete(`/review/${reviewId}`);
   }
 }
 

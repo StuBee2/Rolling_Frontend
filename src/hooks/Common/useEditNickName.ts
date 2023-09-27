@@ -56,7 +56,7 @@ export const useEditNickName = (nickName: string) => {
           setIsEditNickName(false);
           setTimeout(() => {
             window.location.reload();
-          }, 1000);
+          }, 500);
         },
         onError: (error) => {
           if (axios.isAxiosError(error)) {

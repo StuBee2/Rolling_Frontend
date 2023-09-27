@@ -33,7 +33,7 @@ export default function Review() {
             <S.WriteText>Write</S.WriteText>
 
             <S.UpdateAtListCount>
-              {reviewListData.length > 0
+              {reviewListData && reviewListData.length > 0
                 ? getTimeAgo(reviewListData[0].reviewModifiedAt) +
                   " 업데이트 · 갯수 " +
                   reviewListData?.length

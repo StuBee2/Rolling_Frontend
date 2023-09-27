@@ -12,15 +12,12 @@ export const customAxios = axios.create({
   baseURL: CONFIG.SERVER,
 });
 
-const accessToken = Token.getToken(ACCESS_TOKEN_KEY);
+export const rollingAxios = axios.create({
+  baseURL: CONFIG.SERVER,
+  headers: {
+    [REQUEST_TOKEN_KEY]: `Bearer ${Token.getToken(ACCESS_TOKEN_KEY)}`,
+  },
+});
 
-if (accessToken) {
-  customAxios.defaults.headers.common[
-    REQUEST_TOKEN_KEY
-  ] = `Bearer ${accessToken}`;
-} else {
-  delete customAxios.defaults.headers.common[REQUEST_TOKEN_KEY];
-}
-
-customAxios.interceptors.request.use(requestHandler, (response) => response);
-customAxios.interceptors.response.use((response) => response, responseHandler);
+rollingAxios.interceptors.request.use(requestHandler, (response) => response);
+rollingAxios.interceptors.response.use((response) => response, responseHandler);

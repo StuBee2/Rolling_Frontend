@@ -1,10 +1,9 @@
-import { customAxios } from "@src/libs/Axios/customAxios";
+import { customAxios, rollingAxios } from "@src/libs/Axios/customAxios";
 import {
   CompanyInfiniteScrollType,
   CompanyInfoType,
   CompanyListType,
 } from "@src/types/Company/company.type";
-import { useState } from "react";
 import { CommonIdParam, CommonPageParam } from "../common.param";
 import {
   CompanyIdParam,
@@ -17,14 +16,14 @@ class CompanyRepositoryImpl implements CompanyRepository {
   public async postRegister(
     companyData: CompanyParam
   ): Promise<CompanyListType> {
-    const { data } = await customAxios.post("/company", companyData);
+    const { data } = await rollingAxios.post("/company", companyData);
     return data;
   }
 
   public async getMyCompanyList({
     page,
   }: CommonPageParam): Promise<CompanyInfiniteScrollType> {
-    const { data } = await customAxios.get(
+    const { data } = await rollingAxios.get(
       `/company/list/my?page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
@@ -109,7 +108,7 @@ class CompanyRepositoryImpl implements CompanyRepository {
   }
 
   public async deleteCompany(companyId: CompanyIdParam): Promise<void> {
-    await customAxios.delete(`/company/${companyId}`);
+    await rollingAxios.delete(`/company/${companyId}`);
   }
 }
 
