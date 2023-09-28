@@ -44,9 +44,7 @@ export default function User({ children }: Props) {
               <Suspense fallback={<ReviewStatusSkeleton />}>
                 <ReviewStatus />
               </Suspense>
-            </ErrorBoundary>
 
-            <ErrorBoundary fallback={<>Error</>}>
               <Suspense fallback={<UserSkeleton />}>{children}</Suspense>
             </ErrorBoundary>
           </S.Container>

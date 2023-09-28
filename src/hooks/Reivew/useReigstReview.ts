@@ -1,7 +1,6 @@
 import { ReviewCompanyContentsType } from "@src/types/Review/review.type";
 import { usePostReviewMutation } from "@src/queries/Review/review.query";
 import { useState } from "react";
-import { useQueryClient } from "react-query";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { ReviewParam } from "@src/repositories/Review/review.repository";
 import axios from "axios";
@@ -10,10 +9,11 @@ import { QUERY_KEYS } from "@src/queries/queryKey";
 import { CompanyReviewRegisterModalAtom } from "@src/stores/company/company.store";
 import { useSetRecoilState } from "recoil";
 import { POSITION_ITEMS } from "@src/constants/Position/position.constant";
+import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 
 export const useRegistReview = (companyId: string) => {
   const postReview = usePostReviewMutation();
-  const queryClient = useQueryClient();
+  const { queryInvalidates } = useQueryInvalidates();
   const { rollingToast } = useRollingToast();
   const setIsCompanyReviewRegisterModal = useSetRecoilState(
     CompanyReviewRegisterModalAtom
@@ -77,12 +77,19 @@ export const useRegistReview = (companyId: string) => {
 
       postReview.mutate(param as unknown as ReviewParam, {
         onSuccess: () => {
-          queryClient.invalidateQueries(
-            QUERY_KEYS.review.getReviewListCompanyId(companyId)
-          );
-          queryClient.invalidateQueries("/review/my", {
-            refetchInactive: true,
-          });
+          queryInvalidates([
+            {
+              queryKey: QUERY_KEYS.review.getReviewListCompanyId(companyId),
+            },
+            {
+              queryKey: QUERY_KEYS.review.getMyReview,
+              refetchInactive: true,
+            },
+            {
+              queryKey: QUERY_KEYS.review.getReviewMyStatus,
+              refetchInactive: true,
+            },
+          ]);
           setIsCompanyReviewRegisterModal(false);
           rollingToast("리뷰를 등록하였습니다.", "success");
         },

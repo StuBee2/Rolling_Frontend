@@ -23,10 +23,10 @@ export const ReviewItemWrapper = styled.div`
 `;
 
 export const ReviewItem = styled.div`
-  width: 95%;
-  height: 88%;
+  width: 93%;
+  height: 90%;
   display: flex;
-  row-gap: 0.5rem;
+  row-gap: 0.8rem;
   flex-direction: column;
   justify-content: space-between;
 `;

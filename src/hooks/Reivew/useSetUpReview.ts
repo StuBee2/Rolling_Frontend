@@ -1,16 +1,14 @@
 import { QUERY_KEYS } from "@src/queries/queryKey";
 import { useDeleteMyReviewMutation } from "@src/queries/Review/review.query";
-import { ReviewQueryKeyType } from "@src/types/Review/review.type";
 import { reviewErrorHanlder } from "@src/utils/Error/Review/reviewErrorHanlder";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import axios from "axios";
-import { async } from "q";
 import { useState } from "react";
-import { useQueryClient } from "react-query";
+import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 
 export const useSetUpReview = () => {
   const [isClickDots, setIsClickDots] = useState(false);
-  const queryClient = useQueryClient();
+  const { queryInvalidates } = useQueryInvalidates();
   const deleteMyReview = useDeleteMyReviewMutation();
   const { rollingToast } = useRollingToast();
 
@@ -36,15 +34,20 @@ export const useSetUpReview = () => {
     if (answer) {
       deleteMyReview.mutate(reviewId, {
         onSuccess: () => {
-          queryClient.invalidateQueries(
-            QUERY_KEYS.review.getReviewListCompanyId(companyId),
+          queryInvalidates([
             {
+              queryKey: QUERY_KEYS.review.getReviewListCompanyId(companyId),
               refetchInactive: true,
-            }
-          );
-          queryClient.invalidateQueries(QUERY_KEYS.review.getMyReview, {
-            refetchInactive: true,
-          });
+            },
+            {
+              queryKey: QUERY_KEYS.review.getMyReview,
+              refetchInactive: true,
+            },
+            {
+              queryKey: QUERY_KEYS.review.getReviewMyStatus,
+              refetchInactive: true,
+            },
+          ]);
           rollingToast("리뷰를 삭제하였습니다.", "success");
         },
         onError: (error) => {

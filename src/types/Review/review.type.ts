@@ -89,5 +89,3 @@ export interface ReviewCompanyContentsType {
   position: string;
   careerPath: string;
 }
-
-export type ReviewQueryKeyType = "companyDetailMyReview" | "myPageReview";
