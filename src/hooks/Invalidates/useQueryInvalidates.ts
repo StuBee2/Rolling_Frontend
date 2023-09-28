@@ -1,9 +1,5 @@
+import { queryInvalidateType } from "@src/types/Invalidates/invalidates.type";
 import { useQueryClient } from "react-query";
-
-interface queryInvalidateType {
-  queryKey: string | string[];
-  refetchInactive?: boolean;
-}
 
 export const useQueryInvalidates = () => {
   const queryClient = useQueryClient();
