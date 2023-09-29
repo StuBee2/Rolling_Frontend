@@ -6,7 +6,6 @@ interface Props {
 }
 
 export default function EditNickname({ nickName }: Props) {
-  console.log(nickName);
   const { ...attr } = useEditNickName(nickName);
   return (
     <>

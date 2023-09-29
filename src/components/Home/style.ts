@@ -9,8 +9,8 @@ export const HomeContainer = styled.div`
   background-color: #f9fafb;
   padding: 0 15px 0 15px;
   white-space: nowrap;
+  min-width: 450px;
   @media screen and (max-width: 450px) {
-    width: 450px;
     height: 100%;
   }
 `;

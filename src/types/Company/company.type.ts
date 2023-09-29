@@ -64,3 +64,9 @@ export interface CompanyStarGradeInfo extends CompanyStarGrade {
   companyImgUrl: string;
   companyName: string;
 }
+
+export interface CompanyRegistInfo {
+  name: string;
+  address: string;
+  description: string;
+}

@@ -7,9 +7,7 @@ export const CompanyDetailContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 15px 15px 15px;
-  @media screen and (max-width: 500px) {
-    width: 500px;
-  }
+  min-width: 500px;
 `;
 
 export const CompanyDetailWrapper = styled.div`
