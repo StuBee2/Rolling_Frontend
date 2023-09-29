@@ -35,18 +35,9 @@ export const useSetUpReview = () => {
       deleteMyReview.mutate(reviewId, {
         onSuccess: () => {
           queryInvalidates([
-            {
-              queryKey: QUERY_KEYS.review.getReviewListCompanyId(companyId),
-              refetchInactive: true,
-            },
-            {
-              queryKey: QUERY_KEYS.review.getMyReview,
-              refetchInactive: true,
-            },
-            {
-              queryKey: QUERY_KEYS.review.getReviewMyStatus,
-              refetchInactive: true,
-            },
+            QUERY_KEYS.review.getReviewListCompanyId(companyId),
+            QUERY_KEYS.review.getMyReview,
+            QUERY_KEYS.review.getReviewMyStatus,
           ]);
           rollingToast("리뷰를 삭제하였습니다.", "success");
         },

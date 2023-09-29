@@ -78,17 +78,9 @@ export const useRegistReview = (companyId: string) => {
       postReview.mutate(param as unknown as ReviewParam, {
         onSuccess: () => {
           queryInvalidates([
-            {
-              queryKey: QUERY_KEYS.review.getReviewListCompanyId(companyId),
-            },
-            {
-              queryKey: QUERY_KEYS.review.getMyReview,
-              refetchInactive: true,
-            },
-            {
-              queryKey: QUERY_KEYS.review.getReviewMyStatus,
-              refetchInactive: true,
-            },
+            QUERY_KEYS.review.getMyReview,
+            QUERY_KEYS.review.getReviewListCompanyId(companyId),
+            QUERY_KEYS.review.getReviewMyStatus,
           ]);
           setIsCompanyReviewRegisterModal(false);
           rollingToast("리뷰를 등록하였습니다.", "success");

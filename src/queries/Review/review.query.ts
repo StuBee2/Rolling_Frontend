@@ -35,6 +35,8 @@ export const useGetMyReviewQuery = (
       ReviewRepositoryImpl.getMyReviewList({ page: pageParam }),
     {
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
@@ -56,6 +58,8 @@ export const useGetReviewListMemberIdQuery = (
     {
       enabled: !!id,
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
@@ -77,6 +81,8 @@ export const useGetReviewListCompanyIdQuery = (
     {
       ...options,
       enabled: !!id,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
@@ -96,6 +102,8 @@ export const useGetReviewInfoIdQuery = (
     {
       enabled: !!id,
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
     }
   );
 
@@ -103,7 +111,8 @@ export const useGetReviewMyStatusQuery = (
   options?: UseQueryOptions<
     ReviewMyStatusResponse,
     AxiosError,
-    ReviewMyStatusResponse
+    ReviewMyStatusResponse,
+    string
   >
 ): UseQueryResult<ReviewMyStatusResponse, AxiosError> =>
   useQuery(
@@ -111,6 +120,8 @@ export const useGetReviewMyStatusQuery = (
     () => ReviewRepositoryImpl.getReviewMyStatus(),
     {
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
     }
   );
 
