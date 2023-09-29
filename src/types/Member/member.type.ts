@@ -12,7 +12,7 @@ export interface MemberType {
   };
   memberDetails: {
     nickName: string;
-    memberRole: string;
+    memberRole: "MEMBER" | "TEMP";
     createdAt: string;
     modifiedAt: string;
   };
