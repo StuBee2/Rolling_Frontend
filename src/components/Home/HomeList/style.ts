@@ -4,6 +4,7 @@ export const HomeListContainer = styled.div`
   width: calc(100% - 620px);
   height: 100%;
   display: flex;
+  padding-left: 1rem;
   @media screen and (max-width: 1393px) {
     justify-content: center;
   }
@@ -12,6 +13,7 @@ export const HomeListContainer = styled.div`
   }
   @media screen and (max-width: 740px) {
     width: 100%;
+    padding-left: 0;
   }
 `;
 

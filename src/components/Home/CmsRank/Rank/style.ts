@@ -6,6 +6,7 @@ export const RankContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
+  padding-bottom: 10px;
 `;
 
 export const RankCategoriesContainer = styled.div`

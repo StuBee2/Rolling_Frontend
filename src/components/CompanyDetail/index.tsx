@@ -39,7 +39,7 @@ export default function CompanyDetail({ id }: Props) {
     <>
       <S.CompanyDetailContainer>
         <S.CompanyDetailWrapper>
-          <ErrorBoundary fallback={<>에러가 발생했습니다.</>}>
+          <ErrorBoundary fallback={<>회사정보를 갖고오지 못했습니다.</>}>
             <Suspense fallback={<CompanyDetailSkeleton />}>
               <CompanyDetailItem
                 id={id}

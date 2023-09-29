@@ -63,7 +63,7 @@ export default function CompanyDetailInfo({ companyInfo }: Props) {
           )}
         </div>
 
-        <ErrorBoundary fallback={<>리뷰를 가지고 오지 못했습니다.</>}>
+        <ErrorBoundary fallback={<>해당 회사 리뷰를 가지고 오지 못했습니다.</>}>
           <Suspense fallback={<ReviewSkeleton />}>
             <CompanyDetailReview companyId={companyInfo.companyId} />
           </Suspense>

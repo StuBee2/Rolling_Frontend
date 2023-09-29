@@ -18,15 +18,22 @@ export default function CompanyReviewModal({
   const [showPositionList, setShowPositionList] = useState(false);
   useCloseModal(setReviewModal);
 
+  const handleCloseModal = () => {
+    const answer = window.confirm("리뷰 작성을 취소하시겠습니까?");
+    if (answer) {
+      setReviewModal(false);
+    }
+  };
+
   return (
-    <S.ReviewModalContainer onClick={() => setReviewModal(false)}>
+    <S.ReviewModalContainer onClick={handleCloseModal}>
       <S.ReviewModalWrapper
         onClick={(e) => {
           e.stopPropagation();
           setShowPositionList(false);
         }}
       >
-        <S.ReviewCloseIcon onClick={() => setReviewModal(false)}>
+        <S.ReviewCloseIcon onClick={handleCloseModal}>
           <img src={close} alt="이미지 없음" />
         </S.ReviewCloseIcon>
 

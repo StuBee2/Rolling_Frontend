@@ -21,7 +21,7 @@ export default function User({ children }: Props) {
   return (
     <S.UserWrap>
       <S.UserContainer>
-        <ErrorBoundary fallback={<>Error</>}>
+        <ErrorBoundary fallback={<>내 정보를 갖고오지 못했습니다.</>}>
           <Suspense fallback={<NavSkeleton />}>
             <Nav pathName={pathname} />
           </Suspense>
@@ -40,7 +40,9 @@ export default function User({ children }: Props) {
               </S.Explain>
             </S.Title>
 
-            <ErrorBoundary fallback={<>Error</>}>
+            <ErrorBoundary
+              fallback={<>리뷰한 회사의 수를 갖고오지 못했습니다.</>}
+            >
               <Suspense fallback={<ReviewStatusSkeleton />}>
                 <ReviewStatus />
               </Suspense>

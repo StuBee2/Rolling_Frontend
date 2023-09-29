@@ -14,7 +14,7 @@ export default function HomeList() {
           <p>선배들이 추천해요!</p>
         </S.SeniorRecommand>
         <S.HomeItemContainer>
-          <ErrorBoundary fallback={<>Error :)</>}>
+          <ErrorBoundary fallback={<>등록된 회사를 갖고오지 못했습니다.</>}>
             <Suspense fallback={<HomeSkeleton />}>
               <HomeItems />
             </Suspense>

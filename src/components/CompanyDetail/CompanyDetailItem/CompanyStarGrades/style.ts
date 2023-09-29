@@ -121,5 +121,5 @@ export const StarGradeText = styled.p`
 
 export const StarGradeScoreText = styled.p`
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 600;
 `;

@@ -62,7 +62,7 @@ export const RegistTextContainer = styled.div`
   align-items: center;
   column-gap: 5px;
   margin-bottom: 15px;
-  font-weight: bold;
+  font-weight: 600;
 
   img {
     width: 20px;

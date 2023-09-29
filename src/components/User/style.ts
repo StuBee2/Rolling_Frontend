@@ -40,6 +40,9 @@ export const UserListContainer = styled.div`
   @media screen and (max-width: 1040px) {
     width: 100%;
   }
+  @media screen and (max-width: 450px) {
+    padding-bottom: 3rem;
+  }
 `;
 
 export const Container = styled.div`

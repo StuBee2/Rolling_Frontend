@@ -111,7 +111,7 @@ export const ReviewItemDescription = styled.div`
   height: 100%;
   overflow-y: scroll;
   line-height: 22px;
-  font-size: 14px;
+  font-size: 15.5px;
   color: #72777a;
 `;
 

@@ -30,7 +30,7 @@ export default function Rank() {
         </S.RankCategoriesUl>
       </S.RankCategoriesContainer>
 
-      <ErrorBoundary fallback={<>Error :)</>}>
+      <ErrorBoundary fallback={<>회사 랭킹을 갖고오지 못했습니다.</>}>
         <Suspense fallback={<RankSkeleton />}>
           <RankItem rankCategory={rankCategorySelect} />
         </Suspense>

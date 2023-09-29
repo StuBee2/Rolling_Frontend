@@ -41,7 +41,7 @@ export default function CompanyDetailContent({ companyInfo }: Props) {
       </S.CompanyDetailContentInfoContainer>
 
       {/* 아래는 추후에 추가될 기능 */}
-      <S.CompanyDetailContentCompanyImgContainer>
+      {/* <S.CompanyDetailContentCompanyImgContainer>
         {Array.from({ length: 10 }).map((_, idx) => (
           <img
             key={idx}
@@ -49,7 +49,7 @@ export default function CompanyDetailContent({ companyInfo }: Props) {
             alt="이미지 없음"
           />
         ))}
-      </S.CompanyDetailContentCompanyImgContainer>
+      </S.CompanyDetailContentCompanyImgContainer> */}
     </S.CompanyDetailContentContainer>
   );
 }
