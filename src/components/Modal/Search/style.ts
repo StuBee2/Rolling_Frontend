@@ -94,6 +94,12 @@ export const InputContainer = styled.form`
     }
   }
 
+  @media screen and (max-width: 510px) {
+    input {
+      font-size: 30px;
+    }
+  }
+
   @media screen and (max-width: 420px) {
     button {
       img {
