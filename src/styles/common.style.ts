@@ -15,3 +15,11 @@ export const HoverAnimation = css`
     background-color: #dddddd;
   }
 `;
+
+export const StopDrag = css`
+  -webkit-touch-callout: none;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+`;

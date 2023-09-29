@@ -2,7 +2,7 @@ export const QUERY_KEYS = Object.freeze({
   company: {
     getMyListCompany: "/company/my",
     getListSearchCompany: (name: string) => ["/company/search", name],
-    getListCompany: "/company/list",
+    getListAllCompany: "/company/list/all",
     getListAllAndSearchCompany: (name: string) => [
       "/company/allAndSearch",
       name,

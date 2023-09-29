@@ -1,9 +1,8 @@
-import { CustomResponsiveHeaderAtom } from "@src/stores/common/common.store";
+import { useCustomHeader } from "@src/hooks/Common/useCustomHeader";
 import { CompanyReviewRegisterModalAtom } from "@src/stores/company/company.store";
 import { ReviewCompanyInfoType } from "@src/types/Review/review.type";
-import { Suspense, useEffect, useState } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { CSSObject } from "styled-components";
+import { Suspense, useState } from "react";
+import { useRecoilState } from "recoil";
 import ErrorBoundary from "../Common/ErrorBoundary";
 import Portal from "../Common/Portal";
 import CompanyDetailSkeleton from "../Common/Skeleton/CompanyDetail";
@@ -22,19 +21,10 @@ export default function CompanyDetail({ id }: Props) {
       companyName: "",
       companyLogo: "",
     });
-
   const [companyReviewRegisterModal, setCompanyReviewRegisterModal] =
     useRecoilState(CompanyReviewRegisterModalAtom);
-  const setCustomResponsiveHeader = useSetRecoilState<CSSObject | null>(
-    CustomResponsiveHeaderAtom
-  );
 
-  //커스텀 헤더
-  useEffect(() => {
-    setCustomResponsiveHeader(S.CustomHeader);
-    return () => setCustomResponsiveHeader(null);
-  }, [setCustomResponsiveHeader]);
-
+  useCustomHeader(S.CustomHeader);
   return (
     <>
       <S.CompanyDetailContainer>

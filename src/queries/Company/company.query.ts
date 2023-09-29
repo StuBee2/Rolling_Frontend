@@ -84,7 +84,7 @@ export const useGetAllCompanyListQuery = (
   >
 ): UseInfiniteQueryResult<CompanyInfiniteScrollType, AxiosError> =>
   useInfiniteQuery(
-    QUERY_KEYS.company.getListCompany,
+    QUERY_KEYS.company.getListAllCompany,
     ({ pageParam = 1 }) =>
       CompanyRepositoryImpl.getAllCompanyList({ page: pageParam }),
     {
