@@ -12,7 +12,7 @@ export default function UserInfo() {
     <S.UserInfoContainer>
       <div>
         <S.UserInfoWrapper>
-          <ErrorBoundary fallback={<>Error:)</>}>
+          <ErrorBoundary fallback={<>내 정보를 갖고오지 못했습니다.</>}>
             <Suspense fallback={<UserInfoSkeleton />}>
               <UserInfoItem />
             </Suspense>
@@ -35,7 +35,7 @@ function UserInfoItem() {
             {userInfo?.memberDetails.nickName || userInfo?.socialDetails.name}
           </S.UserInfoNickName>
           <S.UserInfoEmail>
-            {stringEllipsis(userInfo?.socialDetails.email!!, 22)}
+            {stringEllipsis(userInfo?.socialDetails.email!! || "", 22)}
           </S.UserInfoEmail>
         </div>
       </S.UserInfoBox>

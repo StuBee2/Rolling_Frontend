@@ -34,38 +34,44 @@ export const InfoModalContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
-export const Profile = styled.div`
+export const ProfileContainer = styled.div`
   width: 100%;
   height: 52%;
   border-radius: 15px 15px 0 0;
   border-bottom: 2px solid rgba(222, 224, 230, 0.3);
   display: flex;
   align-items: center;
-  gap: 10px;
+  column-gap: 10px;
   padding-left: 20px;
   img {
     width: 60px;
     height: 60px;
     border-radius: 10px;
   }
-  div {
-    overflow-x: scroll;
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  }
 `;
 
-export const Name = styled.div`
+export const Profile = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 13px;
+`;
+
+export const Name = styled.p`
   color: #ffffff;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
-  margin-bottom: 5px;
 `;
 
-export const EditProfile = styled.div`
+export const GitInfo = styled.div`
   color: #4869f6;
   cursor: pointer;
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+  img {
+    width: 15px;
+    height: 15px;
+  }
 `;
 
 export const MyPageLogout = styled.div`

@@ -24,6 +24,8 @@ export const UserInfoBox = styled.div`
   display: flex;
   align-items: center;
   column-gap: 10px;
+  width: 100%;
+  white-space: nowrap;
   img {
     width: 75px;
     height: 75px;
@@ -32,6 +34,7 @@ export const UserInfoBox = styled.div`
     border-radius: 4rem;
   }
   div {
+    width: calc(100% - 85px);
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -40,8 +43,11 @@ export const UserInfoBox = styled.div`
 `;
 
 export const UserInfoNickName = styled.p`
-  font-size: 20px;
+  font-size: 18px;
+  height: 20px;
   font-weight: bold;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
   &:hover {
     color: rgba(72, 105, 246, 1);
   }
@@ -56,7 +62,7 @@ export const RegistTextContainer = styled.div`
   align-items: center;
   column-gap: 5px;
   margin-bottom: 15px;
-  font-weight: bold;
+  font-weight: 600;
 
   img {
     width: 20px;

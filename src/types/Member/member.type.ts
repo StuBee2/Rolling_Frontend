@@ -7,12 +7,12 @@ export interface MemberType {
     socialLoginId: string;
     loginType: string;
     name: string;
-    email: string;
+    email?: string;
     imageUrl: string;
   };
   memberDetails: {
     nickName: string;
-    memberRole: string;
+    memberRole: "MEMBER" | "TEMP";
     createdAt: string;
     modifiedAt: string;
   };
@@ -21,5 +21,5 @@ export interface MemberType {
 export interface NavMemberProfileType {
   imgUrl: string;
   name: string;
-  email: string;
+  email?: string;
 }

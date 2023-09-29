@@ -10,7 +10,9 @@ import {
 import ReviewRepositoryImpl from "@src/repositories/Review/review.repositoryImpl";
 import {
   ReviewInfiniteScrollListType,
+  ReviewInfoIdInfiniteScrollListType,
   ReviewInfoIdType,
+  ReviewMyStatusResponse,
 } from "@src/types/Review/review.type";
 import { AxiosError } from "axios";
 import { CommonIdParam } from "@src/repositories/common.param";
@@ -33,11 +35,13 @@ export const useGetMyReviewQuery = (
       ReviewRepositoryImpl.getMyReviewList({ page: pageParam }),
     {
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
 
-export const useGetReviewListwMemberIdQuery = (
+export const useGetReviewListMemberIdQuery = (
   { id }: CommonIdParam,
   options?: UseInfiniteQueryOptions<
     ReviewInfiniteScrollListType,
@@ -54,6 +58,8 @@ export const useGetReviewListwMemberIdQuery = (
     {
       enabled: !!id,
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
@@ -61,13 +67,13 @@ export const useGetReviewListwMemberIdQuery = (
 export const useGetReviewListCompanyIdQuery = (
   { id }: CommonIdParam,
   options?: UseInfiniteQueryOptions<
-    ReviewInfiniteScrollListType,
+    ReviewInfoIdInfiniteScrollListType,
     AxiosError,
-    ReviewInfiniteScrollListType,
-    ReviewInfiniteScrollListType,
+    ReviewInfoIdInfiniteScrollListType,
+    ReviewInfoIdInfiniteScrollListType,
     string[]
   >
-): UseInfiniteQueryResult<ReviewInfiniteScrollListType, AxiosError> =>
+): UseInfiniteQueryResult<ReviewInfoIdInfiniteScrollListType, AxiosError> =>
   useInfiniteQuery(
     QUERY_KEYS.review.getReviewListCompanyId(id),
     ({ pageParam = 1 }) =>
@@ -75,6 +81,8 @@ export const useGetReviewListCompanyIdQuery = (
     {
       ...options,
       enabled: !!id,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
@@ -94,6 +102,26 @@ export const useGetReviewInfoIdQuery = (
     {
       enabled: !!id,
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
+    }
+  );
+
+export const useGetReviewMyStatusQuery = (
+  options?: UseQueryOptions<
+    ReviewMyStatusResponse,
+    AxiosError,
+    ReviewMyStatusResponse,
+    string
+  >
+): UseQueryResult<ReviewMyStatusResponse, AxiosError> =>
+  useQuery(
+    QUERY_KEYS.review.getReviewMyStatus,
+    () => ReviewRepositoryImpl.getReviewMyStatus(),
+    {
+      ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
     }
   );
 

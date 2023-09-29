@@ -43,6 +43,8 @@ export const useGetMyCompanyListQuery = (
       CompanyRepositoryImpl.getMyCompanyList({ page: pageParam }),
     {
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
@@ -66,6 +68,8 @@ export const useGetCompanySerachListQuery = (
       ),
     {
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
@@ -85,6 +89,8 @@ export const useGetAllCompanyListQuery = (
       CompanyRepositoryImpl.getAllCompanyList({ page: pageParam }),
     {
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
@@ -108,6 +114,8 @@ export const useGetAllAndSearchCompanyListQuery = (
       ),
     {
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
@@ -129,6 +137,8 @@ export const useGetCompanyListIdQuery = (
     {
       enabled: !!id,
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );
@@ -148,6 +158,8 @@ export const useGetCompanyInfoIdQuery = (
     {
       enabled: !!id,
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
     }
   );
 
@@ -164,6 +176,8 @@ export const useGetCompanyRankTotalQuery = (
     () => CompanyRepositoryImpl.getCompanyRankTotal(),
     {
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
     }
   );
 
@@ -178,7 +192,7 @@ export const useGetCompanyRankSalaryBenefitsQuery = (
   useQuery(
     QUERY_KEYS.company.getCompanyRankSalaryBenefits,
     () => CompanyRepositoryImpl.getCompanyRankSalaryBenefits(),
-    { ...options }
+    { ...options, staleTime: 1000 * 60 * 60, cacheTime: 1000 * 60 * 60 }
   );
 
 export const useGetCompanyRankCulture = (
@@ -192,7 +206,7 @@ export const useGetCompanyRankCulture = (
   useQuery(
     QUERY_KEYS.company.getCompanyRankCulture,
     () => CompanyRepositoryImpl.getCompanyRankCulture(),
-    { ...options }
+    { ...options, staleTime: 1000 * 60 * 60, cacheTime: 1000 * 60 * 60 }
   );
 
 export const useGetCompanyRankCareer = (
@@ -206,7 +220,7 @@ export const useGetCompanyRankCareer = (
   useQuery(
     QUERY_KEYS.company.getCompanyRankCareer,
     () => CompanyRepositoryImpl.getCompanyRankCareer(),
-    { ...options }
+    { ...options, staleTime: 1000 * 60 * 60, cacheTime: 1000 * 60 * 60 }
   );
 
 export const useGetCompanyRankBalanceQuery = (
@@ -222,6 +236,8 @@ export const useGetCompanyRankBalanceQuery = (
     () => CompanyRepositoryImpl.getCompanyRankBalance(),
     {
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
     }
   );
 
@@ -240,6 +256,8 @@ export const useGetCompanyRankSelectQuery = (
     {
       enabled: !!rankCategory,
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
     }
   );
 

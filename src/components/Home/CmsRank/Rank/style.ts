@@ -5,8 +5,8 @@ export const RankContainer = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
   overflow-y: hidden;
+  padding-bottom: 10px;
 `;
 
 export const RankCategoriesContainer = styled.div`
@@ -34,12 +34,9 @@ export const RankTitle = styled.div`
 
 export const RankCategoriesUl = styled.ul`
   display: flex;
-  column-gap: 15px;
+  column-gap: 12px;
   overflow-x: scroll;
-  padding-top: 20px;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  padding: 20px 0 20px 0;
 `;
 
 export const RankCategoryLi = styled.li<{ isSelect: boolean }>`

@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import { CSSObject } from "styled-components";
 
 export const HideHeader = atom<boolean>({
   key: "hideHeader",
@@ -13,4 +14,9 @@ export const MyInfoModal = atom<boolean>({
 export const IsCloseModalAtom = atom<boolean>({
   key: "isCloseModalAtom",
   default: false,
+});
+
+export const CustomResponsiveHeaderAtom = atom<CSSObject | null>({
+  key: "customResponsiveHeaderAtom",
+  default: null,
 });

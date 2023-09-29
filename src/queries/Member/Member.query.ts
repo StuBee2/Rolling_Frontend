@@ -16,7 +16,7 @@ export const useGetMyInfoQuery = (
   useQuery(
     QUERY_KEYS.member.getMyMember,
     () => MemberRepositoryImpl.getMyInfo(),
-    { ...options }
+    { ...options, staleTime: 1000 * 60 * 60, cacheTime: 1000 * 60 * 60 }
   );
 
 export const usePatchMyNickNameMutation = () => {

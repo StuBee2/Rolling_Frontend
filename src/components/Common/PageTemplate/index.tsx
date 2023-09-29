@@ -9,8 +9,7 @@ import {
 } from "@src/stores/common/common.store";
 import Search from "../../Modal/Search";
 import Info from "../../Modal/MyInfo";
-import { useAuthTopScroll } from "@stubee2/stubee2-rolling-util";
-import styled from "styled-components";
+import Portal from "../Portal";
 
 interface Props {
   children: ReactNode;
@@ -20,14 +19,15 @@ export default function PageTemplate({ children }: Props) {
   const hideHeader = useRecoilValue(HideHeader);
   const isCloseModal = useRecoilValue(IsCloseModalAtom);
   const myInfoModal = useRecoilValue(MyInfoModal);
-  useAuthTopScroll();
 
   return (
     <>
       <GlobalStyle />
       {!hideHeader && <Header />}
-      {isCloseModal && <Search />}
-      {myInfoModal && <Info />}
+      <Portal>
+        {isCloseModal && <Search />}
+        {myInfoModal && <Info />}
+      </Portal>
       <>{children}</>
     </>
   );

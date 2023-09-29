@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const ReviewItemContainer = styled.div`
   width: 100%;
-  height: 350px;
+  height: 340px;
   display: flex;
   column-gap: 5px;
   @media screen and (max-width: 450px) {
@@ -23,16 +23,12 @@ export const ReviewItemWrapper = styled.div`
 `;
 
 export const ReviewItem = styled.div`
-  width: 95%;
-  height: 88%;
+  width: 93%;
+  height: 90%;
   display: flex;
+  row-gap: 0.8rem;
   flex-direction: column;
-  row-gap: 1rem;
-  padding: 0.5rem;
   justify-content: space-between;
-  @media screen and (max-width: 495px) {
-    padding: 0.5rem;
-  }
 `;
 
 export const ReviewCompanyInfoContainer = styled.div`
@@ -40,11 +36,6 @@ export const ReviewCompanyInfoContainer = styled.div`
   height: 60%;
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
-  @media screen and (max-width: 495px) {
-    row-gap: 0;
-    height: auto;
-  }
 `;
 
 export const ReviewRegisteredAtAndDelEditContainer = styled.div`
@@ -71,11 +62,6 @@ export const DelAndEditContainer = styled.div`
     width: 30px;
     height: 30px;
   }
-
-  @media screen and (max-width: 640px) {
-    flex-direction: row;
-    column-gap: 5px;
-  }
 `;
 
 export const SetUpIconContainer = styled.div`
@@ -93,13 +79,18 @@ export const ReviewCompanyContainer = styled.div`
   cursor: pointer;
   overflow-x: scroll;
   overflow-y: hidden;
+`;
 
+export const ReviewCompanyImgContainer = styled.div`
+  width: 100px;
+  height: 100px;
   img {
+    white-space: nowrap;
     width: 100px;
     height: 100px;
-    border-radius: 10px;
     object-fit: cover;
-    border: 1px solid #dddddd;
+    overflow: hidden;
+    border-radius: 10px;
   }
 `;
 
@@ -134,30 +125,4 @@ export const ReviewCompanyContent = styled.p`
   color: rgba(115, 123, 152, 1);
   font-size: 15px;
   font-weight: 300;
-`;
-
-export const ReviewCompanyCultureContainer = styled.div`
-  width: 100%;
-  height: 40%;
-  background-color: rgba(242, 244, 245, 1);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 1rem;
-  padding: 2rem;
-  font-size: 13px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
-
-  div {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    p {
-      text-align: center;
-    }
-  }
 `;

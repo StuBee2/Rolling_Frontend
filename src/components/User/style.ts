@@ -37,21 +37,41 @@ export const UserListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: 1040px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 450px) {
+    padding-bottom: 3rem;
+  }
+`;
 
+export const Container = styled.div`
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;
   }
-  @media screen and (max-width: 1040px) {
-    width: 100%;
-  }
+`;
+
+export const Title = styled.div`
+  font-weight: bold;
+`;
+
+export const Explain = styled.div`
+  font-size: 14.7px;
+  color: #61677e;
+  margin-top: 10px;
 `;
 
 export const FontSize = styled.p<{ fontSize: string }>`
   font-size: ${({ fontSize }) => fontSize};
 `;
 
-export const CompanyStatusCommonHover = css`
+export const ReviewStatusCommonHover = css`
   transform: scale(1);
   transition: all 0.1s ease-in-out;
   cursor: pointer;

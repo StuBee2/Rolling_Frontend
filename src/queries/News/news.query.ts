@@ -25,6 +25,8 @@ export const useGetNewsQuery = (
       NewsRepositoryImpl.getNews({ companyName }, { page: pageParam }),
     {
       ...options,
+      staleTime: 1000 * 60 * 60,
+      cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
     }
   );

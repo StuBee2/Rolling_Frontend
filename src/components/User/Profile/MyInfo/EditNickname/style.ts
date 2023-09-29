@@ -27,10 +27,10 @@ export const AddNickNameBtn = styled.button`
   column-gap: 2px;
 `;
 
-export const NickName = styled.span`
+export const NickName = styled.span<{ isHaveNickName: boolean }>`
   font-weight: bold;
   color: #000;
-  font-size: 25px;
+  font-size: ${({ isHaveNickName }) => (isHaveNickName ? "25px" : "18px")};
 `;
 
 export const EditNickNameHoverContainer = styled.div`
@@ -56,8 +56,5 @@ export const EditAndCancelContainer = styled.div`
     outline: none;
     border: none;
     border-radius: 5px;
-    &:hover {
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-    }
   }
 `;
