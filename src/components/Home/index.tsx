@@ -1,5 +1,4 @@
 import Token from "@src/libs/Token/Token";
-import Category from "./Category";
 import CmsRank from "./CmsRank";
 import HomeList from "./HomeList";
 import * as S from "./style";

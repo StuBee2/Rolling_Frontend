@@ -8,7 +8,7 @@ import { changeReviewStarGradesToArrayObject } from "@src/utils/Review/changeRev
 import ReviewSetUp from "@src/components/Common/ReviewSetUp";
 import Token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
-import { jwtDecodeMemberId } from "@src/utils/Auth/jwtDecodeMemberId";
+import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
 
 interface Props {
   companyId: string;
@@ -51,7 +51,7 @@ export default function CompanyDetailReview({ companyId }: Props) {
 }
 
 function ReviewItem({ ...attr }: ReviewInfoIdType) {
-  const isCoincideMemberId = jwtDecodeMemberId() === attr.writerId;
+  const isCoincideMemberId = jwtDecoding("sub") === attr.writerId;
   return (
     <S.ReviewItemBoxContainer>
       <S.ReviewItemBox>
