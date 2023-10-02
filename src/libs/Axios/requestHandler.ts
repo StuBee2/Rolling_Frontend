@@ -6,7 +6,7 @@ import {
 } from "@src/constants/Auth/auth.constant";
 import Token from "../Token/Token";
 import { rollingAxios } from "./customAxios";
-import moment from "moment";
+import dayjs from "dayjs";
 import authRepositoryImpl from "@src/repositories/Auth/auth.repositoryImpl";
 import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
 
@@ -14,9 +14,8 @@ export const requestHandler = async (config: InternalAxiosRequestConfig) => {
   let access_token = Token.getToken(ACCESS_TOKEN_KEY);
   const refresh_token = Token.getToken(REFRESH_TOKEN_KEY);
   const expirationAt = new Date(Number(jwtDecoding("exp")) * 1000); // 1000을 곱해 밀리초 단위로 변환
-
   // 만료시간과 현재 시간을 비교하여 0 미만이면 어세스 토큰이 만료된 것이므로 아래 조건문 실행
-  if (moment(expirationAt).diff(moment()) < 0 && refresh_token) {
+  if (dayjs(expirationAt).diff(dayjs()) < 0 && refresh_token) {
     try {
       const { accessToken: newAccessToken } =
         await authRepositoryImpl.postRefreshToken({
