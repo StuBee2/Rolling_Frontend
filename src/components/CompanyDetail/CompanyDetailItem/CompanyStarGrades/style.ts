@@ -77,7 +77,7 @@ export const CompanyStarGradesItemUl = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   row-gap: 1.5rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
 
   li {
     display: flex;
@@ -88,7 +88,7 @@ export const CompanyStarGradesItemUl = styled.ul`
     flex-direction: row;
     row-gap: 0;
     column-gap: 20px;
-    padding-bottom: 1rem;
+    padding: 1rem 1rem;
     overflow-x: scroll;
     overflow-y: hidden;
   }
@@ -112,14 +112,22 @@ export const CompanyGradeText = styled.div`
 export const StarGradeContainer = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  @media screen and (max-width: 1005px) {
+    justify-content: center;
+    align-items: normal;
+  }
 `;
 
 export const StarGradeText = styled.p`
   font-size: 15px;
+  &:after {
+    content: "·";
+    margin-left: 5px;
+  }
 `;
 
 export const StarGradeScoreText = styled.p`
   font-size: 17px;
   font-weight: 600;
+  margin-left: 5px;
 `;

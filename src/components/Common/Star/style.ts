@@ -9,19 +9,29 @@ export const StarContainer = styled.div<{ fontSize?: string }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  column-gap: 1rem;
-  padding: 2rem;
-  font-weight: bold;
+  column-gap: 1.5rem;
+  padding: 0 3rem 0 3rem;
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
+`;
 
-  div {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    p {
-      text-align: center;
-    }
-  }
+export const StarWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+`;
+
+export const StarItemTitle = styled.div`
+  display: flex;
+  justify-content: center;
+  column-gap: 5px;
+`;
+
+export const StarGradeText = styled.p`
+  font-weight: 800;
+`;
+
+export const StarRatingContainer = styled.p`
+  text-align: center;
 `;

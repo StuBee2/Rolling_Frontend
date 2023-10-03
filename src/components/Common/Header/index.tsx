@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import logo from "@src/assets/Common/Logo.svg";
 import Search1 from "@src/assets/Search/Search1.svg";
 import { useState } from "react";
-import { HEADER_ITEMS } from "@src/constants/Common/common.constant";
+import { HEADER_ITEMS } from "@src/constants/Header/header.constant";
 import token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import { useRecoilValue, useSetRecoilState } from "recoil";

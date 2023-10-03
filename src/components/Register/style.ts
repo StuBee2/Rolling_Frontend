@@ -9,13 +9,13 @@ export const RegisterContainer = styled.div`
   position: relative;
   background-color: rgba(222, 224, 230, 1);
   overflow-y: scroll;
-  min-width: 720px;
-  @media screen and (max-width: 720px) {
+  min-width: 500px;
+  @media screen and (max-width: 500px) {
     height: 100%;
     overflow-y: visible;
   }
 `;
 
 export const RegisterCustomHeader = {
-  minWidth: "720px",
+  minWidth: "500px",
 };

@@ -22,7 +22,7 @@ export const Title = styled.p`
   font-weight: bold;
   font-size: 35px;
   color: #1d1e5a;
-  /* cursor: pointer; */
+  cursor: pointer;
 `;
 
 export const SignInBox = styled.div`

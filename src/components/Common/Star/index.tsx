@@ -10,12 +10,16 @@ export default function Star({
   return (
     <S.StarContainer fontSize={fontSize}>
       {rankStatus.map((item) => (
-        <div key={item.id}>
-          <p>{item.title}</p>
-          <p>
+        <S.StarWrapper key={item.id}>
+          <S.StarItemTitle>
+            <p>{item.title}</p>
+            <S.StarGradeText>· {item.star}점</S.StarGradeText>
+          </S.StarItemTitle>
+
+          <S.StarRatingContainer>
             <StarRating starRatingCount={item.star} {...attr} />
-          </p>
-        </div>
+          </S.StarRatingContainer>
+        </S.StarWrapper>
       ))}
     </S.StarContainer>
   );

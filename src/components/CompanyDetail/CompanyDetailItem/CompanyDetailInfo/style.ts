@@ -94,9 +94,9 @@ export const CompanyDetailRegistAt = styled.p<{
   widthType: "min-width" | "max-width";
 }>`
   color: #737b98;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  padding-right: 12px;
+  padding-right: 15px;
 
   ${({ widthType }) =>
     widthType === "min-width"
