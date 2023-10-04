@@ -1,3 +1,4 @@
+import { StopDrag } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const SignInItemForm = styled.form`
@@ -31,6 +32,7 @@ export const SignInBox = styled.div`
   flex-direction: column;
   row-gap: 40px;
   filter: blur(5px);
+  ${StopDrag};
 
   ul {
     display: flex;

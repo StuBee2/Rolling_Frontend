@@ -1,6 +1,5 @@
-import { useParams } from "react-router-dom";
-import FirmReview from "@src/components/CompanyDetail/CompanyReviewModal";
+import Register from "@src/components/Register";
 
-export default function ReviewPage() {
-  return <FirmReview />;
+export default function RegisterPage() {
+  return <Register />;
 }

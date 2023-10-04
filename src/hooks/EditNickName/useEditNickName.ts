@@ -24,13 +24,9 @@ export const useEditNickName = (nickName: string) => {
     setEditNickName(e.target.value);
   };
 
-  const hanldeEditNickNameCancel = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const answer = window.confirm("닉네임 수정을 취소하시겠습니까?");
-    if (answer) {
-      setIsEditNickName(false);
-      setEditNickName(nickName);
-    }
+  const hanldeEditNickNameCancel = () => {
+    setIsEditNickName(false);
+    setEditNickName(nickName);
   };
 
   const handleNickNameSubmit = (e: React.FormEvent<HTMLFormElement>) => {

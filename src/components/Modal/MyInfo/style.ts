@@ -14,7 +14,7 @@ export const InfoModalWrapper = styled.div`
 
 export const InfoModalParentBox = styled.div`
   width: 1370px;
-  height: calc(100% - 108px);
+  height: calc(100% - 90px);
   position: absolute;
   bottom: 0;
   @media screen and (max-width: 1355px) {

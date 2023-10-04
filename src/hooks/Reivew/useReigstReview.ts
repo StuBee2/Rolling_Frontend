@@ -53,7 +53,14 @@ export const useRegistReview = (companyId: string) => {
     const answer = window.confirm("리뷰를 등록하시겠습니까?");
     if (answer) {
       const { content, position, careerPath } = reviewContents;
+      const {
+        salaryAndBenefits,
+        workLifeBalance,
+        organizationalCulture,
+        careerAdvancement,
+      } = reviewStarRating;
 
+      // 포지션, 커리어 패스, 회사리뷰내용 공백 검증
       if (position === "") {
         return rollingToast("포지션을 작성해주세요!", "warning");
       }
@@ -62,11 +69,28 @@ export const useRegistReview = (companyId: string) => {
         return rollingToast("입력하신 포지션이 없습니다!", "warning");
       }
       if (careerPath === "") {
-        return rollingToast("입사경로를 작성해주세요!", "warning");
+        return rollingToast("커리어 패스를 작성해주세요!", "warning");
       }
 
       if (content === "") {
         return rollingToast("리뷰내용을 작성해주세요!", "warning");
+      }
+
+      // 만족도 별점 0점 검증
+      if (workLifeBalance === 0) {
+        return rollingToast("워라벨 만족도 별점을 매겨주세요!", "warning");
+      }
+
+      if (salaryAndBenefits === 0) {
+        return rollingToast("연봉 만족도 별점을 매겨주세요!", "warning");
+      }
+
+      if (careerAdvancement === 0) {
+        return rollingToast("커리어 향상 만족도 별점을 매겨주세요!", "warning");
+      }
+
+      if (organizationalCulture === 0) {
+        return rollingToast("조직문화 만족도 별점을 매겨주세요!", "warning");
       }
 
       const param = {

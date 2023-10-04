@@ -16,10 +16,12 @@ export default function CompanyReviewModal({
   reviewCompanyInfo,
 }: Props) {
   const [showPositionList, setShowPositionList] = useState(false);
-  useCloseModal(setReviewModal);
+  const closeQuestion = "리뷰 작성을 취소하시겠습니까?";
+
+  useCloseModal(setReviewModal, closeQuestion);
 
   const handleCloseModal = () => {
-    const answer = window.confirm("리뷰 작성을 취소하시겠습니까?");
+    const answer = window.confirm(closeQuestion);
     if (answer) {
       setReviewModal(false);
     }

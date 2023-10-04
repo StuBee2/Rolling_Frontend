@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const RegisterContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 108px);
+  height: calc(100vh - 90px);
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -45,8 +45,8 @@ export default function ReviewItem({ review }: Props) {
                     <span>포지션</span> · {review?.reviewPosition}
                   </li>
                   <li>
-                    <span>입사경로</span> ·{" "}
-                    {stringEllipsis(review?.reviewCareerPath, 40)}
+                    <span>커리어 패스</span> ·{" "}
+                    {stringEllipsis(review?.reviewCareerPath, 35)}
                   </li>
                 </ul>
                 <S.ReviewCompanyContent>

@@ -24,14 +24,14 @@ export default function Nav({ pathName }: Props) {
 
   return (
     <S.UserNavBar>
-      <S.MemberInfoContainer>
+      <S.UserInfoContainer>
         <S.UserImg src={myInfo?.socialDetails.imageUrl} />
         <S.UserName>{myInfo?.socialDetails.name}</S.UserName>
         <S.UserEmail>{myInfo?.socialDetails.email || ""}</S.UserEmail>
-      </S.MemberInfoContainer>
+      </S.UserInfoContainer>
 
       <S.PageSelectContainer>
-        <S.PageSelect>
+        <S.PageSelectWrapper>
           {USER_ITEMS.map((item) => (
             <S.PageSelectItem
               key={item.id}
@@ -42,7 +42,7 @@ export default function Nav({ pathName }: Props) {
               <p>{item.title}</p>
             </S.PageSelectItem>
           ))}
-        </S.PageSelect>
+        </S.PageSelectWrapper>
         <S.PageSelectItem onClick={handleLogout}>
           <img src={logout} alt="이미지 없음" />
           <p>로그아웃</p>

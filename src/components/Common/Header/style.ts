@@ -4,7 +4,7 @@ import styled, { CSSObject } from "styled-components";
 
 export const Header = styled.div<{ customResponsiveHeader?: CSSObject }>`
   width: 100%;
-  height: 108px;
+  height: 90px;
   font-size: 19px;
   background-color: #f9fafb;
   display: flex;
@@ -63,6 +63,7 @@ export const PageList = styled.li<{
 export const LoginSearchContainer = styled.div`
   display: flex;
   align-items: center;
+  column-gap: 3px;
 `;
 
 export const HoverIconContainer = styled.div`

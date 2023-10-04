@@ -1,4 +1,4 @@
-import useHideHeader from "@src/hooks/Common/useHideHeader";
+import useHideHeader from "@src/hooks/Header/useHideHeader";
 import * as S from "./style";
 import rollingImg from "@src/assets/Auth/rollingImg.svg";
 import SignInItem from "./SignInItem/index";

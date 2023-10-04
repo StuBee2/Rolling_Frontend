@@ -2,23 +2,23 @@ import * as S from "./style";
 import { USER_ITEMS } from "@src/constants/User/user.constants";
 import { useLocation, useNavigate } from "react-router-dom";
 
-export default function UserBottom() {
+export default function NavFooter() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
   return (
-    <S.UserFooter>
-      <S.UserListWrap>
+    <S.NavFooterContainer>
+      <S.NavFooterWrapper>
         {USER_ITEMS.map((user) => (
-          <S.UserCategory
+          <S.NavFooterCategoryItem
             key={user.id}
             isSelect={user.link === pathname}
             onClick={() => navigate(user.link)}
           >
             {user.title}
-          </S.UserCategory>
+          </S.NavFooterCategoryItem>
         ))}
-      </S.UserListWrap>
-    </S.UserFooter>
+      </S.NavFooterWrapper>
+    </S.NavFooterContainer>
   );
 }

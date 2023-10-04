@@ -59,7 +59,10 @@ export const InputContainer = styled.form`
     outline: none;
     border: none;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     img {
       width: 100px;
       height: 100px;
@@ -69,6 +72,7 @@ export const InputContainer = styled.form`
   input {
     width: 80%;
     border: none;
+    padding-left: 10px;
     outline: none;
     background-color: transparent;
     font-weight: bold;

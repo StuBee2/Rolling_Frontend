@@ -70,7 +70,7 @@ function ReviewItem({ ...attr }: ReviewInfoIdType) {
                 {attr.reviewPosition}
               </p>
               <p>
-                <span>입사경로 · </span>
+                <span>커리어 패스 · </span>
                 {attr.reviewCareerPath}
               </p>
             </S.ReviewItemPositionAndCareerPath>

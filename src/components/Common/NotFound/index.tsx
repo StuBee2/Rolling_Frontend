@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import useHideHeader from "@src/hooks/Common/useHideHeader";
+import useHideHeader from "@src/hooks/Header/useHideHeader";
 import * as S from "./style";
 
 export default function NotFound() {
