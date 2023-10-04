@@ -20,7 +20,6 @@ export const AddNickNameForm = styled.form`
 export const AddNickNameBtn = styled.button`
   border: none;
   outline: none;
-  cursor: pointer;
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -42,6 +41,7 @@ export const EditNickNameHoverContainer = styled.div`
 export const EditNickIcon = styled(BsPencilSquare)`
   width: 20px;
   height: 20px;
+  cursor: pointer;
 `;
 
 export const EditAndCancelContainer = styled.div`

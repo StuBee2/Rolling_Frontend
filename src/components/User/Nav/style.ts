@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const UserNavBar = styled.div`
   width: 420px;
-  height: calc(100vh - 108px);
+  height: calc(100vh - 90px);
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;
@@ -12,7 +12,7 @@ export const UserNavBar = styled.div`
   }
 `;
 
-export const MemberInfoContainer = styled.div`
+export const UserInfoContainer = styled.div`
   width: 100%;
   height: 300px;
   display: flex;
@@ -27,6 +27,7 @@ export const UserImg = styled.img`
   height: 115px;
   border-radius: 100%;
   object-fit: cover;
+  border: 1px solid #dddddd;
   box-shadow: 0 3px 6px 0 rgba(29, 34, 53, 0.08);
 `;
 
@@ -55,7 +56,7 @@ export const PageSelectContainer = styled.div`
   -webkit-user-select: none;
 `;
 
-export const PageSelect = styled.div`
+export const PageSelectWrapper = styled.div`
   width: 100%;
   height: auto;
   display: flex;

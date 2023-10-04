@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const UserWrap = styled.div`
   width: 100%;
-  height: calc(100vh - 108px);
+  height: calc(100vh - 90px);
   background-color: #f9fafb;
   display: flex;
   flex-direction: column;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const UserFooter = styled.div`
+export const NavFooterContainer = styled.div`
   display: none;
   @media screen and (max-width: 1040px) {
     width: 100%;
@@ -16,7 +16,7 @@ export const UserFooter = styled.div`
   }
 `;
 
-export const UserListWrap = styled.ul`
+export const NavFooterWrapper = styled.ul`
   width: 100%;
   height: 100%;
   display: flex;
@@ -29,7 +29,7 @@ export const UserListWrap = styled.ul`
   }
 `;
 
-export const UserCategory = styled.li<{ isSelect: boolean }>`
+export const NavFooterCategoryItem = styled.li<{ isSelect: boolean }>`
   color: ${(props) => (props.isSelect ? "#1d1e5a" : "#61677e")};
   white-space: nowrap;
   font-weight: ${(props) => props.isSelect && "800"};

@@ -1,3 +1,4 @@
+import { StopDrag } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const SignInItemForm = styled.form`
@@ -7,7 +8,7 @@ export const SignInItemForm = styled.form`
   flex-direction: column;
   row-gap: 50px;
   @media screen and (max-height: 730px) {
-    padding-top: 40px;
+    padding-top: 3.5rem;
   }
 `;
 
@@ -30,31 +31,37 @@ export const SignInBox = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 40px;
-  position: relative;
+  filter: blur(5px);
+  ${StopDrag};
 
   ul {
     display: flex;
     column-gap: 10px;
     color: #1d1e5a;
     li {
-      cursor: pointer;
+      /* cursor: pointer; */
       &:not(:last-child)::after {
         content: "|";
         margin-left: 10px;
       }
     }
   }
+`;
+
+export const ButtonContainer = styled.div`
+  width: 100%;
+  height: 55px;
+  display: flex;
+  justify-content: flex-end;
 
   button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    cursor: default;
   }
 `;
 
 export const IdPwText = styled.p`
   font-weight: 500;
-  font-size: 25px;
+  font-size: 23px;
   margin-bottom: 5px;
 `;
 
@@ -68,6 +75,7 @@ export const InputStyle = {
   fontSize: "18px",
   paddingLeft: " 20px",
   fontWeight: "350",
+  caretColor: "transparent",
 };
 
 export const SocailSignInBtn = styled.button`
@@ -85,7 +93,7 @@ export const SocailSignInBtn = styled.button`
   justify-content: space-between;
   column-gap: 10px;
   padding: 1rem 2rem;
-  cursor: pointer;
+  /* cursor: pointer; */
 
   img {
     width: 35px;

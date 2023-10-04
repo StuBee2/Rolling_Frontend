@@ -1,6 +1,5 @@
-export interface DecodeType {
-  sub: string;
-  authority: string;
-  iat: number;
-  exp: number;
-}
+export type DecodeKeyType = "sub" | "authority" | "iat" | "exp";
+
+export type DecodeType = {
+  [key in DecodeKeyType]: string | number;
+};

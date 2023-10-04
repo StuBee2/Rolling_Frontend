@@ -1,4 +1,4 @@
-import { useEditNickName } from "@src/hooks/Common/useEditNickName";
+import { useEditNickName } from "@src/hooks/EditNickName/useEditNickName";
 import * as S from "./style";
 
 interface Props {

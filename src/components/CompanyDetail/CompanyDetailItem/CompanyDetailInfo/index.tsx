@@ -7,7 +7,7 @@ import CompanyDetailReview from "./CompanyDetailReview";
 import Token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import { useSetRecoilState } from "recoil";
 import { CompanyReviewRegisterModalAtom } from "@src/stores/company/company.store";
 import ReviewSkeleton from "@src/components/Common/Skeleton/Review";
@@ -16,13 +16,7 @@ interface Props {
   companyInfo: CompanyInfoType;
 }
 
-export default function CompanyDetailInfo({ companyInfo }: Props) {
-  const {
-    memberImageUrl,
-    memberNickName,
-    memberSocialLoginId,
-    companyCreatedAt,
-  } = companyInfo;
+function CompanyDetailInfo({ companyInfo }: Props) {
   const setCompanyReviewRegisterModal = useSetRecoilState(
     CompanyReviewRegisterModalAtom
   );
@@ -39,12 +33,7 @@ export default function CompanyDetailInfo({ companyInfo }: Props) {
       <S.CompanyDetailInfoContentContainer>
         <div>
           <S.CompanyDetailInfoContentWrapper>
-            <CompanyDetailUserProfile
-              memberImageUrl={memberImageUrl}
-              memberNickName={memberNickName}
-              memberSocialLoginId={memberSocialLoginId}
-              companyCreatedAt={companyCreatedAt}
-            />
+            <CompanyDetailUserProfile {...companyInfo} />
             <CompanyDetailContent companyInfo={companyInfo} />
           </S.CompanyDetailInfoContentWrapper>
 
@@ -72,3 +61,5 @@ export default function CompanyDetailInfo({ companyInfo }: Props) {
     </S.CompanyDetailInfoContainer>
   );
 }
+
+export default React.memo(CompanyDetailInfo);

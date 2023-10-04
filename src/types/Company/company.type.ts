@@ -47,10 +47,6 @@ export interface CompanyID {
 
 export interface CompanyStarGrade extends CompanyStarGradeWithoutTotalGrade {
   totalGrade: number;
-  salaryAndBenefits: number;
-  workLifeBalance: number;
-  organizationalCulture: number;
-  careerAdvancement: number;
 }
 
 export interface CompanyStarGradeWithoutTotalGrade {

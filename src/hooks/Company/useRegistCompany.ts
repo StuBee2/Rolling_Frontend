@@ -6,7 +6,7 @@ import { FileParam } from "@src/repositories/File/file.repository";
 import { usePostCompanyRegisterMutation } from "@src/queries/Company/company.query";
 import { useNavigate } from "react-router-dom";
 import { QUERY_KEYS } from "@src/queries/queryKey";
-import { useQueryClient } from "react-query";
+import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 
 export const useRegistCompany = () => {
   const imgRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
@@ -18,10 +18,10 @@ export const useRegistCompany = () => {
     description: "",
   });
   const { rollingToast } = useRollingToast();
-  const queryClient = useQueryClient();
   const navigate = useNavigate();
   const fileUpload = useUploadFileMutation();
   const registCompany = usePostCompanyRegisterMutation();
+  const { queryInvalidates } = useQueryInvalidates();
 
   const handleCompanyLogoClick = () => {
     if (imgRef.current) {
@@ -76,7 +76,9 @@ export const useRegistCompany = () => {
       registCompany.mutate(param, {
         onSuccess: () => {
           rollingToast("기업등록 요청을 하였습니다!", "success");
-          queryClient.invalidateQueries(QUERY_KEYS.company.getListAllCompany);
+          queryInvalidates([
+            QUERY_KEYS.company.getListAllAndSearchCompany("list/all?"),
+          ]);
           setCompanyInfo({ name: "", address: "", description: "" });
           setImgUrl("");
           navigate("/");

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export function useLogin() {
   const { rollingToast } = useRollingToast();
-  const [credentials, setCredentials] = useState<Record<string, string>>({
+  const [credentials, setCredentials] = useState<{ id: string; pw: string }>({
     id: "",
     pw: "",
   });
@@ -18,6 +18,10 @@ export function useLogin() {
     }));
   };
 
+  const handleUseGithubAlert = () => {
+    rollingToast("깃허브 로그인을 이용해주세요", "info");
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { id, pw } = credentials;
@@ -30,5 +34,11 @@ export function useLogin() {
     return rollingToast("깃허브 로그인을 이용해주세요", "info");
   };
 
-  return { handleChange, handleSubmit, credentials, setCredentials };
+  return {
+    handleChange,
+    handleUseGithubAlert,
+    handleSubmit,
+    credentials,
+    setCredentials,
+  };
 }

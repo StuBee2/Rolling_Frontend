@@ -83,7 +83,7 @@ export default function ReviewForm({ ...attr }: Props) {
           customStyle={S.TextAreaStyle}
           handleChange={hooks.handleCompanyReviewChange}
           name="content"
-          placeholder="리뷰내용을 작성해주세요."
+          placeholder="회사에 대한 리뷰내용을 작성해주세요."
         />
         <S.ReviewButtonContainer>
           <Button

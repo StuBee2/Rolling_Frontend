@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import { ReactNode, Suspense } from "react";
 import ErrorBoundary from "../Common/ErrorBoundary";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
-import UserBottom from "./Nav/NavBottom";
+import NavFooter from "./Nav/NavFooter";
 import UserSkeleton from "../Common/Skeleton/User";
 import NavSkeleton from "../Common/Skeleton/Nav";
 import ReviewStatus from "./ReviewStatus";
@@ -53,7 +53,7 @@ export default function User({ children }: Props) {
         </S.UserListContainer>
       </S.UserContainer>
 
-      <UserBottom />
+      <NavFooter />
     </S.UserWrap>
   );
 }

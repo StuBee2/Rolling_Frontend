@@ -1,4 +1,4 @@
-import { useCustomHeader } from "@src/hooks/Common/useCustomHeader";
+import { useCustomHeader } from "@src/hooks/Header/useCustomHeader";
 import { CompanyReviewRegisterModalAtom } from "@src/stores/company/company.store";
 import { ReviewCompanyInfoType } from "@src/types/Review/review.type";
 import { Suspense, useState } from "react";

@@ -34,6 +34,5 @@ export const CompanyDetailWrapper = styled.div`
 
 export const CustomHeader = {
   minWidth: "500px",
-  height: "90px",
   borderBottom: "1px solid #dddddd",
 };

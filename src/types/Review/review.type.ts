@@ -1,3 +1,5 @@
+import { CompanyStarGrade } from "../Company/company.type";
+
 export interface ReviewInfiniteScrollListType {
   data: ReviewListType[];
   nextPage: number;
@@ -58,13 +60,7 @@ export interface ReviewPostResponse {
     createdAt: string;
     modifiedAt: string;
   };
-  reviewGrades: {
-    totalGrade: number;
-    salaryAndBenefits: number;
-    workLifeBalance: number;
-    organizationalCulture: number;
-    careerAdvancement: number;
-  };
+  reviewGrades: CompanyStarGrade;
   memberId: {
     id: string;
   };

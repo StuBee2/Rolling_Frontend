@@ -12,6 +12,10 @@ export const FormContainer = styled.div`
   justify-content: center;
   position: absolute;
   top: 200px;
+
+  @media (max-width: 680px) {
+    width: 480px;
+  }
 `;
 
 export const FormWrapper = styled.form`

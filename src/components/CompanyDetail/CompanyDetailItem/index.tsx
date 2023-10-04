@@ -22,12 +22,7 @@ export default function CompanyDetailItem({ id, setReviewCompanyInfo }: Props) {
       companyName: companyInfo?.companyName!!,
       companyLogo: companyInfo?.companyImgUrl!!,
     });
-  }, [
-    setReviewCompanyInfo,
-    companyInfo?.companyName,
-    companyInfo?.companyImgUrl,
-    companyInfo?.companyId,
-  ]);
+  }, [setReviewCompanyInfo]);
 
   return (
     <>
