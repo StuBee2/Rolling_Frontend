@@ -1,5 +1,4 @@
 import { ReviewCompanyInfoType } from "@src/types/Review/review.type";
-import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 import { Dispatch, SetStateAction, useState } from "react";
 import * as S from "./style";
 import logo from "@src/assets/Common/Logo.svg";
@@ -17,8 +16,6 @@ export default function CompanyReviewModal({
 }: Props) {
   const [showPositionList, setShowPositionList] = useState(false);
   const closeQuestion = "리뷰 작성을 취소하시겠습니까?";
-
-  useCloseModal(setReviewModal, closeQuestion);
 
   const handleCloseModal = () => {
     const answer = window.confirm(closeQuestion);

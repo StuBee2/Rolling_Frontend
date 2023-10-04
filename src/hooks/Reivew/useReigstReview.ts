@@ -60,7 +60,7 @@ export const useRegistReview = (companyId: string) => {
         careerAdvancement,
       } = reviewStarRating;
 
-      // 포지션, 입사경로, 회사리뷰내용 공백 검증
+      // 포지션, 입사경로, 회사리뷰내용 공백 검증
       if (position === "") {
         return rollingToast("포지션을 작성해주세요!", "warning");
       }
