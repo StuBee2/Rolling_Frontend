@@ -53,8 +53,8 @@ export default function CompanyDetailReview({ companyId }: Props) {
 function ReviewItem({ ...attr }: ReviewInfoIdType) {
   const isCoincideMemberId = jwtDecoding("sub") === attr.writerId;
   return (
-    <S.ReviewItemBoxContainer>
-      <S.ReviewItemBox>
+    <S.ReviewItemContainer>
+      <S.ReviewItemWrapper>
         <S.ReviewItemContentContainer>
           <S.ReviewItemUserInfo>
             <S.ReviewItemProfileInfo>
@@ -70,7 +70,7 @@ function ReviewItem({ ...attr }: ReviewInfoIdType) {
                 {attr.reviewPosition}
               </p>
               <p>
-                <span>커리어 패스 · </span>
+                <span>입사경로 · </span>
                 {attr.reviewCareerPath}
               </p>
             </S.ReviewItemPositionAndCareerPath>
@@ -99,7 +99,7 @@ function ReviewItem({ ...attr }: ReviewInfoIdType) {
             fontSize={"15px"}
           />
         </S.ReviewItemStarRatingContainer>
-      </S.ReviewItemBox>
-    </S.ReviewItemBoxContainer>
+      </S.ReviewItemWrapper>
+    </S.ReviewItemContainer>
   );
 }

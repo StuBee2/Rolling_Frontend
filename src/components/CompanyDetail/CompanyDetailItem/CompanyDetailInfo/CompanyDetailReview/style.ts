@@ -25,7 +25,7 @@ export const CompanyDetailReviewWrapper = styled.div`
   row-gap: 2rem;
 `;
 
-export const ReviewItemBoxContainer = styled.div`
+export const ReviewItemContainer = styled.div`
   width: 100%;
   height: 350px;
   background-color: #fff;
@@ -36,7 +36,7 @@ export const ReviewItemBoxContainer = styled.div`
   justify-content: center;
 `;
 
-export const ReviewItemBox = styled.div`
+export const ReviewItemWrapper = styled.div`
   width: 93%;
   height: 85%;
   display: flex;
