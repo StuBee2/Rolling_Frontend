@@ -1,17 +1,5 @@
 import styled from "styled-components";
 
-export const UserInfoContainer = styled.div`
-  width: 280px;
-  height: 100%;
-  overflow: scroll;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  @media screen and (max-width: 1040px) {
-    display: none;
-  }
-`;
-
 export const UserInfoWrapper = styled.div`
   width: 100%;
   height: 200px;
