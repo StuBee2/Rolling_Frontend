@@ -11,6 +11,7 @@ import React, { Suspense } from "react";
 import { useSetRecoilState } from "recoil";
 import { CompanyReviewRegisterModalAtom } from "@src/stores/company/company.store";
 import ReviewSkeleton from "@src/components/Common/Skeleton/Review";
+import { turnOnModal } from "@src/utils/Modal/turnOnModal";
 
 interface Props {
   companyInfo: CompanyInfoType;
@@ -40,10 +41,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
           {Token.getToken(ACCESS_TOKEN_KEY) && (
             <S.CompanyReviewButtonCotainer>
               <S.CompanyReviewButton
-                onClick={() => {
-                  setCompanyReviewRegisterModal(true);
-                  document.body.style.overflow = "hidden";
-                }}
+                onClick={() => turnOnModal(setCompanyReviewRegisterModal)}
               >
                 <p>나의 리뷰</p>
                 <img src={review} alt="이미지 없음" />

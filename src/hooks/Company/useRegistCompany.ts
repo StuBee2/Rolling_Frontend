@@ -7,16 +7,15 @@ import { usePostCompanyRegisterMutation } from "@src/queries/Company/company.que
 import { useNavigate } from "react-router-dom";
 import { QUERY_KEYS } from "@src/queries/queryKey";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
+import { useRecoilState } from "recoil";
+import { CompanyRegistAtom } from "@src/stores/company/company.store";
 
 export const useRegistCompany = () => {
   const imgRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
   const [imgUrl, setImgUrl] = useState<string>("");
   const formData = new FormData();
-  const [companyInfo, setCompanyInfo] = useState<CompanyRegistInfo>({
-    name: "",
-    address: "",
-    description: "",
-  });
+  const [companyInfo, setCompanyInfo] =
+    useRecoilState<CompanyRegistInfo>(CompanyRegistAtom);
   const { rollingToast } = useRollingToast();
   const navigate = useNavigate();
   const fileUpload = useUploadFileMutation();
@@ -92,6 +91,7 @@ export const useRegistCompany = () => {
 
   return {
     companyInfo,
+    setCompanyInfo,
     handleRegistChange,
     handleRegistSubmit,
     imgRef,

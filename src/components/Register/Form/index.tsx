@@ -2,8 +2,14 @@ import { useRegistCompany } from "@src/hooks/Company/useRegistCompany";
 import { Button, TextInput } from "@stubee2/stubee2-rolling-ui";
 import photo from "@src/assets/images/Company/photo.png";
 import * as S from "./style";
+import { Dispatch, SetStateAction } from "react";
+import { turnOnModal } from "@src/utils/Modal/turnOnModal";
 
-export default function Form() {
+interface Props {
+  setIsOpenModal: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function Form({ setIsOpenModal }: Props) {
   const { ...attr } = useRegistCompany();
   return (
     <S.FormContainer>
@@ -41,14 +47,18 @@ export default function Form() {
           <S.CompanyInfoText>
             기업주소 <span>*</span>
           </S.CompanyInfoText>
-          <TextInput
-            type="text"
-            value={attr.companyInfo.address}
-            customStyle={S.InputStyle}
-            placeholder={"기업 본사 도로명 주소를 입력해 주세요 "}
-            handleChange={attr.handleRegistChange}
-            name={"address"}
-          />
+          <S.CompanyAddressInputContainer>
+            <input
+              type="text"
+              value={attr.companyInfo.address}
+              placeholder={"기업 본사 도로명 주소를 입력해주세요"}
+              onChange={attr.handleRegistChange}
+              name={"address"}
+            />
+            <S.SearchButton onClick={() => turnOnModal(setIsOpenModal)}>
+              검색
+            </S.SearchButton>
+          </S.CompanyAddressInputContainer>
         </S.InputContainer>
 
         <S.InputContainer isTextArea={true}>
@@ -60,7 +70,7 @@ export default function Form() {
             textType="textarea"
             customStyle={S.TextAreaStyle}
             placeholder={
-              "기업 소개글을 작성해 주세요\n(회사 서비스의 목적, 기업 문화 등)"
+              "기업 소개 글을 작성해주세요\n(회사 서비스의 목적, 기업 문화 등)"
             }
             handleChange={attr.handleRegistChange}
             name={"description"}

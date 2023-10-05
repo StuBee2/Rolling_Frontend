@@ -13,6 +13,7 @@ import {
   MyInfoModal,
 } from "@src/stores/common/common.store";
 import { CSSObject } from "styled-components";
+import { turnOnModal } from "@src/utils/Modal/turnOnModal";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -52,21 +53,11 @@ export default function Header() {
         </S.PageContainer>
 
         <S.LoginSearchContainer>
-          <S.HoverIconContainer
-            onClick={() => {
-              setIsCloseModal(true);
-              document.body.style.overflow = "hidden";
-            }}
-          >
+          <S.HoverIconContainer onClick={() => turnOnModal(setIsCloseModal)}>
             <S.Search src={Search1} alt="이미지 없음" />
           </S.HoverIconContainer>
           {token.getToken(ACCESS_TOKEN_KEY) ? (
-            <S.HoverIconContainer
-              onClick={() => {
-                setMyInfoModal(true);
-                document.body.style.overflow = "hidden";
-              }}
-            >
+            <S.HoverIconContainer onClick={() => turnOnModal(setMyInfoModal)}>
               <S.UserIcon size={30} />
             </S.HoverIconContainer>
           ) : (

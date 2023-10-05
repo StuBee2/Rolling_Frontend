@@ -79,7 +79,7 @@ export const CompanyAddress = styled.p`
 export const CompanyDetailContentDescription = styled.div`
   display: flex;
   column-gap: 5px;
-  line-height: 20px;
+  line-height: 23px;
   font-size: 16px;
   font-weight: 600;
   img {
@@ -87,9 +87,12 @@ export const CompanyDetailContentDescription = styled.div`
     height: 22px;
   }
   p {
-    color: #000;
+    width: 100%;
+    font-size: 18px;
     max-height: 140px;
+    white-space: pre-wrap;
     overflow-y: scroll;
+    padding-left: 10px;
   }
 `;
 
