@@ -68,6 +68,42 @@ export const InputContainer = styled.div<{ isTextArea?: boolean }>`
   row-gap: 15px;
 `;
 
+export const CompanyAddressInputContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  input {
+    width: calc(100% - 85px);
+    height: 60px;
+    font-size: 16px;
+    padding-left: 15px;
+    outline: none;
+    border: 1px solid rgb(189, 194, 208);
+    border-radius: 5px;
+    ::placeholder {
+      color: rgba(189, 194, 208, 1);
+    }
+  }
+`;
+
+export const SearchButton = styled.div`
+  width: 85px;
+  height: 60px;
+  font-size: 16px;
+  background: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background-color: rgba(72, 105, 246, 1);
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+`;
+
 export const InputStyle = {
   width: "100%",
   height: "60px",
@@ -79,7 +115,7 @@ export const TextAreaStyle = {
   width: "100%",
   height: "200px",
   fontSize: "16px",
-  padding: "15px 0 0 15px",
+  padding: "15px",
 };
 
 export const ButtonContainer = styled.div`
@@ -102,10 +138,7 @@ export const ButtonContainer = styled.div`
     transform: scale(1);
     transition: all 0.1s ease-in-out;
     &:hover {
-      transform: scale(0.97);
-    }
-    &:active {
-      background-color: #dddddd;
+      transform: scale(0.985);
     }
   }
 `;

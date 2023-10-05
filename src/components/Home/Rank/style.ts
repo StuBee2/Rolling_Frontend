@@ -1,6 +1,22 @@
 import styled from "styled-components";
 
 export const RankContainer = styled.div`
+  width: 340px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+  row-gap: 3rem;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  @media screen and (max-width: 740px) {
+    display: none;
+  }
+`;
+
+export const RankWrapper = styled.div`
   width: 100%;
   height: auto;
   display: flex;

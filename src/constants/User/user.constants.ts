@@ -1,8 +1,8 @@
-import review from "@src/assets/User/review.svg";
-import smile from "@src/assets/User/smile.svg";
-import edit from "@src/assets/User/edit.svg";
-import del from "@src/assets/User/del.svg";
-import cancel from "@src/assets/User/cancel.svg";
+import review from "@src/assets/images/User/review.svg";
+import smile from "@src/assets/images/User/smile.svg";
+import edit from "@src/assets/images/User/edit.svg";
+import del from "@src/assets/images/User/del.svg";
+import cancel from "@src/assets/images/User/cancel.svg";
 
 interface Type {
   id: number;

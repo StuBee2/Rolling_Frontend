@@ -2,7 +2,7 @@ import { useState } from "react";
 import { usePatchMyNickNameMutation } from "@src/queries/Member/Member.query";
 import { useQueryClient } from "react-query";
 import { QUERY_KEYS } from "@src/queries/queryKey";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { memberErrorHandler } from "@src/utils/Error/Member/memberErrorHandler";
 
@@ -56,8 +56,8 @@ export const useEditNickName = (nickName: string) => {
         },
         onError: (error) => {
           if (axios.isAxiosError(error)) {
-            const { status, message } = error.response?.data;
-            rollingToast(memberErrorHandler(status, message), "error");
+            const { status, message } = error.response?.data as AxiosError;
+            rollingToast(memberErrorHandler(Number(status), message), "error");
           }
         },
       }

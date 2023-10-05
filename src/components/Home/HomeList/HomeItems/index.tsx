@@ -6,7 +6,7 @@ import { useRecoilValue } from "recoil";
 import * as S from "./style";
 import { getDateText, stringEllipsis } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
-import logo from "@src/assets/Common/Logo.svg";
+import logo from "@src/assets/images/Common/Logo.svg";
 
 export default function HomeItems() {
   const [ref, inView] = useInView();

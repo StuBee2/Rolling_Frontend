@@ -20,4 +20,4 @@ export const rollingAxios = axios.create({
 });
 
 rollingAxios.interceptors.request.use(requestHandler, (response) => response);
-// rollingAxios.interceptors.response.use((response) => response, responseHandler);
+rollingAxios.interceptors.response.use((response) => response, responseHandler);

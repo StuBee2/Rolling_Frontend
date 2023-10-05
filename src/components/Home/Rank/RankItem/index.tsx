@@ -1,11 +1,11 @@
 import { useGetCompanyRankSelectQuery } from "@src/queries/Company/company.query";
 import * as S from "./style";
 import { getCompanyRankIntroduce } from "@src/utils/Rank/getCompanyRankIntroduce";
-import smile from "@src/assets/User/smile.svg";
+import smile from "@src/assets/images/User/smile.svg";
 import React from "react";
 import { stringEllipsis } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
-import logo from "@src/assets/Common/Logo.svg";
+import logo from "@src/assets/images/Common/Logo.svg";
 
 interface Props {
   rankCategory: string;

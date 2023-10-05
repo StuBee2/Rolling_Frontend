@@ -2,7 +2,7 @@ import { useRegistReview } from "@src/hooks/Reivew/useReigstReview";
 import { searchPosition } from "@src/utils/Position/searchPosition";
 import { Button, TextInput } from "@stubee2/stubee2-rolling-ui";
 import PositionList from "./PositonList";
-import regist from "@src/assets/Review/regist.svg";
+import regist from "@src/assets/images/Review/regist.svg";
 import * as S from "./style";
 import StarGrade from "./StarGrades";
 import { Dispatch, SetStateAction } from "react";

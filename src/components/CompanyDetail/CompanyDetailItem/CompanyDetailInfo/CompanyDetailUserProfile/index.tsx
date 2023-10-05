@@ -1,5 +1,5 @@
 import * as S from "./style";
-import github from "@src/assets/Auth/github.svg";
+import github from "@src/assets/images/Auth/github.svg";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { converToGithubLink } from "@src/utils/github/converToGithubLink";
 import { CompanyDetailRegistAt } from "../style";

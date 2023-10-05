@@ -1,6 +1,6 @@
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import * as S from "./style";
-import wonderIcon from "@src/assets/Home/wonderIcon.svg";
+import wonderIcon from "@src/assets/images/Home/wonderIcon.svg";
 import { Suspense } from "react";
 import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import { stringEllipsis } from "@stubee2/stubee2-rolling-util";
@@ -9,17 +9,15 @@ import UserInfoSkeleton from "@src/components/Common/Skeleton/User/UserInfo";
 
 export default function UserInfo() {
   return (
-    <S.UserInfoContainer>
-      <div>
-        <S.UserInfoWrapper>
-          <ErrorBoundary fallback={<>내 정보를 갖고오지 못했습니다.</>}>
-            <Suspense fallback={<UserInfoSkeleton />}>
-              <UserInfoItem />
-            </Suspense>
-          </ErrorBoundary>
-        </S.UserInfoWrapper>
-      </div>
-    </S.UserInfoContainer>
+    <div>
+      <S.UserInfoWrapper>
+        <ErrorBoundary fallback={<>내 정보를 갖고오지 못했습니다.</>}>
+          <Suspense fallback={<UserInfoSkeleton />}>
+            <UserInfoItem />
+          </Suspense>
+        </ErrorBoundary>
+      </S.UserInfoWrapper>
+    </div>
   );
 }
 

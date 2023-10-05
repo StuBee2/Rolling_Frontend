@@ -8,6 +8,12 @@ export const SignInContainer = styled.div`
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+  min-width: 450px;
+
+  @media screen and (max-width: 450px) {
+    height: 100%;
+    padding-top: 3rem;
+  }
 `;
 
 export const SignInWrapper = styled.div`
@@ -29,10 +35,10 @@ export const SignInItemContainer = styled.div`
 
   justify-content: center;
   padding: 0 10px 10px 10px;
-  overflow: scroll;
+  /* overflow: scroll;
   ::-webkit-scrollbar {
     display: none;
-  }
+  } */
 
   @media screen and (max-width: 1400px) {
     width: calc(100% - 580px);
