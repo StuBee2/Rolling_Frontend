@@ -6,7 +6,7 @@ import UserPage from "../pages/UserPage";
 import NotFound from "../components/Common/NotFound";
 import { ROUTE_ITEMS } from "../constants/Router/router.constant";
 import CompanyDetailPage from "../pages/CompanyDetailPage/index";
-import RegisterPage from "@src/pages/ReviewPage";
+import RegisterPage from "@src/pages/RegisterPage";
 
 export default function Router() {
   return (

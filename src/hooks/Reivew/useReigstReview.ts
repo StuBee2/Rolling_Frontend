@@ -3,7 +3,7 @@ import { usePostReviewMutation } from "@src/queries/Review/review.query";
 import { useState } from "react";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { ReviewParam } from "@src/repositories/Review/review.repository";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { reviewErrorHanlder } from "@src/utils/Error/Review/reviewErrorHanlder";
 import { QUERY_KEYS } from "@src/queries/queryKey";
 import { CompanyReviewRegisterModalAtom } from "@src/stores/company/company.store";
@@ -111,8 +111,8 @@ export const useRegistReview = (companyId: string) => {
         },
         onError: (error) => {
           if (axios.isAxiosError(error)) {
-            const { status, message } = error.response?.data;
-            rollingToast(reviewErrorHanlder(status, message), "error");
+            const { status, message } = error.response?.data as AxiosError;
+            rollingToast(reviewErrorHanlder(Number(status), message), "error");
           }
         },
       });

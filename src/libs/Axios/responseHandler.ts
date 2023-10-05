@@ -11,7 +11,6 @@ import { rollingAxios } from "./customAxios";
 export const responseHandler = async (error: AxiosError) => {
   const access_token = Token.getToken(ACCESS_TOKEN_KEY);
   const refresh_token = Token.getToken(REFRESH_TOKEN_KEY);
-
   if (error.response) {
     const {
       config: originalRequest,
@@ -30,6 +29,8 @@ export const responseHandler = async (error: AxiosError) => {
         rollingAxios.defaults.headers.common[
           REQUEST_TOKEN_KEY
         ] = `Bearer ${newAccessToken}`;
+
+        return rollingAxios(originalRequest);
       } catch (e) {
         Token.clearToken();
         window.alert("토큰이 만료되었습니다!");

@@ -1,17 +1,16 @@
-import axios from "axios";
 import {
   AuthRepository,
   RefreshTokenParam,
   newAccessTokenResponse,
 } from "./auth.repository";
-import CONFIG from "@src/config/config.json";
+import { customAxios } from "@src/libs/Axios/customAxios";
 
 class AuthRepositoryImpl implements AuthRepository {
   public async postRefreshToken(
     refreshToken: RefreshTokenParam
   ): Promise<newAccessTokenResponse> {
-    const { data } = await axios.post<newAccessTokenResponse>(
-      `${CONFIG.SERVER}/auth/refresh`,
+    const { data } = await customAxios.post<newAccessTokenResponse>(
+      "/auth/refresh",
       refreshToken
     );
     return data;

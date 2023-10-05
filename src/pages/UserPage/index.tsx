@@ -1,16 +1,14 @@
 import User from "@src/components/User";
 import Review from "@src/components/User/Review";
 import Profile from "@src/components/User/Profile";
-import { useRecoilValue } from "recoil";
-import { MyMemberInfo } from "@src/stores/member/member.store";
+import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
 
 interface Props {
   page: number;
 }
 
 export default function UserPage({ page }: Props) {
-  const myInfo = useRecoilValue(MyMemberInfo);
-  const memberRole = myInfo?.memberDetails.memberRole;
+  const memberRole = jwtDecoding("authority");
   return (
     <User>
       {page === 0 && <Profile />}

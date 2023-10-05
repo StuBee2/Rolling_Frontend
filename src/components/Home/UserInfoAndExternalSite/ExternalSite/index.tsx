@@ -7,7 +7,7 @@ export default function ExternalSite() {
     <S.ExternalSiteContainer>
       <S.ExternalSiteTitle>
         <img src={web} alt="이미지 없음" />
-        <p>외부사이트 바로가기</p>
+        <p>더 많은 정보를 알고 싶다면?</p>
       </S.ExternalSiteTitle>
       <S.ExternalSiteWrapper>
         {EXTERNALSITE_ITEMS.map((item) => (

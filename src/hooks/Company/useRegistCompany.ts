@@ -9,6 +9,8 @@ import { QUERY_KEYS } from "@src/queries/queryKey";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 import { useRecoilState } from "recoil";
 import { CompanyRegistAtom } from "@src/stores/company/company.store";
+import axios, { AxiosError } from "axios";
+import { companyErrorHanlder } from "@src/utils/Error/Company/companyErrorHanlder";
 
 export const useRegistCompany = () => {
   const imgRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
@@ -37,7 +39,7 @@ export const useRegistCompany = () => {
         setImgUrl(imgUrl);
       },
       onError: (e) => {
-        rollingToast("이미지를 전송실패", "error");
+        rollingToast("이미지 전송실패", "error");
       },
     });
   };
@@ -82,8 +84,12 @@ export const useRegistCompany = () => {
           setImgUrl("");
           navigate("/");
         },
-        onError: (e) => {
-          rollingToast("기업등록 요청을 하지 못했습니다!", "error");
+        onError: (error) => {
+          if (axios.isAxiosError(error)) {
+            console.log(error.response?.data);
+            const { status, message } = error.response?.data as AxiosError;
+            rollingToast(companyErrorHanlder(Number(status), message), "error");
+          }
         },
       });
     }

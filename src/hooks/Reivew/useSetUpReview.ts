@@ -2,7 +2,7 @@ import { QUERY_KEYS } from "@src/queries/queryKey";
 import { useDeleteMyReviewMutation } from "@src/queries/Review/review.query";
 import { reviewErrorHanlder } from "@src/utils/Error/Review/reviewErrorHanlder";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useState } from "react";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 
@@ -43,8 +43,8 @@ export const useSetUpReview = () => {
         },
         onError: (error) => {
           if (axios.isAxiosError(error)) {
-            const { status, message } = error.response?.data;
-            rollingToast(reviewErrorHanlder(status, message), "error");
+            const { status, message } = error.response?.data as AxiosError;
+            rollingToast(reviewErrorHanlder(Number(status), message), "error");
           }
         },
       });

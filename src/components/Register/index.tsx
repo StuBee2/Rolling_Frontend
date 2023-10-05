@@ -1,3 +1,4 @@
+import useAlumniCheck from "@src/hooks/Auth/useAlumniCheck";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import { useCustomHeader } from "@src/hooks/Header/useCustomHeader";
 import { useState } from "react";
@@ -9,6 +10,8 @@ import * as S from "./style";
 
 export default function Register() {
   useTokenCheck();
+  useAlumniCheck();
+
   useCustomHeader(S.RegisterCustomHeader);
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
