@@ -1,6 +1,6 @@
 import useHideHeader from "@src/hooks/Header/useHideHeader";
 import * as S from "./style";
-import rollingImg from "@src/assets/Auth/rollingImg.svg";
+import rollingImg from "@src/assets/images/Auth/rollingImg.svg";
 import SignInItem from "./SignInItem/index";
 
 export default function SignIn() {

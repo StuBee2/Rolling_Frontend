@@ -39,7 +39,7 @@ export const CompanyBasicInfo = styled.div`
   margin-bottom: 8px;
 
   img {
-    object-fit: cover;
+    object-fit: contain;
     width: 110px;
     height: 110px;
     border-radius: 5px;

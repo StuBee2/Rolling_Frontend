@@ -1,4 +1,3 @@
-import { UserInfoContainer } from "@src/components/Home/UserInfo/style";
 import {
   PageSelectContainer,
   PageSelectWrapper,
@@ -10,12 +9,13 @@ import * as S from "./style";
 export default function NavSkeleton() {
   return (
     <UserNavBar>
-      <UserInfoContainer>
+      <S.UserInfoContainer>
         <S.NavProfileLogoSkeleton />
-        <SkeletonBox width="70px" height="27px" />
-        <SkeletonBox width="100px" height="17px" />
-        <SkeletonBox width="168px" height="15px" />
-      </UserInfoContainer>
+        <S.UserNameAndEmailContainer>
+          <SkeletonBox width="100px" height="30px" />
+          <SkeletonBox width="168px" height="20px" />
+        </S.UserNameAndEmailContainer>
+      </S.UserInfoContainer>
       <PageSelectContainer>
         <PageSelectWrapper>
           {Array.from({ length: 3 }).map((item, idx) => (

@@ -1,9 +1,9 @@
 import * as S from "./style";
-import bigBannerIcon1 from "@src/assets/Register/bigBannerIcon1.svg";
-import bigBannerIcon2 from "@src/assets/Register/bigBannerIcon2.svg";
-import middleBannerIcon from "@src/assets/Register/middleBannerIcon.svg";
-import smallBannerIcon1 from "@src/assets/Register/smallBannerIcon1.svg";
-import smallBannerIcon2 from "@src/assets/Register/smallBannerIcon2.svg";
+import bigBannerIcon1 from "@src/assets/images/Register/bigBannerIcon1.svg";
+import bigBannerIcon2 from "@src/assets/images/Register/bigBannerIcon2.svg";
+import middleBannerIcon from "@src/assets/images/Register/middleBannerIcon.svg";
+import smallBannerIcon1 from "@src/assets/images/Register/smallBannerIcon1.svg";
+import smallBannerIcon2 from "@src/assets/images/Register/smallBannerIcon2.svg";
 
 export default function Banner() {
   return (

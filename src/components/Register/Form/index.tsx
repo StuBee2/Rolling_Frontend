@@ -1,6 +1,6 @@
 import { useRegistCompany } from "@src/hooks/Company/useRegistCompany";
 import { Button, TextInput } from "@stubee2/stubee2-rolling-ui";
-import photo from "@src/assets/Company/photo.png";
+import photo from "@src/assets/images/Company/photo.png";
 import * as S from "./style";
 
 export default function Form() {

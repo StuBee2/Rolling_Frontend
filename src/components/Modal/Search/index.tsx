@@ -1,7 +1,7 @@
 import * as S from "./style";
-import semicircle2 from "@src/assets/Search/semicircle2.svg";
-import semicircle1 from "@src/assets/Search/semicircle1.svg";
-import Search2 from "@src/assets/Search/Search2.svg";
+import semicircle2 from "@src/assets/images/Search/semicircle2.svg";
+import semicircle1 from "@src/assets/images/Search/semicircle1.svg";
+import Search2 from "@src/assets/images/Search/Search2.svg";
 import { useSearchKeyword } from "@src/hooks/Company/useSearchKeyword";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 

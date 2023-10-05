@@ -2,7 +2,7 @@ import { CompanyInfoType } from "@src/types/Company/company.type";
 import CompanyDetailContent from "./CompanyDetailContent";
 import CompanyDetailUserProfile from "./CompanyDetailUserProfile";
 import * as S from "./style";
-import review from "@src/assets/Review/review.svg";
+import review from "@src/assets/images/Review/review.svg";
 import CompanyDetailReview from "./CompanyDetailReview";
 import Token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";

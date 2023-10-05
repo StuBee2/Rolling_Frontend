@@ -1,8 +1,8 @@
-import average from "@src/assets/Company/average.svg";
+import average from "@src/assets/images/Company/average.svg";
 import { changeStarGradeToArrayObjcet } from "@src/utils/StarGrade/changeStarGradeToArrayObjcet";
 import { StarRating } from "@stubee2/stubee2-rolling-ui";
 import * as S from "./style";
-import Logo from "@src/assets/Common/Logo.svg";
+import Logo from "@src/assets/images/Common/Logo.svg";
 import { CompanyStarGradeInfo } from "@src/types/Company/company.type";
 
 interface Props {

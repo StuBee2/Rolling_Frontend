@@ -46,8 +46,10 @@ export const SeniorRecommand = styled.div`
   font-weight: bold;
   display: flex;
   align-items: center;
-  p {
-    margin-top: 5px;
+  column-gap: 5px;
+  img {
+    width: 27px;
+    height: 27px;
   }
 `;
 

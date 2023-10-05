@@ -1,8 +1,8 @@
 import * as S from "./style";
-import basicInfo from "@src/assets/Company/basicInfo.svg";
-import description from "@src/assets/Company/description.svg";
+import basicInfo from "@src/assets/images/Company/basicInfo.svg";
+import description from "@src/assets/images/Common/description.svg";
 import { CompanyInfoType } from "@src/types/Company/company.type";
-import logo from "@src/assets/Common/Logo.svg";
+import logo from "@src/assets/images/Common/Logo.svg";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { CompanyDetailRegistAt } from "../style";
 

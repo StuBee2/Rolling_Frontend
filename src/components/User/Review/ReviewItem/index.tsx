@@ -3,7 +3,7 @@ import * as S from "./style";
 import { changeReviewStarGradesToArrayObject } from "@src/utils/Review/changeReviewStarGradesToArrayObject";
 import { getDateText, stringEllipsis } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
-import Logo from "@src/assets/Common/Logo.svg";
+import Logo from "@src/assets/images/Common/Logo.svg";
 import CompanyStarRating from "@src/components/Common/Star";
 import ReviewSetUp from "@src/components/Common/ReviewSetUp";
 

@@ -1,6 +1,6 @@
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import * as S from "./style";
-import recommand from "@src/assets/Home/recommand.svg";
+import recommand from "@src/assets/images/Home/recommand.svg";
 import { Suspense } from "react";
 import HomeSkeleton from "@src/components/Common/Skeleton/Home";
 import HomeItems from "./HomeItems";

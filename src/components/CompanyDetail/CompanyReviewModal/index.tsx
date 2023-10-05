@@ -1,8 +1,8 @@
 import { ReviewCompanyInfoType } from "@src/types/Review/review.type";
 import { Dispatch, SetStateAction, useState } from "react";
 import * as S from "./style";
-import logo from "@src/assets/Common/Logo.svg";
-import close from "@src/assets/Review/close.svg";
+import logo from "@src/assets/images/Common/Logo.svg";
+import close from "@src/assets/images/Review/close.svg";
 import ReviewForm from "./ReviewForm";
 
 interface Props {

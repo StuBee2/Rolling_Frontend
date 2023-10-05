@@ -52,7 +52,7 @@ export const CompanyDetailContentInfo = styled.div`
     width: 75px;
     height: 75px;
     border-radius: 5px;
-    object-fit: cover;
+    object-fit: contain;
     border: 1px solid #dddddd;
     background-color: #fff;
   }

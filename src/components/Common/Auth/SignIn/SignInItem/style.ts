@@ -1,7 +1,7 @@
 import { StopDrag } from "@src/styles/common.style";
 import styled from "styled-components";
 
-export const SignInItemForm = styled.form`
+export const SignInItemFormContainer = styled.form`
   width: 530px;
   height: 630px;
   display: flex;
@@ -26,6 +26,10 @@ export const Title = styled.p`
   cursor: pointer;
 `;
 
+export const SignInItemFormWrapper = styled.div`
+  position: relative;
+`;
+
 export const SignInBox = styled.div`
   height: 370px;
   display: flex;
@@ -45,6 +49,23 @@ export const SignInBox = styled.div`
         margin-left: 10px;
       }
     }
+  }
+`;
+
+export const GuideText = styled.div`
+  position: absolute;
+  font-size: 18px;
+  font-weight: 700;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  img {
+    width: 25px;
+    height: 25px;
   }
 `;
 

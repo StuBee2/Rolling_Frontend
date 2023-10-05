@@ -6,7 +6,7 @@ import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import { MyMemberInfo } from "@src/stores/member/member.store";
 import { useSetRecoilState } from "recoil";
 import { useEffect } from "react";
-import logout from "@src/assets/Auth/logout.svg";
+import logout from "@src/assets/images/Auth/logout.svg";
 
 interface Props {
   pathName: string;
