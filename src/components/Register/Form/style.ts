@@ -1,10 +1,4 @@
-import styled, { css } from "styled-components";
-
-const hoverAnimation = css`
-  &:hover {
-    transform: scale(0.985);
-  }
-`;
+import styled from "styled-components";
 
 export const FormContainer = styled.div`
   width: 650px;
@@ -108,7 +102,6 @@ export const SearchButton = styled.div`
   font-weight: 600;
   color: #fff;
   cursor: pointer;
-  ${hoverAnimation};
 `;
 
 export const InputStyle = {
@@ -144,6 +137,8 @@ export const ButtonContainer = styled.div`
     border-radius: 7px;
     transform: scale(1);
     transition: all 0.1s ease-in-out;
-    ${hoverAnimation};
+    &:hover {
+      transform: scale(0.985);
+    }
   }
 `;
