@@ -11,7 +11,7 @@ import React, { Suspense } from "react";
 import { useSetRecoilState } from "recoil";
 import { CompanyReviewRegistModalAtom } from "@src/stores/company/company.store";
 import ReviewSkeleton from "@src/components/Common/Skeleton/Review";
-import { turnOnModal } from "@src/utils/Modal/turnOnModal";
+import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 
 interface Props {
   companyInfo: CompanyInfoType;

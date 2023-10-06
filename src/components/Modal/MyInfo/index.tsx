@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 import github from "@src/assets/images/Auth/github.svg";
 import { converToGithubLink } from "@src/utils/github/converToGithubLink";
+import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 export default function MyInfo() {
   const setMyInfoModal = useSetRecoilState(MyInfoModal);
@@ -18,12 +19,7 @@ export default function MyInfo() {
 
   useCloseModal(setMyInfoModal);
   return (
-    <S.InfoModalWrapper
-      onClick={() => {
-        setMyInfoModal(false);
-        document.body.style.overflow = "unset";
-      }}
-    >
+    <S.InfoModalWrapper onClick={() => turnOffModal(setMyInfoModal)}>
       <S.InfoModalParentBox>
         <S.InfoModalContainer onClick={(e) => e.stopPropagation()}>
           <S.ProfileContainer>

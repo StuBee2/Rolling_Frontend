@@ -4,6 +4,7 @@ import * as S from "./style";
 import logo from "@src/assets/images/Common/Logo.svg";
 import close from "@src/assets/images/Review/close.svg";
 import Form from "./Form";
+import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 interface Props {
   setReviewModal: Dispatch<SetStateAction<boolean>>;
@@ -20,33 +21,28 @@ export default function CompanyReviewRegistModal({
   const handleCloseModal = () => {
     const answer = window.confirm(closeQuestion);
     if (answer) {
-      setReviewModal(false);
+      turnOffModal(setReviewModal);
     }
   };
 
   return (
-    <S.ReviewModalContainer onClick={handleCloseModal}>
-      <S.ReviewModalWrapper
-        onClick={(e) => {
-          e.stopPropagation();
-          setShowPositionList(false);
-        }}
-      >
+    <S.ReviewRegistModalContainer onClick={handleCloseModal}>
+      <S.ReviewRegistModalWrapper onClick={(e) => e.stopPropagation()}>
         <S.ReviewCloseIcon onClick={handleCloseModal}>
           <img src={close} alt="이미지 없음" />
         </S.ReviewCloseIcon>
 
-        <S.ReviewCompanyInfo>
+        <S.ReviewRegistCompanyInfo>
           <img src={reviewCompanyInfo.companyLogo || logo} alt="이미지 없음" />
           <p>{reviewCompanyInfo.companyName}</p>
-        </S.ReviewCompanyInfo>
+        </S.ReviewRegistCompanyInfo>
 
         <Form
           companyId={reviewCompanyInfo.companyId}
           showPositionList={showPositionList}
           setShowPositionList={setShowPositionList}
         />
-      </S.ReviewModalWrapper>
-    </S.ReviewModalContainer>
+      </S.ReviewRegistModalWrapper>
+    </S.ReviewRegistModalContainer>
   );
 }

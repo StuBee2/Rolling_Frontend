@@ -1,7 +1,7 @@
 import { HoverAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
-export const ReviewModalContainer = styled.div`
+export const ReviewRegistModalContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
@@ -15,7 +15,7 @@ export const ReviewModalContainer = styled.div`
   overflow-y: scroll;
 `;
 
-export const ReviewModalWrapper = styled.div`
+export const ReviewRegistModalWrapper = styled.div`
   width: 663px;
   height: 1200px;
   background-color: #fff;
@@ -43,7 +43,7 @@ export const ReviewCloseIcon = styled.div`
   }
 `;
 
-export const ReviewCompanyInfo = styled.div`
+export const ReviewRegistCompanyInfo = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;

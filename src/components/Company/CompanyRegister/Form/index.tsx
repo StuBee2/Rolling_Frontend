@@ -3,7 +3,7 @@ import { Button, TextInput } from "@stubee2/stubee2-rolling-ui";
 import photo from "@src/assets/images/Company/photo.png";
 import * as S from "./style";
 import { Dispatch, SetStateAction } from "react";
-import { turnOnModal } from "@src/utils/Modal/turnOnModal";
+import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 
 interface Props {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;

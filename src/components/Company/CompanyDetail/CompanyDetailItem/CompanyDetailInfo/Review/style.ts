@@ -103,16 +103,17 @@ export const ReviewItemContent = styled.div<{
   width: ${({ isCoincideMemberId }) =>
     isCoincideMemberId ? "calc(100% - 250px)" : "calc(100% - 220px)"};
   display: flex;
-  column-gap: 10px;
+  column-gap: 5px;
 `;
 
 export const ReviewItemDescription = styled.div`
   width: 100%;
   height: 100%;
   overflow-y: scroll;
-  line-height: 22px;
+  line-height: 23px;
   font-size: 15.5px;
   color: #72777a;
+  white-space: pre-wrap;
 `;
 
 export const ReviewItemSetUp = styled.div`

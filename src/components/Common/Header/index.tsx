@@ -13,7 +13,7 @@ import {
   MyInfoModal,
 } from "@src/stores/common/common.store";
 import { CSSObject } from "styled-components";
-import { turnOnModal } from "@src/utils/Modal/turnOnModal";
+import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 
 export default function Header() {
   const navigate = useNavigate();
