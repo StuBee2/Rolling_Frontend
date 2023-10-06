@@ -28,14 +28,6 @@ export default function AddressModal({ setIsOpenModal }: Props) {
         autoClose={false} // 값을 선택할 경우 사용되는 DOM을 제거하여 자동 닫힘 설정
         defaultQuery={companyInfo.address}
         style={S.AddressModalItem}
-
-
-
-
-
-
-
-        
       />
     </S.AddressModalContainer>
   );
