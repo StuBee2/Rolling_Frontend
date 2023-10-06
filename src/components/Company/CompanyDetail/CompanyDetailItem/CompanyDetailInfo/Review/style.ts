@@ -54,7 +54,7 @@ export const ReviewItemContentContainer = styled.div`
   width: 100%;
   height: calc(100% - 125px);
   display: flex;
-  column-gap: 15px;
+  column-gap: 8px;
 `;
 
 export const ReviewItemUserInfo = styled.div`
@@ -100,8 +100,7 @@ export const ReviewItemPositionAndCareerPath = styled.div`
 export const ReviewItemContent = styled.div<{
   isCoincideMemberId: boolean;
 }>`
-  width: ${({ isCoincideMemberId }) =>
-    isCoincideMemberId ? "calc(100% - 250px)" : "calc(100% - 220px)"};
+  width: calc(100% - 220px);
   display: flex;
   column-gap: 5px;
 `;

@@ -10,6 +10,7 @@ import { CompanyReviewRegistModalAtom } from "@src/stores/company/company.store"
 import { useSetRecoilState } from "recoil";
 import { POSITION_ITEMS } from "@src/constants/Position/position.constant";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
+import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 export const useRegistReview = (companyId: string) => {
   const postReview = usePostReviewMutation();
@@ -106,7 +107,7 @@ export const useRegistReview = (companyId: string) => {
             QUERY_KEYS.review.getReviewListCompanyId(companyId),
             QUERY_KEYS.review.getReviewMyStatus,
           ]);
-          setIsCompanyReviewRegisterModal(false);
+          turnOffModal(setIsCompanyReviewRegisterModal);
           rollingToast("리뷰를 등록하였습니다.", "success");
         },
         onError: (error) => {

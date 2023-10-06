@@ -91,6 +91,7 @@ export const ReviewCompanyImgContainer = styled.div`
     object-fit: cover;
     overflow: hidden;
     border-radius: 10px;
+    border: 1px solid #dddddd;
   }
 `;
 

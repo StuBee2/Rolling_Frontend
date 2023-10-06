@@ -27,12 +27,12 @@ export default function Header() {
 
   const handlePageClick = (name: string, link: string) => {
     setSelect(name);
-    navigate(link);
+    window.location.href = link;
   };
 
   return (
-    <S.Header customResponsiveHeader={customResponsiveHeader!!}>
-      <S.HeaderWrap>
+    <S.HeaderContainer customResponsiveHeader={customResponsiveHeader!!}>
+      <S.HeaderWrapper>
         <S.PageContainer>
           <img
             src={logo}
@@ -66,7 +66,7 @@ export default function Header() {
             </S.SignInText>
           )}
         </S.LoginSearchContainer>
-      </S.HeaderWrap>
-    </S.Header>
+      </S.HeaderWrapper>
+    </S.HeaderContainer>
   );
 }
