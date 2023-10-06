@@ -1,15 +1,15 @@
 import { CompanyInfoType } from "@src/types/Company/company.type";
-import CompanyDetailContent from "./CompanyDetailContent";
-import CompanyDetailUserProfile from "./CompanyDetailUserProfile";
+import Content from "./Content";
+import UserProfile from "./UserProfile";
 import * as S from "./style";
 import review from "@src/assets/images/Review/review.svg";
-import CompanyDetailReview from "./CompanyDetailReview";
+import Review from "./Review";
 import Token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import React, { Suspense } from "react";
 import { useSetRecoilState } from "recoil";
-import { CompanyReviewRegisterModalAtom } from "@src/stores/company/company.store";
+import { CompanyReviewRegistModalAtom } from "@src/stores/company/company.store";
 import ReviewSkeleton from "@src/components/Common/Skeleton/Review";
 import { turnOnModal } from "@src/utils/Modal/turnOnModal";
 
@@ -19,7 +19,7 @@ interface Props {
 
 function CompanyDetailInfo({ companyInfo }: Props) {
   const setCompanyReviewRegisterModal = useSetRecoilState(
-    CompanyReviewRegisterModalAtom
+    CompanyReviewRegistModalAtom
   );
 
   return (
@@ -34,8 +34,8 @@ function CompanyDetailInfo({ companyInfo }: Props) {
       <S.CompanyDetailInfoContentContainer>
         <div>
           <S.CompanyDetailInfoContentWrapper>
-            <CompanyDetailUserProfile {...companyInfo} />
-            <CompanyDetailContent companyInfo={companyInfo} />
+            <UserProfile {...companyInfo} />
+            <Content companyInfo={companyInfo} />
           </S.CompanyDetailInfoContentWrapper>
 
           {Token.getToken(ACCESS_TOKEN_KEY) && (
@@ -52,7 +52,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
 
         <ErrorBoundary fallback={<>해당 회사 리뷰를 가지고 오지 못했습니다.</>}>
           <Suspense fallback={<ReviewSkeleton />}>
-            <CompanyDetailReview companyId={companyInfo.companyId} />
+            <Review companyId={companyInfo.companyId} />
           </Suspense>
         </ErrorBoundary>
       </S.CompanyDetailInfoContentContainer>

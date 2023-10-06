@@ -3,12 +3,12 @@ import { StarRatingItem } from "@stubee2/stubee2-rolling-ui";
 import * as S from "./style";
 
 interface Props {
-  reviewStarRating: Record<string, number>;
+  reviewStarGrade: Record<string, number>;
   handleStarGradeChange: (name: string, grade: number) => void;
 }
 
-export default function StarGrade({
-  reviewStarRating,
+export default function RegistStarGrades({
+  reviewStarGrade,
   handleStarGradeChange,
 }: Props) {
   return (
@@ -24,9 +24,7 @@ export default function StarGrade({
                 height={20}
                 onClick={() => handleStarGradeChange(item.name, idx + 1)}
                 cursor="pointer"
-                color={
-                  idx < reviewStarRating[item.name] ? "#FAD85F" : "#d9d9d9"
-                }
+                color={idx < reviewStarGrade[item.name] ? "#FAD85F" : "#d9d9d9"}
               />
             ))}
           </S.StarRatingItemContainer>

@@ -4,7 +4,7 @@ import { Button, TextInput } from "@stubee2/stubee2-rolling-ui";
 import PositionList from "./PositonList";
 import regist from "@src/assets/images/Review/regist.svg";
 import * as S from "./style";
-import StarGrade from "./StarGrades";
+import RegistStarGrades from "./RegistStarGrades";
 import { Dispatch, SetStateAction } from "react";
 
 interface Props {
@@ -13,12 +13,12 @@ interface Props {
   setShowPositionList: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function ReviewForm({ ...attr }: Props) {
+export default function Form({ ...attr }: Props) {
   const { ...hooks } = useRegistReview(attr.companyId);
   const positionList = searchPosition(hooks.reviewContents.position.trim());
 
   return (
-    <S.ReviewForm onSubmit={hooks.handleCompanyReviewSubmit}>
+    <S.FormContainer onSubmit={hooks.handleCompanyReviewSubmit}>
       <S.ReviewInputContainer>
         <S.InputTitle>
           <p>포지션</p>
@@ -66,8 +66,8 @@ export default function ReviewForm({ ...attr }: Props) {
           <span>*</span>
         </S.InputTitle>
 
-        <StarGrade
-          reviewStarRating={hooks.reviewStarRating}
+        <RegistStarGrades
+          reviewStarGrade={hooks.reviewStarGrade}
           handleStarGradeChange={hooks.handleStarGradeChange}
         />
       </S.CompanySatisfaction>
@@ -96,6 +96,6 @@ export default function ReviewForm({ ...attr }: Props) {
           </Button>
         </S.ReviewButtonContainer>
       </S.ReviewTextAreaContainer>
-    </S.ReviewForm>
+    </S.FormContainer>
   );
 }

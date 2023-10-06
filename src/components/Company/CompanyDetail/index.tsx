@@ -1,5 +1,5 @@
 import { useCustomHeader } from "@src/hooks/Header/useCustomHeader";
-import { CompanyReviewRegisterModalAtom } from "@src/stores/company/company.store";
+import { CompanyReviewRegistModalAtom } from "@src/stores/company/company.store";
 import { ReviewCompanyInfoType } from "@src/types/Review/review.type";
 import { Suspense, useState } from "react";
 import { useRecoilState } from "recoil";
@@ -7,7 +7,7 @@ import ErrorBoundary from "../../Common/ErrorBoundary";
 import Portal from "../../Common/Portal";
 import CompanyDetailSkeleton from "../../Common/Skeleton/CompanyDetail";
 import CompanyDetailItem from "./CompanyDetailItem";
-import CompanyReviewModal from "./CompanyReviewModal";
+import CompanyReviewRegistModal from "./CompanyReviewRegistModal";
 import * as S from "./style";
 
 interface Props {
@@ -22,7 +22,7 @@ export default function CompanyDetail({ id }: Props) {
       companyLogo: "",
     });
   const [companyReviewRegisterModal, setCompanyReviewRegisterModal] =
-    useRecoilState(CompanyReviewRegisterModalAtom);
+    useRecoilState(CompanyReviewRegistModalAtom);
 
   useCustomHeader(S.CustomHeader);
   return (
@@ -41,7 +41,7 @@ export default function CompanyDetail({ id }: Props) {
       </S.CompanyDetailContainer>
       {companyReviewRegisterModal && (
         <Portal>
-          <CompanyReviewModal
+          <CompanyReviewRegistModal
             setReviewModal={setCompanyReviewRegisterModal}
             reviewCompanyInfo={reviewCompanyInfo}
           />

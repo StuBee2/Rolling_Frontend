@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 
-export const useSearchKeyword = () => {
+export const useSearchCompany = () => {
   const [keyword, setKeyword] = useState("");
   const setIsCloseModal = useSetRecoilState(IsCloseModalAtom);
   const setSearchApiUrl = useSetRecoilState(CompanyAllAndSearchAtom);

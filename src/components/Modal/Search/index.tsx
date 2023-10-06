@@ -2,12 +2,12 @@ import * as S from "./style";
 import semicircle2 from "@src/assets/images/Search/semicircle2.svg";
 import semicircle1 from "@src/assets/images/Search/semicircle1.svg";
 import Search2 from "@src/assets/images/Search/Search2.svg";
-import { useSearchKeyword } from "@src/hooks/Company/useSearchKeyword";
+import { useSearchCompany } from "@src/hooks/Company/useSearchCompany";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 
 export default function Search() {
   const { handleKeywordChange, handleKeywordSubmit, keyword, setIsCloseModal } =
-    useSearchKeyword();
+    useSearchCompany();
   useCloseModal(setIsCloseModal);
 
   return (

@@ -2,16 +2,16 @@ import styled from "styled-components";
 import ExternalSite from "./ExternalSite";
 import UserInfo from "./UserInfo";
 
-export default function UserInfoAndExternalSite() {
+export default function Nav() {
   return (
-    <UserInfoAndExternalSiteContainer>
+    <NavContainer>
       <UserInfo />
       <ExternalSite />
-    </UserInfoAndExternalSiteContainer>
+    </NavContainer>
   );
 }
 
-export const UserInfoAndExternalSiteContainer = styled.div`
+export const NavContainer = styled.div`
   width: 280px;
   height: 100%;
   overflow: scroll;

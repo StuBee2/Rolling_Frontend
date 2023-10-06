@@ -3,14 +3,14 @@ import { Dispatch, SetStateAction, useState } from "react";
 import * as S from "./style";
 import logo from "@src/assets/images/Common/Logo.svg";
 import close from "@src/assets/images/Review/close.svg";
-import ReviewForm from "./ReviewForm";
+import Form from "./Form";
 
 interface Props {
   setReviewModal: Dispatch<SetStateAction<boolean>>;
   reviewCompanyInfo: ReviewCompanyInfoType;
 }
 
-export default function CompanyReviewModal({
+export default function CompanyReviewRegistModal({
   setReviewModal,
   reviewCompanyInfo,
 }: Props) {
@@ -41,7 +41,7 @@ export default function CompanyReviewModal({
           <p>{reviewCompanyInfo.companyName}</p>
         </S.ReviewCompanyInfo>
 
-        <ReviewForm
+        <Form
           companyId={reviewCompanyInfo.companyId}
           showPositionList={showPositionList}
           setShowPositionList={setShowPositionList}

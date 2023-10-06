@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ReviewForm = styled.form`
+export const FormContainer = styled.form`
   width: 90%;
   display: flex;
   flex-direction: column;

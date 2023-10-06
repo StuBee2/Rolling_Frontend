@@ -6,7 +6,7 @@ export const CompanyAllAndSearchAtom = atom<string>({
   default: "list/all?",
 });
 
-export const CompanyReviewRegisterModalAtom = atom<boolean>({
+export const CompanyReviewRegistModalAtom = atom<boolean>({
   key: "companyReviewRegisterModalAtom",
   default: false,
 });
