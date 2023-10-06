@@ -19,8 +19,8 @@ export default function User({ children }: Props) {
   const { pathname } = useLocation();
   const isReviewPage = pathname === "/mypage/review";
   return (
-    <S.UserWrap>
-      <S.UserContainer>
+    <S.UserContainer>
+      <S.UserWrapper>
         <ErrorBoundary fallback={<>내 정보를 갖고오지 못했습니다.</>}>
           <Suspense fallback={<NavSkeleton />}>
             <Nav pathName={pathname} />
@@ -51,9 +51,9 @@ export default function User({ children }: Props) {
             </ErrorBoundary>
           </S.Container>
         </S.UserListContainer>
-      </S.UserContainer>
+      </S.UserWrapper>
 
       <NavFooter />
-    </S.UserWrap>
+    </S.UserContainer>
   );
 }

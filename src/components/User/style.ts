@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const UserWrap = styled.div`
+export const UserContainer = styled.div`
   width: 100%;
   height: calc(100vh - 90px);
   background-color: #f9fafb;
@@ -15,7 +15,7 @@ export const UserWrap = styled.div`
   }
 `;
 
-export const UserContainer = styled.div`
+export const UserWrapper = styled.div`
   width: 1370px;
   height: 100%;
   display: flex;
