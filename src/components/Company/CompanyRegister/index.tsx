@@ -2,7 +2,7 @@ import useAlumniCheck from "@src/hooks/Auth/useAlumniCheck";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import { useCustomHeader } from "@src/hooks/Header/useCustomHeader";
 import { useState } from "react";
-import Portal from "../Common/Portal";
+import Portal from "../../Common/Portal";
 import AddressModal from "./AddressModal";
 import Banner from "./Banner";
 import Form from "./Form";

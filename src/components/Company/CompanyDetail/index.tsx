@@ -3,9 +3,9 @@ import { CompanyReviewRegisterModalAtom } from "@src/stores/company/company.stor
 import { ReviewCompanyInfoType } from "@src/types/Review/review.type";
 import { Suspense, useState } from "react";
 import { useRecoilState } from "recoil";
-import ErrorBoundary from "../Common/ErrorBoundary";
-import Portal from "../Common/Portal";
-import CompanyDetailSkeleton from "../Common/Skeleton/CompanyDetail";
+import ErrorBoundary from "../../Common/ErrorBoundary";
+import Portal from "../../Common/Portal";
+import CompanyDetailSkeleton from "../../Common/Skeleton/CompanyDetail";
 import CompanyDetailItem from "./CompanyDetailItem";
 import CompanyReviewModal from "./CompanyReviewModal";
 import * as S from "./style";

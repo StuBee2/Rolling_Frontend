@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import AuthLoadingPage from "../pages/Auth/AuthLoadingPage";
-import SignInPage from "../pages/Auth/SignInPage";
+import AuthLoadingPage from "@src/pages/AuthPage/AuthLoadingPage";
+import SignInPage from "@src/pages/AuthPage/SignInPage";
 import UserPage from "../pages/UserPage";
 import NotFound from "../components/Common/NotFound";
 import { ROUTE_ITEMS } from "../constants/Router/router.constant";
-import CompanyDetailPage from "../pages/CompanyDetailPage/index";
-import RegisterPage from "@src/pages/RegisterPage";
+import CompanyDetailPage from "@src/pages/CompanyPage/CompanyDetailPage";
+import RegisterPage from "@src/pages/CompanyPage/CompanyRegisterPage";
 
 export default function Router() {
   return (

@@ -1,4 +1,4 @@
-import { CompanyDetailReviewContainer } from "@src/components/CompanyDetail/CompanyDetailItem/CompanyDetailInfo/CompanyDetailReview/style";
+import { CompanyDetailReviewContainer } from "@src/components/Company/CompanyDetail/CompanyDetailItem/CompanyDetailInfo/CompanyDetailReview/style";
 import { SkeletonBox } from "../Common/style";
 
 export default function ReviewSkeleton() {
