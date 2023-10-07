@@ -1,20 +1,9 @@
 import styled from "styled-components";
 
 export const ExternalSiteContainer = styled.div`
-  width: 100%;
-  height: auto;
-  margin-top: 2rem;
-  padding: 1rem;
-  border: 1px solid #dddddd;
-  border-radius: 10px;
-  background-color: #fff;
-`;
-
-export const ExternalSiteWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  margin-top: 15px;
 `;
 
 export const ExternalSiteTitle = styled.div`
@@ -28,6 +17,22 @@ export const ExternalSiteTitle = styled.div`
     width: 20px;
     height: 20px;
   }
+`;
+
+export const ExternalSiteItemContainer = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 0 1rem 1rem 1rem;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  background-color: #fff;
+`;
+
+export const ExternalSiteItemWrapper = styled.ul`
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-top: 15px;
 `;
 
 export const ExternalSiteItem = styled.li`
@@ -55,10 +60,10 @@ export const ExternalSiteItem = styled.li`
   cursor: pointer;
   &:hover {
     background-color: #eeeeee;
-    color: #4869f6;
     transform: scale(0.97);
   }
   &:active {
     background-color: #dddddd;
+    color: #4869f6;
   }
 `;

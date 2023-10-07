@@ -2,15 +2,20 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 90px);
+  height: 100vh;
+  padding-top: 90px;
+
   display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
   align-items: center;
   justify-content: center;
+
   background-color: #f9fafb;
-  padding: 0 15px 0 15px;
   white-space: nowrap;
-  min-width: 450px;
-  @media screen and (max-width: 450px) {
+  min-width: 500px;
+
+  @media screen and (max-width: 500px) {
     height: 100%;
   }
 `;
@@ -21,6 +26,9 @@ export const HomeWrapper = styled.div`
   padding-top: 2rem;
   display: flex;
   column-gap: 10px;
+  @media screen and (max-width: 1394px) {
+    width: 1150px;
+  }
   @media screen and (max-width: 1040px) {
     width: 90%;
   }

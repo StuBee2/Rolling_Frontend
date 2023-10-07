@@ -2,12 +2,16 @@ import styled from "styled-components";
 
 export const CompanyDetailContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 90px);
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 15px 15px 15px;
   min-width: 500px;
+  padding-top: 90px;
+  @media screen and (max-width: 500px) {
+    height: 100%;
+  }
 `;
 
 export const CompanyDetailWrapper = styled.div`
@@ -24,6 +28,10 @@ export const CompanyDetailWrapper = styled.div`
     row-gap: 3rem;
   }
 
+  @media screen and (max-width: 500px) {
+    row-gap: 0rem;
+  }
+
   @media screen and (min-width: 500px) {
     overflow-y: scroll;
     ::-webkit-scrollbar {
@@ -31,8 +39,3 @@ export const CompanyDetailWrapper = styled.div`
     }
   }
 `;
-
-export const CustomHeader = {
-  minWidth: "500px",
-  borderBottom: "1px solid #dddddd",
-};

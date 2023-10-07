@@ -76,19 +76,19 @@ function ReviewItem({ ...attr }: ReviewInfoIdType) {
             </S.ReviewItemPositionAndCareerPath>
           </S.ReviewItemUserInfo>
 
-          <S.ReviewItemContent isCoincideMemberId={isCoincideMemberId}>
+          <S.ReviewItemContent>
             <S.ReviewItemDescription>
               {attr.reviewContent}
             </S.ReviewItemDescription>
+            {Token.getToken(ACCESS_TOKEN_KEY) && isCoincideMemberId && (
+              <S.ReviewItemSetUp>
+                <ReviewSetUp
+                  reviewId={attr.reviewId}
+                  companyId={attr.companyId!!}
+                />
+              </S.ReviewItemSetUp>
+            )}
           </S.ReviewItemContent>
-          {Token.getToken(ACCESS_TOKEN_KEY) && isCoincideMemberId && (
-            <S.ReviewItemSetUp>
-              <ReviewSetUp
-                reviewId={attr.reviewId}
-                companyId={attr.companyId!!}
-              />
-            </S.ReviewItemSetUp>
-          )}
         </S.ReviewItemContentContainer>
 
         <S.ReviewItemStarRatingContainer>

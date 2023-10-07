@@ -106,5 +106,6 @@ export const CompanyDetailContentCompanyImgContainer = styled.div`
     height: 200px;
     object-fit: cover;
     border-radius: 5px;
+    border: 1px solid #dddddd;
   }
 `;

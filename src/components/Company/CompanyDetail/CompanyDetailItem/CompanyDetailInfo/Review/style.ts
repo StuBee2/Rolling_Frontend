@@ -54,7 +54,7 @@ export const ReviewItemContentContainer = styled.div`
   width: 100%;
   height: calc(100% - 125px);
   display: flex;
-  column-gap: 8px;
+  column-gap: 10px;
 `;
 
 export const ReviewItemUserInfo = styled.div`
@@ -90,6 +90,8 @@ export const ReviewItemPositionAndCareerPath = styled.div`
 
   p {
     line-height: 22px;
+    font-size: 14px;
+    padding-right: 15px;
     span {
       color: #61677e;
       font-weight: 600;
@@ -97,9 +99,7 @@ export const ReviewItemPositionAndCareerPath = styled.div`
   }
 `;
 
-export const ReviewItemContent = styled.div<{
-  isCoincideMemberId: boolean;
-}>`
+export const ReviewItemContent = styled.div`
   width: calc(100% - 220px);
   display: flex;
   column-gap: 5px;

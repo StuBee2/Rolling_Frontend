@@ -6,22 +6,14 @@ import { useState } from "react";
 import { HEADER_ITEMS } from "@src/constants/Header/header.constant";
 import token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import {
-  CustomResponsiveHeaderAtom,
-  IsCloseModalAtom,
-  MyInfoModal,
-} from "@src/stores/common/common.store";
-import { CSSObject } from "styled-components";
+import { useSetRecoilState } from "recoil";
+import { IsCloseModalAtom, MyInfoModal } from "@src/stores/common/common.store";
 import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 
 export default function Header() {
   const navigate = useNavigate();
   const setIsCloseModal = useSetRecoilState<boolean>(IsCloseModalAtom);
   const setMyInfoModal = useSetRecoilState<boolean>(MyInfoModal);
-  const customResponsiveHeader = useRecoilValue<CSSObject | null>(
-    CustomResponsiveHeaderAtom
-  );
   const [select, setSelect] = useState<string>("홈 피드");
   const { pathname } = useLocation();
 
@@ -31,7 +23,7 @@ export default function Header() {
   };
 
   return (
-    <S.HeaderContainer customResponsiveHeader={customResponsiveHeader!!}>
+    <S.HeaderContainer>
       <S.HeaderWrapper>
         <S.PageContainer>
           <img

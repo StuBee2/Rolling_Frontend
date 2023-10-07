@@ -1,6 +1,6 @@
-import { useCustomHeader } from "@src/hooks/Header/useCustomHeader";
 import { CompanyReviewRegistModalAtom } from "@src/stores/company/company.store";
 import { ReviewCompanyInfoType } from "@src/types/Review/review.type";
+import { useAuthTopScroll } from "@stubee2/stubee2-rolling-util";
 import { Suspense, useState } from "react";
 import { useRecoilState } from "recoil";
 import ErrorBoundary from "../../Common/ErrorBoundary";
@@ -24,7 +24,7 @@ export default function CompanyDetail({ id }: Props) {
   const [companyReviewRegisterModal, setCompanyReviewRegisterModal] =
     useRecoilState(CompanyReviewRegistModalAtom);
 
-  useCustomHeader(S.CustomHeader);
+  useAuthTopScroll();
   return (
     <>
       <S.CompanyDetailContainer>

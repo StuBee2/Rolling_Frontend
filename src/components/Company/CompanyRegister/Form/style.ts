@@ -49,7 +49,7 @@ export const CompanyLogoImg = styled.div<{ logo: string }>`
   height: 150px;
   border-radius: 5px;
   background: url(${({ logo }) => logo}) no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   border: 1px solid rgb(189, 194, 208);
   background-color: #fff;

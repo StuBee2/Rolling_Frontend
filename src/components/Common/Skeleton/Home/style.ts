@@ -11,7 +11,7 @@ export const HomeSkeletonContainer = styled.div`
     width: 500px;
     height: 555px;
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 500px) {
     width: 335px;
     height: 380px;
   }

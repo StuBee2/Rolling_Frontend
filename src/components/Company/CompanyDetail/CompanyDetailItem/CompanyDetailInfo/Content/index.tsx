@@ -41,15 +41,15 @@ export default function CompanyDetailContent({ companyInfo }: Props) {
       </S.CompanyDetailContentInfoContainer>
 
       {/* 아래는 추후에 추가될 기능 */}
-      {/* <S.CompanyDetailContentCompanyImgContainer>
+      <S.CompanyDetailContentCompanyImgContainer>
         {Array.from({ length: 10 }).map((_, idx) => (
           <img
             key={idx}
-            src="https://mblogthumb-phinf.pstatic.net/MjAxODEwMDRfNzAg/MDAxNTM4NjQyNTkxNTYw.gMtQPhhpN5drGh2hM5MnEN0ueTwaGXYu5ZWsvF3eyMwg.0mxEaFa4QhEfVNTIVZePVpAmoTQwU_erqtYS7Nf9n5Eg.JPEG.qyeol333/Screenshot_20170917-222550.jpg?type=w800"
+            src="https://static.wanted.co.kr/images/company/15863/d2ooppds2x0bepn6__1080_790.png"
             alt="이미지 없음"
           />
         ))}
-      </S.CompanyDetailContentCompanyImgContainer> */}
+      </S.CompanyDetailContentCompanyImgContainer>
     </S.CompanyDetailContentContainer>
   );
 }
