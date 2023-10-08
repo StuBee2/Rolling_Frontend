@@ -22,22 +22,33 @@ export const HomeItemWrapper = styled.div`
     width: 500px;
     height: 555px;
   }
-  @media screen and (max-width: 450px) {
-    width: 335px;
-    height: 380px;
+  @media screen and (max-width: 500px) {
+    width: 360px;
+    height: 408px;
   }
 `;
 
-export const CompanyImage = styled.div<{ image: string }>`
+export const Test = styled.img`
   width: 100%;
   height: 60%;
   border: 1px solid #dddddd;
 
   border-radius: 15px;
   cursor: pointer;
+  object-fit: contain;
+`;
+
+export const CompanyImage = styled.div<{ image: string }>`
+  width: 100%;
+  height: 60%;
+  aspect-ratio: 1/1;
+  border: 1px solid #dddddd;
+
+  border-radius: 15px;
+  cursor: pointer;
 
   background: url(${(props) => props.image}) no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
 `;
 

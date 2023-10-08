@@ -1,21 +1,22 @@
 import styled, { css } from "styled-components";
 
-export const UserWrap = styled.div`
+export const UserContainer = styled.div`
   width: 100%;
-  height: calc(100vh - 90px);
+  height: 100vh;
   background-color: #f9fafb;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-bottom: 2rem;
-  min-width: 450px;
-  @media screen and (max-width: 450px) {
+  min-width: 500px;
+  padding-top: 90px;
+  @media screen and (max-width: 500px) {
     height: 100%;
   }
 `;
 
-export const UserContainer = styled.div`
+export const UserWrapper = styled.div`
   width: 1370px;
   height: 100%;
   display: flex;
@@ -40,7 +41,7 @@ export const UserListContainer = styled.div`
   @media screen and (max-width: 1040px) {
     width: 100%;
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 500px) {
     padding-bottom: 3rem;
   }
 `;

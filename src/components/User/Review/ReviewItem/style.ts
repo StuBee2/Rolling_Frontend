@@ -6,7 +6,7 @@ export const ReviewItemContainer = styled.div`
   height: 340px;
   display: flex;
   column-gap: 5px;
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 500px) {
     height: 320px;
   }
 `;
@@ -91,6 +91,7 @@ export const ReviewCompanyImgContainer = styled.div`
     object-fit: cover;
     overflow: hidden;
     border-radius: 10px;
+    border: 1px solid #dddddd;
   }
 `;
 

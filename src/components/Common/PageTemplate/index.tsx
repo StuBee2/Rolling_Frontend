@@ -23,11 +23,11 @@ export default function PageTemplate({ children }: Props) {
   return (
     <>
       <GlobalStyle />
-      {!hideHeader && <Header />}
       <Portal>
         {isCloseModal && <Search />}
         {myInfoModal && <Info />}
       </Portal>
+      {!hideHeader && <Header />}
       <>{children}</>
     </>
   );

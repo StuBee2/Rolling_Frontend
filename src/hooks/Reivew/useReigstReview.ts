@@ -6,17 +6,18 @@ import { ReviewParam } from "@src/repositories/Review/review.repository";
 import axios, { AxiosError } from "axios";
 import { reviewErrorHanlder } from "@src/utils/Error/Review/reviewErrorHanlder";
 import { QUERY_KEYS } from "@src/queries/queryKey";
-import { CompanyReviewRegisterModalAtom } from "@src/stores/company/company.store";
+import { CompanyReviewRegistModalAtom } from "@src/stores/company/company.store";
 import { useSetRecoilState } from "recoil";
 import { POSITION_ITEMS } from "@src/constants/Position/position.constant";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
+import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 export const useRegistReview = (companyId: string) => {
   const postReview = usePostReviewMutation();
   const { queryInvalidates } = useQueryInvalidates();
   const { rollingToast } = useRollingToast();
   const setIsCompanyReviewRegisterModal = useSetRecoilState(
-    CompanyReviewRegisterModalAtom
+    CompanyReviewRegistModalAtom
   );
 
   const [reviewContents, setReviewContents] =
@@ -25,7 +26,7 @@ export const useRegistReview = (companyId: string) => {
       position: "",
       careerPath: "",
     });
-  const [reviewStarRating, setReviewStarRating] = useState<
+  const [reviewStarGrade, setReviewStarGrade] = useState<
     Record<string, number>
   >({
     salaryAndBenefits: 0,
@@ -45,7 +46,7 @@ export const useRegistReview = (companyId: string) => {
   };
 
   const handleStarGradeChange = (name: string, grade: number) => {
-    setReviewStarRating((prev) => ({ ...prev, [name]: grade }));
+    setReviewStarGrade((prev) => ({ ...prev, [name]: grade }));
   };
 
   const handleCompanyReviewSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -58,7 +59,7 @@ export const useRegistReview = (companyId: string) => {
         workLifeBalance,
         organizationalCulture,
         careerAdvancement,
-      } = reviewStarRating;
+      } = reviewStarGrade;
 
       // 포지션, 입사경로, 회사리뷰내용 공백 검증
       if (position === "") {
@@ -96,7 +97,7 @@ export const useRegistReview = (companyId: string) => {
       const param = {
         companyId,
         ...reviewContents,
-        ...reviewStarRating,
+        ...reviewStarGrade,
       };
 
       postReview.mutate(param as unknown as ReviewParam, {
@@ -106,7 +107,7 @@ export const useRegistReview = (companyId: string) => {
             QUERY_KEYS.review.getReviewListCompanyId(companyId),
             QUERY_KEYS.review.getReviewMyStatus,
           ]);
-          setIsCompanyReviewRegisterModal(false);
+          turnOffModal(setIsCompanyReviewRegisterModal);
           rollingToast("리뷰를 등록하였습니다.", "success");
         },
         onError: (error) => {
@@ -122,7 +123,7 @@ export const useRegistReview = (companyId: string) => {
   return {
     setReviewContents,
     reviewContents,
-    reviewStarRating,
+    reviewStarGrade,
     handleCompanyReviewChange,
     handleStarGradeChange,
     handleCompanyReviewSubmit,

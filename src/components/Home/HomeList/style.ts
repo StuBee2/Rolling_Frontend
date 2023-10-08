@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const HomeListContainer = styled.div`
   width: calc(100% - 620px);
   height: 100%;
+
   display: flex;
   padding-left: 1rem;
   @media screen and (max-width: 1393px) {
@@ -36,8 +37,8 @@ export const HomeListWrapper = styled.div`
   @media screen and (max-width: 740px) {
     width: 500px;
   }
-  @media screen and (max-width: 450px) {
-    width: 335px;
+  @media screen and (max-width: 500px) {
+    width: 360px;
   }
 `;
 

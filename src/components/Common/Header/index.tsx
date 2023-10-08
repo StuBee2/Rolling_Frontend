@@ -6,33 +6,25 @@ import { useState } from "react";
 import { HEADER_ITEMS } from "@src/constants/Header/header.constant";
 import token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import {
-  CustomResponsiveHeaderAtom,
-  IsCloseModalAtom,
-  MyInfoModal,
-} from "@src/stores/common/common.store";
-import { CSSObject } from "styled-components";
-import { turnOnModal } from "@src/utils/Modal/turnOnModal";
+import { useSetRecoilState } from "recoil";
+import { IsCloseModalAtom, MyInfoModal } from "@src/stores/common/common.store";
+import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 
 export default function Header() {
   const navigate = useNavigate();
   const setIsCloseModal = useSetRecoilState<boolean>(IsCloseModalAtom);
   const setMyInfoModal = useSetRecoilState<boolean>(MyInfoModal);
-  const customResponsiveHeader = useRecoilValue<CSSObject | null>(
-    CustomResponsiveHeaderAtom
-  );
   const [select, setSelect] = useState<string>("홈 피드");
   const { pathname } = useLocation();
 
   const handlePageClick = (name: string, link: string) => {
     setSelect(name);
-    navigate(link);
+    window.location.href = link;
   };
 
   return (
-    <S.Header customResponsiveHeader={customResponsiveHeader!!}>
-      <S.HeaderWrap>
+    <S.HeaderContainer>
+      <S.HeaderWrapper>
         <S.PageContainer>
           <img
             src={logo}
@@ -66,7 +58,7 @@ export default function Header() {
             </S.SignInText>
           )}
         </S.LoginSearchContainer>
-      </S.HeaderWrap>
-    </S.Header>
+      </S.HeaderWrapper>
+    </S.HeaderContainer>
   );
 }

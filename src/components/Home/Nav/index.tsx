@@ -1,0 +1,27 @@
+import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
+import Token from "@src/libs/Token/Token";
+import styled from "styled-components";
+import ExternalSite from "./ExternalSite";
+import UserInfo from "./UserInfo";
+
+export default function Nav() {
+  return (
+    <NavContainer>
+      {Token.getToken(ACCESS_TOKEN_KEY) && <UserInfo />}
+      <ExternalSite />
+    </NavContainer>
+  );
+}
+
+export const NavContainer = styled.div`
+  width: 280px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+
+  @media screen and (max-width: 1040px) {
+    display: none;
+  }
+`;

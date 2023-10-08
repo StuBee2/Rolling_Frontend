@@ -50,7 +50,7 @@ export default function ReviewItem({ review }: Props) {
                   </li>
                 </ul>
                 <S.ReviewCompanyContent>
-                  {stringEllipsis(review?.reviewContent, 100)}
+                  {stringEllipsis(review?.reviewContent, 90)}
                 </S.ReviewCompanyContent>
               </S.ReviewCompanyContentContainer>
             </S.ReviewCompanyContainer>

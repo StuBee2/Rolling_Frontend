@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const RankItemContainer = styled.div`
   width: 100%;
-  height: 90%;
+  height: 100%;
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;
@@ -70,9 +70,10 @@ export const RankingContentContainer = styled.div`
   img {
     width: 46px;
     height: 46px;
-    object-fit: cover;
+    object-fit: 100% 100%;
     border-radius: 10px;
     background-color: #fff;
+    border: 1px solid #dddddd;
   }
   div {
     display: flex;
