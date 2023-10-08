@@ -6,8 +6,6 @@ export const HomeContainer = styled.div`
   padding-top: 90px;
 
   display: flex;
-  flex-direction: column;
-  row-gap: 5rem;
   align-items: center;
   justify-content: center;
 
