@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const RankContainer = styled.div`
-  width: calc(100% - 290px);
+  width: 340px;
   height: 100%;
 
   display: flex;
@@ -13,17 +13,16 @@ export const RankContainer = styled.div`
     display: none;
   }
 
-  @media screen and (max-width: 1105px) {
-    width: 100%;
+  @media screen and (max-width: 740px) {
+    display: none;
   }
 `;
 
 export const RankWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
   overflow-y: hidden;
   padding-bottom: 10px;
 `;
@@ -53,37 +52,20 @@ export const RankTitle = styled.div`
 
 export const RankCategoriesUl = styled.ul`
   display: flex;
-  column-gap: 15px;
-  align-items: center;
+  column-gap: 12px;
   overflow-x: scroll;
-  padding-bottom: 10px;
-  width: 100%;
-  height: 50px;
+  padding: 20px 0 20px 0;
 `;
 
 export const RankCategoryLi = styled.li<{ isSelect: boolean }>`
-  height: 40px;
-  padding: 0.5rem;
-  font-size: 17px;
-
-  font-weight: ${(props) => props.isSelect && "800"};
-  color: ${(props) => props.isSelect && "#fff"};
-  background-color: ${(props) => props.isSelect && "rgba(72, 105, 246, 1)"};
+  font-weight: ${(props) => props.isSelect && "bold"};
+  border-bottom: ${(props) => props.isSelect && "2px solid #1d1e5a"};
+  padding-bottom: ${(props) => props.isSelect && "3px"};
+  font-size: 14.4px;
+  color: ${(props) => props.isSelect && "#1d1e5a"};
   cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-
-  transform: scale(1);
-  transition: all 0.1s ease-in-out;
   &:hover {
-    background-color: ${(props) =>
-      props.isSelect ? "rgba(72, 105, 246, 1)" : "#eeeeee"};
-    transform: scale(0.98);
-  }
-  &:active {
-    background-color: ${(props) => (props.isSelect ? "#2b3f94" : "#dddddd")};
+    color: #1d1e5a;
+    font-weight: bold;
   }
 `;

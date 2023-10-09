@@ -8,11 +8,6 @@ export const CompanyDetailInfoContainer = styled.div`
   flex-direction: column;
   row-gap: 8rem;
 
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
   @media screen and (max-width: 1005px) {
     width: 100%;
     padding-left: 0;
