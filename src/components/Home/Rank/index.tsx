@@ -3,6 +3,7 @@ import rank from "@src/assets/images/Home/rank.svg";
 import { Suspense, useState } from "react";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import RankItem from "./RankItem";
+import RankSkeleton from "@src/components/Common/Skeleton/Rank";
 import { COMPANY_RANK_ITMES } from "@src/constants/Company/company.constant";
 
 export default function Rank() {
@@ -31,7 +32,7 @@ export default function Rank() {
         </S.RankCategoriesContainer>
 
         <ErrorBoundary fallback={<>회사 랭킹을 갖고오지 못했습니다.</>}>
-          <Suspense fallback={<>로딩중...</>}>
+          <Suspense fallback={<RankSkeleton />}>
             <RankItem rankCategory={rankCategorySelect} />
           </Suspense>
         </ErrorBoundary>

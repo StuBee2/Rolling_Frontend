@@ -14,20 +14,14 @@ export default function Nav() {
 }
 
 export const NavContainer = styled.div`
-  width: 290px;
+  width: 280px;
   height: 100%;
 
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
 
-  position: sticky;
-  top: calc(90px + 2rem);
-
-  /* @media screen and (max-width: 1040px) {
-    display: none;
-  } */
-  @media screen and (max-width: 1105px) {
+  @media screen and (max-width: 1040px) {
     display: none;
   }
 `;

@@ -2,7 +2,7 @@ import {
   RankItemContainer,
   RankItemListContainer,
   RankItemWrapper,
-} from "@src/components/Home/Main/Rank/RankItem/style";
+} from "@src/components/Home/Rank/RankItem/style";
 import { SkeletonBox } from "../Common/style";
 
 export default function RankSkeleton() {

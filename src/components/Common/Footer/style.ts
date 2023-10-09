@@ -13,17 +13,17 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterWrapper = styled.div`
-  width: 1370px;
+  width: 100%;
   height: 100%;
-  padding-top: 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
 
-  @media screen and (max-width: 1385px) {
-    width: 1105px;
+  @media screen and (max-width: 1394px) {
+    width: 1150px;
   }
-  @media screen and (max-width: 1165px) {
+  @media screen and (max-width: 1040px) {
     width: 90%;
   }
   @media screen and (max-width: 920px) {
