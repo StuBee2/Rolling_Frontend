@@ -16,7 +16,7 @@ export const COMPANY_RANK_ITMES = [
   },
   {
     id: 3,
-    name: "커리어순위",
+    name: "커리어 향상순위",
     categoryName: "career",
   },
 

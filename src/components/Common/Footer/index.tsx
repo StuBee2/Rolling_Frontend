@@ -17,7 +17,7 @@ export default function Footer() {
             </S.LogoWrapper>
             <S.Introduce>
               Rolling은 직업계고 학생들을 돕기 위한 졸업생 취업 정보리뷰
-              플랫폼입니다.
+              서비스입니다.
             </S.Introduce>
           </S.LogoContainer>
 
@@ -47,7 +47,10 @@ export default function Footer() {
               ))}
             </S.MemberItemUl>
           </S.MemberItemContainer>
-          <p>주소: 대구 달성군 구지면 창리로11길 93</p>
+          <p>
+            주소: 대구 달성군 구지면 창리로11길 93
+            (대구소프트웨어마이스터고등학교)
+          </p>
         </S.EtcContainer>
       </S.FooterWrapper>
     </S.FooterContainer>
