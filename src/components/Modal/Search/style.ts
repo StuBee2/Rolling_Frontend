@@ -34,10 +34,10 @@ export const SearchContainer = styled.div`
 
 export const Semicircle = styled.img<{ top: boolean }>`
   position: absolute;
-  top: ${(props) => props.top && "0"};
-  right: ${(props) => props.top && "0"};
-  bottom: ${(props) => !props.top && "0"};
-  left: ${(props) => !props.top && "0"};
+  top: ${({ top }) => top && "0"};
+  right: ${({ top }) => top && "0"};
+  bottom: ${({ top }) => !top && "0"};
+  left: ${({ top }) => !top && "0"};
 
   -webkit-user-select: none;
   -moz-user-select: none;

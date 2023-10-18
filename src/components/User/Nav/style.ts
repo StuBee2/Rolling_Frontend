@@ -70,26 +70,30 @@ export const PageSelectWrapper = styled.div`
 export const PageSelectItem = styled.div<{ isSelect?: boolean }>`
   width: 100%;
   height: 60px;
-  background-color: ${(props) => props.isSelect && "#1d1e5a"};
-  color: ${(props) => props.isSelect && "#ffffff"};
+
+  background-color: ${({ isSelect }) => isSelect && "#1d1e5a"};
+  color: ${({ isSelect }) => isSelect && "#ffffff"};
   border-radius: 8px;
   line-height: 60px;
   padding-left: 10px;
   cursor: pointer;
+
   display: flex;
   align-items: center;
   column-gap: 10px;
-  transform: scale(1);
-  transition: all 0.1s ease-in-out;
+
   img {
     width: 24px;
     height: 24px;
   }
+
+  transform: scale(1);
+  transition: all 0.1s ease-in-out;
   &:hover {
-    background-color: ${(props) => (props.isSelect ? "#24357b" : "#eeeeee")};
+    background-color: ${({ isSelect }) => (isSelect ? "#24357b" : "#eeeeee")};
     transform: scale(0.98);
   }
   &:active {
-    background-color: ${(props) => (props.isSelect ? "#2b3f94" : "#dddddd")};
+    background-color: ${({ isSelect }) => (isSelect ? "#2b3f94" : "#dddddd")};
   }
 `;
