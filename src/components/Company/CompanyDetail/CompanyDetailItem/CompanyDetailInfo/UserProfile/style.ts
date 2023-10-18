@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CompanyDetailUserProfileContainer = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: 50px;
   position: relative;
@@ -9,7 +9,7 @@ export const CompanyDetailUserProfileContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export const CompanyDetailUserProfileWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
@@ -17,7 +17,7 @@ export const CompanyDetailUserProfileWrapper = styled.div`
   left: 0;
 `;
 
-export const CompanyDetailUserProfileImgContainer = styled.div`
+export const ImgContainer = styled.div`
   width: 130px;
   height: 130px;
   border-radius: 100%;
@@ -38,7 +38,7 @@ export const CompanyDetailUserProfileImgContainer = styled.div`
   }
 `;
 
-export const CompanyDetailUserProfileContent = styled.div<{
+export const Content = styled.div<{
   nameLength: number;
 }>`
   width: ${({ nameLength }) => (nameLength >= 13 ? "auto" : "300px")};
@@ -57,13 +57,13 @@ export const CompanyDetailUserProfileContent = styled.div<{
   white-space: nowrap;
 `;
 
-export const CompanyDetailNickName = styled.p`
+export const NickName = styled.p`
   color: #f9fafb;
   font-size: 18px;
   font-weight: 700;
 `;
 
-export const CompanyDetailGithubId = styled.div`
+export const GithubId = styled.div`
   color: #dee0e6;
   font-size: 15px;
   font-weight: 500;

@@ -18,7 +18,7 @@ export default function Review() {
 
   return (
     <>
-      <S.ListWrap>
+      <S.ListWrapper>
         {reviewListData?.length!! > 0 ? (
           reviewList?.pages.map((data) =>
             data.data.map((review) => (
@@ -28,7 +28,7 @@ export default function Review() {
         ) : (
           <div>리뷰가 없습니다.</div>
         )}
-      </S.ListWrap>
+      </S.ListWrapper>
       <div ref={ref} />
     </>
   );

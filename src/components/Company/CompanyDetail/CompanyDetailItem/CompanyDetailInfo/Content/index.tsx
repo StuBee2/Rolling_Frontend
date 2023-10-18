@@ -12,36 +12,36 @@ interface Props {
 
 export default function CompanyDetailContent({ companyInfo }: Props) {
   return (
-    <S.CompanyDetailContentContainer>
-      <S.CompanyDetailContentTitle>
+    <S.Container>
+      <S.Title>
         <div>
           <img src={basicInfo} alt="이미지 없음" />
           <p>기본정보</p>
         </div>
-        <S.CompanyDetailContentSubTitle>
+        <S.SubTitle>
           이 정보는 졸업생들이 작성한 데이터를 기반으로 만들어지고 있어요
-        </S.CompanyDetailContentSubTitle>
-      </S.CompanyDetailContentTitle>
+        </S.SubTitle>
+      </S.Title>
 
-      <S.CompanyDetailContentInfoContainer>
+      <S.InfoContainer>
         <CompanyDetailRegistAt widthType={"min-width"}>
           {getDateText(new Date(companyInfo.companyCreatedAt))} 작성
         </CompanyDetailRegistAt>
-        <S.CompanyDetailContentInfo>
+        <S.Info>
           <img src={companyInfo.companyImgUrl || logo} alt="이미지 없음" />
           <div>
             <S.CompanyName>{companyInfo.companyName}</S.CompanyName>
             <S.CompanyAddress>{companyInfo.companyAddress}</S.CompanyAddress>
           </div>
-        </S.CompanyDetailContentInfo>
-        <S.CompanyDetailContentDescription>
+        </S.Info>
+        <S.Description>
           <img src={description} alt="이미지 없음" />
           <p>{companyInfo.companyDescription}</p>
-        </S.CompanyDetailContentDescription>
-      </S.CompanyDetailContentInfoContainer>
+        </S.Description>
+      </S.InfoContainer>
 
       {/* 아래는 추후에 추가될 기능 */}
-      <S.CompanyDetailContentCompanyImgContainer>
+      {/* <S.CompanyImgContainer>
         {Array.from({ length: 10 }).map((_, idx) => (
           <img
             key={idx}
@@ -49,7 +49,7 @@ export default function CompanyDetailContent({ companyInfo }: Props) {
             alt="이미지 없음"
           />
         ))}
-      </S.CompanyDetailContentCompanyImgContainer>
-    </S.CompanyDetailContentContainer>
+      </S.CompanyImgContainer> */}
+    </S.Container>
   );
 }

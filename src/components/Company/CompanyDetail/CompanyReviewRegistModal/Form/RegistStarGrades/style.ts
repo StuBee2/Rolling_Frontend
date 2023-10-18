@@ -16,6 +16,6 @@ export const StarGradeUl = styled.div`
   }
 `;
 
-export const StarRatingItemContainer = styled.div`
+export const ItemContainer = styled.div`
   display: flex;
 `;

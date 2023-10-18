@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-export const CompanyStarGradesContainer = styled.div`
+export const Container = styled.div`
   width: 250px;
   height: 100%;
   position: sticky;
   top: 0;
   @media screen and (max-width: 1005px) {
-    width: 95%;
+    width: 100%;
     height: 200px;
     white-space: nowrap;
     position: static;
   }
 `;
 
-export const CompanyStarGradesWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
@@ -56,7 +56,7 @@ export const CompanyBasicInfo = styled.div`
   }
 `;
 
-export const CompanyStarGradesItemContainer = styled.div`
+export const ItemContainer = styled.div`
   width: 100%;
   border-radius: 10px;
   background-color: #f7f9fa;
@@ -72,7 +72,7 @@ export const CompanyStarGradesItemContainer = styled.div`
   }
 `;
 
-export const CompanyStarGradesItemUl = styled.ul`
+export const ItemUl = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -94,7 +94,7 @@ export const CompanyStarGradesItemUl = styled.ul`
   }
 `;
 
-export const CompanyGradeText = styled.div`
+export const CompanyGradesText = styled.div`
   display: flex;
   align-items: center;
   column-gap: 5px;
@@ -118,7 +118,7 @@ export const StarGradeContainer = styled.div`
   }
 `;
 
-export const StarGradeText = styled.p`
+export const StarGradeName = styled.p`
   font-size: 15px;
   &:after {
     content: "·";
@@ -126,7 +126,7 @@ export const StarGradeText = styled.p`
   }
 `;
 
-export const StarGradeScoreText = styled.p`
+export const StarGradeScore = styled.p`
   font-size: 17px;
   font-weight: 600;
   margin-left: 5px;

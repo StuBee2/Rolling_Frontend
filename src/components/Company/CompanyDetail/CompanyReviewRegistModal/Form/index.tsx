@@ -18,8 +18,8 @@ export default function Form({ ...attr }: Props) {
   const positionList = searchPosition(hooks.reviewContents.position.trim());
 
   return (
-    <S.FormContainer onSubmit={hooks.handleCompanyReviewSubmit}>
-      <S.ReviewInputContainer>
+    <S.Container onSubmit={hooks.handleCompanyReviewSubmit}>
+      <S.InputContainer>
         <S.InputTitle>
           <p>포지션</p>
           <span>*</span>
@@ -43,9 +43,9 @@ export default function Form({ ...attr }: Props) {
               setShowPositionList={attr.setShowPositionList}
             />
           )}
-      </S.ReviewInputContainer>
+      </S.InputContainer>
 
-      <S.ReviewInputContainer>
+      <S.InputContainer>
         <S.InputTitle>
           <p>입사경로</p>
           <span>*</span>
@@ -58,7 +58,7 @@ export default function Form({ ...attr }: Props) {
           handleChange={hooks.handleCompanyReviewChange}
           placeholder="입사경로를 입력해주세요."
         />
-      </S.ReviewInputContainer>
+      </S.InputContainer>
 
       <S.CompanySatisfaction>
         <S.InputTitle>
@@ -72,7 +72,7 @@ export default function Form({ ...attr }: Props) {
         />
       </S.CompanySatisfaction>
 
-      <S.ReviewTextAreaContainer>
+      <S.TextAreaContainer>
         <S.InputTitle>
           <p>리뷰내용</p>
           <span>*</span>
@@ -95,7 +95,7 @@ export default function Form({ ...attr }: Props) {
             <img src={regist} alt="이미지 없음" />
           </Button>
         </S.ReviewButtonContainer>
-      </S.ReviewTextAreaContainer>
-    </S.FormContainer>
+      </S.TextAreaContainer>
+    </S.Container>
   );
 }

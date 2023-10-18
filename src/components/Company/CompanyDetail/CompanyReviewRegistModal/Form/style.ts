@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const FormContainer = styled.form`
+export const Container = styled.form`
   width: 90%;
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
 `;
 
-export const ReviewInputContainer = styled.div`
+export const InputContainer = styled.div`
   width: 100%;
   height: 90px;
   display: flex;
@@ -44,7 +44,7 @@ export const CompanySatisfaction = styled.div`
   justify-content: space-between;
 `;
 
-export const ReviewTextAreaContainer = styled.div`
+export const TextAreaContainer = styled.div`
   width: 100%;
   height: 280px;
   display: flex;

@@ -4,7 +4,7 @@ import { changeReviewStarGradesToArrayObject } from "@src/utils/Review/changeRev
 import { getDateText, stringEllipsis } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
 import Logo from "@src/assets/images/Common/Logo.svg";
-import CompanyStarRating from "@src/components/Common/Star";
+import Star from "@src/components/Common/Star";
 import ReviewSetUp from "@src/components/Common/ReviewSetUp";
 
 interface Props {
@@ -17,7 +17,7 @@ export default function ReviewItem({ review }: Props) {
   return (
     <S.ReviewItemContainer>
       <S.ReviewItemWrapper>
-        <S.ReviewItem>
+        <S.ReviewItemContent>
           <S.ReviewCompanyInfoContainer>
             <S.ReviewRegisteredAtAndDelEditContainer>
               <S.ReviewRegisteredDate>
@@ -56,13 +56,13 @@ export default function ReviewItem({ review }: Props) {
             </S.ReviewCompanyContainer>
           </S.ReviewCompanyInfoContainer>
 
-          <CompanyStarRating
+          <Star
             rankStatus={rankStatus}
             width={20}
             height={20}
             fontSize={"15px"}
           />
-        </S.ReviewItem>
+        </S.ReviewItemContent>
       </S.ReviewItemWrapper>
     </S.ReviewItemContainer>
   );

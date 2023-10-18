@@ -16,7 +16,7 @@ export default function RegistStarGrades({
       {REVIEW_STARGRAGE_ITEMS.map((item) => (
         <li key={item.id}>
           <p>{item.title}</p>
-          <S.StarRatingItemContainer>
+          <S.ItemContainer>
             {Array.from({ length: 5 }).map((_, idx) => (
               <StarRatingItem
                 key={idx}
@@ -27,7 +27,7 @@ export default function RegistStarGrades({
                 color={idx < reviewStarGrade[item.name] ? "#FAD85F" : "#d9d9d9"}
               />
             ))}
-          </S.StarRatingItemContainer>
+          </S.ItemContainer>
         </li>
       ))}
     </S.StarGradeUl>

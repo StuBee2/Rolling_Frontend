@@ -22,7 +22,7 @@ export const ReviewItemWrapper = styled.div`
   justify-content: center;
 `;
 
-export const ReviewItem = styled.div`
+export const ReviewItemContent = styled.div`
   width: 93%;
   height: 90%;
   display: flex;

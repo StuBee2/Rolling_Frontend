@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const CompanyDetailInfoContainer = styled.div`
+export const Container = styled.div`
   width: calc(100% - 250px);
   height: 100%;
   padding-left: 5rem;
@@ -8,31 +8,36 @@ export const CompanyDetailInfoContainer = styled.div`
   flex-direction: column;
   row-gap: 8rem;
 
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   @media screen and (max-width: 1005px) {
     width: 100%;
     padding-left: 0;
   }
 `;
 
-export const CompanyDetailInfoTitleContainer = styled.div`
+export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 10px;
 `;
 
-export const CompanyDetailInfoTitle = styled.p`
+export const Title = styled.p`
   color: #000;
   font-size: 30px;
   font-weight: 700;
 `;
 
-export const CompanyDetailInfoSubTitle = styled.p`
+export const SubTitle = styled.p`
   color: #61677e;
   font-size: 18px;
   font-weight: 600;
 `;
 
-export const CompanyDetailInfoContentContainer = styled.div`
+export const ContentContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -40,7 +45,7 @@ export const CompanyDetailInfoContentContainer = styled.div`
   row-gap: 3rem;
 `;
 
-export const CompanyDetailInfoContentWrapper = styled.div`
+export const ContentWrapper = styled.div`
   width: 100%;
   height: auto;
   border-radius: 20px;
@@ -48,7 +53,7 @@ export const CompanyDetailInfoContentWrapper = styled.div`
   border: 1px solid #dddddd;
 `;
 
-export const CompanyDetailInfoReviewContainer = styled.div`
+export const ReviewContainer = styled.div`
   width: 100%;
   height: 300px;
   background-color: rgba(242, 244, 245, 1);

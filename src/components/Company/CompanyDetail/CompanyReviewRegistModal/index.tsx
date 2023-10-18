@@ -26,23 +26,27 @@ export default function CompanyReviewRegistModal({
   };
 
   return (
-    <S.ReviewRegistModalContainer onClick={handleCloseModal}>
-      <S.ReviewRegistModalWrapper onClick={(e) => e.stopPropagation()}>
+    <S.Container onClick={handleCloseModal}>
+      <S.Wrapper
+        onClick={(e) => {
+          e.stopPropagation();
+          setShowPositionList(false);
+        }}
+      >
         <S.ReviewCloseIcon onClick={handleCloseModal}>
           <img src={close} alt="이미지 없음" />
         </S.ReviewCloseIcon>
-
-        <S.ReviewRegistCompanyInfo>
+        <S.CompanyLogo>
           <img src={reviewCompanyInfo.companyLogo || logo} alt="이미지 없음" />
           <p>{reviewCompanyInfo.companyName}</p>
-        </S.ReviewRegistCompanyInfo>
+        </S.CompanyLogo>
 
         <Form
           companyId={reviewCompanyInfo.companyId}
           showPositionList={showPositionList}
           setShowPositionList={setShowPositionList}
         />
-      </S.ReviewRegistModalWrapper>
-    </S.ReviewRegistModalContainer>
+      </S.Wrapper>
+    </S.Container>
   );
 }
