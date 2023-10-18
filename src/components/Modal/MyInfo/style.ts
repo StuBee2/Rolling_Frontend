@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const InfoModalWrapper = styled.div`
+export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@ export const InfoModalWrapper = styled.div`
   z-index: 10;
 `;
 
-export const InfoModalParentBox = styled.div`
+export const Wrapper = styled.div`
   width: 1370px;
   height: calc(100% - 90px);
   position: absolute;
@@ -22,7 +22,7 @@ export const InfoModalParentBox = styled.div`
   }
 `;
 
-export const InfoModalContainer = styled.div`
+export const MyInfoBox = styled.div`
   width: 337px;
   height: 224px;
   background-color: #2b2c30;

@@ -1,3 +1,4 @@
+import { StopDrag } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const SearchModalWrapper = styled.div`
@@ -14,11 +15,11 @@ export const SearchModalWrapper = styled.div`
 
 export const SearchContainer = styled.div`
   width: 100%;
-  height: 342px;
-  background-color: #1d1e5a;
+  height: 322px;
+  background-color: rgba(247, 249, 250, 1);
   position: relative;
   display: flex;
-  align-items: center;
+
   justify-content: center;
 
   @media screen and (max-width: 1393px) {
@@ -27,33 +28,27 @@ export const SearchContainer = styled.div`
   @media screen and (max-width: 740px) {
     height: 250px;
   }
-  @media screen and (max-width: 400px) {
-    height: 200px;
-  }
 `;
 
-export const Semicircle = styled.img<{ top: boolean }>`
+export const Wave = styled.img`
+  width: 100%;
   position: absolute;
-  top: ${({ top }) => top && "0"};
-  right: ${({ top }) => top && "0"};
-  bottom: ${({ top }) => !top && "0"};
-  left: ${({ top }) => !top && "0"};
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  bottom: 0;
+  left: 0;
+  ${StopDrag};
 `;
 
 export const InputContainer = styled.form`
   width: 80%;
-  height: auto;
+  height: 100px;
 
   display: flex;
   align-items: center;
   column-gap: 10px;
   border-bottom: 3px solid #737b98;
   z-index: 1;
+  margin-top: 4rem;
+
   button {
     background-color: transparent;
     outline: none;
@@ -64,8 +59,8 @@ export const InputContainer = styled.form`
     align-items: center;
     justify-content: center;
     img {
-      width: 100px;
-      height: 100px;
+      width: 70px;
+      height: 70px;
     }
   }
 
@@ -78,7 +73,8 @@ export const InputContainer = styled.form`
     font-weight: bold;
 
     color: #f9fafb;
-    font-size: 60px;
+    color: #737b98;
+    font-size: 43px;
 
     ::placeholder {
       font-weight: bold;
@@ -98,21 +94,15 @@ export const InputContainer = styled.form`
     }
   }
 
-  @media screen and (max-width: 510px) {
-    input {
-      font-size: 30px;
-    }
-  }
-
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 521px) {
     button {
       img {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
       }
     }
     input {
-      font-size: 24px;
+      font-size: 30px;
     }
   }
 `;

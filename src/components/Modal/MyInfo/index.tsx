@@ -19,9 +19,9 @@ export default function MyInfo() {
 
   useCloseModal(setMyInfoModal);
   return (
-    <S.InfoModalWrapper onClick={() => turnOffModal(setMyInfoModal)}>
-      <S.InfoModalParentBox>
-        <S.InfoModalContainer onClick={(e) => e.stopPropagation()}>
+    <S.Container onClick={() => turnOffModal(setMyInfoModal)}>
+      <S.Wrapper>
+        <S.MyInfoBox onClick={(e) => e.stopPropagation()}>
           <S.ProfileContainer>
             <img src={myInfo?.socialDetails.imageUrl} alt="이미지 없음" />
             <S.Profile>
@@ -58,8 +58,8 @@ export default function MyInfo() {
               <p>로그아웃</p>
             </div>
           </S.MyPageLogout>
-        </S.InfoModalContainer>
-      </S.InfoModalParentBox>
-    </S.InfoModalWrapper>
+        </S.MyInfoBox>
+      </S.Wrapper>
+    </S.Container>
   );
 }
