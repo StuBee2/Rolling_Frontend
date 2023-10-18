@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { usePatchMyNickNameMutation } from "@src/queries/Member/Member.query";
-import { useQueryClient } from "react-query";
 import { QUERY_KEYS } from "@src/queries/queryKey";
 import axios, { AxiosError } from "axios";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { memberErrorHandler } from "@src/utils/Error/Member/memberErrorHandler";
+import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 
 export const useEditNickName = (nickName: string) => {
   const patchNickNameMutation = usePatchMyNickNameMutation();
   const [isEditNickName, setIsEditNickName] = useState(false);
   const [editNickName, setEditNickName] = useState<string>(nickName);
-  const queryClient = useQueryClient();
   const { rollingToast } = useRollingToast();
+  const { queryInvalidates } = useQueryInvalidates();
 
   const handleEditNickNameQuestion = () => {
     const answer = window.confirm("닉네임을 수정하시겠습니까?");
@@ -48,11 +48,12 @@ export const useEditNickName = (nickName: string) => {
       {
         onSuccess: () => {
           rollingToast("닉네임이 수정되었습니다", "success");
-          queryClient.invalidateQueries(QUERY_KEYS.member.getMyMember);
+          queryInvalidates([
+            QUERY_KEYS.member.getMyMember,
+            QUERY_KEYS.company.company,
+            QUERY_KEYS.review.review,
+          ]);
           setIsEditNickName(false);
-          setTimeout(() => {
-            window.location.reload();
-          }, 500);
         },
         onError: (error) => {
           if (axios.isAxiosError(error)) {
