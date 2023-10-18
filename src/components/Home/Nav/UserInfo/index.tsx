@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import { stringEllipsis } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
-import UserInfoSkeleton from "@src/components/Common/Skeleton/User/UserInfo";
+import UserInfoSkeleton from "@src/components/Common/Skeleton/Home/UserInfo";
 
 export default function UserInfo() {
   return (

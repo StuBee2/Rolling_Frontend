@@ -5,7 +5,7 @@ import ErrorBoundary from "../Common/ErrorBoundary";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import NavFooter from "./Nav/NavFooter";
 import UserSkeleton from "../Common/Skeleton/User";
-import NavSkeleton from "../Common/Skeleton/Nav";
+import NavSkeleton from "../Common/Skeleton/User/Nav";
 import ReviewStatus from "./ReviewStatus";
 import ReviewStatusSkeleton from "../Common/Skeleton/User/ReviewStatus";
 import { useLocation } from "react-router";
