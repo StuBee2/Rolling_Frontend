@@ -1,5 +1,6 @@
 export const QUERY_KEYS = Object.freeze({
   company: {
+    company: "/company",
     getMyListCompany: "/company/my",
     getListSearchCompany: (name: string) => ["/company/search", name],
     getListAllCompany: "/company/list/all",
@@ -11,12 +12,13 @@ export const QUERY_KEYS = Object.freeze({
     getListInfoCompanyId: (id: string) => ["/company/info/id", id],
     getCompanyRankTotal: "/company/rank/total",
     getCompanyRankSalaryBenefits: "/company/rank/salary-benefit",
-    getCompanyRankCulture: "company/rank/culture",
-    getCompanyRankCareer: "company/rank/career",
+    getCompanyRankCulture: "/company/rank/culture",
+    getCompanyRankCareer: "/company/rank/career",
     getCompanyRankBalnce: "/company/rank/balnce",
     getCompanyRank: "/company/rank",
   },
   review: {
+    review: "/review",
     getMyReview: "/review/my",
     getReviewListMemberId: (id: string) => ["/review/list/member/id", id],
     getReviewListCompanyId: (id: string) => ["/reivew/list/company/id", id],

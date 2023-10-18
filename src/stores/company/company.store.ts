@@ -6,6 +6,11 @@ export const CompanyAllAndSearchAtom = atom<string>({
   default: "list/all?",
 });
 
+export const SearchCompanyAtom = atom<string>({
+  key: "searchCompanyAtom",
+  default: "",
+});
+
 export const CompanyReviewRegistModalAtom = atom<boolean>({
   key: "companyReviewRegisterModalAtom",
   default: false,
