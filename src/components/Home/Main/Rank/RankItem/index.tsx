@@ -6,7 +6,7 @@ import React from "react";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
 import logo from "@src/assets/images/Common/Logo.svg";
-import { RankCategoryIntroduce, RankNumber } from "./style";
+import { RankCategoryTitle, RankNumber } from "./style";
 
 interface Props {
   rankCategory: string;
@@ -20,10 +20,10 @@ function RankItem({ rankCategory }: Props) {
 
   return (
     <S.MainItemContainer>
-      <RankCategoryIntroduce>
+      <RankCategoryTitle>
         <img src={smile} alt="이미지 없음" />
         <p>{getCompanyRankIntroduce(rankCategory)}</p>
-      </RankCategoryIntroduce>
+      </RankCategoryTitle>
       <S.MainItemListContainer>
         <S.MainItemWrapper>
           {rankInfo?.slice(0, 9).map((item, idx) => (
@@ -32,9 +32,10 @@ function RankItem({ rankCategory }: Props) {
               onClick={() => navigate(`/company/${item.companyId.id}`)}
             >
               <RankNumber>{idx + 1}</RankNumber>
-              <S.CompanyLogoContainer
-                image={item.companyDetails.imgUrl || logo}
-              />
+
+              <S.CompanyLogoContainer>
+                <S.LogoImg src={item.companyDetails.imgUrl || logo} />
+              </S.CompanyLogoContainer>
 
               <S.CompanyContentContainer>
                 <S.CompanyNameAndCreatedAt>

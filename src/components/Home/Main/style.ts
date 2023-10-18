@@ -103,18 +103,22 @@ export const MainItemBox = styled.div`
   }
 `;
 
-export const CompanyLogoContainer = styled.div<{ image: string }>`
+export const CompanyLogoContainer = styled.div`
   width: 100%;
   height: 65%;
-
-  background: url(${({ image }) => image}) no-repeat;
-  background-size: 100%;
-  background-position: center;
-  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
 
   @media screen and (max-width: 710px) {
     height: calc(100% - 121px);
   }
+`;
+
+export const LogoImg = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 `;
 
 export const CompanyContentContainer = styled.div`

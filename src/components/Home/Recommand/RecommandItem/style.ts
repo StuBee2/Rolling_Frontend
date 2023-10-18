@@ -23,23 +23,6 @@ export const RecommandItemBox = styled.div`
   width: 250px;
   height: 180px;
 
-  img {
-    width: 100%;
-    height: 167px;
-
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    cursor: pointer;
-
-    transform: scale(1);
-    transition: all 0.1s ease-in-out;
-    &:hover {
-      transform: scale(0.98);
-      box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
-    }
-
-    ${StopDrag}
-  }
   p {
     text-align: center;
     font-size: 17px;
@@ -50,4 +33,32 @@ export const RecommandItemBox = styled.div`
   @media screen and (max-width: 1010px) {
     width: 200px;
   }
+`;
+
+export const ImageContainer = styled.div`
+  width: 100%;
+  height: 167px;
+
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+
+  ${StopDrag}
 `;

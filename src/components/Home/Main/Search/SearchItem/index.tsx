@@ -26,9 +26,9 @@ export default function SearchItem({ company }: Props) {
                   key={item.companyId.id}
                   onClick={() => navigate(`/company/${item.companyId.id}`)}
                 >
-                  <S.CompanyLogoContainer
-                    image={item.companyDetails.imgUrl || logo}
-                  />
+                  <S.CompanyLogoContainer>
+                    <S.LogoImg src={item.companyDetails.imgUrl || logo} />
+                  </S.CompanyLogoContainer>
 
                   <S.CompanyContentContainer>
                     <S.CompanyNameAndCreatedAt>

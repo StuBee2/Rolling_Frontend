@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const RankCategoryIntroduce = styled.div`
+export const RankCategoryTitle = styled.div`
   font-size: 17px;
   font-weight: bold;
   color: rgba(115, 123, 152, 1);

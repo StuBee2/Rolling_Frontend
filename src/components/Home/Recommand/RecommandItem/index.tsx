@@ -28,10 +28,12 @@ export default function RecommandItem() {
                 key={item.companyId.id}
                 onClick={() => navigate(`/company/${item.companyId.id}`)}
               >
-                <img
-                  src={item.companyDetails.imgUrl || logo}
-                  alt="이미지 없음"
-                />
+                <S.ImageContainer>
+                  <img
+                    src={item.companyDetails.imgUrl || logo}
+                    alt="이미지 없음"
+                  />
+                </S.ImageContainer>
                 <p>{item.companyDetails.name}</p>
               </S.RecommandItemBox>
             ))
