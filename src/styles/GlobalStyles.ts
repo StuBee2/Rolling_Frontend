@@ -12,7 +12,14 @@ const GlobalStyle = createGlobalStyle`
      body {
       background-color: #f9fafb;
      }
+
     ${reset}
+   
+    .bold-text {
+      font-family: 'Pretendard-Bold' !important;
+    }
+    
+  
 `;
 
 export default GlobalStyle;
