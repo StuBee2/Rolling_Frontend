@@ -88,7 +88,7 @@ export const MainItemBox = styled.div`
   transform: scale(1);
   transition: all 0.1s ease-in-out;
   &:hover {
-    transform: scale(0.98);
+    transform: scale(0.99);
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
   }
 
