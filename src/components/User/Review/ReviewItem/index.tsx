@@ -15,31 +15,31 @@ export default function ReviewItem({ review }: Props) {
   const rankStatus = changeReviewStarGradesToArrayObject(review);
   const navigate = useNavigate();
   return (
-    <S.ReviewItemContainer>
-      <S.ReviewItemWrapper>
-        <S.ReviewItemContent>
-          <S.ReviewCompanyInfoContainer>
-            <S.ReviewRegisteredAtAndDelEditContainer>
-              <S.ReviewRegisteredDate>
+    <S.Container>
+      <S.Wrapper>
+        <S.Content>
+          <S.CompanyInfoContainer>
+            <S.RegisteredAtAndDelEditContainer>
+              <S.RegisteredDate>
                 {getDateText(new Date(review?.reviewModifiedAt))} 등록
-              </S.ReviewRegisteredDate>
+              </S.RegisteredDate>
               <S.DelAndEditContainer>
                 <ReviewSetUp
                   reviewId={review?.reviewId}
                   companyId={review?.companyId}
                 />
               </S.DelAndEditContainer>
-            </S.ReviewRegisteredAtAndDelEditContainer>
+            </S.RegisteredAtAndDelEditContainer>
 
-            <S.ReviewCompanyContainer
+            <S.CompanyContainer
               onClick={() => navigate(`/company/${review?.companyId}`)}
             >
-              <S.ReviewCompanyImgContainer>
+              <S.CompanyImgContainer>
                 <img src={review?.companyImgUrl || Logo} alt="이미지 없음" />
-              </S.ReviewCompanyImgContainer>
+              </S.CompanyImgContainer>
 
-              <S.ReviewCompanyContentContainer>
-                <S.ReviewCompanyName>{review?.companyName}</S.ReviewCompanyName>
+              <S.CompanyContentContainer>
+                <S.CompanyName>{review?.companyName}</S.CompanyName>
                 <ul>
                   <li>
                     <span>포지션</span> · {review?.reviewPosition}
@@ -49,12 +49,12 @@ export default function ReviewItem({ review }: Props) {
                     {stringEllipsis(review?.reviewCareerPath, 35)}
                   </li>
                 </ul>
-                <S.ReviewCompanyContent>
+                <S.CompanyContent>
                   {stringEllipsis(review?.reviewContent, 90)}
-                </S.ReviewCompanyContent>
-              </S.ReviewCompanyContentContainer>
-            </S.ReviewCompanyContainer>
-          </S.ReviewCompanyInfoContainer>
+                </S.CompanyContent>
+              </S.CompanyContentContainer>
+            </S.CompanyContainer>
+          </S.CompanyInfoContainer>
 
           <Star
             rankStatus={rankStatus}
@@ -62,8 +62,8 @@ export default function ReviewItem({ review }: Props) {
             height={20}
             fontSize={"15px"}
           />
-        </S.ReviewItemContent>
-      </S.ReviewItemWrapper>
-    </S.ReviewItemContainer>
+        </S.Content>
+      </S.Wrapper>
+    </S.Container>
   );
 }
