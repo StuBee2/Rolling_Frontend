@@ -6,8 +6,7 @@ class GraduateRepositoryImpl implements graduateRepository {
   public async CertifyGraduate(
     housemaster: GraduateCertifiedType
   ): Promise<void> {
-    const { data } = await rollingAxios.patch("/auth/certify", housemaster);
-    return data;
+    await rollingAxios.patch("/auth/certify", housemaster);
   }
 }
 

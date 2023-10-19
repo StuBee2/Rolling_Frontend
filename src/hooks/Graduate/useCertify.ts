@@ -1,4 +1,4 @@
-import { usePostCertify } from "@src/queries/Graduate/graduate.query";
+import { usePostCertifyMutation } from "@src/queries/Graduate/graduate.query";
 import { GraduateCertifiedType } from "@src/types/Graduate/graduate.type";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { ChangeEvent, FormEvent, useState } from "react";
@@ -10,23 +10,23 @@ export const useCertify = () => {
 
   const { rollingToast } = useRollingToast();
 
-  const postCertified = usePostCertify();
+  const postCertified = usePostCertifyMutation();
 
   const handleQuestionChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setCertifiedData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleGraduateCertified = (e: FormEvent) => {
+  const handleGraduateCertified = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { housemaster } = certifiedData;
 
-    if (housemaster === "") {
+    if (housemaster.trim() === "") {
       return rollingToast("사감선생님 성함을 작성해주세요", "warning");
     }
     postCertified.mutate(
       {
-        housemaster: housemaster,
+        housemaster,
       },
       {
         onSuccess: () => {

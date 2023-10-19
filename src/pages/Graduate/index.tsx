@@ -1,5 +1,5 @@
-import Certified from "@src/components/Graduate/Certified";
+import Certification from "@src/components/Graduate/Certified";
 
 export default function CertifiedPage() {
-  return <Certified />;
+  return <Certification />;
 }

@@ -16,6 +16,8 @@ export const CertificationContainer = styled.div`
   align-items: center;
 
   height: 100vh;
+
+  padding-top: 90px;
 `;
 
 export const Input = styled.input`
@@ -57,7 +59,7 @@ export const CertificationInfo = styled.div`
   margin-bottom: 53px;
 `;
 
-export const QuestionContainer = styled.div`
+export const QuestionContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,25 +78,23 @@ export const QuestionText = styled.div`
   margin-bottom: 49px;
 `;
 
-export const Button = styled.button`
-  width: 1059px;
-  height: 68px;
+export const Button = {
+  width: "1059px",
+  height: "68px",
 
-  background-color: #4869f6;
-  border: 0;
-  border-radius: 7px;
+  backgroundColor: "#4869f6",
+  border: 0,
+  borderRadius: "7px",
 
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
+  fontSize: "20px",
+  fontWeight: "bold",
+  color: "white",
 
-  &:hover {
-    /* transform: scale(0.985); */
-    /* opacity: 0.7; */
-    transition: 0.2s ease-out;
-    opacity: 0.8;
-  }
-`;
+  "&:hover": {
+    transition: "0.2s ease-out",
+    opacity: "0.8",
+  },
+};
 
 export const InputContainer = styled.div`
   display: flex;

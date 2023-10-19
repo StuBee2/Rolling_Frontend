@@ -1,12 +1,13 @@
 import { useCertify } from "@src/hooks/Graduate/useCertify";
 import * as S from "./style";
 import backgroundimg from "@src/assets/images/Graduate/background.svg";
+import { Button, TextInput } from "@stubee2/stubee2-rolling-ui";
 
 const Certification = () => {
   const { handleQuestionChange, handleGraduateCertified } = useCertify();
   return (
-    <S.CertificationContainer style={{ paddingTop: "90px" }}>
-      <S.BackGroundImg src={backgroundimg} style={{}} />
+    <S.CertificationContainer>
+      <S.BackGroundImg src={backgroundimg} alt="이미지 없음" />
       <div style={{ zIndex: "1" }}>
         <S.CertificationBox>
           <S.CertificationList>
@@ -17,7 +18,7 @@ const Certification = () => {
               <br />
               졸업생 인증으로 롤링의 더 많은 기능을 활성화하세요.
             </S.CertificationInfo>
-            <S.QuestionContainer>
+            <S.QuestionContainer onSubmit={(e) => handleGraduateCertified(e)}>
               <S.QuestionList>
                 <S.QuestionText className="bold-text">
                   Q. DGSW 사감선생님 중, 한 분의 성함을 입력해주세요.
@@ -32,9 +33,13 @@ const Certification = () => {
                   <S.Teacher>선생님</S.Teacher>
                 </S.InputContainer>
 
-                <S.Button onClick={(e) => handleGraduateCertified(e)}>
+                <Button
+                  type="submit"
+                  ButtonType="custom"
+                  customStyle={S.Button}
+                >
                   인증하기
-                </S.Button>
+                </Button>
               </S.QuestionList>
             </S.QuestionContainer>
           </S.CertificationList>
