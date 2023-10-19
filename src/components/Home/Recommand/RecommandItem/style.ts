@@ -46,6 +46,7 @@ export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   overflow: hidden;
+  background-color: #fff;
 
   img {
     max-width: 100%;

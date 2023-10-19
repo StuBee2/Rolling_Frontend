@@ -92,8 +92,11 @@ export const MainItemBox = styled.div`
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
   }
 
-  @media screen and (max-width: 1105px) {
+  @media screen and (max-width: 1385px) {
     flex-basis: 47%;
+    height: 340px;
+  }
+  @media screen and (max-width: 1105px) {
     height: 330px;
   }
   @media screen and (max-width: 710px) {
@@ -106,8 +109,12 @@ export const MainItemBox = styled.div`
 export const CompanyLogoContainer = styled.div`
   width: 100%;
   height: 65%;
+
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid #ddd;
+
+  background-color: #fff;
 
   @media screen and (max-width: 710px) {
     height: calc(100% - 121px);

@@ -9,8 +9,10 @@ export const MainItemSkeletonBox = styled.div`
   border-radius: 10px;
   overflow: hidden;
 
-  @media screen and (max-width: 1105px) {
+  @media screen and (max-width: 1385px) {
     flex-basis: 47%;
+  }
+  @media screen and (max-width: 1105px) {
     height: 330px;
   }
   @media screen and (max-width: 710px) {

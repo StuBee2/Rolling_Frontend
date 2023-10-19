@@ -36,10 +36,14 @@ export const HomeWrapper = styled.div`
   row-gap: 5rem;
 
   @media screen and (max-width: 1385px) {
-    width: 1105px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   @media screen and (max-width: 1165px) {
     width: 90%;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 `;
