@@ -4,16 +4,15 @@ import {
   REQUEST_TOKEN_KEY,
 } from "@src/constants/Auth/auth.constant";
 import Token from "../Token/Token";
-import CONFIG from "@src/config/config.json";
 import { responseHandler } from "./responseHandler";
 import { requestHandler } from "./requestHandler";
 
 export const customAxios = axios.create({
-  baseURL: CONFIG.SERVER,
+  baseURL: process.env.REACT_APP_ROLLING_API_KEY,
 });
 
 export const rollingAxios = axios.create({
-  baseURL: CONFIG.SERVER,
+  baseURL: process.env.REACT_APP_ROLLING_API_KEY,
   headers: {
     [REQUEST_TOKEN_KEY]: `Bearer ${Token.getToken(ACCESS_TOKEN_KEY)}`,
   },
