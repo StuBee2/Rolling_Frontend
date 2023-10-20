@@ -4,13 +4,13 @@ import CompanyContent from "@src/components/User/Review/ReviewItem/CompanyConten
 import CompanyInfo from "@src/components/User/Review/ReviewItem/CompanyInfo";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import Token from "@src/libs/Token/Token";
-import { ReviewInfoIdType } from "@src/types/Review/review.type";
+import { StoryCommonType } from "@src/types/Review/review.type";
 import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
 import { changeReviewStarGradesToArrayObject } from "@src/utils/Review/changeReviewStarGradesToArrayObject";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import * as S from "@src/components/User/Review/ReviewItem/style";
 
-export default function ReviewItem({ ...attr }: ReviewInfoIdType) {
+export default function ReviewItem({ ...attr }: StoryCommonType) {
   const isCoincideMemberId = jwtDecoding("sub") === attr.writerId;
   const rankStatus = changeReviewStarGradesToArrayObject(attr);
 
