@@ -31,9 +31,17 @@ export interface ReviewRepository {
 
 export interface ReviewParam {
   companyId: string;
-  content: string;
   position: string;
-  careerPath: string;
+  schoolLife: string;
+  preparationCourse: string;
+  employmentProcess: string;
+  interviewQuestion: string;
+  mostImportantThing: string;
+  welfare: string;
+  commuteTime: string;
+  meal: string;
+  advantages: string;
+  disAdvantages: string;
   salaryAndBenefits: number;
   workLifeBalance: number;
   organizationalCulture: number;

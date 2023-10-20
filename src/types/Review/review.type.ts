@@ -1,5 +1,3 @@
-import { CompanyStarGrade } from "../Company/company.type";
-
 export interface ReviewInfiniteScrollListType {
   data: ReviewListType[];
   nextPage: number;
@@ -10,39 +8,44 @@ export interface ReviewInfoIdInfiniteScrollListType {
   nextPage: number;
 }
 
-export interface ReviewListType {
-  reviewId: string;
-  reviewContent: string;
-  reviewPosition: string;
-  reviewCareerPath: string;
-  totalGrade: number;
+export interface ReviewType {
+  position: string;
+  schoolLife: string;
+  preparationCourse: string;
+  employmentProcess: string;
+  interviewQuestion: string;
+  mostImportantThing: string;
+  welfare: string;
+  commuteTime: string;
+  meal: string;
+  advantages: string;
+  disAdvantages: string;
+
+  total: number;
   salaryAndBenefits: number;
   workLifeBalance: number;
   organizationalCulture: number;
   careerAdvancement: number;
-  reviewCreatedAt: string;
-  reviewModifiedAt: string;
+}
+
+export interface ReviewListType extends ReviewType {
+  storyId: string;
+  totalGrade: number;
+  storyCreatedAt: string;
+  storyModifiedAt: string;
   companyId: string;
   companyName: string;
   companyImgUrl: string;
-  employmentStatus: "HOLD" | "QUIT";
 }
 
-export interface ReviewInfoIdType {
-  reviewId: string;
-  reviewContent: string;
-  reviewPosition: string;
-  reviewCareerPath: string;
-  totalGrade: number;
-  salaryAndBenefits: number;
-  workLifeBalance: number;
-  organizationalCulture: number;
-  careerAdvancement: number;
-  reviewCreatedAt: string;
-  reviewModifiedAt: string;
+export interface ReviewInfoIdType extends ReviewType {
+  storyId: string;
+  total: number;
+  storyCreatedAt: string;
+  storyModifiedAt: string;
   writerId: string;
   memberNickName: string;
-  memberSocialId: string;
+  memberSocialLoginId: string;
   memberImageUrl: string;
 
   //reivew를 삭제할 때 필요한 companyId를 옵셔널로 지정함
@@ -50,23 +53,22 @@ export interface ReviewInfoIdType {
 }
 
 export interface ReviewPostResponse {
-  reviewId: {
-    id: string;
-  };
-  reviewDetails: {
-    content: string;
-    position: string;
-    careerPath: string;
-    createdAt: string;
-    modifiedAt: string;
-  };
-  reviewGrades: CompanyStarGrade;
-  memberId: {
-    id: string;
-  };
-  companyId: {
-    id: string;
-  };
+  companyId: string;
+  position: string;
+  schoolLife: string;
+  preparationCourse: string;
+  employmentProcess: string;
+  interviewQuestion: string;
+  mostImportantThing: string;
+  welfare: string;
+  commuteTime: string;
+  meal: string;
+  advantages: string;
+  disAdvantages: string;
+  salaryAndBenefits: number;
+  workLifeBalance: number;
+  organizationalCulture: number;
+  careerAdvancement: number;
 }
 
 export interface ReviewMyStatusResponse {
@@ -81,7 +83,15 @@ export interface ReviewCompanyInfoType {
 }
 
 export interface ReviewCompanyContentsType {
-  content: string;
   position: string;
-  careerPath: string;
+  schoolLife: string;
+  preparationCourse: string;
+  interviewQuestion: string;
+  mostImportantThing: string;
+  welfare: string;
+  commuteTime: string;
+  meal: string;
+  advantages: string;
+  disAdvantages: string;
+  employmentProcess: string;
 }

@@ -20,7 +20,7 @@ export const useGetNewsQuery = (
   >
 ): UseInfiniteQueryResult<NewsInfiniteScrollType, AxiosError> =>
   useInfiniteQuery(
-    QUERY_KEYS.company.getListCompanyId(companyName),
+    QUERY_KEYS.news.getNews(companyName),
     ({ pageParam = 1 }) =>
       NewsRepositoryImpl.getNews({ companyName }, { page: pageParam }),
     {

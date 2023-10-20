@@ -22,9 +22,17 @@ export const useRegistReview = (companyId: string) => {
 
   const [reviewContents, setReviewContents] =
     useState<ReviewCompanyContentsType>({
-      content: "",
       position: "",
-      careerPath: "",
+      schoolLife: "",
+      preparationCourse: "",
+      employmentProcess: "",
+      interviewQuestion: "",
+      mostImportantThing: "",
+      welfare: "",
+      meal: "",
+      commuteTime: "",
+      advantages: "",
+      disAdvantages: "",
     });
   const [reviewStarGrade, setReviewStarGrade] = useState<
     Record<string, number>
@@ -53,7 +61,7 @@ export const useRegistReview = (companyId: string) => {
     e.preventDefault();
     const answer = window.confirm("리뷰를 등록하시겠습니까?");
     if (answer) {
-      const { content, position, careerPath } = reviewContents;
+      const { ...attr } = reviewContents;
       const {
         salaryAndBenefits,
         workLifeBalance,
@@ -61,20 +69,51 @@ export const useRegistReview = (companyId: string) => {
         careerAdvancement,
       } = reviewStarGrade;
 
-      // 포지션, 입사경로, 회사리뷰내용 공백 검증
-      if (position === "") {
-        return rollingToast("포지션을 작성해주세요!", "warning");
-      }
-
-      if (!POSITION_ITEMS.some((item) => item === position)) {
+      if (!POSITION_ITEMS.some((item) => item === attr.position)) {
         return rollingToast("입력하신 포지션이 없습니다!", "warning");
       }
-      if (careerPath === "") {
-        return rollingToast("입사경로를 작성해주세요!", "warning");
+
+      if (attr.schoolLife.trim() === "") {
+        return rollingToast("학교생활을 작성해주세요!", "warning");
       }
 
-      if (content === "") {
-        return rollingToast("리뷰내용을 작성해주세요!", "warning");
+      if (attr.preparationCourse.trim() === "") {
+        return rollingToast("취업 준비 과정을 작성해주세요!", "warning");
+      }
+
+      if (attr.employmentProcess.trim() === "") {
+        return rollingToast("채용 프로세스을 작성해주세요!", "warning");
+      }
+
+      if (attr.interviewQuestion.trim() === "") {
+        return rollingToast("면접 질문을 작성해주세요!", "warning");
+      }
+
+      if (attr.mostImportantThing.trim() === "") {
+        return rollingToast(
+          "자신이 생각하는 가장 중요한 점을 작성해주세요!",
+          "warning"
+        );
+      }
+
+      if (attr.welfare.trim() === "") {
+        return rollingToast("사내 복지를 작성해주세요!", "warning");
+      }
+
+      if (attr.meal.trim() === "") {
+        return rollingToast("식사 제공 여부를 작성해주세요!", "warning");
+      }
+
+      if (attr.commuteTime.trim() === "") {
+        return rollingToast("출퇴근 시간을 작성해주세요!", "warning");
+      }
+
+      if (attr.advantages.trim() === "") {
+        return rollingToast("회사 장점을 작성해주세요!", "warning");
+      }
+
+      if (attr.disAdvantages.trim() === "") {
+        return rollingToast("회사 단점을 작성해주세요!", "warning");
       }
 
       // 만족도 별점 0점 검증
@@ -100,6 +139,7 @@ export const useRegistReview = (companyId: string) => {
         ...reviewStarGrade,
       };
 
+      console.log(param);
       postReview.mutate(param as unknown as ReviewParam, {
         onSuccess: () => {
           queryInvalidates([

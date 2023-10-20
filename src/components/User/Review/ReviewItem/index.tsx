@@ -4,7 +4,7 @@ import { changeReviewStarGradesToArrayObject } from "@src/utils/Review/changeRev
 import { getDateText, stringEllipsis } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
 import Logo from "@src/assets/images/Common/Logo.svg";
-import CompanyStarRating from "@src/components/Common/Star";
+import Star from "@src/components/Common/Star";
 import ReviewSetUp from "@src/components/Common/ReviewSetUp";
 
 interface Props {
@@ -14,56 +14,54 @@ interface Props {
 export default function ReviewItem({ review }: Props) {
   const rankStatus = changeReviewStarGradesToArrayObject(review);
   const navigate = useNavigate();
+
   return (
-    <S.ReviewItemContainer>
-      <S.ReviewItemWrapper>
-        <S.ReviewItem>
-          <S.ReviewCompanyInfoContainer>
-            <S.ReviewRegisteredAtAndDelEditContainer>
-              <S.ReviewRegisteredDate>
-                {getDateText(new Date(review?.reviewModifiedAt))} 등록
-              </S.ReviewRegisteredDate>
+    <S.Container>
+      <S.Wrapper>
+        <S.Content>
+          <S.CompanyInfoContainer>
+            <S.RegisteredAtAndDelEditContainer>
+              <S.RegisteredDate>
+                {getDateText(new Date(review?.storyModifiedAt))} 등록
+              </S.RegisteredDate>
               <S.DelAndEditContainer>
                 <ReviewSetUp
-                  reviewId={review?.reviewId}
+                  reviewId={review?.storyId}
                   companyId={review?.companyId}
                 />
               </S.DelAndEditContainer>
-            </S.ReviewRegisteredAtAndDelEditContainer>
+            </S.RegisteredAtAndDelEditContainer>
 
-            <S.ReviewCompanyContainer
+            <S.CompanyContainer
               onClick={() => navigate(`/company/${review?.companyId}`)}
             >
-              <S.ReviewCompanyImgContainer>
+              <S.CompanyImgContainer>
                 <img src={review?.companyImgUrl || Logo} alt="이미지 없음" />
-              </S.ReviewCompanyImgContainer>
+              </S.CompanyImgContainer>
 
-              <S.ReviewCompanyContentContainer>
-                <S.ReviewCompanyName>{review?.companyName}</S.ReviewCompanyName>
+              <S.CompanyContentContainer>
+                <S.CompanyName>{review?.companyName}</S.CompanyName>
                 <ul>
                   <li>
-                    <span>포지션</span> · {review?.reviewPosition}
+                    <span>포지션</span> ·
                   </li>
                   <li>
-                    <span>입사경로</span> ·{" "}
-                    {stringEllipsis(review?.reviewCareerPath, 35)}
+                    <span>입사경로</span> · {stringEllipsis("", 35)}
                   </li>
                 </ul>
-                <S.ReviewCompanyContent>
-                  {stringEllipsis(review?.reviewContent, 90)}
-                </S.ReviewCompanyContent>
-              </S.ReviewCompanyContentContainer>
-            </S.ReviewCompanyContainer>
-          </S.ReviewCompanyInfoContainer>
+                <S.CompanyContent>{stringEllipsis("", 90)}</S.CompanyContent>
+              </S.CompanyContentContainer>
+            </S.CompanyContainer>
+          </S.CompanyInfoContainer>
 
-          <CompanyStarRating
+          <Star
             rankStatus={rankStatus}
             width={20}
             height={20}
             fontSize={"15px"}
           />
-        </S.ReviewItem>
-      </S.ReviewItemWrapper>
-    </S.ReviewItemContainer>
+        </S.Content>
+      </S.Wrapper>
+    </S.Container>
   );
 }

@@ -10,25 +10,25 @@ interface Props {
 }
 
 export default function CompanyStarGrades({ starGradeInfo }: Props) {
-  const { companyImgUrl, companyName, ...attr } = starGradeInfo;
+  const { ...attr } = starGradeInfo;
   return (
-    <S.CompanyStarGradesContainer>
-      <S.CompanyStarGradesWrapper>
+    <S.Container>
+      <S.Wrapper>
         <S.CompanyBasicInfo>
-          <img src={companyImgUrl || Logo} alt="이미지 없음" />
-          <p>{companyName}</p>
+          <img src={attr.companyImgUrl || Logo} alt="이미지 없음" />
+          <p>{attr.companyName}</p>
         </S.CompanyBasicInfo>
-        <S.CompanyStarGradesItemContainer>
-          <S.CompanyGradeText>
+        <S.ItemContainer>
+          <S.CompanyGradesText>
             <img src={average} alt="이미지 없음" />
             <p>평균 평점</p>
-          </S.CompanyGradeText>
-          <S.CompanyStarGradesItemUl>
+          </S.CompanyGradesText>
+          <S.ItemUl>
             {changeStarGradeToArrayObjcet(attr).map((item) => (
               <li key={item.id}>
                 <S.StarGradeContainer>
-                  <S.StarGradeText>{item.name}</S.StarGradeText>
-                  <S.StarGradeScoreText>{item.rating}점</S.StarGradeScoreText>
+                  <S.StarGradeName>{item.name}</S.StarGradeName>
+                  <S.StarGradeScore>{item.rating}점</S.StarGradeScore>
                 </S.StarGradeContainer>
                 <div>
                   <StarRating
@@ -39,9 +39,9 @@ export default function CompanyStarGrades({ starGradeInfo }: Props) {
                 </div>
               </li>
             ))}
-          </S.CompanyStarGradesItemUl>
-        </S.CompanyStarGradesItemContainer>
-      </S.CompanyStarGradesWrapper>
-    </S.CompanyStarGradesContainer>
+          </S.ItemUl>
+        </S.ItemContainer>
+      </S.Wrapper>
+    </S.Container>
   );
 }

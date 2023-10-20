@@ -10,7 +10,7 @@ import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import React, { Suspense } from "react";
 import { useSetRecoilState } from "recoil";
 import { CompanyReviewRegistModalAtom } from "@src/stores/company/company.store";
-import ReviewSkeleton from "@src/components/Common/Skeleton/Review";
+import ReviewSkeleton from "@src/components/Common/Skeleton/CompanyDetail/Review";
 import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 
 interface Props {
@@ -23,27 +23,27 @@ function CompanyDetailInfo({ companyInfo }: Props) {
   );
 
   return (
-    <S.CompanyDetailInfoContainer>
-      <S.CompanyDetailInfoTitleContainer>
-        <S.CompanyDetailInfoTitle>That's 기업정보</S.CompanyDetailInfoTitle>
-        <S.CompanyDetailInfoSubTitle>
-          해당기업의 세세한 정보를 빠르고 쉽게 알아볼 수 있어요
-        </S.CompanyDetailInfoSubTitle>
-      </S.CompanyDetailInfoTitleContainer>
+    <S.Container>
+      <S.TitleContainer>
+        <S.Title>That's 기업정보</S.Title>
+        <S.SubTitle>
+          해당기업의 세세한 정보를 빠르고 쉽게 알아볼 수 있어요.
+        </S.SubTitle>
+      </S.TitleContainer>
 
-      <S.CompanyDetailInfoContentContainer>
+      <S.ContentContainer>
         <div>
-          <S.CompanyDetailInfoContentWrapper>
+          <S.ContentWrapper>
             <UserProfile {...companyInfo} />
             <Content companyInfo={companyInfo} />
-          </S.CompanyDetailInfoContentWrapper>
+          </S.ContentWrapper>
 
           {Token.getToken(ACCESS_TOKEN_KEY) && (
             <S.CompanyReviewButtonCotainer>
               <S.CompanyReviewButton
                 onClick={() => turnOnModal(setCompanyReviewRegisterModal)}
               >
-                <p>나의 리뷰</p>
+                <p>스토리 남기기</p>
                 <img src={review} alt="이미지 없음" />
               </S.CompanyReviewButton>
             </S.CompanyReviewButtonCotainer>
@@ -55,8 +55,8 @@ function CompanyDetailInfo({ companyInfo }: Props) {
             <Review companyId={companyInfo.companyId} />
           </Suspense>
         </ErrorBoundary>
-      </S.CompanyDetailInfoContentContainer>
-    </S.CompanyDetailInfoContainer>
+      </S.ContentContainer>
+    </S.Container>
   );
 }
 

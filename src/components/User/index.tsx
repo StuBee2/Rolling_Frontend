@@ -5,7 +5,7 @@ import ErrorBoundary from "../Common/ErrorBoundary";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import NavFooter from "./Nav/NavFooter";
 import UserSkeleton from "../Common/Skeleton/User";
-import NavSkeleton from "../Common/Skeleton/Nav";
+import NavSkeleton from "../Common/Skeleton/User/Nav";
 import ReviewStatus from "./ReviewStatus";
 import ReviewStatusSkeleton from "../Common/Skeleton/User/ReviewStatus";
 import { useLocation } from "react-router";
@@ -21,7 +21,7 @@ export default function User({ children }: Props) {
   return (
     <S.UserContainer>
       <S.UserWrapper>
-        <ErrorBoundary fallback={<>내 정보를 갖고오지 못했습니다.</>}>
+        <ErrorBoundary fallback={<>내 정보 갖고오지 못했습니다.</>}>
           <Suspense fallback={<NavSkeleton />}>
             <Nav pathName={pathname} />
           </Suspense>
@@ -31,7 +31,7 @@ export default function User({ children }: Props) {
           <S.Container>
             <S.Title>
               <S.FontSize fontSize="30px">
-                {isReviewPage ? "내 리뷰 Story" : "롤링 Profile"}
+                {isReviewPage ? "내 롤링 Story" : "롤링 Profile"}
               </S.FontSize>
               <S.Explain>
                 {isReviewPage
@@ -41,7 +41,7 @@ export default function User({ children }: Props) {
             </S.Title>
 
             <ErrorBoundary
-              fallback={<>리뷰한 회사의 수를 갖고오지 못했습니다.</>}
+              fallback={<>롤링한 회사의 수를 갖고오지 못했습니다.</>}
             >
               <Suspense fallback={<ReviewStatusSkeleton />}>
                 <ReviewStatus />

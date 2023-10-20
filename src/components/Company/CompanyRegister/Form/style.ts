@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const FormContainer = styled.div`
   width: 650px;
-  height: 960px;
+  height: auto;
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid #dddddd;
+  padding: 3rem 0 1.5rem 0;
 
   display: flex;
   align-items: center;
@@ -62,7 +63,7 @@ export const CompanyLogoInput = styled.input`
 
 export const InputContainer = styled.div<{ isTextArea?: boolean }>`
   width: 100%;
-  height: ${({ isTextArea }) => (isTextArea ? "200px" : "80px")};
+  height: ${({ isTextArea }) => (isTextArea ? "200px" : "100px")};
   display: flex;
   flex-direction: column;
   row-gap: 15px;

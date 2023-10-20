@@ -1,7 +1,6 @@
 import * as S from "./style";
-import semicircle2 from "@src/assets/images/Search/semicircle2.svg";
-import semicircle1 from "@src/assets/images/Search/semicircle1.svg";
 import Search2 from "@src/assets/images/Search/Search2.svg";
+import wave from "@src/assets/images/Search/wave.svg";
 import { useSearchCompany } from "@src/hooks/Company/useSearchCompany";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
@@ -14,11 +13,11 @@ export default function Search() {
   return (
     <S.SearchModalWrapper onClick={() => turnOffModal(setIsCloseModal)}>
       <S.SearchContainer onClick={(e) => e.stopPropagation()}>
-        <S.Semicircle src={semicircle2} top={true} alt="이미지 없음" />
         <S.InputContainer onSubmit={handleKeywordSubmit}>
           <button type="submit">
             <img src={Search2} alt="이미지 없음" />
           </button>
+
           <input
             type="text"
             placeholder="어떤 걸 찾고 계세요?"
@@ -26,7 +25,7 @@ export default function Search() {
             value={keyword}
           />
         </S.InputContainer>
-        <S.Semicircle src={semicircle1} top={false} alt="이미지 없음" />
+        <S.Wave src={wave} alt="이미지 없음" />
       </S.SearchContainer>
     </S.SearchModalWrapper>
   );

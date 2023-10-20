@@ -2,7 +2,7 @@ import { MemberType } from "@src/types/Member/member.type";
 
 export interface MemberRepository {
   getMyInfo(): Promise<MemberType>;
-  getMemberInfoId(id: number): Promise<MemberType>;
+  getMemberInfoId(id: string): Promise<MemberType>;
   patchMyNickName(nickName: MemberNickNameParam): Promise<void>;
 }
 

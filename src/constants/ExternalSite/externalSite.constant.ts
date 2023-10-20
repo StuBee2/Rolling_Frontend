@@ -33,7 +33,7 @@ export const EXTERNALSITE_ITEMS: Type[] = [
   {
     id: 4,
     name: "잡코리아",
-    logo: "https://play-lh.googleusercontent.com/vSSmZCEWUfHBzI24lUILNE_rDuwyDKwizb6afmpLmXluhPigrXJeL3dPEp7upXeNUTQ",
+    logo: "https://image.rocketpunch.com/company/12850/jobkorea_logo.png?s=400x400&t=inside",
     link: "https://www.jobkorea.co.kr/OnePick/JobList?Ord=GcmCodeAmtDesc&DutyCtgr=10031",
   },
 ];

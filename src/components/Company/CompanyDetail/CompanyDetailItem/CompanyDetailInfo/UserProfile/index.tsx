@@ -13,19 +13,15 @@ interface Props {
 
 export default function CompanyDetailUserProfile({ ...attr }: Props) {
   return (
-    <S.CompanyDetailUserProfileContainer>
-      <S.CompanyDetailUserProfileWrapper>
-        <S.CompanyDetailUserProfileImgContainer>
+    <S.Container>
+      <S.Wrapper>
+        <S.ImgContainer>
           <img src={attr.memberImageUrl || ""} alt="이미지 없음" />
-        </S.CompanyDetailUserProfileImgContainer>
+        </S.ImgContainer>
 
-        <S.CompanyDetailUserProfileContent
-          nameLength={attr.memberNickName.length}
-        >
-          <S.CompanyDetailNickName>
-            {attr.memberNickName}
-          </S.CompanyDetailNickName>
-          <S.CompanyDetailGithubId
+        <S.Content nameLength={attr.memberNickName.length}>
+          <S.NickName>{attr.memberNickName}</S.NickName>
+          <S.GithubId
             onClick={() =>
               window.open(
                 converToGithubLink(attr.memberSocialLoginId),
@@ -35,13 +31,13 @@ export default function CompanyDetailUserProfile({ ...attr }: Props) {
           >
             <img src={github} alt="이미지 없음" />
             <p>{attr.memberSocialLoginId}</p>
-          </S.CompanyDetailGithubId>
-        </S.CompanyDetailUserProfileContent>
-      </S.CompanyDetailUserProfileWrapper>
+          </S.GithubId>
+        </S.Content>
+      </S.Wrapper>
 
       <CompanyDetailRegistAt widthType={"max-width"}>
         {getDateText(new Date(attr.companyCreatedAt))} 작성
       </CompanyDetailRegistAt>
-    </S.CompanyDetailUserProfileContainer>
+    </S.Container>
   );
 }

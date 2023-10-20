@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const StarGradeUl = styled.div`
   width: 100%;
   height: calc(100% - 20px);
-  padding: 1rem 1rem;
   display: flex;
-  flex-direction: column;
+  column-gap: 20px;
   justify-content: space-between;
 
   li {
@@ -13,9 +12,13 @@ export const StarGradeUl = styled.div`
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+
+    p {
+      text-align: center;
+    }
   }
 `;
 
-export const StarRatingItemContainer = styled.div`
+export const ItemContainer = styled.div`
   display: flex;
 `;

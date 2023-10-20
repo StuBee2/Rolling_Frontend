@@ -30,9 +30,9 @@ export const NavFooterWrapper = styled.ul`
 `;
 
 export const NavFooterCategoryItem = styled.li<{ isSelect: boolean }>`
-  color: ${(props) => (props.isSelect ? "#1d1e5a" : "#61677e")};
+  color: ${({ isSelect }) => (isSelect ? "#1d1e5a" : "#61677e")};
   white-space: nowrap;
-  font-weight: ${(props) => props.isSelect && "800"};
+  font-weight: ${({ isSelect }) => isSelect && "800"};
   padding-bottom: 10px;
   cursor: pointer;
 `;

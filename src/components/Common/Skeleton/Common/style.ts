@@ -19,8 +19,8 @@ export const SkeletonBox = styled.div<{
   width: string;
   height: string;
 }>`
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   border-radius: 5px;
   ${SkeletonAnimation}
 `;

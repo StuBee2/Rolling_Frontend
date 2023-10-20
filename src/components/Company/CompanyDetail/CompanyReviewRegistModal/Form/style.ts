@@ -1,18 +1,21 @@
 import styled from "styled-components";
 
-export const FormContainer = styled.form`
+export const Container = styled.form`
   width: 90%;
+  height: auto;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  row-gap: 2.5rem;
+  row-gap: 3rem;
 `;
 
-export const ReviewInputContainer = styled.div`
+export const InputContainer = styled.div<{ height?: string }>`
   width: 100%;
-  height: 90px;
+  height: ${({ height }) => height || "90px"};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  row-gap: 10px;
   position: relative;
 `;
 
@@ -34,29 +37,55 @@ export const InputStyle = {
   height: "60px",
   padding: "0 10px 0 20px",
   fontSize: "16px",
+  backgroundColor: "rgba(247, 249, 250, 1)",
 };
+
+export const CommuteContainer = styled.div`
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  column-gap: 15px;
+`;
+
+export const CommuteWrapper = styled.div`
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+`;
 
 export const CompanySatisfaction = styled.div`
   width: 100%;
-  height: 350px;
   display: flex;
   flex-direction: column;
+  row-gap: 10px;
   justify-content: space-between;
 `;
 
-export const ReviewTextAreaContainer = styled.div`
+export const StarGradeContainer = styled.div`
+  overflow-x: scroll;
+  padding: 1rem;
+`;
+
+export const TextAreaContainer = styled.div`
+  background-color: red;
   width: 100%;
   height: 280px;
   display: flex;
   flex-direction: column;
+  row-gap: 10px;
   justify-content: space-between;
 `;
 
 export const TextAreaStyle = {
   width: "100%",
   height: "180px",
-  padding: "10px 10px 0 10px",
+  padding: "20px",
   fontSize: "16px",
+  backgroundColor: "rgba(247, 249, 250, 1)",
 };
 
 export const ReviewButtonContainer = styled.div`
@@ -68,19 +97,24 @@ export const ReviewButtonContainer = styled.div`
 export const RegistReviewButton = {
   width: "135px",
   height: "50px",
+
   fontSize: "17px",
   fontWeight: "bold",
   color: "#fff",
   backgroundColor: "rgba(29, 30, 90, 1)",
+
   display: "flex",
   outline: "none",
   border: "none",
   borderRadius: "5px",
   columnGap: "5px",
+
   alignItems: "center",
   justifyContent: "center",
+
   transform: "scale(1)",
   transition: "all 0.1s ease-in-out",
+
   "&:hover": {
     backgrounColor: "rgba(29, 30, 90, 0.87)",
     transform: "scale(0.985)",

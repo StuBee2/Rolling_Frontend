@@ -18,8 +18,8 @@ export default function Form({ ...attr }: Props) {
   const positionList = searchPosition(hooks.reviewContents.position.trim());
 
   return (
-    <S.FormContainer onSubmit={hooks.handleCompanyReviewSubmit}>
-      <S.ReviewInputContainer>
+    <S.Container onSubmit={hooks.handleCompanyReviewSubmit}>
+      <S.InputContainer>
         <S.InputTitle>
           <p>포지션</p>
           <span>*</span>
@@ -29,7 +29,7 @@ export default function Form({ ...attr }: Props) {
           customStyle={S.InputStyle}
           name="position"
           autocomplete="off"
-          placeholder="포지션을 입력해주세요. ex) 프론트엔드 개발자..."
+          placeholder="해당 기업에서 어떤 업무를 담당하셨나요?"
           handleChange={(e) => {
             hooks.handleCompanyReviewChange(e);
             attr.setShowPositionList(true);
@@ -43,59 +43,184 @@ export default function Form({ ...attr }: Props) {
               setShowPositionList={attr.setShowPositionList}
             />
           )}
-      </S.ReviewInputContainer>
+      </S.InputContainer>
 
-      <S.ReviewInputContainer>
+      <S.InputContainer height="200px">
         <S.InputTitle>
-          <p>입사경로</p>
+          <p>학교생활</p>
           <span>*</span>
         </S.InputTitle>
         <TextInput
-          value={hooks.reviewContents.careerPath}
-          customStyle={S.InputStyle}
-          name="careerPath"
+          value={hooks.reviewContents.schoolLife}
+          textType="textarea"
+          customStyle={S.TextAreaStyle}
+          name="schoolLife"
           autocomplete="off"
           handleChange={hooks.handleCompanyReviewChange}
-          placeholder="입사경로를 입력해주세요."
+          placeholder="DGSW에서 보낸 학교 생활은 어땠나요?"
         />
-      </S.ReviewInputContainer>
+      </S.InputContainer>
+
+      <S.InputContainer height="200px">
+        <S.InputTitle>
+          <p>취업 준비 과정</p>
+          <span>*</span>
+        </S.InputTitle>
+        <TextInput
+          value={hooks.reviewContents.preparationCourse}
+          customStyle={S.TextAreaStyle}
+          textType="textarea"
+          name="preparationCourse"
+          autocomplete="off"
+          handleChange={hooks.handleCompanyReviewChange}
+          placeholder="어떤 것을 중심으로 어떤 것을 공부하며 취업 준비를 하셨나요?"
+        />
+      </S.InputContainer>
+
+      <S.InputContainer height="200px">
+        <S.InputTitle>
+          <p>면접 질문</p>
+          <span>*</span>
+        </S.InputTitle>
+        <TextInput
+          value={hooks.reviewContents.interviewQuestion}
+          textType="textarea"
+          customStyle={S.TextAreaStyle}
+          name="interviewQuestion"
+          autocomplete="off"
+          handleChange={hooks.handleCompanyReviewChange}
+          placeholder="어떤 면접 질문을 받으셨나요?"
+        />
+      </S.InputContainer>
+
+      <S.InputContainer>
+        <S.InputTitle>
+          <p>채용 프로세스</p>
+          <span>*</span>
+        </S.InputTitle>
+        <TextInput
+          value={hooks.reviewContents.employmentProcess}
+          customStyle={S.InputStyle}
+          name="employmentProcess"
+          autocomplete="off"
+          handleChange={hooks.handleCompanyReviewChange}
+          placeholder="채용 프로세스는 무엇이었나요?"
+        />
+      </S.InputContainer>
+
+      <S.InputContainer>
+        <S.InputTitle>
+          <p>자신이 생각하는 가장 중요한 점</p>
+          <span>*</span>
+        </S.InputTitle>
+        <TextInput
+          value={hooks.reviewContents.mostImportantThing}
+          customStyle={S.InputStyle}
+          name="mostImportantThing"
+          autocomplete="off"
+          handleChange={hooks.handleCompanyReviewChange}
+          placeholder="취업에 있어서 고등학교 생활의 가장 중요한 점은 무엇인가요?"
+        />
+      </S.InputContainer>
+
+      <S.InputContainer>
+        <S.InputTitle>
+          <p>사내복지</p>
+          <span>*</span>
+        </S.InputTitle>
+        <TextInput
+          value={hooks.reviewContents.welfare}
+          customStyle={S.InputStyle}
+          name="welfare"
+          autocomplete="off"
+          handleChange={hooks.handleCompanyReviewChange}
+          placeholder="해당 기업은 어떤 사내복지를 제공하나요?"
+        />
+      </S.InputContainer>
+
+      <S.InputContainer>
+        <S.InputTitle>
+          <p>식사 제공</p>
+          <span>*</span>
+        </S.InputTitle>
+        <TextInput
+          value={hooks.reviewContents.meal}
+          customStyle={S.InputStyle}
+          name="meal"
+          autocomplete="off"
+          handleChange={hooks.handleCompanyReviewChange}
+          placeholder="해당 기업에서 제공해주는 식사는 어떠한가요?"
+        />
+      </S.InputContainer>
+
+      <S.InputContainer>
+        <S.InputTitle>
+          <p>출퇴근 시간</p>
+          <span>*</span>
+        </S.InputTitle>
+        <TextInput
+          value={hooks.reviewContents.commuteTime}
+          customStyle={S.InputStyle}
+          name="commuteTime"
+          autocomplete="off"
+          handleChange={hooks.handleCompanyReviewChange}
+          placeholder="출퇴근 시간은 몇 시부터 몇시까지 인가요?"
+        />
+      </S.InputContainer>
+
+      <S.InputContainer>
+        <S.InputTitle>
+          <p>기업의 장점</p>
+          <span>*</span>
+        </S.InputTitle>
+        <TextInput
+          value={hooks.reviewContents.advantages}
+          customStyle={S.InputStyle}
+          name="advantages"
+          autocomplete="off"
+          handleChange={hooks.handleCompanyReviewChange}
+          placeholder="해당 기업은 어떤 장점을 갖고 있나요?"
+        />
+      </S.InputContainer>
+
+      <S.InputContainer>
+        <S.InputTitle>
+          <p>기업의 단점</p>
+          <span>*</span>
+        </S.InputTitle>
+        <TextInput
+          value={hooks.reviewContents.disAdvantages}
+          customStyle={S.InputStyle}
+          name="disAdvantages"
+          autocomplete="off"
+          handleChange={hooks.handleCompanyReviewChange}
+          placeholder="해당 기업은 어떤 단점을 갖고 있나요?"
+        />
+      </S.InputContainer>
 
       <S.CompanySatisfaction>
         <S.InputTitle>
-          <p>회사만족도</p>
+          <p>회사 만족도</p>
           <span>*</span>
         </S.InputTitle>
-
-        <RegistStarGrades
-          reviewStarGrade={hooks.reviewStarGrade}
-          handleStarGradeChange={hooks.handleStarGradeChange}
-        />
+        <S.StarGradeContainer>
+          <RegistStarGrades
+            reviewStarGrade={hooks.reviewStarGrade}
+            handleStarGradeChange={hooks.handleStarGradeChange}
+          />
+        </S.StarGradeContainer>
       </S.CompanySatisfaction>
 
-      <S.ReviewTextAreaContainer>
-        <S.InputTitle>
-          <p>리뷰내용</p>
-          <span>*</span>
-        </S.InputTitle>
-        <TextInput
-          textType="textarea"
-          value={hooks.reviewContents.content}
-          customStyle={S.TextAreaStyle}
-          handleChange={hooks.handleCompanyReviewChange}
-          name="content"
-          placeholder="회사에 대한 리뷰내용을 작성해주세요."
-        />
-        <S.ReviewButtonContainer>
-          <Button
-            type="submit"
-            ButtonType="custom"
-            customStyle={S.RegistReviewButton}
-          >
-            <p>리뷰등록</p>
-            <img src={regist} alt="이미지 없음" />
-          </Button>
-        </S.ReviewButtonContainer>
-      </S.ReviewTextAreaContainer>
-    </S.FormContainer>
+      <S.ReviewButtonContainer>
+        <Button
+          type="submit"
+          ButtonType="custom"
+          customStyle={S.RegistReviewButton}
+        >
+          <p>스토리 등록</p>
+          <img src={regist} alt="이미지 없음" />
+        </Button>
+      </S.ReviewButtonContainer>
+    </S.Container>
   );
 }

@@ -1,5 +1,3 @@
-import CONFIG from "@src/config/config.json";
-
 export const ACCESS_TOKEN_KEY = "accessToken" as const;
 export const REFRESH_TOKEN_KEY = "refreshToken" as const;
 export const REQUEST_TOKEN_KEY = "Authorization" as const;
@@ -11,4 +9,4 @@ export const SIGNIN_OPTIONS_ITEMS = [
   "비밀번호 찾기",
 ] as const;
 
-export const gitSignInUrl = `${CONFIG.SERVER}/oauth2/authorization/github`;
+export const gitSignInUrl = `${process.env.REACT_APP_ROLLING_API_KEY}/oauth2/authorization/github`;

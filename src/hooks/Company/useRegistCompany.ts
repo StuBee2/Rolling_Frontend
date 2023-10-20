@@ -79,6 +79,7 @@ export const useRegistCompany = () => {
           rollingToast("기업등록 요청을 하였습니다!", "success");
           queryInvalidates([
             QUERY_KEYS.company.getListAllAndSearchCompany("list/all?"),
+            QUERY_KEYS.company.getCompanyRank,
           ]);
           setCompanyInfo({ name: "", address: "", description: "" });
           setImgUrl("");

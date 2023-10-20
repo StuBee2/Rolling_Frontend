@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SkeletonAnimation } from "../Common/style";
+import { SkeletonAnimation } from "../../Common/style";
 
 export const NavProfileLogoSkeleton = styled.div`
   width: 115px;

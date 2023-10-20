@@ -3,21 +3,22 @@ import rank from "@src/assets/images/Home/rank.svg";
 import { Suspense, useState } from "react";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import RankItem from "./RankItem";
-import RankSkeleton from "@src/components/Common/Skeleton/Rank";
 import { COMPANY_RANK_ITMES } from "@src/constants/Company/company.constant";
+import MainSkeleton from "@src/components/Common/Skeleton/Home/Main";
+import { MainContainer, MainTitle, MainWrapper } from "../style";
 
 export default function Rank() {
   const [rankCategorySelect, setRankCategorySelect] = useState("total");
   return (
-    <S.RankContainer>
-      <S.RankWrapper>
+    <MainContainer>
+      <MainWrapper rowGap="1rem">
         <S.RankCategoriesContainer>
-          <S.RankTitle>
+          <MainTitle>
             <img src={rank} alt="이미지 없음" />
             <p>
               <span>BEST</span> 기업 랭킹
             </p>
-          </S.RankTitle>
+          </MainTitle>
           <S.RankCategoriesUl>
             {COMPANY_RANK_ITMES.map((item) => (
               <S.RankCategoryLi
@@ -32,11 +33,11 @@ export default function Rank() {
         </S.RankCategoriesContainer>
 
         <ErrorBoundary fallback={<>회사 랭킹을 갖고오지 못했습니다.</>}>
-          <Suspense fallback={<RankSkeleton />}>
+          <Suspense fallback={<MainSkeleton />}>
             <RankItem rankCategory={rankCategorySelect} />
           </Suspense>
         </ErrorBoundary>
-      </S.RankWrapper>
-    </S.RankContainer>
+      </MainWrapper>
+    </MainContainer>
   );
 }

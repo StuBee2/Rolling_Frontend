@@ -1,5 +1,5 @@
 import { SkeletonBox } from "../../Common/style";
-import * as S from "../style";
+import * as S from "../../User/style";
 
 export default function UserInfoSkeleton() {
   return (

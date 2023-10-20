@@ -62,10 +62,10 @@ export const PageList = styled.li<{
   requiredToken?: boolean;
 }>`
   cursor: pointer;
-  font-weight: ${(props) => props.isSelect && "bold"};
+  font-weight: ${({ isSelect }) => isSelect && "bold"};
   width: 80px;
   height: 45px;
-  display: ${(props) => !props.requiredToken && "none"};
+  display: ${({ requiredToken }) => requiredToken && "none"};
   ${HoverAnimation};
 `;
 

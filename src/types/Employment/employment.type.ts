@@ -1,8 +1,19 @@
 export interface EmploymentResponse {
-  employmentStatus: string;
-  employerId: string;
-  employerName: string;
-  employerDescription: string;
-  employerAddress: string;
-  employerImgUrl: string;
+  employmentId: {
+    id: string;
+  };
+  employeeId: {
+    id: string;
+  };
+  employerId: {
+    id: string;
+  };
+  employmentDetails: {
+    position: string;
+    schoolLife: string;
+    preparationCourse: string;
+    employmentProcess: string;
+    interviewQuestion: string;
+    mostImportantThing: string;
+  };
 }

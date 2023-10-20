@@ -1,7 +1,7 @@
 import { HoverAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
-export const ReviewItemContainer = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: 340px;
   display: flex;
@@ -11,7 +11,7 @@ export const ReviewItemContainer = styled.div`
   }
 `;
 
-export const ReviewItemWrapper = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   background-color: #f9fafb;
@@ -22,7 +22,7 @@ export const ReviewItemWrapper = styled.div`
   justify-content: center;
 `;
 
-export const ReviewItem = styled.div`
+export const Content = styled.div`
   width: 93%;
   height: 90%;
   display: flex;
@@ -31,14 +31,14 @@ export const ReviewItem = styled.div`
   justify-content: space-between;
 `;
 
-export const ReviewCompanyInfoContainer = styled.div`
+export const CompanyInfoContainer = styled.div`
   width: 100%;
   height: 60%;
   display: flex;
   flex-direction: column;
 `;
 
-export const ReviewRegisteredAtAndDelEditContainer = styled.div`
+export const RegisteredAtAndDelEditContainer = styled.div`
   width: 100%;
   height: 40px;
   display: flex;
@@ -46,7 +46,7 @@ export const ReviewRegisteredAtAndDelEditContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const ReviewRegisteredDate = styled.p`
+export const RegisteredDate = styled.p`
   font-size: 1.1rem;
   font-weight: bold;
   color: #61677e;
@@ -70,7 +70,7 @@ export const SetUpIconContainer = styled.div`
   ${HoverAnimation};
 `;
 
-export const ReviewCompanyContainer = styled.div`
+export const CompanyContainer = styled.div`
   width: 100%;
   height: 130px;
   display: flex;
@@ -81,7 +81,7 @@ export const ReviewCompanyContainer = styled.div`
   overflow-y: hidden;
 `;
 
-export const ReviewCompanyImgContainer = styled.div`
+export const CompanyImgContainer = styled.div`
   width: 100px;
   height: 100px;
   img {
@@ -95,7 +95,7 @@ export const ReviewCompanyImgContainer = styled.div`
   }
 `;
 
-export const ReviewCompanyContentContainer = styled.div`
+export const CompanyContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 10px;
@@ -115,14 +115,14 @@ export const ReviewCompanyContentContainer = styled.div`
   }
 `;
 
-export const ReviewCompanyName = styled.p`
+export const CompanyName = styled.p`
   font-size: 25px;
   font-weight: bold;
   margin-top: 3px;
   white-space: nowrap;
 `;
 
-export const ReviewCompanyContent = styled.p`
+export const CompanyContent = styled.p`
   color: rgba(115, 123, 152, 1);
   font-size: 15px;
   font-weight: 300;

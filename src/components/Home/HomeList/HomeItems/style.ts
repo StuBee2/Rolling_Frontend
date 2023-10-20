@@ -47,7 +47,7 @@ export const CompanyImage = styled.div<{ image: string }>`
   border-radius: 15px;
   cursor: pointer;
 
-  background: url(${(props) => props.image}) no-repeat;
+  background: url(${({ image }) => image}) no-repeat;
   background-size: 100% 100%;
   background-position: center;
 `;

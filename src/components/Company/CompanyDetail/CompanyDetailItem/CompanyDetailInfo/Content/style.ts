@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CompanyDetailContentContainer = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: 100%;
   padding: 2rem 2rem;
@@ -10,7 +10,7 @@ export const CompanyDetailContentContainer = styled.div`
   row-gap: 2rem;
 `;
 
-export const CompanyDetailContentTitle = styled.div`
+export const Title = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 10px;
@@ -30,13 +30,13 @@ export const CompanyDetailContentTitle = styled.div`
   }
 `;
 
-export const CompanyDetailContentSubTitle = styled.p`
+export const SubTitle = styled.p`
   color: #737b98;
   font-size: 15px;
   font-weight: 600;
 `;
 
-export const CompanyDetailContentInfoContainer = styled.div`
+export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 15px;
@@ -44,7 +44,7 @@ export const CompanyDetailContentInfoContainer = styled.div`
   border-bottom: 3px solid #dee0e6;
 `;
 
-export const CompanyDetailContentInfo = styled.div`
+export const Info = styled.div`
   display: flex;
   align-items: center;
   column-gap: 10px;
@@ -60,7 +60,7 @@ export const CompanyDetailContentInfo = styled.div`
   div {
     display: flex;
     flex-direction: column;
-    row-gap: 15px;
+    row-gap: 10px;
   }
 `;
 
@@ -76,7 +76,7 @@ export const CompanyAddress = styled.p`
   font-weight: 500;
 `;
 
-export const CompanyDetailContentDescription = styled.div`
+export const Description = styled.div`
   display: flex;
   column-gap: 5px;
   line-height: 23px;
@@ -96,7 +96,7 @@ export const CompanyDetailContentDescription = styled.div`
   }
 `;
 
-export const CompanyDetailContentCompanyImgContainer = styled.div`
+export const CompanyImgContainer = styled.div`
   display: flex;
   overflow-x: scroll;
   column-gap: 10px;
