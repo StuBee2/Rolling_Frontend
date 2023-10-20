@@ -14,6 +14,7 @@ interface Props {
 export default function ReviewItem({ review }: Props) {
   const rankStatus = changeReviewStarGradesToArrayObject(review);
   const navigate = useNavigate();
+
   return (
     <S.Container>
       <S.Wrapper>
@@ -21,11 +22,11 @@ export default function ReviewItem({ review }: Props) {
           <S.CompanyInfoContainer>
             <S.RegisteredAtAndDelEditContainer>
               <S.RegisteredDate>
-                {getDateText(new Date(review?.reviewModifiedAt))} 등록
+                {getDateText(new Date(review?.storyModifiedAt))} 등록
               </S.RegisteredDate>
               <S.DelAndEditContainer>
                 <ReviewSetUp
-                  reviewId={review?.reviewId}
+                  reviewId={review?.storyId}
                   companyId={review?.companyId}
                 />
               </S.DelAndEditContainer>
@@ -42,16 +43,13 @@ export default function ReviewItem({ review }: Props) {
                 <S.CompanyName>{review?.companyName}</S.CompanyName>
                 <ul>
                   <li>
-                    <span>포지션</span> · {review?.reviewPosition}
+                    <span>포지션</span> ·
                   </li>
                   <li>
-                    <span>입사경로</span> ·{" "}
-                    {stringEllipsis(review?.reviewCareerPath, 35)}
+                    <span>입사경로</span> · {stringEllipsis("", 35)}
                   </li>
                 </ul>
-                <S.CompanyContent>
-                  {stringEllipsis(review?.reviewContent, 90)}
-                </S.CompanyContent>
+                <S.CompanyContent>{stringEllipsis("", 90)}</S.CompanyContent>
               </S.CompanyContentContainer>
             </S.CompanyContainer>
           </S.CompanyInfoContainer>

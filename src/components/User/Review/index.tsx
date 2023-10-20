@@ -22,11 +22,11 @@ export default function Review() {
         {reviewListData?.length!! > 0 ? (
           reviewList?.pages.map((data) =>
             data.data.map((review) => (
-              <ReviewItem review={review} key={review.reviewId} />
+              <ReviewItem review={review} key={review.storyId} />
             ))
           )
         ) : (
-          <div>리뷰가 없습니다.</div>
+          <div>롤링한 회사가 없습니다.</div>
         )}
       </S.ListWrapper>
       <div ref={ref} />

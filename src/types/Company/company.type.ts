@@ -38,11 +38,7 @@ export interface CompanyInfoType extends CompanyStarGrade {
 }
 
 export interface CompanyInfoId {
-  id: number;
-}
-
-export interface CompanyID {
-  companyId: string;
+  id: string;
 }
 
 export interface CompanyStarGrade extends CompanyStarGradeWithoutTotalGrade {

@@ -19,7 +19,7 @@ export default function CompanyDetailContent({ companyInfo }: Props) {
           <p>기본정보</p>
         </div>
         <S.SubTitle>
-          이 정보는 졸업생들이 작성한 데이터를 기반으로 만들어지고 있어요
+          이 정보는 졸업생들이 작성한 데이터를 기반으로 만들어지고 있어요!
         </S.SubTitle>
       </S.Title>
 

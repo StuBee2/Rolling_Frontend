@@ -25,18 +25,18 @@ export default function CompanyDetailReview({ companyId }: Props) {
   return (
     <S.Container>
       <S.ReviewTitle>
-        <p>기업리뷰 ·</p>
+        <p>졸업생들의 롤링 Story ·</p>
         <S.ReviewCount>{reviewListData?.length}</S.ReviewCount>
       </S.ReviewTitle>
       <S.Wrapper>
         {reviewListData?.length!! > 0 ? (
           reviewList?.pages.map((list) =>
             list.data.map((item) => (
-              <ReviewItem key={item.reviewId} companyId={companyId} {...item} />
+              <ReviewItem key={item.storyId} companyId={companyId} {...item} />
             ))
           )
         ) : (
-          <div>등록된 리뷰가 없습니다.</div>
+          <div>등록된 스토리가 없습니다.</div>
         )}
       </S.Wrapper>
       <div ref={ref} />

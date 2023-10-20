@@ -13,7 +13,7 @@ class ReviewRepositoryImpl implements ReviewRepository {
   public async getMyReviewList({
     page,
   }: CommonPageParam): Promise<ReviewInfiniteScrollListType> {
-    const { data } = await rollingAxios.get(`/review/my?page=${page}&size=10`);
+    const { data } = await rollingAxios.get(`/story/my?page=${page}&size=10`);
     return { ...data, nextPage: page + 1 };
   }
 
@@ -22,7 +22,7 @@ class ReviewRepositoryImpl implements ReviewRepository {
     { page }: CommonPageParam
   ): Promise<ReviewInfiniteScrollListType> {
     const { data } = await rollingAxios.get(
-      `/review/list/member/${id}?page=${page}&size=10`
+      `/story/list/member/${id}?page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
   }
@@ -32,7 +32,7 @@ class ReviewRepositoryImpl implements ReviewRepository {
     { page }: CommonPageParam
   ): Promise<ReviewInfoIdInfiniteScrollListType> {
     const { data } = await customAxios.get(
-      `/review/list/company/${id}?page=${page}&size=10`
+      `/story/list/company/${id}?page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
   }
@@ -40,24 +40,24 @@ class ReviewRepositoryImpl implements ReviewRepository {
   public async getReviewInfoId({
     id,
   }: CommonIdParam): Promise<ReviewInfoIdType> {
-    const { data } = await customAxios.get(`/review/info/${id}`);
+    const { data } = await customAxios.get(`/story/info/${id}`);
     return data;
   }
 
   public async getReviewMyStatus(): Promise<ReviewMyStatusResponse> {
-    const { data } = await rollingAxios.get("/review/my/status");
+    const { data } = await rollingAxios.get("/story/my/status");
     return data;
   }
 
   public async postReview(
     reviewInfo: ReviewParam
   ): Promise<ReviewPostResponse> {
-    const { data } = await rollingAxios.post("/review", reviewInfo);
+    const { data } = await rollingAxios.post("/story", reviewInfo);
     return data;
   }
 
   public async deleteMyReview(reviewId: string): Promise<void> {
-    await rollingAxios.delete(`/review/${reviewId}`);
+    await rollingAxios.delete(`/story/${reviewId}`);
   }
 }
 

@@ -30,7 +30,7 @@ export const Wrapper = styled.div`
   row-gap: 3rem;
   align-items: center;
 
-  padding-top: 5.5rem;
+  padding-top: 6rem;
 
   animation: fadein 0.6s;
   @keyframes fadein {
@@ -125,5 +125,12 @@ export const SignInButton = styled.button`
     color: #fff;
     font-size: 17px;
     font-weight: 600;
+  }
+
+  transform: scale(1);
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: rgba(32, 35, 37, 1);
+    transform: scale(0.985);
   }
 `;

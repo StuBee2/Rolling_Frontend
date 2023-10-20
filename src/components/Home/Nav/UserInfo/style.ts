@@ -61,11 +61,20 @@ export const RegistTextContainer = styled.div`
 export const CompanyRegistBtn = styled.button`
   width: 100%;
   height: 57px;
+
   outline: none;
   background-color: #fff;
   border-radius: 5px;
   font-size: 15px;
+
   color: rgba(72, 105, 246, 1);
   border: 2px solid rgba(72, 105, 246, 1);
   cursor: pointer;
+
+  transform: scale(1);
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: rgba(247, 249, 250, 1);
+    transform: scale(0.985);
+  }
 `;

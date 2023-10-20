@@ -1,24 +1,16 @@
 import styled from "styled-components";
 import { ReviewStatusCommonHover } from "../style";
 
-export const ReviewStatusWrap = styled.div`
-  width: 100%;
-  display: flex;
-  column-gap: 10px;
-  @media screen and (max-width: 565px) {
-    flex-direction: column;
-    column-gap: 0;
-    row-gap: 25px;
-  }
-`;
-
 export const ReviewStatusContainer = styled.div`
   width: 100%;
   height: 183px;
   background-color: #4869f6;
   border-radius: 10px;
-  padding: 30px;
-  ${ReviewStatusCommonHover}
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
 `;
 
 export const ReviewStatus = styled.div`

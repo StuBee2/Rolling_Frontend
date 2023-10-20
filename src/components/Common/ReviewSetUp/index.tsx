@@ -15,7 +15,7 @@ export default function ReviewSetUp({ ...attr }: Props) {
 
   return (
     <>
-      {isClickDots && reviewId !== "" ? (
+      {isClickDots && reviewId !== null ? (
         <>
           {USER_REVIEW_SETUP_ITEMS.map((item) => (
             <S.Icon

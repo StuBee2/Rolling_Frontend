@@ -5,6 +5,7 @@ import logo from "@src/assets/images/Common/Logo.svg";
 import close from "@src/assets/images/Review/close.svg";
 import Form from "./Form";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
+import wave from "@src/assets/images/Review/wave.svg";
 
 interface Props {
   setReviewModal: Dispatch<SetStateAction<boolean>>;
@@ -36,6 +37,13 @@ export default function CompanyReviewRegistModal({
         <S.ReviewCloseIcon onClick={handleCloseModal}>
           <img src={close} alt="이미지 없음" />
         </S.ReviewCloseIcon>
+
+        <S.Title>스토리 남기기</S.Title>
+        <S.SubTitle>
+          <p>내 기업에 대한 스토리를 작성하고 후배들에게 롤링해 주세요.</p>
+          <p>수 많은 후배들이 기다리고 있습니다.</p>
+        </S.SubTitle>
+
         <S.CompanyLogo>
           <img src={reviewCompanyInfo.companyLogo || logo} alt="이미지 없음" />
           <p>{reviewCompanyInfo.companyName}</p>
@@ -46,6 +54,8 @@ export default function CompanyReviewRegistModal({
           showPositionList={showPositionList}
           setShowPositionList={setShowPositionList}
         />
+
+        <S.Wave src={wave} alt="이미지 없음" />
       </S.Wrapper>
     </S.Container>
   );

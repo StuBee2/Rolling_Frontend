@@ -22,7 +22,7 @@ export const USER_ITEMS: Type[] = [
     id: 2,
     link: "/mypage/review",
     image: review,
-    title: "리뷰한 기업",
+    title: "롤링한 기업",
   },
 ];
 

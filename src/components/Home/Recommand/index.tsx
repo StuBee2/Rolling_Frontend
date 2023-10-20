@@ -10,7 +10,7 @@ export default function Recommand() {
     <S.RecommandContainer>
       <S.SeniorRecommand>
         <img src={recommand} alt="이미지 없음" />
-        <p>선배들이 추천해요!</p>
+        <p>졸업생들이 추천해요!</p>
       </S.SeniorRecommand>
 
       <S.RecommandWrapper>

@@ -60,7 +60,7 @@ export const Info = styled.div`
   div {
     display: flex;
     flex-direction: column;
-    row-gap: 15px;
+    row-gap: 10px;
   }
 `;
 

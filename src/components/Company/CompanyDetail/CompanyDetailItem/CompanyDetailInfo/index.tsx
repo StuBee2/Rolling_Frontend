@@ -27,7 +27,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
       <S.TitleContainer>
         <S.Title>That's 기업정보</S.Title>
         <S.SubTitle>
-          해당기업의 세세한 정보를 빠르고 쉽게 알아볼 수 있어요
+          해당기업의 세세한 정보를 빠르고 쉽게 알아볼 수 있어요.
         </S.SubTitle>
       </S.TitleContainer>
 
@@ -43,7 +43,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
               <S.CompanyReviewButton
                 onClick={() => turnOnModal(setCompanyReviewRegisterModal)}
               >
-                <p>나의 리뷰</p>
+                <p>스토리 남기기</p>
                 <img src={review} alt="이미지 없음" />
               </S.CompanyReviewButton>
             </S.CompanyReviewButtonCotainer>

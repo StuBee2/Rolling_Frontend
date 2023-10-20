@@ -31,7 +31,7 @@ export default function User({ children }: Props) {
           <S.Container>
             <S.Title>
               <S.FontSize fontSize="30px">
-                {isReviewPage ? "내 리뷰 Story" : "롤링 Profile"}
+                {isReviewPage ? "내 롤링 Story" : "롤링 Profile"}
               </S.FontSize>
               <S.Explain>
                 {isReviewPage
@@ -41,7 +41,7 @@ export default function User({ children }: Props) {
             </S.Title>
 
             <ErrorBoundary
-              fallback={<>리뷰한 회사의 수를 갖고오지 못했습니다.</>}
+              fallback={<>롤링한 회사의 수를 갖고오지 못했습니다.</>}
             >
               <Suspense fallback={<ReviewStatusSkeleton />}>
                 <ReviewStatus />

@@ -8,7 +8,7 @@ class MemberRepositoryImpl implements MemberRepository {
     return data;
   }
 
-  public async getMemberInfoId(id: number): Promise<MemberType> {
+  public async getMemberInfoId(id: string): Promise<MemberType> {
     const { data } = await rollingAxios.get(`/member/${id}`);
     return data;
   }

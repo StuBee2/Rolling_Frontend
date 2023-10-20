@@ -9,6 +9,7 @@ import * as S from "./style";
 
 export default function ReviewItem({ ...attr }: ReviewInfoIdType) {
   const isCoincideMemberId = jwtDecoding("sub") === attr.writerId;
+
   return (
     <S.Container>
       <S.Wrapper>
@@ -17,28 +18,26 @@ export default function ReviewItem({ ...attr }: ReviewInfoIdType) {
             <S.Profile>
               <S.ImgUrl src={attr.memberImageUrl} alt="이미지 없음" />
               <S.NickName>
-                {attr.memberNickName || attr.memberSocialId}
+                {/* {attr.memberNickName || attr.memberSocialId} */}
               </S.NickName>
             </S.Profile>
 
             <S.PositionAndCareerPath>
               <p>
                 <span>포지션 · </span>
-                {attr.reviewPosition}
               </p>
               <p>
                 <span>입사경로 · </span>
-                {attr.reviewCareerPath}
               </p>
             </S.PositionAndCareerPath>
           </S.UserInfo>
 
           <S.ContentWrapper>
-            <S.Description>{attr.reviewContent}</S.Description>
+            <S.Description></S.Description>
             {Token.getToken(ACCESS_TOKEN_KEY) && isCoincideMemberId && (
               <S.SetUp>
                 <ReviewSetUp
-                  reviewId={attr.reviewId}
+                  reviewId={attr.storyId}
                   companyId={attr.companyId!!}
                 />
               </S.SetUp>

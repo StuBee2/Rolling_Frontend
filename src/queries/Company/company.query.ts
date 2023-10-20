@@ -131,7 +131,7 @@ export const useGetCompanyListIdQuery = (
   >
 ): UseInfiniteQueryResult<CompanyInfiniteScrollType, AxiosError> =>
   useInfiniteQuery(
-    QUERY_KEYS.company.getListCompanyId(id),
+    QUERY_KEYS.company.getCompanyId(id),
     ({ pageParam = 1 }) =>
       CompanyRepositoryImpl.getCompanyListId({ id }, { page: pageParam }),
     {
@@ -153,7 +153,7 @@ export const useGetCompanyInfoIdQuery = (
   >
 ): UseQueryResult<CompanyInfoType, AxiosError> =>
   useQuery(
-    QUERY_KEYS.company.getListInfoCompanyId(id),
+    QUERY_KEYS.company.getInfoCompanyId(id),
     () => CompanyRepositoryImpl.getCompanyInfoId({ id }),
     {
       enabled: !!id,
@@ -247,11 +247,11 @@ export const useGetCompanyRankSelectQuery = (
     CompanyListType[],
     AxiosError,
     CompanyListType[],
-    string
+    string[]
   >
 ): UseQueryResult<CompanyListType[], AxiosError> =>
   useQuery(
-    QUERY_KEYS.company.getCompanyRank,
+    QUERY_KEYS.company.getCompanyRank(rankCategory),
     () => CompanyRepositoryImpl.getCompanyRankSelect(rankCategory),
     {
       enabled: !!rankCategory,

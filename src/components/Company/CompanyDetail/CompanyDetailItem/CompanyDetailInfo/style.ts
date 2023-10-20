@@ -68,7 +68,7 @@ export const CompanyReviewButtonCotainer = styled.div`
 `;
 
 export const CompanyReviewButton = styled.button`
-  width: 153px;
+  width: 165px;
   height: 52px;
   background-color: #1d1e5a;
   border-radius: 7px;
