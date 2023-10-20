@@ -68,6 +68,8 @@ export const useRegistReview = (companyId: string) => {
         organizationalCulture,
         careerAdvancement,
       } = reviewStarGrade;
+      const regex =
+        /^(오전|오후)?\s(1?[0-9]|2[0-4])시 ~ (오전|오후)?\s(1?[0-9]|2[0-4])시/;
 
       if (!POSITION_ITEMS.some((item) => item === attr.position)) {
         return rollingToast("입력하신 포지션이 없습니다!", "warning");
@@ -106,6 +108,13 @@ export const useRegistReview = (companyId: string) => {
 
       if (attr.commuteTime.trim() === "") {
         return rollingToast("출퇴근 시간을 작성해주세요!", "warning");
+      }
+
+      if (!attr.commuteTime.trim().match(regex)) {
+        return rollingToast(
+          "오전/오후 몇시 ~ 오전/오후 몇시 형식으로 맞춰주세요",
+          "warning"
+        );
       }
 
       if (attr.advantages.trim() === "") {

@@ -14,7 +14,7 @@ const useAlumniCheck = () => {
     const checkAlumni = () => {
       if (Token.getToken(ACCESS_TOKEN_KEY) && memberRole === "TEMP") {
         rollingToast("동문 인증이 필요한 기능입니다.", "warning");
-        navigate("/");
+        navigate("/graduate/certification");
       }
     };
     checkAlumni();

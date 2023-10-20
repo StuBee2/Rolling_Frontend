@@ -12,6 +12,9 @@ import { useSetRecoilState } from "recoil";
 import { CompanyReviewRegistModalAtom } from "@src/stores/company/company.store";
 import ReviewSkeleton from "@src/components/Common/Skeleton/CompanyDetail/Review";
 import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
+import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
+import { useNavigate } from "react-router-dom";
+import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 
 interface Props {
   companyInfo: CompanyInfoType;
@@ -21,6 +24,18 @@ function CompanyDetailInfo({ companyInfo }: Props) {
   const setCompanyReviewRegisterModal = useSetRecoilState(
     CompanyReviewRegistModalAtom
   );
+  const { rollingToast } = useRollingToast();
+  const isNotMember = jwtDecoding("authority") === "TEMP";
+  const navigate = useNavigate();
+
+  const handleRegistStory = () => {
+    if (isNotMember) {
+      rollingToast("동문인증이 필요한 기능입니다!", "warning");
+      navigate("/graduate/certification");
+    } else {
+      turnOnModal(setCompanyReviewRegisterModal);
+    }
+  };
 
   return (
     <S.Container>
@@ -40,9 +55,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
 
           {Token.getToken(ACCESS_TOKEN_KEY) && (
             <S.CompanyReviewButtonCotainer>
-              <S.CompanyReviewButton
-                onClick={() => turnOnModal(setCompanyReviewRegisterModal)}
-              >
+              <S.CompanyReviewButton onClick={handleRegistStory}>
                 <p>스토리 남기기</p>
                 <img src={review} alt="이미지 없음" />
               </S.CompanyReviewButton>

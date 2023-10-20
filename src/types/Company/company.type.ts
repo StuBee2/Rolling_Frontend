@@ -42,7 +42,7 @@ export interface CompanyInfoId {
 }
 
 export interface CompanyStarGrade extends CompanyStarGradeWithoutTotalGrade {
-  totalGrade: number;
+  total: number;
 }
 
 export interface CompanyStarGradeWithoutTotalGrade {

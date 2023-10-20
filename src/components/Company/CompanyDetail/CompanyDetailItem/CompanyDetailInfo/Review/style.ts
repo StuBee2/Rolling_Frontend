@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 2rem;
 `;
 
 export const ReviewTitle = styled.div`
