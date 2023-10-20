@@ -1,10 +1,7 @@
-import {
-  ReviewInfoIdType,
-  ReviewListType,
-} from "@src/types/Review/review.type";
+import { StoryCommonType } from "@src/types/Review/review.type";
 
 export const changeReviewStarGradesToArrayObject = (
-  review: ReviewListType | ReviewInfoIdType
+  review: StoryCommonType
 ) => {
   return [
     { id: 0, title: "총합", star: review?.total },

@@ -47,7 +47,7 @@ export const InfoContainer = styled.div`
 export const Info = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 15px;
   img {
     width: 75px;
     height: 75px;

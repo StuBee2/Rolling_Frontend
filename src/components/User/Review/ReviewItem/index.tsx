@@ -1,4 +1,4 @@
-import { ReviewListType } from "@src/types/Review/review.type";
+import { StoryCommonType } from "@src/types/Review/review.type";
 import * as S from "./style";
 import { changeReviewStarGradesToArrayObject } from "@src/utils/Review/changeReviewStarGradesToArrayObject";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
@@ -8,7 +8,7 @@ import CompanyInfo from "./CompanyInfo";
 import CompanyContent from "./CompanyContent";
 
 interface Props {
-  review: ReviewListType;
+  review: StoryCommonType;
 }
 
 export default function ReviewItem({ review }: Props) {
