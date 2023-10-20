@@ -3,12 +3,13 @@ import { usePostCertifyMutation } from "@src/queries/Graduate/graduate.query";
 import authRepositoryImpl from "@src/repositories/Auth/auth.repositoryImpl";
 import { GraduateCertifiedType } from "@src/types/Graduate/graduate.type";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import Token from "@src/libs/Token/Token";
 import {
   ACCESS_TOKEN_KEY,
   REFRESH_TOKEN_KEY,
 } from "@src/constants/Auth/auth.constant";
+import { useNavigate } from "react-router-dom";
 
 export const useCertify = () => {
   const [certifiedData, setCertifiedData] = useState<GraduateCertifiedType>({
@@ -16,8 +17,8 @@ export const useCertify = () => {
   });
 
   const { rollingToast } = useRollingToast();
-
   const postCertified = usePostCertifyMutation();
+  const navigate = useNavigate();
 
   const handleQuestionChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -34,6 +35,8 @@ export const useCertify = () => {
           });
 
         Token.setToken(ACCESS_TOKEN_KEY, newAccessToken);
+        rollingToast("졸업생 인증 성공", "success");
+        navigate("/");
       } catch (e) {
         console.log(e);
       }
@@ -53,7 +56,6 @@ export const useCertify = () => {
       },
       {
         onSuccess: () => {
-          rollingToast("졸업생 인증 성공", "success");
           TokenRefresh();
         },
         onError: () => {

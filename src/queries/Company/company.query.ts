@@ -251,7 +251,7 @@ export const useGetCompanyRankSelectQuery = (
   >
 ): UseQueryResult<CompanyListType[], AxiosError> =>
   useQuery(
-    QUERY_KEYS.company.getCompanyRank(rankCategory),
+    QUERY_KEYS.company.getCompanyRankCategory(rankCategory),
     () => CompanyRepositoryImpl.getCompanyRankSelect(rankCategory),
     {
       enabled: !!rankCategory,

@@ -77,19 +77,18 @@ export default function Form({ ...attr }: Props) {
         />
       </S.InputContainer>
 
-      <S.InputContainer height="200px">
+      <S.InputContainer>
         <S.InputTitle>
-          <p>면접 질문</p>
+          <p>자신이 생각하는 가장 중요한 점</p>
           <span>*</span>
         </S.InputTitle>
         <TextInput
-          value={hooks.reviewContents.interviewQuestion}
-          textType="textarea"
-          customStyle={S.TextAreaStyle}
-          name="interviewQuestion"
+          value={hooks.reviewContents.mostImportantThing}
+          customStyle={S.InputStyle}
+          name="mostImportantThing"
           autocomplete="off"
           handleChange={hooks.handleCompanyReviewChange}
-          placeholder="어떤 면접 질문을 받으셨나요?"
+          placeholder="취업에 있어서 가장 중요한 점은 무엇인가요?"
         />
       </S.InputContainer>
 
@@ -108,18 +107,19 @@ export default function Form({ ...attr }: Props) {
         />
       </S.InputContainer>
 
-      <S.InputContainer>
+      <S.InputContainer height="200px">
         <S.InputTitle>
-          <p>자신이 생각하는 가장 중요한 점</p>
+          <p>면접 질문</p>
           <span>*</span>
         </S.InputTitle>
         <TextInput
-          value={hooks.reviewContents.mostImportantThing}
-          customStyle={S.InputStyle}
-          name="mostImportantThing"
+          value={hooks.reviewContents.interviewQuestion}
+          textType="textarea"
+          customStyle={S.TextAreaStyle}
+          name="interviewQuestion"
           autocomplete="off"
           handleChange={hooks.handleCompanyReviewChange}
-          placeholder="취업에 있어서 고등학교 생활의 가장 중요한 점은 무엇인가요?"
+          placeholder="어떤 면접 질문을 받으셨나요?"
         />
       </S.InputContainer>
 

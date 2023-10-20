@@ -7,7 +7,7 @@ export default function UserSkeleton() {
       {Array.from({
         length: 15,
       }).map((item, idx) => (
-        <SkeletonBox width="100%" height="250px" key={idx} />
+        <SkeletonBox width="100%" height="900px" key={idx} />
       ))}
     </S.UserSkeletonContainer>
   );

@@ -7,7 +7,7 @@ export const changeStarGradeToArrayObjcet = (
     {
       id: 0,
       name: "총합",
-      rating: starRating.totalGrade,
+      rating: starRating.total,
     },
     {
       id: 1,

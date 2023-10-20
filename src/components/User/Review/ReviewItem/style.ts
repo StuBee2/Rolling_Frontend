@@ -1,22 +1,19 @@
-import { HoverAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
+import { HoverAnimation } from "@src/styles/common.style";
 
 export const Container = styled.div`
   width: 100%;
-  height: 340px;
+  height: auto;
   display: flex;
   column-gap: 5px;
-  @media screen and (max-width: 500px) {
-    height: 320px;
-  }
 `;
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
-  background-color: #f9fafb;
-  border-radius: 15px;
+  height: auto;
+  background-color: #fff;
   border: 1px solid #dddddd;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,18 +21,44 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
   width: 93%;
-  height: 90%;
+  height: 100%;
+  padding: 2rem 0 2.5rem 0;
+
   display: flex;
-  row-gap: 0.8rem;
+  row-gap: 2rem;
   flex-direction: column;
   justify-content: space-between;
 `;
 
-export const CompanyInfoContainer = styled.div`
+export const ContentContainer = styled.div`
   width: 100%;
-  height: 60%;
+  height: calc(100% - 40px);
+
   display: flex;
   flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  column-gap: 2rem;
+`;
+
+export const StarRatingContainer = styled.div`
+  width: 100%;
+  height: 115px;
+  background-color: #f2f4f5;
+  border-radius: 10px;
+  display: flex;
+  font-size: 17px;
+  align-items: center;
+  margin-top: 1rem;
+`;
+
+export const CompanyInfoContainer = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 `;
 
 export const RegisteredAtAndDelEditContainer = styled.div`
@@ -72,58 +95,11 @@ export const SetUpIconContainer = styled.div`
 
 export const CompanyContainer = styled.div`
   width: 100%;
-  height: 130px;
-  display: flex;
-  align-items: center;
-  column-gap: 2rem;
-  cursor: pointer;
-  overflow-x: scroll;
-  overflow-y: hidden;
-`;
+  height: calc(100% - 40px);
 
-export const CompanyImgContainer = styled.div`
-  width: 100px;
-  height: 100px;
-  img {
-    white-space: nowrap;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid #dddddd;
-  }
-`;
-
-export const CompanyContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
-
-  ul {
-    display: flex;
-    column-gap: 10px;
-    font-size: 15px;
-    white-space: nowrap;
-
-    li {
-      span {
-        font-weight: bold;
-        color: rgb(29, 30, 90);
-      }
-    }
-  }
-`;
-
-export const CompanyName = styled.p`
-  font-size: 25px;
-  font-weight: bold;
-  margin-top: 3px;
-  white-space: nowrap;
-`;
-
-export const CompanyContent = styled.p`
-  color: rgba(115, 123, 152, 1);
-  font-size: 15px;
-  font-weight: 300;
+  row-gap: 1rem;
+  align-items: center;
+  column-gap: 2rem;
 `;

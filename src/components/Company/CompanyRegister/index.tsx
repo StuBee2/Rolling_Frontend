@@ -1,4 +1,4 @@
-import useAlumniCheck from "@src/hooks/Auth/useAlumniCheck";
+import useAlumniCheck from "@src/hooks/Graduate/useAlumniCheck";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import { useState } from "react";
 import Portal from "../../Common/Portal";

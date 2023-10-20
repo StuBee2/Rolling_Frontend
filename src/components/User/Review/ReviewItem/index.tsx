@@ -1,11 +1,11 @@
 import { ReviewListType } from "@src/types/Review/review.type";
 import * as S from "./style";
 import { changeReviewStarGradesToArrayObject } from "@src/utils/Review/changeReviewStarGradesToArrayObject";
-import { getDateText, stringEllipsis } from "@stubee2/stubee2-rolling-util";
-import { useNavigate } from "react-router-dom";
-import Logo from "@src/assets/images/Common/Logo.svg";
+import { getDateText } from "@stubee2/stubee2-rolling-util";
 import Star from "@src/components/Common/Star";
 import ReviewSetUp from "@src/components/Common/ReviewSetUp";
+import CompanyInfo from "./CompanyInfo";
+import CompanyContent from "./CompanyContent";
 
 interface Props {
   review: ReviewListType;
@@ -13,7 +13,6 @@ interface Props {
 
 export default function ReviewItem({ review }: Props) {
   const rankStatus = changeReviewStarGradesToArrayObject(review);
-  const navigate = useNavigate();
 
   return (
     <S.Container>
@@ -27,39 +26,25 @@ export default function ReviewItem({ review }: Props) {
               <S.DelAndEditContainer>
                 <ReviewSetUp
                   reviewId={review?.storyId}
-                  companyId={review?.companyId}
+                  companyId={review?.companyId!!}
                 />
               </S.DelAndEditContainer>
             </S.RegisteredAtAndDelEditContainer>
 
-            <S.CompanyContainer
-              onClick={() => navigate(`/company/${review?.companyId}`)}
-            >
-              <S.CompanyImgContainer>
-                <img src={review?.companyImgUrl || Logo} alt="이미지 없음" />
-              </S.CompanyImgContainer>
-
-              <S.CompanyContentContainer>
-                <S.CompanyName>{review?.companyName}</S.CompanyName>
-                <ul>
-                  <li>
-                    <span>포지션</span> ·
-                  </li>
-                  <li>
-                    <span>입사경로</span> · {stringEllipsis("", 35)}
-                  </li>
-                </ul>
-                <S.CompanyContent>{stringEllipsis("", 90)}</S.CompanyContent>
-              </S.CompanyContentContainer>
+            <S.CompanyContainer>
+              <CompanyInfo {...review} />
+              <CompanyContent {...review} />
             </S.CompanyContainer>
           </S.CompanyInfoContainer>
 
-          <Star
-            rankStatus={rankStatus}
-            width={20}
-            height={20}
-            fontSize={"15px"}
-          />
+          <S.StarRatingContainer>
+            <Star
+              rankStatus={rankStatus}
+              width={20}
+              height={20}
+              fontSize={"15px"}
+            />
+          </S.StarRatingContainer>
         </S.Content>
       </S.Wrapper>
     </S.Container>
