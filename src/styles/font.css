@@ -2,3 +2,8 @@
   src: url("../assets/fonts/Pretendard-Regular.woff2");
   font-family: "Pretendard-Regular";
 }
+
+@font-face {
+  src: url("../assets/fonts//Pretendard-Bold.woff2");
+  font-family: "Pretendard-Bold";
+}
