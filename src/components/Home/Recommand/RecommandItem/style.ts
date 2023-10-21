@@ -9,7 +9,6 @@ export const RecommandItemContainer = styled.div`
   flex-wrap: wrap;
 
   overflow-x: hidden;
-  padding-bottom: 7px;
   &:hover {
     overflow-x: scroll;
   }
