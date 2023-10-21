@@ -27,7 +27,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|gif|mp4|jpeg)$/,
+        test: /\.(png|jpg|gif|mp4|jpeg|ico)$/,
         type: "asset",
       },
       {
@@ -60,6 +60,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       filename: "index.html",
+      favicon: "./public/logo.ico",
     }),
     new RefreshWebpackPlugin(),
     new webpack.DefinePlugin({
