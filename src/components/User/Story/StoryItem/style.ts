@@ -51,7 +51,7 @@ export const StarRatingContainer = styled.div`
   align-items: center;
   margin-top: 1rem;
 
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
 
   &:hover {

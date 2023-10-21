@@ -27,21 +27,20 @@ export const RecommandWrapper = styled.div`
   width: 100%;
   height: 260px;
 
-  border-radius: 10px;
-
   display: flex;
   justify-content: center;
-`;
-
-export const RecommandItemContainer = styled.div`
-  width: 100%;
-  height: 100%;
 
   overflow-x: hidden;
   &:hover {
     overflow-x: scroll;
   }
 `;
+
+// export const RecommandItemContainer = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   background: blue;
+// `;
 
 export const ArrowContainer = styled.div`
   width: 50px;

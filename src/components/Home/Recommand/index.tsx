@@ -14,13 +14,11 @@ export default function Recommand() {
       </S.SeniorRecommand>
 
       <S.RecommandWrapper>
-        <S.RecommandItemContainer>
-          <ErrorBoundary fallback={<>회사 정보를 가지고 오지 못했습니다.</>}>
-            <Suspense fallback={<RecommandSkeleton />}>
-              <RecommandItem />
-            </Suspense>
-          </ErrorBoundary>
-        </S.RecommandItemContainer>
+        <ErrorBoundary fallback={<>회사 정보를 가지고 오지 못했습니다.</>}>
+          <Suspense fallback={<RecommandSkeleton />}>
+            <RecommandItem />
+          </Suspense>
+        </ErrorBoundary>
       </S.RecommandWrapper>
     </S.RecommandContainer>
   );
