@@ -20,7 +20,7 @@ export const useCertify = () => {
     setHousemaster(e.target.value);
   };
 
-  const TokenRefresh = async () => {
+  const tokenRefresh = async () => {
     const refresh_token = Token.getToken(REFRESH_TOKEN_KEY);
     if (refresh_token) {
       try {
@@ -46,7 +46,7 @@ export const useCertify = () => {
     }
     postCertify.mutate(housemaster, {
       onSuccess: () => {
-        TokenRefresh();
+        tokenRefresh();
       },
       onError: () => {
         rollingToast("졸업생 인증 실패", "error");

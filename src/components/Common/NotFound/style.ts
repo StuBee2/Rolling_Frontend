@@ -34,7 +34,13 @@ export const GoHomeBtn = styled.button`
   border: none;
   cursor: pointer;
 
+  transform: scale(1);
+  transition: all 0.1s ease-in-out;
   &:hover {
-    background-color: #191a4f;
+    background-color: rgba(28, 31, 91, 0.91);
+    transform: scale(0.98);
+  }
+  &:active {
+    background-color: rgba(28, 31, 91, 0.93);
   }
 `;

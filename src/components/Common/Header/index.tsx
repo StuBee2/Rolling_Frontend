@@ -1,8 +1,7 @@
 import * as S from "./style";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import logo from "@src/assets/images/Common/Logo.svg";
 import search2 from "@src/assets/icons/Search/search2.png";
-import { useState } from "react";
 import { HEADER_ITEMS } from "@src/constants/Header/header.constant";
 import token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
@@ -16,13 +15,8 @@ export default function Header() {
   const setMyInfoModal = useSetRecoilState<boolean>(MyInfoModal);
   const setSignInModal = useSetRecoilState<boolean>(SignInModalAtom);
 
-  const [select, setSelect] = useState<string>("홈 피드");
   const { pathname } = useLocation();
-
-  const handlePageClick = (name: string, link: string) => {
-    setSelect(name);
-    window.location.href = link;
-  };
+  const navigate = useNavigate();
 
   return (
     <S.HeaderContainer>
@@ -37,7 +31,7 @@ export default function Header() {
             {HEADER_ITEMS.map((item) => (
               <S.PageList
                 key={item.id}
-                onClick={() => handlePageClick(item.name, item.link)}
+                onClick={() => navigate(item.link)}
                 isSelect={item.link === pathname}
               >
                 {item.name}
@@ -50,6 +44,7 @@ export default function Header() {
           <S.HoverIconContainer onClick={() => turnOnModal(setIsCloseModal)}>
             <S.Search src={search2} alt="이미지 없음" />
           </S.HoverIconContainer>
+
           {token.getToken(ACCESS_TOKEN_KEY) ? (
             <S.HoverIconContainer onClick={() => turnOnModal(setMyInfoModal)}>
               <S.UserIcon size={30} />

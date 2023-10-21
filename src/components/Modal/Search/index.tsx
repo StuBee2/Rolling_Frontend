@@ -11,8 +11,8 @@ export default function Search() {
   useCloseModal(setIsCloseModal);
 
   return (
-    <S.SearchModalWrapper onClick={() => turnOffModal(setIsCloseModal)}>
-      <S.SearchContainer onClick={(e) => e.stopPropagation()}>
+    <S.Container onClick={() => turnOffModal(setIsCloseModal)}>
+      <S.Wrapper onClick={(e) => e.stopPropagation()}>
         <S.InputContainer onSubmit={handleKeywordSubmit}>
           <button type="submit">
             <img src={search1} alt="이미지 없음" />
@@ -26,7 +26,7 @@ export default function Search() {
           />
         </S.InputContainer>
         <S.Wave src={wave} alt="이미지 없음" />
-      </S.SearchContainer>
-    </S.SearchModalWrapper>
+      </S.Wrapper>
+    </S.Container>
   );
 }

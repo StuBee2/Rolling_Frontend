@@ -1,7 +1,7 @@
 import { StopDrag } from "@src/styles/common.style";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-export const SearchModalWrapper = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: 100%;
 
@@ -13,13 +13,22 @@ export const SearchModalWrapper = styled.div`
   z-index: 3;
 `;
 
-export const SearchContainer = styled.div`
+const slideInAnimation = keyframes`
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+`;
+
+export const Wrapper = styled.div`
   width: 100%;
   height: 322px;
   background-color: rgba(247, 249, 250, 1);
   position: relative;
-  display: flex;
 
+  display: flex;
   justify-content: center;
 
   @media screen and (max-width: 1393px) {
@@ -28,6 +37,8 @@ export const SearchContainer = styled.div`
   @media screen and (max-width: 740px) {
     height: 250px;
   }
+
+  animation: ${slideInAnimation} 0.3s ease-in-out;
 `;
 
 export const Wave = styled.img`
