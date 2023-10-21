@@ -50,7 +50,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
         <div>
           <S.ContentWrapper>
             <UserProfile {...companyInfo} />
-            <Content companyInfo={companyInfo} />
+            <Content {...companyInfo} />
           </S.ContentWrapper>
 
           {Token.getToken(ACCESS_TOKEN_KEY) && (

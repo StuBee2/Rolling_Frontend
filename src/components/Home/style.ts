@@ -43,7 +43,9 @@ export const HomeWrapper = styled.div`
 `;
 
 export const HomeContent = styled.div`
-  display: flex;
   width: 100%;
   height: 100%;
+
+  display: flex;
+  column-gap: 10px;
 `;

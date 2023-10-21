@@ -10,7 +10,8 @@ interface Props {
   companyInfo: CompanyInfoType;
 }
 
-export default function CompanyDetailContent({ companyInfo }: Props) {
+export default function CompanyDetailContent({ ...attr }: CompanyInfoType) {
+  console.log(attr);
   return (
     <S.Container>
       <S.Title>
@@ -25,18 +26,18 @@ export default function CompanyDetailContent({ companyInfo }: Props) {
 
       <S.InfoContainer>
         <CompanyDetailRegistAt widthType={"min-width"}>
-          {getDateText(new Date(companyInfo.companyCreatedAt))} 작성
+          {getDateText(new Date(attr.companyCreatedAt))} 작성
         </CompanyDetailRegistAt>
         <S.Info>
-          <img src={companyInfo.companyImgUrl || logo} alt="이미지 없음" />
+          <img src={attr.companyImgUrl || logo} alt="이미지 없음" />
           <div>
-            <S.CompanyName>{companyInfo.companyName}</S.CompanyName>
-            <S.CompanyAddress>{companyInfo.companyAddress}</S.CompanyAddress>
+            <S.CompanyName>{attr.companyName}</S.CompanyName>
+            <S.CompanyAddress>{attr.companyAddress}</S.CompanyAddress>
           </div>
         </S.Info>
         <S.Description>
           <img src={tool} alt="이미지 없음" />
-          <p>{companyInfo.companyDescription}</p>
+          <p>{attr.companyDescription}</p>
         </S.Description>
       </S.InfoContainer>
 
