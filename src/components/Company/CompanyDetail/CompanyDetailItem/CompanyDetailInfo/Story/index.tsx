@@ -26,7 +26,7 @@ export default function CompanyDetailStory({ companyId }: Props) {
     <S.Container>
       <S.StoryTitle>
         <p>졸업생들의 롤링 Story ·</p>
-        <S.StoryCount>{StoryListData?.length}</S.StoryCount>
+        <S.StoryCount>{storyListData?.length}</S.StoryCount>
       </S.StoryTitle>
       <S.Wrapper>
         {storyListData?.length!! > 0 ? (
