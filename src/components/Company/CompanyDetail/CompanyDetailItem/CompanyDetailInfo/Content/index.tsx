@@ -1,6 +1,6 @@
 import * as S from "./style";
-import basicInfo from "@src/assets/images/Company/basicInfo.svg";
-import description from "@src/assets/images/Common/description.svg";
+import bag from "@src/assets/icons/Company/bag.png";
+import tool from "@src/assets/icons/Company/tool.png";
 import { CompanyInfoType } from "@src/types/Company/company.type";
 import logo from "@src/assets/images/Common/Logo.svg";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
@@ -15,7 +15,7 @@ export default function CompanyDetailContent({ companyInfo }: Props) {
     <S.Container>
       <S.Title>
         <div>
-          <img src={basicInfo} alt="이미지 없음" />
+          <img src={bag} alt="이미지 없음" />
           <p>기본정보</p>
         </div>
         <S.SubTitle>
@@ -35,7 +35,7 @@ export default function CompanyDetailContent({ companyInfo }: Props) {
           </div>
         </S.Info>
         <S.Description>
-          <img src={description} alt="이미지 없음" />
+          <img src={tool} alt="이미지 없음" />
           <p>{companyInfo.companyDescription}</p>
         </S.Description>
       </S.InfoContainer>

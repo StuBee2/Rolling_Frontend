@@ -1,5 +1,5 @@
 import * as S from "./style";
-import Search2 from "@src/assets/images/Search/Search2.svg";
+import search1 from "@src/assets/icons/Search/search1.png";
 import wave from "@src/assets/images/Search/wave.svg";
 import { useSearchCompany } from "@src/hooks/Company/useSearchCompany";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
@@ -15,7 +15,7 @@ export default function Search() {
       <S.SearchContainer onClick={(e) => e.stopPropagation()}>
         <S.InputContainer onSubmit={handleKeywordSubmit}>
           <button type="submit">
-            <img src={Search2} alt="이미지 없음" />
+            <img src={search1} alt="이미지 없음" />
           </button>
 
           <input

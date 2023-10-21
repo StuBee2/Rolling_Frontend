@@ -1,6 +1,6 @@
 import { EXTERNALSITE_ITEMS } from "@src/constants/ExternalSite/externalSite.constant";
 import * as S from "./style";
-import web from "@src/assets/images/ExternalSite/web.svg";
+import web from "@src/assets/icons/Home/web.png";
 
 export default function ExternalSite() {
   return (

@@ -1,6 +1,6 @@
 import * as S from "./style";
-import blueHeart from "@src/assets/images/User/blueHeart.svg";
-import redHeart from "@src/assets/images/User/redHeart.svg";
+import blueHeart from "@src/assets/icons/Story/blueHeart.png";
+import redHeart from "@src/assets/icons/Story/redHeart.png";
 import { StoryItemType } from "@src/types/Story/story.type";
 import { convertStoryItemsObject } from "@src/utils/Story/convertStoryItemsObject";
 

@@ -1,9 +1,9 @@
-import process from "@src/assets/images/User/process.svg";
-import school from "@src/assets/images/User/school.svg";
-import preparation from "@src/assets/images/User/preparation.svg";
-import interview from "@src/assets/images/User/interview.svg";
-import blueHeart from "@src/assets/images/User/blueHeart.svg";
-import welfare from "@src/assets/images/User/welfare.svg";
+import setting from "@src/assets/icons/Story/setting.png";
+import school from "@src/assets/icons/Story/school.png";
+import cloud from "@src/assets/icons/Story/cloud.png";
+import loudSpeaker from "@src/assets/icons/Story/loudSpeaker.png";
+import blueHeart from "@src/assets/icons/Story/blueHeart.png";
+import good from "@src/assets/icons/Story/good.png";
 import { StoryItemType } from "@src/types/Story/story.type";
 
 export const convertStoryItemsObject = (item: StoryItemType) => {
@@ -17,7 +17,7 @@ export const convertStoryItemsObject = (item: StoryItemType) => {
     {
       id: 1,
       title: "나의 취업 준비 과정은 이랬어",
-      icon: preparation,
+      icon: cloud,
       content: item.preparationCourse,
     },
     {
@@ -29,19 +29,19 @@ export const convertStoryItemsObject = (item: StoryItemType) => {
     {
       id: 3,
       title: "채용 프로세스는 이랬어",
-      icon: process,
+      icon: setting,
       content: item.employmentProcess,
     },
     {
       id: 4,
       title: "면접 질문은 이랬어",
-      icon: interview,
+      icon: loudSpeaker,
       content: item.interviewQuestion,
     },
     {
       id: 5,
       title: "사내 복지는 이런게 있어",
-      icon: welfare,
+      icon: good,
       content: item.welfare,
     },
   ];

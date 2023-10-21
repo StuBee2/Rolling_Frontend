@@ -1,7 +1,7 @@
 import { useGetCompanyRankSelectQuery } from "@src/queries/Company/company.query";
 import * as S from "../../style";
 import { getCompanyRankIntroduce } from "@src/utils/Rank/getCompanyRankIntroduce";
-import smile from "@src/assets/images/User/smile.svg";
+import smileFace from "@src/assets/icons/Home/smileFace.png";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
 import logo from "@src/assets/images/Common/Logo.svg";
@@ -21,7 +21,7 @@ function RankItem({ rankCategory }: Props) {
   return (
     <S.MainItemContainer>
       <RankCategoryTitle>
-        <img src={smile} alt="이미지 없음" />
+        <img src={smileFace} alt="이미지 없음" />
         <p>{getCompanyRankIntroduce(rankCategory)}</p>
       </RankCategoryTitle>
       <S.MainItemListContainer>

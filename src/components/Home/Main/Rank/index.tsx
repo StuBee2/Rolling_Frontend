@@ -1,5 +1,5 @@
 import * as S from "./style";
-import rank from "@src/assets/images/Home/rank.svg";
+import graph from "@src/assets/icons/Home/graph.png";
 import { Suspense, useState } from "react";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import RankItem from "./RankItem";
@@ -14,7 +14,7 @@ export default function Rank() {
       <MainWrapper rowGap="1rem">
         <S.RankCategoriesContainer>
           <MainTitle>
-            <img src={rank} alt="이미지 없음" />
+            <img src={graph} alt="이미지 없음" />
             <p>
               <span>BEST</span> 기업 랭킹
             </p>

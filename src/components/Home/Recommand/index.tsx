@@ -1,5 +1,5 @@
 import * as S from "./style";
-import recommand from "@src/assets/images/Home/recommand.svg";
+import developer from "@src/assets/icons/Home/developer.png";
 import RecommandItem from "./RecommandItem";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import { Suspense } from "react";
@@ -9,7 +9,7 @@ export default function Recommand() {
   return (
     <S.RecommandContainer>
       <S.SeniorRecommand>
-        <img src={recommand} alt="이미지 없음" />
+        <img src={developer} alt="이미지 없음" />
         <p>졸업생들이 추천해요!</p>
       </S.SeniorRecommand>
 

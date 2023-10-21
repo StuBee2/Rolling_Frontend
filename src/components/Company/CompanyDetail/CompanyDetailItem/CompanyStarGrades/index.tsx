@@ -1,4 +1,4 @@
-import average from "@src/assets/images/Company/average.svg";
+import bolt from "@src/assets/icons/Company/bolt.png";
 import { changeStarGradeToArrayObjcet } from "@src/utils/StarGrade/changeStarGradeToArrayObjcet";
 import { StarRating } from "@stubee2/stubee2-rolling-ui";
 import * as S from "./style";
@@ -20,7 +20,7 @@ export default function CompanyStarGrades({ starGradeInfo }: Props) {
         </S.CompanyBasicInfo>
         <S.ItemContainer>
           <S.CompanyGradesText>
-            <img src={average} alt="이미지 없음" />
+            <img src={bolt} alt="이미지 없음" />
             <p>평균 평점</p>
           </S.CompanyGradesText>
           <S.ItemUl>

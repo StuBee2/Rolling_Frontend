@@ -1,5 +1,5 @@
 import * as S from "../style";
-import searchIcon from "@src/assets/images/Search/searchIcon.svg";
+import readingGlasses from "@src/assets/icons/Search/readingGlasses.png";
 import React, { Suspense } from "react";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import SearchItem from "./SearchItem";
@@ -14,7 +14,7 @@ function Search({ company }: Props) {
     <S.MainContainer>
       <S.MainWrapper rowGap="1.5rem">
         <S.MainTitle>
-          <img src={searchIcon} alt="이미지 없음" />
+          <img src={readingGlasses} alt="이미지 없음" />
           <p>
             내가 <span>검색</span>한 회사
           </p>

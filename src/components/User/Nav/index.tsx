@@ -6,7 +6,7 @@ import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import { MyMemberInfo } from "@src/stores/member/member.store";
 import { useSetRecoilState } from "recoil";
 import { useEffect } from "react";
-import logout from "@src/assets/images/Auth/logout.svg";
+import emptyFace from "@src/assets/icons/Home/emptyFace.png";
 
 interface Props {
   pathName: string;
@@ -44,7 +44,7 @@ export default function Nav({ pathName }: Props) {
           ))}
         </S.PageSelectWrapper>
         <S.PageSelectItem onClick={handleLogout}>
-          <img src={logout} alt="이미지 없음" />
+          <img src={emptyFace} alt="이미지 없음" />
           <p>로그아웃</p>
         </S.PageSelectItem>
       </S.PageSelectContainer>

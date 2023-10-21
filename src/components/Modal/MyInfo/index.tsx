@@ -3,8 +3,8 @@ import * as S from "./style";
 import { MyInfoModal } from "@src/stores/common/common.store";
 import { useLogout } from "@src/hooks/Auth/useLogout";
 import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
-import logout from "@src/assets/images/Auth/logout.svg";
-import profile from "@src/assets/images/User/profile.svg";
+import emptyFace from "@src/assets/icons/Home/emptyFace.png";
+import smileFace from "@src/assets/icons/Home/smileFace.png";
 import { useNavigate } from "react-router-dom";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 import github from "@src/assets/images/Auth/github.svg";
@@ -50,11 +50,11 @@ export default function MyInfo() {
                 document.body.style.overflow = "unset";
               }}
             >
-              <img src={profile} alt="이미지 없음" />
+              <img src={smileFace} alt="이미지 없음" />
               <p>내 프로필</p>
             </div>
             <div onClick={handleLogout}>
-              <img src={logout} alt="이미지 없음" />
+              <img src={emptyFace} alt="이미지 없음" />
               <p>로그아웃</p>
             </div>
           </S.MyPageLogout>

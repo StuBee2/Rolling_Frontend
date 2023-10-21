@@ -1,7 +1,7 @@
 import { searchPosition } from "@src/utils/Position/searchPosition";
 import { Button, TextInput } from "@stubee2/stubee2-rolling-ui";
 import PositionList from "./PositonList";
-import regist from "@src/assets/images/Story/regist.svg";
+import check from "@src/assets/icons/Story/check.png";
 import * as S from "./style";
 import RegistStarGrades from "./RegistStarGrades";
 import { Dispatch, SetStateAction } from "react";
@@ -218,7 +218,7 @@ export default function Form({ ...attr }: Props) {
           customStyle={S.RegistStoryButton}
         >
           <p>스토리 등록</p>
-          <img src={regist} alt="이미지 없음" />
+          <img src={check} alt="이미지 없음" />
         </Button>
       </S.StoryButtonContainer>
     </S.Container>

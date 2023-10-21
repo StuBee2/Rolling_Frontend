@@ -91,6 +91,11 @@ export const StoryButtonContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
 `;
 
 export const RegistStoryButton = {

@@ -1,5 +1,5 @@
 import * as S from "./style";
-import myStory from "@src/assets/images/User/myStory.svg";
+import printer from "@src/assets/icons/Story/printer.png";
 import { useGetStoryMyStatusQuery } from "@src/queries/Story/story.query";
 import { getTimeAgo } from "@stubee2/stubee2-rolling-util";
 
@@ -10,7 +10,7 @@ export default function StoryStatus() {
     <div>
       <S.StoryStatusContainer>
         <S.StoryStatus>
-          <img src={myStory} alt="이미지 없음" />
+          <img src={printer} alt="이미지 없음" />
         </S.StoryStatus>
         <div>
           <S.StoryNumberText>

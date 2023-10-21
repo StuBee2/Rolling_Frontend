@@ -1,7 +1,7 @@
 import * as S from "./style";
 import { useLocation } from "react-router-dom";
 import logo from "@src/assets/images/Common/Logo.svg";
-import Search1 from "@src/assets/images/Search/Search1.svg";
+import search2 from "@src/assets/icons/Search/search2.png";
 import { useState } from "react";
 import { HEADER_ITEMS } from "@src/constants/Header/header.constant";
 import token from "@src/libs/Token/Token";
@@ -48,7 +48,7 @@ export default function Header() {
 
         <S.LoginSearchContainer>
           <S.HoverIconContainer onClick={() => turnOnModal(setIsCloseModal)}>
-            <S.Search src={Search1} alt="이미지 없음" />
+            <S.Search src={search2} alt="이미지 없음" />
           </S.HoverIconContainer>
           {token.getToken(ACCESS_TOKEN_KEY) ? (
             <S.HoverIconContainer onClick={() => turnOnModal(setMyInfoModal)}>

@@ -2,7 +2,7 @@ import { CompanyInfoType } from "@src/types/Company/company.type";
 import Content from "./Content";
 import UserProfile from "./UserProfile";
 import * as S from "./style";
-import story from "@src/assets/images/Story/story.svg";
+import write from "@src/assets/icons/Company/write.png";
 import Story from "./Story";
 import Token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
@@ -57,7 +57,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
             <S.CompanyStoryButtonCotainer>
               <S.CompanyStoryButton onClick={handleRegistStory}>
                 <p>스토리 남기기</p>
-                <img src={story} alt="이미지 없음" />
+                <img src={write} alt="이미지 없음" />
               </S.CompanyStoryButton>
             </S.CompanyStoryButtonCotainer>
           )}

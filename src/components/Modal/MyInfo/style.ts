@@ -91,7 +91,7 @@ export const MyPageLogout = styled.div`
     align-items: center;
     cursor: pointer;
     img {
-      width: 18px;
+      width: 20px;
       height: 20px;
     }
   }

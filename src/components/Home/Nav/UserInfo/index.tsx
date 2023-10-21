@@ -1,6 +1,6 @@
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import * as S from "./style";
-import wonderIcon from "@src/assets/images/Home/wonderIcon.svg";
+import wonderFace from "@src/assets/icons/Home/wonderFace.png";
 import { Suspense } from "react";
 import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import { stringEllipsis } from "@stubee2/stubee2-rolling-util";
@@ -40,7 +40,7 @@ function UserInfoItem() {
 
       <div>
         <S.RegistTextContainer>
-          <img src={wonderIcon} alt="이미지 없음" />
+          <img src={wonderFace} alt="이미지 없음" />
           <p>내 기업이 등록되어있나요?</p>
         </S.RegistTextContainer>
         <S.CompanyRegistBtn onClick={() => navigate("/register")}>
