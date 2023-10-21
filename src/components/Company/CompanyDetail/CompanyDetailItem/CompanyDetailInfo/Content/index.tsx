@@ -6,12 +6,7 @@ import logo from "@src/assets/images/Common/Logo.svg";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { CompanyDetailRegistAt } from "../style";
 
-interface Props {
-  companyInfo: CompanyInfoType;
-}
-
 export default function CompanyDetailContent({ ...attr }: CompanyInfoType) {
-  console.log(attr);
   return (
     <S.Container>
       <S.Title>
