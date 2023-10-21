@@ -19,8 +19,10 @@ export const RankCategoriesUl = styled.ul`
   height: 40px;
 
   @media screen and (max-width: 595px) {
-    &:hover {
-      overflow-x: scroll;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        overflow-x: scroll;
+      }
     }
   }
 `;

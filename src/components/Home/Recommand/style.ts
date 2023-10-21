@@ -31,16 +31,12 @@ export const RecommandWrapper = styled.div`
   justify-content: center;
 
   overflow-x: hidden;
-  &:hover {
-    overflow-x: scroll;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      overflow-x: scroll;
+    }
   }
 `;
-
-// export const RecommandItemContainer = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   background: blue;
-// `;
 
 export const ArrowContainer = styled.div`
   width: 50px;

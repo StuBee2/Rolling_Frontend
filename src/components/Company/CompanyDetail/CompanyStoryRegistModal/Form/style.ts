@@ -66,8 +66,14 @@ export const CompanySatisfaction = styled.div`
 `;
 
 export const StarGradeContainer = styled.div`
-  overflow-x: scroll;
   padding: 1rem;
+  overflow-x: hidden;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      overflow-x: scroll;
+    }
+  }
 `;
 
 export const TextAreaContainer = styled.div`

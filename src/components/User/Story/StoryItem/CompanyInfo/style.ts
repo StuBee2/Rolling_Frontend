@@ -11,8 +11,10 @@ export const Container = styled.div`
   overflow-y: hidden;
   padding-bottom: 20px;
 
-  &:hover {
-    overflow-x: scroll;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      overflow-x: scroll;
+    }
   }
 `;
 

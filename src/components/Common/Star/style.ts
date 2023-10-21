@@ -20,8 +20,10 @@ export const StarContainer = styled.div<{ fontSize?: string }>`
   overflow-x: hidden;
   overflow-y: hidden;
   background-color: #f2f4f5;
-  &:hover {
-    overflow-x: scroll;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      overflow-x: scroll;
+    }
   }
 `;
 
