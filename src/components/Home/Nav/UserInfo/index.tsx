@@ -24,13 +24,20 @@ export default function UserInfo() {
 function UserInfoItem() {
   const navigate = useNavigate();
   const { data: userInfo } = useGetMyInfoQuery({ suspense: true });
+  const isNickName = !userInfo?.memberDetails.nickName;
   return (
     <>
       <S.UserInfoBox>
         <img src={userInfo?.socialDetails.imageUrl || ""} alt="이미지 없음" />
         <div onClick={() => navigate("/mypage/profile")}>
           <S.UserInfoNickName>
-            {userInfo?.memberDetails.nickName || userInfo?.socialDetails.name}
+            {isNickName ? (
+              <>
+                닉네임을 설정해주세요 <span>*</span>
+              </>
+            ) : (
+              userInfo?.memberDetails.nickName
+            )}
           </S.UserInfoNickName>
           <S.UserInfoEmail>
             {stringEllipsis(userInfo?.socialDetails.email!! || "", 22)}

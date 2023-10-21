@@ -1,20 +1,20 @@
 import cookie from "js-cookie";
 
 class Cookie {
-  public getCookie(key: string): string | undefined {
+  public getCookie(key: string): string | undefined | null {
     let item = undefined;
-    if (cookie.get(key) !== undefined) {
-      item = cookie.get(key);
+    if (localStorage.getItem(key) !== undefined) {
+      item = localStorage.getItem(key);
     }
     return item;
   }
 
   public setCookie(key: string, value: string): void {
-    cookie.set(key, value);
+    localStorage.setItem(key, value);
   }
 
   public removeCookie(key: string): void {
-    cookie.remove(key);
+    localStorage.removeItem(key);
   }
 }
 

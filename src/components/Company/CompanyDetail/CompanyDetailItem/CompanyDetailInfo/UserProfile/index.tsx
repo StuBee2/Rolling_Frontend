@@ -21,9 +21,7 @@ export default function CompanyDetailUserProfile({ ...attr }: Props) {
         </S.ImgContainer>
 
         <S.Content nameLength={nameLength.length}>
-          <S.NickName>
-            {attr.memberNickName || attr.memberSocialLoginId}
-          </S.NickName>
+          <S.NickName>{nameLength}</S.NickName>
           <S.GithubId
             onClick={() =>
               window.open(

@@ -61,6 +61,9 @@ export const NickName = styled.p`
   color: #f9fafb;
   font-size: 18px;
   font-weight: 700;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const GithubId = styled.div`

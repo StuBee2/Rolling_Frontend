@@ -39,6 +39,10 @@ export const UserInfoNickName = styled.p`
   &:hover {
     color: rgba(72, 105, 246, 1);
   }
+
+  span {
+    color: #ec6a5e;
+  }
 `;
 
 export const UserInfoEmail = styled.p`

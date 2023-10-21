@@ -89,7 +89,7 @@ export const Description = styled.div`
   p {
     width: 100%;
     font-size: 18px;
-    max-height: 140px;
+    max-height: 160px;
     white-space: pre-wrap;
     overflow-y: scroll;
     padding-left: 10px;

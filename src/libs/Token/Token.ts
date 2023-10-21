@@ -5,14 +5,14 @@ import {
 import cookie from "../Cookie/cookie";
 
 interface Storage {
-  getToken(key: string): string | undefined;
+  getToken(key: string): string | undefined | null;
   setToken(key: string, value: string): void;
   clearToken(): void;
   removeToken(key: string): void;
 }
 
 class Token implements Storage {
-  public getToken(key: string): string | undefined {
+  public getToken(key: string): string | undefined | null {
     return cookie.getCookie(key);
   }
 

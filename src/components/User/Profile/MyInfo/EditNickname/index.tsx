@@ -25,7 +25,7 @@ export default function EditNickname({ nickName }: Props) {
       ) : (
         <S.AddNickNameBtn>
           <S.NickName isHaveNickName={nickName !== ""}>
-            {nickName || "닉네임 추가하기"}
+            {nickName || "닉네임 설정하기"}
           </S.NickName>
           <S.EditNickNameHoverContainer
             onClick={attr.handleEditNickNameQuestion}
