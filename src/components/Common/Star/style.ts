@@ -15,13 +15,6 @@ export const StarContainer = styled.div<{ fontSize?: string }>`
 
   padding: 0 3rem 0 3rem;
   white-space: nowrap;
-
-  overflow-x: hidden;
-  overflow-y: hidden;
-
-  &:hover {
-    overflow-x: scroll;
-  }
 `;
 
 export const StarWrapper = styled.div`

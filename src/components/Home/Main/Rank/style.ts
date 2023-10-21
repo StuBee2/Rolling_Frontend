@@ -10,6 +10,7 @@ export const RankCategoriesUl = styled.ul`
   display: flex;
   column-gap: 15px;
   align-items: center;
+
   overflow-x: hidden;
   overflow-y: hidden;
 
@@ -17,8 +18,10 @@ export const RankCategoriesUl = styled.ul`
   width: 100%;
   height: 40px;
 
-  &:hover {
-    overflow-x: scroll;
+  @media screen and (max-width: 595px) {
+    &:hover {
+      overflow-x: scroll;
+    }
   }
 `;
 

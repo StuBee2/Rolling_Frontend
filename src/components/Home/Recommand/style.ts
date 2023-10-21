@@ -36,6 +36,11 @@ export const RecommandWrapper = styled.div`
 export const RecommandItemContainer = styled.div`
   width: 100%;
   height: 100%;
+
+  overflow-x: hidden;
+  &:hover {
+    overflow-x: scroll;
+  }
 `;
 
 export const ArrowContainer = styled.div`

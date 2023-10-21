@@ -7,11 +7,6 @@ export const RecommandItemContainer = styled.div`
 
   display: flex;
   flex-wrap: wrap;
-
-  overflow-x: hidden;
-  &:hover {
-    overflow-x: scroll;
-  }
 `;
 
 export const RecommandItemWrapper = styled.div`
@@ -37,7 +32,7 @@ export const RecommandItemBox = styled.div`
   }
 
   @media screen and (max-width: 1010px) {
-    width: 200px;
+    width: 220px;
   }
 `;
 

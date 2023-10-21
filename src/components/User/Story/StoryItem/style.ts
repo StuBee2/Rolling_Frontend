@@ -43,13 +43,20 @@ export const ContentContainer = styled.div`
 
 export const StarRatingContainer = styled.div`
   width: 100%;
-  height: 115px;
+  height: 140px;
   background-color: #f2f4f5;
   border-radius: 10px;
   display: flex;
   font-size: 17px;
   align-items: center;
   margin-top: 1rem;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  &:hover {
+    overflow-x: scroll;
+  }
 `;
 
 export const CompanyInfoContainer = styled.div`
