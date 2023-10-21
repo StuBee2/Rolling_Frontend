@@ -53,7 +53,7 @@ export const ContentWrapper = styled.div`
   border: 1px solid #dddddd;
 `;
 
-export const ReviewContainer = styled.div`
+export const StoryContainer = styled.div`
   width: 100%;
   height: 300px;
   background-color: rgba(242, 244, 245, 1);
@@ -61,13 +61,13 @@ export const ReviewContainer = styled.div`
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
-export const CompanyReviewButtonCotainer = styled.div`
+export const CompanyStoryButtonCotainer = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
 `;
 
-export const CompanyReviewButton = styled.button`
+export const CompanyStoryButton = styled.button`
   width: 165px;
   height: 52px;
   background-color: #1d1e5a;

@@ -1,4 +1,4 @@
-import review from "@src/assets/images/User/review.svg";
+import story from "@src/assets/images/User/story.svg";
 import smile from "@src/assets/images/User/smile.svg";
 import edit from "@src/assets/images/User/edit.svg";
 import del from "@src/assets/images/User/del.svg";
@@ -20,13 +20,13 @@ export const USER_ITEMS: Type[] = [
   },
   {
     id: 2,
-    link: "/mypage/review",
-    image: review,
+    link: "/mypage/story",
+    image: story,
     title: "롤링한 기업",
   },
 ];
 
-export const USER_REVIEW_SETUP_ITEMS = [
+export const USER_STORY_SETUP_ITEMS = [
   // {
   //   id: 0,
   //   image: edit,

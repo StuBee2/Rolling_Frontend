@@ -1,5 +1,5 @@
 import User from "@src/components/User";
-import Review from "@src/components/User/Review";
+import Story from "@src/components/User/Story";
 import Profile from "@src/components/User/Profile";
 import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
 import styled from "styled-components";
@@ -17,7 +17,7 @@ export default function UserPage({ page }: Props) {
       {page === 0 && <Profile />}
       {page === 1 &&
         (memberRole === "MEMBER" ? (
-          <Review />
+          <Story />
         ) : (
           <AlumniCheck>
             <p>동문인증이 필요한 기능입니다.</p>

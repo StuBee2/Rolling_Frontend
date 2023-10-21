@@ -18,13 +18,13 @@ export const QUERY_KEYS = Object.freeze({
     getCompanyRankBalnce: "/company/rank/balnce",
     getCompanyRankCategory: (category: string) => ["/company/rank", category],
   },
-  review: {
-    review: "/story",
-    getMyReview: "/story/my",
-    getReviewListMemberId: (id: string) => ["/story/list/member/id", id],
-    getReviewListCompanyId: (id: string) => ["/story/list/company/id", id],
-    getReviewInfoId: (id: string) => ["/story/info/id", id],
-    getReviewMyStatus: "/story/my/status",
+  story: {
+    story: "/story",
+    getMyStory: "/story/my",
+    getStoryListMemberId: (id: string) => ["/story/list/member/id", id],
+    getStoryListCompanyId: (id: string) => ["/story/list/company/id", id],
+    getStoryInfoId: (id: string) => ["/story/info/id", id],
+    getStoryMyStatus: "/story/my/status",
   },
   member: {
     getMyMember: "/member",

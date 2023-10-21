@@ -8,7 +8,7 @@ export const changeUrlToLoggingText = (url: string) => {
       return "마이페이지의 내정보페이지";
     case "/mypage/employment":
       return "마이페이지의 고용관계페이지";
-    case "/mypage/review":
+    case "/mypage/story":
       return "마이페이지의 리뷰페이지";
     default:
       return "";

@@ -74,7 +74,7 @@ export const FontSize = styled.p<{ fontSize: string }>`
   font-size: ${({ fontSize }) => fontSize};
 `;
 
-export const ReviewStatusCommonHover = css`
+export const StoryStatusCommonHover = css`
   transform: scale(1);
   transition: all 0.1s ease-in-out;
   cursor: pointer;

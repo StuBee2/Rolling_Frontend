@@ -51,7 +51,7 @@ export const useEditNickName = (nickName: string) => {
           queryInvalidates([
             QUERY_KEYS.member.getMyMember,
             QUERY_KEYS.company.company,
-            QUERY_KEYS.review.review,
+            QUERY_KEYS.story.story,
           ]);
           setIsEditNickName(false);
         },

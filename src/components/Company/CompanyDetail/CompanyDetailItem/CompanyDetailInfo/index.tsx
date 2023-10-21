@@ -2,15 +2,15 @@ import { CompanyInfoType } from "@src/types/Company/company.type";
 import Content from "./Content";
 import UserProfile from "./UserProfile";
 import * as S from "./style";
-import review from "@src/assets/images/Review/review.svg";
-import Review from "./Review";
+import story from "@src/assets/images/Story/story.svg";
+import Story from "./Story";
 import Token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import React, { Suspense } from "react";
 import { useSetRecoilState } from "recoil";
-import { CompanyReviewRegistModalAtom } from "@src/stores/company/company.store";
-import ReviewSkeleton from "@src/components/Common/Skeleton/CompanyDetail/Review";
+import { CompanyStoryRegistModalAtom } from "@src/stores/company/company.store";
+import StorySkeleton from "@src/components/Common/Skeleton/CompanyDetail/Review";
 import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
 import { useNavigate } from "react-router-dom";
@@ -21,8 +21,8 @@ interface Props {
 }
 
 function CompanyDetailInfo({ companyInfo }: Props) {
-  const setCompanyReviewRegisterModal = useSetRecoilState(
-    CompanyReviewRegistModalAtom
+  const setCompanyStoryRegisterModal = useSetRecoilState(
+    CompanyStoryRegistModalAtom
   );
   const { rollingToast } = useRollingToast();
   const isNotMember = jwtDecoding("authority") === "TEMP";
@@ -33,7 +33,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
       rollingToast("동문인증이 필요한 기능입니다!", "warning");
       navigate("/graduate/certification");
     } else {
-      turnOnModal(setCompanyReviewRegisterModal);
+      turnOnModal(setCompanyStoryRegisterModal);
     }
   };
 
@@ -54,18 +54,18 @@ function CompanyDetailInfo({ companyInfo }: Props) {
           </S.ContentWrapper>
 
           {Token.getToken(ACCESS_TOKEN_KEY) && (
-            <S.CompanyReviewButtonCotainer>
-              <S.CompanyReviewButton onClick={handleRegistStory}>
+            <S.CompanyStoryButtonCotainer>
+              <S.CompanyStoryButton onClick={handleRegistStory}>
                 <p>스토리 남기기</p>
-                <img src={review} alt="이미지 없음" />
-              </S.CompanyReviewButton>
-            </S.CompanyReviewButtonCotainer>
+                <img src={story} alt="이미지 없음" />
+              </S.CompanyStoryButton>
+            </S.CompanyStoryButtonCotainer>
           )}
         </div>
 
         <ErrorBoundary fallback={<>해당 회사 리뷰를 가지고 오지 못했습니다.</>}>
-          <Suspense fallback={<ReviewSkeleton />}>
-            <Review companyId={companyInfo.companyId} />
+          <Suspense fallback={<StorySkeleton />}>
+            <Story companyId={companyInfo.companyId} />
           </Suspense>
         </ErrorBoundary>
       </S.ContentContainer>

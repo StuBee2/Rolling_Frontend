@@ -1,5 +1,5 @@
-import { CompanyReviewRegistModalAtom } from "@src/stores/company/company.store";
-import { ReviewCompanyInfoType } from "@src/types/Review/review.type";
+import { CompanyStoryRegistModalAtom } from "@src/stores/company/company.store";
+import { StoryCompanyInfoType } from "@src/types/Story/story.type";
 import { useAuthTopScroll } from "@stubee2/stubee2-rolling-util";
 import { Suspense, useState } from "react";
 import { useRecoilState } from "recoil";
@@ -7,7 +7,8 @@ import ErrorBoundary from "../../Common/ErrorBoundary";
 import Portal from "../../Common/Portal";
 import CompanyDetailSkeleton from "../../Common/Skeleton/CompanyDetail";
 import CompanyDetailItem from "./CompanyDetailItem";
-import CompanyReviewRegistModal from "./CompanyReviewRegistModal";
+import CompanyStoryRegistModal from "./CompanyStoryRegistModal";
+
 import * as S from "./style";
 
 interface Props {
@@ -16,15 +17,15 @@ interface Props {
 
 export default function CompanyDetail({ id }: Props) {
   /** 리뷰등록 모달에서 쓰이는 useState */
-  const [reviewCompanyInfo, setReviewCompanyInfo] =
-    useState<ReviewCompanyInfoType>({
+  const [storyCompanyInfo, setStoryCompanyInfo] =
+    useState<StoryCompanyInfoType>({
       companyId: "",
       companyName: "",
       companyLogo: "",
     });
 
-  const [companyReviewRegisterModal, setCompanyReviewRegisterModal] =
-    useRecoilState(CompanyReviewRegistModalAtom);
+  const [companyStoryRegisterModal, setCompanyStoryRegisterModal] =
+    useRecoilState(CompanyStoryRegistModalAtom);
 
   useAuthTopScroll();
   return (
@@ -35,17 +36,17 @@ export default function CompanyDetail({ id }: Props) {
             <Suspense fallback={<CompanyDetailSkeleton />}>
               <CompanyDetailItem
                 id={id}
-                setReviewCompanyInfo={setReviewCompanyInfo}
+                setStoryCompanyInfo={setStoryCompanyInfo}
               />
             </Suspense>
           </ErrorBoundary>
         </S.Wrapper>
       </S.Container>
-      {companyReviewRegisterModal && (
+      {companyStoryRegisterModal && (
         <Portal>
-          <CompanyReviewRegistModal
-            setReviewModal={setCompanyReviewRegisterModal}
-            reviewCompanyInfo={reviewCompanyInfo}
+          <CompanyStoryRegistModal
+            setStoryModal={setCompanyStoryRegisterModal}
+            storyCompanyInfo={storyCompanyInfo}
           />
         </Portal>
       )}
