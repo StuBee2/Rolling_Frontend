@@ -1,9 +1,12 @@
 import { useCertify } from "@src/hooks/Graduate/useCertify";
 import * as S from "./style";
 import { Button } from "@stubee2/stubee2-rolling-ui";
+import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 
 const Certify = () => {
-  const { handleQuestionChange, handleGraduateCertified } = useCertify();
+  useTokenCheck();
+  const { handleQuestionChange, handleGraduateCertified, housemaster } =
+    useCertify();
   return (
     <S.Container>
       <S.Wrapper>
@@ -23,7 +26,11 @@ const Certify = () => {
                 Q. DGSW 사감선생님 중, 한 분의 성함을 입력해주세요.
               </S.QuestionText>
               <S.InputContainer>
-                <S.Input onChange={handleQuestionChange} name="housemaster" />
+                <S.Input
+                  value={housemaster}
+                  type="text"
+                  onChange={handleQuestionChange}
+                />
                 <S.Teacher>선생님</S.Teacher>
               </S.InputContainer>
             </S.QuestionList>

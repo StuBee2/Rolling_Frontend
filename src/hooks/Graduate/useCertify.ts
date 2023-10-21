@@ -1,7 +1,5 @@
-// import refresh
 import { usePostCertifyMutation } from "@src/queries/Graduate/graduate.query";
 import authRepositoryImpl from "@src/repositories/Auth/auth.repositoryImpl";
-import { GraduateCertifiedType } from "@src/types/Graduate/graduate.type";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import React, { ChangeEvent, useState } from "react";
 import Token from "@src/libs/Token/Token";
@@ -12,17 +10,14 @@ import {
 import { useNavigate } from "react-router-dom";
 
 export const useCertify = () => {
-  const [certifiedData, setCertifiedData] = useState<GraduateCertifiedType>({
-    housemaster: "",
-  });
+  const [housemaster, setHousemaster] = useState<string>("");
 
   const { rollingToast } = useRollingToast();
-  const postCertified = usePostCertifyMutation();
+  const postCertify = usePostCertifyMutation();
   const navigate = useNavigate();
 
   const handleQuestionChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setCertifiedData((prev) => ({ ...prev, [name]: value }));
+    setHousemaster(e.target.value);
   };
 
   const TokenRefresh = async () => {
@@ -45,27 +40,22 @@ export const useCertify = () => {
 
   const handleGraduateCertified = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { housemaster } = certifiedData;
 
     if (housemaster.trim() === "") {
       return rollingToast("사감선생님 성함을 작성해주세요", "warning");
     }
-    postCertified.mutate(
-      {
-        housemaster,
+    postCertify.mutate(housemaster, {
+      onSuccess: () => {
+        TokenRefresh();
       },
-      {
-        onSuccess: () => {
-          TokenRefresh();
-        },
-        onError: () => {
-          rollingToast("졸업생 인증 실패", "error");
-        },
-      }
-    );
+      onError: () => {
+        rollingToast("졸업생 인증 실패", "error");
+      },
+    });
   };
 
   return {
+    housemaster,
     handleQuestionChange,
     handleGraduateCertified,
   };

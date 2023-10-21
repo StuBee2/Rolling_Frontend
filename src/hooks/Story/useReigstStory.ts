@@ -145,7 +145,6 @@ export const useRegistStory = (companyId: string) => {
         ...storyStarGrade,
       };
 
-      console.log(param);
       postStory.mutate(param as unknown as StoryParam, {
         onSuccess: () => {
           queryInvalidates([

@@ -14,13 +14,14 @@ export default function SearchItem({ company }: Props) {
     { suspense: true }
   );
   const navigate = useNavigate();
+  const companyList = searchCompany?.pages;
 
   return (
     <S.MainItemContainer>
       <S.MainItemListContainer>
         <S.MainItemWrapper>
-          {searchCompany?.pages[0].data.length!! > 0 ? (
-            searchCompany?.pages.map((data) =>
+          {companyList![0].data.length!! > 0 ? (
+            companyList!.map((data) =>
               data.data.map((item) => (
                 <S.MainItemBox
                   key={item.companyId.id}

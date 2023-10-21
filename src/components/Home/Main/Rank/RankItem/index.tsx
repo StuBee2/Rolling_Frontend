@@ -16,7 +16,6 @@ function RankItem({ rankCategory }: Props) {
     suspense: true,
   });
   const rankInfoSlicing = rankInfo?.slice(0, 9);
-
   const navigate = useNavigate();
 
   return (
