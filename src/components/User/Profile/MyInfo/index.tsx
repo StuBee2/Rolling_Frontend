@@ -3,13 +3,13 @@ import * as S from "./style";
 import { MemberType } from "@src/types/Member/member.type";
 import EditNickname from "./EditNickname";
 import { Explain, Title } from "../../style";
+import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 
 interface Props {
   data: MemberType;
 }
 
 export default function MyInfo({ data }: Props) {
-  const myGihhubLink = `https://github.com/${data?.socialDetails.socialLoginId}`;
   return (
     <S.MyInfoContainer>
       <S.MyInfoWrapper>
@@ -29,7 +29,12 @@ export default function MyInfo({ data }: Props) {
           </div>
         </S.MyInfoAbleContainer>
         <S.MyGitInfoContainer
-          onClick={() => window.open(myGihhubLink, "_blank")}
+          onClick={() =>
+            window.open(
+              convertToGithubLink(data?.socialDetails.socialLoginId),
+              "_blank"
+            )
+          }
         >
           <div>
             <AiFillGithub size={25} />

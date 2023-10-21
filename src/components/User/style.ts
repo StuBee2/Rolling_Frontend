@@ -4,10 +4,12 @@ export const UserContainer = styled.div`
   width: 100%;
   height: 100vh;
   background-color: #f9fafb;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   padding-bottom: 2rem;
   min-width: 500px;
   padding-top: 90px;

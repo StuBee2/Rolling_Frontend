@@ -71,7 +71,6 @@ export const StarGradeContainer = styled.div`
 `;
 
 export const TextAreaContainer = styled.div`
-  background-color: red;
   width: 100%;
   height: 280px;
   display: flex;

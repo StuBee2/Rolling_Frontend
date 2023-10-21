@@ -11,6 +11,8 @@ export const ReviewStatusContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 2rem;
+
+  ${ReviewStatusCommonHover};
 `;
 
 export const ReviewStatus = styled.div`

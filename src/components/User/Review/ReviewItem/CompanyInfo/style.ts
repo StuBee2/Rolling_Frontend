@@ -7,9 +7,13 @@ export const Container = styled.div`
   display: flex;
   white-space: nowrap;
 
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   padding-bottom: 10px;
+
+  &:hover {
+    overflow-x: scroll;
+  }
 `;
 
 export const CompanyLogo = styled.div<{ isHaveSocialId: string }>`

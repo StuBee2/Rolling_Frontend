@@ -37,8 +37,9 @@ export const Title = styled.div`
 
 export const Content = styled.p`
   width: 100%;
-  max-height: 300px;
-  overflow: scroll;
+  max-height: 200px;
+  overflow-y: hidden;
+  overflow-x: hidden;
 
   font-size: 15px;
   color: rgba(115, 123, 152, 1);
@@ -46,6 +47,10 @@ export const Content = styled.p`
   white-space: pre-wrap;
   padding-left: 5px;
   line-height: 23px;
+
+  &:hover {
+    overflow-y: scroll;
+  }
 `;
 
 export const AdvantagesAndDisAdvantages = styled.div`
