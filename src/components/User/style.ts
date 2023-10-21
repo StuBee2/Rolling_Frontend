@@ -4,7 +4,7 @@ export const UserContainer = styled.div`
   width: 100%;
   height: 100vh;
   background-color: #f9fafb;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +32,7 @@ export const UserWrapper = styled.div`
   }
 `;
 
-export const UserListContainer = styled.div`
+export const UserListContainer = styled.div<{ page: boolean }>`
   width: calc(100% - 420px);
   height: 100%;
   padding-top: 40px;
@@ -40,6 +40,16 @@ export const UserListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${({ page }) =>
+    page &&
+    css`
+      overflow-y: scroll;
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    `}
+
   @media screen and (max-width: 1040px) {
     width: 100%;
   }
@@ -54,10 +64,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 30px;
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 export const Title = styled.div`

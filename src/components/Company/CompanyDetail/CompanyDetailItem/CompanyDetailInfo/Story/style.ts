@@ -22,5 +22,5 @@ export const StoryCount = styled.p`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  row-gap: 3rem;
 `;

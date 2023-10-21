@@ -18,6 +18,7 @@ export default function User({ children }: Props) {
   useTokenCheck();
   const { pathname } = useLocation();
   const isStoryPage = pathname === "/mypage/story";
+
   return (
     <S.UserContainer>
       <S.UserWrapper>
@@ -27,7 +28,7 @@ export default function User({ children }: Props) {
           </Suspense>
         </ErrorBoundary>
 
-        <S.UserListContainer>
+        <S.UserListContainer page={isStoryPage}>
           <S.Container>
             <S.Title>
               <S.FontSize fontSize="30px">

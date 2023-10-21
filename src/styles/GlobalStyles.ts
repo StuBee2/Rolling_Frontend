@@ -14,12 +14,6 @@ const GlobalStyle = createGlobalStyle`
      }
 
     ${reset}
-   
-    .bold-text {
-      font-family: 'Pretendard-Bold' !important;
-    }
-    
-  
 `;
 
 export default GlobalStyle;

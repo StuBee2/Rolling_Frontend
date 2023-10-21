@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   overflow-x: hidden;
   overflow-y: hidden;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 
   &:hover {
     overflow-x: scroll;

@@ -1,8 +1,8 @@
+import StoryItem from "@src/components/User/Story/StoryItem";
 import { useGetStoryListCompanyIdQuery } from "@src/queries/Story/story.query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import * as S from "./style";
-import StoryItem from "./StoryItem";
 
 interface Props {
   companyId: string;
@@ -36,7 +36,7 @@ export default function CompanyDetailStory({ companyId }: Props) {
             ))
           )
         ) : (
-          <div>등록된 스토리가 없습니다.</div>
+          <p>등록된 스토리가 없습니다.</p>
         )}
       </S.Wrapper>
       <div ref={ref} />

@@ -1,7 +1,8 @@
+import StoryItem from "@src/components/User/Story/StoryItem";
 import { useGetMyStoryQuery } from "@src/queries/Story/story.query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import StoryItem from "./StoryItem";
+
 import * as S from "./style";
 
 export default function Story() {
@@ -22,7 +23,7 @@ export default function Story() {
         {storyListData?.length!! > 0 ? (
           storyList?.pages.map((data) =>
             data.data.map((story) => (
-              <StoryItem story={story} key={story.storyId} />
+              <StoryItem {...story} key={story.storyId} />
             ))
           )
         ) : (

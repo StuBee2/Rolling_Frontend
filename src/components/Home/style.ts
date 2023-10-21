@@ -20,12 +20,6 @@ export const HomeContainer = styled.div`
   }
 `;
 
-export const HomeContent = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-`;
-
 export const HomeWrapper = styled.div`
   width: 1370px;
   height: 100%;
@@ -46,4 +40,10 @@ export const HomeWrapper = styled.div`
     padding-left: 0px;
     padding-right: 0px;
   }
+`;
+
+export const HomeContent = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
 `;

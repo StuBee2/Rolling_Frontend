@@ -4,7 +4,7 @@ export const storyErrorHanlder = (status: number, message: string) => {
   }
 
   if (status === 403) {
-    return "리뷰를 등록할 권한이 없습니다.";
+    return "권한이 없습니다.";
   }
 
   if (status === 404) {
