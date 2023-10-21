@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const UserNavBar = styled.div`
   width: 420px;
-  height: calc(100vh - 90px);
+  height: 100%;
+
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;

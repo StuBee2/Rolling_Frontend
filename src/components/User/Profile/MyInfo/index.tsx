@@ -3,23 +3,23 @@ import * as S from "./style";
 import { MemberType } from "@src/types/Member/member.type";
 import EditNickname from "./EditNickname";
 import { Explain, Title } from "../../style";
+import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 
 interface Props {
   data: MemberType;
 }
 
 export default function MyInfo({ data }: Props) {
-  const myGihhubLink = `https://github.com/${data?.socialDetails.socialLoginId}`;
   return (
-    <S.MyInfoContainer>
-      <S.MyInfoWrapper>
-        <S.MyInfoTextContainer>
+    <S.Container>
+      <S.Wrapper>
+        <S.TextContainer>
           <Title>기본 정보</Title>
           <Explain>
             롤링에서 제공되는 맞춤 콘텐츠의 기본 데이터로 활용됩니다.
           </Explain>
-        </S.MyInfoTextContainer>
-        <S.MyInfoAbleContainer>
+        </S.TextContainer>
+        <S.AbleContainer>
           <img src={data?.socialDetails.imageUrl || ""} alt="이미지 없음" />
           <div>
             <EditNickname nickName={data?.memberDetails.nickName} />
@@ -27,16 +27,21 @@ export default function MyInfo({ data }: Props) {
               {data?.socialDetails.loginType}으로 로그인 중
             </S.MyGitInfoLoginTypeText>
           </div>
-        </S.MyInfoAbleContainer>
+        </S.AbleContainer>
         <S.MyGitInfoContainer
-          onClick={() => window.open(myGihhubLink, "_blank")}
+          onClick={() =>
+            window.open(
+              convertToGithubLink(data?.socialDetails.socialLoginId),
+              "_blank"
+            )
+          }
         >
           <div>
             <AiFillGithub size={25} />
             <p>{data?.socialDetails.socialLoginId}</p>
           </div>
         </S.MyGitInfoContainer>
-      </S.MyInfoWrapper>
-    </S.MyInfoContainer>
+      </S.Wrapper>
+    </S.Container>
   );
 }

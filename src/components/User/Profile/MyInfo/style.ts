@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MyInfoContainer = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: 250px;
   background-color: #f3f4f5;
@@ -13,7 +13,7 @@ export const MyInfoContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-export const MyInfoWrapper = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   font-weight: bold;
@@ -22,14 +22,14 @@ export const MyInfoWrapper = styled.div`
   row-gap: 15px;
 `;
 
-export const MyInfoTextContainer = styled.div`
+export const TextContainer = styled.div`
   font-size: 22px;
   width: 100%;
   height: 20px;
   margin-bottom: 18px;
 `;
 
-export const MyInfoAbleContainer = styled.div`
+export const AbleContainer = styled.div`
   width: 100%;
   height: 200px;
   border-bottom: 2.5px solid rgba(189, 194, 208, 1);

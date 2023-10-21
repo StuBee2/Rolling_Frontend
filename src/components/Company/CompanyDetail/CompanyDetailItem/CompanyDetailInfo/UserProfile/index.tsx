@@ -1,7 +1,7 @@
 import * as S from "./style";
 import github from "@src/assets/images/Auth/github.svg";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
-import { converToGithubLink } from "@src/utils/github/converToGithubLink";
+import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 import { CompanyDetailRegistAt } from "../style";
 
 interface Props {
@@ -24,7 +24,7 @@ export default function CompanyDetailUserProfile({ ...attr }: Props) {
           <S.GithubId
             onClick={() =>
               window.open(
-                converToGithubLink(attr.memberSocialLoginId),
+                convertToGithubLink(attr.memberSocialLoginId),
                 "_blank"
               )
             }

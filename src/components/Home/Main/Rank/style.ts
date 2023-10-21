@@ -10,12 +10,16 @@ export const RankCategoriesUl = styled.ul`
   display: flex;
   column-gap: 15px;
   align-items: center;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
 
-  padding: 20px 0 30px 0;
+  padding: 20px 0 40px 0;
   width: 100%;
   height: 40px;
+
+  &:hover {
+    overflow-x: scroll;
+  }
 `;
 
 export const RankCategoryLi = styled.li<{ isSelect: boolean }>`

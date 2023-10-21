@@ -6,9 +6,9 @@ import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import NavFooter from "./Nav/NavFooter";
 import UserSkeleton from "../Common/Skeleton/User";
 import NavSkeleton from "../Common/Skeleton/User/Nav";
-import ReviewStatus from "./ReviewStatus";
-import ReviewStatusSkeleton from "../Common/Skeleton/User/ReviewStatus";
 import { useLocation } from "react-router";
+import StoryStatus from "./StoryStatus";
+import StoryStatusSkeleton from "../Common/Skeleton/User/StoryStatus";
 
 interface Props {
   children: ReactNode;
@@ -17,7 +17,8 @@ interface Props {
 export default function User({ children }: Props) {
   useTokenCheck();
   const { pathname } = useLocation();
-  const isReviewPage = pathname === "/mypage/review";
+  const isStoryPage = pathname === "/mypage/story";
+
   return (
     <S.UserContainer>
       <S.UserWrapper>
@@ -27,14 +28,14 @@ export default function User({ children }: Props) {
           </Suspense>
         </ErrorBoundary>
 
-        <S.UserListContainer>
+        <S.UserListContainer page={isStoryPage}>
           <S.Container>
             <S.Title>
               <S.FontSize fontSize="30px">
-                {isReviewPage ? "내 롤링 Story" : "롤링 Profile"}
+                {isStoryPage ? "내 롤링 Story" : "롤링 Profile"}
               </S.FontSize>
               <S.Explain>
-                {isReviewPage
+                {isStoryPage
                   ? "자신이 직접 롤링한 회사를 보여줘요"
                   : "기본 정보와 서비스에서 이용되는 프로필을 설정할 수 있어요"}
               </S.Explain>
@@ -43,8 +44,8 @@ export default function User({ children }: Props) {
             <ErrorBoundary
               fallback={<>롤링한 회사의 수를 갖고오지 못했습니다.</>}
             >
-              <Suspense fallback={<ReviewStatusSkeleton />}>
-                <ReviewStatus />
+              <Suspense fallback={<StoryStatusSkeleton />}>
+                <StoryStatus />
               </Suspense>
 
               <Suspense fallback={<UserSkeleton />}>{children}</Suspense>

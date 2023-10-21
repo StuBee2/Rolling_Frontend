@@ -8,7 +8,7 @@ import profile from "@src/assets/images/User/profile.svg";
 import { useNavigate } from "react-router-dom";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 import github from "@src/assets/images/Auth/github.svg";
-import { converToGithubLink } from "@src/utils/github/converToGithubLink";
+import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 export default function MyInfo() {
@@ -31,7 +31,7 @@ export default function MyInfo() {
               <S.GitInfo
                 onClick={() =>
                   window.open(
-                    converToGithubLink(myInfo?.socialDetails.socialLoginId!!),
+                    convertToGithubLink(myInfo?.socialDetails.socialLoginId!!),
                     "_blank"
                   )
                 }

@@ -8,8 +8,11 @@ export const RecommandItemContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  overflow-x: scroll;
+  overflow-x: hidden;
   padding-bottom: 7px;
+  &:hover {
+    overflow-x: scroll;
+  }
 `;
 
 export const RecommandItemWrapper = styled.div`
@@ -22,6 +25,10 @@ export const RecommandItemWrapper = styled.div`
 export const RecommandItemBox = styled.div`
   width: 250px;
   height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
 
   p {
     text-align: center;

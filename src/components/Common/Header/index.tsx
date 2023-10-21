@@ -1,5 +1,5 @@
 import * as S from "./style";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import logo from "@src/assets/images/Common/Logo.svg";
 import Search1 from "@src/assets/images/Search/Search1.svg";
 import { useState } from "react";
@@ -12,7 +12,6 @@ import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import { SignInModalAtom } from "@src/stores/auth/auth.store";
 
 export default function Header() {
-  const navigate = useNavigate();
   const setIsCloseModal = useSetRecoilState<boolean>(IsCloseModalAtom);
   const setMyInfoModal = useSetRecoilState<boolean>(MyInfoModal);
   const setSignInModal = useSetRecoilState<boolean>(SignInModalAtom);

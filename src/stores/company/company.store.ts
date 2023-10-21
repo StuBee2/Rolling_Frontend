@@ -11,8 +11,8 @@ export const SearchCompanyAtom = atom<string>({
   default: "",
 });
 
-export const CompanyReviewRegistModalAtom = atom<boolean>({
-  key: "companyReviewRegisterModalAtom",
+export const CompanyStoryRegistModalAtom = atom<boolean>({
+  key: "companyStoryRegisterModalAtom",
   default: false,
 });
 
