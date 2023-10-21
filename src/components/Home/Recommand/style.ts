@@ -30,11 +30,12 @@ export const RecommandWrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  overflow-x: hidden;
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      overflow-x: scroll;
-    }
+  &:hover {
+    overflow-x: scroll;
+  }
+  // 모바일
+  @media (hover: none) and (pointer: coarse) {
+    overflow-x: scroll;
   }
 `;
 

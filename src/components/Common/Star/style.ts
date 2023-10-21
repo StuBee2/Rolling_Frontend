@@ -20,10 +20,13 @@ export const StarContainer = styled.div<{ fontSize?: string }>`
   overflow-x: hidden;
   overflow-y: hidden;
   background-color: #f2f4f5;
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      overflow-x: scroll;
-    }
+
+  &:hover {
+    overflow-x: scroll;
+  }
+  // 모바일
+  @media (hover: none) and (pointer: coarse) {
+    overflow-x: scroll;
   }
 `;
 

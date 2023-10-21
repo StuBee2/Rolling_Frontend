@@ -69,10 +69,12 @@ export const StarGradeContainer = styled.div`
   padding: 1rem;
   overflow-x: hidden;
 
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      overflow-x: scroll;
-    }
+  &:hover {
+    overflow-x: scroll;
+  }
+  // 모바일
+  @media (hover: none) and (pointer: coarse) {
+    overflow-x: scroll;
   }
 `;
 
