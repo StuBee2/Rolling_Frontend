@@ -45,15 +45,13 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
               <CompanyContent {...attr} />
             </S.ContentContainer>
           </S.CompanyInfoContainer>
-
-          <S.StarRatingContainer>
-            <Star
-              rankStatus={rankStatus}
-              width={20}
-              height={20}
-              fontSize={"15px"}
-            />
-          </S.StarRatingContainer>
+          
+          <Star
+            rankStatus={rankStatus}
+            width={20}
+            height={20}
+            fontSize={"15px"}
+          />
         </S.Content>
       </S.Wrapper>
     </S.Container>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const RecommandContainer = styled.div`
   width: 100%;
-  height: 260px;
+  height: auto;
   display: flex;
   flex-direction: column;
 
@@ -25,7 +25,7 @@ export const SeniorRecommand = styled.div`
 
 export const RecommandWrapper = styled.div`
   width: 100%;
-  height: 260px;
+  height: 240px;
 
   display: flex;
   justify-content: center;
