@@ -7,17 +7,9 @@ export const Container = styled.div`
   display: flex;
   white-space: nowrap;
 
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: hidden;
   padding-bottom: 20px;
-
-  &:hover {
-    overflow-x: scroll;
-  }
-  // 모바일
-  @media (hover: none) and (pointer: coarse) {
-    overflow-x: scroll;
-  }
 `;
 
 export const CompanyLogo = styled.div<{ isHaveSocialId: string }>`

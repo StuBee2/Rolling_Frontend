@@ -29,14 +29,7 @@ export const RecommandWrapper = styled.div`
 
   display: flex;
   justify-content: center;
-
-  &:hover {
-    overflow-x: scroll;
-  }
-  // 모바일
-  @media (hover: none) and (pointer: coarse) {
-    overflow-x: scroll;
-  }
+  overflow-x: auto;
 `;
 
 export const ArrowContainer = styled.div`

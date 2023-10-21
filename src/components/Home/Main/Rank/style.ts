@@ -19,13 +19,7 @@ export const RankCategoriesUl = styled.ul`
   height: 40px;
 
   @media screen and (max-width: 595px) {
-    &:hover {
-      overflow-x: scroll;
-    }
-    // 모바일
-    @media (hover: none) and (pointer: coarse) {
-      overflow-x: scroll;
-    }
+    overflow-x: scroll;
   }
 `;
 

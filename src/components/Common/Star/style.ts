@@ -17,17 +17,9 @@ export const StarContainer = styled.div<{ fontSize?: string }>`
   white-space: nowrap;
   background-color: red;
 
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: hidden;
   background-color: #f2f4f5;
-
-  &:hover {
-    overflow-x: scroll;
-  }
-  // 모바일
-  @media (hover: none) and (pointer: coarse) {
-    overflow-x: scroll;
-  }
 `;
 
 export const StarWrapper = styled.div`

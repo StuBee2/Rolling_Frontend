@@ -67,15 +67,7 @@ export const CompanySatisfaction = styled.div`
 
 export const StarGradeContainer = styled.div`
   padding: 1rem;
-  overflow-x: hidden;
-
-  &:hover {
-    overflow-x: scroll;
-  }
-  // 모바일
-  @media (hover: none) and (pointer: coarse) {
-    overflow-x: scroll;
-  }
+  overflow-x: scroll;
 `;
 
 export const TextAreaContainer = styled.div`
