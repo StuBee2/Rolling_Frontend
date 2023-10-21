@@ -35,7 +35,7 @@ export const HeaderWrapper = styled.div`
     width: 90%;
   }
   @media screen and (min-width: 500px) {
-    padding: 0 20px 0 20px;
+    padding: 0 10px 0 10px;
   }
 `;
 
