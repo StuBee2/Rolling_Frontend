@@ -5,7 +5,7 @@ import CompanyInfo from "@src/components/User/Story/StoryItem/CompanyInfo";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import Token from "@src/libs/Token/Token";
 import { StoryCommonType } from "@src/types/Story/story.type";
-import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
+import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import { changeStoryStarGradesToArrayObject } from "@src/utils/Story/changeStoryStarGradesToArrayObject";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import * as S from "./style";
@@ -17,7 +17,7 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
    * 있다면 회사단일 조회 페이지이기에 jwt 디코딩해서 writerId랑 내 id를 비교
    * */
   const isCoincideMemberId =
-    !attr.writerId || jwtDecoding("access", "sub") === attr.writerId;
+    !attr.writerId || tokenDecode("access", "sub") === attr.writerId;
   const rankStatus = changeStoryStarGradesToArrayObject(attr);
 
   return (

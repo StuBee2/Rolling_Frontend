@@ -1,7 +1,7 @@
 import User from "@src/components/User";
 import Story from "@src/components/User/Story";
 import Profile from "@src/components/User/Profile";
-import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
+import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function UserPage({ page }: Props) {
-  const memberRole = jwtDecoding("access", "authority");
+  const memberRole = tokenDecode("access", "authority");
   const navigate = useNavigate();
   return (
     <User>

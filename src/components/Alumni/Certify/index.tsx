@@ -3,13 +3,13 @@ import * as S from "./style";
 import { Button } from "@stubee2/stubee2-rolling-ui";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import { useEffect } from "react";
-import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
+import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 
 export default function Certify() {
   useTokenCheck();
 
   const { ...attr } = useCertify();
-  const memberRole = jwtDecoding("access", "authority");
+  const memberRole = tokenDecode("access", "authority");
 
   useEffect(() => {
     if (memberRole === "MEMBER") {

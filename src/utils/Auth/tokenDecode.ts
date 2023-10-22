@@ -6,7 +6,7 @@ import Token from "@src/libs/Token/Token";
 import { DecodeKeyType, DecodeType } from "@src/types/Auth/auth.type";
 import jwtDecode from "jwt-decode";
 
-export const jwtDecoding = (
+export const tokenDecode = (
   tokenType: "access" | "refresh",
   option: DecodeKeyType
 ) => {

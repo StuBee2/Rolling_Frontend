@@ -11,7 +11,7 @@ import React, { Suspense } from "react";
 import { useSetRecoilState } from "recoil";
 import { CompanyStoryRegistModalAtom } from "@src/stores/company/company.store";
 import StorySkeleton from "@src/components/Common/Skeleton/CompanyDetail/Review";
-import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
+import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import { useNavigate } from "react-router-dom";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 
@@ -24,7 +24,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
     CompanyStoryRegistModalAtom
   );
   const { rollingToast } = useRollingToast();
-  const isNotMember = jwtDecoding("access", "authority") === "TEMP";
+  const isNotMember = tokenDecode("access", "authority") === "TEMP";
   const navigate = useNavigate();
 
   const handleRegistStory = () => {

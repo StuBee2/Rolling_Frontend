@@ -3,12 +3,12 @@ import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import Token from "@src/libs/Token/Token";
 import { useNavigate } from "react-router-dom";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
-import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
+import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 
 const useAlumniCheck = () => {
   const navigate = useNavigate();
   const { rollingToast } = useRollingToast();
-  const memberRole = jwtDecoding("access", "authority");
+  const memberRole = tokenDecode("access", "authority");
 
   useEffect(() => {
     const checkAlumni = () => {
