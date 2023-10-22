@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function CompanyDetailUserProfile({ ...attr }: Props) {
-  const nameLength = attr.memberNickName || attr.memberSocialLoginId;
+  const userName = attr.memberNickName || attr.memberSocialLoginId;
   return (
     <S.Container>
       <S.Wrapper>
@@ -20,8 +20,8 @@ export default function CompanyDetailUserProfile({ ...attr }: Props) {
           <img src={attr.memberImageUrl || ""} alt="이미지 없음" />
         </S.ImgContainer>
 
-        <S.Content nameLength={nameLength.length}>
-          <S.NickName>{nameLength}</S.NickName>
+        <S.Content nameLength={userName.length}>
+          <S.NickName>{userName}</S.NickName>
           <S.GithubId
             onClick={() =>
               window.open(

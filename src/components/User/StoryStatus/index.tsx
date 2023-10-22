@@ -20,7 +20,7 @@ export default function StoryStatus() {
             내가 작성한 롤링 Story · {isError ? 0 : count}개
           </S.WroteStoryCount>
           <S.StatusText>
-            {count > 0 || !isError
+            {count > 0
               ? "최근 업데이트 " + getTimeAgo(lastModifiedDate)
               : "롤링한 회사가 없습니다."}
           </S.StatusText>
