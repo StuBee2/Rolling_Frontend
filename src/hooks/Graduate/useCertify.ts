@@ -58,5 +58,7 @@ export const useCertify = () => {
     housemaster,
     handleQuestionChange,
     handleGraduateCertified,
+    navigate,
+    rollingToast,
   };
 };
