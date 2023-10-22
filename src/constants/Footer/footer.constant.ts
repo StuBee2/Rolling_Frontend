@@ -13,7 +13,7 @@ export const FOOTER_ITEMS: Type[] = [
   {
     id: 1,
     name: "Notion",
-    link: "https://sanghyun0505.notion.site/Rolling-5bcf879eb8bc446d82215bc4e82c2337?pvs=4",
+    link: "https://chldkdudsally.notion.site/Rolling-d7c0ffe961b7498bab3a5af2e112198c?pvs=4",
   },
   {
     id: 2,
