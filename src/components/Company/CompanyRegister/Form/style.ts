@@ -93,16 +93,23 @@ export const CompanyAddressInputContainer = styled.div`
 export const SearchButton = styled.div`
   width: 85px;
   height: 60px;
-  font-size: 16px;
-  background: blue;
+
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 7px;
+
+  border-radius: 10px;
   background-color: rgba(72, 105, 246, 1);
   font-weight: 600;
+
   color: #fff;
   cursor: pointer;
+
+  transition: all 0.1s ease-in-out;
+  &:active {
+    background-color: rgba(72, 105, 246, 0.85);
+  }
 `;
 
 export const InputStyle = {
@@ -126,20 +133,22 @@ export const ButtonContainer = styled.div`
   justify-content: flex-end;
 
   button {
-    background-color: rgba(72, 105, 246, 1);
     width: 153px;
     height: 50px;
+
     cursor: pointer;
     color: #fff;
     outline: none;
     border: none;
+
     font-weight: 600;
     font-size: 17px;
     border-radius: 7px;
-    transform: scale(1);
+    background-color: rgba(72, 105, 246, 1);
+
     transition: all 0.1s ease-in-out;
-    &:hover {
-      transform: scale(0.985);
+    &:active {
+      background-color: rgba(72, 105, 246, 0.85);
     }
   }
 `;

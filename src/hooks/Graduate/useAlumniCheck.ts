@@ -8,7 +8,7 @@ import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
 const useAlumniCheck = () => {
   const navigate = useNavigate();
   const { rollingToast } = useRollingToast();
-  const memberRole = jwtDecoding("authority");
+  const memberRole = jwtDecoding("access", "authority");
 
   useEffect(() => {
     const checkAlumni = () => {

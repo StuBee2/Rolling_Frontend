@@ -6,7 +6,7 @@ import cookie from "../Cookie/cookie";
 
 interface Storage {
   getToken(key: string): string | undefined;
-  setToken(key: string, value: string): void;
+  setToken(key: string, value: string, expire?: Date): void;
   clearToken(): void;
   removeToken(key: string): void;
 }
@@ -16,8 +16,8 @@ class Token implements Storage {
     return cookie.getCookie(key);
   }
 
-  public setToken(key: string, token: string): void {
-    cookie.setCookie(key, token);
+  public setToken(key: string, token: string, expire?: Date): void {
+    cookie.setCookie(key, token, expire);
   }
 
   public clearToken() {

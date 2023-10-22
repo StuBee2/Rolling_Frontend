@@ -1,7 +1,7 @@
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import * as S from "./style";
 import { MemberType } from "@src/types/Member/member.type";
-import EditNickname from "./EditNickname";
+import NickName from "./NickName";
 import { Explain, Title } from "../../style";
 import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 
@@ -22,7 +22,7 @@ export default function MyInfo({ data }: Props) {
         <S.AbleContainer>
           <img src={data?.socialDetails.imageUrl || ""} alt="이미지 없음" />
           <div>
-            <EditNickname nickName={data?.memberDetails.nickName} />
+            <NickName nickName={data?.memberDetails.nickName} />
             <S.MyGitInfoLoginTypeText>
               {data?.socialDetails.loginType}으로 로그인 중
             </S.MyGitInfoLoginTypeText>

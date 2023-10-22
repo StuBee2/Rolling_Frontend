@@ -11,7 +11,6 @@ import React, { Suspense } from "react";
 import { useSetRecoilState } from "recoil";
 import { CompanyStoryRegistModalAtom } from "@src/stores/company/company.store";
 import StorySkeleton from "@src/components/Common/Skeleton/CompanyDetail/Review";
-import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import { jwtDecoding } from "@src/utils/Auth/jwtDecoding";
 import { useNavigate } from "react-router-dom";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
@@ -25,7 +24,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
     CompanyStoryRegistModalAtom
   );
   const { rollingToast } = useRollingToast();
-  const isNotMember = jwtDecoding("authority") === "TEMP";
+  const isNotMember = jwtDecoding("access", "authority") === "TEMP";
   const navigate = useNavigate();
 
   const handleRegistStory = () => {
@@ -33,7 +32,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
       rollingToast("동문인증이 필요한 기능입니다!", "warning");
       navigate("/graduate/certification");
     } else {
-      turnOnModal(setCompanyStoryRegisterModal);
+      setCompanyStoryRegisterModal(true);
     }
   };
 

@@ -4,6 +4,7 @@ export const ExternalSiteContainer = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+  margin-top: 10px;
 `;
 
 export const ExternalSiteTitle = styled.div`

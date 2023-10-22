@@ -19,7 +19,7 @@ export const NavContainer = styled.div`
 
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  row-gap: calc(2rem - 10px);
 
   position: sticky;
   top: calc(90px + 2rem);

@@ -17,6 +17,8 @@ const useTokenCheck = () => {
         !Token.getToken(REFRESH_TOKEN_KEY)
       ) {
         rollingToast("로그인이 필요한 기능입니다.", "warning");
+        // 어세스토큰만 있거나 리프레쉬 토큰만 있을 경우를 대비해 토큰을 비워줌
+        Token.clearToken();
         navigate("/");
       }
     };

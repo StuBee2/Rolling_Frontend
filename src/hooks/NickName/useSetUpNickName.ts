@@ -6,10 +6,10 @@ import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { memberErrorHandler } from "@src/utils/Error/Member/memberErrorHandler";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 
-export const useEditNickName = (nickName: string) => {
+export const useSetUpNickName = (nickName: string) => {
   const patchNickNameMutation = usePatchMyNickNameMutation();
   const [isEditNickName, setIsEditNickName] = useState(false);
-  const [editNickName, setEditNickName] = useState<string>(nickName);
+  const [setUpNickName, setSetUpNickName] = useState<string>(nickName);
   const { rollingToast } = useRollingToast();
   const { queryInvalidates } = useQueryInvalidates();
 
@@ -20,31 +20,31 @@ export const useEditNickName = (nickName: string) => {
     }
   };
 
-  const handleEditNickNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEditNickName(e.target.value);
+  const handleNickNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSetUpNickName(e.target.value);
   };
 
-  const hanldeEditNickNameCancel = () => {
+  const hanldeCancelClick = () => {
     setIsEditNickName(false);
-    setEditNickName(nickName);
+    setSetUpNickName(nickName);
   };
 
   const handleNickNameSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (editNickName.length > 15) {
+    if (setUpNickName.length > 15) {
       return rollingToast("15자내로 입력해주세요.", "warning");
     }
 
-    if (!editNickName) {
+    if (!setUpNickName) {
       return rollingToast("닉네임을 입력해주세요.", "warning");
     }
 
-    if (nickName === editNickName) {
+    if (nickName === setUpNickName) {
       return rollingToast("닉네임을 수정해주세요.", "warning");
     }
 
     patchNickNameMutation.mutate(
-      { nickName: editNickName },
+      { nickName: setUpNickName },
       {
         onSuccess: () => {
           rollingToast("닉네임이 수정되었습니다", "success");
@@ -67,10 +67,10 @@ export const useEditNickName = (nickName: string) => {
 
   return {
     handleEditNickNameQuestion,
-    handleEditNickNameChange,
+    handleNickNameChange,
     handleNickNameSubmit,
-    hanldeEditNickNameCancel,
+    hanldeCancelClick,
     isEditNickName,
-    editNickName,
+    setUpNickName,
   };
 };

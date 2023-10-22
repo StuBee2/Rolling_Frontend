@@ -15,9 +15,7 @@ export default function Form({ setIsOpenModal }: Props) {
     <S.FormContainer>
       <S.FormWrapper onSubmit={attr.handleRegistSubmit}>
         <S.CompanyLogoContainer>
-          <S.CompanyInfoText>
-            기업로고 <span>*</span>
-          </S.CompanyInfoText>
+          <S.CompanyInfoText>기업로고</S.CompanyInfoText>
           <S.CompanyLogoImg
             logo={attr.imgUrl || photo}
             onClick={attr.handleCompanyLogoClick}

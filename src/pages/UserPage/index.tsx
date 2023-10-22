@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function UserPage({ page }: Props) {
-  const memberRole = jwtDecoding("authority");
+  const memberRole = jwtDecoding("access", "authority");
   const navigate = useNavigate();
   return (
     <User>

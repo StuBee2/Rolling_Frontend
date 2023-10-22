@@ -79,7 +79,7 @@ export const CompanyAddress = styled.p`
 export const Description = styled.div`
   display: flex;
   column-gap: 5px;
-  line-height: 23px;
+  line-height: 25px;
   font-size: 16px;
   font-weight: 600;
   img {
@@ -89,7 +89,7 @@ export const Description = styled.div`
   p {
     width: 100%;
     font-size: 18px;
-    max-height: 160px;
+    max-height: 200px;
     white-space: pre-wrap;
     overflow-y: scroll;
     padding-left: 10px;

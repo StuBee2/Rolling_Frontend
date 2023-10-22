@@ -4,7 +4,7 @@ export const UserSkeletonContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 3rem;
 `;
 
 export const UserInfoSkeletonContainer = styled.div`

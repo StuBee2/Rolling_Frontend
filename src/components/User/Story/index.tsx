@@ -1,3 +1,4 @@
+import UserSkeleton from "@src/components/Common/Skeleton/User";
 import StoryItem from "@src/components/User/Story/StoryItem";
 import { useGetMyStoryQuery } from "@src/queries/Story/story.query";
 import { useEffect } from "react";
@@ -19,18 +20,20 @@ export default function Story() {
 
   return (
     <>
-      <S.ListWrapper>
-        {storyListData?.length!! > 0 ? (
-          storyList?.pages.map((data) =>
-            data.data.map((story) => (
-              <StoryItem {...story} key={story.storyId} />
-            ))
-          )
-        ) : (
-          <div>롤링한 기업이 없습니다.</div>
-        )}
-      </S.ListWrapper>
-      <div ref={ref} />
+      {storyListData?.length!! > 0 ? (
+        <>
+          <S.ListWrapper>
+            {storyList?.pages.map((data) =>
+              data.data.map((story) => (
+                <StoryItem {...story} key={story.storyId} />
+              ))
+            )}
+          </S.ListWrapper>
+          <div ref={ref} />
+        </>
+      ) : (
+        <UserSkeleton />
+      )}
     </>
   );
 }

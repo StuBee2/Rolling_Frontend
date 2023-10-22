@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { BsPencilSquare } from "@react-icons/all-files/bs/BsPencilSquare";
 import { HoverAnimation } from "@src/styles/common.style";
 
-export const AddNickNameForm = styled.form`
+export const NickNameForm = styled.form`
   display: flex;
   column-gap: 5px;
   align-items: center;
@@ -17,7 +17,7 @@ export const AddNickNameForm = styled.form`
   }
 `;
 
-export const AddNickNameBtn = styled.button`
+export const SetUpNickNameBtn = styled.button`
   border: none;
   outline: none;
   background-color: transparent;
@@ -32,7 +32,7 @@ export const NickName = styled.span<{ isHaveNickName: boolean }>`
   font-size: ${({ isHaveNickName }) => (isHaveNickName ? "22px" : "18px")};
 `;
 
-export const EditNickNameHoverContainer = styled.div`
+export const HoverContainer = styled.div`
   width: 40px;
   height: 40px;
   ${HoverAnimation};

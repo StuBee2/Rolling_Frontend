@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { StoryStatusCommonHover } from "../style";
 
-export const StoryStatusContainer = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: 183px;
   background-color: #4869f6;
@@ -15,7 +15,7 @@ export const StoryStatusContainer = styled.div`
   ${StoryStatusCommonHover};
 `;
 
-export const StoryStatus = styled.div`
+export const IconCotainer = styled.div`
   margin-bottom: 20px;
   img {
     width: 53px;
@@ -34,7 +34,7 @@ export const StoryNumber = styled.div`
   font-size: 22px;
 `;
 
-export const StoryNumberText = styled.p`
+export const WroteStoryCount = styled.p`
   color: #f9fafb;
   font-size: 18px;
   font-weight: bold;

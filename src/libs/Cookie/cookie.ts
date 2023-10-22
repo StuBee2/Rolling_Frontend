@@ -9,8 +9,8 @@ class Cookie {
     return item;
   }
 
-  public setCookie(key: string, value: string): void {
-    cookie.set(key, value);
+  public setCookie(key: string, value: string, expire?: Date): void {
+    cookie.set(key, value, { expires: expire });
   }
 
   public removeCookie(key: string): void {

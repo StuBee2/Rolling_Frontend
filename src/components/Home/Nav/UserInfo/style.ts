@@ -31,17 +31,20 @@ export const UserInfoBox = styled.div`
 `;
 
 export const UserInfoNickName = styled.p`
-  font-size: 18px;
   height: 20px;
-  font-weight: bold;
+  font-size: 18px;
+
+  font-weight: 600;
   overflow-x: hidden;
   text-overflow: ellipsis;
-  &:hover {
-    color: rgba(72, 105, 246, 1);
-  }
 
   span {
     color: #ec6a5e;
+  }
+
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    color: rgba(72, 105, 246, 1);
   }
 `;
 

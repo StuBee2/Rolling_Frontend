@@ -17,7 +17,7 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
    * 있다면 회사단일 조회 페이지이기에 jwt 디코딩해서 writerId랑 내 id를 비교
    * */
   const isCoincideMemberId =
-    !attr.writerId || jwtDecoding("sub") === attr.writerId;
+    !attr.writerId || jwtDecoding("access", "sub") === attr.writerId;
   const rankStatus = changeStoryStarGradesToArrayObject(attr);
 
   return (
@@ -45,7 +45,7 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
               <CompanyContent {...attr} />
             </S.ContentContainer>
           </S.CompanyInfoContainer>
-          
+
           <Star
             rankStatus={rankStatus}
             width={20}

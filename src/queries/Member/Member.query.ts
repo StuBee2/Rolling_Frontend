@@ -9,6 +9,7 @@ import { MemberType } from "@src/types/Member/member.type";
 import { AxiosError } from "axios";
 import { QUERY_KEYS } from "../queryKey";
 import { MemberNickNameParam } from "@src/repositories/Member/member.repository";
+import Token from "@src/libs/Token/Token";
 
 export const useGetMyInfoQuery = (
   options?: UseQueryOptions<MemberType, AxiosError, MemberType, string>
@@ -16,7 +17,14 @@ export const useGetMyInfoQuery = (
   useQuery(
     QUERY_KEYS.member.getMyMember,
     () => MemberRepositoryImpl.getMyInfo(),
-    { ...options, staleTime: 1000 * 60 * 60, cacheTime: 1000 * 60 * 60 }
+    {
+      ...options,
+      onError: () => {
+        window.alert("토큰이 위조 됐습니다.");
+        Token.clearToken();
+        window.location.href = "/";
+      },
+    }
   );
 
 export const usePatchMyNickNameMutation = () => {
