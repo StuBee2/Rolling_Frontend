@@ -1,4 +1,4 @@
-import { useCertify } from "@src/hooks/Graduate/useCertify";
+import { useCertify } from "@src/hooks/Alumni/useCertify";
 import * as S from "./style";
 import { Button } from "@stubee2/stubee2-rolling-ui";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
@@ -22,13 +22,13 @@ export default function Certify() {
     <S.Container>
       <S.Wrapper>
         <S.CertificationList>
-          <S.Title>DGSW 졸업생 인증</S.Title>
+          <S.Title>DGSW 동문 인증</S.Title>
           <S.CertificationInfo>
             <p>
-              해당 절차는 DGSW졸업생을 인증하여 서비스를 제공하기 위해
+              해당 절차는 DGSW 동문 인증하여 서비스를 제공하기 위해
               이루어집니다.
             </p>
-            <p> 졸업생 인증으로 롤링의 더 많은 기능을 활성화하세요.</p>
+            <p> 동문 인증으로 롤링의 더 많은 기능을 활성화하세요.</p>
           </S.CertificationInfo>
 
           <S.QuestionContainer

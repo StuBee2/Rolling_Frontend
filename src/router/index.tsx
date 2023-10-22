@@ -6,7 +6,7 @@ import NotFound from "../components/Common/NotFound";
 import { ROUTE_ITEMS } from "../constants/Router/router.constant";
 import CompanyDetailPage from "@src/pages/CompanyPage/CompanyDetailPage";
 import RegisterPage from "@src/pages/CompanyPage/CompanyRegisterPage";
-import CertifiedPage from "@src/pages/GraduatePage/CertifyPage";
+import CertifiedPage from "@src/pages/AlumniPage/CertifyPage";
 
 export default function Router() {
   return (
@@ -22,7 +22,7 @@ export default function Router() {
       ))}
       <Route path="/company/:id" element={<CompanyDetailPage />} />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/graduate/certification" element={<CertifiedPage />} />
+      <Route path="/alumni/certify" element={<CertifiedPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

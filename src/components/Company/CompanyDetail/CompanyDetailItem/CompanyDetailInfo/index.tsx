@@ -30,7 +30,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
   const handleRegistStory = () => {
     if (isNotMember) {
       rollingToast("동문인증이 필요한 기능입니다!", "warning");
-      navigate("/graduate/certification");
+      navigate("/alumni/certify");
     } else {
       setCompanyStoryRegisterModal(true);
     }

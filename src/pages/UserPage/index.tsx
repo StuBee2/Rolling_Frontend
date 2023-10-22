@@ -21,7 +21,7 @@ export default function UserPage({ page }: Props) {
         ) : (
           <AlumniCheck>
             <p>동문인증이 필요한 기능입니다.</p>
-            <Authenticate onClick={() => navigate("/graduate/certification")}>
+            <Authenticate onClick={() => navigate("/alumni/certify")}>
               인증하러 가기
             </Authenticate>
           </AlumniCheck>
