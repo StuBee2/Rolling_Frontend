@@ -15,6 +15,8 @@ import { companyErrorHanlder } from "@src/utils/Error/Company/companyErrorHanlde
 export const useRegistCompany = () => {
   const imgRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
   const [imgUrl, setImgUrl] = useState<string>("");
+  const [rgb, setRgb] = useState(-1);
+
   const formData = new FormData();
   const [companyInfo, setCompanyInfo] =
     useRecoilState<CompanyRegistInfo>(CompanyRegistAtom);
@@ -36,7 +38,8 @@ export const useRegistCompany = () => {
 
     fileUpload.mutate(formData as unknown as FileParam, {
       onSuccess: (imgUrl) => {
-        setImgUrl(imgUrl);
+        setImgUrl(imgUrl.url);
+        setRgb(imgUrl.rgb);
       },
       onError: (e) => {
         rollingToast("이미지 전송실패", "error");
@@ -72,7 +75,7 @@ export const useRegistCompany = () => {
         return rollingToast("기업소개를 작성해주세요!", "warning");
       }
 
-      const param = { ...companyInfo, imgUrl };
+      const param = { ...companyInfo, imgUrl, rgb };
 
       registCompany.mutate(param, {
         onSuccess: () => {
@@ -83,6 +86,7 @@ export const useRegistCompany = () => {
           ]);
           setCompanyInfo({ name: "", address: "", description: "" });
           setImgUrl("");
+          setRgb(-1);
           navigate("/");
         },
         onError: (error) => {

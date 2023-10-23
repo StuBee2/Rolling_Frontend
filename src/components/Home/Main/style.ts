@@ -53,7 +53,7 @@ export const MainItemContainer = styled.div`
   row-gap: 15px;
 `;
 
-export const MainItemListContainer = styled.div`
+export const MainItemWrapper = styled.div`
   widht: 100%;
   height: 100%;
 
@@ -62,7 +62,7 @@ export const MainItemListContainer = styled.div`
   flex-direction: column;
 `;
 
-export const MainItemWrapper = styled.div`
+export const MainItemContent = styled.div`
   width: 100%;
   height: 100%;
 
@@ -106,7 +106,7 @@ export const MainItemBox = styled.div`
   }
 `;
 
-export const CompanyLogoContainer = styled.div`
+export const CompanyLogoContainer = styled.div<{ rgb: string }>`
   width: 100%;
   height: 65%;
 
@@ -114,7 +114,7 @@ export const CompanyLogoContainer = styled.div`
   justify-content: center;
   border-bottom: 1px solid #ddd;
 
-  background-color: #fff;
+  background-color: ${({ rgb }) => rgb || "#fff"};
 
   @media screen and (max-width: 710px) {
     height: calc(100% - 121px);

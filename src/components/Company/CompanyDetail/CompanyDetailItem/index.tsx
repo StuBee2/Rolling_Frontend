@@ -20,7 +20,7 @@ export default function CompanyDetailItem({ id, setStoryCompanyInfo }: Props) {
     setStoryCompanyInfo({
       companyId: companyInfo?.companyId!!,
       companyName: companyInfo?.companyName!!,
-      companyLogo: companyInfo?.companyImgUrl!!,
+      companyLogo: companyInfo?.companyLogoUrl!!,
     });
   }, [setStoryCompanyInfo]);
 

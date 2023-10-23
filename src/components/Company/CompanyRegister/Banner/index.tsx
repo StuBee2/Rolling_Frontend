@@ -16,6 +16,7 @@ export default function Banner() {
             <p>내 기업이 등록되어있다면 다양한 서비스를 즐길 수 있어요</p>
           </S.BannerSubTitleContainer>
         </S.BannerTitleContainer>
+
         <S.MiddleBannerIcon src={middleBannerIcon} alt="이미지 없음" />
         <S.SmallBannerIcon1 src={smallBannerIcon1} alt="이미지 없음" />
         <S.BigBannerIcon1 src={bigBannerIcon1} alt="이미지 없음" />

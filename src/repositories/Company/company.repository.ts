@@ -10,6 +10,7 @@ export interface CompanyParam {
   address: string;
   description: string;
   imgUrl: string;
+  rgb: number;
 }
 
 export interface CompanyKeywordParam {

@@ -1,20 +1,20 @@
 import {
   MainItemContainer,
-  MainItemListContainer,
   MainItemWrapper,
+  MainItemContent,
 } from "@src/components/Home/Main/style";
 import * as S from "./style";
 
 export default function MainSkeleton() {
   return (
     <MainItemContainer>
-      <MainItemListContainer>
-        <MainItemWrapper>
+      <MainItemWrapper>
+        <MainItemContent>
           {Array.from({ length: 9 }).map((_, idx) => (
             <S.MainItemSkeletonBox key={idx} />
           ))}
-        </MainItemWrapper>
-      </MainItemListContainer>
+        </MainItemContent>
+      </MainItemWrapper>
     </MainItemContainer>
   );
 }

@@ -6,7 +6,7 @@ import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
 import logo from "@src/assets/images/Common/Logo.svg";
 import { RankCategoryTitle, RankNumber } from "./style";
-import MainSkeleton from "@src/components/Common/Skeleton/Home/Main";
+import { changeRgb } from "@src/utils/Rgb/changeRgb";
 
 interface Props {
   rankCategory: string;
@@ -27,8 +27,8 @@ function RankItem({ rankCategory }: Props) {
             <img src={smileFace} alt="이미지 없음" />
             <p>{getCompanyRankIntroduce(rankCategory)}</p>
           </RankCategoryTitle>
-          <S.MainItemListContainer>
-            <S.MainItemWrapper>
+          <S.MainItemWrapper>
+            <S.MainItemContent>
               {rankInfoSlicing?.map((item, idx) => (
                 <S.MainItemBox
                   key={item.companyId.id}
@@ -36,8 +36,12 @@ function RankItem({ rankCategory }: Props) {
                 >
                   <RankNumber>{idx + 1}</RankNumber>
 
-                  <S.CompanyLogoContainer>
-                    <S.LogoImg src={item.companyDetails.imgUrl || logo} />
+                  <S.CompanyLogoContainer
+                    rgb={changeRgb(item.companyDetails.companyLogo.rgb)}
+                  >
+                    <S.LogoImg
+                      src={item.companyDetails.companyLogo.url || logo}
+                    />
                   </S.CompanyLogoContainer>
 
                   <S.CompanyContentContainer>
@@ -58,11 +62,11 @@ function RankItem({ rankCategory }: Props) {
                   </S.CompanyContentContainer>
                 </S.MainItemBox>
               ))}
-            </S.MainItemWrapper>
-          </S.MainItemListContainer>
+            </S.MainItemContent>
+          </S.MainItemWrapper>
         </S.MainItemContainer>
       ) : (
-        <MainSkeleton />
+        <p>BEST 기업 랭킹에 등록된 회사가 없습니다.</p>
       )}
     </>
   );

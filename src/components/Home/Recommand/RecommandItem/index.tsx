@@ -4,7 +4,7 @@ import logo from "@src/assets/images/Common/Logo.svg";
 import * as S from "./style";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import RecommandSkeleton from "@src/components/Common/Skeleton/Home/Recommand";
+import { changeRgb } from "@src/utils/Rgb/changeRgb";
 
 export default function RecommandItem() {
   const { data, fetchNextPage } = useGetAllCompanyListQuery({
@@ -31,9 +31,11 @@ export default function RecommandItem() {
                   key={item.companyId.id}
                   onClick={() => navigate(`/company/${item.companyId.id}`)}
                 >
-                  <S.ImageContainer>
+                  <S.ImageContainer
+                    rgb={changeRgb(item.companyDetails.companyLogo.rgb)}
+                  >
                     <img
-                      src={item.companyDetails.imgUrl || logo}
+                      src={item.companyDetails.companyLogo.url || logo}
                       alt="이미지 없음"
                     />
                   </S.ImageContainer>
@@ -45,7 +47,7 @@ export default function RecommandItem() {
           </S.RecommandItemWrapper>
         </S.RecommandItemContainer>
       ) : (
-        <RecommandSkeleton />
+        <p>졸업생들이 추천하는 회사가 없습니다.</p>
       )}
     </>
   );

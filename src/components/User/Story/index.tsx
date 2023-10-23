@@ -1,4 +1,3 @@
-import UserSkeleton from "@src/components/Common/Skeleton/User";
 import StoryItem from "@src/components/User/Story/StoryItem";
 import { useGetMyStoryQuery } from "@src/queries/Story/story.query";
 import { useEffect } from "react";
@@ -32,7 +31,9 @@ export default function Story() {
           <div ref={ref} />
         </>
       ) : (
-        <UserSkeleton />
+        <S.doRollingText>
+          지금 당장 <span>롤링</span>하세요!
+        </S.doRollingText>
       )}
     </>
   );

@@ -24,7 +24,7 @@ export default function CompanyDetailContent({ ...attr }: CompanyInfoType) {
           {getDateText(new Date(attr.companyCreatedAt))} 작성
         </CompanyDetailRegistAt>
         <S.Info>
-          <img src={attr.companyImgUrl || logo} alt="이미지 없음" />
+          <img src={attr.companyLogoUrl || logo} alt="이미지 없음" />
           <div>
             <S.CompanyName>{attr.companyName}</S.CompanyName>
             <S.CompanyAddress>{attr.companyAddress}</S.CompanyAddress>

@@ -3,6 +3,7 @@ import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
 import * as S from "../../style";
 import logo from "@src/assets/images/Common/Logo.svg";
+import { changeRgb } from "@src/utils/Rgb/changeRgb";
 
 interface Props {
   company: string;
@@ -18,8 +19,8 @@ export default function SearchItem({ company }: Props) {
 
   return (
     <S.MainItemContainer>
-      <S.MainItemListContainer>
-        <S.MainItemWrapper>
+      <S.MainItemWrapper>
+        <S.MainItemContent>
           {companyList![0].data.length!! > 0 ? (
             companyList!.map((data) =>
               data.data.map((item) => (
@@ -27,8 +28,12 @@ export default function SearchItem({ company }: Props) {
                   key={item.companyId.id}
                   onClick={() => navigate(`/company/${item.companyId.id}`)}
                 >
-                  <S.CompanyLogoContainer>
-                    <S.LogoImg src={item.companyDetails.imgUrl || logo} />
+                  <S.CompanyLogoContainer
+                    rgb={changeRgb(item.companyDetails.companyLogo.rgb)}
+                  >
+                    <S.LogoImg
+                      src={item.companyDetails.companyLogo.url || logo}
+                    />
                   </S.CompanyLogoContainer>
 
                   <S.CompanyContentContainer>
@@ -53,8 +58,8 @@ export default function SearchItem({ company }: Props) {
           ) : (
             <p>검색한 회사가 없습니다.</p>
           )}
-        </S.MainItemWrapper>
-      </S.MainItemListContainer>
+        </S.MainItemContent>
+      </S.MainItemWrapper>
     </S.MainItemContainer>
   );
 }

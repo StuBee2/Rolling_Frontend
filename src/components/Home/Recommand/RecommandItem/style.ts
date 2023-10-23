@@ -36,7 +36,7 @@ export const RecommandItemBox = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.div<{ rgb: string }>`
   width: 100%;
   height: 167px;
 
@@ -47,7 +47,7 @@ export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   overflow: hidden;
-  background-color: #fff;
+  background-color: ${({ rgb }) => rgb || "#fff"};
 
   img {
     max-width: 100%;

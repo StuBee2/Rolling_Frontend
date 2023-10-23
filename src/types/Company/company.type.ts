@@ -8,12 +8,19 @@ export interface CompanyListType {
     id: string;
   };
   companyDetails: {
+    registrantId: {
+      id: number;
+    };
     name: string;
+    description: string;
     companyAddress: {
       address: string;
     };
-    description: string;
-    imgUrl: string;
+    companyLogo: {
+      url: string;
+      rgb: number;
+    };
+    companyStatus: "ACCEPTED" | "PENDING";
     createdAt: string;
     modifiedAt: string;
   };
@@ -28,7 +35,8 @@ export interface CompanyInfoType extends CompanyStarGrade {
   companyName: string;
   companyAddress: string;
   companyDescription: string;
-  companyImgUrl: string;
+  companyLogoUrl: string;
+  companyLogoRGB: string;
   companyCreatedAt: string;
   companyModifiedAt: string;
   registrantId: string;
