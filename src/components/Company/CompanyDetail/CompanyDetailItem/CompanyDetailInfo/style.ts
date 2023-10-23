@@ -6,7 +6,7 @@ export const Container = styled.div`
   padding-left: 5rem;
   display: flex;
   flex-direction: column;
-  row-gap: 8rem;
+  row-gap: 7.5rem;
 
   overflow-y: scroll;
   ::-webkit-scrollbar {
