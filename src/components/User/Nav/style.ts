@@ -40,6 +40,7 @@ export const UserName = styled.p`
 export const UserEmail = styled.p`
   font-size: 15px;
   color: #61677e;
+  cursor: pointer;
 `;
 
 export const PageSelectContainer = styled.div`

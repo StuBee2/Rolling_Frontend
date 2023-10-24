@@ -1,6 +1,6 @@
 import * as S from "./style";
 import { useLocation, useNavigate } from "react-router-dom";
-import logo from "@src/assets/images/Common/Logo.svg";
+import logo from "@src/assets/icons/Logo/logo.png";
 import search2 from "@src/assets/icons/Search/search2.png";
 import { HEADER_ITEMS } from "@src/constants/Header/header.constant";
 import token from "@src/libs/Token/Token";

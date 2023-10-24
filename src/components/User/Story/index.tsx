@@ -31,9 +31,7 @@ export default function Story() {
           <div ref={ref} />
         </>
       ) : (
-        <S.doRollingText>
-          지금 당장 <span>롤링</span>하세요!
-        </S.doRollingText>
+        <p>지금 당장 롤링하세요!</p>
       )}
     </>
   );

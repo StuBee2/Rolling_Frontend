@@ -2,7 +2,7 @@ import { useGetCompanySerachListQuery } from "@src/queries/Company/company.query
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
 import * as S from "../../style";
-import logo from "@src/assets/images/Common/Logo.svg";
+import logo from "@src/assets/icons/Logo/logo.png";
 import { getRgb } from "@src/utils/Rgb/getRgb";
 
 interface Props {

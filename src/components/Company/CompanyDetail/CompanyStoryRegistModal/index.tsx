@@ -1,7 +1,7 @@
 import { StoryCompanyInfoType } from "@src/types/Story/story.type";
 import { Dispatch, SetStateAction, useState } from "react";
 import * as S from "./style";
-import logo from "@src/assets/images/Common/Logo.svg";
+import logo from "@src/assets/icons/Logo/logo.png";
 import close from "@src/assets/images/Story/close.svg";
 import Form from "./Form";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";

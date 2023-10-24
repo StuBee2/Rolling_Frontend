@@ -2,7 +2,7 @@ import bolt from "@src/assets/icons/Company/bolt.png";
 import { convertStarRatingObject } from "@src/utils/StarRating/convertRankingObject";
 import { StarRating } from "@stubee2/stubee2-rolling-ui";
 import * as S from "./style";
-import Logo from "@src/assets/images/Common/Logo.svg";
+import logo from "@src/assets/icons/Logo/logo.png";
 import { CompanyStarGradeInfo } from "@src/types/Company/company.type";
 
 interface Props {
@@ -16,7 +16,7 @@ export default function CompanyStarGrades({ starGradeInfo }: Props) {
     <S.Container>
       <S.Wrapper>
         <S.CompanyBasicInfo>
-          <img src={attr.companyImgUrl || Logo} alt="이미지 없음" />
+          <img src={attr.companyImgUrl || logo} alt="이미지 없음" />
           <p>{attr.companyName}</p>
         </S.CompanyBasicInfo>
         <S.ItemContainer>

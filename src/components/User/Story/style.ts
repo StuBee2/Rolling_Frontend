@@ -7,12 +7,3 @@ export const ListWrapper = styled.div`
   row-gap: 3rem;
   justify-content: center;
 `;
-
-export const doRollingText = styled.p`
-  font-size: 18px;
-  font-weight: 600;
-
-  span {
-    color: rgb(72, 105, 246);
-  }
-`;

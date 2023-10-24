@@ -22,12 +22,22 @@ export default function Nav({ pathName }: Props) {
     setMyMemberInfo(myInfo!!);
   }, [myInfo]);
 
+  const handleSetUpEmailClick = () => {
+    window.location.href = "https://github.com/settings/profile";
+  };
+
   return (
     <S.UserNavBar>
       <S.UserInfoContainer>
         <S.UserImg src={myInfo?.socialDetails.imageUrl} />
         <S.UserName>{myInfo?.socialDetails.name}</S.UserName>
-        <S.UserEmail>{myInfo?.socialDetails.email || ""}</S.UserEmail>
+        <S.UserEmail
+          onClick={() =>
+            !myInfo?.socialDetails.email && handleSetUpEmailClick()
+          }
+        >
+          {myInfo?.socialDetails.email || "이메일을 설정해주세요."}
+        </S.UserEmail>
       </S.UserInfoContainer>
 
       <S.PageSelectContainer>

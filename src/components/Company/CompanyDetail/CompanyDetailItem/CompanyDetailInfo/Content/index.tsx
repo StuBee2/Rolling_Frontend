@@ -2,7 +2,7 @@ import * as S from "./style";
 import bag from "@src/assets/icons/Company/bag.png";
 import tool from "@src/assets/icons/Company/tool.png";
 import { CompanyInfoType } from "@src/types/Company/company.type";
-import logo from "@src/assets/images/Common/Logo.svg";
+import logo from "@src/assets/icons/Logo/logo.png";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { CompanyDetailRegistAt } from "../style";
 

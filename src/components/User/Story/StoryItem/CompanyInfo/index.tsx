@@ -1,5 +1,5 @@
 import * as S from "./style";
-import Logo from "@src/assets/images/Common/Logo.svg";
+import Logo from "@src/assets/icons/Logo/logo.png";
 import { useNavigate } from "react-router-dom";
 
 interface Props {

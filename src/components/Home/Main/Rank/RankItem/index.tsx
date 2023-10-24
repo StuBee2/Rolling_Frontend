@@ -4,7 +4,7 @@ import { getCompanyRankIntroduce } from "@src/utils/Rank/getCompanyRankIntroduce
 import smileFace from "@src/assets/icons/Home/smileFace.png";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
-import logo from "@src/assets/images/Common/Logo.svg";
+import logo from "@src/assets/icons/Logo/logo.png";
 import { RankCategoryTitle, RankNumber } from "./style";
 import { getRgb } from "@src/utils/Rgb/getRgb";
 
