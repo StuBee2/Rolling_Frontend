@@ -3,7 +3,7 @@ import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
 import * as S from "../../style";
 import logo from "@src/assets/images/Common/Logo.svg";
-import { changeRgb } from "@src/utils/Rgb/changeRgb";
+import { getRgb } from "@src/utils/Rgb/getRgb";
 
 interface Props {
   company: string;
@@ -29,7 +29,7 @@ export default function SearchItem({ company }: Props) {
                   onClick={() => navigate(`/company/${item.companyId.id}`)}
                 >
                   <S.CompanyLogoContainer
-                    rgb={changeRgb(item.companyDetails.companyLogo.rgb)}
+                    rgb={getRgb(item.companyDetails.companyLogo.rgb)}
                   >
                     <S.LogoImg
                       src={item.companyDetails.companyLogo.url || logo}

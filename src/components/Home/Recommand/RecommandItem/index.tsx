@@ -4,7 +4,7 @@ import logo from "@src/assets/images/Common/Logo.svg";
 import * as S from "./style";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { changeRgb } from "@src/utils/Rgb/changeRgb";
+import { getRgb } from "@src/utils/Rgb/getRgb";
 
 export default function RecommandItem() {
   const { data, fetchNextPage } = useGetAllCompanyListQuery({
@@ -32,7 +32,7 @@ export default function RecommandItem() {
                   onClick={() => navigate(`/company/${item.companyId.id}`)}
                 >
                   <S.ImageContainer
-                    rgb={changeRgb(item.companyDetails.companyLogo.rgb)}
+                    rgb={getRgb(item.companyDetails.companyLogo.rgb)}
                   >
                     <img
                       src={item.companyDetails.companyLogo.url || logo}

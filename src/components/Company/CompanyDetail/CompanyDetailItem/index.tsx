@@ -1,6 +1,6 @@
 import { useGetCompanyInfoIdQuery } from "@src/queries/Company/company.query";
 import { StoryCompanyInfoType } from "@src/types/Story/story.type";
-import { tieStarGradeToObject } from "@src/utils/StarGrade/tieStarGradeToObject";
+import { tieStarGradeToObject } from "@src/utils/StarRating/tieStarGradeToObject";
 import { Dispatch, SetStateAction, useEffect } from "react";
 import CompanyDetailInfo from "./CompanyDetailInfo";
 import CompanyStarGrades from "./CompanyStarGrades";

@@ -6,7 +6,7 @@ import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
 import logo from "@src/assets/images/Common/Logo.svg";
 import { RankCategoryTitle, RankNumber } from "./style";
-import { changeRgb } from "@src/utils/Rgb/changeRgb";
+import { getRgb } from "@src/utils/Rgb/getRgb";
 
 interface Props {
   rankCategory: string;
@@ -37,7 +37,7 @@ function RankItem({ rankCategory }: Props) {
                   <RankNumber>{idx + 1}</RankNumber>
 
                   <S.CompanyLogoContainer
-                    rgb={changeRgb(item.companyDetails.companyLogo.rgb)}
+                    rgb={getRgb(item.companyDetails.companyLogo.rgb)}
                   >
                     <S.LogoImg
                       src={item.companyDetails.companyLogo.url || logo}

@@ -1,5 +1,5 @@
 import bolt from "@src/assets/icons/Company/bolt.png";
-import { changeStarGradeToArrayObjcet } from "@src/utils/StarGrade/changeStarGradeToArrayObjcet";
+import { convertStarRatingObject } from "@src/utils/StarRating/convertRankingObject";
 import { StarRating } from "@stubee2/stubee2-rolling-ui";
 import * as S from "./style";
 import Logo from "@src/assets/images/Common/Logo.svg";
@@ -11,6 +11,7 @@ interface Props {
 
 export default function CompanyStarGrades({ starGradeInfo }: Props) {
   const { ...attr } = starGradeInfo;
+  console.log(attr.companyImgUrl);
   return (
     <S.Container>
       <S.Wrapper>
@@ -24,17 +25,17 @@ export default function CompanyStarGrades({ starGradeInfo }: Props) {
             <p>평균 평점</p>
           </S.CompanyGradesText>
           <S.ItemUl>
-            {changeStarGradeToArrayObjcet(attr).map((item) => (
+            {convertStarRatingObject(attr).map((item) => (
               <li key={item.id}>
                 <S.StarGradeContainer>
-                  <S.StarGradeName>{item.name}</S.StarGradeName>
-                  <S.StarGradeScore>{item.rating}점</S.StarGradeScore>
+                  <S.StarGradeTitle>{item.title}</S.StarGradeTitle>
+                  <S.StarGradeScore>{item.star}점</S.StarGradeScore>
                 </S.StarGradeContainer>
                 <div>
                   <StarRating
                     width={25}
                     height={25}
-                    starRatingCount={item.rating!!}
+                    starRatingCount={item.star!!}
                   />
                 </div>
               </li>

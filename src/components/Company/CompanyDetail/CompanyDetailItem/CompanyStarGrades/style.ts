@@ -118,7 +118,7 @@ export const StarGradeContainer = styled.div`
   }
 `;
 
-export const StarGradeName = styled.p`
+export const StarGradeTitle = styled.p`
   font-size: 15px;
   &:after {
     content: "·";

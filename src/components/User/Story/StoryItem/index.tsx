@@ -6,9 +6,9 @@ import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import Token from "@src/libs/Token/Token";
 import { StoryCommonType } from "@src/types/Story/story.type";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
-import { changeStoryStarGradesToArrayObject } from "@src/utils/Story/changeStoryStarGradesToArrayObject";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import * as S from "./style";
+import { convertStarRatingObject } from "@src/utils/StarRating/convertRankingObject";
 
 // 마이페이지와 회사단일 조회 페이지에서 같이 쓰이는 컴포넌트
 export default function StoryItem({ ...attr }: StoryCommonType) {
@@ -18,7 +18,7 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
    * */
   const isCoincideMemberId =
     !attr.writerId || tokenDecode("access", "sub") === attr.writerId;
-  const rankStatus = changeStoryStarGradesToArrayObject(attr);
+  const rankStatus = convertStarRatingObject(attr);
 
   return (
     <S.Container>

@@ -6,7 +6,7 @@ import blueHeart from "@src/assets/icons/Story/blueHeart.png";
 import good from "@src/assets/icons/Story/good.png";
 import { StoryItemType } from "@src/types/Story/story.type";
 
-export const convertStoryItemsObject = (item: StoryItemType) => {
+export const storyItemsObject = (item: StoryItemType) => {
   return [
     {
       id: 0,
