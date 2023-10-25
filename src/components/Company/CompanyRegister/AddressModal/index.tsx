@@ -10,9 +10,23 @@ interface Props {
 }
 
 export default function AddressModal({ setIsOpenModal }: Props) {
-  const { companyInfo, setCompanyInfo } = useRegistCompany();
+  const {
+    companyInfo,
+    setCompanyInfo,
+    companyModifyInfo,
+    setCompanyModifyInfo,
+    companyId,
+  } = useRegistCompany();
+
   const handleSelectAddress = (data: { address: string }) => {
     setIsOpenModal(false);
+
+    if (companyId) {
+      setCompanyModifyInfo((prev) => ({
+        ...prev,
+        address: data.address,
+      }));
+    }
     setCompanyInfo((prev) => ({
       ...prev,
       address: data.address,
@@ -26,7 +40,7 @@ export default function AddressModal({ setIsOpenModal }: Props) {
         animation={true}
         onComplete={handleSelectAddress} // 값을 선택할 경우 실행되는 이벤트
         autoClose={false} // 값을 선택할 경우 사용되는 DOM을 제거하여 자동 닫힘 설정
-        defaultQuery={companyInfo.address}
+        defaultQuery={companyInfo.address || companyModifyInfo.address}
         style={S.AddressModalItem}
       />
     </S.AddressModalContainer>

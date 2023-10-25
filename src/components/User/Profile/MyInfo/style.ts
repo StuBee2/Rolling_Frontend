@@ -37,7 +37,7 @@ export const AbleContainer = styled.div`
   align-items: center;
   column-gap: 20px;
   white-space: nowrap;
-  overflow-x: scroll;
+  overflow-x: auto;
   img {
     width: 85px;
     height: 85px;

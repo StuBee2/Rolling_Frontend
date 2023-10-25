@@ -8,7 +8,7 @@ export const MainContainer = styled.div`
   flex-direction: column;
   row-gap: 3rem;
 
-  overflow-y: scroll;
+  overflow-y: auto;
   ::-webkit-scrollbar {
     display: none;
   }
@@ -37,6 +37,7 @@ export const MainTitle = styled.div`
     width: 27px;
     height: 27px;
   }
+
   p {
     span {
       color: rgba(236, 106, 94, 1);
@@ -89,7 +90,7 @@ export const MainItemBox = styled.div`
   transition: all 0.1s ease-in-out;
   &:hover {
     transform: scale(0.99);
-    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.06);
   }
 
   @media screen and (max-width: 1385px) {

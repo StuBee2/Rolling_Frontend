@@ -6,16 +6,23 @@ export const FormContainer = styled.div`
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid #dddddd;
-  padding: 3rem 0 1.5rem 0;
+  margin-bottom: 2rem;
+  padding-bottom: 2.5rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 200px;
+
+  z-index: 1;
+
+  margin-top: 12rem;
 
   @media (max-width: 680px) {
     width: 480px;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding-top: 2.4rem;
   }
 `;
 
@@ -25,12 +32,13 @@ export const FormWrapper = styled.form`
 
   display: flex;
   flex-direction: column;
-  row-gap: 4.5rem;
+  row-gap: 3rem;
 `;
 
 export const CompanyLogoContainer = styled.div`
   width: 100%;
   height: auto;
+
   display: flex;
   flex-direction: column;
   row-gap: 15px;
@@ -63,35 +71,28 @@ export const CompanyLogoInput = styled.input`
 
 export const InputContainer = styled.div<{ isTextArea?: boolean }>`
   width: 100%;
-  height: ${({ isTextArea }) => (isTextArea ? "200px" : "100px")};
+  height: auto;
   display: flex;
   flex-direction: column;
   row-gap: 15px;
 `;
 
+export const InputWrapper = styled.div`
+  display: flex;
+  column-gap: 10px;
+`;
+
 export const CompanyAddressInputContainer = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
 
-  input {
-    width: calc(100% - 85px);
-    height: 60px;
-    font-size: 16px;
-    padding-left: 15px;
-    outline: none;
-    border: 1px solid rgb(189, 194, 208);
-    border-radius: 5px;
-    ::placeholder {
-      color: rgba(189, 194, 208, 1);
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 `;
 
-export const SearchButton = styled.div`
-  width: 85px;
+export const SearchButton = styled.span`
+  width: 100px;
   height: 60px;
 
   font-size: 18px;
@@ -131,6 +132,7 @@ export const ButtonContainer = styled.div`
   height: 50px;
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 2rem;
 
   button {
     width: 153px;

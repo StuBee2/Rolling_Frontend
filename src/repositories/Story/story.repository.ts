@@ -1,4 +1,5 @@
 import {
+  StoryCompanyContentsType,
   StoryInfiniteScrollListType,
   StoryInfoIdInfiniteScrollListType,
   StoryInfoIdType,
@@ -25,8 +26,12 @@ export interface StoryRepository {
   getStoryInfoId({ id }: CommonIdParam): Promise<StoryInfoIdType>;
   getStoryMyStatus(): Promise<StoryMyStatusResponse>;
 
-  postStory(StoryInfo: StoryParam): Promise<StoryPostResponse>;
-  deleteMyStory(StoryId: string): Promise<void>;
+  postStory(storyInfo: StoryParam): Promise<StoryPostResponse>;
+  deleteMyStory(storyId: string): Promise<void>;
+  patchMyStory(input: {
+    storyId: string;
+    storyContent: StoryCompanyContentsType;
+  }): Promise<void>;
 }
 
 export interface StoryParam {

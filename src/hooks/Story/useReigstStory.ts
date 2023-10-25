@@ -1,24 +1,25 @@
-import { StoryCompanyContentsType } from "@src/types/Story/story.type";
 import { usePostStoryMutation } from "@src/queries/Story/story.query";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { StoryParam } from "@src/repositories/Story/story.repository";
 import axios, { AxiosError } from "axios";
 import { storyErrorHanlder } from "@src/utils/Error/Story/storyErrorHanlder";
 import { QUERY_KEYS } from "@src/queries/queryKey";
-import { CompanyStoryRegistModalAtom } from "@src/stores/company/company.store";
 import { useSetRecoilState } from "recoil";
-import { POSITION_ITEMS } from "@src/constants/Position/position.constant";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
+import {
+  StoryCompanyContentsType,
+  StoryInputRefType,
+} from "@src/types/Story/story.type";
+import { StoryRegistModalAtom } from "@src/stores/story/story.store";
 
 export const useRegistStory = (companyId: string) => {
   const postStory = usePostStoryMutation();
   const { queryInvalidates } = useQueryInvalidates();
   const { rollingToast } = useRollingToast();
-  const setIsCompanyStoryRegisterModal = useSetRecoilState(
-    CompanyStoryRegistModalAtom
-  );
+  const setIsCompanyStoryRegisterModal =
+    useSetRecoilState(StoryRegistModalAtom);
 
   const [storyContents, setStoryContents] = useState<StoryCompanyContentsType>({
     position: "",
@@ -33,6 +34,7 @@ export const useRegistStory = (companyId: string) => {
     advantages: "",
     disAdvantages: "",
   });
+
   const [storyStarGrade, setStoryStarGrade] = useState<Record<string, number>>({
     salaryAndBenefits: 0,
     workLifeBalance: 0,
@@ -40,14 +42,40 @@ export const useRegistStory = (companyId: string) => {
     careerAdvancement: 0,
   });
 
+  const inputRefs: StoryInputRefType = {
+    position: useRef<HTMLInputElement>(null),
+    schoolLife: useRef<HTMLInputElement>(null),
+    preparationCourse: useRef<HTMLInputElement>(null),
+    mostImportantThing: useRef<HTMLInputElement>(null),
+    employmentProcess: useRef<HTMLInputElement>(null),
+    interviewQuestion: useRef<HTMLInputElement>(null),
+  };
+
+  const [isError, setIsError] = useState({
+    position: false,
+    schoolLife: false,
+    preparationCourse: false,
+    employmentProcess: false,
+    interviewQuestion: false,
+    mostImportantThing: false,
+  });
+
   const handleCompanyStoryChange = (
-    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
+    isError?: boolean
   ) => {
     const { name, value } = e.target;
     setStoryContents((prev) => ({
       ...prev,
       [name]: value,
     }));
+
+    if (isError && value !== "") {
+      setIsError((prev) => ({
+        ...prev,
+        [name]: false,
+      }));
+    }
   };
 
   const handleStarGradeChange = (name: string, grade: number) => {
@@ -65,61 +93,35 @@ export const useRegistStory = (companyId: string) => {
         organizationalCulture,
         careerAdvancement,
       } = storyStarGrade;
-      const regex =
-        /^(오전|오후)?\s(1?[0-9]|2[0-4])시 ~ (오전|오후)?\s(1?[0-9]|2[0-4])시/;
 
-      if (!POSITION_ITEMS.some((item) => item === attr.position)) {
-        return rollingToast("입력하신 포지션이 없습니다!", "warning");
+      if (attr.position === "") {
+        setIsError((prev) => ({ ...prev, position: true }));
+        return inputRefs.position.current?.focus();
       }
 
       if (attr.schoolLife.trim() === "") {
-        return rollingToast("학교생활을 작성해주세요!", "warning");
+        setIsError((prev) => ({ ...prev, schoolLife: true }));
+        return inputRefs.schoolLife.current?.focus();
       }
 
       if (attr.preparationCourse.trim() === "") {
-        return rollingToast("취업 준비 과정을 작성해주세요!", "warning");
+        setIsError((prev) => ({ ...prev, preparationCourse: true }));
+        return inputRefs.preparationCourse.current?.focus();
       }
 
       if (attr.employmentProcess.trim() === "") {
-        return rollingToast("채용 프로세스을 작성해주세요!", "warning");
+        setIsError((prev) => ({ ...prev, employmentProcess: true }));
+        return inputRefs.employmentProcess.current?.focus();
       }
 
       if (attr.interviewQuestion.trim() === "") {
-        return rollingToast("면접 질문을 작성해주세요!", "warning");
+        setIsError((prev) => ({ ...prev, interviewQuestion: true }));
+        return inputRefs.interviewQuestion.current?.focus();
       }
 
       if (attr.mostImportantThing.trim() === "") {
-        return rollingToast(
-          "자신이 생각하는 가장 중요한 점을 작성해주세요!",
-          "warning"
-        );
-      }
-
-      if (attr.welfare.trim() === "") {
-        return rollingToast("사내 복지를 작성해주세요!", "warning");
-      }
-
-      if (attr.meal.trim() === "") {
-        return rollingToast("식사 제공 여부를 작성해주세요!", "warning");
-      }
-
-      if (attr.commuteTime.trim() === "") {
-        return rollingToast("출퇴근 시간을 작성해주세요!", "warning");
-      }
-
-      if (!attr.commuteTime.trim().match(regex)) {
-        return rollingToast(
-          "오전/오후 몇시 ~ 오전/오후 몇시 형식으로 맞춰주세요",
-          "warning"
-        );
-      }
-
-      if (attr.advantages.trim() === "") {
-        return rollingToast("회사 장점을 작성해주세요!", "warning");
-      }
-
-      if (attr.disAdvantages.trim() === "") {
-        return rollingToast("회사 단점을 작성해주세요!", "warning");
+        setIsError((prev) => ({ ...prev, mostImportantThing: true }));
+        return inputRefs.mostImportantThing.current?.focus();
       }
 
       // 만족도 별점 0점 검증
@@ -172,5 +174,8 @@ export const useRegistStory = (companyId: string) => {
     handleCompanyStoryChange,
     handleStarGradeChange,
     handleCompanyStorySubmit,
+    isError,
+    setIsError,
+    inputRefs,
   };
 };

@@ -10,7 +10,7 @@ export interface CompanyParam {
   address: string;
   description: string;
   imgUrl: string;
-  rgb: number;
+  rgb: number | null;
 }
 
 export interface CompanyKeywordParam {
@@ -60,4 +60,9 @@ export interface CompanyRepository {
   getCompanyRankBalance(): Promise<CompanyListType[]>;
 
   deleteCompany(companyId: CompanyIdParam): Promise<void>;
+
+  patchCompany(input: {
+    companyId: string;
+    companyData: CompanyParam;
+  }): Promise<void>;
 }

@@ -107,3 +107,21 @@ export interface StoryCompanyContentsType {
   disAdvantages: string;
   employmentProcess: string;
 }
+
+export interface StoryRegistErrorType {
+  position: boolean;
+  schoolLife: boolean;
+  preparationCourse: boolean;
+  interviewQuestion: boolean;
+  mostImportantThing: boolean;
+  employmentProcess: boolean;
+}
+
+export interface StoryInputRefType {
+  position: React.RefObject<HTMLInputElement>;
+  schoolLife: React.RefObject<HTMLInputElement>;
+  preparationCourse: React.RefObject<HTMLInputElement>;
+  mostImportantThing: React.RefObject<HTMLInputElement>;
+  employmentProcess: React.RefObject<HTMLInputElement>;
+  interviewQuestion: React.RefObject<HTMLInputElement>;
+}

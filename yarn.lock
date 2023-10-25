@@ -2066,10 +2066,10 @@
     styled-components "5.3.9"
     typescript "4.8.4"
 
-"@stubee2/stubee2-rolling-ui@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.npmjs.org/@stubee2/stubee2-rolling-ui/-/stubee2-rolling-ui-2.9.0.tgz"
-  integrity sha512-iIiXIvAZBz3m+sppnXrhXpPFARk0HyADNl3lYCEbDnKvciowf8yeLsRESbjI1XqeD2Ojb+ByskKA8uaMbzB0Ow==
+"@stubee2/stubee2-rolling-ui@^2.12.0":
+  version "2.12.0"
+  resolved "https://registry.npmjs.org/@stubee2/stubee2-rolling-ui/-/stubee2-rolling-ui-2.12.0.tgz"
+  integrity sha512-r9d/fEXzNDgyAAED+cpvB6tIposMnXj0FfYEWNUl12gZVxfIL2aPFmPhK0v2eHQ2LSFgun2j2JZFMTzX6VCY2w==
   dependencies:
     "@react-icons/all-files" "^4.1.0"
     "@types/styled-components" "^5.1.26"

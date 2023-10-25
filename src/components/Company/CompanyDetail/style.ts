@@ -37,7 +37,7 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 500px) {
-    overflow-y: scroll;
+    overflow-y: auto;
     ::-webkit-scrollbar {
       display: none;
     }

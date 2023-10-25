@@ -24,6 +24,7 @@ interface Props {
 export default function CompanyInfo({ ...attr }: Props) {
   const navigate = useNavigate();
 
+  console.log(attr.companyImgUrl);
   const handleMovePage = () => {
     if (attr.memberSocialLoginId) {
       window.open(`https://github.com/${attr.memberSocialLoginId}`);

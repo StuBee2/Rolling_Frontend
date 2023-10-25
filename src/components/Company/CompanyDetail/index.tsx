@@ -1,4 +1,3 @@
-import { CompanyStoryRegistModalAtom } from "@src/stores/company/company.store";
 import { StoryCompanyInfoType } from "@src/types/Story/story.type";
 import { useAuthTopScroll } from "@stubee2/stubee2-rolling-util";
 import { Suspense, useState } from "react";
@@ -7,16 +6,16 @@ import ErrorBoundary from "../../Common/ErrorBoundary";
 import Portal from "../../Common/Portal";
 import CompanyDetailSkeleton from "../../Common/Skeleton/CompanyDetail";
 import CompanyDetailItem from "./CompanyDetailItem";
-import CompanyStoryRegistModal from "./CompanyStoryRegistModal";
-
+import StoryRegistModal from "@src/components/Modal/Story";
 import * as S from "./style";
+import { StoryRegistModalAtom } from "@src/stores/story/story.store";
 
 interface Props {
   id: string;
 }
 
 export default function CompanyDetail({ id }: Props) {
-  /** 리뷰등록 모달에서 쓰이는 useState */
+  /** 스토리 등록 모달에서 쓰이는 useState */
   const [storyCompanyInfo, setStoryCompanyInfo] =
     useState<StoryCompanyInfoType>({
       companyId: "",
@@ -25,7 +24,7 @@ export default function CompanyDetail({ id }: Props) {
     });
 
   const [companyStoryRegisterModal, setCompanyStoryRegisterModal] =
-    useRecoilState(CompanyStoryRegistModalAtom);
+    useRecoilState(StoryRegistModalAtom);
 
   useAuthTopScroll();
   return (
@@ -44,7 +43,7 @@ export default function CompanyDetail({ id }: Props) {
       </S.Container>
       {companyStoryRegisterModal && (
         <Portal>
-          <CompanyStoryRegistModal
+          <StoryRegistModal
             setStoryModal={setCompanyStoryRegisterModal}
             storyCompanyInfo={storyCompanyInfo}
           />

@@ -91,14 +91,14 @@ export const Description = styled.div`
     font-size: 18px;
     max-height: 200px;
     white-space: pre-wrap;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-left: 10px;
   }
 `;
 
 export const CompanyImgContainer = styled.div`
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   column-gap: 10px;
   padding-bottom: 15px;
   img {

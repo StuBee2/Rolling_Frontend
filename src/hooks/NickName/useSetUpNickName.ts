@@ -9,15 +9,12 @@ import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 export const useSetUpNickName = (nickName: string) => {
   const patchNickNameMutation = usePatchMyNickNameMutation();
   const [isEditNickName, setIsEditNickName] = useState(false);
-  const [setUpNickName, setSetUpNickName] = useState<string>(nickName);
+  const [setUpNickName, setSetUpNickName] = useState<string>("");
   const { rollingToast } = useRollingToast();
   const { queryInvalidates } = useQueryInvalidates();
 
   const handleEditNickNameQuestion = () => {
-    const answer = window.confirm("닉네임을 수정하시겠습니까?");
-    if (answer) {
-      setIsEditNickName(true);
-    }
+    setIsEditNickName(true);
   };
 
   const handleNickNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +23,7 @@ export const useSetUpNickName = (nickName: string) => {
 
   const hanldeCancelClick = () => {
     setIsEditNickName(false);
-    setSetUpNickName(nickName);
+    setSetUpNickName("");
   };
 
   const handleNickNameSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -54,6 +51,7 @@ export const useSetUpNickName = (nickName: string) => {
             QUERY_KEYS.story.story,
           ]);
           setIsEditNickName(false);
+          setSetUpNickName("");
         },
         onError: (error) => {
           if (axios.isAxiosError(error)) {

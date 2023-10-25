@@ -19,7 +19,7 @@ export const RankCategoriesUl = styled.ul`
   height: 40px;
 
   @media screen and (max-width: 595px) {
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 `;
 

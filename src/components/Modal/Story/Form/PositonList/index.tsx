@@ -41,7 +41,7 @@ const PositionListUl = styled.ul`
   height: auto;
   max-height: 300px;
   z-index: 3;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;

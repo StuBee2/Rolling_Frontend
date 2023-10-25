@@ -7,7 +7,7 @@ export const RegisterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: rgba(222, 224, 230, 1);
-  overflow-y: scroll;
+  overflow-y: auto;
   min-width: 500px;
   position: relative;
   top: 90px;

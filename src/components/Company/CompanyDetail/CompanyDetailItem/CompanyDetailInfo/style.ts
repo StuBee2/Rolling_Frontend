@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
   row-gap: 7.5rem;
 
-  overflow-y: scroll;
+  overflow-y: auto;
   ::-webkit-scrollbar {
     display: none;
   }
@@ -65,6 +65,7 @@ export const CompanyStoryButtonCotainer = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
+  column-gap: 10px;
 `;
 
 export const CompanyStoryButton = styled.button`

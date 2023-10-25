@@ -1,12 +1,12 @@
 import { AiOutlineUser } from "@react-icons/all-files/ai/AiOutlineUser";
 import { HoverAnimation } from "@src/styles/common.style";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const HeaderContainer = styled.div`
   width: 100%;
   height: 90px;
   font-size: 19px;
-  background-color: #f9fafb;
+  background-color: #fff;
   border-bottom: 1px solid #ddd;
 
   display: flex;
@@ -66,7 +66,25 @@ export const PageList = styled.li<{
   width: 80px;
   height: 45px;
   display: ${({ requiredToken }) => requiredToken && "none"};
-  ${HoverAnimation};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: all 0.1s ease-in-out;
+
+  ${({ isSelect }) =>
+    !isSelect &&
+    css`
+      &:hover {
+        background-color: #eeeeee;
+        transform: scale(0.98);
+      }
+      &:active {
+        background-color: #dddddd;
+      }
+    `};
 `;
 
 export const LoginSearchContainer = styled.div`

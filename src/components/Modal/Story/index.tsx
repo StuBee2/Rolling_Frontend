@@ -1,5 +1,5 @@
 import { StoryCompanyInfoType } from "@src/types/Story/story.type";
-import { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import * as S from "./style";
 import logo from "@src/assets/icons/Logo/logo.png";
 import close from "@src/assets/images/Story/close.svg";
@@ -12,22 +12,17 @@ interface Props {
   storyCompanyInfo: StoryCompanyInfoType;
 }
 
-export default function CompanyStoryRegistModal({
-  setStoryModal,
-  storyCompanyInfo,
-}: Props) {
+function StoryRegistModal({ setStoryModal, storyCompanyInfo }: Props) {
   const [showPositionList, setShowPositionList] = useState(false);
-  const closeQuestion = "리뷰 작성을 취소하시겠습니까?";
 
   const handleCloseModal = () => {
-    const answer = window.confirm(closeQuestion);
+    const answer = window.confirm("스토리 남기기를 취소하시겠습니까?");
     if (answer) {
       turnOffModal(setStoryModal);
     }
   };
-
   return (
-    <S.Container onClick={handleCloseModal}>
+    <S.Container>
       <S.Wrapper
         onClick={(e) => {
           e.stopPropagation();
@@ -60,3 +55,5 @@ export default function CompanyStoryRegistModal({
     </S.Container>
   );
 }
+
+export default React.memo(StoryRegistModal);

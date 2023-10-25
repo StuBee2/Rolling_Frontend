@@ -23,7 +23,7 @@ export const NavFooterWrapper = styled.ul`
   align-items: center;
   justify-content: space-evenly;
   font-size: 18px;
-  overflow-x: scroll;
+  overflow-x: auto;
   ::-webkit-scrollbar {
     display: none;
   }

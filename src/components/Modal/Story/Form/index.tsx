@@ -28,10 +28,12 @@ export default function Form({ ...attr }: Props) {
           value={hooks.storyContents.position}
           customStyle={S.InputStyle}
           name="position"
-          autocomplete="off"
+          inputRef={hooks.inputRefs.position}
           placeholder="해당 기업에서 어떤 업무를 담당하셨나요?"
+          isError={hooks.isError.position}
+          errorMessage={"해당 기업에서 어떤 업무를 담당하셨나요?"}
           handleChange={(e) => {
-            hooks.handleCompanyStoryChange(e);
+            hooks.handleCompanyStoryChange(e, hooks.isError.position);
             attr.setShowPositionList(true);
           }}
         />
@@ -45,7 +47,7 @@ export default function Form({ ...attr }: Props) {
           )}
       </S.InputContainer>
 
-      <S.InputContainer height="200px">
+      <S.InputContainer>
         <S.InputTitle>
           <p>학교생활</p>
           <span>*</span>
@@ -54,14 +56,18 @@ export default function Form({ ...attr }: Props) {
           value={hooks.storyContents.schoolLife}
           textType="textarea"
           customStyle={S.TextAreaStyle}
-          name="schoolLife"
-          autocomplete="off"
-          handleChange={hooks.handleCompanyStoryChange}
+          inputRef={hooks.inputRefs.schoolLife}
           placeholder="DGSW에서 보낸 학교 생활은 어땠나요?"
+          isError={hooks.isError.schoolLife}
+          errorMessage={"DGSW에서 보낸 학교 생활은 어땠나요?"}
+          name="schoolLife"
+          handleChange={(e) =>
+            hooks.handleCompanyStoryChange(e, hooks.isError.schoolLife)
+          }
         />
       </S.InputContainer>
 
-      <S.InputContainer height="200px">
+      <S.InputContainer>
         <S.InputTitle>
           <p>취업 준비 과정</p>
           <span>*</span>
@@ -69,11 +75,17 @@ export default function Form({ ...attr }: Props) {
         <TextInput
           value={hooks.storyContents.preparationCourse}
           customStyle={S.TextAreaStyle}
+          inputRef={hooks.inputRefs.preparationCourse}
+          placeholder="어떤 것을 중심으로 어떤 것을 공부하며 취업 준비를 하셨나요?"
+          isError={hooks.isError.preparationCourse}
+          errorMessage={
+            "어떤 것을 중심으로 어떤 것을 공부하며 취업 준비를 하셨나요?"
+          }
           textType="textarea"
           name="preparationCourse"
-          autocomplete="off"
-          handleChange={hooks.handleCompanyStoryChange}
-          placeholder="어떤 것을 중심으로 어떤 것을 공부하며 취업 준비를 하셨나요?"
+          handleChange={(e) =>
+            hooks.handleCompanyStoryChange(e, hooks.isError.preparationCourse)
+          }
         />
       </S.InputContainer>
 
@@ -85,10 +97,14 @@ export default function Form({ ...attr }: Props) {
         <TextInput
           value={hooks.storyContents.mostImportantThing}
           customStyle={S.InputStyle}
-          name="mostImportantThing"
-          autocomplete="off"
-          handleChange={hooks.handleCompanyStoryChange}
+          inputRef={hooks.inputRefs.mostImportantThing}
           placeholder="취업에 있어서 가장 중요한 점은 무엇인가요?"
+          isError={hooks.isError.mostImportantThing}
+          errorMessage={"취업에 있어서 가장 중요한 점은 무엇인가요?"}
+          name="mostImportantThing"
+          handleChange={(e) =>
+            hooks.handleCompanyStoryChange(e, hooks.isError.mostImportantThing)
+          }
         />
       </S.InputContainer>
 
@@ -100,14 +116,18 @@ export default function Form({ ...attr }: Props) {
         <TextInput
           value={hooks.storyContents.employmentProcess}
           customStyle={S.InputStyle}
-          name="employmentProcess"
-          autocomplete="off"
-          handleChange={hooks.handleCompanyStoryChange}
+          inputRef={hooks.inputRefs.employmentProcess}
           placeholder="채용 프로세스는 무엇이었나요?"
+          isError={hooks.isError.employmentProcess}
+          errorMessage={"채용 프로세스는 무엇이었나요?"}
+          name="employmentProcess"
+          handleChange={(e) =>
+            hooks.handleCompanyStoryChange(e, hooks.isError.employmentProcess)
+          }
         />
       </S.InputContainer>
 
-      <S.InputContainer height="200px">
+      <S.InputContainer>
         <S.InputTitle>
           <p>면접 질문</p>
           <span>*</span>
@@ -116,92 +136,85 @@ export default function Form({ ...attr }: Props) {
           value={hooks.storyContents.interviewQuestion}
           textType="textarea"
           customStyle={S.TextAreaStyle}
-          name="interviewQuestion"
-          autocomplete="off"
-          handleChange={hooks.handleCompanyStoryChange}
+          inputRef={hooks.inputRefs.interviewQuestion}
           placeholder="어떤 면접 질문을 받으셨나요?"
+          isError={hooks.isError.interviewQuestion}
+          errorMessage={"어떤 면접 질문을 받으셨나요?"}
+          name="interviewQuestion"
+          handleChange={(e) =>
+            hooks.handleCompanyStoryChange(e, hooks.isError.interviewQuestion)
+          }
         />
       </S.InputContainer>
 
       <S.InputContainer>
         <S.InputTitle>
           <p>사내복지</p>
-          <span>*</span>
         </S.InputTitle>
         <TextInput
           value={hooks.storyContents.welfare}
           customStyle={S.InputStyle}
-          name="welfare"
-          autocomplete="off"
-          handleChange={hooks.handleCompanyStoryChange}
           placeholder="해당 기업은 어떤 사내복지를 제공하나요?"
+          name="welfare"
+          handleChange={hooks.handleCompanyStoryChange}
         />
       </S.InputContainer>
 
       <S.InputContainer>
         <S.InputTitle>
           <p>식사 제공</p>
-          <span>*</span>
         </S.InputTitle>
         <TextInput
           value={hooks.storyContents.meal}
           customStyle={S.InputStyle}
-          name="meal"
-          autocomplete="off"
-          handleChange={hooks.handleCompanyStoryChange}
           placeholder="해당 기업에서 제공해주는 식사는 어떠한가요?"
+          name="meal"
+          handleChange={hooks.handleCompanyStoryChange}
         />
       </S.InputContainer>
 
       <S.InputContainer>
         <S.InputTitle>
           <p>출퇴근 시간</p>
-          <span>*</span>
         </S.InputTitle>
         <TextInput
           value={hooks.storyContents.commuteTime}
           customStyle={S.InputStyle}
-          name="commuteTime"
-          autocomplete="off"
-          handleChange={hooks.handleCompanyStoryChange}
           placeholder="출퇴근 시간은 몇 시부터 몇시까지 인가요?"
+          name="commuteTime"
+          handleChange={hooks.handleCompanyStoryChange}
         />
       </S.InputContainer>
 
       <S.InputContainer>
         <S.InputTitle>
           <p>기업의 장점</p>
-          <span>*</span>
         </S.InputTitle>
         <TextInput
           value={hooks.storyContents.advantages}
           customStyle={S.InputStyle}
-          name="advantages"
-          autocomplete="off"
-          handleChange={hooks.handleCompanyStoryChange}
           placeholder="해당 기업은 어떤 장점을 갖고 있나요?"
+          name="advantages"
+          handleChange={hooks.handleCompanyStoryChange}
         />
       </S.InputContainer>
 
       <S.InputContainer>
         <S.InputTitle>
           <p>기업의 단점</p>
-          <span>*</span>
         </S.InputTitle>
         <TextInput
           value={hooks.storyContents.disAdvantages}
           customStyle={S.InputStyle}
-          name="disAdvantages"
-          autocomplete="off"
-          handleChange={hooks.handleCompanyStoryChange}
           placeholder="해당 기업은 어떤 단점을 갖고 있나요?"
+          name="disAdvantages"
+          handleChange={hooks.handleCompanyStoryChange}
         />
       </S.InputContainer>
 
       <S.CompanySatisfaction>
         <S.InputTitle>
           <p>회사 만족도</p>
-          <span>*</span>
         </S.InputTitle>
         <S.StarGradeContainer>
           <RegistStarGrades

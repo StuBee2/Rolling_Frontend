@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   white-space: nowrap;
 
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 20px;
 `;

@@ -11,7 +11,6 @@ interface Props {
 
 export default function CompanyStarGrades({ starGradeInfo }: Props) {
   const { ...attr } = starGradeInfo;
-  console.log(attr.companyImgUrl);
   return (
     <S.Container>
       <S.Wrapper>

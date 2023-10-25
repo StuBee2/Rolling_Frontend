@@ -6,7 +6,7 @@ export const FooterContainer = styled.div`
   height: 270px;
   min-width: 500px;
   border-top: 1px solid #dddddd;
-  background-color: #f9fafb;
+  background-color: #fff;
 
   display: flex;
   justify-content: center;

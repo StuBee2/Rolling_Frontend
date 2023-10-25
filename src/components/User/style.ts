@@ -44,7 +44,7 @@ export const UserListContainer = styled.div<{ page: boolean }>`
   ${({ page }) =>
     page &&
     css`
-      overflow-y: scroll;
+      overflow-y: auto;
       ::-webkit-scrollbar {
         display: none;
       }

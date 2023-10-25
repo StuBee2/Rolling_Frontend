@@ -36,7 +36,7 @@ export interface CompanyInfoType extends CompanyStarGrade {
   companyAddress: string;
   companyDescription: string;
   companyLogoUrl: string;
-  companyLogoRGB: string;
+  companyLogoRGB: number;
   companyCreatedAt: string;
   companyModifiedAt: string;
   registrantId: string;
@@ -69,4 +69,24 @@ export interface CompanyRegistInfo {
   name: string;
   address: string;
   description: string;
+}
+
+export interface CompanyRegistErrorType {
+  name: boolean;
+  address: boolean;
+  description: boolean;
+}
+
+export interface CompanyInputRefType {
+  name: React.RefObject<HTMLInputElement>;
+  address: React.RefObject<HTMLInputElement>;
+  description: React.RefObject<HTMLInputElement>;
+}
+
+export interface CompanyModifyType {
+  name: string;
+  address: string;
+  description: string;
+  imgUrl: string;
+  rgb: number | null;
 }

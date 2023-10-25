@@ -49,7 +49,7 @@ export const Content = styled.p`
   line-height: 23px;
 
   &:hover {
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 `;
 

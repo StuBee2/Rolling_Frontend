@@ -9,6 +9,7 @@ import {
 } from "react-query";
 import StoryRepositoryImpl from "@src/repositories/Story/story.repositoryImpl";
 import {
+  StoryCompanyContentsType,
   StoryInfiniteScrollListType,
   StoryInfoIdInfiniteScrollListType,
   StoryInfoIdType,
@@ -134,6 +135,14 @@ export const usePostStoryMutation = () => {
 export const useDeleteMyStoryMutation = () => {
   const mutation = useMutation((storyId: string) =>
     StoryRepositoryImpl.deleteMyStory(storyId)
+  );
+  return mutation;
+};
+
+export const usePutMyStoryMutation = () => {
+  const mutation = useMutation(
+    (input: { storyId: string; storyContent: StoryCompanyContentsType }) =>
+      StoryRepositoryImpl.patchMyStory(input)
   );
   return mutation;
 };

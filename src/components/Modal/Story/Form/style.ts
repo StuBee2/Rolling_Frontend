@@ -9,9 +9,9 @@ export const Container = styled.form`
   row-gap: 3rem;
 `;
 
-export const InputContainer = styled.div<{ height?: string }>`
+export const InputContainer = styled.div`
   width: 100%;
-  height: ${({ height }) => height || "90px"};
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,7 +67,7 @@ export const CompanySatisfaction = styled.div`
 
 export const StarGradeContainer = styled.div`
   padding: 1rem;
-  overflow-x: scroll;
+  overflow-x: auto;
 `;
 
 export const TextAreaContainer = styled.div`

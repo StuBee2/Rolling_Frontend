@@ -2,7 +2,6 @@ import StoryItem from "@src/components/User/Story/StoryItem";
 import { useGetMyStoryQuery } from "@src/queries/Story/story.query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-
 import * as S from "./style";
 
 export default function Story() {

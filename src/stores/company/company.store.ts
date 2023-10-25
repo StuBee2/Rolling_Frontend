@@ -1,19 +1,28 @@
-import { CompanyRegistInfo } from "@src/types/Company/company.type";
+import {
+  CompanyModifyType,
+  CompanyRegistInfo,
+} from "@src/types/Company/company.type";
 import { atom } from "recoil";
-
-export const CompanyAllAndSearchAtom = atom<string>({
-  key: "companyAllAndSearchAtom",
-  default: "list/all?",
-});
 
 export const SearchCompanyAtom = atom<string>({
   key: "searchCompanyAtom",
   default: "",
 });
 
-export const CompanyStoryRegistModalAtom = atom<boolean>({
-  key: "companyStoryRegisterModalAtom",
-  default: false,
+export const CompanyIdAtom = atom<string>({
+  key: "companyIdAtom",
+  default: "",
+});
+
+export const CompanyModifyAtom = atom<CompanyModifyType>({
+  key: "companyModifyAtom",
+  default: {
+    name: "",
+    address: "",
+    description: "",
+    imgUrl: "",
+    rgb: null,
+  },
 });
 
 export const CompanyRegistAtom = atom<CompanyRegistInfo>({

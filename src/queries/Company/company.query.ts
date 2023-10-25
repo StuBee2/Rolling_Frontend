@@ -267,3 +267,11 @@ export const useDeleteCompanyMutation = () => {
   );
   return mutation;
 };
+
+export const usePatchCompanyMutation = () => {
+  const mutation = useMutation(
+    (input: { companyId: string; companyData: CompanyParam }) =>
+      CompanyRepositoryImpl.patchCompany(input)
+  );
+  return mutation;
+};

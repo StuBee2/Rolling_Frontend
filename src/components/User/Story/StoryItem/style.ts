@@ -25,7 +25,7 @@ export const Content = styled.div`
   padding: 2rem 0 2.5rem 0;
 
   display: flex;
-  row-gap: 2rem;
+  row-gap: 1.5rem;
   flex-direction: column;
   justify-content: space-between;
 `;

@@ -9,22 +9,28 @@ import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import React, { Suspense } from "react";
 import { useSetRecoilState } from "recoil";
-import { CompanyStoryRegistModalAtom } from "@src/stores/company/company.store";
 import StorySkeleton from "@src/components/Common/Skeleton/CompanyDetail/Review";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import { useNavigate } from "react-router-dom";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
+import { StoryRegistModalAtom } from "@src/stores/story/story.store";
+import {
+  CompanyIdAtom,
+  CompanyModifyAtom,
+} from "@src/stores/company/company.store";
 
 interface Props {
   companyInfo: CompanyInfoType;
 }
 
 function CompanyDetailInfo({ companyInfo }: Props) {
-  const setCompanyStoryRegisterModal = useSetRecoilState(
-    CompanyStoryRegistModalAtom
-  );
+  const setCompanyStoryRegisterModal = useSetRecoilState(StoryRegistModalAtom);
+  const setCompanyModifyInfo = useSetRecoilState(CompanyModifyAtom);
+  const setCompanyId = useSetRecoilState(CompanyIdAtom);
+
   const { rollingToast } = useRollingToast();
   const isNotMember = tokenDecode("access", "authority") === "TEMP";
+  const userId = tokenDecode("access", "sub");
   const navigate = useNavigate();
 
   const handleRegistStory = () => {
@@ -34,6 +40,19 @@ function CompanyDetailInfo({ companyInfo }: Props) {
     } else {
       setCompanyStoryRegisterModal(true);
     }
+  };
+  console.log(companyInfo);
+  const handleModifyCompany = () => {
+    setCompanyId(companyInfo.companyId);
+    setCompanyModifyInfo({
+      name: companyInfo.companyName,
+      address: companyInfo.companyAddress,
+      description: companyInfo.companyDescription,
+      imgUrl: companyInfo.companyLogoUrl,
+      rgb: companyInfo.companyLogoRGB,
+    });
+
+    navigate("/register");
   };
 
   return (
@@ -54,6 +73,13 @@ function CompanyDetailInfo({ companyInfo }: Props) {
 
           {Token.getToken(ACCESS_TOKEN_KEY) && (
             <S.CompanyStoryButtonCotainer>
+              {companyInfo.registrantId === userId && (
+                <S.CompanyStoryButton onClick={handleModifyCompany}>
+                  <p>기업 수정하기</p>
+                  <img src={write} alt="이미지 없음" />
+                </S.CompanyStoryButton>
+              )}
+
               <S.CompanyStoryButton onClick={handleRegistStory}>
                 <p>스토리 남기기</p>
                 <img src={write} alt="이미지 없음" />

@@ -15,9 +15,7 @@ function Search({ company }: Props) {
       <S.MainWrapper rowGap="1.5rem">
         <S.MainTitle>
           <img src={readingGlasses} alt="이미지 없음" />
-          <p>
-            내가 <span>검색</span>한 회사
-          </p>
+          <p>{company}</p>
         </S.MainTitle>
 
         <ErrorBoundary fallback={<>검색한 회사를 갖고오지 못했습니다.</>}>

@@ -12,7 +12,7 @@ export const Container = styled.div`
   display: flex;
   padding: 1rem;
   justify-content: center;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 export const Wrapper = styled.div`

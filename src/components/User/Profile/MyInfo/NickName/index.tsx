@@ -7,13 +7,14 @@ interface Props {
 
 export default function NickName({ nickName }: Props) {
   const { ...attr } = useSetUpNickName(nickName);
+
   return (
     <>
       {attr.isEditNickName ? (
         <S.NickNameForm onSubmit={attr.handleNickNameSubmit}>
           <input
             type="text"
-            value={attr.setUpNickName || ""}
+            value={attr.setUpNickName}
             onChange={attr.handleNickNameChange}
             placeholder="닉네임을 입력하세요."
           />

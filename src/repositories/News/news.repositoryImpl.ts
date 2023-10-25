@@ -1,4 +1,4 @@
-import { customAxios } from "@src/libs/Axios/customAxios";
+import { rollingAxios } from "@src/libs/Axios/customAxios";
 import { NewsInfiniteScrollType } from "@src/types/News/news.type";
 import { CommonPageParam } from "../common.param";
 import { NewsCompanyNameParam, NewsRepository } from "./news.repository";
@@ -8,7 +8,7 @@ class NewsRepositoryImpl implements NewsRepository {
     { companyName }: NewsCompanyNameParam,
     { page }: CommonPageParam
   ): Promise<NewsInfiniteScrollType> {
-    const { data } = await customAxios.get(
+    const { data } = await rollingAxios.get(
       `/news/${companyName}?page=${page}&size=10`
     );
     return data;

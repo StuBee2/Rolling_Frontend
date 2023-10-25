@@ -17,7 +17,7 @@ export const StarContainer = styled.div<{ fontSize?: string }>`
   white-space: nowrap;
   background-color: red;
 
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   background-color: #f2f4f5;
 `;

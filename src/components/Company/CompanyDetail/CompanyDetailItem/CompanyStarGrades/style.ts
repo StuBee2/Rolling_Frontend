@@ -89,8 +89,8 @@ export const ItemUl = styled.ul`
     row-gap: 0;
     column-gap: 20px;
     padding: 1rem 1rem;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-x: auto;
+    overflow-y: auto;
   }
 `;
 
