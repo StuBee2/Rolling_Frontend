@@ -41,7 +41,7 @@ function CompanyDetailInfo({ companyInfo }: Props) {
       setCompanyStoryRegisterModal(true);
     }
   };
-  console.log(companyInfo);
+
   const handleModifyCompany = () => {
     setCompanyId(companyInfo.companyId);
     setCompanyModifyInfo({

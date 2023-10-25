@@ -69,8 +69,11 @@ export const useRegistCompany = () => {
     fileUpload.mutate(formData as unknown as FileParam, {
       onSuccess: (imgUrl) => {
         if (companyId) {
-          setCompanyModifyInfo((prev) => ({ ...prev, imgUrl: imgUrl.url }));
-          setCompanyModifyInfo((prev) => ({ ...prev, rgb: imgUrl.rgb }));
+          setCompanyModifyInfo((prev) => ({
+            ...prev,
+            imgUrl: imgUrl.url,
+            rgb: imgUrl.rgb,
+          }));
         } else {
           setImgUrl(imgUrl.url);
           setRgb(imgUrl.rgb);
@@ -199,6 +202,9 @@ export const useRegistCompany = () => {
               rgb: null,
             });
             navigate("/");
+          },
+          onError: (e) => {
+            rollingToast("기업을 수정하지 못했습니다.", "error");
           },
         }
       );
