@@ -1,12 +1,12 @@
 import { useCertify } from "@src/hooks/Alumni/useCertify";
 import * as S from "./style";
 import { Button } from "@stubee2/stubee2-rolling-ui";
-import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import { useEffect } from "react";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
+import useHideHeader from "@src/hooks/Header/useHideHeader";
 
 export default function Certify() {
-  useTokenCheck();
+  useHideHeader();
 
   const { ...attr } = useCertify();
   const memberRole = tokenDecode("access", "authority");
@@ -17,7 +17,7 @@ export default function Certify() {
       attr.navigate("/");
     }
   }, []);
-
+  
   return (
     <S.Container>
       <S.Wrapper>

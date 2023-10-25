@@ -165,6 +165,7 @@ export const useRegistCompany = () => {
   const handleModifySubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const answer = window.confirm("기업등록을 수정하시겠습니까?");
+
     if (answer) {
       const { address, name, description } = companyModifyInfo;
 
@@ -203,8 +204,18 @@ export const useRegistCompany = () => {
             });
             navigate("/");
           },
-          onError: (e) => {
-            rollingToast("기업을 수정하지 못했습니다.", "error");
+          onError: (error) => {
+            if (axios.isAxiosError(error)) {
+              const { status, message } = error.response?.data as AxiosError;
+              if (Number(status) === 409) {
+                setIsError((prev) => ({ ...prev, name: true }));
+                inputRefs.name.current?.focus();
+              }
+              rollingToast(
+                companyErrorHanlder(Number(status), message),
+                "error"
+              );
+            }
           },
         }
       );
