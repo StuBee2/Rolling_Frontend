@@ -16,8 +16,8 @@ export function useSocialLogin() {
     if (accessToken && refreshToken) {
       Token.setToken(ACCESS_TOKEN_KEY, accessToken.toString());
       Token.setToken(REFRESH_TOKEN_KEY, refreshToken.toString());
-      navigate("alumni/certify");
-      window.location.replace("alumni/certify");
+      navigate("/");
+      window.location.replace("/");
     }
   }, [accessToken, refreshToken, navigate]);
 }
