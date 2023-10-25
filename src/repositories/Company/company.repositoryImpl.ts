@@ -1,4 +1,4 @@
-import { rollingAxios } from "@src/libs/Axios/customAxios";
+import { customAxios, rollingAxios } from "@src/libs/Axios/customAxios";
 import {
   CompanyInfiniteScrollType,
   CompanyInfoType,
@@ -33,7 +33,7 @@ class CompanyRepositoryImpl implements CompanyRepository {
     { keyword }: CompanyKeywordParam,
     { page }: CommonPageParam
   ): Promise<CompanyInfiniteScrollType> {
-    const { data } = await rollingAxios.get(
+    const { data } = await customAxios.get(
       `/company/search?name=${keyword}&page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
@@ -42,7 +42,7 @@ class CompanyRepositoryImpl implements CompanyRepository {
   public async getAllCompanyList({
     page,
   }: CommonPageParam): Promise<CompanyInfiniteScrollType> {
-    const { data } = await rollingAxios.get(
+    const { data } = await customAxios.get(
       `/company/list/all?page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
@@ -52,7 +52,7 @@ class CompanyRepositoryImpl implements CompanyRepository {
     { keyword }: CompanyKeywordParam,
     { page }: CommonPageParam
   ): Promise<CompanyInfiniteScrollType> {
-    const { data } = await rollingAxios.get(
+    const { data } = await customAxios.get(
       `/company/${keyword}page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
@@ -62,7 +62,7 @@ class CompanyRepositoryImpl implements CompanyRepository {
     { id }: CommonIdParam,
     { page }: CommonPageParam
   ): Promise<CompanyInfiniteScrollType> {
-    const { data } = await rollingAxios.get(
+    const { data } = await customAxios.get(
       `/company/list/${id}?page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
@@ -71,22 +71,22 @@ class CompanyRepositoryImpl implements CompanyRepository {
   public async getCompanyInfoId({
     id,
   }: CommonIdParam): Promise<CompanyInfoType> {
-    const { data } = await rollingAxios.get(`/company/info/${id}`);
+    const { data } = await customAxios.get(`/company/info/${id}`);
     return data;
   }
 
   public async getCompanyRankSalaryBenefits(): Promise<CompanyListType[]> {
-    const { data } = await rollingAxios.get("/company/rank/salary-benefits");
+    const { data } = await customAxios.get("/company/rank/salary-benefits");
     return data;
   }
 
   public async getCompanyRankTotal(): Promise<CompanyListType[]> {
-    const { data } = await rollingAxios.get("/company/rank/total");
+    const { data } = await customAxios.get("/company/rank/total");
     return data;
   }
 
   public async getCompanyRankCulture(): Promise<CompanyListType[]> {
-    const { data } = await rollingAxios.get("/company/rank/culture");
+    const { data } = await customAxios.get("/company/rank/culture");
     return data;
   }
 
@@ -96,14 +96,14 @@ class CompanyRepositoryImpl implements CompanyRepository {
   }
 
   public async getCompanyRankBalance(): Promise<CompanyListType[]> {
-    const { data } = await rollingAxios.get("/company/rank/balance");
+    const { data } = await customAxios.get("/company/rank/balance");
     return data;
   }
 
   public async getCompanyRankSelect(
     rankCategory: string
   ): Promise<CompanyListType[]> {
-    const { data } = await rollingAxios.get(`/company/rank/${rankCategory}`);
+    const { data } = await customAxios.get(`/company/rank/${rankCategory}`);
     return data;
   }
 

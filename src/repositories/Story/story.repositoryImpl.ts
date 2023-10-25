@@ -1,4 +1,4 @@
-import { rollingAxios } from "@src/libs/Axios/customAxios";
+import { customAxios, rollingAxios } from "@src/libs/Axios/customAxios";
 import {
   StoryCompanyContentsType,
   StoryInfiniteScrollListType,
@@ -32,14 +32,14 @@ class StoryRepositoryImpl implements StoryRepository {
     { id }: CommonIdParam,
     { page }: CommonPageParam
   ): Promise<StoryInfoIdInfiniteScrollListType> {
-    const { data } = await rollingAxios.get(
+    const { data } = await customAxios.get(
       `/story/list/company/${id}?page=${page}&size=10`
     );
     return { ...data, nextPage: page + 1 };
   }
 
   public async getStoryInfoId({ id }: CommonIdParam): Promise<StoryInfoIdType> {
-    const { data } = await rollingAxios.get(`/story/info/${id}`);
+    const { data } = await customAxios.get(`/story/info/${id}`);
     return data;
   }
 
