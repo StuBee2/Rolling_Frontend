@@ -17,7 +17,7 @@ export default function Certify() {
       attr.navigate("/");
     }
   }, []);
-  
+
   return (
     <S.Container>
       <S.Wrapper>

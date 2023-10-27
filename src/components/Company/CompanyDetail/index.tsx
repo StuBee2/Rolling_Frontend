@@ -9,6 +9,7 @@ import CompanyDetailItem from "./CompanyDetailItem";
 import StoryRegistModal from "@src/components/Modal/Story";
 import * as S from "./style";
 import { StoryRegistModalAtom } from "@src/stores/story/story.store";
+import { StoryisEditElementShowPageAtom } from "@src/stores/story/story.store";
 
 interface Props {
   id: string;
@@ -27,6 +28,11 @@ export default function CompanyDetail({ id }: Props) {
     useRecoilState(StoryRegistModalAtom);
 
   useAuthTopScroll();
+
+  const [isEditElementShowPageValue, setIsEditElementShowPageValue] =
+    useRecoilState(StoryisEditElementShowPageAtom);
+  setIsEditElementShowPageValue("기업_상세");
+
   return (
     <>
       <S.Container>
