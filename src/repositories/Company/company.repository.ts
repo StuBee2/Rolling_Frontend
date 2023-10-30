@@ -38,11 +38,6 @@ export interface CompanyRepository {
     page,
   }: CommonPageParam): Promise<CompanyInfiniteScrollType>;
 
-  getAllAndSearchCompanyList(
-    { keyword }: CompanyKeywordParam,
-    { page }: CommonPageParam
-  ): Promise<CompanyInfiniteScrollType>;
-
   getCompanyListId(
     { id }: CommonIdParam,
     { page }: CommonPageParam

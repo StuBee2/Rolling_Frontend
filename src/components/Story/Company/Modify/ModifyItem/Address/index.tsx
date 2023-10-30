@@ -1,4 +1,4 @@
-import { useCompanyModify } from "@src/hooks/Company/useCompanyModify";
+import { useStoryCompanyModify } from "@src/hooks/Story/useStoryCompanyModify";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 import { Dispatch, SetStateAction } from "react";
@@ -10,8 +10,7 @@ interface Props {
 }
 
 export default function AddressModal({ setIsOpenModal }: Props) {
-  const { companyModifyInfo, setCompanyModifyInfo, companyId } =
-    useCompanyModify();
+  const { companyModifyInfo, setCompanyModifyInfo } = useStoryCompanyModify();
   useCloseModal(setIsOpenModal);
 
   const handleSelectAddress = (data: { address: string }) => {

@@ -4,10 +4,6 @@ export const QUERY_KEYS = Object.freeze({
     getMyListCompany: "/company/my",
     getListSearchCompany: (name: string) => ["/company/search", name],
     getListAllCompany: "/company/list/all",
-    getListAllAndSearchCompany: (name: string) => [
-      "/company/allAndSearch",
-      name,
-    ],
     getCompanyId: (id: string) => ["/company/list/id", id],
     getInfoCompanyId: (id: string) => ["/company/info/id", id],
     getInfoCompany: "/company/info/id",

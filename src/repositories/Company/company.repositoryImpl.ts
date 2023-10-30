@@ -50,16 +50,6 @@ class CompanyRepositoryImpl implements CompanyRepository {
     return { ...data, nextPage: page + 1 };
   }
 
-  public async getAllAndSearchCompanyList(
-    { keyword }: CompanyKeywordParam,
-    { page }: CommonPageParam
-  ): Promise<CompanyInfiniteScrollType> {
-    const { data } = await customAxios.get(
-      `/company/${keyword}page=${page}&size=10`
-    );
-    return { ...data, nextPage: page + 1 };
-  }
-
   public async getCompanyListId(
     { id }: CommonIdParam,
     { page }: CommonPageParam

@@ -1,4 +1,4 @@
-import { useCompanyModify } from "@src/hooks/Company/useCompanyModify";
+import { useStoryCompanyModify } from "@src/hooks/Story/useStoryCompanyModify";
 import { TextInput } from "@stubee2/stubee2-rolling-ui";
 import logo from "@src/assets/icons/Logo/logo.png";
 import { Dispatch, SetStateAction, useEffect } from "react";
@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default function ModifyItem({ setIsOpenModal }: Props) {
-  const { ...attr } = useCompanyModify();
+  const { ...attr } = useStoryCompanyModify();
 
   useEffect(() => {
     attr.setPrevCompanyModifyInfo(attr.companyModifyInfo);

@@ -96,31 +96,6 @@ export const useGetAllCompanyListQuery = (
     }
   );
 
-export const useGetAllAndSearchCompanyListQuery = (
-  { keyword }: CompanyKeywordParam,
-  options?: UseInfiniteQueryOptions<
-    CompanyInfiniteScrollType,
-    AxiosError,
-    CompanyInfiniteScrollType,
-    CompanyInfiniteScrollType,
-    string[]
-  >
-): UseInfiniteQueryResult<CompanyInfiniteScrollType, AxiosError> =>
-  useInfiniteQuery(
-    QUERY_KEYS.company.getListAllAndSearchCompany(keyword),
-    ({ pageParam = 1 }) =>
-      CompanyRepositoryImpl.getAllAndSearchCompanyList(
-        { keyword: keyword },
-        { page: pageParam }
-      ),
-    {
-      ...options,
-      staleTime: 1000 * 60 * 60,
-      cacheTime: 1000 * 60 * 60,
-      getNextPageParam: (nextPage) => nextPage.nextPage,
-    }
-  );
-
 export const useGetCompanyListIdQuery = (
   { id }: CommonIdParam,
   options?: UseInfiniteQueryOptions<

@@ -15,7 +15,7 @@ import axios, { AxiosError } from "axios";
 import { companyErrorHanlder } from "@src/utils/Error/Company/companyErrorHanlder";
 import { CompanyModifyType } from "@src/types/Company/company.type";
 
-export const useCompanyModify = () => {
+export const useStoryCompanyModify = () => {
   const imgRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
 
   const formData = new FormData();
