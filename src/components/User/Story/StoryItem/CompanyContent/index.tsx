@@ -29,7 +29,7 @@ export default function CompanyContent({ ...attr }: StoryItemType) {
           </S.Title>
 
           <S.AdvantagesContent isCons={true}>
-            {attr.advantages}
+            {attr.pros}
           </S.AdvantagesContent>
         </S.Advantages>
 
@@ -39,7 +39,7 @@ export default function CompanyContent({ ...attr }: StoryItemType) {
             <p>우리 기업의 단점은</p>
           </S.Title>
 
-          <S.AdvantagesContent>{attr.disAdvantages}</S.AdvantagesContent>
+          <S.AdvantagesContent>{attr.cons}</S.AdvantagesContent>
         </S.Advantages>
       </S.AdvantagesAndDisAdvantages>
     </S.Container>

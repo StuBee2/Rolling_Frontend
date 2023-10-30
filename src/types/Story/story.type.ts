@@ -17,8 +17,8 @@ export interface StoryItemType {
   welfare: string;
   commuteTime: string;
   meal: string;
-  advantages: string;
-  disAdvantages: string;
+  pros: string;
+  cons: string;
 }
 
 export interface StoryCommonItemType extends StoryItemType {
@@ -75,8 +75,8 @@ export interface StoryPostResponse {
   welfare: string;
   commuteTime: string;
   meal: string;
-  advantages: string;
-  disAdvantages: string;
+  pros: string;
+  cons: string;
   salaryAndBenefits: number;
   workLifeBalance: number;
   organizationalCulture: number;
@@ -103,8 +103,8 @@ export interface StoryCompanyContentsType {
   welfare: string;
   commuteTime: string;
   meal: string;
-  advantages: string;
-  disAdvantages: string;
+  pros: string;
+  cons: string;
   employmentProcess: string;
 }
 
@@ -124,4 +124,11 @@ export interface StoryInputRefType {
   mostImportantThing: React.RefObject<HTMLInputElement>;
   employmentProcess: React.RefObject<HTMLInputElement>;
   interviewQuestion: React.RefObject<HTMLInputElement>;
+}
+
+export interface StoryRegistRequireType {
+  position: string;
+  welfare: string;
+  pros: string;
+  cons: string;
 }

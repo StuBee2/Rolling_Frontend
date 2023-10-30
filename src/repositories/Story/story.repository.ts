@@ -45,8 +45,8 @@ export interface StoryParam {
   welfare: string;
   commuteTime: string;
   meal: string;
-  advantages: string;
-  disAdvantages: string;
+  pros: string;
+  cons: string;
   salaryAndBenefits: number;
   workLifeBalance: number;
   organizationalCulture: number;

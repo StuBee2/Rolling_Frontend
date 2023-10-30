@@ -38,7 +38,7 @@ export default function Form({ ...attr }: Props) {
           }}
         />
         {attr.showPositionList && // 입력할 때 등장, 포지션 선택하면 사라짐
-          positionList.length > 0 && ( //내가 입력한 포지션이 포지션리스트에 있을때 등장
+          positionList.length > 0 && ( // 내가 입력한 포지션이 포지션리스트에 있을때 등장
             <PositionList
               positionList={positionList}
               setStoryContents={hooks.setStoryContents}
@@ -191,10 +191,10 @@ export default function Form({ ...attr }: Props) {
           <p>기업의 장점</p>
         </S.InputTitle>
         <TextInput
-          value={hooks.storyContents.advantages}
+          value={hooks.storyContents.pros}
           customStyle={S.InputStyle}
           placeholder="해당 기업은 어떤 장점을 갖고 있나요?"
-          name="advantages"
+          name="pros"
           handleChange={hooks.handleCompanyStoryChange}
         />
       </S.InputContainer>
@@ -204,10 +204,10 @@ export default function Form({ ...attr }: Props) {
           <p>기업의 단점</p>
         </S.InputTitle>
         <TextInput
-          value={hooks.storyContents.disAdvantages}
+          value={hooks.storyContents.cons}
           customStyle={S.InputStyle}
           placeholder="해당 기업은 어떤 단점을 갖고 있나요?"
-          name="disAdvantages"
+          name="cons"
           handleChange={hooks.handleCompanyStoryChange}
         />
       </S.InputContainer>
