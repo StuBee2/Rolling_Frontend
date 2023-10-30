@@ -7,32 +7,23 @@ interface Props {
 
 export default function NickName({ nickName }: Props) {
   const { ...attr } = useSetUpNickName(nickName);
+  const isEditing =
+    nickName !== attr.setUpNickName && attr.setUpNickName !== "";
 
   return (
     <>
-      {attr.isEditNickName ? (
-        <S.NickNameForm onSubmit={attr.handleNickNameSubmit}>
-          <input
-            type="text"
-            value={attr.setUpNickName}
-            onChange={attr.handleNickNameChange}
-            placeholder="닉네임을 입력하세요."
-          />
-          <S.EditAndCancelContainer>
-            <button type="submit">수정</button>
-            <button onClick={attr.hanldeCancelClick}>취소</button>
-          </S.EditAndCancelContainer>
-        </S.NickNameForm>
-      ) : (
-        <S.SetUpNickNameBtn>
-          <S.NickName isHaveNickName={nickName !== ""}>
-            {nickName || "닉네임 설정하기"}
-          </S.NickName>
-          <S.HoverContainer onClick={attr.handleEditNickNameQuestion}>
-            <S.EditNickIcon size={15} />
-          </S.HoverContainer>
-        </S.SetUpNickNameBtn>
-      )}
+      <S.Form onSubmit={attr.handleNickNameSubmit} isEditing={isEditing}>
+        <S.Input
+          type="text"
+          value={attr.setUpNickName}
+          onChange={attr.handleNickNameChange}
+          placeholder="닉네임 입력"
+        />
+
+        <S.SubmitButton type="submit" isEditing={isEditing}>
+          {nickName === null ? "등록" : "수정"}
+        </S.SubmitButton>
+      </S.Form>
     </>
   );
 }

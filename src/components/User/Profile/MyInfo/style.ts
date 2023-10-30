@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 250px;
+  height: 260px;
   background-color: #f3f4f5;
   border-radius: 15px;
   border: 1px solid #dddddd;
@@ -27,6 +27,18 @@ export const TextContainer = styled.div`
   width: 100%;
   height: 20px;
   margin-bottom: 18px;
+
+  div {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 5px;
+  }
+`;
+
+export const SetUpNickNameText = styled.p`
+  font-size: 13px;
+  margin-bottom: 2px;
+  color: rgba(255, 78, 67, 1);
 `;
 
 export const AbleContainer = styled.div`
@@ -55,7 +67,7 @@ export const MyGitInfoLoginTypeText = styled.p`
 
 export const MyGitInfoContainer = styled.div`
   width: 100%;
-  height: 30px;
+  height: 45px;
   div {
     display: flex;
     align-items: center;

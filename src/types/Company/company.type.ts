@@ -25,9 +25,6 @@ export interface CompanyListType {
     modifiedAt: string;
   };
   companyGrades: CompanyStarGrade;
-  registrantId: {
-    id: string;
-  };
 }
 
 export interface CompanyInfoType extends CompanyStarGrade {
@@ -68,6 +65,7 @@ export interface CompanyStarGradeInfo extends CompanyStarGrade {
 export interface CompanyRegistInfo {
   name: string;
   address: string;
+  addressEtc?: string;
   description: string;
 }
 
@@ -86,6 +84,7 @@ export interface CompanyInputRefType {
 export interface CompanyModifyType {
   name: string;
   address: string;
+  addressEtc?: string;
   description: string;
   imgUrl: string;
   rgb: number | null;

@@ -27,10 +27,12 @@ export const HeaderContainer = styled.div`
 export const HeaderWrapper = styled.div`
   width: 1370px;
   height: 100%;
+
   display: flex;
   align-items: center;
   column-gap: 10px;
   justify-content: space-between;
+
   @media screen and (max-width: 1040px) {
     width: 90%;
   }
@@ -63,16 +65,22 @@ export const PageList = styled.li<{
 }>`
   cursor: pointer;
   font-weight: ${({ isSelect }) => isSelect && "bold"};
-  width: 80px;
   height: 45px;
-  display: ${({ requiredToken }) => requiredToken && "none"};
+  padding: 10px;
 
+  display: ${({ requiredToken }) => requiredToken && "none"};
   display: flex;
   align-items: center;
+  column-gap: 2px;
   justify-content: center;
+
   border-radius: 10px;
   transform: scale(1);
   transition: all 0.1s ease-in-out;
+
+  span {
+    color: rgb(236, 106, 94);
+  }
 
   ${({ isSelect }) =>
     !isSelect &&

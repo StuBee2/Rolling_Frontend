@@ -10,12 +10,14 @@ import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 import github from "@src/assets/images/Auth/github.svg";
 import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
+import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 
 export default function MyInfo() {
   const setMyInfoModal = useSetRecoilState(MyInfoModal);
   const { handleLogout } = useLogout();
   const { data: myInfo } = useGetMyInfoQuery();
   const navigate = useNavigate();
+  const jwtDecode = tokenDecode("access", "authority");
 
   useCloseModal(setMyInfoModal);
   return (
@@ -28,6 +30,7 @@ export default function MyInfo() {
               <S.Name>
                 {myInfo?.memberDetails.nickName || myInfo?.socialDetails.name}
               </S.Name>
+
               <S.GitInfo
                 onClick={() =>
                   window.open(

@@ -1,14 +1,22 @@
+import { FadeInAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const RecommandContainer = styled.div`
   width: 100%;
   height: auto;
+
   display: flex;
   flex-direction: column;
 
   @media screen and (max-width: 710px) {
     width: 99%;
   }
+`;
+
+export const SeniorRecommandContainer = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 3px;
 `;
 
 export const SeniorRecommand = styled.div`
@@ -28,8 +36,9 @@ export const RecommandWrapper = styled.div`
   height: 240px;
 
   display: flex;
-  justify-content: center;
   overflow-x: auto;
+
+  ${FadeInAnimation};
 `;
 
 export const ArrowContainer = styled.div`

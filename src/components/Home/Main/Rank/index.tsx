@@ -6,19 +6,28 @@ import RankItem from "./RankItem";
 import { COMPANY_RANK_ITMES } from "@src/constants/Company/company.constant";
 import MainSkeleton from "@src/components/Common/Skeleton/Home/Main";
 import { MainContainer, MainTitle, MainWrapper } from "../style";
+import { ViewAll } from "../../style";
+import { useNavigate } from "react-router-dom";
 
 export default function Rank() {
   const [rankCategorySelect, setRankCategorySelect] = useState("total");
+  const navigate = useNavigate();
+
   return (
     <MainContainer>
       <MainWrapper rowGap="1rem">
         <S.RankCategoriesContainer>
-          <MainTitle>
-            <img src={graph} alt="이미지 없음" />
-            <p>
-              <span>BEST</span> 기업 랭킹
-            </p>
-          </MainTitle>
+          <S.TitleContainer>
+            <MainTitle>
+              <img src={graph} alt="이미지 없음" />
+              <p>
+                <span>BEST</span> 기업 랭킹
+              </p>
+            </MainTitle>
+
+            <ViewAll onClick={() => navigate("/ranking")}>전체보기</ViewAll>
+          </S.TitleContainer>
+
           <S.RankCategoriesUl>
             {COMPANY_RANK_ITMES.map((item) => (
               <S.RankCategoryLi

@@ -10,6 +10,7 @@ export const QUERY_KEYS = Object.freeze({
     ],
     getCompanyId: (id: string) => ["/company/list/id", id],
     getInfoCompanyId: (id: string) => ["/company/info/id", id],
+    getInfoCompany: "/company/info/id",
     getCompanyRank: "/company/rank",
     getCompanyRankTotal: "/company/rank/total",
     getCompanyRankSalaryBenefits: "/company/rank/salary-benefit",

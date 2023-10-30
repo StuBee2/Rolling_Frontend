@@ -1,3 +1,4 @@
+import { HoverAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const HomeContainer = styled.div`
@@ -8,16 +9,12 @@ export const HomeContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  row-gap: 5rem;
+  row-gap: 10rem;
   justify-content: center;
 
   background-color: #f9fafb;
   white-space: nowrap;
   min-width: 500px;
-
-  @media screen and (max-width: 500px) {
-    height: 100%;
-  }
 `;
 
 export const HomeWrapper = styled.div`
@@ -27,13 +24,7 @@ export const HomeWrapper = styled.div`
   display: flex;
 
   flex-direction: column;
-  row-gap: 5rem;
-
-  @media screen and (max-width: 1385px) {
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+  row-gap: 8rem;
 
   @media screen and (max-width: 1165px) {
     width: 90%;
@@ -48,4 +39,15 @@ export const HomeContent = styled.div`
 
   display: flex;
   column-gap: 10px;
+`;
+
+export const ViewAll = styled.p`
+  cursor: pointer;
+  padding: 10px;
+
+  margin-top: 3px;
+  font-weight: bold;
+  color: rgba(115, 123, 152, 1);
+
+  ${HoverAnimation};
 `;

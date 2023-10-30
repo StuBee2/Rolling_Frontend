@@ -3,6 +3,9 @@ import {
   CompanyRegistInfo,
 } from "@src/types/Company/company.type";
 import { atom } from "recoil";
+import { recoilPersist } from "recoil-persist";
+
+const { persistAtom } = recoilPersist();
 
 export const SearchCompanyAtom = atom<string>({
   key: "searchCompanyAtom",
@@ -12,6 +15,7 @@ export const SearchCompanyAtom = atom<string>({
 export const CompanyIdAtom = atom<string>({
   key: "companyIdAtom",
   default: "",
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const CompanyModifyAtom = atom<CompanyModifyType>({
@@ -23,6 +27,7 @@ export const CompanyModifyAtom = atom<CompanyModifyType>({
     imgUrl: "",
     rgb: null,
   },
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const CompanyRegistAtom = atom<CompanyRegistInfo>({

@@ -6,23 +6,22 @@ export const COMPANY_RANK_ITMES = [
   },
   {
     id: 1,
-    name: "워라벨순위",
-    categoryName: "balance",
-  },
-  {
-    id: 2,
     name: "연봉순위",
     categoryName: "salary-benefits",
   },
   {
-    id: 3,
-    name: "커리어 향상순위",
-    categoryName: "career",
+    id: 2,
+    name: "워라벨순위",
+    categoryName: "balance",
   },
-
   {
-    id: 4,
+    id: 3,
     name: "조직문화순위",
     categoryName: "culture",
+  },
+  {
+    id: 4,
+    name: "커리어 향상순위",
+    categoryName: "career",
   },
 ];

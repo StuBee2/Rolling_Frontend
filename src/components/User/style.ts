@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const UserContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #f9fafb;
 
   display: flex;
@@ -22,7 +22,7 @@ export const UserWrapper = styled.div`
   width: 1370px;
   height: 100%;
   display: flex;
-  @media screen and (max-width: 1385px) {
+  @media screen and (max-width: 1130px) {
     width: 100%;
     padding: 0 10px 0 10px;
   }

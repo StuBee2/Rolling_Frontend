@@ -1,3 +1,4 @@
+import { FadeInAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
@@ -16,6 +17,8 @@ export const MainContainer = styled.div`
   @media screen and (max-width: 1105px) {
     width: 100%;
   }
+
+  ${FadeInAnimation};
 `;
 
 export const MainWrapper = styled.div<{ rowGap: string }>`
@@ -69,7 +72,7 @@ export const MainItemContent = styled.div`
 
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
 
   @media screen and (max-width: 703px) {
     justify-content: center;
@@ -86,13 +89,6 @@ export const MainItemBox = styled.div`
   overflow: hidden;
   cursor: pointer;
 
-  transform: scale(1);
-  transition: all 0.1s ease-in-out;
-  &:hover {
-    transform: scale(0.99);
-    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.06);
-  }
-
   @media screen and (max-width: 1385px) {
     flex-basis: 47%;
     height: 340px;
@@ -103,7 +99,7 @@ export const MainItemBox = styled.div`
   @media screen and (max-width: 710px) {
     flex-basis: auto;
     width: 98%;
-    height: 450px;
+    height: 380px;
   }
 `;
 
@@ -114,6 +110,7 @@ export const CompanyLogoContainer = styled.div<{ rgb: string }>`
   display: flex;
   justify-content: center;
   border-bottom: 1px solid #ddd;
+  overflow: hidden;
 
   background-color: ${({ rgb }) => rgb || "#fff"};
 
@@ -127,12 +124,18 @@ export const LogoImg = styled.img`
   max-height: 100%;
   width: auto;
   height: auto;
+
+  transform: scale(1);
+  transition: all 0.27s ease-in-out;
+  &:hover {
+    transform: scale(1.08);
+  }
 `;
 
 export const CompanyContentContainer = styled.div`
   width: 100%;
   height: 35%;
-  background: #fff;
+  background-color: #fff;
 
   display: flex;
   flex-direction: column;
@@ -146,10 +149,22 @@ export const CompanyContentContainer = styled.div`
   }
 `;
 
-export const CompanyNameAndCreatedAt = styled.p`
-  font-size: 18px;
-  color: rgba(115, 123, 152, 1);
+export const CompanyNameAndCreatedAt = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
   font-weight: bold;
+`;
+
+export const CompanyName = styled.p`
+  color: #000;
+  font-size: 20px;
+  font-family: "Pretendard-Bold" !important;
+`;
+
+export const CompanyCreatedAt = styled.p`
+  font-size: 15px;
+  color: rgba(189, 194, 208, 1);
 `;
 
 export const CompanyDescriptionAndAddress = styled.div`
@@ -169,9 +184,9 @@ export const CompanyDescription = styled.p`
 `;
 
 export const CompanyAddress = styled.p`
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
-  color: rgba(189, 194, 208, 1);
+  color: rgba(115, 123, 152, 1);
 
   text-overflow: ellipsis;
   overflow: hidden;

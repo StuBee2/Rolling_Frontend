@@ -4,6 +4,9 @@ export const UserNavBar = styled.div`
   width: 420px;
   height: 100%;
 
+  position: sticky;
+  top: 90px;
+
   overflow-y: auto;
   ::-webkit-scrollbar {
     display: none;
@@ -37,10 +40,11 @@ export const UserName = styled.p`
   font-weight: 700;
 `;
 
-export const UserEmail = styled.p`
-  font-size: 15px;
-  color: #61677e;
-  cursor: pointer;
+export const UserEmail = styled.p<{ email: string }>`
+  font-size: 17px;
+  color: ${({ email }) =>
+    email === null ? "rgba(72, 105, 246, 1)" : "#61677e"};
+  cursor: ${({ email }) => email === null && "pointer"};
 `;
 
 export const PageSelectContainer = styled.div`

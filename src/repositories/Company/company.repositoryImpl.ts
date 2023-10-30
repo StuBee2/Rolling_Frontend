@@ -1,4 +1,6 @@
+import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import { customAxios, rollingAxios } from "@src/libs/Axios/customAxios";
+import Token from "@src/libs/Token/Token";
 import {
   CompanyInfiniteScrollType,
   CompanyInfoType,
@@ -15,7 +17,7 @@ import {
 class CompanyRepositoryImpl implements CompanyRepository {
   public async postRegister(
     companyData: CompanyParam
-  ): Promise<CompanyListType> {
+  ): Promise<{ id: string }> {
     const { data } = await rollingAxios.post("/company", companyData);
     return data;
   }
@@ -71,7 +73,10 @@ class CompanyRepositoryImpl implements CompanyRepository {
   public async getCompanyInfoId({
     id,
   }: CommonIdParam): Promise<CompanyInfoType> {
-    const { data } = await customAxios.get(`/company/info/${id}`);
+    const { data } = Token.getToken(ACCESS_TOKEN_KEY)
+      ? await rollingAxios.get(`/company/info/${id}`)
+      : await customAxios.get(`/company/info/${id}`);
+
     return data;
   }
 

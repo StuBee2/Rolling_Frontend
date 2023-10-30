@@ -1,60 +1,46 @@
 import styled from "styled-components";
-import { BsPencilSquare } from "@react-icons/all-files/bs/BsPencilSquare";
-import { HoverAnimation } from "@src/styles/common.style";
 
-export const NickNameForm = styled.form`
+export const Form = styled.form<{ isEditing: boolean }>`
+  width: 295px;
+  height: 55px;
+
+  border-radius: 5px;
+  border: ${({ isEditing }) =>
+    isEditing ? "2px solid rgba(72, 105, 246, 1)" : "2px solid #c3c9d9"};
   display: flex;
-  column-gap: 5px;
-  align-items: center;
-  input {
-    width: 100%;
-    height: 25px;
-    padding-left: 5px;
-    border: 1px solid #4869f6;
-    border-radius: 5px;
-    outline: none;
-    background-color: #f3f4f5;
-  }
+  overflow: hidden;
+
+  transition: all 0.25s ease-in-out;
 `;
 
-export const SetUpNickNameBtn = styled.button`
+export const Input = styled.input`
+  width: calc(100% - 60px);
+  height: 100%;
   border: none;
   outline: none;
-  background-color: transparent;
+  background-color: rgb(243, 244, 245);
+
+  padding-left: 15px;
+  font-size: 18px;
+  color: #000;
+`;
+
+export const SubmitButton = styled.button<{ isEditing: boolean }>`
+  width: 60px;
+  height: 100%;
+
   display: flex;
   align-items: center;
-  column-gap: 2px;
-`;
+  justify-content: center;
 
-export const NickName = styled.span<{ isHaveNickName: boolean }>`
-  font-weight: bold;
-  color: #000;
-  font-size: ${({ isHaveNickName }) => (isHaveNickName ? "22px" : "18px")};
-`;
-
-export const HoverContainer = styled.div`
-  width: 40px;
-  height: 40px;
-  ${HoverAnimation};
-`;
-
-export const EditNickIcon = styled(BsPencilSquare)`
-  width: 20px;
-  height: 20px;
+  outline: none;
+  border: none;
   cursor: pointer;
-`;
+  background-color: ${({ isEditing }) =>
+    isEditing ? "rgba(72, 105, 246, 1)" : "#c3c9d9"};
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
 
-export const EditAndCancelContainer = styled.div`
-  display: flex;
-  column-gap: 2px;
-  button {
-    width: 40px;
-    height: 25px;
-    cursor: pointer;
-    color: #fff;
-    background-color: #4869f6;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-  }
+  transition: all 0.25s ease-in-out;
 `;

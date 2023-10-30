@@ -46,8 +46,17 @@ function RankItem({ rankCategory }: Props) {
 
                   <S.CompanyContentContainer>
                     <S.CompanyNameAndCreatedAt>
-                      {item.companyDetails.name} |{" "}
-                      {getDateText(new Date(item.companyDetails.createdAt))}
+                      <S.CompanyName
+                        onClick={() =>
+                          navigate(`/company/${item.companyId.id}`)
+                        }
+                      >
+                        {item.companyDetails.name}
+                      </S.CompanyName>
+
+                      <S.CompanyAddress>
+                        | {item.companyDetails.companyAddress.address}
+                      </S.CompanyAddress>
                     </S.CompanyNameAndCreatedAt>
 
                     <S.CompanyDescriptionAndAddress>
@@ -55,9 +64,9 @@ function RankItem({ rankCategory }: Props) {
                         {item.companyDetails.description}
                       </S.CompanyDescription>
 
-                      <S.CompanyAddress>
-                        {item.companyDetails.companyAddress.address}
-                      </S.CompanyAddress>
+                      <S.CompanyCreatedAt>
+                        {getDateText(new Date(item.companyDetails.createdAt))}
+                      </S.CompanyCreatedAt>
                     </S.CompanyDescriptionAndAddress>
                   </S.CompanyContentContainer>
                 </S.MainItemBox>

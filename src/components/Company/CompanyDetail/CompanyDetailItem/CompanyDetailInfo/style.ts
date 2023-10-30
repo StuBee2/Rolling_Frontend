@@ -3,6 +3,8 @@ import styled, { css } from "styled-components";
 export const Container = styled.div`
   width: calc(100% - 250px);
   height: 100%;
+  margin-left: 250px;
+
   padding-left: 5rem;
   display: flex;
   flex-direction: column;
@@ -16,6 +18,7 @@ export const Container = styled.div`
   @media screen and (max-width: 1005px) {
     width: 100%;
     padding-left: 0;
+    margin-left: 0;
   }
 `;
 
@@ -71,23 +74,27 @@ export const CompanyStoryButtonCotainer = styled.div`
 export const CompanyStoryButton = styled.button`
   width: 165px;
   height: 52px;
+
   background-color: #1d1e5a;
   border-radius: 7px;
   outline: none;
   border: none;
+
   font-size: 17px;
   font-weight: bold;
   color: #fff;
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 5px;
-  cursor: pointer;
 
   img {
     width: 20px;
     height: 20px;
   }
+
   transform: scale(1);
   transition: all 0.1s ease-in-out;
   &:hover {

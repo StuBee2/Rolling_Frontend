@@ -12,6 +12,7 @@ export const POSITION_ITEMS: string[] = [
   "안드로이드 개발자",
   "DevOps 개발자",
   "시스템 관리자",
+  "기술이사",
   "네트워크 관리자",
   "iOS 개발자",
   "개발 매니저",

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { StoryStatusCommonHover } from "../style";
 
 export const Container = styled.div`
   width: 100%;
@@ -9,10 +8,28 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
+  row-gap: 10px;
   justify-content: center;
-  padding-left: 2rem;
+  padding: 0 1.5rem 0 2rem;
+`;
 
-  ${StoryStatusCommonHover};
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const RegistStoryText = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 7px;
+
+  font-size: 18px;
+  color: #fff;
+
+  @media screen and (max-width: 585px) {
+    font-size: 15px;
+  }
 `;
 
 export const IconCotainer = styled.div`
@@ -40,8 +57,40 @@ export const WroteStoryCount = styled.p`
   font-weight: bold;
 `;
 
-export const StatusText = styled.div`
+export const StatusText = styled.p`
   color: #dee0e6;
   font-size: 12px;
   margin-top: 10px;
+`;
+
+export const StoryButton = styled.button`
+  width: 135px;
+  height: 52px;
+
+  background-color: #1d1e5a;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  transform: scale(1);
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    background-color: rgba(29, 30, 90, 0.87);
+    transform: scale(0.985);
+  }
 `;
