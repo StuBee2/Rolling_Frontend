@@ -68,6 +68,7 @@ export const useGetCompanySerachListQuery = (
       ),
     {
       ...options,
+      enabled: !!keyword,
       staleTime: 1000 * 60 * 60,
       cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
