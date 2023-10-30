@@ -3,25 +3,22 @@ import * as S from "./style";
 import { Button } from "@stubee2/stubee2-rolling-ui";
 import { useEffect } from "react";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
-import useHideHeader from "@src/hooks/Header/useHideHeader";
 
 export default function Certify() {
-  useHideHeader();
-
   const { ...attr } = useCertify();
   const memberRole = tokenDecode("access", "authority");
 
   useEffect(() => {
     if (memberRole === "MEMBER") {
-      attr.rollingToast("본교 인증이 이미 되어있습니다.", "warning");
+      attr.rollingToast("동문 인증이 이미 되어있습니다.", "info");
       attr.navigate("/");
     }
   }, []);
-  
+
   return (
     <S.Container>
       <S.Wrapper>
-        <S.CertificationList>
+        <S.CertificationBox>
           <S.Title>DGSW 동문 인증</S.Title>
           <S.CertificationInfo>
             <p>
@@ -52,7 +49,7 @@ export default function Certify() {
               인증하기
             </Button>
           </S.QuestionContainer>
-        </S.CertificationList>
+        </S.CertificationBox>
       </S.Wrapper>
     </S.Container>
   );

@@ -1,13 +1,14 @@
+import { FadeInAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  padding-top: 90px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 90px;
 
   min-width: 500px;
   background-color: rgba(222, 224, 230, 1);
@@ -28,7 +29,7 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const CertificationList = styled.div`
+export const CertificationBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,6 +52,8 @@ export const CertificationList = styled.div`
   @media screen and (max-width: 500px) {
     border: 1px solid #ddd;
   }
+
+  ${FadeInAnimation};
 `;
 
 export const Title = styled.div`
