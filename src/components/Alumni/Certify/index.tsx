@@ -1,8 +1,8 @@
 import { useCertify } from "@src/hooks/Alumni/useCertify";
 import * as S from "./style";
 import { Button } from "@stubee2/stubee2-rolling-ui";
-import { useEffect } from "react";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
+import { useEffect } from "react";
 
 export default function Certify() {
   const { ...attr } = useCertify();

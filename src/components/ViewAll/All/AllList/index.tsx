@@ -77,9 +77,7 @@ export default function AllList() {
             ))
           )
         ) : (
-          <S.NoneData>
-            <p>데이터가 없습니다.</p>
-          </S.NoneData>
+          <S.NoneData>데이터가 없습니다.</S.NoneData>
         )}
         <div ref={ref} />
       </S.Wrapper>

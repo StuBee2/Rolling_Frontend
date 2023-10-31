@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   display: flex;
   justify-content: center;
@@ -11,7 +11,6 @@ export const Container = styled.div`
   padding-top: 90px;
 
   min-width: 500px;
-  background-color: rgba(222, 224, 230, 1);
 
   @media screen and (max-width: 500px) {
     background-color: transparent;
@@ -21,8 +20,9 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 1370px;
+  width: 1020px;
   height: 100%;
+  padding-top: 6rem;
 
   display: flex;
   justify-content: center;
@@ -35,10 +35,12 @@ export const CertificationBox = styled.div`
   justify-content: center;
   align-items: center;
 
+  border: 1.5px solid #ddd;
+
   border-radius: 20px;
 
-  width: 1020px;
-  height: 601px;
+  width: 100%;
+  height: 600px;
 
   background-color: #fff;
   padding: 0 4rem 0 4rem;
