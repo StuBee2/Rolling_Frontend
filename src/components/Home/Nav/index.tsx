@@ -24,6 +24,8 @@ export const NavContainer = styled.div`
   position: sticky;
   top: calc(90px + 2rem);
 
+  /* background-color: red; */
+
   @media screen and (max-width: 1105px) {
     display: none;
   }

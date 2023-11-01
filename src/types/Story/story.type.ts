@@ -143,3 +143,22 @@ export interface StoryModifiableContentType {
 
   [key: string]: string;
 }
+
+export interface StoryModifiableContentPutType {
+  position: string;
+  schoolLife: string;
+  preparationCourse: string;
+  employmentProcess: string;
+  interviewQuestion: string;
+  mostImportantThing: string;
+  welfare: string;
+  commuteTime: string;
+  meal: string;
+  pros: string;
+  cons: string;
+  etc: string;
+  salaryAndBenefits: 5;
+  workLifeBalance: 5;
+  organizationalCulture: 5;
+  careerAdvancement: 5;
+}
