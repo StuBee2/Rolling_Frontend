@@ -155,7 +155,9 @@ export const ModalContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+
   z-index: 3;
+  padding: 0 10px 0 10px;
 
   display: flex;
   justify-content: center;
