@@ -5,9 +5,19 @@ import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import axios, { AxiosError } from "axios";
 import { useState } from "react";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
+import { useRecoilState } from "recoil";
+import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
+import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
 
 export const useSetUpStory = () => {
   const [isClickDots, setIsClickDots] = useState(false);
+  const [isModifiableEvent, setIsModifiableEvent] = useRecoilState(
+    StoryModifiableEventAtom
+  );
+  const [changeElementId, setChangeElementId] = useRecoilState(
+    StoryModifiableIdAtom
+  );
+
   const { queryInvalidates } = useQueryInvalidates();
   const deleteMyStory = useDeleteMyStoryMutation();
   const { rollingToast } = useRollingToast();
@@ -19,14 +29,19 @@ export const useSetUpStory = () => {
   ) => {
     switch (id) {
       case 0:
-        return;
+        return hanldeModifiableMyStroy(storyId);
       case 1:
         return hanldeDeleteMyStory(storyId, companyId);
       case 2:
-        return setIsClickDots(false);
+        return handleCloseMyStory();
       default:
         break;
     }
+  };
+
+  const hanldeModifiableMyStroy = (storyId: string) => {
+    setChangeElementId(storyId);
+    setIsModifiableEvent(true);
   };
 
   const hanldeDeleteMyStory = (storyId: string, companyId: string) => {
@@ -49,6 +64,11 @@ export const useSetUpStory = () => {
         },
       });
     }
+  };
+
+  const handleCloseMyStory = () => {
+    setIsClickDots(false);
+    setIsModifiableEvent(false);
   };
 
   return { isClickDots, setIsClickDots, hanldeStorySetUpClick };

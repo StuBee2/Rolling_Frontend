@@ -63,3 +63,10 @@ export const Info = styled.div`
     }
   }
 `;
+
+export const modifyInput = styled.input`
+  width: 60%;
+  height: 130%;
+  padding-left: 1%;
+  outline-color: blue;
+`;
