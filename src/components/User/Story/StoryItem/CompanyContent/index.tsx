@@ -117,7 +117,7 @@ export default function CompanyContent({ ...attr }: StoryItemType) {
           <S.AdvantagesContent>{attr.disAdvantages}</S.AdvantagesContent>
         </S.Advantages>
       </S.AdvantagesAndDisAdvantages>
-      {isModifiableEvent && <button>수정하기</button>}
+      {ischangeElementIdSame && <button>수정하기</button>}
     </S.Container>
   );
 }
