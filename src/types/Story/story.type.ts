@@ -9,6 +9,7 @@ export interface StoryInfoIdInfiniteScrollListType {
 }
 
 export interface StoryItemType {
+  storyId: string;
   schoolLife: string;
   preparationCourse: string;
   employmentProcess: string;
@@ -103,8 +104,8 @@ export interface StoryCompanyContentsType {
   welfare: string;
   commuteTime: string;
   meal: string;
-  advantages: string;
-  disAdvantages: string;
+  pros: string;
+  cons: string;
   employmentProcess: string;
 }
 
@@ -124,4 +125,21 @@ export interface StoryInputRefType {
   mostImportantThing: React.RefObject<HTMLInputElement>;
   employmentProcess: React.RefObject<HTMLInputElement>;
   interviewQuestion: React.RefObject<HTMLInputElement>;
+}
+
+export interface StoryModifiableInfoType {
+  position: string;
+  commuteTime: string;
+  meal: string;
+}
+
+export interface StoryModifiableContentType {
+  schoolLife: string;
+  preparationCourse: string;
+  employmentProcess: string;
+  interviewQuestion: string;
+  mostImportantThing: string;
+  welfare: string;
+
+  [key: string]: string;
 }

@@ -9,12 +9,16 @@ import CompanyDetailItem from "./CompanyDetailItem";
 import StoryRegistModal from "@src/components/Modal/Story";
 import * as S from "./style";
 import { StoryRegistModalAtom } from "@src/stores/story/story.store";
+import { StoryModifiablePageAtom } from "@src/stores/story/story.store";
 
 interface Props {
   id: string;
 }
 
 export default function CompanyDetail({ id }: Props) {
+  const [currentPage, setCurrentPage] = useRecoilState(StoryModifiablePageAtom);
+  setCurrentPage(true);
+
   /** 스토리 등록 모달에서 쓰이는 useState */
   const [storyCompanyInfo, setStoryCompanyInfo] =
     useState<StoryCompanyInfoType>({

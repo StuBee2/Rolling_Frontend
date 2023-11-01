@@ -98,3 +98,10 @@ export const Important = styled.p`
   padding: 1rem;
   color: rgba(115, 123, 152, 1);
 `;
+
+export const ModifyInput = styled.input`
+  width: 60%;
+  height: 30px;
+  padding-left: 1%;
+  outline-color: blue;
+`;

@@ -112,7 +112,7 @@ export const useRegistCompany = () => {
   };
 
   // 기업등록 제출
-  const handleRegistSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleRegistSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const answer = window.confirm("기업등록을 요청하시겠습니까?");
     if (answer) {

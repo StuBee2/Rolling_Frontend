@@ -31,8 +31,8 @@ export const useRegistStory = (companyId: string) => {
     welfare: "",
     meal: "",
     commuteTime: "",
-    advantages: "",
-    disAdvantages: "",
+    pros: "",
+    cons: "",
   });
 
   const [storyStarGrade, setStoryStarGrade] = useState<Record<string, number>>({

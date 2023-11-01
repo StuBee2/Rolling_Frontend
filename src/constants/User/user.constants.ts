@@ -27,10 +27,10 @@ export const USER_ITEMS: Type[] = [
 ];
 
 export const USER_STORY_SETUP_ITEMS = [
-  // {
-  //   id: 0,
-  //   image: edit,
-  // },
+  {
+    id: 0,
+    image: edit,
+  },
   {
     id: 1,
     image: del,

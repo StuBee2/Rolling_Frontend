@@ -1,6 +1,9 @@
 import { BiDotsVerticalRounded } from "@react-icons/all-files/bi/BiDotsVerticalRounded";
 import { USER_STORY_SETUP_ITEMS } from "@src/constants/User/user.constants";
 import { useSetUpStory } from "@src/hooks/Story/useSetUpStory";
+import { useRecoilState } from "recoil";
+import { StoryModifiablePageAtom } from "@src/stores/story/story.store";
+
 import * as S from "./style";
 
 interface Props {
@@ -13,27 +16,60 @@ export default function StorySetUp({ ...attr }: Props) {
     useSetUpStory();
   const { storyId, companyId } = attr;
 
+  const [currentPage, setCurrentPage] = useRecoilState(StoryModifiablePageAtom);
+
   return (
     <>
-      {isClickDots && storyId !== null ? (
+      {currentPage ? (
         <>
-          {USER_STORY_SETUP_ITEMS.map((item) => (
-            <S.Icon
-              key={item.id}
-              src={item.image}
-              onClick={() => hanldeStorySetUpClick(item.id, storyId, companyId)}
-              alt="이미지 없음"
-            />
-          ))}
+          {isClickDots && storyId !== null ? (
+            <>
+              {USER_STORY_SETUP_ITEMS.map((item) => (
+                <S.Icon
+                  key={item.id}
+                  src={item.image}
+                  onClick={() =>
+                    hanldeStorySetUpClick(item.id, storyId, companyId)
+                  }
+                  alt="이미지 없음"
+                />
+              ))}
+            </>
+          ) : (
+            <S.SetUpIconContainer>
+              <BiDotsVerticalRounded
+                size={25}
+                cursor="pointer"
+                onClick={() => setIsClickDots(true)}
+              />
+            </S.SetUpIconContainer>
+          )}
         </>
       ) : (
-        <S.SetUpIconContainer>
-          <BiDotsVerticalRounded
-            size={25}
-            cursor="pointer"
-            onClick={() => setIsClickDots(true)}
-          />
-        </S.SetUpIconContainer>
+        <>
+          {isClickDots && storyId !== null ? (
+            <>
+              {USER_STORY_SETUP_ITEMS.slice(1).map((item) => (
+                <S.Icon
+                  key={item.id}
+                  src={item.image}
+                  onClick={() =>
+                    hanldeStorySetUpClick(item.id, storyId, companyId)
+                  }
+                  alt="이미지 없음"
+                />
+              ))}
+            </>
+          ) : (
+            <S.SetUpIconContainer>
+              <BiDotsVerticalRounded
+                size={25}
+                cursor="pointer"
+                onClick={() => setIsClickDots(true)}
+              />
+            </S.SetUpIconContainer>
+          )}
+        </>
       )}
     </>
   );

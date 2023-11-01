@@ -191,7 +191,7 @@ export default function Form({ ...attr }: Props) {
           <p>기업의 장점</p>
         </S.InputTitle>
         <TextInput
-          value={hooks.storyContents.advantages}
+          value={hooks.storyContents.pros}
           customStyle={S.InputStyle}
           placeholder="해당 기업은 어떤 장점을 갖고 있나요?"
           name="advantages"
@@ -204,7 +204,7 @@ export default function Form({ ...attr }: Props) {
           <p>기업의 단점</p>
         </S.InputTitle>
         <TextInput
-          value={hooks.storyContents.disAdvantages}
+          value={hooks.storyContents.cons}
           customStyle={S.InputStyle}
           placeholder="해당 기업은 어떤 단점을 갖고 있나요?"
           name="disAdvantages"
