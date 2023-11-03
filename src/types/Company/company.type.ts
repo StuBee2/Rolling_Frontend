@@ -62,13 +62,6 @@ export interface CompanyStarGradeInfo extends CompanyStarGrade {
   companyName: string;
 }
 
-export interface CompanyRegistInfo {
-  name: string;
-  address: string;
-  addressEtc?: string;
-  description: string;
-}
-
 export interface CompanyRegistErrorType {
   name: boolean;
   address: boolean;
@@ -79,13 +72,4 @@ export interface CompanyInputRefType {
   name: React.RefObject<HTMLInputElement>;
   address: React.RefObject<HTMLInputElement>;
   description: React.RefObject<HTMLInputElement>;
-}
-
-export interface CompanyModifyType {
-  name: string;
-  address: string;
-  addressEtc?: string;
-  description: string;
-  imgUrl: string;
-  rgb: number | null;
 }

@@ -18,7 +18,7 @@ interface Props {
   setSearchCompanyModal: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function CompanyList({ setSearchCompanyModal }: Props) {
+export default function SearchCompanyModal({ setSearchCompanyModal }: Props) {
   useCloseModal(setSearchCompanyModal);
   const { ...attr } = useSearchCompany();
 

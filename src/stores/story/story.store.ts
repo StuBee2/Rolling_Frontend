@@ -1,13 +1,8 @@
-import { CompanyRegistInfo } from "@src/types/Company/company.type";
+import { CompanyParam } from "@src/repositories/Company/company.repository";
 import { atom } from "recoil";
 
 export const StoryRegistModalAtom = atom<boolean>({
   key: "StoryRegisterModalAtom",
-  default: false,
-});
-
-export const StorySearchCompanyNameModalAtom = atom<boolean>({
-  key: "storySearchCompanyNameModalAtom",
   default: false,
 });
 
@@ -22,19 +17,16 @@ export const StorySearchCompanyAtom = atom<{
   },
 });
 
-export const StoryCompanyRegistAtom = atom<CompanyRegistInfo>({
+export const StoryCompanyRegistAtom = atom<CompanyParam>({
   key: "storyCompanyRegistAtom",
   default: {
     name: "",
     address: "",
     addressEtc: "",
     description: "",
+    imgUrl: "",
+    rgb: null,
   },
-});
-
-export const StoryAddressModalAtom = atom<boolean>({
-  key: "storyAddressModalAtom",
-  default: false,
 });
 
 /** 스토리 등록페이지에서 기업등록해서 서버가 주는 id값을 담은 다음,

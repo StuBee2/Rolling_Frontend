@@ -35,7 +35,7 @@ export const CertificationBox = styled.div`
   justify-content: center;
   align-items: center;
 
-  border: 1.5px solid #ddd;
+  border: 1.3px solid #ddd;
 
   border-radius: 20px;
 

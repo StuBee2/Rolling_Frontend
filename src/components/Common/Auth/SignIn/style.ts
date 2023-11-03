@@ -15,6 +15,8 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0 10px 0 10px;
 `;
 
 export const Wrapper = styled.div`
@@ -46,11 +48,6 @@ export const Wrapper = styled.div`
     width: 630px;
     height: 550px;
   }
-
-  @media screen and (max-width: 665px) {
-    width: 480px;
-  }
-
   @media screen and (max-height: 690px) {
     height: 500px;
   }

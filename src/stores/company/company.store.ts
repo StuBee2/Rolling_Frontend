@@ -1,7 +1,4 @@
-import {
-  CompanyModifyType,
-  CompanyRegistInfo,
-} from "@src/types/Company/company.type";
+import { CompanyParam } from "@src/repositories/Company/company.repository";
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 
@@ -18,7 +15,7 @@ export const CompanyIdAtom = atom<string>({
   effects_UNSTABLE: [persistAtom],
 });
 
-export const CompanyModifyAtom = atom<CompanyModifyType>({
+export const CompanyModifyAtom = atom<CompanyParam>({
   key: "companyModifyAtom",
   default: {
     name: "",
@@ -28,13 +25,4 @@ export const CompanyModifyAtom = atom<CompanyModifyType>({
     rgb: null,
   },
   effects_UNSTABLE: [persistAtom],
-});
-
-export const CompanyRegistAtom = atom<CompanyRegistInfo>({
-  key: "companyRegistAtom",
-  default: {
-    name: "",
-    address: "",
-    description: "",
-  },
 });

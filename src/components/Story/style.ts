@@ -10,16 +10,15 @@ export const Container = styled.div`
   padding: 90px 10px 0 10px;
 `;
 
-export const Wrapper = styled.div`
-  width: 900px;
+export const Wrapper = styled.div<{ rowGap: string }>`
+  width: 950px;
   height: 100%;
-
   padding-top: 4rem;
   padding-bottom: 3rem;
 
   display: flex;
   flex-direction: column;
-  row-gap: 10rem;
+  row-gap: ${({ rowGap }) => rowGap};
 `;
 
 export const TitleContainer = styled.div`

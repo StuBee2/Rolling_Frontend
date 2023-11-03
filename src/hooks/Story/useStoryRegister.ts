@@ -69,7 +69,6 @@ export const useStoryRegister = (companyId: string) => {
           employmentProcess: "",
           interviewQuestion: "",
           mostImportantThing: "",
-          welfare: "",
           commuteTime: "",
           meal: "",
         };

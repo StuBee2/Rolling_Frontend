@@ -1,26 +1,17 @@
 import useAlumniCheck from "@src/hooks/Alumni/useAlumniCheck";
 import {
-  StoryAddressModalAtom,
   StoryCompanyIdAtom,
   StorySearchCompanyAtom,
-  StorySearchCompanyNameModalAtom,
 } from "@src/stores/story/story.store";
 import { useEffect } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import Portal from "../Common/Portal";
+import { useRecoilState } from "recoil";
 import CompanyRegister from "./Company/Register";
-import AddressModal from "./Company/Register/RegisterItem/Address";
 import SearchCompany from "./Company/Search";
-import SearchCompanyModal from "./Company/Search/SearchModal";
 import StoryRegister from "./StoryRegister";
 import * as S from "./style";
 
 export default function Story() {
   useAlumniCheck();
-  const [searchCompanyModal, setSearchCompanyModal] = useRecoilState(
-    StorySearchCompanyNameModalAtom
-  );
-  const storyAddressModal = useRecoilValue(StoryAddressModalAtom);
 
   const [storySearchCompany, setStorySearchCompany] = useRecoilState(
     StorySearchCompanyAtom
@@ -61,27 +52,18 @@ export default function Story() {
   }, []);
 
   return (
-    <>
-      <S.Container>
-        <S.Wrapper>
-          <SearchCompany />
-          <CompanyRegister
-            storySearchCompany={storySearchCompany}
-            storyCompanyId={storyCompanyId}
-          />
-          <StoryRegister
-            storySearchCompany={storySearchCompany}
-            storyCompanyId={storyCompanyId}
-          />
-        </S.Wrapper>
-      </S.Container>
-
-      <Portal>
-        {searchCompanyModal && (
-          <SearchCompanyModal setSearchCompanyModal={setSearchCompanyModal} />
-        )}
-        {storyAddressModal && <AddressModal />}
-      </Portal>
-    </>
+    <S.Container>
+      <S.Wrapper rowGap="10rem">
+        <SearchCompany />
+        <CompanyRegister
+          storySearchCompany={storySearchCompany}
+          storyCompanyId={storyCompanyId}
+        />
+        <StoryRegister
+          storySearchCompany={storySearchCompany}
+          storyCompanyId={storyCompanyId}
+        />
+      </S.Wrapper>
+    </S.Container>
   );
 }

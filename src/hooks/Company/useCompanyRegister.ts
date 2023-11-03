@@ -7,9 +7,8 @@ import {
   StoryCompanyIdAtom,
   StoryCompanyRegistAtom,
 } from "@src/stores/story/story.store";
-import { CompanyRegistInfo } from "@src/types/Company/company.type";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
-import { MutableRefObject, useRef, useState } from "react";
+import { MutableRefObject, useRef } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 
@@ -19,20 +18,17 @@ export const useCompanyRegister = () => {
   const formData = new FormData();
   const { rollingToast } = useRollingToast();
 
-  const [imgUrl, setImgUrl] = useState<string>("");
-  const [rgb, setRgb] = useState<number | null>(null);
-
   const fileUpload = useUploadFileMutation();
   const registCompany = usePostCompanyRegisterMutation();
   const { queryInvalidates } = useQueryInvalidates();
 
-  const [companyInfo, setCompanyInfo] = useRecoilState<CompanyRegistInfo>(
-    StoryCompanyRegistAtom
-  );
+  const [companyRegisterInfo, setCompanyRegisterInfo] =
+    useRecoilState<CompanyParam>(StoryCompanyRegistAtom);
 
   // 필수요소를 만족하는지 판단
   const isRequred =
-    companyInfo.address.trim() !== "" && companyInfo.description.trim() !== "";
+    companyRegisterInfo.address.trim() !== "" &&
+    companyRegisterInfo.description.trim() !== "";
 
   // 회사 스토리를 남길 때 필요한 레코일
   const setStoryCompanyId = useSetRecoilState(StoryCompanyIdAtom);
@@ -47,8 +43,7 @@ export const useCompanyRegister = () => {
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
     const { name, value } = e.target;
-
-    setCompanyInfo((prev) => ({ ...prev, [name]: value }));
+    setCompanyRegisterInfo((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleUploadCompanyLogo = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,8 +52,8 @@ export const useCompanyRegister = () => {
 
     fileUpload.mutate(formData as unknown as FileParam, {
       onSuccess: (imgUrl) => {
-        setImgUrl(imgUrl.url);
-        setRgb(imgUrl.rgb);
+        setCompanyRegisterInfo((prev) => ({ ...prev, imgUrl: imgUrl.url }));
+        setCompanyRegisterInfo((prev) => ({ ...prev, rgb: imgUrl.rgb }));
       },
       onError: (e) => {
         rollingToast("이미지 전송실패", "error");
@@ -74,11 +69,7 @@ export const useCompanyRegister = () => {
       const answer = window.confirm("기업을 등록 하시겠습니까?");
 
       if (answer) {
-        const param = { ...companyInfo, imgUrl, rgb };
-
-        console.log(param);
-
-        registCompany.mutate(param as unknown as CompanyParam, {
+        registCompany.mutate(companyRegisterInfo, {
           onSuccess: (res) => {
             rollingToast("기업을 등록 하였습니다!", "success");
 
@@ -91,20 +82,20 @@ export const useCompanyRegister = () => {
             setStoryCompanyId(res.id);
 
             queryInvalidates([
-              QUERY_KEYS.company.getListSearchCompany(companyInfo.name),
+              QUERY_KEYS.company.getListSearchCompany(companyRegisterInfo.name),
               QUERY_KEYS.company.company,
               QUERY_KEYS.company.getListAllCompany,
               QUERY_KEYS.company.getCompanyRank,
             ]);
 
-            setCompanyInfo({
+            setCompanyRegisterInfo({
               name: "",
               address: "",
               addressEtc: "",
               description: "",
+              imgUrl: "",
+              rgb: null,
             });
-            setImgUrl("");
-            setRgb(null);
           },
           onError: (error) => {
             console.log(error);
@@ -115,11 +106,9 @@ export const useCompanyRegister = () => {
   };
 
   return {
-    companyInfo,
-    setCompanyInfo,
+    companyRegisterInfo,
+    setCompanyRegisterInfo,
 
-    imgUrl,
-    setImgUrl,
     imgRef,
     handleUploadCompanyLogo,
 

@@ -73,10 +73,6 @@ export const MainItemContent = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-
-  @media screen and (max-width: 703px) {
-    justify-content: center;
-  }
 `;
 
 export const MainItemBox = styled.div`
@@ -94,11 +90,15 @@ export const MainItemBox = styled.div`
     height: 340px;
   }
   @media screen and (max-width: 1105px) {
+    flex-basis: 31%;
     height: 330px;
   }
-  @media screen and (max-width: 710px) {
+  @media screen and (max-width: 900px) {
+    flex-basis: 48%;
+  }
+  @media screen and (max-width: 533px) {
     flex-basis: auto;
-    width: 98%;
+    width: 100%;
     height: 380px;
   }
 `;

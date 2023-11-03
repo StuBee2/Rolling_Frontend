@@ -31,4 +31,5 @@ export const RankNumber = styled.div`
 
   font-size: 20px;
   color: #fff;
+  z-index: 2;
 `;

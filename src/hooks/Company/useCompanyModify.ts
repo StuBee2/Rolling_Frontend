@@ -13,16 +13,16 @@ import {
 } from "@src/stores/company/company.store";
 import axios, { AxiosError } from "axios";
 import { companyErrorHanlder } from "@src/utils/Error/Company/companyErrorHanlder";
-import { CompanyModifyType } from "@src/types/Company/company.type";
+import { CompanyParam } from "@src/repositories/Company/company.repository";
 
-export const useStoryCompanyModify = () => {
+export const useCompanyModify = () => {
   const imgRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
 
   const formData = new FormData();
 
   // 전 값과 비교를 하는 state
   const [prevCompanyModifyInfo, setPrevCompanyModifyInfo] =
-    useState<CompanyModifyType>({
+    useState<CompanyParam>({
       name: "",
       address: "",
       addressEtc: "",
