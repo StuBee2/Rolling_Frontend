@@ -14,7 +14,7 @@ import { convertStarRatingObject } from "@src/utils/StarRating/convertRankingObj
 import { StoryModifiableContentAtom } from "@src/stores/story/story.store";
 import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
 import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
-import { useEditStory } from "@src/hooks/Story/useStoryModify";
+import { useStoryModify } from "@src/hooks/Story/useStoryModify";
 
 // 마이페이지와 회사단일 조회 페이지에서 같이 쓰이는 컴포넌트
 export default function StoryItem({ ...attr }: StoryCommonType) {
@@ -26,7 +26,7 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
     !attr.writerId || tokenDecode("access", "sub") === attr.writerId;
   const rankStatus = convertStarRatingObject(attr);
 
-  const { handleModifyStorySubmit } = useEditStory();
+  const { handleModifyStorySubmit } = useStoryModify();
   const modifyStoryId = useRecoilValue(StoryModifiableIdAtom);
   const isModifiableEvent = useRecoilValue(StoryModifiableEventAtom);
   const [storyModifiableContent, setStoryModifiableContent] = useRecoilState(
@@ -95,7 +95,7 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
           />
           {isModifiableEvent && (
             <S.StoryModifySubmitBtn
-              onClick={() => handleModifyStorySubmit(modifyStroyCompanyId)}
+              onClick={(e) => handleModifyStorySubmit(e, modifyStroyCompanyId)}
             >
               수정완료
             </S.StoryModifySubmitBtn>

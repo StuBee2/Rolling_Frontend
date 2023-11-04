@@ -5,7 +5,7 @@ import { useRecoilValue } from "recoil";
 import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
 import { StoryModifiableContentAtom } from "@src/stores/story/story.store";
 import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
-import { useEditStory } from "@src/hooks/Story/useStoryModify";
+import { useStoryModify } from "@src/hooks/Story/useStoryModify";
 
 interface Props {
   companyImgUrl?: string;
@@ -24,7 +24,7 @@ interface Props {
 
 export default function CompanyInfo({ ...attr }: Props) {
   const navigate = useNavigate();
-  const { handleChangeModifyStoryContent } = useEditStory();
+  const { handleChangeModifyStoryContent } = useStoryModify();
 
   const isModifiableEvent = useRecoilValue(StoryModifiableEventAtom);
   const modifyStoryId = useRecoilValue(StoryModifiableIdAtom);

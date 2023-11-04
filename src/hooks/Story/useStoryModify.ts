@@ -7,8 +7,9 @@ import { QUERY_KEYS } from "@src/queries/queryKey";
 import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
 import { StorySetupInitializationDotAtom } from "@src/stores/story/story.store";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
+import { FormEvent } from "react";
 
-export const useEditStory = () => {
+export const useStoryModify = () => {
   const { queryInvalidates } = useQueryInvalidates();
   const { rollingToast } = useRollingToast();
   const putStory = usePutMyStoryMutation();
@@ -32,7 +33,11 @@ export const useEditStory = () => {
       [name]: value,
     });
   };
-  const handleModifyStorySubmit = (modifyStoryCompanyId: string) => {
+  const handleModifyStorySubmit = (
+    e: React.FormEvent<HTMLFormElement>,
+    modifyStoryCompanyId: string
+  ) => {
+    e.preventDefault();
     putStory.mutate(
       { storyId: modifyStroyId, storyContent: storyModifiableContent },
       {
@@ -43,8 +48,8 @@ export const useEditStory = () => {
           ]);
           rollingToast("스토리가 수정되었습니다", "success");
         },
-        onError: (e) => {
-          console.log(e);
+        onError: (error) => {
+          console.log(error);
         },
       }
     );

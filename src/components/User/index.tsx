@@ -1,6 +1,6 @@
 import * as S from "./style";
 import Nav from "./Nav";
-import { ReactNode, Suspense } from "react";
+import { ReactNode, Suspense, useEffect } from "react";
 import ErrorBoundary from "../Common/ErrorBoundary";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import NavFooter from "./Nav/NavFooter";
@@ -24,7 +24,10 @@ export default function User({ children }: Props) {
   const [modifyActivationPage, setModifyActivationPage] = useRecoilState(
     StoryModifiablePageAtom
   );
-  setModifyActivationPage(true);
+
+  useEffect(() => {
+    setModifyActivationPage(true);
+  }, []);
 
   return (
     <S.UserContainer>

@@ -5,11 +5,11 @@ import { storyItemsObject } from "@src/utils/Story/storyItemsObject";
 import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
 import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
 import { StoryModifiableContentAtom } from "@src/stores/story/story.store";
-import { useEditStory } from "@src/hooks/Story/useStoryModify";
+import { useStoryModify } from "@src/hooks/Story/useStoryModify";
 import { StoryModifiableContentPatchType } from "@src/types/Story/story.type";
 
 export default function CompanyContent({ ...attr }: StoryItemType) {
-  const { handleChangeModifyStoryContent } = useEditStory();
+  const { handleChangeModifyStoryContent } = useStoryModify();
   const isModifiableEvent = useRecoilValue(StoryModifiableEventAtom);
   const modifyStoryId = useRecoilValue(StoryModifiableIdAtom);
   const storyModifiableContent = useRecoilValue(StoryModifiableContentAtom);

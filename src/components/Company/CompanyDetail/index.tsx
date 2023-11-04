@@ -19,7 +19,6 @@ export default function CompanyDetail({ id }: Props) {
   const [modifyActivationPage, setModifyActivationPage] = useRecoilState(
     StoryModifiablePageAtom
   );
-  setModifyActivationPage(false);
 
   /** 스토리 등록 모달에서 쓰이는 useState */
   const [storyCompanyInfo, setStoryCompanyInfo] =
