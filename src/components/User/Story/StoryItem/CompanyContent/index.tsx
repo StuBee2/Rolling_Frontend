@@ -28,9 +28,7 @@ export default function CompanyContent({ ...attr }: StoryItemType) {
             <p>우리 기업의 장점은</p>
           </S.Title>
 
-          <S.AdvantagesContent isCons={true}>
-            {attr.pros}
-          </S.AdvantagesContent>
+          <S.AdvantagesContent isCons={true}>{attr.pros}</S.AdvantagesContent>
         </S.Advantages>
 
         <S.Advantages>

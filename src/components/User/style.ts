@@ -13,6 +13,7 @@ export const UserContainer = styled.div`
   padding-bottom: 2rem;
   min-width: 500px;
   padding-top: 90px;
+
   @media screen and (max-width: 500px) {
     height: 100%;
   }

@@ -48,6 +48,8 @@ export const Content = styled.p`
   padding-left: 5px;
   line-height: 23px;
 
+  font-size: 17px;
+
   &:hover {
     overflow-y: auto;
   }
@@ -88,6 +90,8 @@ export const AdvantagesContent = styled.p<{ isCons?: boolean }>`
   padding: 1rem;
   color: rgba(115, 123, 152, 1);
   line-height: 23px;
+
+  font-size: 17px;
 `;
 
 export const Important = styled.p`
