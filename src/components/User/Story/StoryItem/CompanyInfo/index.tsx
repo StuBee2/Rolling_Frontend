@@ -5,7 +5,7 @@ import { useRecoilValue } from "recoil";
 import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
 import { StoryModifiableContentAtom } from "@src/stores/story/story.store";
 import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
-import { useEditStory } from "@src/hooks/Story/useEditStory";
+import { useEditStory } from "@src/hooks/Story/useStoryModify";
 
 interface Props {
   companyImgUrl?: string;

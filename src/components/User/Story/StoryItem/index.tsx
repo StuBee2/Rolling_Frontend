@@ -1,5 +1,5 @@
 import { useRecoilState, useRecoilValue } from "recoil";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import StorySetUp from "@src/components/Common/StorySetUp";
 import Star from "@src/components/Common/Star";
 import CompanyContent from "@src/components/User/Story/StoryItem/CompanyContent";
@@ -14,7 +14,7 @@ import { convertStarRatingObject } from "@src/utils/StarRating/convertRankingObj
 import { StoryModifiableContentAtom } from "@src/stores/story/story.store";
 import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
 import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
-import { useEditStory } from "@src/hooks/Story/useEditStory";
+import { useEditStory } from "@src/hooks/Story/useStoryModify";
 
 // 마이페이지와 회사단일 조회 페이지에서 같이 쓰이는 컴포넌트
 export default function StoryItem({ ...attr }: StoryCommonType) {
@@ -32,6 +32,7 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
   const [storyModifiableContent, setStoryModifiableContent] = useRecoilState(
     StoryModifiableContentAtom
   );
+  const [modifyStroyCompanyId, setModifyStroyCompanyId] = useState<string>("");
 
   useEffect(() => {
     if (attr.storyId === modifyStoryId) {
@@ -54,8 +55,11 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
         organizationalCulture: attr.organizationalCulture,
         careerAdvancement: attr.careerAdvancement,
       });
+      if (attr.companyId) {
+        setModifyStroyCompanyId(attr.companyId);
+      }
     }
-  }, [modifyStoryId, attr.storyId]);
+  }, [modifyStoryId, attr.storyId, attr.companyId]);
 
   return (
     <S.Container>
@@ -90,7 +94,9 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
             fontSize={"15px"}
           />
           {isModifiableEvent && (
-            <S.StoryModifySubmitBtn onClick={handleModifyStorySubmit}>
+            <S.StoryModifySubmitBtn
+              onClick={() => handleModifyStorySubmit(modifyStroyCompanyId)}
+            >
               수정완료
             </S.StoryModifySubmitBtn>
           )}

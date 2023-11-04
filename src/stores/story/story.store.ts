@@ -6,6 +6,11 @@ export const StoryRegistModalAtom = atom<boolean>({
   default: false,
 });
 
+export const StorySetupInitializationDotAtom = atom<boolean>({
+  key: "StorySetupInitializationDotAtom",
+  default: false,
+});
+
 export const StoryModifiablePageAtom = atom<boolean>({
   key: "StoryModifiablePageAtom",
   default: false,

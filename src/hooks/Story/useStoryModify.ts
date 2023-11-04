@@ -1,18 +1,28 @@
-import React, { useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { StoryModifiableContentAtom } from "@src/stores/story/story.store";
 import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
 import { usePutMyStoryMutation } from "@src/queries/Story/story.query";
-import { StoryParam } from "@src/repositories/Story/story.repository";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
+import { QUERY_KEYS } from "@src/queries/queryKey";
+import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
+import { StorySetupInitializationDotAtom } from "@src/stores/story/story.store";
+import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 
 export const useEditStory = () => {
+  const { queryInvalidates } = useQueryInvalidates();
   const { rollingToast } = useRollingToast();
   const putStory = usePutMyStoryMutation();
 
-  const storyId = useRecoilValue(StoryModifiableIdAtom);
+  const modifyStroyId = useRecoilValue(StoryModifiableIdAtom);
   const [storyModifiableContent, setStoryModifiableContent] = useRecoilState(
     StoryModifiableContentAtom
+  );
+
+  const [isModifiableEvent, setIsModifiableEvent] = useRecoilState(
+    StoryModifiableEventAtom
+  );
+  const [isClickDots, setIsClickDots] = useRecoilState(
+    StorySetupInitializationDotAtom
   );
 
   const handleChangeModifyStoryContent = (name: string, value: string) => {
@@ -22,11 +32,15 @@ export const useEditStory = () => {
       [name]: value,
     });
   };
-  const handleModifyStorySubmit = (e: React.FormEvent) => {
+  const handleModifyStorySubmit = (modifyStoryCompanyId: string) => {
     putStory.mutate(
-      { storyId: storyId, storyContent: storyModifiableContent },
+      { storyId: modifyStroyId, storyContent: storyModifiableContent },
       {
         onSuccess: () => {
+          queryInvalidates([
+            QUERY_KEYS.story.getMyStory,
+            QUERY_KEYS.story.getStoryListCompanyId(modifyStoryCompanyId),
+          ]);
           rollingToast("스토리가 수정되었습니다", "success");
         },
         onError: (e) => {
@@ -34,6 +48,8 @@ export const useEditStory = () => {
         },
       }
     );
+    setIsClickDots(false);
+    setIsModifiableEvent(false);
   };
 
   return {

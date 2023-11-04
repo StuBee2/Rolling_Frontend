@@ -5,6 +5,7 @@ import { BiDotsVerticalRounded } from "@react-icons/all-files/bi/BiDotsVerticalR
 import { USER_STORY_SETUP_ITEMS } from "@src/constants/User/user.constants";
 import { useSetUpStory } from "@src/hooks/Story/useSetUpStory";
 import { StoryModifiablePageAtom } from "@src/stores/story/story.store";
+import { StorySetupInitializationDotAtom } from "@src/stores/story/story.store";
 
 interface Props {
   storyId: string;
@@ -12,11 +13,11 @@ interface Props {
 }
 
 export default function StorySetUp({ ...attr }: Props) {
-  const { isClickDots, setIsClickDots, hanldeStorySetUpClick } =
-    useSetUpStory();
+  const { setIsClickDots, hanldeStorySetUpClick } = useSetUpStory();
   const { storyId, companyId } = attr;
 
   const modifyActivationPage = useRecoilValue(StoryModifiablePageAtom);
+  const isClickDots = useRecoilValue(StorySetupInitializationDotAtom);
   const [userStorySetupItemsSlice, SetUserStorySetupItemsSlice] =
     useState<number>(0);
 
