@@ -1,3 +1,5 @@
+import { useRecoilState, useRecoilValue } from "recoil";
+import { useEffect, useState } from "react";
 import StorySetUp from "@src/components/Common/StorySetUp";
 import Star from "@src/components/Common/Star";
 import CompanyContent from "@src/components/User/Story/StoryItem/CompanyContent";
@@ -9,6 +11,10 @@ import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import * as S from "./style";
 import { convertStarRatingObject } from "@src/utils/StarRating/convertRankingObject";
+import { StoryModifiableContentAtom } from "@src/stores/story/story.store";
+import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
+import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
+import { useStoryModify } from "@src/hooks/Story/useStoryModify";
 
 // 마이페이지와 회사단일 조회 페이지에서 같이 쓰이는 컴포넌트
 export default function StoryItem({ ...attr }: StoryCommonType) {
@@ -19,6 +25,41 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
   const isCoincideMemberId =
     !attr.writerId || tokenDecode("access", "sub") === attr.writerId;
   const rankStatus = convertStarRatingObject(attr);
+
+  const { handleModifyStorySubmit } = useStoryModify();
+  const modifyStoryId = useRecoilValue(StoryModifiableIdAtom);
+  const isModifiableEvent = useRecoilValue(StoryModifiableEventAtom);
+  const [storyModifiableContent, setStoryModifiableContent] = useRecoilState(
+    StoryModifiableContentAtom
+  );
+  const [modifyStroyCompanyId, setModifyStroyCompanyId] = useState<string>("");
+
+  useEffect(() => {
+    if (attr.storyId === modifyStoryId) {
+      setStoryModifiableContent({
+        ...storyModifiableContent,
+        position: attr.position,
+        schoolLife: attr.schoolLife,
+        preparationCourse: attr.preparationCourse,
+        employmentProcess: attr.employmentProcess,
+        interviewQuestion: attr.interviewQuestion,
+        mostImportantThing: attr.mostImportantThing,
+        welfare: attr.welfare,
+        commuteTime: attr.commuteTime,
+        meal: attr.meal,
+        pros: attr.pros,
+        cons: attr.cons,
+        etc: "Developing features...",
+        salaryAndBenefits: attr.salaryAndBenefits,
+        workLifeBalance: attr.workLifeBalance,
+        organizationalCulture: attr.organizationalCulture,
+        careerAdvancement: attr.careerAdvancement,
+      });
+      if (attr.companyId) {
+        setModifyStroyCompanyId(attr.companyId);
+      }
+    }
+  }, [modifyStoryId, attr.storyId, attr.companyId]);
 
   return (
     <S.Container>
@@ -52,6 +93,13 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
             height={20}
             fontSize={"15px"}
           />
+          {isModifiableEvent && (
+            <S.StoryModifySubmitBtn
+              onClick={(e) => handleModifyStorySubmit(e, modifyStroyCompanyId)}
+            >
+              수정완료
+            </S.StoryModifySubmitBtn>
+          )}
         </S.Content>
       </S.Wrapper>
     </S.Container>

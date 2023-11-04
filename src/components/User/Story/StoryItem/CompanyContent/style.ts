@@ -35,17 +35,20 @@ export const Title = styled.div`
   }
 `;
 
-export const Content = styled.p`
+export const Content = styled.p<{ isEtc?: string }>`
   width: 100%;
+  height: ${({ isEtc }) => (isEtc === "etc" ? "500px" : "auto")};
   max-height: 200px;
   overflow-y: hidden;
   overflow-x: hidden;
 
   font-size: 15px;
   color: rgba(115, 123, 152, 1);
+  border-radius: 5px;
+  background-color: #f2f4f5;
 
   white-space: pre-wrap;
-  padding-left: 5px;
+  padding: 0.8rem;
   line-height: 23px;
 
   font-size: 17px;
@@ -87,7 +90,7 @@ export const AdvantagesContent = styled.p<{ isCons?: boolean }>`
   background-color: ${({ isCons }) => (isCons ? "#eef2fa" : "#fbeeee")};
   border-radius: 10px;
 
-  padding: 1rem;
+  padding: 0.8rem;
   color: rgba(115, 123, 152, 1);
   line-height: 23px;
 
@@ -101,4 +104,62 @@ export const Important = styled.p`
   border-radius: 10px;
   padding: 1rem;
   color: rgba(115, 123, 152, 1);
+`;
+
+export const AdvantagesContentInput = styled.input`
+  width: 100%;
+  height: auto;
+  border: 2px solid #f2f4f5;
+  border-radius: 5px;
+  background-color: white;
+  outline-color: blue;
+
+  padding: 0.8rem;
+  color: rgba(115, 123, 152, 1);
+  line-height: 23px;
+`;
+
+export const ModifyContentInput = styled.input`
+  width: 100%;
+  max-height: 200px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  font-size: 15px;
+  color: rgba(115, 123, 152, 1);
+  border: 2px solid #f2f4f5;
+  border-radius: 5px;
+  background-color: white;
+  outline-color: blue;
+
+  white-space: pre-wrap;
+  padding: 0.8rem;
+  line-height: 23px;
+  &:hover {
+    overflow-y: auto;
+  }
+`;
+
+export const ModifyContentTextArea = styled.textarea<{ isEtc?: string }>`
+  width: 100%;
+  height: ${({ isEtc }) => (isEtc === "etc" ? "500px" : "auto")};
+  max-height: 200px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  font-size: 15px;
+  color: rgba(115, 123, 152, 1);
+  border: 2px solid #f2f4f5;
+  border-radius: 5px;
+  background-color: white;
+  outline-color: blue;
+
+  white-space: pre-wrap;
+  padding: 0.8rem;
+  line-height: 23px;
+  resize: none;
+
+  &:hover {
+    overflow-y: auto;
+  }
 `;

@@ -1,13 +1,26 @@
+import { useState } from "react";
+import { useRecoilState } from "recoil";
+import axios, { AxiosError } from "axios";
 import { QUERY_KEYS } from "@src/queries/queryKey";
 import { useDeleteMyStoryMutation } from "@src/queries/Story/story.query";
 import { storyErrorHanlder } from "@src/utils/Error/Story/storyErrorHanlder";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
-import axios, { AxiosError } from "axios";
-import { useState } from "react";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
+import { StorySetupInitializationDotAtom } from "@src/stores/story/story.store";
+import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
+import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
 
 export const useSetUpStory = () => {
-  const [isClickDots, setIsClickDots] = useState(false);
+  const [isModifiableEvent, setIsModifiableEvent] = useRecoilState(
+    StoryModifiableEventAtom
+  );
+  const [isClickDots, setIsClickDots] = useRecoilState(
+    StorySetupInitializationDotAtom
+  );
+  const [modifyStoryId, setModifyStoryId] = useRecoilState(
+    StoryModifiableIdAtom
+  );
+
   const { queryInvalidates } = useQueryInvalidates();
   const deleteMyStory = useDeleteMyStoryMutation();
   const { rollingToast } = useRollingToast();
@@ -19,14 +32,19 @@ export const useSetUpStory = () => {
   ) => {
     switch (id) {
       case 0:
-        return;
+        return hanldeModifiableMyStroy(storyId);
       case 1:
         return hanldeDeleteMyStory(storyId, companyId);
       case 2:
-        return setIsClickDots(false);
+        return handleCloseMyStory();
       default:
         break;
     }
+  };
+
+  const hanldeModifiableMyStroy = (storyId: string) => {
+    setModifyStoryId(storyId);
+    setIsModifiableEvent(true);
   };
 
   const hanldeDeleteMyStory = (storyId: string, companyId: string) => {
@@ -51,5 +69,10 @@ export const useSetUpStory = () => {
     }
   };
 
-  return { isClickDots, setIsClickDots, hanldeStorySetUpClick };
+  const handleCloseMyStory = () => {
+    setIsClickDots(false);
+    setIsModifiableEvent(false);
+  };
+
+  return { setIsClickDots, hanldeStorySetUpClick };
 };

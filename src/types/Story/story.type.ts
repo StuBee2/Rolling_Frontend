@@ -9,6 +9,7 @@ export interface StoryInfoIdInfiniteScrollListType {
 }
 
 export interface StoryItemType {
+  storyId: string;
   schoolLife: string;
   preparationCourse: string;
   employmentProcess: string;
@@ -19,6 +20,7 @@ export interface StoryItemType {
   meal: string;
   pros: string;
   cons: string;
+  etc: string;
 }
 
 export interface StoryCommonItemType extends StoryItemType {
@@ -131,4 +133,29 @@ export interface StoryRegistRequireType {
   welfare: string;
   pros: string;
   cons: string;
+}
+
+export interface StoryModifiableInfoType {
+  position: string;
+  commuteTime: string;
+  meal: string;
+}
+
+export interface StoryModifiableContentPatchType {
+  position: string;
+  schoolLife: string;
+  preparationCourse: string;
+  employmentProcess: string;
+  interviewQuestion: string;
+  mostImportantThing: string;
+  welfare: string;
+  commuteTime: string;
+  meal: string;
+  pros: string;
+  cons: string;
+  etc: string;
+  salaryAndBenefits: number;
+  workLifeBalance: number;
+  organizationalCulture: number;
+  careerAdvancement: number;
 }
