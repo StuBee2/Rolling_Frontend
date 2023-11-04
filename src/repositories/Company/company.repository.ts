@@ -8,6 +8,7 @@ import { CommonIdParam, CommonPageParam } from "../common.param";
 export interface CompanyParam {
   name: string;
   address: string;
+  addressEtc?: string;
   description: string;
   imgUrl: string;
   rgb: number | null;
@@ -22,7 +23,7 @@ export interface CompanyIdParam {
 }
 
 export interface CompanyRepository {
-  postRegister(companyData: CompanyParam): Promise<CompanyListType>;
+  postRegister(companyData: CompanyParam): Promise<{ id: string }>;
 
   getMyCompanyList({
     page,
@@ -36,11 +37,6 @@ export interface CompanyRepository {
   getAllCompanyList({
     page,
   }: CommonPageParam): Promise<CompanyInfiniteScrollType>;
-
-  getAllAndSearchCompanyList(
-    { keyword }: CompanyKeywordParam,
-    { page }: CommonPageParam
-  ): Promise<CompanyInfiniteScrollType>;
 
   getCompanyListId(
     { id }: CommonIdParam,

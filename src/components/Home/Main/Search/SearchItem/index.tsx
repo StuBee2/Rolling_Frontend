@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import * as S from "../../style";
 import logo from "@src/assets/icons/Logo/logo.png";
 import { getRgb } from "@src/utils/Rgb/getRgb";
+import { NoneData } from "./style";
 
 interface Props {
   company: string;
@@ -38,8 +39,17 @@ export default function SearchItem({ company }: Props) {
 
                   <S.CompanyContentContainer>
                     <S.CompanyNameAndCreatedAt>
-                      {item.companyDetails.name} |{" "}
-                      {getDateText(new Date(item.companyDetails.createdAt))}
+                      <S.CompanyName
+                        onClick={() =>
+                          navigate(`/company/${item.companyId.id}`)
+                        }
+                      >
+                        {item.companyDetails.name}
+                      </S.CompanyName>
+
+                      <S.CompanyAddress>
+                        | {item.companyDetails.companyAddress.address}
+                      </S.CompanyAddress>
                     </S.CompanyNameAndCreatedAt>
 
                     <S.CompanyDescriptionAndAddress>
@@ -47,16 +57,22 @@ export default function SearchItem({ company }: Props) {
                         {item.companyDetails.description}
                       </S.CompanyDescription>
 
-                      <S.CompanyAddress>
-                        {item.companyDetails.companyAddress.address}
-                      </S.CompanyAddress>
+                      <S.CompanyCreatedAt>
+                        {getDateText(new Date(item.companyDetails.createdAt))}
+                      </S.CompanyCreatedAt>
                     </S.CompanyDescriptionAndAddress>
                   </S.CompanyContentContainer>
                 </S.MainItemBox>
               ))
             )
           ) : (
-            <p>검색한 회사가 없습니다.</p>
+            <NoneData>
+              <p>
+                검색한 회사가 없습니다.
+                <span onClick={() => navigate("/story")}> 스토리 등록</span>은
+                어떠세요?
+              </p>
+            </NoneData>
           )}
         </S.MainItemContent>
       </S.MainItemWrapper>

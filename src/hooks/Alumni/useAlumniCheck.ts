@@ -13,8 +13,8 @@ const useAlumniCheck = () => {
   useEffect(() => {
     const checkAlumni = () => {
       if (Token.getToken(ACCESS_TOKEN_KEY) && memberRole === "TEMP") {
-        rollingToast("동문 인증이 필요한 기능입니다.", "warning");
-        navigate("/alumni/certify");
+        rollingToast("동문 인증이 필요합니다.", "warning");
+        navigate(-1);
       }
     };
     checkAlumni();

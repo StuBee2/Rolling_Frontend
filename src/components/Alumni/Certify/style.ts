@@ -1,59 +1,83 @@
+import { FadeInAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
-  padding-top: 90px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  min-width: 500px;
-  background-color: rgba(222, 224, 230, 1);
-
-  @media screen and (max-width: 500px) {
-    background-color: transparent;
-    height: 100%;
-    margin-top: 3rem;
-  }
-`;
-
-export const Wrapper = styled.div`
-  width: 1370px;
   height: 100%;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 90px 20px 2rem 20px;
+
+  min-width: 500px;
+
+  @media screen and (max-width: 500px) {
+    background-color: transparent;
+    height: 100%;
+  }
 `;
 
-export const CertificationList = styled.div`
+export const Wrapper = styled.div`
+  width: 1200px;
+  height: 100%;
+  padding-top: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding-bottom: 2rem;
+
+  border-bottom: 1px solid #ddd;
+`;
+
+export const Title = styled.p`
+  font-size: 30px;
+  font-family: "Pretendard-Bold" !important;
+`;
+
+export const SubTitle = styled.p`
+  font-size: 18px;
+  color: rgb(97, 103, 126);
+`;
+
+export const Content = styled.div`
+  width: 100%;
+`;
+
+export const CertificationBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  border: 1.3px solid #ddd;
+
   border-radius: 20px;
 
-  width: 1020px;
-  height: 601px;
+  width: 100%;
+  height: 600px;
 
   background-color: #fff;
   padding: 0 4rem 0 4rem;
 
-  @media screen and (max-width: 1055px) {
-    width: 95%;
-  }
   @media screen and (max-width: 750px) {
     padding: 0 2rem 0 2rem;
   }
   @media screen and (max-width: 500px) {
     border: 1px solid #ddd;
   }
+
+  ${FadeInAnimation};
 `;
 
-export const Title = styled.div`
+export const CertifyText = styled.div`
   margin-bottom: 38px;
   font-size: 30px;
 
@@ -126,7 +150,7 @@ export const Teacher = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 50%;
+  width: 60%;
   height: 60px;
 
   border: 0;

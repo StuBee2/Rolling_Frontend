@@ -23,3 +23,15 @@ export const StopDrag = css`
   -ms-user-select: none;
   -webkit-user-select: none;
 `;
+
+export const FadeInAnimation = css`
+  animation: fadein 0.6s;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;

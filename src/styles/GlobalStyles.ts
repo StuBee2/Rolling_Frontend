@@ -9,8 +9,10 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
       font-family: 'Pretendard-Regular' !important;
      }
+     
      body {
       background-color: #f9fafb;
+      zoom:0.8;
      }
 
     ${reset}

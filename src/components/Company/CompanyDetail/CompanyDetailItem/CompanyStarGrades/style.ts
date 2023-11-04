@@ -3,8 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 250px;
   height: 100%;
-  position: sticky;
-  top: 0;
+
+  position: fixed;
+  top: calc(90px + 2rem);
+
   @media screen and (max-width: 1005px) {
     width: 100%;
     height: 200px;

@@ -32,11 +32,12 @@ export default function Nav({ pathName }: Props) {
         <S.UserImg src={myInfo?.socialDetails.imageUrl} />
         <S.UserName>{myInfo?.socialDetails.name}</S.UserName>
         <S.UserEmail
+          email={myInfo?.socialDetails.email!!}
           onClick={() =>
             !myInfo?.socialDetails.email && handleSetUpEmailClick()
           }
         >
-          {myInfo?.socialDetails.email || "이메일을 설정해주세요."}
+          {myInfo?.socialDetails.email || "이메일 설정하러 가기"}
         </S.UserEmail>
       </S.UserInfoContainer>
 

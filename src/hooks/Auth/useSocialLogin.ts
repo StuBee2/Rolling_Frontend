@@ -6,6 +6,7 @@ import {
 import Token from "@src/libs/Token/Token";
 import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
+import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 
 export function useSocialLogin() {
   const navigate = useNavigate();
@@ -16,8 +17,12 @@ export function useSocialLogin() {
     if (accessToken && refreshToken) {
       Token.setToken(ACCESS_TOKEN_KEY, accessToken.toString());
       Token.setToken(REFRESH_TOKEN_KEY, refreshToken.toString());
-      navigate("/alumni/certify");
-      // window.location.replace("/");
+      const jwtDecode = tokenDecode("access", "authority");
+      if (jwtDecode === "MEMBER") {
+        navigate("/");
+      } else {
+        navigate("/alumni/certify");
+      }
     }
   }, [accessToken, refreshToken, navigate]);
 }

@@ -52,13 +52,13 @@ function CompanyDetailInfo({ companyInfo }: Props) {
       rgb: companyInfo.companyLogoRGB,
     });
 
-    navigate("/register");
+    navigate("/modify");
   };
 
   return (
     <S.Container>
       <S.TitleContainer>
-        <S.Title>That's 기업정보</S.Title>
+        <S.Title>That's 기업 정보</S.Title>
         <S.SubTitle>
           해당기업의 세세한 정보를 빠르고 쉽게 알아볼 수 있어요.
         </S.SubTitle>

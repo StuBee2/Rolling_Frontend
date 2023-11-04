@@ -9,7 +9,8 @@ import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 export const useSetUpNickName = (nickName: string) => {
   const patchNickNameMutation = usePatchMyNickNameMutation();
   const [isEditNickName, setIsEditNickName] = useState(false);
-  const [setUpNickName, setSetUpNickName] = useState<string>("");
+  const [setUpNickName, setSetUpNickName] = useState<string>(nickName || "");
+
   const { rollingToast } = useRollingToast();
   const { queryInvalidates } = useQueryInvalidates();
 
@@ -47,11 +48,10 @@ export const useSetUpNickName = (nickName: string) => {
           rollingToast("닉네임이 수정되었습니다", "success");
           queryInvalidates([
             QUERY_KEYS.member.getMyMember,
-            QUERY_KEYS.company.company,
+            QUERY_KEYS.company.getInfoCompany,
             QUERY_KEYS.story.story,
           ]);
           setIsEditNickName(false);
-          setSetUpNickName("");
         },
         onError: (error) => {
           if (axios.isAxiosError(error)) {
@@ -70,5 +70,6 @@ export const useSetUpNickName = (nickName: string) => {
     hanldeCancelClick,
     isEditNickName,
     setUpNickName,
+    setSetUpNickName,
   };
 };

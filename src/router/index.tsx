@@ -5,8 +5,11 @@ import UserPage from "../pages/UserPage";
 import NotFound from "../components/Common/NotFound";
 import { ROUTE_ITEMS } from "../constants/Router/router.constant";
 import CompanyDetailPage from "@src/pages/CompanyPage/CompanyDetailPage";
-import RegisterPage from "@src/pages/CompanyPage/CompanyRegisterPage";
+import CompanyModifyPage from "@src/pages/StoryPage/ModifyPage/Company";
 import CertifiedPage from "@src/pages/AlumniPage/CertifyPage";
+import StoryPage from "@src/pages/StoryPage";
+import AllPage from "@src/pages/AllPage";
+import RankingPage from "@src/pages/RankPage";
 
 export default function Router() {
   return (
@@ -21,8 +24,11 @@ export default function Router() {
         />
       ))}
       <Route path="/company/:id" element={<CompanyDetailPage />} />
-      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/modify" element={<CompanyModifyPage />} />
       <Route path="/alumni/certify" element={<CertifiedPage />} />
+      <Route path="/story" element={<StoryPage />} />
+      <Route path="/all" element={<AllPage />} />
+      <Route path="/ranking" element={<RankingPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

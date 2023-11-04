@@ -24,7 +24,7 @@ const slideInAnimation = keyframes`
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 322px;
+  height: 340px;
   background-color: rgba(247, 249, 250, 1);
   position: relative;
 

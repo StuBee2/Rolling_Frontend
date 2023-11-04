@@ -6,6 +6,7 @@ import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import { stringEllipsis } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
 import UserInfoSkeleton from "@src/components/Common/Skeleton/Home/UserInfo";
+import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 
 export default function UserInfo() {
   return (
@@ -23,6 +24,7 @@ function UserInfoItem() {
   const navigate = useNavigate();
   const { data: userInfo } = useGetMyInfoQuery({ suspense: true });
   const isNickName = !userInfo?.memberDetails.nickName;
+  const isMember = tokenDecode("access", "authority") === "MEMBER";
 
   return (
     <>
@@ -39,7 +41,10 @@ function UserInfoItem() {
             )}
           </S.UserInfoNickName>
           <S.UserInfoEmail>
-            {stringEllipsis(userInfo?.socialDetails.email!! || "", 22)}
+            {stringEllipsis(
+              userInfo?.socialDetails.email!! || "이메일을 설정해주세요",
+              22
+            )}
           </S.UserInfoEmail>
         </div>
       </S.UserInfoBox>
@@ -47,10 +52,16 @@ function UserInfoItem() {
       <div>
         <S.RegistTextContainer>
           <img src={wonderFace} alt="이미지 없음" />
-          <p>내 기업이 등록되어있나요?</p>
+          <p>
+            {isMember
+              ? "내 기업 스토리가 등록 되어있나요?"
+              : "동문 인증이 되어 있지 않나요?"}
+          </p>
         </S.RegistTextContainer>
-        <S.CompanyRegistBtn onClick={() => navigate("/register")}>
-          내 기업 등록하기
+        <S.CompanyRegistBtn
+          onClick={() => navigate(isMember ? "/story" : "/alumni/certify")}
+        >
+          {isMember ? "스토리 등록하러 가기" : "동문인증 하러가기"}
         </S.CompanyRegistBtn>
       </div>
     </>

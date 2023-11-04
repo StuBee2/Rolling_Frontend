@@ -30,8 +30,8 @@ export const useCertify = () => {
           });
 
         Token.setToken(ACCESS_TOKEN_KEY, newAccessToken);
-        rollingToast("졸업생 인증 성공", "success");
-        navigate("/");
+        rollingToast("동문 인증에 성공하였습니다.", "success");
+        navigate("/mypage/profile");
       } catch (e) {
         console.log(e);
       }

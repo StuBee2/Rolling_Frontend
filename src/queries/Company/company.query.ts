@@ -68,6 +68,7 @@ export const useGetCompanySerachListQuery = (
       ),
     {
       ...options,
+      enabled: !!keyword,
       staleTime: 1000 * 60 * 60,
       cacheTime: 1000 * 60 * 60,
       getNextPageParam: (nextPage) => nextPage.nextPage,
@@ -87,31 +88,6 @@ export const useGetAllCompanyListQuery = (
     QUERY_KEYS.company.getListAllCompany,
     ({ pageParam = 1 }) =>
       CompanyRepositoryImpl.getAllCompanyList({ page: pageParam }),
-    {
-      ...options,
-      staleTime: 1000 * 60 * 60,
-      cacheTime: 1000 * 60 * 60,
-      getNextPageParam: (nextPage) => nextPage.nextPage,
-    }
-  );
-
-export const useGetAllAndSearchCompanyListQuery = (
-  { keyword }: CompanyKeywordParam,
-  options?: UseInfiniteQueryOptions<
-    CompanyInfiniteScrollType,
-    AxiosError,
-    CompanyInfiniteScrollType,
-    CompanyInfiniteScrollType,
-    string[]
-  >
-): UseInfiniteQueryResult<CompanyInfiniteScrollType, AxiosError> =>
-  useInfiniteQuery(
-    QUERY_KEYS.company.getListAllAndSearchCompany(keyword),
-    ({ pageParam = 1 }) =>
-      CompanyRepositoryImpl.getAllAndSearchCompanyList(
-        { keyword: keyword },
-        { page: pageParam }
-      ),
     {
       ...options,
       staleTime: 1000 * 60 * 60,

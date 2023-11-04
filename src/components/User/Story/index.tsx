@@ -30,7 +30,7 @@ export default function Story() {
           <div ref={ref} />
         </>
       ) : (
-        <p>지금 당장 롤링하세요!</p>
+        <p>지금 당장 스토리를 등록하세요!</p>
       )}
     </>
   );

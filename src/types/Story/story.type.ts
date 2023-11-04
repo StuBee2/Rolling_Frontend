@@ -128,6 +128,13 @@ export interface StoryInputRefType {
   interviewQuestion: React.RefObject<HTMLInputElement>;
 }
 
+export interface StoryRegistRequireType {
+  position: string;
+  welfare: string;
+  pros: string;
+  cons: string;
+}
+
 export interface StoryModifiableInfoType {
   position: string;
   commuteTime: string;

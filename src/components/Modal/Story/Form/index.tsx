@@ -38,7 +38,7 @@ export default function Form({ ...attr }: Props) {
           }}
         />
         {attr.showPositionList && // 입력할 때 등장, 포지션 선택하면 사라짐
-          positionList.length > 0 && ( //내가 입력한 포지션이 포지션리스트에 있을때 등장
+          positionList.length > 0 && ( // 내가 입력한 포지션이 포지션리스트에 있을때 등장
             <PositionList
               positionList={positionList}
               setStoryContents={hooks.setStoryContents}

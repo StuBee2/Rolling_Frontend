@@ -9,6 +9,7 @@ import { useSetRecoilState } from "recoil";
 import { IsCloseModalAtom, MyInfoModal } from "@src/stores/common/common.store";
 import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import { SignInModalAtom } from "@src/stores/auth/auth.store";
+import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 
 export default function Header() {
   const setIsCloseModal = useSetRecoilState<boolean>(IsCloseModalAtom);
@@ -17,6 +18,7 @@ export default function Header() {
 
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const isTemp = tokenDecode("access", "authority") === "TEMP";
 
   return (
     <S.HeaderContainer>
@@ -28,15 +30,29 @@ export default function Header() {
             alt="이미지 없음"
           />
           <ul>
-            {HEADER_ITEMS.map((item) => (
-              <S.PageList
-                key={item.id}
-                onClick={() => navigate(item.link)}
-                isSelect={item.link === pathname}
-              >
-                {item.name}
-              </S.PageList>
-            ))}
+            {HEADER_ITEMS.map((item) => {
+              const handleClick = () => {
+                if (item.name === "기업등록" && isTemp) {
+                  navigate("/alumni/certify");
+                } else {
+                  navigate(item.link);
+                }
+              };
+              const isCertify = item.name === "기업등록" && isTemp;
+
+              return (
+                <S.PageList
+                  key={item.id}
+                  onClick={handleClick}
+                  isSelect={
+                    item.link === pathname || pathname === "/alumni/certify"
+                  }
+                >
+                  {isCertify ? "동문인증" : item.name}
+                  {isCertify && <span>*</span>}
+                </S.PageList>
+              );
+            })}
           </ul>
         </S.PageContainer>
 

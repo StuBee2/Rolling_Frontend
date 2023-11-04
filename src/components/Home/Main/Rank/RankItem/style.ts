@@ -16,8 +16,8 @@ export const RankCategoryTitle = styled.div`
 `;
 
 export const RankNumber = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 
   background-color: rgba(29, 30, 90, 1);
   border-radius: 0 0 10px 0;
@@ -29,6 +29,7 @@ export const RankNumber = styled.div`
   align-items: center;
   justify-content: center;
 
-  font-size: 22px;
+  font-size: 20px;
   color: #fff;
+  z-index: 2;
 `;

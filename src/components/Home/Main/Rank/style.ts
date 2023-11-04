@@ -49,3 +49,8 @@ export const RankCategoryLi = styled.li<{ isSelect: boolean }>`
     background-color: ${({ isSelect }) => (isSelect ? "#2b3f94" : "#dddddd")};
   }
 `;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  column-gap: 3px;
+`;

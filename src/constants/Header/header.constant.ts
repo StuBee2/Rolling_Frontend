@@ -17,7 +17,7 @@ export const HEADER_ITEMS: Type[] = [
   // },
   {
     id: 1,
-    name: "기업등록",
-    link: "/register",
+    name: "스토리 등록",
+    link: "/story",
   },
 ];

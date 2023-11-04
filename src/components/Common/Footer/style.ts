@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.div`
   width: 100%;
-  height: 270px;
+  height: 290px;
   min-width: 500px;
   border-top: 1px solid #dddddd;
   background-color: #fff;
