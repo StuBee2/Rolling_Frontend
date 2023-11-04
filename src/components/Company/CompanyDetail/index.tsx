@@ -16,8 +16,10 @@ interface Props {
 }
 
 export default function CompanyDetail({ id }: Props) {
-  const [currentPage, setCurrentPage] = useRecoilState(StoryModifiablePageAtom);
-  setCurrentPage(true);
+  const [modifyActivationPage, setModifyActivationPage] = useRecoilState(
+    StoryModifiablePageAtom
+  );
+  setModifyActivationPage(false);
 
   /** 스토리 등록 모달에서 쓰이는 useState */
   const [storyCompanyInfo, setStoryCompanyInfo] =

@@ -14,7 +14,7 @@ export const useSetUpStory = () => {
   const [isModifiableEvent, setIsModifiableEvent] = useRecoilState(
     StoryModifiableEventAtom
   );
-  const [changeElementId, setChangeElementId] = useRecoilState(
+  const [modifyStoryId, setModifyStoryId] = useRecoilState(
     StoryModifiableIdAtom
   );
 
@@ -40,7 +40,7 @@ export const useSetUpStory = () => {
   };
 
   const hanldeModifiableMyStroy = (storyId: string) => {
-    setChangeElementId(storyId);
+    setModifyStoryId(storyId);
     setIsModifiableEvent(true);
   };
 

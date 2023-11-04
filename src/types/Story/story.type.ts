@@ -18,8 +18,9 @@ export interface StoryItemType {
   welfare: string;
   commuteTime: string;
   meal: string;
-  advantages: string;
-  disAdvantages: string;
+  pros: string;
+  cons: string;
+  etc: string;
 }
 
 export interface StoryCommonItemType extends StoryItemType {
@@ -76,8 +77,8 @@ export interface StoryPostResponse {
   welfare: string;
   commuteTime: string;
   meal: string;
-  advantages: string;
-  disAdvantages: string;
+  pros: string;
+  cons: string;
   salaryAndBenefits: number;
   workLifeBalance: number;
   organizationalCulture: number;
@@ -133,18 +134,7 @@ export interface StoryModifiableInfoType {
   meal: string;
 }
 
-export interface StoryModifiableContentType {
-  schoolLife: string;
-  preparationCourse: string;
-  employmentProcess: string;
-  interviewQuestion: string;
-  mostImportantThing: string;
-  welfare: string;
-
-  [key: string]: string;
-}
-
-export interface StoryModifiableContentPutType {
+export interface StoryModifiableContentPatchType {
   position: string;
   schoolLife: string;
   preparationCourse: string;
@@ -157,8 +147,8 @@ export interface StoryModifiableContentPutType {
   pros: string;
   cons: string;
   etc: string;
-  salaryAndBenefits: 5;
-  workLifeBalance: 5;
-  organizationalCulture: 5;
-  careerAdvancement: 5;
+  salaryAndBenefits: number;
+  workLifeBalance: number;
+  organizationalCulture: number;
+  careerAdvancement: number;
 }

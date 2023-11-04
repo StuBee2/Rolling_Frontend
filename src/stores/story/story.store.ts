@@ -1,6 +1,5 @@
 import { atom } from "recoil";
-import { StoryModifiableContentType } from "@src/types/Story/story.type";
-import { StoryModifiableInfoType } from "@src/types/Story/story.type";
+import { StoryModifiableContentPatchType } from "@src/types/Story/story.type";
 
 export const StoryRegistModalAtom = atom<boolean>({
   key: "StoryRegisterModalAtom",
@@ -22,23 +21,26 @@ export const StoryModifiableIdAtom = atom<string>({
   default: "",
 });
 
-export const StoryModifiableInfoAtom = atom<StoryModifiableInfoType>({
-  key: "StoryEditionContentAtom",
-  default: {
-    position: "",
-    commuteTime: "",
-    meal: "",
-  },
-});
-
-export const StoryModifiableContentAtom = atom<StoryModifiableContentType>({
-  key: "StoryEditionContentAtom",
-  default: {
-    schoolLife: "",
-    preparationCourse: "",
-    employmentProcess: "",
-    interviewQuestion: "",
-    mostImportantThing: "",
-    welfare: "",
-  },
-});
+export const StoryModifiableContentAtom = atom<StoryModifiableContentPatchType>(
+  {
+    key: "StoryEditionContentAtom",
+    default: {
+      position: "",
+      schoolLife: "",
+      preparationCourse: "",
+      employmentProcess: "",
+      interviewQuestion: "",
+      mostImportantThing: "",
+      welfare: "",
+      commuteTime: "",
+      meal: "",
+      pros: "",
+      cons: "",
+      etc: "",
+      salaryAndBenefits: 0,
+      workLifeBalance: 0,
+      organizationalCulture: 0,
+      careerAdvancement: 0,
+    },
+  }
+);

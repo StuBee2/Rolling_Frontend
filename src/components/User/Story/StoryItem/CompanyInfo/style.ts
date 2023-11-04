@@ -29,12 +29,11 @@ export const CompanyLogo = styled.div<{ isHaveSocialId: string }>`
 export const Wrapper = styled.div`
   width: calc(100% - 115px);
   height: 115px;
-
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  row-gap: 20px;
+  justify-content: center;
 
+  row-gap: 20px;
   padding: 0.5rem 0 10px 2rem;
 `;
 
@@ -46,13 +45,10 @@ export const Title = styled.p`
 
 export const Content = styled.div`
   display: flex;
-  flex-direction: column;
-  row-gap: 15px;
 `;
 
 export const Info = styled.div`
   display: flex;
-  column-gap: 20px;
   color: rgba(29, 30, 90, 1);
 
   p {
@@ -64,9 +60,35 @@ export const Info = styled.div`
   }
 `;
 
-export const modifyInput = styled.input`
-  width: 60%;
+export const ModifyInput = styled.input`
+  width: 100%;
   height: 130%;
-  padding-left: 1%;
+  border: 2px solid #f2f4f5;
+  border-radius: 2px;
+  background-color: white;
   outline-color: blue;
+  color: #737b98;
+  padding: 5px;
+`;
+
+export const PositionListUl = styled.ul`
+  position: absolute;
+  top: 95px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid rgba(189, 194, 208, 1);
+  color: rgba(29, 30, 90, 1);
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  z-index: 3;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  li {
+    cursor: pointer;
+  }
 `;

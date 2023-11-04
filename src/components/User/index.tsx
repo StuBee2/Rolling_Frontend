@@ -21,8 +21,10 @@ export default function User({ children }: Props) {
   const { pathname } = useLocation();
   const isStoryPage = pathname === "/mypage/story";
 
-  const [currentPage, setCurrentPage] = useRecoilState(StoryModifiablePageAtom);
-  setCurrentPage(false);
+  const [modifyActivationPage, setModifyActivationPage] = useRecoilState(
+    StoryModifiablePageAtom
+  );
+  setModifyActivationPage(true);
 
   return (
     <S.UserContainer>

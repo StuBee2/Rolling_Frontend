@@ -194,7 +194,7 @@ export default function Form({ ...attr }: Props) {
           value={hooks.storyContents.pros}
           customStyle={S.InputStyle}
           placeholder="해당 기업은 어떤 장점을 갖고 있나요?"
-          name="advantages"
+          name="pros"
           handleChange={hooks.handleCompanyStoryChange}
         />
       </S.InputContainer>
@@ -207,7 +207,7 @@ export default function Form({ ...attr }: Props) {
           value={hooks.storyContents.cons}
           customStyle={S.InputStyle}
           placeholder="해당 기업은 어떤 단점을 갖고 있나요?"
-          name="disAdvantages"
+          name="cons"
           handleChange={hooks.handleCompanyStoryChange}
         />
       </S.InputContainer>

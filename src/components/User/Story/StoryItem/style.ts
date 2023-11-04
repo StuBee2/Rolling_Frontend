@@ -92,3 +92,15 @@ export const CompanyContainer = styled.div`
   align-items: center;
   column-gap: 2rem;
 `;
+
+export const StoryModifySubmitBtn = styled.button`
+  color: #f9fafb;
+  font-family: "Pretendard-Bold" !important;
+  font-size: 15px;
+
+  width: 107px;
+  height: 50px;
+  border-radius: 7px;
+  border: none;
+  background: #4869f6;
+`;
