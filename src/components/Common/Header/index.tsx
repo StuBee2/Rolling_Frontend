@@ -32,13 +32,13 @@ export default function Header() {
           <ul>
             {HEADER_ITEMS.map((item) => {
               const handleClick = () => {
-                if (item.name === "기업등록" && isTemp) {
+                if (item.name === "스토리 등록" && isTemp) {
                   navigate("/alumni/certify");
                 } else {
                   navigate(item.link);
                 }
               };
-              const isCertify = item.name === "기업등록" && isTemp;
+              const isCertify = item.name === "스토리 등록" && isTemp;
 
               return (
                 <S.PageList
