@@ -154,8 +154,4 @@ export interface StoryModifiableContentPatchType {
   pros: string;
   cons: string;
   etc: string;
-  salaryAndBenefits: number;
-  workLifeBalance: number;
-  organizationalCulture: number;
-  careerAdvancement: number;
 }

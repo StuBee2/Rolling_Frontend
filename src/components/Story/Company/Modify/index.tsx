@@ -2,14 +2,17 @@ import useAlumniCheck from "@src/hooks/Alumni/useAlumniCheck";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import { useState } from "react";
 import Portal from "@src/components/Common/Portal";
-import CompanyAddressModal from "@src/components/Modal/CompanyAddress";
+import CompanyAddressModal from "@src/components/Common/Modal/CompanyAddress";
 import ModifyItem from "./ModifyItem";
 import * as S from "../../style";
 import { useCompanyModify } from "@src/hooks/Company/useCompanyModify";
+import { useAuthTopScroll } from "@stubee2/stubee2-rolling-util";
 
 export default function CompanyModify() {
   useTokenCheck();
   useAlumniCheck();
+  useAuthTopScroll();
+
   const { companyModifyInfo, setCompanyModifyInfo } = useCompanyModify();
 
   const [isModalOpen, setIsModalOpen] = useState(false);

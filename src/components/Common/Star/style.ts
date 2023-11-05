@@ -13,6 +13,8 @@ export const StarContainer = styled.div<{ fontSize?: string }>`
   justify-content: space-between;
   column-gap: 1.5rem;
 
+  font-size: 16px;
+
   padding: 0 3rem 0 3rem;
   white-space: nowrap;
   background-color: red;

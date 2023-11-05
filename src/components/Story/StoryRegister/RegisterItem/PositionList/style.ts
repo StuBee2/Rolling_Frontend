@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<{ positionTop: string }>`
   position: absolute;
 
   width: 100%;
@@ -10,7 +10,7 @@ export const Container = styled.div`
   background-color: #fff;
   border-radius: 5px;
 
-  top: 95px;
+  top: ${({ positionTop }) => positionTop};
 
   z-index: 3;
   overflow-y: auto;
@@ -28,6 +28,8 @@ export const Ul = styled.ul`
     height: 55px;
 
     padding-left: 20px;
+    line-height: 25px;
+    font-size: 17px;
 
     display: flex;
     align-items: center;

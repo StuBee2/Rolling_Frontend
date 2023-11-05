@@ -25,7 +25,6 @@ export const UserWrapper = styled.div`
   display: flex;
   @media screen and (max-width: 1130px) {
     width: 100%;
-    padding: 0 10px 0 10px;
   }
   @media screen and (max-width: 1040px) {
     flex-direction: column;

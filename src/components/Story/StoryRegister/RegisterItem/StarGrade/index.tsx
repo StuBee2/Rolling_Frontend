@@ -1,15 +1,18 @@
 import { STORY_STARGRAGE_ITEMS } from "@src/constants/Story/story.constant";
 import { StarRatingItem } from "@stubee2/stubee2-rolling-ui";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 interface Props {
   storyStarGrade: Record<string, number>;
+  // 스토리 수정에 필요하기 때문에 prevStarGrade 옵셔널 지정하여 값 받기
+  prevStarGarade?: Record<string, number>;
   handleStarGradeChange: (name: string, grade: number) => void;
 }
 
 export default function RegistStarGrade({
   storyStarGrade,
+  prevStarGarade,
   handleStarGradeChange,
 }: Props) {
   // 별점을 클릭했는지 안했는지 판단하는 state
@@ -18,8 +21,14 @@ export default function RegistStarGrade({
     {}
   );
 
+  useEffect(() => {
+    if (prevStarGarade) {
+      setPrevStarGrades(prevStarGarade);
+    }
+  }, [prevStarGarade]);
+
   return (
-    <StarGradeUl>
+    <StarGradeContainer>
       {STORY_STARGRAGE_ITEMS.map((item) => (
         <li key={item.id}>
           <p>{item.title}</p>
@@ -55,11 +64,11 @@ export default function RegistStarGrade({
           </ItemContainer>
         </li>
       ))}
-    </StarGradeUl>
+    </StarGradeContainer>
   );
 }
 
-const StarGradeUl = styled.div`
+const StarGradeContainer = styled.div`
   width: 100%;
   height: 140px;
 
@@ -68,10 +77,12 @@ const StarGradeUl = styled.div`
   justify-content: space-between;
   column-gap: 20px;
 
+  overflow: auto;
+
   background-color: rgba(247, 249, 250, 1);
   border: 1px solid #bdc2d0;
   border-radius: 5px;
-  padding: 0 2rem 0 2rem;
+  padding: 0 3rem 0 3rem;
 
   li {
     color: rgba(115, 123, 152, 1);

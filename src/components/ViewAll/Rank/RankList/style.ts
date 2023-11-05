@@ -111,7 +111,7 @@ export const RankBox = styled.div`
 
   @media screen and (max-width: 650px) {
     flex-basis: 47.7%;
-    height: 290px;
+    height: 320px;
   }
 `;
 

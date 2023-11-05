@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 90px 10px 0 10px;
+  padding: 90px 15px 0 15px;
 `;
 
 export const Wrapper = styled.div<{ rowGap: string }>`

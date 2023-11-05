@@ -2,9 +2,16 @@ import { CompanyParam } from "@src/repositories/Company/company.repository";
 import { atom } from "recoil";
 import { StoryModifiableContentPatchType } from "@src/types/Story/story.type";
 
-export const StoryRegistModalAtom = atom<boolean>({
-  key: "StoryRegisterModalAtom",
-  default: false,
+import { recoilPersist } from "recoil-persist";
+
+const { persistAtom } = recoilPersist();
+
+// 스토리 등록페이지 경로유입이 헤더로 들어온 건지 회사단일 조회 페이지에서
+// 들어온 건지 판단하는 atom
+export const StoryPagePathInflow = atom<"header" | "detail">({
+  key: "storyPagePathInflowAtom",
+  default: "header",
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const StorySearchCompanyAtom = atom<{
@@ -16,6 +23,16 @@ export const StorySearchCompanyAtom = atom<{
     companyName: "",
     isExistSearchList: false,
   },
+  effects_UNSTABLE: [persistAtom],
+});
+
+/** 스토리 등록페이지에서 기업등록해서 서버가 주는 id값을 담은 다음,
+ * 스토리 남기기를 위해서 해당회사 id로 스토리를 등록할 때 필요한 atom
+ */
+export const StoryCompanyIdAtom = atom<string>({
+  key: "storyCompanyId",
+  default: "",
+  effects_UNSTABLE: [persistAtom],
 });
 
 export const StoryCompanyRegistAtom = atom<CompanyParam>({
@@ -30,21 +47,8 @@ export const StoryCompanyRegistAtom = atom<CompanyParam>({
   },
 });
 
-/** 스토리 등록페이지에서 기업등록해서 서버가 주는 id값을 담은 다음,
- * 스토리 남기기를 위해서 해당회사 id로 스토리를 등록할 때 필요한 atom
- */
-export const StoryCompanyIdAtom = atom<string>({
-  key: "storyCompanyId",
-  default: "",
-});
-
 export const StorySetupInitializationDotAtom = atom<boolean>({
   key: "StorySetupInitializationDotAtom",
-  default: false,
-});
-
-export const StoryModifiablePageAtom = atom<boolean>({
-  key: "StoryModifiablePageAtom",
   default: false,
 });
 
@@ -74,10 +78,6 @@ export const StoryModifiableContentAtom = atom<StoryModifiableContentPatchType>(
       pros: "",
       cons: "",
       etc: "",
-      salaryAndBenefits: 0,
-      workLifeBalance: 0,
-      organizationalCulture: 0,
-      careerAdvancement: 0,
     },
   }
 );

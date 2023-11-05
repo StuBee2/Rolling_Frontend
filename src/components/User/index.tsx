@@ -1,6 +1,6 @@
 import * as S from "./style";
 import Nav from "./Nav";
-import { ReactNode, Suspense, useEffect } from "react";
+import { ReactNode, Suspense } from "react";
 import ErrorBoundary from "../Common/ErrorBoundary";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import NavFooter from "./Nav/NavFooter";
@@ -9,8 +9,6 @@ import NavSkeleton from "../Common/Skeleton/User/Nav";
 import { useLocation } from "react-router";
 import StoryStatus from "./StoryStatus";
 import StoryStatusSkeleton from "../Common/Skeleton/User/StoryStatus";
-import { useRecoilState } from "recoil";
-import { StoryModifiablePageAtom } from "@src/stores/story/story.store";
 
 interface Props {
   children: ReactNode;
@@ -20,14 +18,6 @@ export default function User({ children }: Props) {
   useTokenCheck();
   const { pathname } = useLocation();
   const isStoryPage = pathname === "/mypage/story";
-
-  const [modifyActivationPage, setModifyActivationPage] = useRecoilState(
-    StoryModifiablePageAtom
-  );
-
-  useEffect(() => {
-    setModifyActivationPage(true);
-  }, []);
 
   return (
     <S.UserContainer>

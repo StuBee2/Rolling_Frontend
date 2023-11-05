@@ -7,8 +7,8 @@ import {
   IsCloseModalAtom,
   MyInfoModal,
 } from "@src/stores/common/common.store";
-import Search from "../../Modal/Search";
-import Info from "../../Modal/MyInfo";
+import Search from "../Modal/Search";
+import Info from "../Modal/MyInfo";
 import Portal from "../Portal";
 import { SignInModalAtom } from "@src/stores/auth/auth.store";
 import SignIn from "../Auth/SignIn";

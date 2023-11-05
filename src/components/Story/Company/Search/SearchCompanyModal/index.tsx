@@ -6,9 +6,10 @@ import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 import { useSearchCompany } from "@src/hooks/Company/useSearchCompany";
 import { useGetCompanySerachListQuery } from "@src/queries/Company/company.query";
 import { useInView } from "react-intersection-observer";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import {
   StoryCompanyIdAtom,
+  StoryPagePathInflow,
   StorySearchCompanyAtom,
 } from "@src/stores/story/story.store";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
@@ -37,6 +38,9 @@ export default function SearchCompanyModal({ setSearchCompanyModal }: Props) {
   // 검색한 회사가 있는 회사인지 없는 회사인지 판단하여 setStorySearchCompany에 담는 state
   const [isExistSearchList, setIsExistSearchList] = useState(false);
 
+  const [storyPagePathInflow, setStoryPagePathInflow] =
+    useRecoilState(StoryPagePathInflow);
+
   const [ref, inView] = useInView();
   useEffect(() => {
     if (inView) {
@@ -45,6 +49,10 @@ export default function SearchCompanyModal({ setSearchCompanyModal }: Props) {
   }, [inView]);
 
   const handleConfirmClick = () => {
+    if (storyPagePathInflow === "detail") {
+      setStoryPagePathInflow("header");
+    }
+
     setStoryCompanyId(companyId);
     setStorySearchCompany((prev) => ({
       ...prev,

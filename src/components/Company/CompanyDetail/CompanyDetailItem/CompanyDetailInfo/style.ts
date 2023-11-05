@@ -45,7 +45,7 @@ export const ContentContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 3rem;
+  row-gap: 8rem;
 `;
 
 export const ContentWrapper = styled.div`
@@ -67,7 +67,7 @@ export const StoryContainer = styled.div`
 export const CompanyStoryButtonCotainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px;
+  margin: 20px 10px 0 0;
   column-gap: 10px;
 `;
 

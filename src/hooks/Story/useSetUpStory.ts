@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import axios, { AxiosError } from "axios";
 import { QUERY_KEYS } from "@src/queries/queryKey";
 import { useDeleteMyStoryMutation } from "@src/queries/Story/story.query";
@@ -11,9 +10,7 @@ import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
 import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
 
 export const useSetUpStory = () => {
-  const [isModifiableEvent, setIsModifiableEvent] = useRecoilState(
-    StoryModifiableEventAtom
-  );
+  const setIsModifiableEvent = useSetRecoilState(StoryModifiableEventAtom);
   const [isClickDots, setIsClickDots] = useRecoilState(
     StorySetupInitializationDotAtom
   );
@@ -32,7 +29,7 @@ export const useSetUpStory = () => {
   ) => {
     switch (id) {
       case 0:
-        return hanldeModifiableMyStroy(storyId);
+        return hanldeModifiableMyStroy();
       case 1:
         return hanldeDeleteMyStory(storyId, companyId);
       case 2:
@@ -42,8 +39,7 @@ export const useSetUpStory = () => {
     }
   };
 
-  const hanldeModifiableMyStroy = (storyId: string) => {
-    setModifyStoryId(storyId);
+  const hanldeModifiableMyStroy = () => {
     setIsModifiableEvent(true);
   };
 
@@ -74,5 +70,13 @@ export const useSetUpStory = () => {
     setIsModifiableEvent(false);
   };
 
-  return { setIsClickDots, hanldeStorySetUpClick };
+  return {
+    modifyStoryId,
+    setModifyStoryId,
+
+    isClickDots,
+    setIsClickDots,
+
+    hanldeStorySetUpClick,
+  };
 };

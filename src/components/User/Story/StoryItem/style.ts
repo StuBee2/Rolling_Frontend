@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { HoverAnimation } from "@src/styles/common.style";
 
 export const Container = styled.div`
@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
   justify-content: center;
 `;
 
-export const Content = styled.div`
+export const Content = styled.form`
   width: 93%;
   height: 100%;
   padding: 2rem 0 2.5rem 0;
@@ -93,14 +93,33 @@ export const CompanyContainer = styled.div`
   column-gap: 2rem;
 `;
 
-export const StoryModifySubmitBtn = styled.button`
+export const StoryModifySubmitBtnContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const StoryModifySubmitBtn = styled.button<{ isRequired: boolean }>`
   color: #f9fafb;
-  font-family: "Pretendard-Bold" !important;
   font-size: 15px;
 
-  width: 107px;
+  width: 130px;
   height: 50px;
   border-radius: 7px;
   border: none;
-  background: #4869f6;
+  background-color: rgba(72, 105, 246, 0.58);
+
+  transition: all 0.2s ease-in-out;
+
+  ${({ isRequired }) =>
+    isRequired &&
+    css`
+      cursor: pointer;
+      background-color: #4869f6;
+      transform: scale(1);
+      &:active {
+        background-color: rgba(72, 105, 246, 0.81);
+        transform: scale(0.99);
+      }
+    `}
 `;

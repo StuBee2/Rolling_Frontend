@@ -87,7 +87,7 @@ export const useGetStoryListCompanyIdQuery = (
     }
   );
 
-export const useGetstoryInfoIdQuery = (
+export const useGetStoryInfoIdQuery = (
   { id }: CommonIdParam,
   options?: UseQueryOptions<
     StoryInfoIdType,
@@ -139,7 +139,7 @@ export const useDeleteMyStoryMutation = () => {
   return mutation;
 };
 
-export const usePutMyStoryMutation = () => {
+export const usePatchMyStoryMutation = () => {
   const mutation = useMutation(
     (input: { storyId: string; storyContent: StoryCompanyContentsType }) =>
       StoryRepositoryImpl.patchMyStory(input)

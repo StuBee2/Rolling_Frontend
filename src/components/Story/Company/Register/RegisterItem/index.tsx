@@ -6,7 +6,7 @@ import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import { useEffect, useState } from "react";
 import { InputEmphasizeText, RegistButton } from "../../../style";
 import Portal from "@src/components/Common/Portal";
-import AddressModal from "@src/components/Modal/CompanyAddress";
+import AddressModal from "@src/components/Common/Modal/CompanyAddress";
 
 interface Props {
   companyName: string;

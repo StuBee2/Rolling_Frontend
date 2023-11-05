@@ -3,7 +3,7 @@ import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 import { Dispatch, SetStateAction } from "react";
 import DaumPostcodeEmbed from "react-daum-postcode";
-import * as S from "../../Story/Company/style";
+import * as S from "../../../Story/Company/style";
 
 interface Props {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;

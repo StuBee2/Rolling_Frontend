@@ -6,6 +6,8 @@ import { StoryParam } from "@src/repositories/Story/story.repository";
 import { useNavigate } from "react-router-dom";
 import { QUERY_KEYS } from "@src/queries/queryKey";
 import { StoryRegistRequireType } from "@src/types/Story/story.type";
+import { StoryPagePathInflow } from "@src/stores/story/story.store";
+import { useRecoilState } from "recoil";
 
 export const useStoryRegister = (companyId: string) => {
   const [storyRequiredElement, setStoryRequiredElement] =
@@ -15,6 +17,9 @@ export const useStoryRegister = (companyId: string) => {
       pros: "",
       cons: "",
     });
+
+  const [storyPagePathInflow, setStoryPagePathInflow] =
+    useRecoilState(StoryPagePathInflow);
 
   const [storyOptionElements, setStoryOptionElements] = useState({
     corporationEtc: "",
@@ -34,7 +39,7 @@ export const useStoryRegister = (companyId: string) => {
   const postStory = usePostStoryMutation();
   const { queryInvalidates } = useQueryInvalidates();
   const { rollingToast } = useRollingToast();
-  const naviate = useNavigate();
+  const navigate = useNavigate();
 
   const handleStarGradeChange = (name: string, grade: number) => {
     setStoryStarGrade((prev) => ({ ...prev, [name]: grade }));
@@ -83,7 +88,12 @@ export const useStoryRegister = (companyId: string) => {
               QUERY_KEYS.story.getStoryMyStatus,
             ]);
 
-            naviate("/");
+            if (storyPagePathInflow === "detail") {
+              setStoryPagePathInflow("header");
+              navigate(-1);
+            } else {
+              navigate("/");
+            }
           },
           onError: (e) => {
             rollingToast("스토리를 등록하지 못했습니다.", "error");

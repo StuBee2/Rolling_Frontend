@@ -97,27 +97,35 @@ export const AdvantagesContent = styled.p<{ isCons?: boolean }>`
   font-size: 17px;
 `;
 
-export const Important = styled.p`
-  width: 100%;
-  height: auto;
-  background-color: #eef2fa;
-  border-radius: 10px;
-  padding: 1rem;
-  color: rgba(115, 123, 152, 1);
-`;
+export const InputStyle = {
+  width: "100%",
+  height: "auto",
+  border: "1.5px solid #ddd",
+  borderRadius: "5px",
+  backgroundColor: "rgba(247, 249, 250, 1)",
+  outlineColor: "blue",
+  padding: "0.8rem",
+  color: "#000",
+  lineHeight: "23px",
+  fontSize: "17px",
+};
 
-export const AdvantagesContentInput = styled.input`
-  width: 100%;
-  height: auto;
-  border: 2px solid #f2f4f5;
-  border-radius: 5px;
-  background-color: white;
-  outline-color: blue;
+export const TextAreaStyle = {
+  width: "100%",
+  height: "500px",
+  maxHeight: "200px",
+  OverflowY: "auto",
+  OverflowX: "hidden",
 
-  padding: 0.8rem;
-  color: rgba(115, 123, 152, 1);
-  line-height: 23px;
-`;
+  fontSize: "17px",
+  color: "#000",
+  borderRadius: "5px",
+  backgroundColor: "rgba(247, 249, 250, 1)",
+
+  WhiteSpace: "pre-wrap",
+  padding: "0.8rem",
+  lineHeight: "25px",
+};
 
 export const ModifyContentInput = styled.input`
   width: 100%;
@@ -127,7 +135,7 @@ export const ModifyContentInput = styled.input`
 
   font-size: 15px;
   color: rgba(115, 123, 152, 1);
-  border: 2px solid #f2f4f5;
+  border: 1.5px solid #ddd;
   border-radius: 5px;
   background-color: white;
   outline-color: blue;
@@ -149,7 +157,7 @@ export const ModifyContentTextArea = styled.textarea<{ isEtc?: string }>`
 
   font-size: 15px;
   color: rgba(115, 123, 152, 1);
-  border: 2px solid #f2f4f5;
+  border: 1.5px solid #ddd;
   border-radius: 5px;
   background-color: white;
   outline-color: blue;

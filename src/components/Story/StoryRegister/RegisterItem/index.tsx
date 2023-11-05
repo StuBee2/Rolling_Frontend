@@ -1,7 +1,7 @@
 import { useStoryRegister } from "@src/hooks/Story/useStoryRegister";
 import { searchPosition } from "@src/utils/Position/searchPosition";
 import { TextInput } from "@stubee2/stubee2-rolling-ui";
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { InputEmphasizeText, RegistButton } from "../../style";
 import StoryPositionList from "./PositionList";
 import RegistStarGrade from "./StarGrade";
@@ -46,11 +46,11 @@ function StoryRegisterItem({ storyCompanyId, companyName }: Props) {
         <span>{companyName}</span>은/는 어떤가요?
       </S.CompanyStoryText>
 
-      <S.Wrapper onClick={() => setShowPositionList(false)}>
+      <S.Wrapper onClick={() => showPositionList && setShowPositionList(false)}>
         <S.Form onSubmit={attr.handleStorySubmit}>
           <S.RequireContainer>
             <S.RequireWrapper>
-              <S.InputContainer>
+              <S.InputContainer onClick={(e) => e.stopPropagation()}>
                 <InputEmphasizeText>
                   포지션 <span>*</span>
                 </InputEmphasizeText>
@@ -63,14 +63,19 @@ function StoryRegisterItem({ storyCompanyId, companyName }: Props) {
                   placeholder="ex) 프론트엔드 개발자"
                   handleChange={(e) => {
                     attr.handleStoryChange(e, true);
-                    setShowPositionList(true);
+                    !showPositionList && setShowPositionList(true);
                   }}
                 />
                 {showPositionList && (
                   <StoryPositionList
                     positionList={positionList}
                     setShowPositionList={setShowPositionList}
-                    setStoryRequiredElement={attr.setStoryRequiredElement}
+                    setStoryRequiredElement={
+                      attr.setStoryRequiredElement as unknown as Dispatch<
+                        SetStateAction<Record<string, string>>
+                      >
+                    }
+                    positionTop={"95px"}
                   />
                 )}
               </S.InputContainer>

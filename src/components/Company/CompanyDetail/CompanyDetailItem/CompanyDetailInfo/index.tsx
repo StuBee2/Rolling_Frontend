@@ -13,7 +13,11 @@ import StorySkeleton from "@src/components/Common/Skeleton/CompanyDetail/Review"
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import { useNavigate } from "react-router-dom";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
-import { StoryRegistModalAtom } from "@src/stores/story/story.store";
+import {
+  StoryCompanyIdAtom,
+  StoryPagePathInflow,
+  StorySearchCompanyAtom,
+} from "@src/stores/story/story.store";
 import {
   CompanyIdAtom,
   CompanyModifyAtom,
@@ -24,7 +28,6 @@ interface Props {
 }
 
 function CompanyDetailInfo({ companyInfo }: Props) {
-  const setCompanyStoryRegisterModal = useSetRecoilState(StoryRegistModalAtom);
   const setCompanyModifyInfo = useSetRecoilState(CompanyModifyAtom);
   const setCompanyId = useSetRecoilState(CompanyIdAtom);
 
@@ -33,12 +36,24 @@ function CompanyDetailInfo({ companyInfo }: Props) {
   const userId = tokenDecode("access", "sub");
   const navigate = useNavigate();
 
+  const setStoryPagePathInflow = useSetRecoilState(StoryPagePathInflow);
+  const setStorySearchCompany = useSetRecoilState(StorySearchCompanyAtom);
+  const setStoryCompanyId = useSetRecoilState(StoryCompanyIdAtom);
+
   const handleRegistStory = () => {
     if (isNotMember) {
       rollingToast("동문인증이 필요한 기능입니다!", "warning");
       navigate("/alumni/certify");
     } else {
-      setCompanyStoryRegisterModal(true);
+      setStoryPagePathInflow("detail");
+      setStorySearchCompany((prev) => ({
+        ...prev,
+        companyName: companyInfo.companyName,
+        isExistSearchList: true,
+      }));
+      setStoryCompanyId(companyInfo.companyId);
+
+      navigate("/story");
     }
   };
 

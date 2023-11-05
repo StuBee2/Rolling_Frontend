@@ -5,10 +5,7 @@ export const Container = styled.div`
   height: auto;
 
   display: flex;
-  white-space: nowrap;
 
-  overflow-x: auto;
-  overflow-y: hidden;
   padding-bottom: 20px;
 `;
 
@@ -49,21 +46,35 @@ export const Content = styled.div`
 
 export const Info = styled.div`
   display: flex;
+  column-gap: 5px;
+  align-items: center;
   color: rgba(29, 30, 90, 1);
+
+  font-family: "Pretendard-Bold" !important;
+  font-weight: 600;
+  font-size: 19px;
 
   p {
     font-family: "Pretendard-Bold" !important;
     font-weight: 600;
-    span {
-      color: #000;
-    }
+    font-size: 18px;
+    white-space: nowrap;
   }
+
+  span {
+    color: #000;
+    line-height: 25px;
+  }
+`;
+
+export const PositionContainer = styled.div`
+  position: relative;
 `;
 
 export const ModifyInput = styled.input`
   width: 100%;
   height: 130%;
-  border: 2px solid #f2f4f5;
+  border: 1.5px solid #ddd;
   border-radius: 2px;
   background-color: white;
   outline-color: blue;

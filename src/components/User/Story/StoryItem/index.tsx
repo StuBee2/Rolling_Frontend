@@ -1,4 +1,4 @@
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { useEffect, useState } from "react";
 import StorySetUp from "@src/components/Common/StorySetUp";
 import Star from "@src/components/Common/Star";
@@ -11,60 +11,92 @@ import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import * as S from "./style";
 import { convertStarRatingObject } from "@src/utils/StarRating/convertRankingObject";
-import { StoryModifiableContentAtom } from "@src/stores/story/story.store";
-import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
+import {
+  StoryModifiableIdAtom,
+  StorySetupInitializationDotAtom,
+} from "@src/stores/story/story.store";
 import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
 import { useStoryModify } from "@src/hooks/Story/useStoryModify";
+import RegistStarGrade from "@src/components/Story/StoryRegister/RegisterItem/StarGrade";
 
 // 마이페이지와 회사단일 조회 페이지에서 같이 쓰이는 컴포넌트
 export default function StoryItem({ ...attr }: StoryCommonType) {
-  /**
-   * writerId가 없으면 마이페이지이고
-   * 있다면 회사단일 조회 페이지이기에 jwt 디코딩해서 writerId랑 내 id를 비교
-   * */
+  const {
+    salaryAndBenefits,
+    workLifeBalance,
+    organizationalCulture,
+    careerAdvancement,
+  } = attr;
+
+  // writerId가 없으면 마이페이지이고
+  // 있다면 회사단일 조회 페이지이기에 jwt 디코딩해서 writerId랑 내 id를 비교
   const isCoincideMemberId =
     !attr.writerId || tokenDecode("access", "sub") === attr.writerId;
+
   const rankStatus = convertStarRatingObject(attr);
 
-  const { handleModifyStorySubmit } = useStoryModify();
+  const { ...hooks } = useStoryModify();
+
   const modifyStoryId = useRecoilValue(StoryModifiableIdAtom);
-  const isModifiableEvent = useRecoilValue(StoryModifiableEventAtom);
-  const [storyModifiableContent, setStoryModifiableContent] = useRecoilState(
-    StoryModifiableContentAtom
+  const isCoincideStoryId = attr.storyId === modifyStoryId;
+
+  const setIsClickDots = useSetRecoilState(StorySetupInitializationDotAtom);
+  const [isModifiableEvent, setIsModifiableEvent] = useRecoilState(
+    StoryModifiableEventAtom
   );
-  const [modifyStroyCompanyId, setModifyStroyCompanyId] = useState<string>("");
+  const [modifyStroyCompanyId, setModifyStroyCompanyId] = useState("");
+
+  // 담당업무를 리스트를 보여줄지 안보여줄지를 판단하는 state
+  const [showPositionList, setShowPositionList] = useState(false);
 
   useEffect(() => {
-    if (attr.storyId === modifyStoryId) {
-      setStoryModifiableContent({
-        ...storyModifiableContent,
-        position: attr.position,
-        schoolLife: attr.schoolLife,
-        preparationCourse: attr.preparationCourse,
-        employmentProcess: attr.employmentProcess,
-        interviewQuestion: attr.interviewQuestion,
-        mostImportantThing: attr.mostImportantThing,
-        welfare: attr.welfare,
-        commuteTime: attr.commuteTime,
-        meal: attr.meal,
-        pros: attr.pros,
-        cons: attr.cons,
-        etc: "Developing features...",
-        salaryAndBenefits: attr.salaryAndBenefits,
-        workLifeBalance: attr.workLifeBalance,
-        organizationalCulture: attr.organizationalCulture,
-        careerAdvancement: attr.careerAdvancement,
+    // setIsClickDots는 전역 상태관리이기에 다른 페이지 이동시 
+    // 값이 유지 되는것을 막기위해 사용
+    return () => setIsClickDots(false);
+  }, [setIsClickDots]);
+
+  useEffect(() => {
+    if (isCoincideStoryId && isModifiableEvent) {
+      hooks.setPrevStoryModifyInfo({
+        ...attr,
       });
+
+      hooks.setStoryModifiableContent({
+        ...attr,
+      });
+
+      hooks.setPrevStoryStarGrade((prev) => ({
+        ...prev,
+        salaryAndBenefits,
+        workLifeBalance,
+        organizationalCulture,
+        careerAdvancement,
+      }));
+
+      hooks.setStoryStarGrade((prev) => ({
+        ...prev,
+        salaryAndBenefits,
+        workLifeBalance,
+        organizationalCulture,
+        careerAdvancement,
+      }));
+
       if (attr.companyId) {
         setModifyStroyCompanyId(attr.companyId);
       }
+
+      return () => setIsModifiableEvent(false);
     }
-  }, [modifyStoryId, attr.storyId, attr.companyId]);
+  }, [isCoincideStoryId, isModifiableEvent]);
 
   return (
     <S.Container>
-      <S.Wrapper>
-        <S.Content>
+      <S.Wrapper onClick={() => showPositionList && setShowPositionList(false)}>
+        <S.Content
+          onSubmit={(e) =>
+            hooks.handleModifyStorySubmit(e, modifyStroyCompanyId)
+          }
+        >
           <S.CompanyInfoContainer>
             <S.RegisteredAtAndDelEditContainer>
               <S.RegisteredDate>
@@ -76,29 +108,50 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
                   <StorySetUp
                     storyId={attr.storyId}
                     companyId={attr.companyId!!}
+                    isCoincideStoryId={isCoincideStoryId}
                   />
                 </S.DelAndEditContainer>
               )}
             </S.RegisteredAtAndDelEditContainer>
 
             <S.ContentContainer>
-              <CompanyInfo {...attr} />
-              <CompanyContent {...attr} />
+              <CompanyInfo
+                isCoincideStoryId={isCoincideStoryId}
+                storyData={attr}
+                showPositionList={showPositionList}
+                setShowPositionList={setShowPositionList}
+              />
+              <CompanyContent
+                isCoincideStoryId={isCoincideStoryId}
+                storyData={attr}
+              />
             </S.ContentContainer>
           </S.CompanyInfoContainer>
 
-          <Star
-            rankStatus={rankStatus}
-            width={20}
-            height={20}
-            fontSize={"15px"}
-          />
-          {isModifiableEvent && (
-            <S.StoryModifySubmitBtn
-              onClick={(e) => handleModifyStorySubmit(e, modifyStroyCompanyId)}
-            >
-              수정완료
-            </S.StoryModifySubmitBtn>
+          {isModifiableEvent && isCoincideStoryId ? (
+            <RegistStarGrade
+              storyStarGrade={hooks.storyStarGrade}
+              prevStarGarade={hooks.prevStoryStarGrade}
+              handleStarGradeChange={hooks.handleStarGradeChange}
+            />
+          ) : (
+            <Star
+              rankStatus={rankStatus}
+              width={20}
+              height={20}
+              fontSize={"15px"}
+            />
+          )}
+
+          {isModifiableEvent && isCoincideMemberId && isCoincideStoryId && (
+            <S.StoryModifySubmitBtnContainer>
+              <S.StoryModifySubmitBtn
+                isRequired={hooks.isStoryRequired || hooks.isStarGradeRequired}
+                type="submit"
+              >
+                수정하기
+              </S.StoryModifySubmitBtn>
+            </S.StoryModifySubmitBtnContainer>
           )}
         </S.Content>
       </S.Wrapper>
