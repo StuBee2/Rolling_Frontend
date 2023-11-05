@@ -5,7 +5,7 @@ import {
 } from "@src/components/ViewAll/Rank/RankList/style";
 import { CompanyContent } from "@src/components/ViewAll/style";
 import { SkeletonBox } from "../../Common/style";
-import { AllSkeletonBox } from "../All/style";
+import * as S from "./style";
 
 export default function RankSkeleton() {
   return (
@@ -16,7 +16,7 @@ export default function RankSkeleton() {
           <Wrapper>
             <Content>
               {Array.from({ length: 10 }).map((_, idx) => (
-                <AllSkeletonBox key={idx}>
+                <S.RankSkeletonBox key={idx}>
                   <SkeletonBox width="100%" height="60%" />
 
                   <CompanyContent>
@@ -24,7 +24,7 @@ export default function RankSkeleton() {
                     <SkeletonBox width="100%" height="18px" />
                     <SkeletonBox width="100px" height="18px" />
                   </CompanyContent>
-                </AllSkeletonBox>
+                </S.RankSkeletonBox>
               ))}
             </Content>
           </Wrapper>
