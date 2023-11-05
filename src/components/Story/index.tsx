@@ -1,4 +1,5 @@
 import useAlumniCheck from "@src/hooks/Alumni/useAlumniCheck";
+import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import {
   StoryCompanyIdAtom,
   StorySearchCompanyAtom,
@@ -11,6 +12,7 @@ import StoryRegister from "./StoryRegister";
 import * as S from "./style";
 
 export default function Story() {
+  useTokenCheck();
   useAlumniCheck();
 
   const [storySearchCompany, setStorySearchCompany] = useRecoilState(
