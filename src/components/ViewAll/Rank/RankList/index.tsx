@@ -17,7 +17,7 @@ import logo from "@src/assets/icons/Logo/logo.png";
 import rightArrow from "@src/assets/icons/Rank/rightArrow.png";
 import leftArrow from "@src/assets/icons/Rank/leftArrow.png";
 import { useRef } from "react";
-import { getSlideWidth } from "@src/utils/Rank/getSlideWidth";
+import { getSlideRankBoxWidth } from "@src/utils/Rank/getSlideRankBoxWidth";
 
 interface Props {
   category: string;
@@ -33,7 +33,7 @@ export default function RankList({ category, title }: Props) {
 
   const scrollHandler = (position: "left" | "right") => {
     const scrollRef = scrollContainerRef.current;
-    const slideWidth = getSlideWidth(scrollRef!!.clientWidth);
+    const slideWidth = getSlideRankBoxWidth(scrollRef!!.clientWidth);
 
     if (scrollRef) {
       if (position === "left") {

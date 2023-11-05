@@ -7,7 +7,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 90px 15px 0 15px;
+  padding: 90px 20px 0 20px;
+
+  min-width: 830px;
 `;
 
 export const Wrapper = styled.div<{ rowGap: string }>`
@@ -91,11 +93,11 @@ export const RegistButton = styled.div<{ isRequired: boolean }>`
       isRequired ? "rgba(72, 105, 246, 1)" : "rgba(72, 105, 246, 0.58)"};
     color: #fff;
 
+    transition: all 0.2s ease-in-out;
     ${({ isRequired }) =>
       isRequired &&
       css`
         transform: scale(1);
-        transition: all 0.1s ease-in-out;
         &:active {
           background-color: rgba(72, 105, 246, 0.81);
           transform: scale(0.99);

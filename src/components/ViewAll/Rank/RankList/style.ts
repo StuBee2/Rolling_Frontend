@@ -90,28 +90,23 @@ export const Content = styled.div`
 `;
 
 export const RankBox = styled.div`
-  width: 275px;
+  width: 273px;
   height: 320px;
 
   overflow: hidden;
   cursor: pointer;
 
-  @media screen and (max-width: 1215px) {
-    flex-basis: 32%;
+  @media screen and (max-width: 985px) {
+    flex-basis: 31.5%;
   }
-
-  @media screen and (max-width: 1031px) {
-    flex-basis: 48.7%;
-    height: 350px;
+  @media screen and (max-width: 645px) {
+    flex-basis: 48%;
+    width: 267px;
+    height: 300px;
   }
-
-  @media screen and (max-width: 850px) {
-    flex-basis: 48.3%;
-  }
-
-  @media screen and (max-width: 650px) {
-    flex-basis: 47.7%;
-    height: 320px;
+  @media screen and (max-width: 500px) {
+    flex-basis: 47.6%;
+    width: 223px;
   }
 `;
 

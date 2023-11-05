@@ -42,29 +42,22 @@ export const Title = styled.div`
   }
 `;
 
-export const RecommandBox = styled.div`
-  width: 285px;
+export const CompanyBox = styled.div`
+  width: 282px;
   height: 320px;
 
   overflow: hidden;
   cursor: pointer;
 
-  @media screen and (max-width: 1215px) {
-    flex-basis: 32%;
+  @media screen and (max-width: 985px) {
+    flex-basis: 31.5%;
   }
-
-  @media screen and (max-width: 1031px) {
-    flex-basis: 48.7%;
-    height: 350px;
+  @media screen and (max-width: 645px) {
+    flex-basis: 48%;
+    height: 300px;
   }
-
-  @media screen and (max-width: 850px) {
-    flex-basis: 48.2%;
-  }
-
-  @media screen and (max-width: 650px) {
-    flex-basis: 47.7%;
-    height: 290px;
+  @media screen and (max-width: 500px) {
+    flex-basis: 47.6%;
   }
 `;
 

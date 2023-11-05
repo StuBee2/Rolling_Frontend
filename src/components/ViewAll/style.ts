@@ -19,23 +19,20 @@ export const ViewAllContainer = styled.div<{ rowGap: string }>`
 export const ViewAllWrapper = styled.div`
   width: 1200px;
   height: 100%;
-  padding: 3rem 0 2rem 0;
+  padding: 3rem 5px 2rem 5px;
 
   display: flex;
   flex-direction: column;
   row-gap: 5rem;
 
-  @media screen and (max-width: 1215px) {
-    width: 1000px;
+  @media screen and (max-width: 985px) {
+    width: 785px;
   }
-  @media screen and (max-width: 1031px) {
-    width: 800px;
+  @media screen and (max-width: 645px) {
+    width: 580px;
   }
-  @media screen and (max-width: 850px) {
-    width: 600px;
-  }
-  @media screen and (max-width: 650px) {
-    width: 480px;
+  @media screen and (max-width: 500px) {
+    width: 490px;
   }
 `;
 

@@ -41,7 +41,7 @@ export default function AllList() {
         {sizeOfRecommandList!! > 0 ? (
           recommandList?.pages.map((data) =>
             data.data.map((item) => (
-              <S.RecommandBox key={item.companyId.id}>
+              <S.CompanyBox key={item.companyId.id}>
                 <CompanyLogoContainer
                   rgb={getRgb(item.companyDetails.companyLogo.rgb)}
                   onClick={() => navigate(`/company/${item.companyId.id}`)}
@@ -73,7 +73,7 @@ export default function AllList() {
                     </CompanyCreatedAt>
                   </CompanyDescriptionAndAddress>
                 </CompanyContent>
-              </S.RecommandBox>
+              </S.CompanyBox>
             ))
           )
         ) : (
