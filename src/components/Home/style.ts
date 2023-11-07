@@ -15,6 +15,10 @@ export const HomeContainer = styled.div`
   background-color: #f9fafb;
   white-space: nowrap;
   min-width: 500px;
+
+  @media screen and (max-width: 500px) {
+    zoom: 1.2;
+  }
 `;
 
 export const HomeWrapper = styled.div`
