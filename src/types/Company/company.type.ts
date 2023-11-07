@@ -15,6 +15,7 @@ export interface CompanyListType {
     description: string;
     companyAddress: {
       address: string;
+      etc: string;
     };
     companyLogo: {
       url: string;
@@ -31,6 +32,7 @@ export interface CompanyInfoType extends CompanyStarGrade {
   companyId: string;
   companyName: string;
   companyAddress: string;
+  companyAddressEtc: string;
   companyDescription: string;
   companyLogoUrl: string;
   companyLogoRGB: number;

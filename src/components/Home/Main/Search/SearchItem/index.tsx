@@ -48,7 +48,10 @@ export default function SearchItem({ company }: Props) {
                       </S.CompanyName>
 
                       <S.CompanyAddress>
-                        | {item.companyDetails.companyAddress.address}
+                        |{" "}
+                        {item.companyDetails.companyAddress.address +
+                          (" " +
+                            (item.companyDetails.companyAddress.etc || ""))}
                       </S.CompanyAddress>
                     </S.CompanyNameAndCreatedAt>
 

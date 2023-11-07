@@ -65,7 +65,8 @@ export default function AllList() {
                     </CompanyDescription>
 
                     <CompanyAddress>
-                      {item.companyDetails.companyAddress.address}
+                      {item.companyDetails.companyAddress.address +
+                        (" " + (item.companyDetails.companyAddress.etc || ""))}
                     </CompanyAddress>
 
                     <CompanyCreatedAt>

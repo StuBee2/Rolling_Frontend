@@ -27,7 +27,9 @@ export default function CompanyDetailContent({ ...attr }: CompanyInfoType) {
           <img src={attr.companyLogoUrl || logo} alt="이미지 없음" />
           <div>
             <S.CompanyName>{attr.companyName}</S.CompanyName>
-            <S.CompanyAddress>{attr.companyAddress}</S.CompanyAddress>
+            <S.CompanyAddress>
+              {attr.companyAddress + (" " + (attr.companyAddressEtc || ""))}
+            </S.CompanyAddress>
           </div>
         </S.Info>
         <S.Description>

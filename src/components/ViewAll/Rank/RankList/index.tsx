@@ -92,7 +92,8 @@ export default function RankList({ category, title }: Props) {
                     </CompanyDescription>
 
                     <CompanyAddress>
-                      {item.companyDetails.companyAddress.address}
+                      {item.companyDetails.companyAddress.address +
+                        (" " + (item.companyDetails.companyAddress.etc || ""))}
                     </CompanyAddress>
 
                     <CompanyCreatedAt>
