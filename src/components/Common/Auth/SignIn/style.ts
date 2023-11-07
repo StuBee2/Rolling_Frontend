@@ -128,6 +128,8 @@ export const SignInButton = styled.button`
   transition: all 0.1s ease-in-out;
   &:hover {
     background-color: rgba(32, 35, 37, 1);
+  }
+  &:active {
     transform: scale(0.985);
   }
 `;
