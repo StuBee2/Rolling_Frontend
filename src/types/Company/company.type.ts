@@ -61,6 +61,7 @@ export interface CompanyStarGradeWithoutTotalGrade {
 
 export interface CompanyStarGradeInfo extends CompanyStarGrade {
   companyImgUrl: string;
+  companyLogoRgb: number;
   companyName: string;
 }
 

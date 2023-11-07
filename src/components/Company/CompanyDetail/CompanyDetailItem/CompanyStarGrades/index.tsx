@@ -4,6 +4,7 @@ import { StarRating } from "@stubee2/stubee2-rolling-ui";
 import * as S from "./style";
 import logo from "@src/assets/icons/Logo/logo.png";
 import { CompanyStarGradeInfo } from "@src/types/Company/company.type";
+import { getRgb } from "@src/utils/Rgb/getRgb";
 
 interface Props {
   starGradeInfo: CompanyStarGradeInfo;
@@ -14,7 +15,9 @@ export default function CompanyStarGrades({ starGradeInfo }: Props) {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.CompanyBasicInfo>
+        <S.CompanyBasicInfo
+          backgroundColor={getRgb(starGradeInfo.companyLogoRgb)}
+        >
           <img src={attr.companyImgUrl || logo} alt="이미지 없음" />
           <p>{attr.companyName}</p>
         </S.CompanyBasicInfo>

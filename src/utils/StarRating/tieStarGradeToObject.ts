@@ -3,6 +3,7 @@ import { CompanyInfoType } from "@src/types/Company/company.type";
 export const tieStarGradeToObject = (starRatingInfo: CompanyInfoType) => {
   return {
     companyImgUrl: starRatingInfo.companyLogoUrl,
+    companyLogoRgb: starRatingInfo.companyLogoRGB,
     companyName: starRatingInfo.companyName,
     total: starRatingInfo.total,
     salaryAndBenefits: starRatingInfo.salaryAndBenefits,

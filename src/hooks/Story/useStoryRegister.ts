@@ -92,7 +92,7 @@ export const useStoryRegister = (companyId: string) => {
               setStoryPagePathInflow("header");
               navigate(-1);
             } else {
-              navigate("/");
+              navigate(`/company/${companyId}`);
             }
           },
           onError: (e) => {

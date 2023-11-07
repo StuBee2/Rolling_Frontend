@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const CompanyBasicInfo = styled.div`
+export const CompanyBasicInfo = styled.div<{ backgroundColor: string }>`
   width: 100%;
   height: 150px;
   display: flex;
@@ -46,7 +46,7 @@ export const CompanyBasicInfo = styled.div`
     height: 110px;
     border-radius: 5px;
     border: 1px solid #dddddd;
-    background-color: #fff;
+    background-color: ${({ backgroundColor }) => backgroundColor || "#fff"};
   }
 
   p {

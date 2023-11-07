@@ -5,6 +5,7 @@ import { CompanyInfoType } from "@src/types/Company/company.type";
 import logo from "@src/assets/icons/Logo/logo.png";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { CompanyDetailRegistAt } from "../style";
+import { getRgb } from "@src/utils/Rgb/getRgb";
 
 export default function CompanyDetailContent({ ...attr }: CompanyInfoType) {
   return (
@@ -23,7 +24,7 @@ export default function CompanyDetailContent({ ...attr }: CompanyInfoType) {
         <CompanyDetailRegistAt widthType={"min-width"}>
           {getDateText(new Date(attr.companyCreatedAt))} 작성
         </CompanyDetailRegistAt>
-        <S.Info>
+        <S.Info backgroundColor={getRgb(attr.companyLogoRGB)}>
           <img src={attr.companyLogoUrl || logo} alt="이미지 없음" />
           <div>
             <S.CompanyName>{attr.companyName}</S.CompanyName>

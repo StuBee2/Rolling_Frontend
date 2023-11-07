@@ -98,7 +98,10 @@ export const useCompanyRegister = () => {
             });
           },
           onError: (error) => {
-            console.log(error);
+            rollingToast(
+              `${companyRegisterInfo.name}을/를 등록하지 못했습니다.`,
+              "error"
+            );
           },
         });
       }

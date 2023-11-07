@@ -44,7 +44,7 @@ export const InfoContainer = styled.div`
   border-bottom: 3px solid #dee0e6;
 `;
 
-export const Info = styled.div`
+export const Info = styled.div<{ backgroundColor: string }>`
   display: flex;
   align-items: center;
   column-gap: 15px;
@@ -54,7 +54,7 @@ export const Info = styled.div`
     border-radius: 5px;
     object-fit: contain;
     border: 1px solid #dddddd;
-    background-color: #fff;
+    background-color: ${({ backgroundColor }) => backgroundColor || "#fff"};
   }
 
   div {
