@@ -2,7 +2,7 @@ import { AiOutlineUser } from "@react-icons/all-files/ai/AiOutlineUser";
 import { HoverAnimation } from "@src/styles/common.style";
 import styled, { css } from "styled-components";
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div<{ pathname: string }>`
   width: 100%;
   height: 90px;
   font-size: 19px;
@@ -19,6 +19,15 @@ export const HeaderContainer = styled.div`
   top: 0;
   left: 0;
   z-index: 3;
+
+  ${({ pathname }) =>
+    pathname === "/" &&
+    css`
+      @media screen and (max-width: 500px) {
+        zoom: 1.2;
+      }
+    `}
+
   @media screen and (max-width: 740px) {
     border-bottom: 1px solid #dddddd;
   }
