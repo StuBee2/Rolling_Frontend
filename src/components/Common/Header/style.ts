@@ -24,7 +24,7 @@ export const HeaderContainer = styled.div<{ pathname: string }>`
     pathname === "/" &&
     css`
       @media screen and (max-width: 500px) {
-        zoom: 1.2;
+        zoom: 1.1;
       }
     `}
 
