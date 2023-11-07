@@ -15,6 +15,11 @@ export const HomeContainer = styled.div`
   background-color: #f9fafb;
   white-space: nowrap;
   min-width: 500px;
+
+  // 아이폰 대응
+  @media screen and (max-width: 500px) {
+    zoom: 1.1;
+  }
 `;
 
 export const HomeWrapper = styled.div`
