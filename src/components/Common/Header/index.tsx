@@ -21,7 +21,7 @@ export default function Header() {
   const isTemp = tokenDecode("access", "authority") === "TEMP";
 
   return (
-    <S.HeaderContainer pathname={pathname}>
+    <S.HeaderContainer>
       <S.HeaderWrapper>
         <S.PageContainer>
           <img

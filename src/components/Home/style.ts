@@ -16,8 +16,9 @@ export const HomeContainer = styled.div`
   white-space: nowrap;
   min-width: 500px;
 
+  // 아이폰 대응
   @media screen and (max-width: 500px) {
-    zoom: 1.2;
+    zoom: 1.1;
   }
 `;
 
