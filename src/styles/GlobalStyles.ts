@@ -12,7 +12,10 @@ const GlobalStyle = createGlobalStyle`
      
      body {
       background-color: #f9fafb;
-      zoom:0.8;
+
+      @media screen and (min-width: 500px) {
+        zoom: 0.8;
+      }
      }
 
     ${reset}

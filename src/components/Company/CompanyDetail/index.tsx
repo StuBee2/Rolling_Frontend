@@ -12,16 +12,14 @@ interface Props {
 export default function CompanyDetail({ id }: Props) {
   useAuthTopScroll();
   return (
-    <>
-      <S.Container>
-        <S.Wrapper>
-          <ErrorBoundary fallback={<>회사정보를 갖고오지 못했습니다.</>}>
-            <Suspense fallback={<CompanyDetailSkeleton />}>
-              <CompanyDetailItem id={id} />
-            </Suspense>
-          </ErrorBoundary>
-        </S.Wrapper>
-      </S.Container>
-    </>
+    <S.Container>
+      <S.Wrapper>
+        <ErrorBoundary fallback={<>회사정보를 갖고오지 못했습니다.</>}>
+          <Suspense fallback={<CompanyDetailSkeleton />}>
+            <CompanyDetailItem id={id} />
+          </Suspense>
+        </ErrorBoundary>
+      </S.Wrapper>
+    </S.Container>
   );
 }

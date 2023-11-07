@@ -9,8 +9,8 @@ export const HomeContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  row-gap: 10rem;
   justify-content: center;
+  row-gap: 10rem;
 
   background-color: #f9fafb;
   white-space: nowrap;
@@ -21,8 +21,8 @@ export const HomeWrapper = styled.div`
   width: 1370px;
   height: 100%;
   padding-top: 2rem;
-  display: flex;
 
+  display: flex;
   flex-direction: column;
   row-gap: 8rem;
 

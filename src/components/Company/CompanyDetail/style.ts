@@ -8,9 +8,8 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  padding: 0 15px 15px 15px;
+  padding: 90px 15px 15px 15px;
   min-width: 500px;
-  padding-top: 90px;
 `;
 
 export const Wrapper = styled.div`
