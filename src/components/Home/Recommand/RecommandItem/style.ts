@@ -54,12 +54,6 @@ export const ImageContainer = styled.div<{ rgb: string }>`
     max-height: 100%;
     width: auto;
     height: auto;
-
-    transform: scale(1);
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      transform: scale(1.08);
-    }
   }
 
   ${StopDrag}
