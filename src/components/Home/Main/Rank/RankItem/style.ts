@@ -20,7 +20,7 @@ export const RankNumber = styled.div`
   height: 40px;
 
   background-color: rgba(29, 30, 90, 1);
-  border-radius: 0 0 10px 0;
+  border-radius: 10px 0 10px 0;
   position: absolute;
   top: 0;
   left: 0;

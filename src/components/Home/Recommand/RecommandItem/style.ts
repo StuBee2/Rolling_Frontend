@@ -48,7 +48,7 @@ export const ImageContainer = styled.div<{ rgb: string }>`
   justify-content: center;
   overflow: hidden;
   background-color: ${({ rgb }) => rgb || "#fff"};
-
+  zoom: 0.85;
   img {
     max-width: 100%;
     max-height: 100%;
