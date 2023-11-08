@@ -4,6 +4,7 @@ export const UserContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: #f9fafb;
+  zoom: 0.8;
 
   display: flex;
   flex-direction: column;

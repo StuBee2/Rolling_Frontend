@@ -4,6 +4,7 @@ import styled, { keyframes } from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100%;
+  zoom: 0.8;
 
   position: fixed;
   top: 0;

@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  zoom: 0.8;
 
   padding: 90px 15px 15px 15px;
   min-width: 500px;

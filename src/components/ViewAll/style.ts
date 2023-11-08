@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ViewAllContainer = styled.div<{ rowGap: string }>`
   width: 100%;
   height: 100%;
+  zoom: 0.8;
 
   padding-top: 90px;
 

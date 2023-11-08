@@ -9,6 +9,8 @@ export const Container = styled.div`
   top: 0;
   left: 0;
 
+  zoom: 0.8;
+
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 3;
 

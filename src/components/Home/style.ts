@@ -6,6 +6,8 @@ export const HomeContainer = styled.div`
   height: 100%;
   padding-top: 90px;
 
+  zoom: 0.8;
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -17,9 +19,9 @@ export const HomeContainer = styled.div`
   min-width: 500px;
 
   // 아이폰 대응
-  @media screen and (max-width: 500px) {
+  /* @media screen and (max-width: 500px) {
     zoom: 1.1;
-  }
+  } */
 `;
 
 export const HomeWrapper = styled.div`

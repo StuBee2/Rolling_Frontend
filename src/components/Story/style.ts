@@ -10,6 +10,8 @@ export const Container = styled.div`
   padding: 90px 20px 0 20px;
 
   min-width: 830px;
+
+  zoom: 0.8;
 `;
 
 export const Wrapper = styled.div<{ rowGap: string }>`

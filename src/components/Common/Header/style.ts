@@ -8,6 +8,7 @@ export const HeaderContainer = styled.div`
   font-size: 19px;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+  zoom: 0.8;
 
   display: flex;
   align-items: center;

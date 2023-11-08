@@ -6,6 +6,8 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
+
+  zoom: 0.8;
   position: fixed;
   top: 0;
   left: 0;

@@ -151,6 +151,8 @@ export const ModalContainer = styled.div`
   width: 100%;
   height: 100%;
 
+  zoom: 0.8;
+
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
