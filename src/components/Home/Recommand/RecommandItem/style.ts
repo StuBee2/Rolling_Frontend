@@ -42,7 +42,6 @@ export const ImageContainer = styled.div<{ rgb: string }>`
   height: 167px;
 
   border-radius: 10px;
-  border: 1px solid #ddd;
   cursor: pointer;
 
   display: flex;
