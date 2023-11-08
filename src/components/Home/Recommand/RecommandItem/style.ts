@@ -23,6 +23,7 @@ export const RecommandItemBox = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 5px;
+  overflow: hidden;
 
   p {
     text-align: center;
