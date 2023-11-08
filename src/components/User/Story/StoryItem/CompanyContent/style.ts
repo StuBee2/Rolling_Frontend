@@ -42,7 +42,7 @@ export const Content = styled.p<{ isEtc?: string }>`
   overflow-y: hidden;
   overflow-x: hidden;
 
-  font-size: 15px;
+  font-size: 18px;
   color: rgba(115, 123, 152, 1);
   border-radius: 5px;
   background-color: #f2f4f5;
@@ -50,8 +50,6 @@ export const Content = styled.p<{ isEtc?: string }>`
   white-space: pre-wrap;
   padding: 0.8rem;
   line-height: 23px;
-
-  font-size: 17px;
 
   &:hover {
     overflow-y: auto;
