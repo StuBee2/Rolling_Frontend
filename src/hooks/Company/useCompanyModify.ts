@@ -94,7 +94,7 @@ export const useCompanyModify = () => {
     e.preventDefault();
 
     if (isRequired) {
-      const answer = window.confirm("기업등록을 수정하시겠습니까?");
+      const answer = window.confirm("기업을 수정하시겠습니까?");
 
       if (answer) {
         const companyData = { ...companyModifyInfo };
