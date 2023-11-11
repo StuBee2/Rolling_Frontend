@@ -1,4 +1,5 @@
 import { FadeInAnimation } from "@src/styles/common.style";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -9,7 +10,7 @@ export const Wrapper = styled.div`
 
 export const GuideText = styled.p`
   font-size: 15px;
-  color: rgba(72, 105, 246, 0.81);
+  color: ${RollingPalette.main.Base};
 
   display: flex;
   align-items: center;
@@ -17,7 +18,7 @@ export const GuideText = styled.p`
 
   width: 100%;
   height: 40px;
-  background-color: rgba(222, 224, 230, 1);
+  background-color: ${RollingPalette.unEmphasize.Light};
 
   ${FadeInAnimation};
 `;

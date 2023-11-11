@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const NavFooterContainer = styled.div`
@@ -30,7 +31,8 @@ export const NavFooterWrapper = styled.ul`
 `;
 
 export const NavFooterCategoryItem = styled.li<{ isSelect: boolean }>`
-  color: ${({ isSelect }) => (isSelect ? "#1d1e5a" : "#61677e")};
+  color: ${({ isSelect }) =>
+    isSelect ? RollingPalette.main.Dark : RollingPalette.unEmphasize.Dark};
   white-space: nowrap;
   font-weight: ${({ isSelect }) => isSelect && "800"};
   padding-bottom: 10px;

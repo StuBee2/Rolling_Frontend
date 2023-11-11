@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -31,7 +32,7 @@ export const Title = styled.div`
 `;
 
 export const SubTitle = styled.p`
-  color: #737b98;
+  color: ${RollingPalette.unEmphasize.Dark};
   font-size: 15px;
   font-weight: 600;
 `;
@@ -41,7 +42,7 @@ export const InfoContainer = styled.div`
   flex-direction: column;
   row-gap: 15px;
   padding-bottom: 20px;
-  border-bottom: 3px solid #dee0e6;
+  border-bottom: 3px solid ${RollingPalette.unEmphasize.Light};
 `;
 
 export const Info = styled.div<{ backgroundColor: string }>`
@@ -71,7 +72,7 @@ export const CompanyName = styled.p`
 `;
 
 export const CompanyAddress = styled.p`
-  color: #737b98;
+  color: ${RollingPalette.unEmphasize.Dark};
   font-size: 15px;
   font-weight: 500;
 `;

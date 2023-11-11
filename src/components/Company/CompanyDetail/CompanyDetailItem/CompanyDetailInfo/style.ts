@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
@@ -29,13 +30,13 @@ export const TitleContainer = styled.div`
 `;
 
 export const Title = styled.p`
-  color: #000;
+  color: ${RollingPalette.text.Darkest};
   font-size: 30px;
   font-weight: 700;
 `;
 
 export const SubTitle = styled.p`
-  color: #61677e;
+  color: ${RollingPalette.unEmphasize.Dark};
   font-size: 18px;
   font-weight: 600;
 `;
@@ -106,7 +107,7 @@ export const CompanyStoryButton = styled.button`
 export const CompanyDetailRegistAt = styled.p<{
   widthType: "min-width" | "max-width";
 }>`
-  color: #737b98;
+  color: ${RollingPalette.unEmphasize.Dark};
   font-size: 16px;
   font-weight: 500;
   padding-right: 15px;

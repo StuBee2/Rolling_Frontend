@@ -9,9 +9,9 @@ import {
 } from "@src/stores/common/common.store";
 import Search from "../Modal/Search";
 import Info from "../Modal/MyInfo";
-import Portal from "../Portal";
 import { SignInModalAtom } from "@src/stores/auth/auth.store";
 import SignIn from "../Auth/SignIn";
+import { Portal } from "@stubee2/stubee2-rolling-ui";
 
 interface Props {
   children: ReactNode;
@@ -26,7 +26,7 @@ export default function PageTemplate({ children }: Props) {
   return (
     <>
       <GlobalStyle />
-      <Portal>
+      <Portal id="modal">
         {myInfoModal && <Info />}
         {signInModal && <SignIn />}
         {isCloseModal && <Search />}

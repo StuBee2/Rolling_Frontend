@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const UserNavBar = styled.div`
@@ -43,7 +44,9 @@ export const UserName = styled.p`
 export const UserEmail = styled.p<{ email: string }>`
   font-size: 17px;
   color: ${({ email }) =>
-    email === null ? "rgba(72, 105, 246, 1)" : "#61677e"};
+    email === null
+      ? RollingPalette.main.Base
+      : RollingPalette.unEmphasize.Dark};
   cursor: ${({ email }) => email === null && "pointer"};
 `;
 
@@ -77,7 +80,7 @@ export const PageSelectItem = styled.div<{ isSelect?: boolean }>`
   width: 100%;
   height: 60px;
 
-  background-color: ${({ isSelect }) => isSelect && "#1d1e5a"};
+  background-color: ${({ isSelect }) => isSelect && RollingPalette.main.Dark};
   color: ${({ isSelect }) => isSelect && "#ffffff"};
   border-radius: 8px;
   line-height: 60px;

@@ -1,4 +1,5 @@
 import { HoverAnimation } from "@src/styles/common.style";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { css } from "styled-components";
 
 export const CompanyNameForm = styled.div`
@@ -68,20 +69,17 @@ export const InputWrapper = styled.div`
   padding-right: 10px;
 `;
 
-export const Input = styled.input`
-  width: 100%;
-  height: 100%;
-
-  outline: none;
-  border: none;
-  padding-left: 20px;
-
-  font-size: 20px;
-
-  ::placeholder {
-    color: rgba(189, 194, 208, 1);
-  }
-`;
+export const InputStyle = {
+  width: "100%",
+  height: "100%",
+  outline: "none",
+  border: "none",
+  paddingLeft: "20px",
+  fontSize: "20px",
+  "::placeholder": {
+    color: `${RollingPalette.unEmphasize.Base}`,
+  },
+};
 
 export const SearchIcon = styled.img`
   width: 30px;
@@ -95,7 +93,7 @@ export const ConfirmButton = styled.button<{ isActive: boolean }>`
   width: 100%;
   height: 60px;
   background-color: ${({ isActive }) =>
-    isActive ? "rgba(72, 105, 246, 1)" : "rgba(222, 224, 230, 1)"};
+    isActive ? RollingPalette.main.Base : "rgba(222, 224, 230, 1)"};
 
   border-radius: 3rem;
   margin-top: 20px;

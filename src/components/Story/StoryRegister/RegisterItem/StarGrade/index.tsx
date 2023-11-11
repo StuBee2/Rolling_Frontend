@@ -1,4 +1,5 @@
 import { STORY_STARGRAGE_ITEMS } from "@src/constants/Story/story.constant";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import { StarRatingItem } from "@stubee2/stubee2-rolling-ui";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -79,8 +80,8 @@ const StarGradeContainer = styled.div`
 
   overflow: auto;
 
-  background-color: rgba(247, 249, 250, 1);
-  border: 1px solid #bdc2d0;
+  background-color: ${RollingPalette.unEmphasize.Lightest};
+  border: 1px solid ${RollingPalette.unEmphasize.Base};
   border-radius: 5px;
   padding: 0 3rem 0 3rem;
 

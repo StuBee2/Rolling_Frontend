@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const UserInfoWrapper = styled.div`
@@ -44,7 +45,7 @@ export const UserInfoNickName = styled.p`
 
   transition: all 0.1s ease-in-out;
   &:hover {
-    color: rgba(72, 105, 246, 1);
+    color: ${RollingPalette.main.Base};
   }
 `;
 
@@ -74,8 +75,8 @@ export const CompanyRegistBtn = styled.button`
   border-radius: 5px;
   font-size: 15px;
 
-  color: rgba(72, 105, 246, 1);
-  border: 2px solid rgba(72, 105, 246, 1);
+  color: ${RollingPalette.main.Base};
+  border: 2px solid ${RollingPalette.main.Base};
   cursor: pointer;
 
   transform: scale(1);

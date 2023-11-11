@@ -1,4 +1,5 @@
 import { HoverAnimation } from "@src/styles/common.style";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
@@ -90,7 +91,7 @@ export const FooterItemContainer = styled.ul`
 
 export const EtcContainer = styled.div`
   font-size: 14px;
-  color: #8a8a8a;
+  color: ${RollingPalette.unEmphasize.Dark};
 
   display: flex;
   flex-direction: column;

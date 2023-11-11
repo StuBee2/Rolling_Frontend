@@ -1,7 +1,7 @@
 import useAlumniCheck from "@src/hooks/Alumni/useAlumniCheck";
 import useTokenCheck from "@src/hooks/Auth/useTokenCheck";
 import { useState } from "react";
-import Portal from "@src/components/Common/Portal";
+import { Portal } from "@stubee2/stubee2-rolling-ui";
 import CompanyAddressModal from "@src/components/Common/Modal/CompanyAddress";
 import ModifyItem from "./ModifyItem";
 import * as S from "../../style";
@@ -33,7 +33,7 @@ export default function CompanyModify() {
       </S.Container>
 
       {isModalOpen && (
-        <Portal>
+        <Portal id="modal">
           <CompanyAddressModal
             setIsOpenModal={setIsModalOpen}
             companyInfo={companyModifyInfo.address}

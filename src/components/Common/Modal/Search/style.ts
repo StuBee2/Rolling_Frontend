@@ -1,4 +1,5 @@
 import { StopDrag } from "@src/styles/common.style";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
@@ -26,7 +27,7 @@ const slideInAnimation = keyframes`
 export const Wrapper = styled.div`
   width: 100%;
   height: 340px;
-  background-color: rgba(247, 249, 250, 1);
+  background-color: ${RollingPalette.unEmphasize.Lightest};
   position: relative;
 
   display: flex;
@@ -57,7 +58,7 @@ export const InputContainer = styled.form`
   display: flex;
   align-items: center;
   column-gap: 10px;
-  border-bottom: 3px solid #737b98;
+  border-bottom: 3px solid ${RollingPalette.unEmphasize.Dark};
   z-index: 1;
   margin-top: 4rem;
 
@@ -84,13 +85,12 @@ export const InputContainer = styled.form`
     background-color: transparent;
     font-weight: bold;
 
-    color: #f9fafb;
-    color: #737b98;
+    color: ${RollingPalette.unEmphasize.Dark};
     font-size: 43px;
 
     ::placeholder {
       font-weight: bold;
-      color: #737b98;
+      color: ${RollingPalette.unEmphasize.Dark};
     }
   }
 

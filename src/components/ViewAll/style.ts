@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const ViewAllContainer = styled.div<{ rowGap: string }>`
@@ -50,19 +51,19 @@ export const Title = styled.p`
   span {
     font-size: 13px;
     margin-left: 10px;
-    color: rgba(115, 123, 152, 1);
+    color: ${RollingPalette.unEmphasize.Dark};
   }
 `;
 
 export const SubTitle = styled.p`
-  color: #61677e;
+  color: ${RollingPalette.unEmphasize.Dark};
   font-size: 17px;
   font-weight: 600;
 
   line-height: 25px;
 
   span {
-    color: rgba(72, 105, 246, 1);
+    color: ${RollingPalette.main.Base};
   }
 `;
 

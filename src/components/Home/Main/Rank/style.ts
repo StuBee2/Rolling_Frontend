@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const RankCategoriesContainer = styled.div`
@@ -30,7 +31,7 @@ export const RankCategoryLi = styled.li<{ isSelect: boolean }>`
 
   font-weight: ${({ isSelect }) => isSelect && "800"};
   color: ${({ isSelect }) => isSelect && "#fff"};
-  background-color: ${({ isSelect }) => isSelect && "rgba(72, 105, 246, 1)"};
+  background-color: ${({ isSelect }) => isSelect && RollingPalette.main.Base};
   cursor: pointer;
 
   display: flex;

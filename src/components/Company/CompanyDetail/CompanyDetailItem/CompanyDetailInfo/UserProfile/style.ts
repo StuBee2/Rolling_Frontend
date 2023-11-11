@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -48,7 +49,7 @@ export const Content = styled.div<{
   height: 105px;
 
   padding-right: ${({ nameLength }) => nameLength >= 13 && "15px"};
-  background-color: rgba(72, 105, 246, 1);
+  background-color: ${RollingPalette.main.Base};
   border-radius: 5px;
 
   position: absolute;
@@ -71,7 +72,7 @@ export const NickName = styled.p`
 `;
 
 export const GithubId = styled.div`
-  color: #dee0e6;
+  color: ${RollingPalette.unEmphasize.Base};
   font-size: 15px;
   font-weight: 500;
   display: flex;
