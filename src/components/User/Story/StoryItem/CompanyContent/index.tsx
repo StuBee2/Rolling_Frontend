@@ -28,7 +28,7 @@ export default function CompanyContent({
             <S.Wrapper key={item.id}>
               {item.id === 1 ? (
                 <S.AdvantagesAndDisAdvantages>
-                  <S.Advantages>
+                  <S.ProsAndCons>
                     <S.Title>
                       <img src={item.prosIcon} alt="이미지 없음" />
                       <p>{item.prosTitle}</p>
@@ -42,9 +42,9 @@ export default function CompanyContent({
                       customStyle={S.InputStyle}
                       handleChange={handleChangeModifyStoryContent}
                     />
-                  </S.Advantages>
+                  </S.ProsAndCons>
 
-                  <S.Advantages>
+                  <S.ProsAndCons>
                     <S.Title>
                       <img src={item.consIcon} alt="이미지 없음" />
                       <p>{item.consTitle}</p>
@@ -58,7 +58,7 @@ export default function CompanyContent({
                       customStyle={S.InputStyle}
                       handleChange={handleChangeModifyStoryContent}
                     />
-                  </S.Advantages>
+                  </S.ProsAndCons>
                 </S.AdvantagesAndDisAdvantages>
               ) : (
                 <>
@@ -105,24 +105,24 @@ export default function CompanyContent({
           <S.Wrapper key={item.id}>
             {item.id === 1 ? (
               <S.AdvantagesAndDisAdvantages>
-                <S.Advantages>
+                <S.ProsAndCons>
                   <S.Title>
                     <img src={item.prosIcon} alt="이미지 없음" />
                     <p>{item.prosTitle}</p>
                   </S.Title>
-                  <S.AdvantagesContent isCons={true}>
+                  <S.ProsAndConsContent isPros={true}>
                     {item.prosContent}
-                  </S.AdvantagesContent>
-                </S.Advantages>
-                <S.Advantages>
+                  </S.ProsAndConsContent>
+                </S.ProsAndCons>
+                <S.ProsAndCons>
                   <S.Title>
                     <img src={item.consIcon} alt="이미지 없음" />
                     <p>{item.consTitle}</p>
                   </S.Title>
-                  <S.AdvantagesContent isCons={false}>
+                  <S.ProsAndConsContent isPros={false}>
                     {item.consContent}
-                  </S.AdvantagesContent>
-                </S.Advantages>
+                  </S.ProsAndConsContent>
+                </S.ProsAndCons>
               </S.AdvantagesAndDisAdvantages>
             ) : (
               <>

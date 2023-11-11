@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Form = styled.form<{ isEditing: boolean }>`
@@ -5,8 +6,8 @@ export const Form = styled.form<{ isEditing: boolean }>`
   height: 55px;
 
   border-radius: 5px;
-  border: ${({ isEditing }) =>
-    isEditing ? "2px solid rgba(72, 105, 246, 1)" : "2px solid #c3c9d9"};
+  border: 2px solid
+    ${({ isEditing }) => (isEditing ? RollingPalette.main.Base : "#c3c9d9")};
   display: flex;
   overflow: hidden;
 
@@ -22,7 +23,7 @@ export const Input = styled.input`
 
   padding-left: 15px;
   font-size: 18px;
-  color: #000;
+  color: ${RollingPalette.text.Darkest};
 `;
 
 export const SubmitButton = styled.button<{ isEditing: boolean }>`
@@ -37,7 +38,7 @@ export const SubmitButton = styled.button<{ isEditing: boolean }>`
   border: none;
   cursor: pointer;
   background-color: ${({ isEditing }) =>
-    isEditing ? "rgba(72, 105, 246, 1)" : "#c3c9d9"};
+    isEditing ? RollingPalette.main.Base : "#c3c9d9"};
   font-size: 18px;
   color: #fff;
   font-weight: 700;

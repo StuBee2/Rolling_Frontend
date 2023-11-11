@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const ErrorContainer = styled.div`
@@ -28,7 +29,7 @@ export const GoHomeBtn = styled.button`
   width: 100%;
   height: 50px;
   color: #ffffff;
-  background-color: #1d1e5a;
+  background-color: ${RollingPalette.main.Dark};
   border-radius: 10px;
   outline: none;
   border: none;

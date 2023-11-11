@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const NoneData = styled.div`
@@ -6,7 +7,7 @@ export const NoneData = styled.div`
   p {
     span {
       transition: all 0.1s ease-in-out;
-      color: rgba(72, 105, 246, 1);
+      color: ${RollingPalette.main.Base};
       font-weight: 800;
       cursor: pointer;
 

@@ -1,4 +1,5 @@
 import { FadeInAnimation } from "@src/styles/common.style";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
@@ -43,7 +44,7 @@ export const MainTitle = styled.div`
 
   p {
     span {
-      color: rgba(236, 106, 94, 1);
+      color: #ec6a5e;
     }
   }
 `;
@@ -157,14 +158,14 @@ export const CompanyNameAndCreatedAt = styled.div`
 `;
 
 export const CompanyName = styled.p`
-  color: #000;
+  color: ${RollingPalette.text.Darkest};
   font-size: 20px;
   font-family: "Pretendard-Bold" !important;
 `;
 
 export const CompanyCreatedAt = styled.p`
   font-size: 15px;
-  color: rgba(189, 194, 208, 1);
+  color: ${RollingPalette.unEmphasize.Base};
 `;
 
 export const CompanyDescriptionAndAddress = styled.div`
@@ -186,7 +187,7 @@ export const CompanyDescription = styled.p`
 export const CompanyAddress = styled.p`
   font-size: 16px;
   font-weight: bold;
-  color: rgba(115, 123, 152, 1);
+  color: ${RollingPalette.unEmphasize.Dark};
 
   text-overflow: ellipsis;
   overflow: hidden;

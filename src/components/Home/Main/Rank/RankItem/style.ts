@@ -1,9 +1,10 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const RankCategoryTitle = styled.div`
   font-size: 17px;
   font-weight: bold;
-  color: rgba(115, 123, 152, 1);
+  color: ${RollingPalette.unEmphasize.Dark};
 
   display: flex;
   align-items: center;
@@ -19,7 +20,7 @@ export const RankNumber = styled.div`
   width: 40px;
   height: 40px;
 
-  background-color: rgba(29, 30, 90, 1);
+  background-color: ${RollingPalette.main.Dark};
   border-radius: 10px 0 10px 0;
   position: absolute;
   top: 0;

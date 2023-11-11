@@ -50,7 +50,7 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
   const [showPositionList, setShowPositionList] = useState(false);
 
   useEffect(() => {
-    // setIsClickDots는 전역 상태관리이기에 다른 페이지 이동시 
+    // setIsClickDots는 전역 상태관리이기에 다른 페이지 이동시
     // 값이 유지 되는것을 막기위해 사용
     return () => setIsClickDots(false);
   }, [setIsClickDots]);

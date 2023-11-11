@@ -1,4 +1,5 @@
 import { FadeInAnimation } from "@src/styles/common.style";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -45,7 +46,7 @@ export const Title = styled.p`
 
 export const SubTitle = styled.p`
   font-size: 18px;
-  color: rgb(97, 103, 126);
+  color: ${RollingPalette.unEmphasize.Dark};
 `;
 
 export const Content = styled.div`
@@ -91,7 +92,7 @@ export const CertificationInfo = styled.div`
   text-align: center;
 
   font-size: 16px;
-  color: #61677e;
+  color: ${RollingPalette.unEmphasize.Dark};
   margin-bottom: 53px;
   row-gap: 0.8rem;
 
@@ -108,7 +109,7 @@ export const QuestionContainer = styled.form`
 
   width: 100%;
   height: 300px;
-  background-color: #dee0e6;
+  background-color: ${RollingPalette.unEmphasize.Light};
   border-radius: 10px;
 `;
 
@@ -155,7 +156,7 @@ export const Input = styled.input`
   height: 60px;
 
   border: 0;
-  background-color: #bdc2d0;
+  background-color: ${RollingPalette.unEmphasize.Base};
 
   border-radius: 10px;
   outline: none;
@@ -169,13 +170,13 @@ export const Button = {
   width: "100%",
   height: "68px",
 
-  backgroundColor: "#4869f6",
+  backgroundColor: `${RollingPalette.main.Base};`,
   border: 0,
   borderRadius: "7px",
 
   fontSize: "20px",
   fontWeight: "bold",
-  color: "white",
+  color: "#fff",
 
   transition: "0.2s ease-out",
   "&:active": {

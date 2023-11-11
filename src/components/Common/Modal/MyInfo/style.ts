@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -27,7 +28,7 @@ export const Wrapper = styled.div`
 export const MyInfoBox = styled.div`
   width: 337px;
   height: 224px;
-  background-color: #2b2c30;
+  background-color: ${RollingPalette.text.Dark};
   z-index: 3;
   border-radius: 15px;
   position: absolute;
@@ -65,7 +66,7 @@ export const Name = styled.p`
 `;
 
 export const GitInfo = styled.div`
-  color: #4869f6;
+  color: ${RollingPalette.main.Base};
   cursor: pointer;
   display: flex;
   column-gap: 5px;

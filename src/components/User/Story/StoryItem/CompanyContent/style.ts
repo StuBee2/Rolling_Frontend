@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -43,9 +44,9 @@ export const Content = styled.p<{ isEtc?: string }>`
   overflow-x: hidden;
 
   font-size: 18px;
-  color: rgba(115, 123, 152, 1);
+  color: ${RollingPalette.unEmphasize.Dark};
   border-radius: 5px;
-  background-color: #f2f4f5;
+  background-color: ${RollingPalette.unEmphasize.Lighter};
 
   white-space: pre-wrap;
   padding: 0.8rem;
@@ -69,7 +70,7 @@ export const AdvantagesAndDisAdvantages = styled.div`
   }
 `;
 
-export const Advantages = styled.div`
+export const ProsAndCons = styled.div`
   width: 50%;
   height: 100%;
   display: flex;
@@ -81,11 +82,11 @@ export const Advantages = styled.div`
   }
 `;
 
-export const AdvantagesContent = styled.p<{ isCons?: boolean }>`
+export const ProsAndConsContent = styled.p<{ isPros?: boolean }>`
   width: 100%;
   height: auto;
 
-  background-color: ${({ isCons }) => (isCons ? "#eef2fa" : "#fbeeee")};
+  background-color: ${({ isPros }) => (isPros ? "#eef2fa" : "#fbeeee")};
   border-radius: 10px;
 
   padding: 0.8rem;
@@ -98,12 +99,12 @@ export const AdvantagesContent = styled.p<{ isCons?: boolean }>`
 export const InputStyle = {
   width: "100%",
   height: "auto",
-  border: "1.5px solid #ddd",
+  border: `1px solid ${RollingPalette.unEmphasize.Base}`,
   borderRadius: "5px",
-  backgroundColor: "rgba(247, 249, 250, 1)",
+  backgroundColor: `${RollingPalette.unEmphasize.Lightest}`,
   outlineColor: "blue",
   padding: "0.8rem",
-  color: "#000",
+  color: `${RollingPalette.text.Darkest};`,
   lineHeight: "23px",
   fontSize: "17px",
 };
@@ -116,9 +117,9 @@ export const TextAreaStyle = {
   OverflowX: "hidden",
 
   fontSize: "17px",
-  color: "#000",
+  color: `${RollingPalette.text.Darkest};`,
   borderRadius: "5px",
-  backgroundColor: "rgba(247, 249, 250, 1)",
+  backgroundColor: `${RollingPalette.unEmphasize.Lightest}`,
 
   WhiteSpace: "pre-wrap",
   padding: "0.8rem",
@@ -135,7 +136,7 @@ export const ModifyContentInput = styled.input`
   color: rgba(115, 123, 152, 1);
   border: 1.5px solid #ddd;
   border-radius: 5px;
-  background-color: white;
+  background-color: #fff;
   outline-color: blue;
 
   white-space: pre-wrap;

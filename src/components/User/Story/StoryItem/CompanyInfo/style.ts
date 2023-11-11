@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -48,7 +49,7 @@ export const Info = styled.div`
   display: flex;
   column-gap: 5px;
   align-items: center;
-  color: rgba(29, 30, 90, 1);
+  color: ${RollingPalette.main.Dark};
 
   font-family: "Pretendard-Bold" !important;
   font-weight: 600;
@@ -62,7 +63,7 @@ export const Info = styled.div`
   }
 
   span {
-    color: #000;
+    color: ${RollingPalette.text.Darkest};
     line-height: 25px;
   }
 `;
@@ -76,7 +77,7 @@ export const ModifyInput = styled.input`
   height: 130%;
   border: 1.5px solid #ddd;
   border-radius: 2px;
-  background-color: white;
+  background-color: #fff;
   outline-color: blue;
   color: #737b98;
   padding: 5px;

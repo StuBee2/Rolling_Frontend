@@ -1,4 +1,5 @@
 import { HoverAnimation, StopDrag } from "@src/styles/common.style";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -112,7 +113,7 @@ export const SignInButton = styled.button`
   outline: none;
 
   cursor: pointer;
-  background-color: #000;
+  background-color: ${RollingPalette.text.Darkest};
   border-radius: 10px;
   margin-top: 5px;
 

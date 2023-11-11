@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { css } from "styled-components";
 
 export const UserContainer = styled.div`
@@ -73,7 +74,7 @@ export const Title = styled.div`
 
 export const Explain = styled.div`
   font-size: 14.7px;
-  color: #61677e;
+  color: ${RollingPalette.unEmphasize.Dark};
   margin-top: 10px;
 `;
 

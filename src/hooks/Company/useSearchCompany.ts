@@ -33,7 +33,9 @@ export const useSearchCompany = () => {
   };
 
   // 스토리 등록 회사검색 onChange
-  const handleCompanyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCompanyChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const inputValue = e.target.value;
     setIsTyping(!!inputValue);
     setKeyword(inputValue);

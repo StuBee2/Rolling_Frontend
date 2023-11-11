@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -11,7 +12,7 @@ export const CompanyStoryText = styled.p`
   font-family: "Pretendard-Bold" !important;
 
   span {
-    color: #4869f6;
+    color: ${RollingPalette.main.Base};
     font-family: "Pretendard-Bold" !important;
   }
 `;
@@ -67,7 +68,7 @@ export const InputStyle = {
   height: "60px",
   paddingLeft: "20px",
   fontSize: "17px",
-  backgroundColor: "rgba(247, 249, 250, 1)",
+  backgroundColor: `${RollingPalette.unEmphasize.Lightest}`,
 };
 
 export const ProsConsContainer = styled.div`
@@ -98,6 +99,6 @@ export const TextAreaStyle = {
   height: "230px",
   padding: "20px",
   fontSize: "17px",
-  backgroundColor: "rgba(247, 249, 250, 1)",
+  backgroundColor: `${RollingPalette.unEmphasize.Lightest}`,
   lineHeight: "25px",
 };

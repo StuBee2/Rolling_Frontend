@@ -1,5 +1,5 @@
+import { skeletonAnimation } from "@stubee2/stubee2-rolling-styled-components-util";
 import styled from "styled-components";
-import { SkeletonAnimation } from "../Common/style";
 
 export const CompanySkeletonContainer = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ export const CompanyStarGradeSkeleton = styled.div`
   width: 100%;
   height: 500px;
   border-radius: 10px;
-  ${SkeletonAnimation};
+  ${skeletonAnimation};
   @media screen and (max-width: 1005px) {
     height: 160px;
   }

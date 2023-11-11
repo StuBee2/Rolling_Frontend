@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -61,7 +62,7 @@ export const CompanyBasicInfo = styled.div<{ backgroundColor: string }>`
 export const ItemContainer = styled.div`
   width: 100%;
   border-radius: 10px;
-  background-color: #f7f9fa;
+  background-color: ${RollingPalette.unEmphasize.Lightest};
   border: 1px solid #dddddd;
   padding: 1.5rem 1rem;
   display: flex;

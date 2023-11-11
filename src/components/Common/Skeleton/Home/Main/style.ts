@@ -1,5 +1,5 @@
+import { skeletonAnimation } from "@stubee2/stubee2-rolling-styled-components-util";
 import styled from "styled-components";
-import { SkeletonAnimation } from "../../Common/style";
 
 export const MainItemSkeletonBox = styled.div`
   width: 330px;
@@ -26,5 +26,5 @@ export const MainItemSkeletonBox = styled.div`
     height: 380px;
   }
 
-  ${SkeletonAnimation};
+  ${skeletonAnimation};
 `;

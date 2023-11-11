@@ -33,7 +33,7 @@ export default function StoryStatus() {
             </S.WroteStoryCount>
             <S.StatusText>
               {count > 0
-                ? "최근 업데이트 " + getTimeAgo(lastModifiedDate)
+                ? "최근 업데이트 " + getTimeAgo(new Date(lastModifiedDate))
                 : "롤링한 회사가 없습니다."}
             </S.StatusText>
           </div>

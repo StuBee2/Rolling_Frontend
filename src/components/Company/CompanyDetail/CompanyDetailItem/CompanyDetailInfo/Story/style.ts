@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -16,7 +17,7 @@ export const StoryTitle = styled.div`
 `;
 
 export const StoryCount = styled.p`
-  color: #4869f6;
+  color: ${RollingPalette.main.Base};
 `;
 
 export const Wrapper = styled.div`

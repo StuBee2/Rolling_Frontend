@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -38,10 +39,10 @@ export const TextContainer = styled.div`
 export const SetUpNickNameText = styled.p`
   font-size: 13px;
   margin-bottom: 2px;
-  color: rgba(255, 78, 67, 1);
+  color: ${RollingPalette.error.Base};
 `;
 
-export const AbleContainer = styled.div`
+export const UserInfoContainer = styled.div`
   width: 100%;
   height: 200px;
   border-bottom: 2.5px solid rgba(189, 194, 208, 1);
@@ -55,12 +56,12 @@ export const AbleContainer = styled.div`
     height: 85px;
     border-radius: 4rem;
     object-fit: cover;
-    border: 1px solid #dddddd;
+    border: 1px solid #ddd;
   }
 `;
 
 export const MyGitInfoLoginTypeText = styled.p`
-  color: rgba(115, 123, 152, 1);
+  color: ${RollingPalette.unEmphasize.Dark};
   margin-top: 5px;
   font-size: 14px;
 `;

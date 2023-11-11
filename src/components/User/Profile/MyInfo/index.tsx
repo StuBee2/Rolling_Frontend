@@ -24,14 +24,14 @@ export default function MyInfo() {
           </Explain>
         </S.TextContainer>
 
-        <S.AbleContainer>
+        <S.UserInfoContainer>
           <img src={myInfo?.socialDetails.imageUrl || ""} alt="이미지 없음" />
           {myInfo && (
             <div>
               <NickName nickName={myInfo.memberDetails.nickName} />
             </div>
           )}
-        </S.AbleContainer>
+        </S.UserInfoContainer>
 
         <S.MyGitInfoContainer>
           <div

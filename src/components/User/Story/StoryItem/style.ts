@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { HoverAnimation } from "@src/styles/common.style";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 
 export const Container = styled.div`
   width: 100%;
@@ -61,7 +62,7 @@ export const RegisteredAtAndDelEditContainer = styled.div`
 export const RegisteredDate = styled.p`
   font-size: 1.1rem;
   font-weight: bold;
-  color: #61677e;
+  color: ${RollingPalette.unEmphasize.Dark};
 `;
 
 export const DelAndEditContainer = styled.div`
@@ -115,7 +116,7 @@ export const StoryModifySubmitBtn = styled.button<{ isRequired: boolean }>`
     isRequired &&
     css`
       cursor: pointer;
-      background-color: #4869f6;
+      background-color: ${RollingPalette.main.Base};
       transform: scale(1);
       &:active {
         background-color: rgba(72, 105, 246, 0.81);

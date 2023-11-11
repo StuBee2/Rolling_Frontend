@@ -14,6 +14,7 @@ import {
 } from "@src/stores/story/story.store";
 import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 import { ModalContainer } from "../../style";
+import { TextInput } from "@stubee2/stubee2-rolling-ui";
 
 interface Props {
   setSearchCompanyModal: Dispatch<SetStateAction<boolean>>;
@@ -86,11 +87,12 @@ export default function SearchCompanyModal({ setSearchCompanyModal }: Props) {
           </p>
 
           <S.InputWrapper>
-            <S.Input
+            <TextInput
               placeholder="기업명을 입력해주세요"
               type="text"
               value={attr.keyword}
-              onChange={attr.handleCompanyChange}
+              handleChange={attr.handleCompanyChange}
+              customStyle={S.InputStyle}
             />
             <S.SearchIcon src={search3} alt="이미지 없음" />
           </S.InputWrapper>

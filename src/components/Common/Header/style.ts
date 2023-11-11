@@ -1,5 +1,6 @@
 import { AiOutlineUser } from "@react-icons/all-files/ai/AiOutlineUser";
 import { HoverAnimation } from "@src/styles/common.style";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { css } from "styled-components";
 
 export const HeaderContainer = styled.div`
@@ -81,7 +82,7 @@ export const PageList = styled.li<{
   transition: all 0.1s ease-in-out;
 
   span {
-    color: rgb(236, 106, 94);
+    color: ${RollingPalette.error.Light};
   }
 
   ${({ isSelect }) =>

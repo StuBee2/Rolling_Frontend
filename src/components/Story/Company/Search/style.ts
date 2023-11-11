@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -9,7 +10,7 @@ export const Container = styled.div`
 export const SearchContainer = styled.div`
   width: 100%;
   height: 170px;
-  background-color: rgba(72, 105, 246, 1);
+  background-color: ${RollingPalette.main.Base};
 
   border-radius: 10px;
   padding: 1.5rem 1.5rem 2rem 1.5rem;
@@ -51,7 +52,7 @@ export const SearchCompany = styled.div`
 export const InputContainer = styled.div`
   width: 100%;
   height: 52px;
-  border-bottom: 3px solid rgba(189, 194, 208, 1);
+  border-bottom: 3px solid ${RollingPalette.unEmphasize.Base};
 
   display: flex;
   align-items: center;
@@ -76,7 +77,7 @@ export const Input = styled.div<{ isCompanyName: string }>`
   font-size: 28px;
   padding-left: 20px;
   color: ${({ isCompanyName }) =>
-    isCompanyName !== "" ? "#fff" : "rgba(189, 194, 208, 1)"};
+    isCompanyName !== "" ? "#fff" : RollingPalette.unEmphasize.Base};
 
   font-weight: bold;
   display: flex;

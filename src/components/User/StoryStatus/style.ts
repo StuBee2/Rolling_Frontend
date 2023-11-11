@@ -1,9 +1,10 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
   height: 183px;
-  background-color: #4869f6;
+  background-color: ${RollingPalette.main.Base};
   border-radius: 10px;
 
   display: flex;
@@ -58,7 +59,7 @@ export const WroteStoryCount = styled.p`
 `;
 
 export const StatusText = styled.p`
-  color: #dee0e6;
+  color: ${RollingPalette.unEmphasize.Light};
   font-size: 12px;
   margin-top: 10px;
 `;
@@ -67,7 +68,7 @@ export const StoryButton = styled.button`
   width: 135px;
   height: 52px;
 
-  background-color: #1d1e5a;
+  background-color: ${RollingPalette.main.Dark};
   border-radius: 7px;
   outline: none;
   border: none;

@@ -1,3 +1,4 @@
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
@@ -41,7 +42,7 @@ export const Title = styled.p`
 
 export const SubTitle = styled.p`
   font-size: 15px;
-  color: rgba(115, 123, 152, 1);
+  color: ${RollingPalette.unEmphasize.Dark};
   font-weight: bold;
 `;
 
@@ -66,10 +67,10 @@ export const AddText = styled.p`
 export const InputEmphasizeText = styled.div`
   font-size: 18px;
   font-family: "Pretendard-Bold" !important;
-  color: rgba(115, 123, 152, 1);
+  color: ${RollingPalette.unEmphasize.Dark};
 
   span {
-    color: rgba(76, 212, 113, 1);
+    color: ${RollingPalette.check.Light};
   }
 `;
 
@@ -92,7 +93,7 @@ export const RegistButton = styled.div<{ isRequired: boolean }>`
     border-radius: 7px;
     cursor: pointer;
     background-color: ${({ isRequired }) =>
-      isRequired ? "rgba(72, 105, 246, 1)" : "rgba(72, 105, 246, 0.58)"};
+      isRequired ? RollingPalette.main.Base : "rgba(72, 105, 246, 0.58)"};
     color: #fff;
 
     transition: all 0.2s ease-in-out;

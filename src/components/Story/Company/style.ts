@@ -1,4 +1,5 @@
 import { FadeInAnimation } from "@src/styles/common.style";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const RegistContainer = styled.div`
@@ -91,7 +92,7 @@ export const InputStyle = {
   height: "65px",
   paddingLeft: "20px",
   fontSize: "17px",
-  backgroundColor: "rgba(247, 249, 250, 1)",
+  backgroundColor: `${RollingPalette.unEmphasize.Lightest}`,
 };
 
 export const Address = styled.div`
@@ -119,14 +120,14 @@ export const FindAddressButton = styled.div`
   align-items: center;
   justify-content: center;
 
-  color: rgba(115, 123, 152, 1);
-  background-color: #f2f4f5;
+  color: ${RollingPalette.unEmphasize.Dark};
+  background-color: ${RollingPalette.unEmphasize.Lightest};
   border: 1px solid #bdc2d0;
   border-radius: 5px;
 
   transition: ease-in-out 0.1s;
   &:active {
-    background-color: rgba(222, 224, 230, 1);
+    background-color: ${RollingPalette.unEmphasize.Light};
   }
 `;
 
@@ -144,7 +145,7 @@ export const TextAreaStyle = {
   height: "250px",
   padding: "20px",
   fontSize: "17px",
-  backgroundColor: "rgba(247, 249, 250, 1)",
+  backgroundColor: `${RollingPalette.unEmphasize.Lightest}`,
 };
 
 export const ModalContainer = styled.div`

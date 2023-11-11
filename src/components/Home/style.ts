@@ -1,5 +1,6 @@
 import { HoverAnimation } from "@src/styles/common.style";
 import styled from "styled-components";
+import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 
 export const HomeContainer = styled.div`
   width: 100%;
@@ -49,7 +50,7 @@ export const ViewAll = styled.p`
 
   margin-top: 3px;
   font-weight: bold;
-  color: rgba(115, 123, 152, 1);
+  color: ${RollingPalette.unEmphasize.Dark};
 
   ${HoverAnimation};
 `;
