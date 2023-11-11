@@ -5,7 +5,7 @@ import { useRecoilValue } from "recoil";
 import { StorySearchCompanyAtom } from "@src/stores/story/story.store";
 import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import { SubTitle, Title, TitleContainer } from "../../style";
-import Portal from "@src/components/Common/Portal";
+import { Portal } from "@stubee2/stubee2-rolling-ui";
 import SearchCompanyModal from "./SearchCompanyModal";
 import { useState } from "react";
 
@@ -41,7 +41,7 @@ export default function SearchCompany() {
       </S.Container>
 
       {searchCompanyModal && (
-        <Portal>
+        <Portal id="modal">
           <SearchCompanyModal setSearchCompanyModal={setSearchCompanyModal} />
         </Portal>
       )}
