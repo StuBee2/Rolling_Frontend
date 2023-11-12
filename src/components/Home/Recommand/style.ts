@@ -36,17 +36,5 @@ export const RecommandWrapper = styled.div`
   height: 240px;
 
   display: flex;
-  overflow-x: auto;
-
   ${FadeInAnimation};
-`;
-
-export const ArrowContainer = styled.div`
-  width: 50px;
-  height: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
 `;

@@ -6,7 +6,8 @@ export const RecommandItemContainer = styled.div`
   height: 100%;
 
   display: flex;
-  flex-wrap: wrap;
+  overflow-y: hidden;
+  overflow-x: auto;
 `;
 
 export const RecommandItemWrapper = styled.div`
@@ -18,12 +19,12 @@ export const RecommandItemWrapper = styled.div`
 
 export const RecommandItemBox = styled.div`
   width: 250px;
-  height: 180px;
+  height: 200px;
 
   display: flex;
+  justify-content: center;
   flex-direction: column;
   row-gap: 5px;
-  overflow: hidden;
 
   p {
     text-align: center;
