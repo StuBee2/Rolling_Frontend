@@ -1,4 +1,4 @@
-import { IsCloseModalAtom } from "@src/stores/common/common.store";
+import { SearchModalAtom } from "@src/stores/common/common.store";
 import { SearchCompanyAtom } from "@src/stores/company/company.store";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { useState } from "react";
@@ -7,7 +7,7 @@ import { useSetRecoilState } from "recoil";
 
 export const useSearchCompany = () => {
   const [keyword, setKeyword] = useState("");
-  const setIsCloseModal = useSetRecoilState(IsCloseModalAtom);
+  const setSearchModal = useSetRecoilState(SearchModalAtom);
   const setSearchCompany = useSetRecoilState(SearchCompanyAtom);
 
   const [isTyping, setIsTyping] = useState(false);
@@ -28,7 +28,7 @@ export const useSearchCompany = () => {
     navigate("/");
     window.scrollTo(0, 0);
     setSearchCompany(keyword);
-    setIsCloseModal(false);
+    setSearchModal(false);
     setKeyword("");
   };
 
@@ -46,7 +46,7 @@ export const useSearchCompany = () => {
     handleKeywordSubmit,
     keyword,
     setKeyword,
-    setIsCloseModal,
+    setSearchModal,
     handleCompanyChange,
     isTyping,
     setIsTyping,

@@ -10,7 +10,7 @@ export const MyInfoModal = atom<boolean>({
   default: false,
 });
 
-export const IsCloseModalAtom = atom<boolean>({
-  key: "isCloseModalAtom",
+export const SearchModalAtom = atom<boolean>({
+  key: "searchModalAtom",
   default: false,
 });

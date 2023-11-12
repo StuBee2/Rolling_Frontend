@@ -6,12 +6,12 @@ import { useCloseModal } from "@stubee2/stubee2-rolling-util";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 export default function Search() {
-  const { handleKeywordChange, handleKeywordSubmit, keyword, setIsCloseModal } =
+  const { handleKeywordChange, handleKeywordSubmit, keyword, setSearchModal } =
     useSearchCompany();
-  useCloseModal(setIsCloseModal);
+  useCloseModal(setSearchModal);
 
   return (
-    <S.Container onClick={() => turnOffModal(setIsCloseModal)}>
+    <S.Container onClick={() => turnOffModal(setSearchModal)}>
       <S.Wrapper onClick={(e) => e.stopPropagation()}>
         <S.InputContainer onSubmit={handleKeywordSubmit}>
           <button type="submit">

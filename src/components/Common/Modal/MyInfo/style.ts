@@ -2,13 +2,13 @@ import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100vh;
 
-  zoom: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -16,18 +16,20 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 1370px;
-  height: calc(100% - 90px);
+  width: 1090px;
+  height: calc(100% - 75px);
+
   position: absolute;
   bottom: 0;
-  @media screen and (max-width: 1355px) {
+
+  @media screen and (max-width: 1105px) {
     width: 100%;
   }
 `;
 
 export const MyInfoBox = styled.div`
-  width: 337px;
-  height: 224px;
+  width: 272px;
+  height: 181px;
   background-color: ${RollingPalette.text.Dark};
   z-index: 3;
   border-radius: 15px;
@@ -47,8 +49,8 @@ export const ProfileContainer = styled.div`
   column-gap: 10px;
   padding-left: 20px;
   img {
-    width: 60px;
-    height: 60px;
+    width: 51px;
+    height: 51px;
     border-radius: 10px;
   }
 `;
@@ -56,12 +58,12 @@ export const ProfileContainer = styled.div`
 export const Profile = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 13px;
+  row-gap: 8px;
 `;
 
 export const Name = styled.p`
   color: #ffffff;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: bold;
 `;
 
@@ -71,6 +73,8 @@ export const GitInfo = styled.div`
   display: flex;
   column-gap: 5px;
   align-items: center;
+
+  font-size: 14px;
   img {
     width: 15px;
     height: 15px;
@@ -82,20 +86,21 @@ export const MyPageLogout = styled.div`
   height: 48%;
   border-radius: 0 0 15px 15px;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 14px;
   padding-left: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  row-gap: 20px;
+  row-gap: 13px;
   div {
     display: flex;
-    column-gap: 10px;
+    column-gap: 7px;
     align-items: center;
     cursor: pointer;
+
     img {
-      width: 20px;
-      height: 20px;
+      width: 17px;
+      height: 17px;
     }
   }
 `;

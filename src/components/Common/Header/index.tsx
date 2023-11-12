@@ -5,73 +5,87 @@ import search2 from "@src/assets/icons/Search/search2.png";
 import { HEADER_ITEMS } from "@src/constants/Header/header.constant";
 import token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
-import { useSetRecoilState } from "recoil";
-import { IsCloseModalAtom, MyInfoModal } from "@src/stores/common/common.store";
+import { useRecoilState } from "recoil";
+import { SearchModalAtom, MyInfoModal } from "@src/stores/common/common.store";
 import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import { SignInModalAtom } from "@src/stores/auth/auth.store";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
+import MyInfo from "../Modal/MyInfo";
+import { Portal } from "@stubee2/stubee2-rolling-ui";
+import SignIn from "../Auth/SignIn";
+import Search from "../Modal/Search";
 
 export default function Header() {
-  const setIsCloseModal = useSetRecoilState<boolean>(IsCloseModalAtom);
-  const setMyInfoModal = useSetRecoilState<boolean>(MyInfoModal);
-  const setSignInModal = useSetRecoilState<boolean>(SignInModalAtom);
+  const [searchModal, setSearchModal] =
+    useRecoilState<boolean>(SearchModalAtom);
+  const [myInfoModal, setMyInfoModal] = useRecoilState<boolean>(MyInfoModal);
+  const [signInModal, setSignInModal] =
+    useRecoilState<boolean>(SignInModalAtom);
 
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const isTemp = tokenDecode("access", "authority") === "TEMP";
 
   return (
-    <S.HeaderContainer>
-      <S.HeaderWrapper>
-        <S.PageContainer>
-          <img
-            src={logo}
-            onClick={() => (window.location.href = "/")}
-            alt="이미지 없음"
-          />
-          <ul>
-            {HEADER_ITEMS.map((item) => {
-              const handleClick = () => {
-                if (item.name === "스토리 등록" && isTemp) {
-                  navigate("/alumni/certify");
-                } else {
-                  navigate(item.link);
-                }
-              };
-              const isCertify = item.name === "스토리 등록" && isTemp;
-
-              return (
-                <S.PageList
-                  key={item.id}
-                  onClick={handleClick}
-                  isSelect={
-                    item.link === pathname || pathname === "/alumni/certify"
+    <>
+      <S.HeaderContainer>
+        <S.HeaderWrapper>
+          <S.PageContainer>
+            <img
+              src={logo}
+              onClick={() => (window.location.href = "/")}
+              alt="이미지 없음"
+            />
+            <ul>
+              {HEADER_ITEMS.map((item) => {
+                const handleClick = () => {
+                  if (item.name === "스토리 등록" && isTemp) {
+                    navigate("/alumni/certify");
+                  } else {
+                    navigate(item.link);
                   }
-                >
-                  {isCertify ? "동문인증" : item.name}
-                  {isCertify && <span>*</span>}
-                </S.PageList>
-              );
-            })}
-          </ul>
-        </S.PageContainer>
+                };
+                const isCertify = item.name === "스토리 등록" && isTemp;
 
-        <S.LoginSearchContainer>
-          <S.HoverIconContainer onClick={() => turnOnModal(setIsCloseModal)}>
-            <S.Search src={search2} alt="이미지 없음" />
-          </S.HoverIconContainer>
+                return (
+                  <S.PageList
+                    key={item.id}
+                    onClick={handleClick}
+                    isSelect={
+                      item.link === pathname || pathname === "/alumni/certify"
+                    }
+                  >
+                    {isCertify ? "동문인증" : item.name}
+                    {isCertify && <span>*</span>}
+                  </S.PageList>
+                );
+              })}
+            </ul>
+          </S.PageContainer>
 
-          {token.getToken(ACCESS_TOKEN_KEY) ? (
-            <S.HoverIconContainer onClick={() => turnOnModal(setMyInfoModal)}>
-              <S.UserIcon size={30} />
+          <S.LoginSearchContainer>
+            <S.HoverIconContainer onClick={() => turnOnModal(setSearchModal)}>
+              <S.Search src={search2} alt="이미지 없음" />
             </S.HoverIconContainer>
-          ) : (
-            <S.SignInText onClick={() => turnOnModal(setSignInModal)}>
-              <p>로그인</p>
-            </S.SignInText>
-          )}
-        </S.LoginSearchContainer>
-      </S.HeaderWrapper>
-    </S.HeaderContainer>
+
+            {token.getToken(ACCESS_TOKEN_KEY) ? (
+              <S.HoverIconContainer onClick={() => turnOnModal(setMyInfoModal)}>
+                <S.UserIcon size={30} />
+              </S.HoverIconContainer>
+            ) : (
+              <S.SignInText onClick={() => turnOnModal(setSignInModal)}>
+                <p>로그인</p>
+              </S.SignInText>
+            )}
+          </S.LoginSearchContainer>
+        </S.HeaderWrapper>
+      </S.HeaderContainer>
+
+      <Portal id="modal">
+        {myInfoModal && <MyInfo />}
+        {signInModal && <SignIn />}
+        {searchModal && <Search />}
+      </Portal>
+    </>
   );
 }
