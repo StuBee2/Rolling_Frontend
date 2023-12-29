@@ -1,5 +1,5 @@
 import * as S from "./style";
-import graph from "@src/assets/icons/Home/graph.png";
+import graph from "@src/assets/icons/Home/graph.svg";
 import { Suspense, useState } from "react";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import RankItem from "./RankItem";

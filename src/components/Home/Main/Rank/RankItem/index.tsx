@@ -1,10 +1,10 @@
 import { useGetCompanyRankSelectQuery } from "@src/queries/Company/company.query";
 import * as S from "../../style";
 import { getCompanyRankIntroduce } from "@src/utils/Rank/getCompanyRankIntroduce";
-import smileFace from "@src/assets/icons/Home/smileFace.png";
+import smileFace from "@src/assets/icons/Home/smileFace.svg";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { useNavigate } from "react-router-dom";
-import logo from "@src/assets/icons/Logo/logo.png";
+import logo from "@src/assets/icons/Logo/logo.svg";
 import { RankCategoryTitle, RankNumber } from "./style";
 import { getRgb } from "@src/utils/Rgb/getRgb";
 

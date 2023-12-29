@@ -1,8 +1,8 @@
-import bolt from "@src/assets/icons/Company/bolt.png";
+import bolt from "@src/assets/icons/Company/bolt.svg";
 import { convertStarRatingObject } from "@src/utils/StarRating/convertRankingObject";
 import { StarRating } from "@stubee2/stubee2-rolling-ui";
 import * as S from "./style";
-import logo from "@src/assets/icons/Logo/logo.png";
+import logo from "@src/assets/icons/Logo/logo.svg";
 import { CompanyStarGradeInfo } from "@src/types/Company/company.type";
 import { getRgb } from "@src/utils/Rgb/getRgb";
 

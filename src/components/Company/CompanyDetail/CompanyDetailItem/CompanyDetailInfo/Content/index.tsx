@@ -1,8 +1,8 @@
 import * as S from "./style";
-import bag from "@src/assets/icons/Company/bag.png";
-import tool from "@src/assets/icons/Company/tool.png";
+import bag from "@src/assets/icons/Company/bag.svg";
+import tool from "@src/assets/icons/Company/tool.svg";
 import { CompanyInfoType } from "@src/types/Company/company.type";
-import logo from "@src/assets/icons/Logo/logo.png";
+import logo from "@src/assets/icons/Logo/logo.svg";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { CompanyDetailRegistAt } from "../style";
 import { getRgb } from "@src/utils/Rgb/getRgb";

@@ -1,5 +1,5 @@
 import * as S from "./style";
-import { useCloseModal } from "@stubee2/stubee2-rolling-util";
+import { useEscCloseModal } from "@stubee2/stubee2-rolling-util";
 import { useSetRecoilState } from "recoil";
 import { SignInModalAtom } from "@src/stores/auth/auth.store";
 import wave from "@src/assets/images/Auth/wave.svg";
@@ -10,7 +10,7 @@ import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 export default function SignIn() {
   const setSignInModal = useSetRecoilState(SignInModalAtom);
-  useCloseModal(setSignInModal);
+  useEscCloseModal(setSignInModal);
   return (
     <S.Container onClick={() => turnOffModal(setSignInModal)}>
       <S.Wrapper onClick={(e) => e.stopPropagation()}>

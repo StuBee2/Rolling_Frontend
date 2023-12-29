@@ -1,5 +1,5 @@
 import * as S from "./style";
-import developer from "@src/assets/icons/Home/developer.png";
+import developer from "@src/assets/icons/Home/developer.svg";
 import RecommandItem from "./RecommandItem";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import { Suspense } from "react";

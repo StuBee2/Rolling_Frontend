@@ -1,6 +1,6 @@
 import * as S from "./style";
-import readingGlasses from "@src/assets/icons/Search/readingGlasses.png";
-import search3 from "@src/assets/icons/Search/search3.png";
+import readingGlasses from "@src/assets/icons/Search/readingGlasses.svg";
+import search3 from "@src/assets/icons/Search/search3.svg";
 import { useRecoilValue } from "recoil";
 import { StorySearchCompanyAtom } from "@src/stores/story/story.store";
 import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";

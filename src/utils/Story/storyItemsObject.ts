@@ -1,6 +1,6 @@
-import cloud from "@src/assets/icons/Story/cloud.png";
-import box from "@src/assets/icons/Story/box.png";
-import blueHeart from "@src/assets/icons/Story/blueHeart.png";
+import cloud from "@src/assets/icons/Story/cloud.svg";
+import box from "@src/assets/icons/Story/box.svg";
+import blueHeart from "@src/assets/icons/Story/blueHeart.svg";
 import redHeart from "@src/assets/icons/Story/redHeart.png";
 import { StoryItemType } from "@src/types/Story/story.type";
 

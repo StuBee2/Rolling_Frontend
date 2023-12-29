@@ -3,10 +3,10 @@ import * as S from "./style";
 import { MyInfoModal } from "@src/stores/common/common.store";
 import { useLogout } from "@src/hooks/Auth/useLogout";
 import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
-import emptyFace from "@src/assets/icons/Home/emptyFace.png";
-import smileFace from "@src/assets/icons/Home/smileFace.png";
+import emptyFace from "@src/assets/icons/Home/emptyFace.svg";
+import smileFace from "@src/assets/icons/Home/smileFace.svg";
 import { useNavigate } from "react-router-dom";
-import { useCloseModal } from "@stubee2/stubee2-rolling-util";
+import { useEscCloseModal } from "@stubee2/stubee2-rolling-util";
 import github from "@src/assets/images/Auth/github.svg";
 import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
@@ -17,7 +17,7 @@ export default function MyInfo() {
   const { data: myInfo } = useGetMyInfoQuery();
   const navigate = useNavigate();
 
-  useCloseModal(setMyInfoModal);
+  useEscCloseModal(setMyInfoModal);
   return (
     <S.Container onClick={() => turnOffModal(setMyInfoModal)}>
       <S.Wrapper>

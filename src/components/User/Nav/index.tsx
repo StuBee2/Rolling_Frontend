@@ -6,7 +6,7 @@ import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import { MyMemberInfo } from "@src/stores/member/member.store";
 import { useSetRecoilState } from "recoil";
 import { useEffect } from "react";
-import emptyFace from "@src/assets/icons/Home/emptyFace.png";
+import emptyFace from "@src/assets/icons/Home/emptyFace.svg";
 
 interface Props {
   pathName: string;

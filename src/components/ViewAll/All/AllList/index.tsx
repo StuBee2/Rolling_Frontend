@@ -13,8 +13,8 @@ import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 import { CompanyContent, CompanyLogoContainer, LogoImg } from "../../style";
 import * as S from "./style";
-import developer from "@src/assets/icons/Home/developer.png";
-import logo from "@src/assets/icons/Logo/logo.png";
+import developer from "@src/assets/icons/Home/developer.svg";
+import logo from "@src/assets/icons/Logo/logo.svg";
 
 export default function AllList() {
   const { data: recommandList, fetchNextPage } = useGetAllCompanyListQuery({

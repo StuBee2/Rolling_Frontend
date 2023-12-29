@@ -1,5 +1,5 @@
-import idCard from "@src/assets/icons/Story/idCard.png";
-import smileFace from "@src/assets/icons/Home/smileFace.png";
+import idCard from "@src/assets/icons/Story/idCard.svg";
+import smileFace from "@src/assets/icons/Home/smileFace.svg";
 import edit from "@src/assets/images/User/edit.svg";
 import del from "@src/assets/images/User/del.svg";
 import cancel from "@src/assets/images/User/cancel.svg";

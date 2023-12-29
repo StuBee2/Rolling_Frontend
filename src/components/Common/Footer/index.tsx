@@ -1,5 +1,5 @@
 import * as S from "./style";
-import logo from "@src/assets/icons/Logo/logo.png";
+import logo from "@src/assets/icons/Logo/logo.svg";
 import {
   FOOTER_ITEMS,
   FOOTER_MEMBERS_ITEMS,

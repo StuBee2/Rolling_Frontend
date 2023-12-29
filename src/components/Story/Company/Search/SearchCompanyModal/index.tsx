@@ -1,5 +1,5 @@
 import * as S from "./style";
-import search3 from "@src/assets/icons/Search/search3.png";
+import search3 from "@src/assets/icons/Search/search3.svg";
 import close from "@src/assets/images/Story/close.svg";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
@@ -12,7 +12,7 @@ import {
   StoryPagePathInflow,
   StorySearchCompanyAtom,
 } from "@src/stores/story/story.store";
-import { useCloseModal } from "@stubee2/stubee2-rolling-util";
+import { useEscCloseModal } from "@stubee2/stubee2-rolling-util";
 import { ModalContainer } from "../../style";
 import { TextInput } from "@stubee2/stubee2-rolling-ui";
 
@@ -21,7 +21,7 @@ interface Props {
 }
 
 export default function SearchCompanyModal({ setSearchCompanyModal }: Props) {
-  useCloseModal(setSearchCompanyModal);
+  useEscCloseModal(setSearchCompanyModal);
   const { ...attr } = useSearchCompany();
 
   // 등록된 회사 아이디를 담아 스토리 남기기에 사용하는 state

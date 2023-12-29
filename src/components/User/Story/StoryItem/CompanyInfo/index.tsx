@@ -1,5 +1,5 @@
 import * as S from "./style";
-import Logo from "@src/assets/icons/Logo/logo.png";
+import Logo from "@src/assets/icons/Logo/logo.svg";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { StoryModifiableEventAtom } from "@src/stores/story/story.store";

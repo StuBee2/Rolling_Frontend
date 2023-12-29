@@ -1,6 +1,6 @@
 import { useCompanyModify } from "@src/hooks/Company/useCompanyModify";
 import { TextInput } from "@stubee2/stubee2-rolling-ui";
-import logo from "@src/assets/icons/Logo/logo.png";
+import logo from "@src/assets/icons/Logo/logo.svg";
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import * as S from "@src/components/Story/Company/style";

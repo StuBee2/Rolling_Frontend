@@ -1,5 +1,5 @@
 import * as S from "../style";
-import readingGlasses from "@src/assets/icons/Search/readingGlasses.png";
+import readingGlasses from "@src/assets/icons/Search/readingGlasses.svg";
 import React, { Suspense } from "react";
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import SearchItem from "./SearchItem";

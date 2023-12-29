@@ -1,6 +1,6 @@
 import { useGetAllCompanyListQuery } from "@src/queries/Company/company.query";
 import { useInView } from "react-intersection-observer";
-import logo from "@src/assets/icons/Logo/logo.png";
+import logo from "@src/assets/icons/Logo/logo.svg";
 import * as S from "./style";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";

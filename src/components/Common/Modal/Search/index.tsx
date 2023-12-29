@@ -1,14 +1,14 @@
 import * as S from "./style";
-import search1 from "@src/assets/icons/Search/search1.png";
+import search1 from "@src/assets/icons/Search/search1.svg";
 import wave from "@src/assets/images/Search/wave.svg";
 import { useSearchCompany } from "@src/hooks/Company/useSearchCompany";
-import { useCloseModal } from "@stubee2/stubee2-rolling-util";
+import { useEscCloseModal } from "@stubee2/stubee2-rolling-util";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 export default function Search() {
   const { handleKeywordChange, handleKeywordSubmit, keyword, setSearchModal } =
     useSearchCompany();
-  useCloseModal(setSearchModal);
+  useEscCloseModal(setSearchModal);
 
   return (
     <S.Container onClick={() => turnOffModal(setSearchModal)}>

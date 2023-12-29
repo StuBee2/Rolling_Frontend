@@ -1,6 +1,6 @@
 import { CompanyParam } from "@src/repositories/Company/company.repository";
 import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
-import { useCloseModal } from "@stubee2/stubee2-rolling-util";
+import { useEscCloseModal } from "@stubee2/stubee2-rolling-util";
 import { Dispatch, SetStateAction } from "react";
 import DaumPostcodeEmbed from "react-daum-postcode";
 import * as S from "../../../Story/Company/style";
@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function CompanyAddressModal({ ...attr }: Props) {
-  useCloseModal(attr.setIsOpenModal);
+  useEscCloseModal(attr.setIsOpenModal);
 
   const handleSelectAddress = (data: { address: string }) => {
     attr.setCompanyInfo((prev) => ({

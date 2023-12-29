@@ -13,7 +13,7 @@ import { getRankIcon } from "@src/utils/Rank/getRankIcon";
 import { RankNumber } from "@src/components/Home/Main/Rank/RankItem/style";
 import { useNavigate } from "react-router-dom";
 import { CompanyContent, CompanyLogoContainer, LogoImg } from "../../style";
-import logo from "@src/assets/icons/Logo/logo.png";
+import logo from "@src/assets/icons/Logo/logo.svg";
 import rightArrow from "@src/assets/icons/Rank/rightArrow.png";
 import leftArrow from "@src/assets/icons/Rank/leftArrow.png";
 import { useRef } from "react";

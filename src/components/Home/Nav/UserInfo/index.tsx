@@ -1,6 +1,6 @@
 import ErrorBoundary from "@src/components/Common/ErrorBoundary";
 import * as S from "./style";
-import wonderFace from "@src/assets/icons/Home/wonderFace.png";
+import wonderFace from "@src/assets/icons/Home/wonderFace.svg";
 import { Suspense } from "react";
 import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import { stringEllipsis } from "@stubee2/stubee2-rolling-util";
