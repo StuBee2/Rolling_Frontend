@@ -1,9 +1,9 @@
 import { CompanyParam } from "@src/repositories/Company/company.repository";
-import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 import { useEscCloseModal } from "@stubee2/stubee2-rolling-util";
 import { Dispatch, SetStateAction } from "react";
 import DaumPostcodeEmbed from "react-daum-postcode";
 import * as S from "../../../Story/Company/style";
+import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 interface Props {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
@@ -19,11 +19,13 @@ export default function CompanyAddressModal({ ...attr }: Props) {
       ...prev,
       address: data.address,
     }));
-    turnOffModal(attr.setIsOpenModal);
+    turnOnOffModal(attr.setIsOpenModal, "off");
   };
 
   return (
-    <S.ModalContainer onClick={() => turnOffModal(attr.setIsOpenModal)}>
+    <S.ModalContainer
+      onClick={() => turnOnOffModal(attr.setIsOpenModal, "off")}
+    >
       <DaumPostcodeEmbed
         animation={true}
         onComplete={handleSelectAddress} // 값을 선택할 경우 실행되는 이벤트

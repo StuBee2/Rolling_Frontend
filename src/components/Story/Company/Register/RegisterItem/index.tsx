@@ -2,10 +2,10 @@ import * as S from "../../style";
 import photo from "@src/assets/images/Register/photo.png";
 import { useCompanyRegister } from "@src/hooks/Company/useCompanyRegister";
 import { Portal, TextInput } from "@stubee2/stubee2-rolling-ui";
-import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import { useEffect, useState } from "react";
 import { InputEmphasizeText, RegistButton } from "../../../style";
 import AddressModal from "@src/components/Common/Modal/CompanyAddress";
+import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 interface Props {
   companyName: string;
@@ -71,7 +71,7 @@ export default function CompanyRegisterItem({ companyName }: Props) {
                       name="address"
                     />
                     <S.FindAddressButton
-                      onClick={() => turnOnModal(setStoryAddressModal)}
+                      onClick={() => turnOnOffModal(setStoryAddressModal, "on")}
                     >
                       주소 찾기
                     </S.FindAddressButton>

@@ -7,13 +7,13 @@ import token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";
 import { useRecoilState } from "recoil";
 import { SearchModalAtom, MyInfoModal } from "@src/stores/common/common.store";
-import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import { SignInModalAtom } from "@src/stores/auth/auth.store";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import MyInfo from "../Modal/MyInfo";
 import { Portal } from "@stubee2/stubee2-rolling-ui";
 import SignIn from "../Auth/SignIn";
 import Search from "../Modal/Search";
+import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 export default function Header() {
   const [searchModal, setSearchModal] =
@@ -64,16 +64,22 @@ export default function Header() {
           </S.PageContainer>
 
           <S.LoginSearchContainer>
-            <S.HoverIconContainer onClick={() => turnOnModal(setSearchModal)}>
+            <S.HoverIconContainer
+              onClick={() => turnOnOffModal(setSearchModal, "on")}
+            >
               <S.Search src={search2} alt="이미지 없음" />
             </S.HoverIconContainer>
 
             {token.getToken(ACCESS_TOKEN_KEY) ? (
-              <S.HoverIconContainer onClick={() => turnOnModal(setMyInfoModal)}>
+              <S.HoverIconContainer
+                onClick={() => turnOnOffModal(setMyInfoModal, "on")}
+              >
                 <S.UserIcon size={30} />
               </S.HoverIconContainer>
             ) : (
-              <S.SignInText onClick={() => turnOnModal(setSignInModal)}>
+              <S.SignInText
+                onClick={() => turnOnOffModal(setSignInModal, "on")}
+              >
                 <p>로그인</p>
               </S.SignInText>
             )}

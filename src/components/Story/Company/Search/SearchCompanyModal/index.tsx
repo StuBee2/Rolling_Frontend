@@ -2,7 +2,6 @@ import * as S from "./style";
 import search3 from "@src/assets/icons/Search/search3.svg";
 import close from "@src/assets/images/Story/close.svg";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
 import { useSearchCompany } from "@src/hooks/Company/useSearchCompany";
 import { useGetCompanySerachListQuery } from "@src/queries/Company/company.query";
 import { useInView } from "react-intersection-observer";
@@ -15,6 +14,7 @@ import {
 import { useEscCloseModal } from "@stubee2/stubee2-rolling-util";
 import { ModalContainer } from "../../style";
 import { TextInput } from "@stubee2/stubee2-rolling-ui";
+import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 interface Props {
   setSearchCompanyModal: Dispatch<SetStateAction<boolean>>;
@@ -60,7 +60,7 @@ export default function SearchCompanyModal({ setSearchCompanyModal }: Props) {
       companyName: attr.keyword,
       isExistSearchList,
     }));
-    turnOffModal(setSearchCompanyModal);
+    turnOnOffModal(setSearchCompanyModal, "off");
   };
 
   // 내가 검색한 회사가 없다면 직접 ~~ 등록하기 띄워주는 함수
@@ -76,7 +76,7 @@ export default function SearchCompanyModal({ setSearchCompanyModal }: Props) {
       <S.CompanyNameForm>
         <S.Close
           src={close}
-          onClick={() => turnOffModal(setSearchCompanyModal)}
+          onClick={() => turnOnOffModal(setSearchCompanyModal, "off")}
           alt="이미지 없음"
         />
         <S.Title>내 기업 찾기</S.Title>

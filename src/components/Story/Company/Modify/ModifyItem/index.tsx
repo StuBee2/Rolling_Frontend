@@ -2,9 +2,9 @@ import { useCompanyModify } from "@src/hooks/Company/useCompanyModify";
 import { TextInput } from "@stubee2/stubee2-rolling-ui";
 import logo from "@src/assets/icons/Logo/logo.svg";
 import { Dispatch, SetStateAction, useEffect } from "react";
-import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import * as S from "@src/components/Story/Company/style";
 import { InputEmphasizeText, RegistButton } from "@src/components/Story/style";
+import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 interface Props {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
@@ -74,7 +74,7 @@ export default function ModifyItem({ setIsOpenModal }: Props) {
                   name="address"
                 />
                 <S.FindAddressButton
-                  onClick={() => turnOnModal(setIsOpenModal)}
+                  onClick={() => turnOnOffModal(setIsOpenModal, "on")}
                 >
                   주소 찾기
                 </S.FindAddressButton>

@@ -6,17 +6,17 @@ import wave from "@src/assets/images/Auth/wave.svg";
 import close from "@src/assets/images/Auth/close.svg";
 import github from "@src/assets/images/Auth/github.svg";
 import { gitSignInUrl } from "@src/constants/Auth/auth.constant";
-import { turnOffModal } from "@src/utils/Modal/turnOnOffModal";
+import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 export default function SignIn() {
   const setSignInModal = useSetRecoilState(SignInModalAtom);
   useEscCloseModal(setSignInModal);
   return (
-    <S.Container onClick={() => turnOffModal(setSignInModal)}>
+    <S.Container onClick={() => turnOnOffModal(setSignInModal, "off")}>
       <S.Wrapper onClick={(e) => e.stopPropagation()}>
         <S.Close
           src={close}
-          onClick={() => turnOffModal(setSignInModal)}
+          onClick={() => turnOnOffModal(setSignInModal, "off")}
           alt="이미지 없음"
         />
 

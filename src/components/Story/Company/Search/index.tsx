@@ -3,11 +3,11 @@ import readingGlasses from "@src/assets/icons/Search/readingGlasses.svg";
 import search3 from "@src/assets/icons/Search/search3.svg";
 import { useRecoilValue } from "recoil";
 import { StorySearchCompanyAtom } from "@src/stores/story/story.store";
-import { turnOnModal } from "@src/utils/Modal/turnOnOffModal";
 import { SubTitle, Title, TitleContainer } from "../../style";
 import { Portal } from "@stubee2/stubee2-rolling-ui";
 import SearchCompanyModal from "./SearchCompanyModal";
 import { useState } from "react";
+import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
 export default function SearchCompany() {
   const [searchCompanyModal, setSearchCompanyModal] = useState(false);
@@ -31,7 +31,9 @@ export default function SearchCompany() {
             </S.SearchCompany>
           </S.SearchTitle>
 
-          <S.InputContainer onClick={() => turnOnModal(setSearchCompanyModal)}>
+          <S.InputContainer
+            onClick={() => turnOnOffModal(setSearchCompanyModal, "off")}
+          >
             <S.Input isCompanyName={companyName}>
               {companyName || "기업명"}
             </S.Input>
