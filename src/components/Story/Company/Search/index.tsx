@@ -32,7 +32,7 @@ export default function SearchCompany() {
           </S.SearchTitle>
 
           <S.InputContainer
-            onClick={() => turnOnOffModal(setSearchCompanyModal, "off")}
+            onClick={() => turnOnOffModal(setSearchCompanyModal, "on")}
           >
             <S.Input isCompanyName={companyName}>
               {companyName || "기업명"}
