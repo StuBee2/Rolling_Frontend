@@ -1,4 +1,4 @@
-import { CompanyParam } from "@src/repositories/Company/company.repository";
+import { CompanyParam } from "@src/services/Company/api";
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 

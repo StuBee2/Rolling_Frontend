@@ -1,15 +1,13 @@
-import { useGetAllCompanyListQuery } from "@src/queries/Company/company.query";
 import { useInView } from "react-intersection-observer";
 import logo from "@src/assets/icons/Logo/logo.svg";
 import * as S from "./style";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { getRgb } from "@src/utils/Rgb/getRgb";
+import { useGetAllCompanyListQuery } from "@src/services/Company/queries";
 
 export default function RecommandItem() {
-  const { data, fetchNextPage } = useGetAllCompanyListQuery({
-    suspense: true,
-  });
+  const { data, fetchNextPage } = useGetAllCompanyListQuery();
   const companyList = data?.pages;
   const [ref, inView] = useInView();
   const navigate = useNavigate();

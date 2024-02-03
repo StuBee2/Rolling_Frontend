@@ -1,10 +1,7 @@
-import { useUploadFileMutation } from "@src/queries/File/file.query";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { MutableRefObject, useRef, useState } from "react";
-import { FileParam } from "@src/repositories/File/file.repository";
-import { usePatchCompanyMutation } from "@src/queries/Company/company.query";
 import { useNavigate } from "react-router-dom";
-import { QUERY_KEYS } from "@src/queries/queryKey";
+import { QUERY_KEYS } from "@src/services/queryKey";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 import { useRecoilState, useRecoilValue } from "recoil";
 import {
@@ -13,7 +10,10 @@ import {
 } from "@src/stores/company/company.store";
 import axios, { AxiosError } from "axios";
 import { companyErrorHanlder } from "@src/utils/Error/Company/companyErrorHanlder";
-import { CompanyParam } from "@src/repositories/Company/company.repository";
+import { CompanyParam } from "@src/services/Company/api";
+import { FileParam } from "@src/services/File/api";
+import { useUploadFileMutation } from "@src/services/File/mutations";
+import { usePatchCompanyMutation } from "@src/services/Company/mutation";
 
 export const useCompanyModify = () => {
   const imgRef: MutableRefObject<HTMLInputElement | null> = useRef(null);

@@ -1,4 +1,3 @@
-import { useGetCompanyRankSelectQuery } from "@src/queries/Company/company.query";
 import * as S from "../../style";
 import { getCompanyRankIntroduce } from "@src/utils/Rank/getCompanyRankIntroduce";
 import smileFace from "@src/assets/icons/Home/smileFace.svg";
@@ -7,15 +6,14 @@ import { useNavigate } from "react-router-dom";
 import logo from "@src/assets/icons/Logo/logo.svg";
 import { RankCategoryTitle, RankNumber } from "./style";
 import { getRgb } from "@src/utils/Rgb/getRgb";
+import { useGetCompanyRankSelectQuery } from "@src/services/Company/queries";
 
 interface Props {
   rankCategory: string;
 }
 
 function RankItem({ rankCategory }: Props) {
-  const { data: rankInfo } = useGetCompanyRankSelectQuery(rankCategory, {
-    suspense: true,
-  });
+  const { data: rankInfo } = useGetCompanyRankSelectQuery(rankCategory);
   const rankInfoSlicing = rankInfo?.slice(0, 9);
   const navigate = useNavigate();
 

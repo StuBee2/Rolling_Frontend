@@ -1,7 +1,7 @@
-import { useGetCompanyInfoIdQuery } from "@src/queries/Company/company.query";
 import { tieStarGradeToObject } from "@src/utils/StarRating/tieStarGradeToObject";
 import CompanyDetailInfo from "./CompanyDetailInfo";
 import CompanyStarGrades from "./CompanyStarGrades";
+import { useGetCompanyInfoIdQuery } from "@src/services/Company/queries";
 
 interface Props {
   id: string;

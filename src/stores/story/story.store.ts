@@ -1,8 +1,8 @@
-import { CompanyParam } from "@src/repositories/Company/company.repository";
 import { atom } from "recoil";
 import { StoryModifiableContentPatchType } from "@src/types/Story/story.type";
 
 import { recoilPersist } from "recoil-persist";
+import { CompanyParam } from "@src/services/Company/api";
 
 const { persistAtom } = recoilPersist();
 

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { usePatchMyNickNameMutation } from "@src/queries/Member/Member.query";
-import { QUERY_KEYS } from "@src/queries/queryKey";
+import { QUERY_KEYS } from "@src/services/queryKey";
 import axios, { AxiosError } from "axios";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { memberErrorHandler } from "@src/utils/Error/Member/memberErrorHandler";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
+import { usePatchMyNickNameMutation } from "@src/services/Member/mutations";
 
 export const useSetUpNickName = (nickName: string) => {
   const patchNickNameMutation = usePatchMyNickNameMutation();

@@ -2,7 +2,6 @@ import { useSetRecoilState } from "recoil";
 import * as S from "./style";
 import { MyInfoModal } from "@src/stores/common/common.store";
 import { useLogout } from "@src/hooks/Auth/useLogout";
-import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import emptyFace from "@src/assets/icons/Home/emptyFace.svg";
 import smileFace from "@src/assets/icons/Home/smileFace.svg";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +9,7 @@ import { useEscCloseModal } from "@stubee2/stubee2-rolling-util";
 import github from "@src/assets/images/Auth/github.svg";
 import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
+import { useGetMyInfoQuery } from "@src/services/Member/queries";
 
 export default function MyInfo() {
   const setMyInfoModal = useSetRecoilState(MyInfoModal);

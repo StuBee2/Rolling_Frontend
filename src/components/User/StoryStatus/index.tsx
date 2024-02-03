@@ -1,14 +1,12 @@
 import * as S from "./style";
 import printer from "@src/assets/icons/Story/printer.svg";
-import { useGetStoryMyStatusQuery } from "@src/queries/Story/story.query";
 import { getTimeAgo } from "@stubee2/stubee2-rolling-util";
 import write from "@src/assets/icons/Company/write.svg";
 import { useNavigate } from "react-router-dom";
+import { useGetStoryMyStatusQuery } from "@src/services/Story/queries";
 
 export default function StoryStatus() {
-  const { data: storyStatus, isError } = useGetStoryMyStatusQuery({
-    suspense: true,
-  });
+  const { data: storyStatus, isError } = useGetStoryMyStatusQuery();
   const { count, lastModifiedDate } = storyStatus!!;
   const navigate = useNavigate();
 

@@ -1,9 +1,9 @@
-import { CompanyParam } from "@src/repositories/Company/company.repository";
 import { useEscCloseModal } from "@stubee2/stubee2-rolling-util";
 import { Dispatch, SetStateAction } from "react";
 import DaumPostcodeEmbed from "react-daum-postcode";
 import * as S from "../../../Story/Company/style";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
+import { CompanyParam } from "@src/services/Company/api";
 
 interface Props {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;

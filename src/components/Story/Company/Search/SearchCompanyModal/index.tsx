@@ -3,7 +3,6 @@ import search3 from "@src/assets/icons/Search/search3.svg";
 import close from "@src/assets/images/Story/close.svg";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useSearchCompany } from "@src/hooks/Company/useSearchCompany";
-import { useGetCompanySerachListQuery } from "@src/queries/Company/company.query";
 import { useInView } from "react-intersection-observer";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {
@@ -15,6 +14,7 @@ import { useEscCloseModal } from "@stubee2/stubee2-rolling-util";
 import { ModalContainer } from "../../style";
 import { TextInput } from "@stubee2/stubee2-rolling-ui";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
+import { useGetCompanySerachListQuery } from "@src/services/Company/queries";
 
 interface Props {
   setSearchCompanyModal: Dispatch<SetStateAction<boolean>>;

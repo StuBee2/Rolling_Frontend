@@ -66,7 +66,7 @@ export interface StoryCommonType extends StoryCommonItemType {
   memberImageUrl?: string;
 }
 
-export interface StoryPostResponse {
+export interface StoryPostType {
   companyId: string;
   position: string;
   schoolLife: string;

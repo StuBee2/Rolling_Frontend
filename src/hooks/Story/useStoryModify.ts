@@ -1,14 +1,14 @@
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { StoryModifiableContentAtom } from "@src/stores/story/story.store";
 import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
-import { usePatchMyStoryMutation } from "@src/queries/Story/story.query";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
-import { QUERY_KEYS } from "@src/queries/queryKey";
+import { QUERY_KEYS } from "@src/services/queryKey";
 import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
 import { StorySetupInitializationDotAtom } from "@src/stores/story/story.store";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 import { useState } from "react";
 import { StoryModifiableContentPatchType } from "@src/types/Story/story.type";
+import { usePatchMyStoryMutation } from "@src/services/Story/mutations";
 
 export const useStoryModify = () => {
   const { queryInvalidates } = useQueryInvalidates();

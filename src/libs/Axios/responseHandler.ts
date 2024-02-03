@@ -5,8 +5,8 @@ import {
   REQUEST_TOKEN_KEY,
 } from "@src/constants/Auth/auth.constant";
 import Token from "../Token/Token";
-import authRepositoryImpl from "@src/repositories/Auth/auth.repositoryImpl";
-import { rollingAxios } from "./customAxios";
+import AuthApi from "@src/services/Auth/api";
+import { rollingAxios } from "./RollingAxios";
 
 export const responseHandler = async (error: AxiosError) => {
   const access_token = Token.getToken(ACCESS_TOKEN_KEY);
@@ -19,10 +19,9 @@ export const responseHandler = async (error: AxiosError) => {
 
     if (access_token && refresh_token && status === 401) {
       try {
-        const { accessToken: newAccessToken } =
-          await authRepositoryImpl.postRefreshToken({
-            refreshToken: refresh_token,
-          });
+        const { accessToken: newAccessToken } = await AuthApi.postRefreshToken({
+          refreshToken: refresh_token,
+        });
 
         Token.setToken(ACCESS_TOKEN_KEY, newAccessToken);
 

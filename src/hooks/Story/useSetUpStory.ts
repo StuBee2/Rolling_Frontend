@@ -1,13 +1,13 @@
 import { useRecoilState, useSetRecoilState } from "recoil";
 import axios, { AxiosError } from "axios";
-import { QUERY_KEYS } from "@src/queries/queryKey";
-import { useDeleteMyStoryMutation } from "@src/queries/Story/story.query";
+import { QUERY_KEYS } from "@src/services/queryKey";
 import { storyErrorHanlder } from "@src/utils/Error/Story/storyErrorHanlder";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
 import { StorySetupInitializationDotAtom } from "@src/stores/story/story.store";
 import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
 import { StoryModifiableIdAtom } from "@src/stores/story/story.store";
+import { useDeleteMyStoryMutation } from "@src/services/Story/mutations";
 
 export const useSetUpStory = () => {
   const setIsModifiableEvent = useSetRecoilState(StoryModifiableEventAtom);

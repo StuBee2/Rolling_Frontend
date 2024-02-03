@@ -1,4 +1,3 @@
-import { useGetCompanyRankSelectQuery } from "@src/queries/Company/company.query";
 import * as S from "./style";
 import {
   CompanyAddress,
@@ -18,6 +17,7 @@ import rightArrow from "@src/assets/icons/Rank/rightArrow.png";
 import leftArrow from "@src/assets/icons/Rank/leftArrow.png";
 import { useRef } from "react";
 import { getSlideRankBoxWidth } from "@src/utils/Rank/getSlideRankBoxWidth";
+import { useGetCompanyRankSelectQuery } from "@src/services/Company/queries";
 
 interface Props {
   category: string;
@@ -25,9 +25,7 @@ interface Props {
 }
 
 export default function RankList({ category, title }: Props) {
-  const { data: rankList } = useGetCompanyRankSelectQuery(category, {
-    suspense: true,
-  });
+  const { data: rankList } = useGetCompanyRankSelectQuery(category);
   const navigate = useNavigate();
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 

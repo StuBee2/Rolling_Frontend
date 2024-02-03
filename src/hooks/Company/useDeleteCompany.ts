@@ -1,7 +1,7 @@
-import { useDeleteCompanyMutation } from "@src/queries/Company/company.query";
 import { useQueryClient } from "react-query";
-import { QUERY_KEYS } from "@src/queries/queryKey";
+import { QUERY_KEYS } from "@src/services/queryKey";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
+import { useDeleteCompanyMutation } from "@src/services/Company/mutation";
 
 export const useDeleteCompany = () => {
   const deleteCompany = useDeleteCompanyMutation();

@@ -1,13 +1,15 @@
-import { usePostStoryMutation } from "@src/queries/Story/story.query";
 import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { useState } from "react";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
-import { StoryParam } from "@src/repositories/Story/story.repository";
 import { useNavigate } from "react-router-dom";
-import { QUERY_KEYS } from "@src/queries/queryKey";
-import { StoryRegistRequireType } from "@src/types/Story/story.type";
+import { QUERY_KEYS } from "@src/services/queryKey";
+import {
+  StoryPostType,
+  StoryRegistRequireType,
+} from "@src/types/Story/story.type";
 import { StoryPagePathInflow } from "@src/stores/story/story.store";
 import { useRecoilState } from "recoil";
+import { usePostStoryMutation } from "@src/services/Story/mutations";
 
 export const useStoryRegister = (companyId: string) => {
   const [storyRequiredElement, setStoryRequiredElement] =
@@ -78,7 +80,7 @@ export const useStoryRegister = (companyId: string) => {
           meal: "",
         };
 
-        postStory.mutate(param as unknown as StoryParam, {
+        postStory.mutate(param as unknown as StoryPostType, {
           onSuccess: () => {
             rollingToast("스토리를 등록하였습니다!", "success");
 

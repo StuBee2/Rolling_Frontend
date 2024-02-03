@@ -1,8 +1,8 @@
 import StoryItem from "@src/components/User/Story/StoryItem";
-import { useGetStoryListCompanyIdQuery } from "@src/queries/Story/story.query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import * as S from "./style";
+import { useGetStoryListCompanyIdQuery } from "@src/services/Story/queries";
 
 interface Props {
   companyId: string;

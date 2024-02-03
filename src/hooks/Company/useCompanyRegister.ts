@@ -1,8 +1,4 @@
-import { usePostCompanyRegisterMutation } from "@src/queries/Company/company.query";
-import { useUploadFileMutation } from "@src/queries/File/file.query";
-import { QUERY_KEYS } from "@src/queries/queryKey";
-import { CompanyParam } from "@src/repositories/Company/company.repository";
-import { FileParam } from "@src/repositories/File/file.repository";
+import { QUERY_KEYS } from "@src/services/queryKey";
 import {
   StoryCompanyIdAtom,
   StoryCompanyRegistAtom,
@@ -11,6 +7,10 @@ import { useRollingToast } from "@stubee2/stubee2-rolling-toastify";
 import { MutableRefObject, useRef } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { useQueryInvalidates } from "../Invalidates/useQueryInvalidates";
+import { useUploadFileMutation } from "@src/services/File/mutations";
+import { usePostCompanyRegisterMutation } from "@src/services/Company/mutation";
+import { CompanyParam } from "@src/services/Company/api";
+import { FileParam } from "@src/services/File/api";
 
 export const useCompanyRegister = () => {
   const imgRef: MutableRefObject<HTMLInputElement | null> = useRef(null);

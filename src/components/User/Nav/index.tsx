@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 import { USER_ITEMS } from "@src/constants/User/user.constants";
 import { useLogout } from "@src/hooks/Auth/useLogout";
-import { useGetMyInfoQuery } from "@src/queries/Member/Member.query";
 import { MyMemberInfo } from "@src/stores/member/member.store";
 import { useSetRecoilState } from "recoil";
 import { useEffect } from "react";
 import emptyFace from "@src/assets/icons/Home/emptyFace.svg";
+import { useGetMyInfoQuery } from "@src/services/Member/queries";
 
 interface Props {
   pathName: string;

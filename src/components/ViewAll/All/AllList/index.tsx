@@ -5,7 +5,6 @@ import {
   CompanyDescriptionAndAddress,
   CompanyName,
 } from "@src/components/Home/Main/style";
-import { useGetAllCompanyListQuery } from "@src/queries/Company/company.query";
 import { getRgb } from "@src/utils/Rgb/getRgb";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { useEffect } from "react";
@@ -15,11 +14,10 @@ import { CompanyContent, CompanyLogoContainer, LogoImg } from "../../style";
 import * as S from "./style";
 import developer from "@src/assets/icons/Home/developer.svg";
 import logo from "@src/assets/icons/Logo/logo.svg";
+import { useGetAllCompanyListQuery } from "@src/services/Company/queries";
 
 export default function AllList() {
-  const { data: recommandList, fetchNextPage } = useGetAllCompanyListQuery({
-    suspense: true,
-  });
+  const { data: recommandList, fetchNextPage } = useGetAllCompanyListQuery();
   const navigate = useNavigate();
   const sizeOfRecommandList = recommandList?.pages[0].data.length;
   const [ref, inView] = useInView();

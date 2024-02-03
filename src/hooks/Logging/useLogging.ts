@@ -1,4 +1,4 @@
-import { usePostLoggingMutation } from "@src/queries/Logging/logging.query";
+import { usePostLoggingMutation } from "@src/services/Logging/mutations";
 import { changeUrlToLoggingText } from "@src/utils/Logging/changeUrlToLoggingText";
 
 export const useLogging = () => {
