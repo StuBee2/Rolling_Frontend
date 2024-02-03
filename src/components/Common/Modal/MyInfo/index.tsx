@@ -23,22 +23,24 @@ export default function MyInfo() {
       <S.Wrapper>
         <S.MyInfoBox onClick={(e) => e.stopPropagation()}>
           <S.ProfileContainer>
-            <img src={myInfo?.socialDetails.imageUrl} alt="이미지 없음" />
+            <img src={myInfo?.details.imageUrl} alt="이미지 없음" />
             <S.Profile>
               <S.Name>
-                {myInfo?.memberDetails.nickName || myInfo?.socialDetails.name}
+                {myInfo?.details.nickName || myInfo?.details.name}
               </S.Name>
 
               <S.GitInfo
                 onClick={() =>
                   window.open(
-                    convertToGithubLink(myInfo?.socialDetails.socialLoginId!!),
+                    convertToGithubLink(
+                      myInfo?.detailssocialDetails.socialLoginId!!
+                    ),
                     "_blank"
                   )
                 }
               >
                 <img src={github} alt="이미지 없음" />
-                <p>{myInfo?.socialDetails.socialLoginId}</p>
+                <p>{myInfo?.detailssocialDetails.socialLoginId}</p>
               </S.GitInfo>
             </S.Profile>
           </S.ProfileContainer>

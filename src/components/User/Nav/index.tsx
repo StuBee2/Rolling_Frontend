@@ -29,15 +29,13 @@ export default function Nav({ pathName }: Props) {
   return (
     <S.UserNavBar>
       <S.UserInfoContainer>
-        <S.UserImg src={myInfo?.socialDetails.imageUrl} />
-        <S.UserName>{myInfo?.socialDetails.name}</S.UserName>
+        <S.UserImg src={myInfo?.details.imageUrl} />
+        <S.UserName>{myInfo?.details.name}</S.UserName>
         <S.UserEmail
-          email={myInfo?.socialDetails.email!!}
-          onClick={() =>
-            !myInfo?.socialDetails.email && handleSetUpEmailClick()
-          }
+          email={myInfo?.details.email!!}
+          onClick={() => !myInfo?.details.email && handleSetUpEmailClick()}
         >
-          {myInfo?.socialDetails.email || "이메일 설정하러 가기"}
+          {myInfo?.details.email || "이메일 설정하러 가기"}
         </S.UserEmail>
       </S.UserInfoContainer>
 

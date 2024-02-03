@@ -7,25 +7,31 @@ export interface CompanyListType {
   companyId: {
     id: string;
   };
+  status: string;
+  registrantId: {
+    id: string;
+  };
   companyDetails: {
-    registrantId: {
-      id: number;
-    };
     name: string;
     description: string;
-    companyAddress: {
+    address: {
       address: string;
       etc: string;
     };
-    companyLogo: {
+    logo: {
       url: string;
       rgb: number;
     };
-    companyStatus: "ACCEPTED" | "PENDING";
-    createdAt: string;
-    modifiedAt: string;
   };
-  companyGrades: CompanyStarGrade;
+  companyGrades: {
+    total: number;
+    salaryAndBenefits: number;
+    workLifeBalance: number;
+    organizationalCulture: number;
+    careerAdvancement: number;
+  };
+  createdAt: string;
+  modifiedAt: string;
 }
 
 export interface CompanyInfoType extends CompanyStarGrade {
@@ -42,6 +48,11 @@ export interface CompanyInfoType extends CompanyStarGrade {
   memberNickName: string;
   memberSocialLoginId: string;
   memberImageUrl: string;
+  total: number;
+  salaryAndBenefits: number;
+  workLifeBalance: number;
+  organizationalCulture: number;
+  careerAdvancement: number;
 }
 
 export interface CompanyInfoId {

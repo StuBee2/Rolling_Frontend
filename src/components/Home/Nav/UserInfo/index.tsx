@@ -22,14 +22,14 @@ export default function UserInfo() {
 
 function UserInfoItem() {
   const navigate = useNavigate();
-  const { data: userInfo } = useGetMyInfoQuery({ suspense: true });
-  const isNickName = !userInfo?.memberDetails.nickName;
+  const { data: myInfo } = useGetMyInfoQuery({ suspense: true });
+  const isNickName = !myInfo?.details.nickName;
   const isMember = tokenDecode("access", "authority") === "MEMBER";
 
   return (
     <>
       <S.UserInfoBox>
-        <img src={userInfo?.socialDetails.imageUrl || ""} alt="이미지 없음" />
+        <img src={myInfo?.details.imageUrl || ""} alt="이미지 없음" />
         <div onClick={() => navigate("/mypage/profile")}>
           <S.UserInfoNickName>
             {isNickName ? (
@@ -37,12 +37,12 @@ function UserInfoItem() {
                 닉네임을 설정해주세요 <span>*</span>
               </>
             ) : (
-              userInfo?.memberDetails.nickName
+              myInfo?.details.nickName
             )}
           </S.UserInfoNickName>
           <S.UserInfoEmail>
             {stringEllipsis(
-              userInfo?.socialDetails.email!! || "이메일을 설정해주세요",
+              myInfo?.details.email!! || "이메일을 설정해주세요",
               22
             )}
           </S.UserInfoEmail>

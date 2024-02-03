@@ -2,20 +2,20 @@ export interface MemberType {
   memberId: {
     id: string;
   };
-  socialDetails: {
+  role: "MEMBER" | "TEMP";
+  details: {
+    nickName: string;
+    name: string;
+    email: string;
+    imageUrl: string;
+  };
+  detailssocialDetails: {
     socialId: string;
     socialLoginId: string;
     loginType: string;
-    name: string;
-    email?: string;
-    imageUrl: string;
   };
-  memberDetails: {
-    nickName: string;
-    memberRole: "MEMBER" | "TEMP";
-    createdAt: string;
-    modifiedAt: string;
-  };
+  createdAt: string;
+  modifiedAt: string;
 }
 
 export interface NavMemberProfileType {

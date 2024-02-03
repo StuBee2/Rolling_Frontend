@@ -37,11 +37,9 @@ function RankItem({ rankCategory }: Props) {
                   <RankNumber>{idx + 1}</RankNumber>
 
                   <S.CompanyLogoContainer
-                    rgb={getRgb(item.companyDetails.companyLogo.rgb)}
+                    rgb={getRgb(item.companyDetails.logo.rgb)}
                   >
-                    <S.LogoImg
-                      src={item.companyDetails.companyLogo.url || logo}
-                    />
+                    <S.LogoImg src={item.companyDetails.logo.url || logo} />
                   </S.CompanyLogoContainer>
 
                   <S.CompanyContentContainer>
@@ -56,9 +54,8 @@ function RankItem({ rankCategory }: Props) {
 
                       <S.CompanyAddress>
                         |{" "}
-                        {item.companyDetails.companyAddress.address +
-                          (" " +
-                            (item.companyDetails.companyAddress.etc || ""))}
+                        {item.companyDetails.address.address +
+                          (" " + (item.companyDetails.address.etc || ""))}
                       </S.CompanyAddress>
                     </S.CompanyNameAndCreatedAt>
 
@@ -68,7 +65,7 @@ function RankItem({ rankCategory }: Props) {
                       </S.CompanyDescription>
 
                       <S.CompanyCreatedAt>
-                        {getDateText(new Date(item.companyDetails.createdAt))}
+                        {getDateText(new Date(item.createdAt))}
                       </S.CompanyCreatedAt>
                     </S.CompanyDescriptionAndAddress>
                   </S.CompanyContentContainer>

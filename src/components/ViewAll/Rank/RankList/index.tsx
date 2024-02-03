@@ -68,11 +68,11 @@ export default function RankList({ category, title }: Props) {
             rankList?.map((item, idx) => (
               <S.RankBox key={item.companyId.id}>
                 <CompanyLogoContainer
-                  rgb={getRgb(item.companyDetails.companyLogo.rgb)}
+                  rgb={getRgb(item.companyDetails.logo.rgb)}
                   onClick={() => navigate(`/company/${item.companyId.id}`)}
                 >
                   <LogoImg
-                    src={item.companyDetails.companyLogo.url || logo}
+                    src={item.companyDetails.logo.url || logo}
                     alt="이미지 없음"
                   />
 
@@ -92,12 +92,12 @@ export default function RankList({ category, title }: Props) {
                     </CompanyDescription>
 
                     <CompanyAddress>
-                      {item.companyDetails.companyAddress.address +
-                        (" " + (item.companyDetails.companyAddress.etc || ""))}
+                      {item.companyDetails.address.address +
+                        (" " + (item.companyDetails.address.etc || ""))}
                     </CompanyAddress>
 
                     <CompanyCreatedAt>
-                      {getDateText(new Date(item.companyDetails.createdAt))}
+                      {getDateText(new Date(item.createdAt))}
                     </CompanyCreatedAt>
                   </CompanyDescriptionAndAddress>
                 </CompanyContent>

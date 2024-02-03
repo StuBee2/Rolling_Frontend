@@ -43,11 +43,11 @@ export default function AllList() {
             data.data.map((item) => (
               <S.CompanyBox key={item.companyId.id}>
                 <CompanyLogoContainer
-                  rgb={getRgb(item.companyDetails.companyLogo.rgb)}
+                  rgb={getRgb(item.companyDetails.logo.rgb)}
                   onClick={() => navigate(`/company/${item.companyId.id}`)}
                 >
                   <LogoImg
-                    src={item.companyDetails.companyLogo.url || logo}
+                    src={item.companyDetails.logo.url || logo}
                     alt="이미지 없음"
                   />
                 </CompanyLogoContainer>
@@ -65,12 +65,12 @@ export default function AllList() {
                     </CompanyDescription>
 
                     <CompanyAddress>
-                      {item.companyDetails.companyAddress.address +
-                        (" " + (item.companyDetails.companyAddress.etc || ""))}
+                      {item.companyDetails.address.address +
+                        (" " + (item.companyDetails.address.etc || ""))}
                     </CompanyAddress>
 
                     <CompanyCreatedAt>
-                      {getDateText(new Date(item.companyDetails.createdAt))}
+                      {getDateText(new Date(item.createdAt))}
                     </CompanyCreatedAt>
                   </CompanyDescriptionAndAddress>
                 </CompanyContent>

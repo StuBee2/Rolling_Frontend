@@ -31,11 +31,9 @@ export default function RecommandItem() {
                   key={item.companyId.id}
                   onClick={() => navigate(`/company/${item.companyId.id}`)}
                 >
-                  <S.ImageContainer
-                    rgb={getRgb(item.companyDetails.companyLogo.rgb)}
-                  >
+                  <S.ImageContainer rgb={getRgb(item.companyDetails.logo.rgb)}>
                     <img
-                      src={item.companyDetails.companyLogo.url || logo}
+                      src={item.companyDetails.logo.url || logo}
                       alt="이미지 없음"
                     />
                   </S.ImageContainer>
