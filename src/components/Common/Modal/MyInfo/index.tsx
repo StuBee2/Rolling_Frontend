@@ -33,14 +33,14 @@ export default function MyInfo() {
                 onClick={() =>
                   window.open(
                     convertToGithubLink(
-                      myInfo?.detailssocialDetails.socialLoginId!!
+                      myInfo?.socialDetails.socialLoginId!!
                     ),
                     "_blank"
                   )
                 }
               >
                 <img src={github} alt="이미지 없음" />
-                <p>{myInfo?.detailssocialDetails.socialLoginId}</p>
+                <p>{myInfo?.socialDetails.socialLoginId}</p>
               </S.GitInfo>
             </S.Profile>
           </S.ProfileContainer>
