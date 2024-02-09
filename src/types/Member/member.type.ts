@@ -9,7 +9,7 @@ export interface MemberType {
     email: string;
     imageUrl: string;
   };
-  detailssocialDetails: {
+  socialDetails: {
     socialId: string;
     socialLoginId: string;
     loginType: string;

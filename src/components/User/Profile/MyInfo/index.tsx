@@ -15,7 +15,7 @@ export default function MyInfo() {
         <S.TextContainer>
           <div>
             <Title>기본 정보</Title>
-            {!myInfo?.memberDetails.nickName && (
+            {!myInfo?.details.nickName && (
               <S.SetUpNickNameText>닉네임을 설정하세요!</S.SetUpNickNameText>
             )}
           </div>
@@ -25,10 +25,10 @@ export default function MyInfo() {
         </S.TextContainer>
 
         <S.UserInfoContainer>
-          <img src={myInfo?.socialDetails.imageUrl || ""} alt="이미지 없음" />
+          <img src={myInfo?.details.imageUrl || ""} alt="이미지 없음" />
           {myInfo && (
             <div>
-              <NickName nickName={myInfo.memberDetails.nickName} />
+              <NickName nickName={myInfo.details.nickName} />
             </div>
           )}
         </S.UserInfoContainer>
