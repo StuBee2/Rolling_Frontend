@@ -32,9 +32,7 @@ export default function MyInfo() {
               <S.GitInfo
                 onClick={() =>
                   window.open(
-                    convertToGithubLink(
-                      myInfo?.socialDetails.socialLoginId!!
-                    ),
+                    convertToGithubLink(myInfo?.socialDetails.socialLoginId!!),
                     "_blank"
                   )
                 }
