@@ -2,7 +2,7 @@ import { CompanyInfoType } from "@src/types/Company/company.type";
 import Content from "./Content";
 import UserProfile from "./UserProfile";
 import * as S from "./style";
-import write from "@src/assets/icons/Company/write.svg";
+import write from "@src/assets/icons/Company/write.png";
 import Story from "./Story";
 import Token from "@src/libs/Token/Token";
 import { ACCESS_TOKEN_KEY } from "@src/constants/Auth/auth.constant";

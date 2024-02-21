@@ -14,7 +14,7 @@ interface Props {
 
 export default function Nav({ pathName }: Props) {
   const { handleLogout } = useLogout();
-  const { data: myInfo } = useGetMyInfoQuery({ suspense: true });
+  const { data: myInfo } = useGetMyInfoQuery();
   const setMyMemberInfo = useSetRecoilState(MyMemberInfo);
   const navigate = useNavigate();
 

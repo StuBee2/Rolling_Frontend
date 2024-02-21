@@ -1,7 +1,7 @@
 import { useInfiniteQuery, useQuery } from "react-query";
 import { QUERY_KEYS } from "../queryKey";
-import CompanyApi, { CompanyKeywordParam } from "./api";
-import { CommonIdParam } from "@src/types/common/commont.type";
+import CompanyApi from "./api";
+import { CommonIdParam, SuspenseType } from "@src/types/common/commont.type";
 
 export const useGetMyCompanyListQuery = () =>
   useInfiniteQuery(
@@ -15,15 +15,16 @@ export const useGetMyCompanyListQuery = () =>
     }
   );
 
-export const useGetCompanySerachListQuery = ({
-  keyword,
-}: CompanyKeywordParam) =>
+export const useGetCompanySerachListQuery = (
+  keyword: string,
+  suspense?: SuspenseType
+) =>
   useInfiniteQuery(
     QUERY_KEYS.company.getListSearchCompany(keyword),
     ({ pageParam = 1 }) =>
       CompanyApi.getCompanySearchList({ keyword }, { page: pageParam }),
     {
-      suspense: true,
+      suspense: suspense?.suspense,
       enabled: !!keyword,
       staleTime: 1000 * 60 * 60,
       cacheTime: 1000 * 60 * 60,

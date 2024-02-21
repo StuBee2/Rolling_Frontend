@@ -22,7 +22,7 @@ export default function UserInfo() {
 
 function UserInfoItem() {
   const navigate = useNavigate();
-  const { data: myInfo } = useGetMyInfoQuery();
+  const { data: myInfo } = useGetMyInfoQuery({ suspense: true });
   const isNickName = !myInfo?.details.nickName;
   const isMember = tokenDecode("access", "authority") === "MEMBER";
 

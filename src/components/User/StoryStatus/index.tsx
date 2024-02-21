@@ -1,7 +1,7 @@
 import * as S from "./style";
 import printer from "@src/assets/icons/Story/printer.svg";
 import { getTimeAgo } from "@stubee2/stubee2-rolling-util";
-import write from "@src/assets/icons/Company/write.svg";
+import write from "@src/assets/icons/Company/write.png";
 import { useNavigate } from "react-router-dom";
 import { useGetStoryMyStatusQuery } from "@src/services/Story/queries";
 

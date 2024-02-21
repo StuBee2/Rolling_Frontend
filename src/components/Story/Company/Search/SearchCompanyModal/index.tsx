@@ -32,9 +32,9 @@ export default function SearchCompanyModal({ setSearchCompanyModal }: Props) {
 
   const setStorySearchCompany = useSetRecoilState(StorySearchCompanyAtom);
 
-  const { data: searchList, fetchNextPage } = useGetCompanySerachListQuery({
-    keyword: attr.keyword,
-  });
+  const { data: searchList, fetchNextPage } = useGetCompanySerachListQuery(
+    attr.keyword
+  );
 
   // 검색한 회사가 있는 회사인지 없는 회사인지 판단하여 setStorySearchCompany에 담는 state
   const [isExistSearchList, setIsExistSearchList] = useState(false);

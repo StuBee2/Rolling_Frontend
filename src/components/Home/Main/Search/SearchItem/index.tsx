@@ -11,10 +11,9 @@ interface Props {
 }
 
 export default function SearchItem({ company }: Props) {
-  const { data: searchCompany } = useGetCompanySerachListQuery(
-    { keyword: company },
-    { suspense: true }
-  );
+  const { data: searchCompany } = useGetCompanySerachListQuery(company, {
+    suspense: true,
+  });
   const navigate = useNavigate();
   const companyList = searchCompany?.pages;
 

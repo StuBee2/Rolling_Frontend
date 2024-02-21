@@ -9,10 +9,9 @@ interface Props {
 }
 
 export default function CompanyDetailStory({ companyId }: Props) {
-  const { data: storyList, fetchNextPage } = useGetStoryListCompanyIdQuery(
-    { id: companyId },
-    { suspense: true }
-  );
+  const { data: storyList, fetchNextPage } = useGetStoryListCompanyIdQuery({
+    id: companyId,
+  });
   const [ref, inView] = useInView();
   const storyListData = storyList?.pages[0].data;
 

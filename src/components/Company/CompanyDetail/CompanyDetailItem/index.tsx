@@ -8,10 +8,7 @@ interface Props {
 }
 
 export default function CompanyDetailItem({ id }: Props) {
-  const { data: companyInfo } = useGetCompanyInfoIdQuery(
-    { id },
-    { suspense: true }
-  );
+  const { data: companyInfo } = useGetCompanyInfoIdQuery({ id });
 
   return (
     <>
