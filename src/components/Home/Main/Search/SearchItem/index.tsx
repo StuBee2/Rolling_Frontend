@@ -10,7 +10,7 @@ interface Props {
   company: string;
 }
 
-export default function SearchItem({ company }: Props) {
+const SearchItem = ({ company }: Props) => {
   const { data: searchCompany } = useGetCompanySerachListQuery(company, {
     suspense: true,
   });
@@ -77,4 +77,6 @@ export default function SearchItem({ company }: Props) {
       </S.MainItemWrapper>
     </S.MainItemContainer>
   );
-}
+};
+
+export default SearchItem;

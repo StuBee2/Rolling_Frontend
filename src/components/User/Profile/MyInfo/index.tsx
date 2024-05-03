@@ -6,7 +6,7 @@ import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 import { useRecoilValue } from "recoil";
 import { MyMemberInfo } from "@src/stores/member/member.store";
 
-export default function MyInfo() {
+const MyInfo = () => {
   const myInfo = useRecoilValue(MyMemberInfo);
 
   return (
@@ -53,4 +53,6 @@ export default function MyInfo() {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default MyInfo;

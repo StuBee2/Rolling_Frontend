@@ -1,5 +1,7 @@
 import Certifiy from "@src/components/Alumni/Certify";
 
-export default function CertifyPage() {
+const CertifyPage = () => {
   return <Certifiy />;
-}
+};
+
+export default CertifyPage;

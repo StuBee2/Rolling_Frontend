@@ -8,7 +8,7 @@ import { SearchCompanyAtom } from "@src/stores/company/company.store";
 import Search from "./Main/Search";
 import { useAuthTopScroll } from "@stubee2/stubee2-rolling-util";
 
-export default function Home() {
+const Home = () => {
   const searchCompany = useRecoilValue(SearchCompanyAtom);
   useAuthTopScroll();
   return (
@@ -23,4 +23,6 @@ export default function Home() {
       <Footer />
     </S.HomeContainer>
   );
-}
+};
+
+export default Home;

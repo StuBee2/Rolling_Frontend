@@ -1,7 +1,7 @@
 import { SkeletonBox } from "../Common/style";
 import * as S from "./style";
 
-export default function CompanyDetailSkeleton() {
+const CompanyDetailSkeleton = () => {
   return (
     <S.CompanySkeletonContainer>
       <S.CompanySkeletonStarGrade>
@@ -26,4 +26,6 @@ export default function CompanyDetailSkeleton() {
       </S.CompanySkeletonContent>
     </S.CompanySkeletonContainer>
   );
-}
+};
+
+export default CompanyDetailSkeleton;

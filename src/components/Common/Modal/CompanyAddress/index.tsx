@@ -11,7 +11,7 @@ interface Props {
   setCompanyInfo: Dispatch<SetStateAction<CompanyParam>>;
 }
 
-export default function CompanyAddressModal({ ...attr }: Props) {
+const CompanyAddressModal = ({ ...attr }: Props) => {
   useEscCloseModal(attr.setIsOpenModal);
 
   const handleSelectAddress = (data: { address: string }) => {
@@ -35,4 +35,6 @@ export default function CompanyAddressModal({ ...attr }: Props) {
       />
     </S.ModalContainer>
   );
-}
+};
+
+export default CompanyAddressModal;

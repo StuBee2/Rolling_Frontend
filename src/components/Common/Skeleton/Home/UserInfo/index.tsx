@@ -1,7 +1,7 @@
 import { SkeletonBox } from "../../Common/style";
 import * as S from "../../User/style";
 
-export default function UserInfoSkeleton() {
+const UserInfoSkeleton = () => {
   return (
     <S.UserInfoSkeletonContainer>
       <SkeletonBox width="270px" height="75px" />
@@ -11,4 +11,6 @@ export default function UserInfoSkeleton() {
       </div>
     </S.UserInfoSkeletonContainer>
   );
-}
+};
+
+export default UserInfoSkeleton;

@@ -1,9 +1,9 @@
 import { useMutation } from "react-query";
-import GraduateApi from "./api";
+import graduateApi from "./api";
 
 export const usePostCertifyMutation = () => {
   const mutation = useMutation((housemaster: string) =>
-    GraduateApi.certifyGraduate(housemaster)
+    graduateApi.certifyGraduate(housemaster)
   );
   return mutation;
 };

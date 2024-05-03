@@ -9,7 +9,7 @@ interface Props {
   page: number;
 }
 
-export default function UserPage({ page }: Props) {
+const UserPage = ({ page }: Props) => {
   const memberRole = tokenDecode("access", "authority");
   const navigate = useNavigate();
   return (
@@ -28,7 +28,7 @@ export default function UserPage({ page }: Props) {
         ))}
     </User>
   );
-}
+};
 
 const AlumniCheck = styled.div`
   display: flex;
@@ -44,3 +44,5 @@ const Authenticate = styled.p`
     color: rgba(86, 103, 193, 1);
   }
 `;
+
+export default UserPage;

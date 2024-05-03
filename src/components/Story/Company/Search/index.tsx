@@ -9,7 +9,7 @@ import SearchCompanyModal from "./SearchCompanyModal";
 import { useState } from "react";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
-export default function SearchCompany() {
+const SearchCompany = () => {
   const [searchCompanyModal, setSearchCompanyModal] = useState(false);
   const storySearchCompany = useRecoilValue(StorySearchCompanyAtom);
   const companyName = storySearchCompany.companyName;
@@ -49,4 +49,6 @@ export default function SearchCompany() {
       )}
     </>
   );
-}
+};
+
+export default SearchCompany;

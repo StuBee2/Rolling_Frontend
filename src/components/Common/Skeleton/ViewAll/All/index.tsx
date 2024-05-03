@@ -3,7 +3,7 @@ import { CompanyContent } from "@src/components/ViewAll/style";
 import { SkeletonBox } from "../../Common/style";
 import * as S from "./style";
 
-export default function All() {
+const AllListSkeleton = () => {
   return (
     <Container>
       <Wrapper>
@@ -21,4 +21,6 @@ export default function All() {
       </Wrapper>
     </Container>
   );
-}
+};
+
+export default AllListSkeleton;

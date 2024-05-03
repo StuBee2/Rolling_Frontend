@@ -20,7 +20,7 @@ interface Props {
   setSearchCompanyModal: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function SearchCompanyModal({ setSearchCompanyModal }: Props) {
+const SearchCompanyModal = ({ setSearchCompanyModal }: Props) => {
   useEscCloseModal(setSearchCompanyModal);
   const { ...attr } = useSearchCompany();
 
@@ -145,4 +145,6 @@ export default function SearchCompanyModal({ setSearchCompanyModal }: Props) {
       </S.CompanyNameForm>
     </ModalContainer>
   );
-}
+};
+
+export default SearchCompanyModal;

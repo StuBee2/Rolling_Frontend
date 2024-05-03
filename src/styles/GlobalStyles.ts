@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
      
      body {
       background-color: #f9fafb;
-      /* zoom: 0.8; */
      }
 
     ${reset}

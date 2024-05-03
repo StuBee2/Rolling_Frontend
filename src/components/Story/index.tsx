@@ -11,7 +11,7 @@ import SearchCompany from "./Company/Search";
 import StoryRegister from "./StoryRegister";
 import * as S from "./style";
 
-export default function Story() {
+const Story = () => {
   useTokenCheck();
   useAlumniCheck();
 
@@ -68,4 +68,6 @@ export default function Story() {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default Story;

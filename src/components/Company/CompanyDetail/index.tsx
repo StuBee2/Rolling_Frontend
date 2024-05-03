@@ -9,7 +9,7 @@ interface Props {
   id: string;
 }
 
-export default function CompanyDetail({ id }: Props) {
+const CompanyDetail = ({ id }: Props) => {
   useAuthTopScroll();
   return (
     <S.Container>
@@ -22,4 +22,6 @@ export default function CompanyDetail({ id }: Props) {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default CompanyDetail;

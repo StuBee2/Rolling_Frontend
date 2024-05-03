@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import useHideHeader from "@src/hooks/Header/useHideHeader";
 import * as S from "./style";
 
-export default function NotFound() {
+const NotFound = () => {
   const navigate = useNavigate();
   useHideHeader();
   return (
@@ -14,4 +14,6 @@ export default function NotFound() {
       </S.ErrorBox>
     </S.ErrorContainer>
   );
-}
+};
+
+export default NotFound;

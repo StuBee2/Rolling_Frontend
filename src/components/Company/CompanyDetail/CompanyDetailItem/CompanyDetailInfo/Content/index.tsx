@@ -7,7 +7,7 @@ import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { CompanyDetailRegistAt } from "../style";
 import { getRgb } from "@src/utils/Rgb/getRgb";
 
-export default function CompanyDetailContent({ ...attr }: CompanyInfoType) {
+const CompanyDetailContent = ({ ...attr }: CompanyInfoType) => {
   return (
     <S.Container>
       <S.Title>
@@ -51,4 +51,6 @@ export default function CompanyDetailContent({ ...attr }: CompanyInfoType) {
       </S.CompanyImgContainer> */}
     </S.Container>
   );
-}
+};
+
+export default CompanyDetailContent;

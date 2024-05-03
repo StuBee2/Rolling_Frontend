@@ -4,7 +4,7 @@ import { Button } from "@stubee2/stubee2-rolling-ui";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import { useEffect } from "react";
 
-export default function Certify() {
+const Certify = () => {
   const { ...attr } = useCertify();
   const memberRole = tokenDecode("access", "authority");
 
@@ -62,4 +62,6 @@ export default function Certify() {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default Certify;

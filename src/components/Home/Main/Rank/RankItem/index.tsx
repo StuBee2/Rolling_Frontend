@@ -13,7 +13,9 @@ interface Props {
 }
 
 function RankItem({ rankCategory }: Props) {
-  const { data: rankInfo } = useGetCompanyRankSelectQuery(rankCategory);
+  const { data: rankInfo } = useGetCompanyRankSelectQuery(rankCategory, {
+    suspense: true,
+  });
   const rankInfoSlicing = rankInfo?.slice(0, 9);
   const navigate = useNavigate();
 

@@ -15,7 +15,7 @@ import SignIn from "../Auth/SignIn";
 import Search from "../Modal/Search";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
-export default function Header() {
+const Header = () => {
   const [searchModal, setSearchModal] =
     useRecoilState<boolean>(SearchModalAtom);
   const [myInfoModal, setMyInfoModal] = useRecoilState<boolean>(MyInfoModal);
@@ -94,4 +94,6 @@ export default function Header() {
       </Portal>
     </>
   );
-}
+};
+
+export default Header;

@@ -12,10 +12,7 @@ interface Props {
   storyData: StoryItemType;
 }
 
-export default function CompanyContent({
-  isCoincideStoryId,
-  storyData,
-}: Props) {
+const CompanyContent = ({ isCoincideStoryId, storyData }: Props) => {
   const { handleChangeModifyStoryContent } = useStoryModify();
   const isModifiableEvent = useRecoilValue(StoryModifiableEventAtom);
   const storyModifiableContent = useRecoilValue(StoryModifiableContentAtom);
@@ -146,4 +143,6 @@ export default function CompanyContent({
         : renderCompanyContent()}
     </S.Container>
   );
-}
+};
+
+export default CompanyContent;

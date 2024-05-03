@@ -8,12 +8,12 @@ interface Props {
   positionTop: string;
 }
 
-export default function StoryPositionList({
+const StoryPositionList = ({
   positionList,
   setShowPositionList,
   setStoryRequiredElement,
   positionTop,
-}: Props) {
+}: Props) => {
   return (
     <>
       {positionList.length > 0 && (
@@ -38,4 +38,6 @@ export default function StoryPositionList({
       )}
     </>
   );
-}
+};
+
+export default StoryPositionList;

@@ -9,7 +9,7 @@ import { MainContainer, MainTitle, MainWrapper } from "../style";
 import { ViewAll } from "../../style";
 import { useNavigate } from "react-router-dom";
 
-export default function Rank() {
+const Rank = () => {
   const [rankCategorySelect, setRankCategorySelect] = useState("total");
   const navigate = useNavigate();
 
@@ -49,4 +49,6 @@ export default function Rank() {
       </MainWrapper>
     </MainContainer>
   );
-}
+};
+
+export default Rank;

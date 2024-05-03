@@ -11,7 +11,7 @@ interface Props {
   companyCreatedAt: string;
 }
 
-export default function CompanyDetailUserProfile({ ...attr }: Props) {
+const CompanyDetailUserProfile = ({ ...attr }: Props) => {
   const userName = attr.memberNickName || attr.memberSocialLoginId;
   return (
     <S.Container>
@@ -41,4 +41,6 @@ export default function CompanyDetailUserProfile({ ...attr }: Props) {
       </CompanyDetailRegistAt>
     </S.Container>
   );
-}
+};
+
+export default CompanyDetailUserProfile;

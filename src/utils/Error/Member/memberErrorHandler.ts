@@ -7,15 +7,22 @@ export const memberErrorHandler = (status: number, message: string) => {
       return "저자/등록자가 아닙니다!";
     }
   }
+
   if (status === 404) {
     if (message === "Member not found") {
       return "회원정보를 찾지 못했습니다.";
     }
   }
+
   if (status === 409) {
     if (message === "Nickname is duplicated") {
       return "닉네임이 중복되었습니다.";
     }
   }
+
+  if (status === 500) {
+    return "서버에서 오류가 발생했어요!";
+  }
+
   return message;
 };

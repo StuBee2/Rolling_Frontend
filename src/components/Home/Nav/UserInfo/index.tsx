@@ -8,7 +8,7 @@ import UserInfoSkeleton from "@src/components/Common/Skeleton/Home/UserInfo";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import { useGetMyInfoQuery } from "@src/services/Member/queries";
 
-export default function UserInfo() {
+const UserInfo = () => {
   return (
     <S.UserInfoWrapper>
       <ErrorBoundary fallback={<>내 정보를 갖고오지 못했습니다.</>}>
@@ -18,7 +18,7 @@ export default function UserInfo() {
       </ErrorBoundary>
     </S.UserInfoWrapper>
   );
-}
+};
 
 function UserInfoItem() {
   const navigate = useNavigate();
@@ -32,13 +32,7 @@ function UserInfoItem() {
         <img src={myInfo?.details.imageUrl || ""} alt="이미지 없음" />
         <div onClick={() => navigate("/mypage/profile")}>
           <S.UserInfoNickName>
-            {isNickName ? (
-              <>
-                닉네임을 설정해주세요 <span>*</span>
-              </>
-            ) : (
-              myInfo?.details.nickName
-            )}
+            {isNickName ? myInfo?.details.name : myInfo?.details.nickName}
           </S.UserInfoNickName>
           <S.UserInfoEmail>
             {stringEllipsis(
@@ -67,3 +61,5 @@ function UserInfoItem() {
     </>
   );
 }
+
+export default UserInfo;

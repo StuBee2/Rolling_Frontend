@@ -7,7 +7,7 @@ import { CompanyParam } from "@src/services/Company/api";
 const { persistAtom } = recoilPersist();
 
 // 스토리 등록페이지 경로유입이 헤더로 들어온 건지 회사단일 조회 페이지에서
-// 들어온 건지 판단하는 atom
+// 들어온 건지 판단하는 atom, detail에서 들어오면 기업수정임
 export const StoryPagePathInflow = atom<"header" | "detail">({
   key: "storyPagePathInflowAtom",
   default: "header",
@@ -26,7 +26,8 @@ export const StorySearchCompanyAtom = atom<{
   effects_UNSTABLE: [persistAtom],
 });
 
-/** 스토리 등록페이지에서 기업등록해서 서버가 주는 id값을 담은 다음,
+/** 
+ * 스토리 등록페이지에서 기업등록해서 서버가 주는 id값을 담은 다음,
  * 스토리 남기기를 위해서 해당회사 id로 스토리를 등록할 때 필요한 atom
  */
 export const StoryCompanyIdAtom = atom<string>({

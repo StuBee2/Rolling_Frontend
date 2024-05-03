@@ -11,13 +11,13 @@ interface Props {
   handleStarGradeChange: (name: string, grade: number) => void;
 }
 
-export default function RegistStarGrade({
+const RegistStarGrade = ({
   storyStarGrade,
   prevStarGarade,
   handleStarGradeChange,
-}: Props) {
+}: Props) => {
   // 별점을 클릭했는지 안했는지 판단하는 state
-  const [isClick, setIsClick] = useState(false);
+  const [isStarGradeClick, setIsStarGradeClick] = useState(false);
   const [prevStarGrades, setPrevStarGrades] = useState<Record<string, number>>(
     {}
   );
@@ -40,18 +40,18 @@ export default function RegistStarGrade({
                 width={23}
                 height={23}
                 onMouseEnter={() => {
-                  setIsClick(false);
-                  handleStarGradeChange(item.name, idx + 1);
+                  setIsStarGradeClick(false);
+                  handleStarGradeChange(item.name, idx + 1); // 마우스 포인터가 별점 가리키는 만큼 별점을 표시해줌
                 }}
                 onMouseLeave={() => {
-                  !isClick &&
+                  !isStarGradeClick && // 별점을 클릭 안하면 기존 별점을 넣어줌
                     handleStarGradeChange(
                       item.name,
                       prevStarGrades[item.name] || 0
                     );
                 }}
                 onClick={() => {
-                  setIsClick(true);
+                  setIsStarGradeClick(true);
                   setPrevStarGrades((prev) => ({
                     ...prev,
                     [item.name]: idx + 1,
@@ -67,7 +67,7 @@ export default function RegistStarGrade({
       ))}
     </StarGradeContainer>
   );
-}
+};
 
 const StarGradeContainer = styled.div`
   width: 100%;
@@ -101,3 +101,5 @@ const StarGradeContainer = styled.div`
 const ItemContainer = styled.div`
   display: flex;
 `;
+
+export default RegistStarGrade;

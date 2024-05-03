@@ -5,8 +5,10 @@ import write from "@src/assets/icons/Company/write.png";
 import { useNavigate } from "react-router-dom";
 import { useGetStoryMyStatusQuery } from "@src/services/Story/queries";
 
-export default function StoryStatus() {
-  const { data: storyStatus, isError } = useGetStoryMyStatusQuery();
+const StoryStatus = () => {
+  const { data: storyStatus, isError } = useGetStoryMyStatusQuery({
+    suspense: true,
+  });
   const { count, lastModifiedDate } = storyStatus!!;
   const navigate = useNavigate();
 
@@ -44,4 +46,6 @@ export default function StoryStatus() {
       </S.Container>
     </div>
   );
-}
+};
+
+export default StoryStatus;

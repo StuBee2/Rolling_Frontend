@@ -12,5 +12,10 @@ export const storyErrorHanlder = (status: number, message: string) => {
       return "리뷰를 찾지 못했습니다.";
     }
   }
+
+  if (status === 500) {
+    return "서버에서 오류가 발생했어요!";
+  }
+
   return message;
 };

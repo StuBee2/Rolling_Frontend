@@ -16,8 +16,10 @@ import developer from "@src/assets/icons/Home/developer.svg";
 import logo from "@src/assets/icons/Logo/logo.svg";
 import { useGetAllCompanyListQuery } from "@src/services/Company/queries";
 
-export default function AllList() {
-  const { data: recommandList, fetchNextPage } = useGetAllCompanyListQuery();
+const AllList = () => {
+  const { data: recommandList, fetchNextPage } = useGetAllCompanyListQuery({
+    suspense: true,
+  });
   const navigate = useNavigate();
   const sizeOfRecommandList = recommandList?.pages[0].data.length;
   const [ref, inView] = useInView();
@@ -82,4 +84,6 @@ export default function AllList() {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default AllList;

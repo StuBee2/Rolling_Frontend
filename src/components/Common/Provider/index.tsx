@@ -8,7 +8,7 @@ interface Props {
   children: ReactNode;
 }
 
-export default function PageTemplate({ children }: Props) {
+const Provider = ({ children }: Props) => {
   const hideHeader = useRecoilValue(HideHeader);
   return (
     <>
@@ -17,4 +17,6 @@ export default function PageTemplate({ children }: Props) {
       <>{children}</>
     </>
   );
-}
+};
+
+export default Provider;

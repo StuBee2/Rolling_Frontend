@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import PageTemplate from "./components/Common/PageTemplate";
+import Provider from "./components/Common/Provider";
 import Router from "./router";
 import { RollingToastProvider } from "@stubee2/stubee2-rolling-toastify";
 
@@ -18,9 +18,9 @@ function App() {
       <RecoilRoot>
         <BrowserRouter>
           <RollingToastProvider>
-            <PageTemplate>
+            <Provider>
               <Router />
-            </PageTemplate>
+            </Provider>
           </RollingToastProvider>
         </BrowserRouter>
       </RecoilRoot>

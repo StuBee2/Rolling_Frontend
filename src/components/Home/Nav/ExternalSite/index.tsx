@@ -2,7 +2,7 @@ import { EXTERNALSITE_ITEMS } from "@src/constants/ExternalSite/externalSite.con
 import * as S from "./style";
 import web from "@src/assets/icons/Home/web.svg";
 
-export default function ExternalSite() {
+const ExternalSite = () => {
   return (
     <S.ExternalSiteContainer>
       <S.ExternalSiteTitle>
@@ -25,4 +25,6 @@ export default function ExternalSite() {
       </S.ExternalSiteItemContainer>
     </S.ExternalSiteContainer>
   );
-}
+};
+
+export default ExternalSite;

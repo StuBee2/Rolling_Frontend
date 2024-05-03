@@ -28,7 +28,7 @@ interface Props {
   setShowPositionList: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function CompanyInfo({ ...attr }: Props) {
+const CompanyInfo = ({ ...attr }: Props) => {
   const navigate = useNavigate();
   const { handleChangeModifyStoryContent, setStoryModifiableContent } =
     useStoryModify();
@@ -121,4 +121,6 @@ export default function CompanyInfo({ ...attr }: Props) {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default CompanyInfo;

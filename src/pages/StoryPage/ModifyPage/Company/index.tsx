@@ -1,5 +1,7 @@
 import CompanyModify from "@src/components/Story/Company/Modify";
 
-export default function CompanyModifyPage() {
+const CompanyModifyPage = () => {
   return <CompanyModify />;
-}
+};
+
+export default CompanyModifyPage;

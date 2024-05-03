@@ -7,8 +7,11 @@ interface Props {
   id: string;
 }
 
-export default function CompanyDetailItem({ id }: Props) {
-  const { data: companyInfo } = useGetCompanyInfoIdQuery({ id });
+const CompanyDetailItem = ({ id }: Props) => {
+  const { data: companyInfo } = useGetCompanyInfoIdQuery(
+    { id },
+    { suspense: true }
+  );
 
   return (
     <>
@@ -16,4 +19,6 @@ export default function CompanyDetailItem({ id }: Props) {
       <CompanyDetailInfo companyInfo={companyInfo!!} />
     </>
   );
-}
+};
+
+export default CompanyDetailItem;

@@ -7,7 +7,7 @@ import RecommandSkeleton from "@src/components/Common/Skeleton/Home/Recommand";
 import { useNavigate } from "react-router-dom";
 import { ViewAll } from "../style";
 
-export default function Recommand() {
+const Recommand = () => {
   const navigate = useNavigate();
 
   return (
@@ -30,4 +30,6 @@ export default function Recommand() {
       </S.RecommandWrapper>
     </S.RecommandContainer>
   );
-}
+};
+
+export default Recommand;

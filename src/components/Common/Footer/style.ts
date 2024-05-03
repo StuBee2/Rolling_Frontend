@@ -28,6 +28,7 @@ export const FooterWrapper = styled.div`
   @media screen and (max-width: 1165px) {
     width: 90%;
   }
+  
   @media screen and (max-width: 920px) {
     padding: 2rem 0 0 1rem;
   }

@@ -4,8 +4,10 @@ import { useInView } from "react-intersection-observer";
 import * as S from "./style";
 import { useGetMyStoryQuery } from "@src/services/Story/queries";
 
-export default function Story() {
-  const { data: storyList, fetchNextPage } = useGetMyStoryQuery();
+const Story = () => {
+  const { data: storyList, fetchNextPage } = useGetMyStoryQuery({
+    suspense: true,
+  });
   const [ref, inView] = useInView();
   const storyListData = storyList?.pages[0].data!!;
   useEffect(() => {
@@ -32,4 +34,6 @@ export default function Story() {
       )}
     </>
   );
-}
+};
+
+export default Story;

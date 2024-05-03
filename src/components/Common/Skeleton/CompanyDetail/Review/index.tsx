@@ -1,7 +1,7 @@
 import { Container } from "@src/components/Company/CompanyDetail/CompanyDetailItem/CompanyDetailInfo/Story/style";
 import { SkeletonBox } from "../../Common/style";
 
-export default function StorySkeleton() {
+const StorySkeleton = () => {
   return (
     <Container>
       <div style={{ display: "flex", columnGap: "10px" }}>
@@ -13,4 +13,6 @@ export default function StorySkeleton() {
       ))}
     </Container>
   );
-}
+};
+
+export default StorySkeleton;
