@@ -7,7 +7,7 @@ import { CompanyContent } from "@src/components/ViewAll/style";
 import { SkeletonBox } from "../../Common/style";
 import * as S from "./style";
 
-export default function RankSkeleton() {
+const RankSkeleton = () => {
   return (
     <>
       {Array.from({ length: 5 }).map((_, idx) => (
@@ -32,4 +32,6 @@ export default function RankSkeleton() {
       ))}
     </>
   );
-}
+};
+
+export default RankSkeleton;

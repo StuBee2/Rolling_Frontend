@@ -9,7 +9,7 @@ interface Props {
   isCoincideStoryId: boolean;
 }
 
-export default function StorySetUp({ ...attr }: Props) {
+const StorySetUp = ({ ...attr }: Props) => {
   const { ...hooks } = useSetUpStory();
   const { storyId, companyId, isCoincideStoryId } = attr;
 
@@ -42,4 +42,6 @@ export default function StorySetUp({ ...attr }: Props) {
       )}
     </>
   );
-}
+};
+
+export default StorySetUp;

@@ -4,14 +4,14 @@ import styled from "styled-components";
 import ExternalSite from "./ExternalSite";
 import UserInfo from "./UserInfo";
 
-export default function Nav() {
+const Nav = () => {
   return (
     <NavContainer>
       {Token.getToken(ACCESS_TOKEN_KEY) && <UserInfo />}
       <ExternalSite />
     </NavContainer>
   );
-}
+};
 
 export const NavContainer = styled.div`
   width: 290px;
@@ -30,3 +30,5 @@ export const NavContainer = styled.div`
     display: none;
   }
 `;
+
+export default Nav;

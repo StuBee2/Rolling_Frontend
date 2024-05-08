@@ -7,7 +7,7 @@ import {
 } from "@src/constants/Auth/auth.constant";
 import { useNavigate } from "react-router-dom";
 import { usePostCertifyMutation } from "@src/services/Graduate/mutations";
-import AuthApi from "@src/services/Auth/api";
+import authApi from "@src/services/Auth/api";
 
 export const useCertify = () => {
   const [housemaster, setHousemaster] = useState<string>("");
@@ -24,7 +24,7 @@ export const useCertify = () => {
     const refresh_token = Token.getToken(REFRESH_TOKEN_KEY);
     if (refresh_token) {
       try {
-        const { accessToken: newAccessToken } = await AuthApi.postRefreshToken({
+        const { accessToken: newAccessToken } = await authApi.postRefreshToken({
           refreshToken: refresh_token,
         });
 

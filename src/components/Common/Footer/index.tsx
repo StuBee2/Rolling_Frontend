@@ -5,7 +5,7 @@ import {
   FOOTER_MEMBERS_ITEMS,
 } from "@src/constants/Footer/footer.constant";
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <S.FooterContainer>
       <S.FooterWrapper>
@@ -55,4 +55,6 @@ export default function Footer() {
       </S.FooterWrapper>
     </S.FooterContainer>
   );
-}
+};
+
+export default Footer;

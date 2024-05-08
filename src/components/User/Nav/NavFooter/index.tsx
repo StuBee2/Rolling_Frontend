@@ -2,7 +2,7 @@ import * as S from "./style";
 import { USER_ITEMS } from "@src/constants/User/user.constants";
 import { useLocation, useNavigate } from "react-router-dom";
 
-export default function NavFooter() {
+const NavFooter = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -21,4 +21,6 @@ export default function NavFooter() {
       </S.NavFooterWrapper>
     </S.NavFooterContainer>
   );
-}
+};
+
+export default NavFooter;

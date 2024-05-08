@@ -10,7 +10,7 @@ interface Props {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function ModifyItem({ setIsOpenModal }: Props) {
+const ModifyItem = ({ setIsOpenModal }: Props) => {
   const { ...attr } = useCompanyModify();
 
   useEffect(() => {
@@ -113,4 +113,6 @@ export default function ModifyItem({ setIsOpenModal }: Props) {
       </S.Form>
     </S.RegistContainer>
   );
-}
+};
+
+export default ModifyItem;

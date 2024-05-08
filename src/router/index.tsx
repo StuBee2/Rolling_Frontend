@@ -11,7 +11,7 @@ import StoryPage from "@src/pages/StoryPage";
 import AllPage from "@src/pages/AllPage";
 import RankingPage from "@src/pages/RankPage";
 
-export default function Router() {
+const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
@@ -32,4 +32,6 @@ export default function Router() {
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
-}
+};
+
+export default Router;

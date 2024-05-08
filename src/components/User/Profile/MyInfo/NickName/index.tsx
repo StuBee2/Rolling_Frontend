@@ -5,7 +5,7 @@ interface Props {
   nickName: string;
 }
 
-export default function NickName({ nickName }: Props) {
+const NickName = ({ nickName }: Props) => {
   const { ...attr } = useSetUpNickName(nickName);
   const isEditing =
     nickName !== attr.setUpNickName && attr.setUpNickName !== "";
@@ -24,4 +24,6 @@ export default function NickName({ nickName }: Props) {
       </S.SubmitButton>
     </S.Form>
   );
-}
+};
+
+export default NickName;

@@ -10,7 +10,7 @@ interface Props {
   starGradeInfo: CompanyStarGradeInfo;
 }
 
-export default function CompanyStarGrades({ starGradeInfo }: Props) {
+const CompanyStarGrades = ({ starGradeInfo }: Props) => {
   const { ...attr } = starGradeInfo;
   return (
     <S.Container>
@@ -47,4 +47,6 @@ export default function CompanyStarGrades({ starGradeInfo }: Props) {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default CompanyStarGrades;

@@ -6,7 +6,7 @@ import {
 import { SkeletonBox } from "../../Common/style";
 import * as S from "./style";
 
-export default function NavSkeleton() {
+const NavSkeleton = () => {
   return (
     <UserNavBar>
       <S.UserInfoContainer>
@@ -26,4 +26,6 @@ export default function NavSkeleton() {
       </PageSelectContainer>
     </UserNavBar>
   );
-}
+};
+
+export default NavSkeleton;

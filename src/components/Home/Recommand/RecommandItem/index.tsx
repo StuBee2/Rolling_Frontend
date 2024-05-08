@@ -6,8 +6,8 @@ import { useEffect } from "react";
 import { getRgb } from "@src/utils/Rgb/getRgb";
 import { useGetAllCompanyListQuery } from "@src/services/Company/queries";
 
-export default function RecommandItem() {
-  const { data, fetchNextPage } = useGetAllCompanyListQuery();
+const RecommandItem = () => {
+  const { data, fetchNextPage } = useGetAllCompanyListQuery({ suspense: true });
   const companyList = data?.pages;
   const [ref, inView] = useInView();
   const navigate = useNavigate();
@@ -47,4 +47,6 @@ export default function RecommandItem() {
       )}
     </>
   );
-}
+};
+
+export default RecommandItem;

@@ -1,5 +1,7 @@
 import All from "@src/components/ViewAll/All";
 
-export default function AllPage() {
+const AllPage = () => {
   return <All />;
-}
+};
+
+export default AllPage;

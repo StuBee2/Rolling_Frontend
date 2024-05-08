@@ -5,7 +5,7 @@ import { useSearchCompany } from "@src/hooks/Company/useSearchCompany";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 import { useEscCloseModal } from "@stubee2/stubee2-rolling-util";
 
-export default function Search() {
+const Search = () => {
   const { handleKeywordChange, handleKeywordSubmit, keyword, setSearchModal } =
     useSearchCompany();
   useEscCloseModal(setSearchModal);
@@ -23,10 +23,13 @@ export default function Search() {
             placeholder="어떤 걸 찾고 계세요?"
             onChange={handleKeywordChange}
             value={keyword}
+            autoFocus
           />
         </S.InputContainer>
         <S.Wave src={wave} alt="이미지 없음" />
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default Search;

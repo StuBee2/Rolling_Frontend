@@ -8,10 +8,13 @@ interface Props {
   companyId: string;
 }
 
-export default function CompanyDetailStory({ companyId }: Props) {
-  const { data: storyList, fetchNextPage } = useGetStoryListCompanyIdQuery({
-    id: companyId,
-  });
+const CompanyDetailStory = ({ companyId }: Props) => {
+  const { data: storyList, fetchNextPage } = useGetStoryListCompanyIdQuery(
+    {
+      id: companyId,
+    },
+    { suspense: true }
+  );
   const [ref, inView] = useInView();
   const storyListData = storyList?.pages[0].data;
 
@@ -41,4 +44,6 @@ export default function CompanyDetailStory({ companyId }: Props) {
       <div ref={ref} />
     </S.Container>
   );
-}
+};
+
+export default CompanyDetailStory;

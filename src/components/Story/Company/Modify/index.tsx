@@ -8,7 +8,7 @@ import * as S from "../../style";
 import { useCompanyModify } from "@src/hooks/Company/useCompanyModify";
 import { useAuthTopScroll } from "@stubee2/stubee2-rolling-util";
 
-export default function CompanyModify() {
+const CompanyModify = () => {
   useTokenCheck();
   useAlumniCheck();
   useAuthTopScroll();
@@ -43,4 +43,6 @@ export default function CompanyModify() {
       )}
     </>
   );
-}
+};
+
+export default CompanyModify;

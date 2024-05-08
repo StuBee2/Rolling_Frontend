@@ -14,7 +14,7 @@ interface Props {
   children: ReactNode;
 }
 
-export default function User({ children }: Props) {
+const User = ({ children }: Props) => {
   useTokenCheck();
   const { pathname } = useLocation();
   const isStoryPage = pathname === "/mypage/story";
@@ -57,4 +57,6 @@ export default function User({ children }: Props) {
       <NavFooter />
     </S.UserContainer>
   );
-}
+};
+
+export default User;

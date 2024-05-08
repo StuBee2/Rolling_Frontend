@@ -4,9 +4,9 @@ import { Suspense } from "react";
 import AllList from "./AllList";
 import { useAuthTopScroll } from "@stubee2/stubee2-rolling-util";
 import Footer from "../../Common/Footer";
-import AllSkeleton from "../../Common/Skeleton/ViewAll/All";
+import AllListSkeleton from "../../Common/Skeleton/ViewAll/All";
 
-export default function All() {
+const All = () => {
   useAuthTopScroll();
   return (
     <S.ViewAllContainer rowGap="8rem">
@@ -21,7 +21,7 @@ export default function All() {
         <ErrorBoundary
           fallback={<>졸업생 추천 회사들을 가지고 오지 못했습니다.</>}
         >
-          <Suspense fallback={<AllSkeleton />}>
+          <Suspense fallback={<AllListSkeleton />}>
             <AllList />
           </Suspense>
         </ErrorBoundary>
@@ -29,4 +29,6 @@ export default function All() {
       <Footer />
     </S.ViewAllContainer>
   );
-}
+};
+
+export default All;

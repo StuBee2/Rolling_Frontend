@@ -11,10 +11,10 @@ import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 import { useGetMyInfoQuery } from "@src/services/Member/queries";
 
-export default function MyInfo() {
+const MyInfo = () => {
   const setMyInfoModal = useSetRecoilState(MyInfoModal);
   const { handleLogout } = useLogout();
-  const { data: myInfo } = useGetMyInfoQuery();
+  const { data: myInfo } = useGetMyInfoQuery({ suspense: true });
   const navigate = useNavigate();
 
   useEscCloseModal(setMyInfoModal);
@@ -63,4 +63,6 @@ export default function MyInfo() {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default MyInfo;

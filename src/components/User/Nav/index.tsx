@@ -12,9 +12,9 @@ interface Props {
   pathName: string;
 }
 
-export default function Nav({ pathName }: Props) {
+const Nav = ({ pathName }: Props) => {
   const { handleLogout } = useLogout();
-  const { data: myInfo } = useGetMyInfoQuery();
+  const { data: myInfo } = useGetMyInfoQuery({ suspense: true });
   const setMyMemberInfo = useSetRecoilState(MyMemberInfo);
   const navigate = useNavigate();
 
@@ -59,4 +59,6 @@ export default function Nav({ pathName }: Props) {
       </S.PageSelectContainer>
     </S.UserNavBar>
   );
-}
+};
+
+export default Nav;

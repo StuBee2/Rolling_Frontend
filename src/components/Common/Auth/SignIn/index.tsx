@@ -8,7 +8,7 @@ import github from "@src/assets/images/Auth/github.svg";
 import { gitSignInUrl } from "@src/constants/Auth/auth.constant";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 
-export default function SignIn() {
+const SignIn = () => {
   const setSignInModal = useSetRecoilState(SignInModalAtom);
   useEscCloseModal(setSignInModal);
   return (
@@ -36,4 +36,6 @@ export default function SignIn() {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default SignIn;

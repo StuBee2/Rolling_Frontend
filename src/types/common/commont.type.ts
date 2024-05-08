@@ -5,7 +5,3 @@ export interface CommonPageParam {
 export interface CommonIdParam {
   id: string;
 }
-
-export interface SuspenseType {
-  suspense: boolean;
-}

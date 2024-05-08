@@ -6,7 +6,7 @@ import {
 import { SkeletonBox } from "../../Common/style";
 import * as S from "./style";
 
-export default function MainSkeleton() {
+const MainSkeleton = () => {
   return (
     <MainItemContainer>
       <SkeletonBox width="200px" height="30px" />
@@ -19,4 +19,6 @@ export default function MainSkeleton() {
       </MainItemWrapper>
     </MainItemContainer>
   );
-}
+};
+
+export default MainSkeleton;

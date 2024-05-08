@@ -11,7 +11,7 @@ interface Props {
   companyName: string;
 }
 
-export default function CompanyRegisterItem({ companyName }: Props) {
+const CompanyRegisterItem = ({ companyName }: Props) => {
   const { ...attr } = useCompanyRegister();
   const [storyAddressModal, setStoryAddressModal] = useState(false);
 
@@ -123,4 +123,6 @@ export default function CompanyRegisterItem({ companyName }: Props) {
       )}
     </>
   );
-}
+};
+
+export default CompanyRegisterItem;

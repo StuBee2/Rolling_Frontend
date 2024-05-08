@@ -6,7 +6,7 @@ import RankingSkeleton from "../../Common/Skeleton/ViewAll/Rank";
 import RankList from "./RankList";
 import * as S from "../style";
 
-export default function Rank() {
+const Rank = () => {
   return (
     <S.ViewAllContainer rowGap={"12rem"}>
       <S.ViewAllWrapper>
@@ -36,4 +36,6 @@ export default function Rank() {
       <Footer />
     </S.ViewAllContainer>
   );
-}
+};
+
+export default Rank;

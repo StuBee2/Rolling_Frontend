@@ -24,8 +24,10 @@ interface Props {
   title: string;
 }
 
-export default function RankList({ category, title }: Props) {
-  const { data: rankList } = useGetCompanyRankSelectQuery(category);
+const RankList = ({ category, title }: Props) => {
+  const { data: rankList } = useGetCompanyRankSelectQuery(category, {
+    suspense: true,
+  });
   const navigate = useNavigate();
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
@@ -108,4 +110,6 @@ export default function RankList({ category, title }: Props) {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default RankList;

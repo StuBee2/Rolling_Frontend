@@ -4,7 +4,7 @@ import {
 } from "@src/components/Home/Recommand/RecommandItem/style";
 import { SkeletonBox } from "../../Common/style";
 
-export default function RecommandSkeleton() {
+const RecommandSkeleton = () => {
   return (
     <RecommandItemContainer>
       <RecommandItemWrapper>
@@ -14,4 +14,6 @@ export default function RecommandSkeleton() {
       </RecommandItemWrapper>
     </RecommandItemContainer>
   );
-}
+};
+
+export default RecommandSkeleton;

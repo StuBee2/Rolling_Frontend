@@ -1,4 +1,3 @@
-import React from "react";
 import {
   AddText,
   RegisterContainer,
@@ -52,4 +51,4 @@ function StoryRegister({ storySearchCompany, storyCompanyId }: Props) {
   );
 }
 
-export default React.memo(StoryRegister);
+export default StoryRegister;

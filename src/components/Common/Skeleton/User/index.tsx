@@ -1,7 +1,7 @@
 import { SkeletonBox } from "../Common/style";
 import * as S from "./style";
 
-export default function UserSkeleton() {
+const UserSkeleton = () => {
   return (
     <S.UserSkeletonContainer>
       {Array.from({
@@ -11,4 +11,6 @@ export default function UserSkeleton() {
       ))}
     </S.UserSkeletonContainer>
   );
-}
+};
+
+export default UserSkeleton;

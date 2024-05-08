@@ -20,7 +20,7 @@ import { useStoryModify } from "@src/hooks/Story/useStoryModify";
 import RegistStarGrade from "@src/components/Story/StoryRegister/RegisterItem/StarGrade";
 
 // 마이페이지와 회사단일 조회 페이지에서 같이 쓰이는 컴포넌트
-export default function StoryItem({ ...attr }: StoryCommonType) {
+const StoryItem = ({ ...attr }: StoryCommonType) => {
   const {
     salaryAndBenefits,
     workLifeBalance,
@@ -157,4 +157,6 @@ export default function StoryItem({ ...attr }: StoryCommonType) {
       </S.Wrapper>
     </S.Container>
   );
-}
+};
+
+export default StoryItem;
