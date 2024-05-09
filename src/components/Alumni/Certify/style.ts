@@ -1,4 +1,5 @@
 import { FadeInAnimation } from "@src/styles/common.style";
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -7,9 +8,6 @@ export const Container = styled.div`
   height: 100%;
   zoom: 0.8;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 90px 20px 2rem 20px;
 
   min-width: 500px;
@@ -18,25 +16,13 @@ export const Container = styled.div`
     background-color: transparent;
     height: 100%;
   }
-`;
-
-export const Wrapper = styled.div`
-  width: 1200px;
-  height: 100%;
-  padding-top: 5rem;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 `;
 
 export const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
   padding-bottom: 2rem;
-
   border-bottom: 1px solid #ddd;
+  ${Flex({ flexDirection: "column", rowGap: "20px" })}
 `;
 
 export const Title = styled.p`
@@ -54,11 +40,6 @@ export const Content = styled.div`
 `;
 
 export const CertificationBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
   border: 1.3px solid #ddd;
 
   border-radius: 20px;
@@ -76,6 +57,12 @@ export const CertificationBox = styled.div`
     border: 1px solid #ddd;
   }
 
+  ${Flex({
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  })}
+
   ${FadeInAnimation};
 `;
 
@@ -87,8 +74,6 @@ export const CertifyText = styled.div`
 `;
 
 export const CertificationInfo = styled.div`
-  display: flex;
-  flex-direction: column;
   text-align: center;
 
   font-size: 16px;
@@ -99,30 +84,33 @@ export const CertificationInfo = styled.div`
   @media screen and (max-width: 575px) {
     font-size: 13px;
   }
+
+  ${Flex({ flexDirection: "column" })}
 `;
 
 export const QuestionContainer = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
   width: 100%;
   height: 300px;
   background-color: ${RollingPalette.unEmphasize.Light};
   border-radius: 10px;
+
+  ${Flex({
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+  })}
 `;
 
 export const QuestionList = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
   width: 90%;
   height: calc(100% - 68px);
 
   padding-top: 4rem;
+  ${Flex({
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  })}
 `;
 
 export const QuestionText = styled.div`
@@ -136,14 +124,10 @@ export const QuestionText = styled.div`
 `;
 
 export const InputContainer = styled.div`
-  display: flex;
-  justify-content: center;
-
-  align-items: flex-end;
-  text-align: center;
-
-  margin-bottom: 76px;
   width: 100%;
+  text-align: center;
+  margin-bottom: 76px;
+  ${Flex({ justifyContent: "center", alignItems: "flex-end" })}
 `;
 
 export const Teacher = styled.div`

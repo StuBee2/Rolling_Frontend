@@ -14,6 +14,7 @@ import { Portal } from "@stubee2/stubee2-rolling-ui";
 import SignIn from "../Auth/SignIn";
 import Search from "../Modal/Search";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
+import { Row } from "@src/styles/flex";
 
 const Header = () => {
   const [searchModal, setSearchModal] =
@@ -63,7 +64,7 @@ const Header = () => {
             </ul>
           </S.PageContainer>
 
-          <S.LoginSearchContainer>
+          <Row $alignItems={"center"} $columnGap={"3px"}>
             <S.HoverIconContainer
               onClick={() => turnOnOffModal(setSearchModal, "on")}
             >
@@ -83,7 +84,7 @@ const Header = () => {
                 <p>로그인</p>
               </S.SignInText>
             )}
-          </S.LoginSearchContainer>
+          </Row>
         </S.HeaderWrapper>
       </S.HeaderContainer>
 

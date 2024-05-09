@@ -1,10 +1,11 @@
+import { Flex } from "@src/styles/flex";
 import { skeletonAnimation } from "@stubee2/stubee2-rolling-styled-components-util";
 import styled from "styled-components";
 
 export const CompanySkeletonContainer = styled.div`
-  display: flex;
   width: 100%;
   height: 100%;
+  display: flex;
 
   @media screen and (max-width: 1005px) {
     flex-direction: column;
@@ -15,10 +16,8 @@ export const CompanySkeletonContainer = styled.div`
 export const CompanySkeletonStarGrade = styled.div`
   width: 250px;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
-  align-items: center;
+
+  ${Flex({ flexDirection: "column", rowGap: "2rem", alignItems: "center" })}
 
   @media screen and (max-width: 1005px) {
     width: 100%;
@@ -43,30 +42,10 @@ export const CompanySkeletonContent = styled.div`
   width: calc(100% - 250px);
   height: 100%;
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
+  ${Flex({ flexDirection: "column", rowGap: "3rem" })}
   padding-left: 5rem;
   @media screen and (max-width: 1005px) {
     width: 100%;
     padding-left: 0;
   }
-`;
-
-export const Title = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-`;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-`;
-
-export const Button = styled.div`
-  widht: 100%;
-  display: flex;
-  justify-content: flex-end;
 `;

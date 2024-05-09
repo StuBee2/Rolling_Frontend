@@ -1,9 +1,9 @@
-import { Container } from "@src/components/Company/CompanyDetail/CompanyDetailItem/CompanyDetailInfo/Story/style";
 import { SkeletonBox } from "../../Common/style";
+import { Column } from "@src/styles/flex";
 
 const StorySkeleton = () => {
   return (
-    <Container>
+    <Column $width={"100%"} $rowGap={"2rem"}>
       <div style={{ display: "flex", columnGap: "10px" }}>
         <SkeletonBox width="150px" height="50px" />
         <SkeletonBox width="50px" height="50px" />
@@ -11,7 +11,7 @@ const StorySkeleton = () => {
       {Array.from({ length: 10 }).map((_, idx) => (
         <SkeletonBox key={idx} width="100%" height="300px" />
       ))}
-    </Container>
+    </Column>
   );
 };
 

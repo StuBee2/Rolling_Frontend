@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { css } from "styled-components";
 
@@ -7,9 +8,8 @@ export const Container = styled.div`
   margin-left: 250px;
 
   padding-left: 5rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 7.5rem;
+
+  ${Flex({ flexDirection: "column", rowGap: "5rem" })}
 
   overflow-y: auto;
   ::-webkit-scrollbar {
@@ -21,12 +21,6 @@ export const Container = styled.div`
     padding-left: 0;
     margin-left: 0;
   }
-`;
-
-export const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
 `;
 
 export const Title = styled.p`
@@ -41,17 +35,8 @@ export const SubTitle = styled.p`
   font-weight: 600;
 `;
 
-export const ContentContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 8rem;
-`;
-
 export const ContentWrapper = styled.div`
   width: 100%;
-  height: auto;
   border-radius: 20px;
   background-color: rgba(242, 244, 245, 1);
   border: 1px solid #dddddd;
@@ -66,10 +51,8 @@ export const StoryContainer = styled.div`
 `;
 
 export const CompanyStoryButtonCotainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
+  ${Flex({ justifyContent: "flex-end", columnGap: "10px" })}
   margin: 20px 10px 0 0;
-  column-gap: 10px;
 `;
 
 export const CompanyStoryButton = styled.button`
@@ -86,10 +69,7 @@ export const CompanyStoryButton = styled.button`
   color: #fff;
   cursor: pointer;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 5px;
+  ${Flex({ alignItems: "center", justifyContent: "center", columnGap: "5px" })}
 
   img {
     width: 20px;

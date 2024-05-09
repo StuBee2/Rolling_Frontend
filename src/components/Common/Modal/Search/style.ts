@@ -1,4 +1,5 @@
 import { StopDrag } from "@src/styles/common.style";
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { keyframes } from "styled-components";
 
@@ -30,8 +31,7 @@ export const Wrapper = styled.div`
   background-color: ${RollingPalette.unEmphasize.Lightest};
   position: relative;
 
-  display: flex;
-  justify-content: center;
+  ${Flex({ justifyContent: "center" })}
 
   @media screen and (max-width: 1393px) {
     height: 300px;
@@ -55,12 +55,11 @@ export const InputContainer = styled.form`
   width: 80%;
   height: 100px;
 
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
   border-bottom: 3px solid ${RollingPalette.unEmphasize.Dark};
   z-index: 1;
   margin-top: 4rem;
+
+  ${Flex({ alignItems: "center", columnGap: "10px" })}
 
   button {
     background-color: transparent;
@@ -68,9 +67,9 @@ export const InputContainer = styled.form`
     border: none;
     cursor: pointer;
     margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    ${Flex({ alignItems: "center", justifyContent: "center" })}
+
     img {
       width: 70px;
       height: 70px;

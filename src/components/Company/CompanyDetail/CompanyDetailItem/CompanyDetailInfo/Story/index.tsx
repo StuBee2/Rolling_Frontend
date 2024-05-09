@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import * as S from "./style";
 import { useGetStoryListCompanyIdQuery } from "@src/services/Story/queries";
+import { Column } from "@src/styles/flex";
 
 interface Props {
   companyId: string;
@@ -25,12 +26,12 @@ const CompanyDetailStory = ({ companyId }: Props) => {
   }, [inView]);
 
   return (
-    <S.Container>
+    <Column $width={"100%"} $rowGap={"2rem"}>
       <S.StoryTitle>
         <p>졸업생들의 롤링 Story ·</p>
         <S.StoryCount>{storyListData?.length}</S.StoryCount>
       </S.StoryTitle>
-      <S.Wrapper>
+      <Column $width={"100%"} $rowGap={"3rem"}>
         {storyListData?.length!! > 0 ? (
           storyList?.pages.map((list) =>
             list.data.map((item) => (
@@ -40,9 +41,9 @@ const CompanyDetailStory = ({ companyId }: Props) => {
         ) : (
           <p>등록된 스토리가 없습니다.</p>
         )}
-      </S.Wrapper>
+      </Column>
       <div ref={ref} />
-    </S.Container>
+    </Column>
   );
 };
 

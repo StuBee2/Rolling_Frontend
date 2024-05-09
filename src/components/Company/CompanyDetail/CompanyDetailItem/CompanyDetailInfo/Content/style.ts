@@ -1,34 +1,16 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 2rem 2rem;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
+export const Image = styled.img`
+  width: 30px;
+  height: 30px;
 `;
 
-export const Title = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  div {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-    img {
-      width: 30px;
-      height: 30px;
-    }
-    p {
-      margin-top: 5px;
-      font-size: 25px;
-      font-weight: 700;
-    }
-  }
+export const BasicInfo = styled.p`
+  margin-top: 5px;
+  font-size: 25px;
+  font-weight: 700;
 `;
 
 export const SubTitle = styled.p`
@@ -38,17 +20,15 @@ export const SubTitle = styled.p`
 `;
 
 export const InfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
+  width: 100%;
   padding-bottom: 20px;
+  ${Flex({ flexDirection: "column", rowGap: "15px" })}
   border-bottom: 3px solid ${RollingPalette.unEmphasize.Light};
 `;
 
 export const Info = styled.div<{ backgroundColor: string }>`
-  display: flex;
-  align-items: center;
-  column-gap: 15px;
+  width: 100%;
+  ${Flex({ alignItems: "center", columnGap: "15px" })}
   img {
     width: 75px;
     height: 75px;
@@ -56,12 +36,6 @@ export const Info = styled.div<{ backgroundColor: string }>`
     object-fit: contain;
     border: 1px solid #dddddd;
     background-color: ${({ backgroundColor }) => backgroundColor || "#fff"};
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
   }
 `;
 
@@ -78,11 +52,13 @@ export const CompanyAddress = styled.p`
 `;
 
 export const Description = styled.div`
-  display: flex;
-  column-gap: 5px;
+  width: 100%;
   line-height: 25px;
   font-size: 16px;
   font-weight: 600;
+
+  ${Flex({ columnGap: "5px" })}
+
   img {
     width: 22px;
     height: 22px;
@@ -98,10 +74,9 @@ export const Description = styled.div`
 `;
 
 export const CompanyImgContainer = styled.div`
-  display: flex;
   overflow-x: auto;
-  column-gap: 10px;
   padding-bottom: 15px;
+  ${Flex({ columnGap: "10px" })}
   img {
     width: 350px;
     height: 200px;

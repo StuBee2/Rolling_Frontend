@@ -10,6 +10,7 @@ import github from "@src/assets/images/Auth/github.svg";
 import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
 import { useGetMyInfoQuery } from "@src/services/Member/queries";
+import { Column } from "@src/styles/flex";
 
 const MyInfo = () => {
   const setMyInfoModal = useSetRecoilState(MyInfoModal);
@@ -24,7 +25,7 @@ const MyInfo = () => {
         <S.MyInfoBox onClick={(e) => e.stopPropagation()}>
           <S.ProfileContainer>
             <img src={myInfo?.details.imageUrl} alt="이미지 없음" />
-            <S.Profile>
+            <Column $rowGap={"8px"}>
               <S.Name>
                 {myInfo?.details.nickName || myInfo?.details.name}
               </S.Name>
@@ -40,7 +41,7 @@ const MyInfo = () => {
                 <img src={github} alt="이미지 없음" />
                 <p>{myInfo?.socialDetails.socialLoginId}</p>
               </S.GitInfo>
-            </S.Profile>
+            </Column>
           </S.ProfileContainer>
 
           <S.MyPageLogout>

@@ -1,3 +1,4 @@
+import { Column, Row } from "@src/styles/flex";
 import { SkeletonBox } from "../Common/style";
 import * as S from "./style";
 
@@ -12,17 +13,17 @@ const CompanyDetailSkeleton = () => {
       </S.CompanySkeletonStarGrade>
 
       <S.CompanySkeletonContent>
-        <S.Title>
+        <Column $rowGap={"1rem"}>
           <SkeletonBox width="250px" height="50px" />
           <SkeletonBox width="300px" height="25px" />
-        </S.Title>
+        </Column>
 
-        <S.Content>
+        <Column $rowGap={"15px"}>
           <SkeletonBox width="100%" height="450px" />
-          <S.Button>
+          <Row $width={"100%"} $justifyContent={"flex-end"}>
             <SkeletonBox width="150px" height="50px" />
-          </S.Button>
-        </S.Content>
+          </Row>
+        </Column>
       </S.CompanySkeletonContent>
     </S.CompanySkeletonContainer>
   );

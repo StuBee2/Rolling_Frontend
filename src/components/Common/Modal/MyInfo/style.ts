@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -5,9 +6,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 
   position: fixed;
   top: 0;
@@ -42,23 +41,19 @@ export const MyInfoBox = styled.div`
 export const ProfileContainer = styled.div`
   width: 100%;
   height: 52%;
+
   border-radius: 15px 15px 0 0;
   border-bottom: 2px solid rgba(222, 224, 230, 0.3);
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
+
   padding-left: 20px;
+
   img {
     width: 51px;
     height: 51px;
     border-radius: 10px;
   }
-`;
 
-export const Profile = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
+  ${Flex({ alignItems: "center", columnGap: "10px" })}
 `;
 
 export const Name = styled.p`
@@ -70,9 +65,8 @@ export const Name = styled.p`
 export const GitInfo = styled.div`
   color: ${RollingPalette.main.Base};
   cursor: pointer;
-  display: flex;
-  column-gap: 5px;
-  align-items: center;
+
+  ${Flex({ columnGap: "5px", alignItems: "center" })}
 
   font-size: 14px;
   img {
@@ -84,18 +78,16 @@ export const GitInfo = styled.div`
 export const MyPageLogout = styled.div`
   width: 100%;
   height: 48%;
+
   border-radius: 0 0 15px 15px;
   color: #ffffff;
   font-size: 14px;
   padding-left: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  row-gap: 13px;
+
+  ${Flex({ flexDirection: "column", justifyContent: "center", rowGap: "13px" })}
+
   div {
-    display: flex;
-    column-gap: 7px;
-    align-items: center;
+    ${Flex({ columnGap: "7px", alignItems: "center" })}
     cursor: pointer;
 
     img {

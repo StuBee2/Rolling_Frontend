@@ -3,6 +3,7 @@ import * as S from "./style";
 import { Button } from "@stubee2/stubee2-rolling-ui";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import { useEffect } from "react";
+import { Column } from "@src/styles/flex";
 
 const Certify = () => {
   const { ...attr } = useCertify();
@@ -17,7 +18,12 @@ const Certify = () => {
 
   return (
     <S.Container>
-      <S.Wrapper>
+      <Column
+        $width={"1200px"}
+        $height={"100%"}
+        $padding={"5rem 0 0 0"}
+        $rowGap={"3rem"}
+      >
         <S.TitleContainer>
           <S.Title>That's 동문인증</S.Title>
           <S.SubTitle>
@@ -59,7 +65,7 @@ const Certify = () => {
             </S.QuestionContainer>
           </S.CertificationBox>
         </S.Content>
-      </S.Wrapper>
+      </Column>
     </S.Container>
   );
 };

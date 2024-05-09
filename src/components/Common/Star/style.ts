@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import styled from "styled-components";
 
 export const StarContainer = styled.div<{ fontSize?: string }>`
@@ -8,10 +9,11 @@ export const StarContainer = styled.div<{ fontSize?: string }>`
   border-radius: 10px;
   font-size: ${({ fontSize }) => fontSize};
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 1.5rem;
+  ${Flex({
+    alignItems: "center",
+    justifyContent: "space-between",
+    columnGap: "1.5rem",
+  })}
 
   font-size: 16px;
 
@@ -22,18 +24,6 @@ export const StarContainer = styled.div<{ fontSize?: string }>`
   overflow-x: auto;
   overflow-y: hidden;
   background-color: #f2f4f5;
-`;
-
-export const StarWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-`;
-
-export const StarItemTitle = styled.div`
-  display: flex;
-  justify-content: center;
-  column-gap: 5px;
 `;
 
 export const StarGradeText = styled.p`

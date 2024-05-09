@@ -22,6 +22,7 @@ import {
   CompanyIdAtom,
   CompanyModifyAtom,
 } from "@src/stores/company/company.store";
+import { Column, Row } from "@src/styles/flex";
 
 interface Props {
   companyInfo: CompanyInfoType;
@@ -72,15 +73,15 @@ function CompanyDetailInfo({ companyInfo }: Props) {
 
   return (
     <S.Container>
-      <S.TitleContainer>
+      <Column $rowGap={"10px"}>
         <S.Title>That's 기업 정보</S.Title>
         <S.SubTitle>
           해당기업의 세세한 정보를 빠르고 쉽게 알아볼 수 있어요.
         </S.SubTitle>
-      </S.TitleContainer>
+      </Column>
 
-      <S.ContentContainer>
-        <div>
+      <Column $width={"100%"} $height={"100%"} $rowGap={"8rem"}>
+        <Column $width={"100%"} $alignItems="flex-end">
           <S.ContentWrapper>
             <UserProfile {...companyInfo} />
             <Content {...companyInfo} />
@@ -101,14 +102,14 @@ function CompanyDetailInfo({ companyInfo }: Props) {
               </S.CompanyStoryButton>
             </S.CompanyStoryButtonCotainer>
           )}
-        </div>
+        </Column>
 
         <ErrorBoundary fallback={<>해당 회사 리뷰를 가지고 오지 못했습니다.</>}>
           <Suspense fallback={<StorySkeleton />}>
             <Story companyId={companyInfo.companyId} />
           </Suspense>
         </ErrorBoundary>
-      </S.ContentContainer>
+      </Column>
     </S.Container>
   );
 }

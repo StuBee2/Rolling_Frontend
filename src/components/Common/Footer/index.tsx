@@ -4,6 +4,7 @@ import {
   FOOTER_ITEMS,
   FOOTER_MEMBERS_ITEMS,
 } from "@src/constants/Footer/footer.constant";
+import { Row } from "@src/styles/flex";
 
 export const Footer = () => {
   return (
@@ -34,8 +35,8 @@ export const Footer = () => {
         </S.LogoAndFooterItem>
 
         <S.EtcContainer>
-          <S.MemberItemContainer>
-            <p>Team StuBee</p>
+          <Row $columnGap={"5px"}>
+            <S.TeamStubee>Team StuBee</S.TeamStubee>
             <S.MemberItemUl>
               {FOOTER_MEMBERS_ITEMS.map((item) => (
                 <li
@@ -46,7 +47,7 @@ export const Footer = () => {
                 </li>
               ))}
             </S.MemberItemUl>
-          </S.MemberItemContainer>
+          </Row>
           <p>
             주소: 대구 달성군 구지면 창리로11길 93
             (대구소프트웨어마이스터고등학교)

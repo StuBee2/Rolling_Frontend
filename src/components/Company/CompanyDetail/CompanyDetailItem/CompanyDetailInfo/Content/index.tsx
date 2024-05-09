@@ -6,33 +6,36 @@ import logo from "@src/assets/icons/Logo/logo.svg";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
 import { CompanyDetailRegistAt } from "../style";
 import { getRgb } from "@src/utils/Rgb/getRgb";
+import { Column, Row } from "@src/styles/flex";
 
 const CompanyDetailContent = ({ ...attr }: CompanyInfoType) => {
   return (
-    <S.Container>
-      <S.Title>
-        <div>
-          <img src={bag} alt="이미지 없음" />
-          <p>기본정보</p>
-        </div>
+    <Column $width={"100%"} $height={"100%"} $padding={"2rem"} $rowGap={"2rem"}>
+      <Column $width={"100%"} $rowGap={"10px"}>
+        <Row $alignItems={"center"} $columnGap={"10px"}>
+          <S.Image src={bag} alt="이미지 없음" />
+          <S.BasicInfo>기본정보</S.BasicInfo>
+        </Row>
         <S.SubTitle>
           이 정보는 졸업생들이 작성한 데이터를 기반으로 만들어지고 있어요!
         </S.SubTitle>
-      </S.Title>
+      </Column>
 
       <S.InfoContainer>
         <CompanyDetailRegistAt widthType={"min-width"}>
           {getDateText(new Date(attr.companyCreatedAt))} 작성
         </CompanyDetailRegistAt>
+
         <S.Info backgroundColor={getRgb(attr.companyLogoRGB)}>
           <img src={attr.companyLogoUrl || logo} alt="이미지 없음" />
-          <div>
+          <Column $rowGap={"10px"}>
             <S.CompanyName>{attr.companyName}</S.CompanyName>
             <S.CompanyAddress>
               {attr.companyAddress + (" " + (attr.companyAddressEtc || ""))}
             </S.CompanyAddress>
-          </div>
+          </Column>
         </S.Info>
+
         <S.Description>
           <img src={tool} alt="이미지 없음" />
           <p>{attr.companyDescription}</p>
@@ -49,7 +52,7 @@ const CompanyDetailContent = ({ ...attr }: CompanyInfoType) => {
           />
         ))}
       </S.CompanyImgContainer> */}
-    </S.Container>
+    </Column>
   );
 };
 

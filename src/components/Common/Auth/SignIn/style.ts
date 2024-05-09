@@ -1,4 +1,5 @@
 import { HoverAnimation, StopDrag } from "@src/styles/common.style";
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -15,11 +16,8 @@ export const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 3;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   padding: 0 10px 0 10px;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 `;
 
 export const Wrapper = styled.div`
@@ -29,11 +27,6 @@ export const Wrapper = styled.div`
   background-color: #fff;
   border-radius: 7px;
   position: relative;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
-  align-items: center;
 
   padding-top: 6rem;
 
@@ -54,6 +47,8 @@ export const Wrapper = styled.div`
   @media screen and (max-height: 690px) {
     height: 500px;
   }
+
+  ${Flex({ flexDirection: "column", rowGap: "3rem", alignItems: "center" })}
 `;
 
 export const Close = styled.img`
@@ -90,23 +85,14 @@ export const Explain = styled.div`
   font-size: 20px;
   font-weight: 500;
   color: #6c7072;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  row-gap: 15px;
-
   margin-top: 0.5rem;
+  ${Flex({ flexDirection: "column", alignItems: "center", rowGap: "15px" })}
 `;
 
 export const SignInButton = styled.button`
   width: 280px;
   height: 65px;
   z-index: 3;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
   padding: 0 30px 0 20px;
   border: none;
@@ -129,10 +115,14 @@ export const SignInButton = styled.button`
 
   transform: scale(1);
   transition: all 0.1s ease-in-out;
+
   &:hover {
     background-color: rgba(32, 35, 37, 1);
   }
+
   &:active {
     transform: scale(0.985);
   }
+
+  ${Flex({ alignItems: "center", justifyContent: "space-between" })}
 `;

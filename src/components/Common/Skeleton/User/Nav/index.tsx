@@ -5,17 +5,24 @@ import {
 } from "@src/components/User/Nav/style";
 import { SkeletonBox } from "../../Common/style";
 import * as S from "./style";
+import { Column } from "@src/styles/flex";
 
 const NavSkeleton = () => {
   return (
     <UserNavBar>
-      <S.UserInfoContainer>
+      <Column
+        $width={"100%"}
+        $height={"300px"}
+        $alignItems={"center"}
+        $justifyContent={"center"}
+        $rowGap={"2.5rem"}
+      >
         <S.NavProfileLogoSkeleton />
-        <S.UserNameAndEmailContainer>
+        <Column $alignItems={"center"} $rowGap={"10px"}>
           <SkeletonBox width="100px" height="30px" />
           <SkeletonBox width="168px" height="20px" />
-        </S.UserNameAndEmailContainer>
-      </S.UserInfoContainer>
+        </Column>
+      </Column>
       <PageSelectContainer>
         <PageSelectWrapper>
           {Array.from({ length: 2 }).map((item, idx) => (

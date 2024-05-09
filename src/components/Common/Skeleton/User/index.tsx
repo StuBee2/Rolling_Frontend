@@ -1,15 +1,15 @@
+import { Column } from "@src/styles/flex";
 import { SkeletonBox } from "../Common/style";
-import * as S from "./style";
 
 const UserSkeleton = () => {
   return (
-    <S.UserSkeletonContainer>
+    <Column $width={"100%"} $rowGap={"3rem"}>
       {Array.from({
         length: 5,
       }).map((item, idx) => (
         <SkeletonBox width="100%" height="400px" key={idx} />
       ))}
-    </S.UserSkeletonContainer>
+    </Column>
   );
 };
 

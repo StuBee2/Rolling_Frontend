@@ -1,5 +1,6 @@
 import { AiOutlineUser } from "@react-icons/all-files/ai/AiOutlineUser";
 import { HoverAnimation } from "@src/styles/common.style";
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { css } from "styled-components";
 
@@ -11,9 +12,6 @@ export const HeaderContainer = styled.div`
   border-bottom: 1px solid #ddd;
   zoom: 0.8;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-width: 500px;
   white-space: nowrap;
 
@@ -25,16 +23,19 @@ export const HeaderContainer = styled.div`
   @media screen and (max-width: 740px) {
     border-bottom: 1px solid #dddddd;
   }
+
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 `;
 
 export const HeaderWrapper = styled.div`
   width: 1370px;
   height: 100%;
 
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  justify-content: space-between;
+  ${Flex({
+    alignItems: "center",
+    columnGap: "10px",
+    justifyContent: "space-between",
+  })}
 
   @media screen and (max-width: 1040px) {
     width: 90%;
@@ -45,9 +46,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const PageContainer = styled.div`
-  display: flex;
-  gap: 10px;
-  align-items: center;
+  ${Flex({ gap: "10px", alignItems: "center" })}
 
   img {
     width: 50px;
@@ -56,9 +55,7 @@ export const PageContainer = styled.div`
   }
 
   ul {
-    display: flex;
-    align-items: center;
-    column-gap: 3px;
+    ${Flex({ columnGap: "3px", alignItems: "center" })}
   }
 `;
 
@@ -72,10 +69,7 @@ export const PageList = styled.li<{
   padding: 10px;
 
   display: ${({ requiredToken }) => requiredToken && "none"};
-  display: flex;
-  align-items: center;
-  column-gap: 2px;
-  justify-content: center;
+  ${Flex({ alignItems: "center", justifyContent: "center", columnGap: "2px" })}
 
   border-radius: 10px;
   transform: scale(1);
@@ -96,12 +90,6 @@ export const PageList = styled.li<{
         background-color: #dddddd;
       }
     `};
-`;
-
-export const LoginSearchContainer = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 3px;
 `;
 
 export const HoverIconContainer = styled.div`
