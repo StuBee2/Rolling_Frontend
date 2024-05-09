@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -15,16 +16,6 @@ export const UserNavBar = styled.div`
   @media screen and (max-width: 1040px) {
     display: none;
   }
-`;
-
-export const UserInfoContainer = styled.div`
-  width: 100%;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
 `;
 
 export const UserImg = styled.img`
@@ -55,9 +46,9 @@ export const PageSelectContainer = styled.div`
   height: 300px;
   font-weight: bold;
   color: #61677e;
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
+
+  ${Flex({ flexDirection: "column", rowGap: "10px" })}
+
   -webkit-touch-callout: none;
   user-select: none;
   -moz-user-select: none;
@@ -67,10 +58,8 @@ export const PageSelectContainer = styled.div`
 
 export const PageSelectWrapper = styled.div`
   width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
+  ${Flex({ flexDirection: "column", rowGap: "15px" })}
+
   border-bottom: 2px solid #dee0e6;
   font-size: 20px;
   padding-bottom: 20px;
@@ -87,9 +76,7 @@ export const PageSelectItem = styled.div<{ isSelect?: boolean }>`
   padding-left: 10px;
   cursor: pointer;
 
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
+  ${Flex({ alignItems: "center", columnGap: "10px" })}
 
   img {
     width: 24px;

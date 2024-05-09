@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -6,24 +7,12 @@ export const Container = styled.div`
   height: 183px;
   background-color: ${RollingPalette.main.Base};
   border-radius: 10px;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  justify-content: center;
   padding: 0 1.5rem 0 2rem;
-`;
-
-export const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+  ${Flex({ flexDirection: "column", justifyContent: "center", rowGap: "10px" })}
 `;
 
 export const RegistStoryText = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  row-gap: 7px;
+  ${Flex({ flexDirection: "column", alignItems: "flex-end", rowGap: "7px" })}
 
   font-size: 18px;
   color: #fff;
@@ -46,10 +35,8 @@ export const StoryNumber = styled.div`
   border-radius: 4rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: #4869f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 22px;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 `;
 
 export const WroteStoryCount = styled.p`
@@ -78,10 +65,7 @@ export const StoryButton = styled.button`
   color: #fff;
   cursor: pointer;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 5px;
+  ${Flex({ alignItems: "center", justifyContent: "center", columnGap: "5px" })}
 
   img {
     width: 20px;

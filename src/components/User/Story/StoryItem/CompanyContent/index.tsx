@@ -6,6 +6,7 @@ import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
 import { StoryModifiableContentAtom } from "@src/stores/story/story.store";
 import { useStoryModify } from "@src/hooks/Story/useStoryModify";
 import { TextInput } from "@stubee2/stubee2-rolling-ui";
+import { Column } from "@src/styles/flex";
 
 interface Props {
   isCoincideStoryId: boolean;
@@ -22,13 +23,18 @@ const CompanyContent = ({ isCoincideStoryId, storyData }: Props) => {
       return (
         <>
           {storyItemsObject(storyData).map((item) => (
-            <S.Wrapper key={item.id}>
+            <Column
+              $width={"100%"}
+              $height={"100%"}
+              $rowGap={"1.5rem"}
+              key={item.id}
+            >
               {item.id === 1 ? (
                 <S.AdvantagesAndDisAdvantages>
                   <S.ProsAndCons>
                     <S.Title>
-                      <img src={item.prosIcon} alt="이미지 없음" />
-                      <p>{item.prosTitle}</p>
+                      <S.Image src={item.prosIcon} alt="이미지 없음" />
+                      <S.Text>{item.prosTitle}</S.Text>
                     </S.Title>
                     <TextInput
                       type="text"
@@ -43,8 +49,8 @@ const CompanyContent = ({ isCoincideStoryId, storyData }: Props) => {
 
                   <S.ProsAndCons>
                     <S.Title>
-                      <img src={item.consIcon} alt="이미지 없음" />
-                      <p>{item.consTitle}</p>
+                      <S.Image src={item.consIcon} alt="이미지 없음" />
+                      <S.Text>{item.consTitle}</S.Text>
                     </S.Title>
                     <TextInput
                       type="text"
@@ -60,8 +66,8 @@ const CompanyContent = ({ isCoincideStoryId, storyData }: Props) => {
               ) : (
                 <>
                   <S.Title>
-                    <img src={item.icon} alt="이미지 없음" />
-                    <p>{item.title}</p>
+                    <S.Image src={item.icon} alt="이미지 없음" />
+                    <S.Text>{item.title}</S.Text>
                   </S.Title>
                   {item.id === 0 ? (
                     <TextInput
@@ -86,7 +92,7 @@ const CompanyContent = ({ isCoincideStoryId, storyData }: Props) => {
                   )}
                 </>
               )}
-            </S.Wrapper>
+            </Column>
           ))}
         </>
       );
@@ -99,13 +105,18 @@ const CompanyContent = ({ isCoincideStoryId, storyData }: Props) => {
     return (
       <>
         {storyItemsObject(storyData).map((item) => (
-          <S.Wrapper key={item.id}>
+          <Column
+            $width={"100%"}
+            $height={"100%"}
+            $rowGap={"1.5rem"}
+            key={item.id}
+          >
             {item.id === 1 ? (
               <S.AdvantagesAndDisAdvantages>
                 <S.ProsAndCons>
                   <S.Title>
-                    <img src={item.prosIcon} alt="이미지 없음" />
-                    <p>{item.prosTitle}</p>
+                    <S.Image src={item.prosIcon} alt="이미지 없음" />
+                    <S.Text>{item.prosTitle}</S.Text>
                   </S.Title>
                   <S.ProsAndConsContent isPros={true}>
                     {item.prosContent}
@@ -113,8 +124,8 @@ const CompanyContent = ({ isCoincideStoryId, storyData }: Props) => {
                 </S.ProsAndCons>
                 <S.ProsAndCons>
                   <S.Title>
-                    <img src={item.consIcon} alt="이미지 없음" />
-                    <p>{item.consTitle}</p>
+                    <S.Image src={item.consIcon} alt="이미지 없음" />
+                    <S.Text>{item.consTitle}</S.Text>
                   </S.Title>
                   <S.ProsAndConsContent isPros={false}>
                     {item.consContent}
@@ -124,13 +135,13 @@ const CompanyContent = ({ isCoincideStoryId, storyData }: Props) => {
             ) : (
               <>
                 <S.Title>
-                  <img src={item.icon} alt="이미지 없음" />
-                  <p>{item.title}</p>
+                  <S.Image src={item.icon} alt="이미지 없음" />
+                  <S.Text>{item.title}</S.Text>
                 </S.Title>
                 <S.Content isEtc={item.valueTitle}>{item.content}</S.Content>
               </>
             )}
-          </S.Wrapper>
+          </Column>
         ))}
       </>
     );

@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -6,11 +7,13 @@ export const NavFooterContainer = styled.div`
   @media screen and (max-width: 1040px) {
     width: 100%;
     height: 60px;
+
     background-color: #ffffff;
     border-top: 1px solid #d9d9d9;
     border-bottom: 1px solid #d9d9d9;
-    display: flex;
-    justify-content: center;
+
+    ${Flex({ justifyContent: "center" })}
+
     position: fixed;
     bottom: 0;
     left: 0;
@@ -20,9 +23,9 @@ export const NavFooterContainer = styled.div`
 export const NavFooterWrapper = styled.ul`
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+
+  ${Flex({ alignItems: "center", justifyContent: "space-evenly" })}
+
   font-size: 18px;
   overflow-x: auto;
   ::-webkit-scrollbar {

@@ -6,20 +6,21 @@ import { Suspense } from "react";
 import RecommandSkeleton from "@src/components/Common/Skeleton/Home/Recommand";
 import { useNavigate } from "react-router-dom";
 import { ViewAll } from "../style";
+import { Row } from "@src/styles/flex";
 
 const Recommand = () => {
   const navigate = useNavigate();
 
   return (
     <S.RecommandContainer>
-      <S.SeniorRecommandContainer>
+      <Row $alignItems={"center"} $columnGap={"3px"}>
         <S.SeniorRecommand>
           <img src={developer} alt="이미지 없음" />
           <p>졸업생들이 추천해요!</p>
         </S.SeniorRecommand>
 
         <ViewAll onClick={() => navigate("/all")}>전체보기</ViewAll>
-      </S.SeniorRecommandContainer>
+      </Row>
 
       <S.RecommandWrapper>
         <ErrorBoundary fallback={<>회사 정보를 가지고 오지 못했습니다.</>}>

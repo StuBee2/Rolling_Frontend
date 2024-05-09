@@ -1,4 +1,5 @@
 import { STORY_STARGRAGE_ITEMS } from "@src/constants/Story/story.constant";
+import { Flex, Row } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import { StarRatingItem } from "@stubee2/stubee2-rolling-ui";
 import { useEffect, useState } from "react";
@@ -33,7 +34,7 @@ const RegistStarGrade = ({
       {STORY_STARGRAGE_ITEMS.map((item) => (
         <li key={item.id}>
           <p>{item.title}</p>
-          <ItemContainer>
+          <Row>
             {Array.from({ length: 5 }).map((_, idx) => (
               <StarRatingItem
                 key={idx}
@@ -62,7 +63,7 @@ const RegistStarGrade = ({
                 color={idx < storyStarGrade[item.name] ? "#FAD85F" : "#d9d9d9"}
               />
             ))}
-          </ItemContainer>
+          </Row>
         </li>
       ))}
     </StarGradeContainer>
@@ -73,10 +74,11 @@ const StarGradeContainer = styled.div`
   width: 100%;
   height: 140px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 20px;
+  ${Flex({
+    alignItems: "center",
+    justifyContent: "space-between",
+    columnGap: "20px",
+  })}
 
   overflow: auto;
 
@@ -87,19 +89,13 @@ const StarGradeContainer = styled.div`
 
   li {
     color: rgba(115, 123, 152, 1);
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
+    ${Flex({ flexDirection: "column", rowGap: "10px" })}
 
     p {
       text-align: center;
       font-size: 17px;
     }
   }
-`;
-
-const ItemContainer = styled.div`
-  display: flex;
 `;
 
 export default RegistStarGrade;

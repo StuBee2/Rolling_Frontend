@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import styled from "styled-components";
 
 export const Container = styled.div<{ positionTop: string }>`
@@ -20,8 +21,7 @@ export const Ul = styled.ul`
   width: 100%;
   height: 100%;
 
-  display: flex;
-  flex-direction: column;
+  ${Flex({ flexDirection: "column" })}
 
   li {
     width: 100%;
@@ -31,8 +31,7 @@ export const Ul = styled.ul`
     line-height: 25px;
     font-size: 17px;
 
-    display: flex;
-    align-items: center;
+    ${Flex({ alignItems: "center" })}
     cursor: pointer;
 
     &:hover {

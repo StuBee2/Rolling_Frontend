@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { InputEmphasizeText, RegistButton } from "../../../style";
 import AddressModal from "@src/components/Common/Modal/CompanyAddress";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
+import { Column, Row } from "@src/styles/flex";
 
 interface Props {
   companyName: string;
@@ -23,8 +24,8 @@ const CompanyRegisterItem = ({ companyName }: Props) => {
     <>
       <S.RegistContainer>
         <S.Form onSubmit={attr.handleRegistSubmit}>
-          <S.Wrapper>
-            <S.LogoContainer>
+          <Row>
+            <Column $width={"200px"} $height={"100%"} $rowGap={"10px"}>
               <InputEmphasizeText>기업 로고</InputEmphasizeText>
 
               <S.LogoBox>
@@ -38,11 +39,11 @@ const CompanyRegisterItem = ({ companyName }: Props) => {
                   onChange={(e) => attr.handleUploadCompanyLogo(e)}
                 />
               </S.LogoBox>
-            </S.LogoContainer>
+            </Column>
 
             <S.RegistInputContainer>
-              <S.CompanyBasicInfo>
-                <S.CompanyName>
+              <Column $rowGap={"2rem"}>
+                <Column $rowGap={"10px"}>
                   <InputEmphasizeText>
                     기업명 <span>*</span>
                   </InputEmphasizeText>
@@ -54,14 +55,14 @@ const CompanyRegisterItem = ({ companyName }: Props) => {
                     name="name"
                     disabled
                   />
-                </S.CompanyName>
+                </Column>
 
-                <S.Address>
+                <Column $width={"100%"} $rowGap={"10px"}>
                   <InputEmphasizeText>
                     기업 주소 <span>*</span>
                   </InputEmphasizeText>
 
-                  <S.MainAddress>
+                  <Column $width={"100%"} $rowGap={"10px"}>
                     <TextInput
                       value={attr.companyRegisterInfo.address}
                       autoComplete="off"
@@ -75,7 +76,7 @@ const CompanyRegisterItem = ({ companyName }: Props) => {
                     >
                       주소 찾기
                     </S.FindAddressButton>
-                  </S.MainAddress>
+                  </Column>
 
                   <TextInput
                     value={attr.companyRegisterInfo.addressEtc!!}
@@ -85,12 +86,12 @@ const CompanyRegisterItem = ({ companyName }: Props) => {
                     handleChange={attr.handleRegistChange}
                     name="addressEtc"
                   />
-                </S.Address>
-              </S.CompanyBasicInfo>
+                </Column>
+              </Column>
             </S.RegistInputContainer>
-          </S.Wrapper>
+          </Row>
 
-          <S.CompanyIntroduce>
+          <Column $width={"100%"} $rowGap={"15px"}>
             <InputEmphasizeText>
               기업 소개 <span>*</span>
             </InputEmphasizeText>
@@ -108,7 +109,7 @@ const CompanyRegisterItem = ({ companyName }: Props) => {
             <RegistButton isRequired={attr.isRequred}>
               <button type="submit">등록하기</button>
             </RegistButton>
-          </S.CompanyIntroduce>
+          </Column>
         </S.Form>
       </S.RegistContainer>
 

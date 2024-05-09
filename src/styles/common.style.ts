@@ -1,9 +1,9 @@
 import { css } from "styled-components";
+import { Flex } from "./flex";
 
 export const HoverAnimation = css`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
+
   border-radius: 10px;
   transform: scale(1);
   transition: all 0.1s ease-in-out;

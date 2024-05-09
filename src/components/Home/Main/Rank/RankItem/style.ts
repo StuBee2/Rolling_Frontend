@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -6,14 +7,18 @@ export const RankCategoryTitle = styled.div`
   font-weight: bold;
   color: ${RollingPalette.unEmphasize.Dark};
 
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
+  ${Flex({ columnGap: "5px", alignItems: "center" })}
 
   img {
     width: 24px;
-    headers: 24px;
+    height: 24px;
   }
+`;
+
+export const MainItemWrap = styled.div`
+  width: 100%;
+  height: 100%;
+  ${Flex({ flexWrap: "wrap", gap: "1.5rem" })}
 `;
 
 export const RankNumber = styled.div`
@@ -26,9 +31,7 @@ export const RankNumber = styled.div`
   top: 0;
   left: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 
   font-size: 20px;
   color: #fff;

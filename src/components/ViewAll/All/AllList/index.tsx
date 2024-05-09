@@ -2,7 +2,6 @@ import {
   CompanyAddress,
   CompanyCreatedAt,
   CompanyDescription,
-  CompanyDescriptionAndAddress,
   CompanyName,
 } from "@src/components/Home/Main/style";
 import { getRgb } from "@src/utils/Rgb/getRgb";
@@ -15,6 +14,7 @@ import * as S from "./style";
 import developer from "@src/assets/icons/Home/developer.svg";
 import logo from "@src/assets/icons/Logo/logo.svg";
 import { useGetAllCompanyListQuery } from "@src/services/Company/queries";
+import { Column } from "@src/styles/flex";
 
 const AllList = () => {
   const { data: recommandList, fetchNextPage } = useGetAllCompanyListQuery({
@@ -31,10 +31,10 @@ const AllList = () => {
   }, [inView]);
 
   return (
-    <S.Container>
+    <Column $rowGap={"20px"}>
       <S.Title>
-        <img src={developer} alt="이미지 없음" />
-        <p>졸업생들이 롤링한 모든 기업들이에요!</p>
+        <S.Image src={developer} alt="이미지 없음" />
+        <S.Text>졸업생들이 롤링한 모든 기업들이에요!</S.Text>
       </S.Title>
 
       <S.Wrapper>
@@ -59,7 +59,7 @@ const AllList = () => {
                     {item.companyDetails.name}
                   </CompanyName>
 
-                  <CompanyDescriptionAndAddress>
+                  <Column $rowGap={"6px"}>
                     <CompanyDescription>
                       {item.companyDetails.description}
                     </CompanyDescription>
@@ -72,7 +72,7 @@ const AllList = () => {
                     <CompanyCreatedAt>
                       {getDateText(new Date(item.createdAt))}
                     </CompanyCreatedAt>
-                  </CompanyDescriptionAndAddress>
+                  </Column>
                 </CompanyContent>
               </S.CompanyBox>
             ))
@@ -82,7 +82,7 @@ const AllList = () => {
         )}
         <div ref={ref} />
       </S.Wrapper>
-    </S.Container>
+    </Column>
   );
 };
 

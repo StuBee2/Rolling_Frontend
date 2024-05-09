@@ -4,6 +4,7 @@ import Profile from "@src/components/User/Profile";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { Flex } from "@src/styles/flex";
 
 interface Props {
   page: number;
@@ -31,10 +32,8 @@ const UserPage = ({ page }: Props) => {
 };
 
 const AlumniCheck = styled.div`
-  display: flex;
-  justify-content: center;
-  column-gap: 10px;
   font-size: 18px;
+  ${Flex({ justifyContent: "center", columnGap: "10px" })}
 `;
 
 const Authenticate = styled.p`

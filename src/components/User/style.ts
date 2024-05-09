@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { css } from "styled-components";
 
@@ -7,10 +8,11 @@ export const UserContainer = styled.div`
   background-color: #f9fafb;
   zoom: 0.8;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${Flex({
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  })}
 
   padding-bottom: 2rem;
   min-width: 500px;
@@ -25,9 +27,11 @@ export const UserWrapper = styled.div`
   width: 1370px;
   height: 100%;
   display: flex;
+
   @media screen and (max-width: 1130px) {
     width: 100%;
   }
+
   @media screen and (max-width: 1040px) {
     flex-direction: column;
     height: calc(100% - 60px);
@@ -39,9 +43,7 @@ export const UserListContainer = styled.div<{ page: boolean }>`
   height: 100%;
   padding-top: 40px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  ${Flex({ flexDirection: "column", alignItems: "center" })}
 
   ${({ page }) =>
     page &&
@@ -63,9 +65,7 @@ export const UserListContainer = styled.div<{ page: boolean }>`
 export const Container = styled.div`
   width: 90%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 30px;
+  ${Flex({ flexDirection: "column", rowGap: "30px" })}
 `;
 
 export const Title = styled.div`

@@ -1,12 +1,7 @@
-import {
-  AddText,
-  RegisterContainer,
-  SubTitle,
-  Title,
-  TitleContainer,
-} from "../../style";
+import { AddText, SubTitle, Title, TitleContainer } from "../../style";
 import React from "react";
 import CompanyRegisterItem from "./RegisterItem";
+import { Column } from "@src/styles/flex";
 
 interface Props {
   storySearchCompany: {
@@ -20,7 +15,7 @@ function CompanyRegister({ storySearchCompany, storyCompanyId }: Props) {
   const { companyName, isExistSearchList } = storySearchCompany;
 
   return (
-    <RegisterContainer>
+    <Column $rowGap={"2rem"}>
       <TitleContainer>
         <Title>My Company 등록</Title>
         <SubTitle>
@@ -36,7 +31,7 @@ function CompanyRegister({ storySearchCompany, storyCompanyId }: Props) {
       {!isExistSearchList && companyName !== "" && storyCompanyId === "" && (
         <CompanyRegisterItem companyName={companyName} />
       )}
-    </RegisterContainer>
+    </Column>
   );
 }
 export default React.memo(CompanyRegister);

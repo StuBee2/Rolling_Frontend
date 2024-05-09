@@ -1,14 +1,6 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
-
-export const Container = styled.div`
-  width: 100%;
-  height: auto;
-
-  display: flex;
-
-  padding-bottom: 20px;
-`;
 
 export const CompanyLogo = styled.div<{ isHaveSocialId: string }>`
   width: 115px;
@@ -27,12 +19,8 @@ export const CompanyLogo = styled.div<{ isHaveSocialId: string }>`
 export const Wrapper = styled.div`
   width: calc(100% - 115px);
   height: 115px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  row-gap: 20px;
   padding: 0.5rem 0 10px 2rem;
+  ${Flex({ flexDirection: "column", justifyContent: "center", rowGap: "20px" })}
 `;
 
 export const Title = styled.p`
@@ -41,14 +29,8 @@ export const Title = styled.p`
   cursor: pointer;
 `;
 
-export const Content = styled.div`
-  display: flex;
-`;
-
 export const Info = styled.div`
-  display: flex;
-  column-gap: 5px;
-  align-items: center;
+  ${Flex({ alignItems: "center", columnGap: "5px" })}
   color: ${RollingPalette.main.Dark};
 
   font-family: "Pretendard-Bold" !important;
@@ -84,21 +66,22 @@ export const ModifyInput = styled.input`
 `;
 
 export const PositionListUl = styled.ul`
+  width: 100%;
+
   position: absolute;
   top: 95px;
+
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid rgba(189, 194, 208, 1);
+
   color: rgba(29, 30, 90, 1);
-  width: 100%;
-  height: auto;
   max-height: 300px;
   z-index: 3;
   overflow-y: auto;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
+
+  ${Flex({ flexDirection: "column", rowGap: "20px" })}
 
   li {
     cursor: pointer;

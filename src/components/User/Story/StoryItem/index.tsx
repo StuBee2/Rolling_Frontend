@@ -18,6 +18,7 @@ import {
 import { StoryModifiableEventAtom } from "@src/stores/story/story.store";
 import { useStoryModify } from "@src/hooks/Story/useStoryModify";
 import RegistStarGrade from "@src/components/Story/StoryRegister/RegisterItem/StarGrade";
+import { Column, Row } from "@src/styles/flex";
 
 // 마이페이지와 회사단일 조회 페이지에서 같이 쓰이는 컴포넌트
 const StoryItem = ({ ...attr }: StoryCommonType) => {
@@ -90,15 +91,20 @@ const StoryItem = ({ ...attr }: StoryCommonType) => {
   }, [isCoincideStoryId, isModifiableEvent]);
 
   return (
-    <S.Container>
+    <Row $width={"100%"} $columnGap={"5px"}>
       <S.Wrapper onClick={() => showPositionList && setShowPositionList(false)}>
         <S.Content
           onSubmit={(e) =>
             hooks.handleModifyStorySubmit(e, modifyStroyCompanyId)
           }
         >
-          <S.CompanyInfoContainer>
-            <S.RegisteredAtAndDelEditContainer>
+          <Column $width={"100%"} $height={"100%"} $rowGap={"1rem"}>
+            <Row
+              $width={"100%"}
+              $height={"40px"}
+              $alignItems={"center"}
+              $justifyContent={"space-between"}
+            >
               <S.RegisteredDate>
                 {getDateText(new Date(attr.storyModifiedAt))} 등록
               </S.RegisteredDate>
@@ -112,7 +118,7 @@ const StoryItem = ({ ...attr }: StoryCommonType) => {
                   />
                 </S.DelAndEditContainer>
               )}
-            </S.RegisteredAtAndDelEditContainer>
+            </Row>
 
             <S.ContentContainer>
               <CompanyInfo
@@ -126,7 +132,7 @@ const StoryItem = ({ ...attr }: StoryCommonType) => {
                 storyData={attr}
               />
             </S.ContentContainer>
-          </S.CompanyInfoContainer>
+          </Column>
 
           {isModifiableEvent && isCoincideStoryId ? (
             <RegistStarGrade
@@ -144,18 +150,18 @@ const StoryItem = ({ ...attr }: StoryCommonType) => {
           )}
 
           {isModifiableEvent && isCoincideMemberId && isCoincideStoryId && (
-            <S.StoryModifySubmitBtnContainer>
+            <Row $width={"100%"} $justifyContent={"flex-end"}>
               <S.StoryModifySubmitBtn
                 isRequired={hooks.isStoryRequired || hooks.isStarGradeRequired}
                 type="submit"
               >
                 수정하기
               </S.StoryModifySubmitBtn>
-            </S.StoryModifySubmitBtnContainer>
+            </Row>
           )}
         </S.Content>
       </S.Wrapper>
-    </S.Container>
+    </Row>
   );
 };
 

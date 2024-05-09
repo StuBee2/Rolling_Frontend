@@ -1,4 +1,5 @@
 import { StopDrag } from "@src/styles/common.style";
+import { Flex } from "@src/styles/flex";
 import styled from "styled-components";
 
 export const RecommandItemContainer = styled.div`
@@ -10,21 +11,11 @@ export const RecommandItemContainer = styled.div`
   overflow-x: auto;
 `;
 
-export const RecommandItemWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 1rem;
-`;
-
 export const RecommandItemBox = styled.div`
   width: 250px;
   height: 200px;
 
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  row-gap: 5px;
+  ${Flex({ flexDirection: "column", justifyContent: "center", rowGap: "5px" })}
 
   p {
     text-align: center;
@@ -46,16 +37,14 @@ export const ImageContainer = styled.div<{ rgb: string }>`
   border: 1px solid #ddd;
   cursor: pointer;
 
-  display: flex;
-  justify-content: center;
+  ${Flex({ justifyContent: "center" })}
   overflow: hidden;
   background-color: ${({ rgb }) => rgb || "#fff"};
   zoom: 0.85;
+
   img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
   }
 
   ${StopDrag}

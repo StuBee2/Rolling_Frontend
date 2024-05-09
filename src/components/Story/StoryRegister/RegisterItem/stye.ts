@@ -1,11 +1,6 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
-
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-`;
 
 export const CompanyStoryText = styled.p`
   font-size: 24px;
@@ -19,7 +14,6 @@ export const CompanyStoryText = styled.p`
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: auto;
 
   background-color: #fff;
   border-radius: 15px;
@@ -33,33 +27,12 @@ export const Wrapper = styled.div`
 export const Form = styled.form`
   width: 100%;
   height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
-`;
-
-export const RequireContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
-`;
-
-export const RequireWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 30px;
+  ${Flex({ flexDirection: "column", rowGap: "3rem" })}
 `;
 
 export const InputContainer = styled.div`
   width: 50%;
-  height: auto;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-
+  ${Flex({ flexDirection: "column", rowGap: "10px" })}
   position: relative;
 `;
 
@@ -71,24 +44,8 @@ export const InputStyle = {
   backgroundColor: `${RollingPalette.unEmphasize.Lightest}`,
 };
 
-export const ProsConsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-`;
-
-export const Content = styled.div`
-  width: 100%;
-  height: auto;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-`;
-
 export const StarGradeContainer = styled.div`
   width: 100%;
-  height: auto;
   background-color: rgba(247, 249, 250, 1);
   border: 1px solid #bdc2d0;
   border-radius: 5px;

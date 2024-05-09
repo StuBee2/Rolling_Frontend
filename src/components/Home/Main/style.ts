@@ -1,4 +1,5 @@
 import { FadeInAnimation } from "@src/styles/common.style";
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -6,9 +7,7 @@ export const MainContainer = styled.div`
   width: calc(100% - 290px);
   height: 100%;
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
+  ${Flex({ flexDirection: "column", rowGap: "3rem" })}
 
   overflow-y: auto;
   ::-webkit-scrollbar {
@@ -25,18 +24,17 @@ export const MainContainer = styled.div`
 export const MainWrapper = styled.div<{ rowGap: string }>`
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: ${({ rowGap }) => rowGap};
+
+  ${({ rowGap }) => Flex({ flexDirection: "column", rowGap })}
   overflow-y: hidden;
 `;
 
 export const MainTitle = styled.div`
-  display: flex;
-  align-items: center;
   font-weight: bold;
   font-size: 25px;
-  column-gap: 10px;
+
+  ${Flex({ alignItems: "center", columnGap: "10px" })}
+
   img {
     width: 27px;
     height: 27px;
@@ -47,33 +45,6 @@ export const MainTitle = styled.div`
       color: #ec6a5e;
     }
   }
-`;
-
-export const MainItemContainer = styled.div`
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-`;
-
-export const MainItemWrapper = styled.div`
-  widht: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-`;
-
-export const MainItemContent = styled.div`
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
 `;
 
 export const MainItemBox = styled.div`
@@ -108,8 +79,7 @@ export const CompanyLogoContainer = styled.div<{ rgb: string }>`
   width: 100%;
   height: 65%;
 
-  display: flex;
-  justify-content: center;
+  ${Flex({ justifyContent: "center" })}
   border-bottom: 1px solid #ddd;
   overflow: hidden;
 
@@ -123,8 +93,6 @@ export const CompanyLogoContainer = styled.div<{ rgb: string }>`
 export const LogoImg = styled.img`
   max-width: 100%;
   max-height: 100%;
-  width: auto;
-  height: auto;
 
   transform: scale(1);
   transition: all 0.27s ease-in-out;
@@ -138,23 +106,18 @@ export const CompanyContentContainer = styled.div`
   height: 35%;
   background-color: #fff;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  ${Flex({ flexDirection: "column", justifyContent: "space-between" })}
   padding: 1rem 1rem 0.7rem 1rem;
 
   @media screen and (max-width: 710px) {
     height: 121px;
-    justify-content: normal;
-    row-gap: 1.5rem;
+    ${Flex({ justifyContent: "normal", rowGap: "1.5rem" })}
   }
 `;
 
 export const CompanyNameAndCreatedAt = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
   font-weight: bold;
+  ${Flex({ alignItems: "center", columnGap: "5px" })}
 `;
 
 export const CompanyName = styled.p`
@@ -166,12 +129,6 @@ export const CompanyName = styled.p`
 export const CompanyCreatedAt = styled.p`
   font-size: 15px;
   color: ${RollingPalette.unEmphasize.Base};
-`;
-
-export const CompanyDescriptionAndAddress = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 6px;
 `;
 
 export const CompanyDescription = styled.p`

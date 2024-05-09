@@ -8,6 +8,7 @@ interface Props {
   columnGap?: CSSProperties["columnGap"];
   rowGap?: CSSProperties["rowGap"];
   gap?: CSSProperties["gap"];
+  flexWrap?: CSSProperties["flexWrap"];
 }
 
 export const Flex = ({
@@ -17,6 +18,7 @@ export const Flex = ({
   columnGap,
   rowGap,
   gap,
+  flexWrap,
 }: Props) => {
   return css`
     display: flex;
@@ -26,6 +28,7 @@ export const Flex = ({
     column-gap: ${columnGap};
     row-gap: ${rowGap};
     gap: ${gap};
+    flex-wrap: ${flexWrap};
   `;
 };
 

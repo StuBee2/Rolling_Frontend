@@ -1,8 +1,8 @@
 import StoryItem from "@src/components/User/Story/StoryItem";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import * as S from "./style";
 import { useGetMyStoryQuery } from "@src/services/Story/queries";
+import { Row } from "@src/styles/flex";
 
 const Story = () => {
   const { data: storyList, fetchNextPage } = useGetMyStoryQuery({
@@ -20,13 +20,18 @@ const Story = () => {
     <>
       {storyListData?.length!! > 0 ? (
         <>
-          <S.ListWrapper>
+          <Row
+            $width={"100%"}
+            $wrap={"wrap"}
+            $rowGap={"3rem"}
+            $justifyContent={"center"}
+          >
             {storyList?.pages.map((data) =>
               data.data.map((story) => (
                 <StoryItem {...story} key={story.storyId} />
               ))
             )}
-          </S.ListWrapper>
+          </Row>
           <div ref={ref} />
         </>
       ) : (

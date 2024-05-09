@@ -5,6 +5,7 @@ import * as S from "./style";
 import logo from "@src/assets/icons/Logo/logo.svg";
 import { CompanyStarGradeInfo } from "@src/types/Company/company.type";
 import { getRgb } from "@src/utils/Rgb/getRgb";
+import { Row } from "@src/styles/flex";
 
 interface Props {
   starGradeInfo: CompanyStarGradeInfo;
@@ -22,10 +23,10 @@ const CompanyStarGrades = ({ starGradeInfo }: Props) => {
           <p>{attr.companyName}</p>
         </S.CompanyBasicInfo>
         <S.ItemContainer>
-          <S.CompanyGradesText>
-            <img src={bolt} alt="이미지 없음" />
-            <p>평균 평점</p>
-          </S.CompanyGradesText>
+          <Row $columnGap={"5px"} $alignItems={"center"}>
+            <S.Image src={bolt} alt="이미지 없음" />
+            <S.Grade>평균 평점</S.Grade>
+          </Row>
           <S.ItemUl>
             {convertStarRatingObject(attr).map((item) => (
               <li key={item.id}>

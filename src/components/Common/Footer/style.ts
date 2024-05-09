@@ -70,7 +70,6 @@ export const LogoWrapper = styled.div`
 export const FooterItemContainer = styled.ul`
   font-weight: 700;
   li {
-    width: auto;
     padding: 1rem;
     height: 40px;
     cursor: pointer;

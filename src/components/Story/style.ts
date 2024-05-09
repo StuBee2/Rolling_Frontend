@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { css } from "styled-components";
 
@@ -5,9 +6,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
   padding: 90px 20px 0 20px;
 
   min-width: 830px;
@@ -21,16 +20,11 @@ export const Wrapper = styled.div<{ rowGap: string }>`
   padding-top: 4rem;
   padding-bottom: 3rem;
 
-  display: flex;
-  flex-direction: column;
-  row-gap: ${({ rowGap }) => rowGap};
+  ${({ rowGap }) => Flex({ flexDirection: "column", rowGap })}
 `;
 
 export const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-
+  ${Flex({ flexDirection: "column", rowGap: "15px" })}
   padding-bottom: 1.5rem;
   border-bottom: 1px solid #d9d9d9;
 `;
@@ -44,18 +38,6 @@ export const SubTitle = styled.p`
   font-size: 15px;
   color: ${RollingPalette.unEmphasize.Dark};
   font-weight: bold;
-`;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-`;
-
-export const RegisterContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
 `;
 
 export const AddText = styled.p`
@@ -76,9 +58,7 @@ export const InputEmphasizeText = styled.div`
 
 export const RegistButton = styled.div<{ isRequired: boolean }>`
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  ${Flex({ alignItems: "center", justifyContent: "flex-end" })}
   margin-top: 15px;
 
   button {

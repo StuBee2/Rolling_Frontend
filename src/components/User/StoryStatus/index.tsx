@@ -4,6 +4,7 @@ import { getTimeAgo } from "@stubee2/stubee2-rolling-util";
 import write from "@src/assets/icons/Company/write.png";
 import { useNavigate } from "react-router-dom";
 import { useGetStoryMyStatusQuery } from "@src/services/Story/queries";
+import { Row } from "@src/styles/flex";
 
 const StoryStatus = () => {
   const { data: storyStatus, isError } = useGetStoryMyStatusQuery({
@@ -15,7 +16,7 @@ const StoryStatus = () => {
   return (
     <div>
       <S.Container>
-        <S.Wrapper>
+        <Row $justifyContent={"space-between"}>
           <S.IconCotainer>
             <img src={printer} alt="이미지 없음" />
           </S.IconCotainer>
@@ -24,9 +25,9 @@ const StoryStatus = () => {
             <p>스토리를 등록하여</p>
             <p>후배들에게 더 많은 이야기를 들려주세요!</p>
           </S.RegistStoryText>
-        </S.Wrapper>
+        </Row>
 
-        <S.Wrapper>
+        <Row $justifyContent={"space-between"}>
           <div>
             <S.WroteStoryCount>
               내가 작성한 롤링 Story · {isError ? 0 : count}개
@@ -42,7 +43,7 @@ const StoryStatus = () => {
             <p>스토리 등록</p>
             <img src={write} alt="이미지 없음" />
           </S.StoryButton>
-        </S.Wrapper>
+        </Row>
       </S.Container>
     </div>
   );

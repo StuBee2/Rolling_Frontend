@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { getRgb } from "@src/utils/Rgb/getRgb";
 import { useGetAllCompanyListQuery } from "@src/services/Company/queries";
+import { Row } from "@src/styles/flex";
 
 const RecommandItem = () => {
   const { data, fetchNextPage } = useGetAllCompanyListQuery({ suspense: true });
@@ -22,7 +23,11 @@ const RecommandItem = () => {
     <>
       {companyList!![0].data.length!! > 0 ? (
         <S.RecommandItemContainer>
-          <S.RecommandItemWrapper>
+          <Row
+            $alignItems={"center"}
+            $columnGap={"1rem"}
+            $justifyContent={"center"}
+          >
             {companyList?.map((data) =>
               data.data.map((item) => (
                 <S.RecommandItemBox
@@ -40,7 +45,7 @@ const RecommandItem = () => {
               ))
             )}
             <div ref={ref} />
-          </S.RecommandItemWrapper>
+          </Row>
         </S.RecommandItemContainer>
       ) : (
         <p>졸업생들이 추천하는 회사가 없습니다.</p>

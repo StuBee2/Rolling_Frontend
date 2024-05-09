@@ -7,6 +7,7 @@ import { useSetRecoilState } from "recoil";
 import { useEffect } from "react";
 import emptyFace from "@src/assets/icons/Home/emptyFace.svg";
 import { useGetMyInfoQuery } from "@src/services/Member/queries";
+import { Column } from "@src/styles/flex";
 
 interface Props {
   pathName: string;
@@ -28,7 +29,13 @@ const Nav = ({ pathName }: Props) => {
 
   return (
     <S.UserNavBar>
-      <S.UserInfoContainer>
+      <Column
+        $width={"100%"}
+        $height={"300px"}
+        $alignItems={"center"}
+        $justifyContent={"center"}
+        $rowGap={"10px"}
+      >
         <S.UserImg src={myInfo?.details.imageUrl} />
         <S.UserName>{myInfo?.details.name}</S.UserName>
         <S.UserEmail
@@ -37,7 +44,7 @@ const Nav = ({ pathName }: Props) => {
         >
           {myInfo?.details.email || "이메일 설정하러 가기"}
         </S.UserEmail>
-      </S.UserInfoContainer>
+      </Column>
 
       <S.PageSelectContainer>
         <S.PageSelectWrapper>

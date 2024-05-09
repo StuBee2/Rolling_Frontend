@@ -1,21 +1,12 @@
 import { FadeInAnimation } from "@src/styles/common.style";
+import { Flex } from "@src/styles/flex";
 import styled from "styled-components";
-
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-`;
 
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
 
-  display: flex;
-  flex-wrap: wrap;
-
-  column-gap: 20px;
-  row-gap: 6rem;
+  ${Flex({ flexWrap: "wrap", columnGap: "20px", rowGap: "6rem" })}
 
   @media screen and (max-width: 1031px) {
     row-gap: 2.5rem;
@@ -25,21 +16,19 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
+  ${Flex({ alignItems: "center", columnGap: "5px" })}
+`;
 
-  img {
-    width: 25px;
-    height: 25px;
-  }
+export const Image = styled.img`
+  width: 25px;
+  height: 25px;
+`;
 
-  p {
-    font-size: 22px;
-    font-weight: bold;
-  }
+export const Text = styled.p`
+  font-size: 22px;
+  font-weight: bold;
 `;
 
 export const CompanyBox = styled.div`

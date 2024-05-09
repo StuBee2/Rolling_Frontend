@@ -1,30 +1,22 @@
 import { FadeInAnimation } from "@src/styles/common.style";
+import { Flex } from "@src/styles/flex";
 import styled from "styled-components";
 
 export const RecommandContainer = styled.div`
   width: 100%;
-  height: auto;
-
-  display: flex;
-  flex-direction: column;
+  ${Flex({ flexDirection: "column" })}
 
   @media screen and (max-width: 710px) {
     width: 99%;
   }
 `;
 
-export const SeniorRecommandContainer = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 3px;
-`;
-
 export const SeniorRecommand = styled.div`
   font-size: 22px;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
+
+  ${Flex({ alignItems: "center", columnGap: "5px" })}
+
   img {
     width: 27px;
     height: 27px;

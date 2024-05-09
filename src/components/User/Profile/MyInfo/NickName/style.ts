@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -30,9 +31,7 @@ export const SubmitButton = styled.button<{ isEditing: boolean }>`
   width: 60px;
   height: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 
   outline: none;
   border: none;

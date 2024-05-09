@@ -1,11 +1,12 @@
-import { Container, Wrapper } from "@src/components/ViewAll/All/AllList/style";
+import { Wrapper } from "@src/components/ViewAll/All/AllList/style";
 import { CompanyContent } from "@src/components/ViewAll/style";
 import { SkeletonBox } from "../../Common/style";
 import * as S from "./style";
+import { Column } from "@src/styles/flex";
 
 const AllListSkeleton = () => {
   return (
-    <Container>
+    <Column $rowGap={"20px"}>
       <Wrapper>
         {Array.from({ length: 20 }).map((_, idx) => (
           <S.AllSkeletonBox key={idx}>
@@ -19,7 +20,7 @@ const AllListSkeleton = () => {
           </S.AllSkeletonBox>
         ))}
       </Wrapper>
-    </Container>
+    </Column>
   );
 };
 

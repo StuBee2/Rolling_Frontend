@@ -5,6 +5,7 @@ import logo from "@src/assets/icons/Logo/logo.svg";
 import { getRgb } from "@src/utils/Rgb/getRgb";
 import { NoneData } from "./style";
 import { useGetCompanySerachListQuery } from "@src/services/Company/queries";
+import { Column, Row } from "@src/styles/flex";
 
 interface Props {
   company: string;
@@ -18,9 +19,9 @@ const SearchItem = ({ company }: Props) => {
   const companyList = searchCompany?.pages;
 
   return (
-    <S.MainItemContainer>
-      <S.MainItemWrapper>
-        <S.MainItemContent>
+    <Column $width={"100%"} $height={"100%"} $rowGap={"15px"}>
+      <Column $width={"100%"} $height={"100%"} $wrap={"wrap"}>
+        <Row $width={"100%"} $height={"100%"} $wrap={"wrap"} $gap={"1.5rem"}>
           {companyList![0].data.length!! > 0 ? (
             companyList!.map((data) =>
               data.data.map((item) => (
@@ -51,7 +52,7 @@ const SearchItem = ({ company }: Props) => {
                       </S.CompanyAddress>
                     </S.CompanyNameAndCreatedAt>
 
-                    <S.CompanyDescriptionAndAddress>
+                    <Column $rowGap={"6px"}>
                       <S.CompanyDescription>
                         {item.companyDetails.description}
                       </S.CompanyDescription>
@@ -59,7 +60,7 @@ const SearchItem = ({ company }: Props) => {
                       <S.CompanyCreatedAt>
                         {getDateText(new Date(item.createdAt))}
                       </S.CompanyCreatedAt>
-                    </S.CompanyDescriptionAndAddress>
+                    </Column>
                   </S.CompanyContentContainer>
                 </S.MainItemBox>
               ))
@@ -73,9 +74,9 @@ const SearchItem = ({ company }: Props) => {
               </p>
             </NoneData>
           )}
-        </S.MainItemContent>
-      </S.MainItemWrapper>
-    </S.MainItemContainer>
+        </Row>
+      </Column>
+    </Column>
   );
 };
 

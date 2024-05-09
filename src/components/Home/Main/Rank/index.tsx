@@ -8,6 +8,7 @@ import MainSkeleton from "@src/components/Common/Skeleton/Home/Main";
 import { MainContainer, MainTitle, MainWrapper } from "../style";
 import { ViewAll } from "../../style";
 import { useNavigate } from "react-router-dom";
+import { Column, Row } from "@src/styles/flex";
 
 const Rank = () => {
   const [rankCategorySelect, setRankCategorySelect] = useState("total");
@@ -16,8 +17,8 @@ const Rank = () => {
   return (
     <MainContainer>
       <MainWrapper rowGap="1rem">
-        <S.RankCategoriesContainer>
-          <S.TitleContainer>
+        <Column $rowGap={"15px"}>
+          <Row $columnGap={"3px"}>
             <MainTitle>
               <img src={graph} alt="이미지 없음" />
               <p>
@@ -26,7 +27,7 @@ const Rank = () => {
             </MainTitle>
 
             <ViewAll onClick={() => navigate("/ranking")}>전체보기</ViewAll>
-          </S.TitleContainer>
+          </Row>
 
           <S.RankCategoriesUl>
             {COMPANY_RANK_ITMES.map((item) => (
@@ -39,7 +40,7 @@ const Rank = () => {
               </S.RankCategoryLi>
             ))}
           </S.RankCategoriesUl>
-        </S.RankCategoriesContainer>
+        </Column>
 
         <ErrorBoundary fallback={<>회사 랭킹을 갖고오지 못했습니다.</>}>
           <Suspense fallback={<MainSkeleton />}>

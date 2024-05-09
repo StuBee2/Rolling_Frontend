@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -5,17 +6,14 @@ export const Container = styled.div`
   width: 100%;
   height: 50px;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  ${Flex({ alignItems: "center", justifyContent: "flex-end" })}
 `;
 
 export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
+  ${Flex({ alignItems: "center" })}
 `;
 
 export const ImgContainer = styled.div`
@@ -23,9 +21,7 @@ export const ImgContainer = styled.div`
   height: 130px;
   border-radius: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 
   background-color: #fff;
   z-index: 1;
@@ -55,10 +51,7 @@ export const Content = styled.div<{
   position: absolute;
   left: 3.5rem;
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 12px;
-  justify-content: center;
+  ${Flex({ flexDirection: "column", rowGap: "12px", justifyContent: "center" })}
 
   padding-left: 5.5rem;
   white-space: nowrap;
@@ -75,8 +68,8 @@ export const GithubId = styled.div`
   color: ${RollingPalette.unEmphasize.Base};
   font-size: 15px;
   font-weight: 500;
-  display: flex;
-  column-gap: 5px;
+
+  ${Flex({ columnGap: "5px" })}
   cursor: pointer;
 
   img {

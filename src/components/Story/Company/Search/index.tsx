@@ -8,6 +8,7 @@ import { Portal } from "@stubee2/stubee2-rolling-ui";
 import SearchCompanyModal from "./SearchCompanyModal";
 import { useState } from "react";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
+import { Column, Row } from "@src/styles/flex";
 
 const SearchCompany = () => {
   const [searchCompanyModal, setSearchCompanyModal] = useState(false);
@@ -16,7 +17,7 @@ const SearchCompany = () => {
 
   return (
     <>
-      <S.Container>
+      <Column $rowGap={"20px"}>
         <TitleContainer>
           <Title>My Company 찾기</Title>
           <SubTitle>
@@ -24,12 +25,12 @@ const SearchCompany = () => {
           </SubTitle>
         </TitleContainer>
         <S.SearchContainer>
-          <S.SearchTitle>
-            <S.SearchCompany>
-              <img src={readingGlasses} alt="이미지 없음" />
-              <p>내 기업 찾기</p>
-            </S.SearchCompany>
-          </S.SearchTitle>
+          <Row $alignItems={"center"} $justifyContent={"space-between"}>
+            <Row $columnGap={"10px"} $alignItems={"center"}>
+              <S.Image src={readingGlasses} alt="이미지 없음" />
+              <S.FindMyCompany>내 기업 찾기</S.FindMyCompany>
+            </Row>
+          </Row>
 
           <S.InputContainer
             onClick={() => turnOnOffModal(setSearchCompanyModal, "on")}
@@ -40,7 +41,7 @@ const SearchCompany = () => {
             <img src={search3} alt="이미지 없음" />
           </S.InputContainer>
         </S.SearchContainer>
-      </S.Container>
+      </Column>
 
       {searchCompanyModal && (
         <Portal id="modal">

@@ -67,7 +67,6 @@ export const Close = styled.img`
 
 export const Wave = styled.img`
   width: 100%;
-  height: auto;
 
   position: absolute;
   bottom: 0;

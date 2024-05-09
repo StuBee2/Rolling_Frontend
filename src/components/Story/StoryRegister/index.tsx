@@ -1,10 +1,5 @@
-import {
-  AddText,
-  RegisterContainer,
-  SubTitle,
-  Title,
-  TitleContainer,
-} from "../style";
+import { Column } from "@src/styles/flex";
+import { AddText, SubTitle, Title, TitleContainer } from "../style";
 import StoryRegisterItem from "./RegisterItem";
 import * as S from "./style";
 
@@ -20,7 +15,7 @@ function StoryRegister({ storySearchCompany, storyCompanyId }: Props) {
   const { companyName, isExistSearchList } = storySearchCompany;
 
   return (
-    <RegisterContainer>
+    <Column $rowGap={"2rem"}>
       <TitleContainer>
         <Title>My Company 스토리</Title>
         <SubTitle>
@@ -33,7 +28,7 @@ function StoryRegister({ storySearchCompany, storyCompanyId }: Props) {
         )}
       </TitleContainer>
 
-      <S.Wrapper>
+      <Column $rowGap={"15px"}>
         {storyCompanyId && companyName ? (
           <StoryRegisterItem
             storyCompanyId={storyCompanyId}
@@ -46,8 +41,8 @@ function StoryRegister({ storySearchCompany, storyCompanyId }: Props) {
               : "기업을 먼저 찾아주세요!"}
           </AddText>
         )}
-      </S.Wrapper>
-    </RegisterContainer>
+      </Column>
+    </Column>
   );
 }
 

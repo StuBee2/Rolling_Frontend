@@ -5,12 +5,13 @@ import Footer from "../../Common/Footer";
 import RankingSkeleton from "../../Common/Skeleton/ViewAll/Rank";
 import RankList from "./RankList";
 import * as S from "../style";
+import { Column } from "@src/styles/flex";
 
 const Rank = () => {
   return (
     <S.ViewAllContainer rowGap={"12rem"}>
       <S.ViewAllWrapper>
-        <S.TitleContianer>
+        <Column $rowGap={"17px"}>
           <S.Title>
             That's 기업 랭킹
             <span>매일 오전 3:00시 업데이트</span>
@@ -19,7 +20,7 @@ const Rank = () => {
             졸업생들이 직접 매긴 <span>회사만족도</span>를 기반으로 카테고리별{" "}
             <span>TOP 10</span> 기업을 보여줘요!
           </S.SubTitle>
-        </S.TitleContianer>
+        </Column>
 
         <ErrorBoundary fallback={<>데이터를 가지고 오지 못했습니다.</>}>
           <Suspense fallback={<RankingSkeleton />}>

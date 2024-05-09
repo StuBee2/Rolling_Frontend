@@ -5,6 +5,7 @@ import { Dispatch, SetStateAction, useEffect } from "react";
 import * as S from "@src/components/Story/Company/style";
 import { InputEmphasizeText, RegistButton } from "@src/components/Story/style";
 import { turnOnOffModal } from "@src/utils/Modal/turnOnOffModal";
+import { Column, Row } from "@src/styles/flex";
 
 interface Props {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
@@ -20,8 +21,8 @@ const ModifyItem = ({ setIsOpenModal }: Props) => {
   return (
     <S.RegistContainer>
       <S.Form onSubmit={attr.handleModifySubmit}>
-        <S.Wrapper>
-          <S.LogoContainer>
+        <Row>
+          <Column $width={"200px"} $height={"100%"} $rowGap={"10px"}>
             <InputEmphasizeText>기업로고</InputEmphasizeText>
 
             <S.LogoBox>
@@ -35,11 +36,11 @@ const ModifyItem = ({ setIsOpenModal }: Props) => {
                 onChange={attr.handleUploadCompanyLogo}
               />
             </S.LogoBox>
-          </S.LogoContainer>
+          </Column>
 
           <S.RegistInputContainer>
-            <S.CompanyBasicInfo>
-              <S.CompanyName>
+            <Column $rowGap={"2rem"}>
+              <Column $rowGap={"10px"}>
                 <InputEmphasizeText>
                   기업명 <span>*</span>
                 </InputEmphasizeText>
@@ -56,15 +57,15 @@ const ModifyItem = ({ setIsOpenModal }: Props) => {
                   errorMessage={"기업명이 중복되었습니다."}
                   name="name"
                 />
-              </S.CompanyName>
-            </S.CompanyBasicInfo>
+              </Column>
+            </Column>
 
-            <S.Address>
+            <Column $width={"100%"} $rowGap={"10px"}>
               <InputEmphasizeText>
                 기업 주소 <span>*</span>
               </InputEmphasizeText>
 
-              <S.MainAddress>
+              <Row $alignItems={"center"} $columnGap={"5px"}>
                 <TextInput
                   autoComplete="off"
                   value={attr.companyModifyInfo.address}
@@ -78,7 +79,7 @@ const ModifyItem = ({ setIsOpenModal }: Props) => {
                 >
                   주소 찾기
                 </S.FindAddressButton>
-              </S.MainAddress>
+              </Row>
 
               <TextInput
                 autoComplete="off"
@@ -88,11 +89,11 @@ const ModifyItem = ({ setIsOpenModal }: Props) => {
                 handleChange={attr.handleModifyChange}
                 name="addressEtc"
               />
-            </S.Address>
+            </Column>
           </S.RegistInputContainer>
-        </S.Wrapper>
+        </Row>
 
-        <S.CompanyIntroduce>
+        <Column $width={"100%"} $rowGap={"15px"}>
           <InputEmphasizeText>
             기업 소개 <span>*</span>
           </InputEmphasizeText>
@@ -109,7 +110,7 @@ const ModifyItem = ({ setIsOpenModal }: Props) => {
           <RegistButton isRequired={attr.isRequired}>
             <button type="submit">수정하기</button>
           </RegistButton>
-        </S.CompanyIntroduce>
+        </Column>
       </S.Form>
     </S.RegistContainer>
   );

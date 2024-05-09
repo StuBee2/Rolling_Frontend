@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -5,35 +6,23 @@ export const Container = styled.div`
   width: 100%;
   height: calc(100% - 300px);
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 2.5rem;
-`;
-
-export const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
+  ${Flex({ flexDirection: "column", rowGap: "2.5rem" })}
 `;
 
 export const Title = styled.div`
   width: 100%;
   height: 30px;
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
+  ${Flex({ alignItems: "center", columnGap: "10px" })}
+`;
 
-  img {
-    width: 30px;
-    height: 30px;
-  }
+export const Image = styled.img`
+  width: 30px;
+  height: 30px;
+`;
 
-  p {
-    font-family: "Pretendard-Bold" !important;
-    font-size: 23px;
-  }
+export const Text = styled.p`
+  font-family: "Pretendard-Bold" !important;
+  font-size: 23px;
 `;
 
 export const Content = styled.p<{ isEtc?: string }>`
@@ -59,9 +48,7 @@ export const Content = styled.p<{ isEtc?: string }>`
 
 export const AdvantagesAndDisAdvantages = styled.div`
   width: 100%;
-  height: auto;
-  display: flex;
-  column-gap: 20px;
+  ${Flex({ columnGap: "20px" })}
 
   @media screen and (max-width: 560px) {
     flex-direction: column;
@@ -73,9 +60,8 @@ export const AdvantagesAndDisAdvantages = styled.div`
 export const ProsAndCons = styled.div`
   width: 50%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
+
+  ${Flex({ flexDirection: "column", rowGap: "10px" })}
 
   @media screen and (max-width: 560px) {
     width: 100%;
@@ -84,7 +70,6 @@ export const ProsAndCons = styled.div`
 
 export const ProsAndConsContent = styled.p<{ isPros?: boolean }>`
   width: 100%;
-  height: auto;
 
   background-color: ${({ isPros }) => (isPros ? "#eef2fa" : "#fbeeee")};
   border-radius: 10px;
@@ -98,7 +83,6 @@ export const ProsAndConsContent = styled.p<{ isPros?: boolean }>`
 
 export const InputStyle = {
   width: "100%",
-  height: "auto",
   border: `1px solid ${RollingPalette.unEmphasize.Base}`,
   borderRadius: "5px",
   backgroundColor: `${RollingPalette.unEmphasize.Lightest}`,

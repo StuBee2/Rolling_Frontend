@@ -1,20 +1,12 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
-export const UserInfoWrapper = styled.div`
-  width: 100%;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
 export const UserInfoBox = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
   width: 100%;
   white-space: nowrap;
+  ${Flex({ alignItems: "center", columnGap: "10px" })};
+
   img {
     width: 75px;
     height: 75px;
@@ -22,12 +14,11 @@ export const UserInfoBox = styled.div`
     object-fit: cover;
     border-radius: 4rem;
   }
+
   div {
     width: calc(100% - 85px);
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    row-gap: 8px;
+    ${Flex({ flexDirection: "column", rowGap: "8px" })}
   }
 `;
 
@@ -38,10 +29,6 @@ export const UserInfoNickName = styled.p`
   font-weight: 600;
   overflow-x: hidden;
   text-overflow: ellipsis;
-
-  span {
-    color: #ec6a5e;
-  }
 
   transition: all 0.1s ease-in-out;
   &:hover {
@@ -54,11 +41,12 @@ export const UserInfoEmail = styled.p`
 `;
 
 export const RegistTextContainer = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
+  width: 100%;
+
   margin-bottom: 15px;
   font-weight: 600;
+
+  ${Flex({ alignItems: "center", columnGap: "5px" })}
 
   img {
     width: 20px;

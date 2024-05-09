@@ -25,7 +25,6 @@ export const Wrapper = styled.div`
   @media screen and (max-width: 500px) {
     row-gap: 0rem;
   }
-
   overflow-y: auto;
   ::-webkit-scrollbar {
     display: none;

@@ -1,27 +1,15 @@
 import { FadeInAnimation } from "@src/styles/common.style";
+import { Flex } from "@src/styles/flex";
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 100%;
-  height: auto;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-`;
-
 export const TitleContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   border-bottom: 1px solid #ddd;
+  ${Flex({ alignItems: "center", justifyContent: "space-between" })}
 `;
 
 export const Title = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
   padding-bottom: 10px;
+  ${Flex({ alignItems: "center", columnGap: "5px" })}
 
   img {
     width: 25px;
@@ -34,19 +22,11 @@ export const Title = styled.div`
   }
 `;
 
-export const ArrowContainer = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
-`;
-
 export const SliderButton = styled.button`
   width: 25px;
   height: 25px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 
   border: 1px solid #ddd;
   cursor: pointer;
@@ -68,7 +48,6 @@ export const SliderButton = styled.button`
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: auto;
   display: flex;
 
   overflow-x: auto;
@@ -81,12 +60,6 @@ export const Wrapper = styled.div`
   }
 
   ${FadeInAnimation};
-`;
-
-export const Content = styled.div`
-  display: flex;
-  felx-wrap: wrap;
-  column-gap: 2rem;
 `;
 
 export const RankBox = styled.div`

@@ -1,3 +1,4 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
@@ -5,14 +6,15 @@ export const ViewAllContainer = styled.div<{ rowGap: string }>`
   width: 100%;
   height: 100%;
   zoom: 0.8;
-
   padding-top: 90px;
 
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  row-gap: ${({ rowGap }) => rowGap};
-  justify-content: center;
+  ${({ rowGap }) =>
+    Flex({
+      alignItems: "center",
+      flexDirection: "column",
+      justifyContent: "center",
+      rowGap,
+    })}
 
   background-color: #f9fafb;
   min-width: 500px;
@@ -23,9 +25,7 @@ export const ViewAllWrapper = styled.div`
   height: 100%;
   padding: 3rem 5px 2rem 5px;
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 5rem;
+  ${Flex({ flexDirection: "column", rowGap: "5rem" })}
 
   @media screen and (max-width: 985px) {
     width: 785px;
@@ -36,12 +36,6 @@ export const ViewAllWrapper = styled.div`
   @media screen and (max-width: 500px) {
     width: 490px;
   }
-`;
-
-export const TitleContianer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 17px;
 `;
 
 export const Title = styled.p`
@@ -75,8 +69,7 @@ export const CompanyLogoContainer = styled.div<{ rgb: string }>`
   //회사 랭킹 숫자 보여주기 위해서 사용함
   position: relative;
 
-  display: flex;
-  justify-content: center;
+  ${Flex({ justifyContent: "center" })}
   border-bottom: 1px solid #ddd;
 
   background-color: ${({ rgb }) => rgb || "#fff"};
@@ -88,8 +81,6 @@ export const CompanyLogoContainer = styled.div<{ rgb: string }>`
 export const LogoImg = styled.img`
   max-width: 100%;
   max-height: 100%;
-  width: auto;
-  height: auto;
 
   transform: scale(1);
   transition: all 0.27s ease-in-out;
@@ -102,8 +93,6 @@ export const CompanyContent = styled.div`
   width: 100%;
   height: 40%;
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
+  ${Flex({ flexDirection: "column", rowGap: "1rem" })}
   padding: 1rem 1rem 0.7rem 0.3rem;
 `;

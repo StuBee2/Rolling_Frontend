@@ -1,4 +1,5 @@
 import { HoverAnimation } from "@src/styles/common.style";
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled, { css } from "styled-components";
 
@@ -9,10 +10,11 @@ export const CompanyNameForm = styled.div`
   background-color: #f2f4f5;
   border-radius: 5px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  ${Flex({
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+  })}
 
   padding: 5rem 0 3rem 0;
   position: relative;
@@ -38,11 +40,8 @@ export const Title = styled.p`
 
 export const InputContainer = styled.div`
   width: 80%;
-  height: auto;
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
+  ${Flex({ flexDirection: "column", rowGap: "10px" })}
   position: relative;
 
   p {
@@ -63,9 +62,7 @@ export const InputWrapper = styled.div`
   border-radius: 5px;
 
   overflow: hidden;
-  display: flex;
-  align-items: center;
-
+  ${Flex({ alignItems: "center" })}
   padding-right: 10px;
 `;
 
@@ -115,11 +112,7 @@ export const ConfirmButton = styled.button<{ isActive: boolean }>`
 
 export const CompanyListContainer = styled.div`
   width: 100%;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
+  ${Flex({ alignItems: "center", flexDirection: "column" })}
   position: absolute;
   top: 100px;
 `;
@@ -134,8 +127,7 @@ export const CompanyListUl = styled.ul`
   border: 1px solid rgba(189, 194, 208, 1);
   background-color: #fff;
 
-  display: flex;
-  flex-wrap: wrap;
+  ${Flex({ flexWrap: "wrap" })}
   font-size: 20px;
 
   li {
@@ -144,8 +136,7 @@ export const CompanyListUl = styled.ul`
     width: 100%;
     height: 60px;
 
-    display: flex;
-    align-items: center;
+    ${Flex({ alignItems: "center" })}
 
     &:hover {
       background-color: rgba(242, 244, 245, 1);

@@ -7,16 +7,17 @@ import { useNavigate } from "react-router-dom";
 import UserInfoSkeleton from "@src/components/Common/Skeleton/Home/UserInfo";
 import { tokenDecode } from "@src/utils/Auth/tokenDecode";
 import { useGetMyInfoQuery } from "@src/services/Member/queries";
+import { Column } from "@src/styles/flex";
 
 const UserInfo = () => {
   return (
-    <S.UserInfoWrapper>
+    <Column $width={"100%"} $height={"200px"} $justifyContent={"space-between"}>
       <ErrorBoundary fallback={<>내 정보를 갖고오지 못했습니다.</>}>
         <Suspense fallback={<UserInfoSkeleton />}>
           <UserInfoItem />
         </Suspense>
       </ErrorBoundary>
-    </S.UserInfoWrapper>
+    </Column>
   );
 };
 
@@ -43,7 +44,7 @@ function UserInfoItem() {
         </div>
       </S.UserInfoBox>
 
-      <div>
+      <Column $width={"100%"}>
         <S.RegistTextContainer>
           <img src={wonderFace} alt="이미지 없음" />
           <p>
@@ -52,12 +53,13 @@ function UserInfoItem() {
               : "동문 인증이 되어 있지 않나요?"}
           </p>
         </S.RegistTextContainer>
+
         <S.CompanyRegistBtn
           onClick={() => navigate(isMember ? "/story" : "/alumni/certify")}
         >
           {isMember ? "스토리 등록하러 가기" : "동문인증 하러가기"}
         </S.CompanyRegistBtn>
-      </div>
+      </Column>
     </>
   );
 }

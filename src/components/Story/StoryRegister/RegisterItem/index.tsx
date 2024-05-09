@@ -6,6 +6,7 @@ import { InputEmphasizeText, RegistButton } from "../../style";
 import StoryPositionList from "./PositionList";
 import RegistStarGrade from "./StarGrade";
 import * as S from "./stye";
+import { Column } from "@src/styles/flex";
 
 interface Props {
   storyCompanyId: string;
@@ -41,15 +42,19 @@ function StoryRegisterItem({ storyCompanyId, companyName }: Props) {
   }, [storyCompanyId]);
 
   return (
-    <S.Container>
+    <Column $rowGap={"20px"}>
       <S.CompanyStoryText>
         <span>{companyName}</span>은/는 어떤가요?
       </S.CompanyStoryText>
 
       <S.Wrapper onClick={() => showPositionList && setShowPositionList(false)}>
         <S.Form onSubmit={attr.handleStorySubmit}>
-          <S.RequireContainer>
-            <S.RequireWrapper>
+          <Column $rowGap={"2rem"}>
+            <Column
+              $alignItems={"center"}
+              $justifyContent={"space-between"}
+              $columnGap={"30px"}
+            >
               <S.InputContainer onClick={(e) => e.stopPropagation()}>
                 <InputEmphasizeText>
                   포지션 <span>*</span>
@@ -94,15 +99,15 @@ function StoryRegisterItem({ storyCompanyId, companyName }: Props) {
                   handleChange={(e) => attr.handleStoryChange(e, true)}
                 />
               </S.InputContainer>
-            </S.RequireWrapper>
-          </S.RequireContainer>
+            </Column>
+          </Column>
 
-          <S.ProsConsContainer>
+          <Column $rowGap={"10px"}>
             <InputEmphasizeText>
               장단점 <span>*</span>
             </InputEmphasizeText>
 
-            <S.Content>
+            <Column $width={"100%"} $rowGap={"10px"}>
               <TextInput
                 name="pros"
                 autoComplete="off"
@@ -119,10 +124,10 @@ function StoryRegisterItem({ storyCompanyId, companyName }: Props) {
                 placeholder="기업의 단점을 입력해주세요"
                 handleChange={(e) => attr.handleStoryChange(e, true)}
               />
-            </S.Content>
-          </S.ProsConsContainer>
+            </Column>
+          </Column>
 
-          <S.Content>
+          <Column $width={"100%"} $rowGap={"10px"}>
             <InputEmphasizeText>
               회사 만족도 <span>*</span>
             </InputEmphasizeText>
@@ -131,9 +136,9 @@ function StoryRegisterItem({ storyCompanyId, companyName }: Props) {
               storyStarGrade={attr.storyStarGrade}
               handleStarGradeChange={attr.handleStarGradeChange}
             />
-          </S.Content>
+          </Column>
 
-          <S.Content>
+          <Column $width={"100%"} $rowGap={"10px"}>
             <InputEmphasizeText>기타 내용</InputEmphasizeText>
             <TextInput
               name="corporationEtc"
@@ -144,14 +149,14 @@ function StoryRegisterItem({ storyCompanyId, companyName }: Props) {
               placeholder={`면접 질문, 취업 준비 과정 등\n후배들에게 들려주고 싶은 이야기를 작성해 주세요`}
               handleChange={attr.handleStoryChange}
             />
-          </S.Content>
+          </Column>
 
           <RegistButton isRequired={attr.isRequired}>
             <button type="submit">스토리 남기기</button>
           </RegistButton>
         </S.Form>
       </S.Wrapper>
-    </S.Container>
+    </Column>
   );
 }
 

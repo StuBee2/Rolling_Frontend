@@ -1,23 +1,16 @@
 import styled, { css } from "styled-components";
 import { HoverAnimation } from "@src/styles/common.style";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
-
-export const Container = styled.div`
-  width: 100%;
-  height: auto;
-  display: flex;
-  column-gap: 5px;
-`;
+import { Flex } from "@src/styles/flex";
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: auto;
+
   background-color: #fff;
   border: 1px solid #dddddd;
   border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 `;
 
 export const Content = styled.form`
@@ -25,38 +18,23 @@ export const Content = styled.form`
   height: 100%;
   padding: 2rem 0 2.5rem 0;
 
-  display: flex;
-  row-gap: 1.5rem;
-  flex-direction: column;
-  justify-content: space-between;
+  ${Flex({
+    flexDirection: "column",
+    rowGap: "1.5rem",
+    justifyContent: "space-between",
+  })}
 `;
 
 export const ContentContainer = styled.div`
   width: 100%;
   height: calc(100% - 40px);
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-  align-items: center;
-  column-gap: 2rem;
-`;
-
-export const CompanyInfoContainer = styled.div`
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-`;
-
-export const RegisteredAtAndDelEditContainer = styled.div`
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  ${Flex({
+    flexDirection: "column",
+    rowGap: "1rem",
+    alignItems: "center",
+    columnGap: "2rem",
+  })}
 `;
 
 export const RegisteredDate = styled.p`
@@ -66,9 +44,7 @@ export const RegisteredDate = styled.p`
 `;
 
 export const DelAndEditContainer = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
+  ${Flex({ alignItems: "center", columnGap: "5px" })}
   margin-left: 10px;
   img {
     cursor: pointer;
@@ -87,17 +63,12 @@ export const CompanyContainer = styled.div`
   width: 100%;
   height: calc(100% - 40px);
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-  align-items: center;
-  column-gap: 2rem;
-`;
-
-export const StoryModifySubmitBtnContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
+  ${Flex({
+    flexDirection: "column",
+    rowGap: "1rem",
+    alignItems: "center",
+    columnGap: "2rem",
+  })}
 `;
 
 export const StoryModifySubmitBtn = styled.button<{ isRequired: boolean }>`

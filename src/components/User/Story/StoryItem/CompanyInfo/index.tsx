@@ -10,6 +10,7 @@ import { InputStyle } from "../CompanyContent/style";
 import { searchPosition } from "@src/utils/Position/searchPosition";
 import { Dispatch, SetStateAction } from "react";
 import StoryPositionList from "@src/components/Story/StoryRegister/RegisterItem/PositionList";
+import { Row } from "@src/styles/flex";
 
 interface Props {
   isCoincideStoryId: boolean;
@@ -93,7 +94,9 @@ const CompanyInfo = ({ ...attr }: Props) => {
   };
 
   return (
-    <S.Container
+    <Row
+      $width={"100%"}
+      $padding={"0 0 20px 0"}
       onClick={() => attr.showPositionList && attr.setShowPositionList(false)}
     >
       <S.CompanyLogo
@@ -115,11 +118,11 @@ const CompanyInfo = ({ ...attr }: Props) => {
             attr.storyData.memberNickName ||
             attr.storyData.memberSocialLoginId}
         </S.Title>
-        <S.Content>
+        <Row>
           {isModifiableEvent ? renderModifyCompanyInfo() : renderCompanyInfo()}
-        </S.Content>
+        </Row>
       </S.Wrapper>
-    </S.Container>
+    </Row>
   );
 };
 

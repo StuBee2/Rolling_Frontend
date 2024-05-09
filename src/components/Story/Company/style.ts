@@ -1,10 +1,10 @@
 import { FadeInAnimation } from "@src/styles/common.style";
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
 export const RegistContainer = styled.div`
   width: 100%;
-  height: auto;
 
   border-radius: 20px;
   background-color: #fff;
@@ -18,33 +18,15 @@ export const RegistContainer = styled.div`
 export const Form = styled.form`
   width: 100%;
   height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 4.5rem;
+  ${Flex({ flexDirection: "column", rowGap: "4.5rem" })}
   padding: 3.5rem 3rem 2.5rem 3rem;
-`;
-
-export const Wrapper = styled.div`
-  display: flex;
-`;
-
-export const LogoContainer = styled.div`
-  width: 200px;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
 `;
 
 export const RegistInputContainer = styled.div`
   width: calc(100% - 200px);
   height: 100%;
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
+  ${Flex({ flexDirection: "column", rowGap: "2rem" })}
 `;
 
 export const LogoBox = styled.div`
@@ -75,18 +57,6 @@ export const CompanyLogoInput = styled.input`
   display: none;
 `;
 
-export const CompanyBasicInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
-`;
-
-export const CompanyName = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-`;
-
 export const InputStyle = {
   width: "100%",
   height: "65px",
@@ -95,30 +65,13 @@ export const InputStyle = {
   backgroundColor: `${RollingPalette.unEmphasize.Lightest}`,
 };
 
-export const Address = styled.div`
-  width: 100%;
-  height: auto;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-`;
-
-export const MainAddress = styled.div`
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
-`;
-
 export const FindAddressButton = styled.div`
   width: 100px;
   height: 65px;
 
   cursor: pointer;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 
   color: ${RollingPalette.unEmphasize.Dark};
   background-color: ${RollingPalette.unEmphasize.Lightest};
@@ -129,15 +82,6 @@ export const FindAddressButton = styled.div`
   &:active {
     background-color: ${RollingPalette.unEmphasize.Light};
   }
-`;
-
-export const CompanyIntroduce = styled.div`
-  width: 100%;
-  height: auto;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
 `;
 
 export const TextAreaStyle = {
@@ -162,9 +106,7 @@ export const ModalContainer = styled.div`
   z-index: 3;
   padding: 0 10px 0 10px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
 
   ${FadeInAnimation};
 `;

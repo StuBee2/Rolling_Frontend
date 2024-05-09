@@ -3,7 +3,6 @@ import {
   CompanyAddress,
   CompanyCreatedAt,
   CompanyDescription,
-  CompanyDescriptionAndAddress,
   CompanyName,
 } from "@src/components/Home/Main/style";
 import { getDateText } from "@stubee2/stubee2-rolling-util";
@@ -18,6 +17,7 @@ import leftArrow from "@src/assets/icons/Rank/leftArrow.png";
 import { useRef } from "react";
 import { getSlideRankBoxWidth } from "@src/utils/Rank/getSlideRankBoxWidth";
 import { useGetCompanyRankSelectQuery } from "@src/services/Company/queries";
+import { Column, Row } from "@src/styles/flex";
 
 interface Props {
   category: string;
@@ -45,25 +45,25 @@ const RankList = ({ category, title }: Props) => {
   };
 
   return (
-    <S.Container>
+    <Column $width={"100%"} $rowGap={"20px"}>
       <S.TitleContainer>
         <S.Title>
           <img src={getRankIcon(category)} alt="이미지 없음" />
           <p>{title}</p>
         </S.Title>
 
-        <S.ArrowContainer>
+        <Row $alignItems={"center"} $columnGap={"5px"}>
           <S.SliderButton onClick={() => scrollHandler("left")}>
             <img src={leftArrow} alt="이미지 없음" />
           </S.SliderButton>
           <S.SliderButton onClick={() => scrollHandler("right")}>
             <img src={rightArrow} alt="이미지 없음" />
           </S.SliderButton>
-        </S.ArrowContainer>
+        </Row>
       </S.TitleContainer>
 
       <S.Wrapper ref={scrollContainerRef}>
-        <S.Content>
+        <Row $columnGap={"2rem"}>
           {rankList?.length!! > 0 ? (
             rankList?.map((item, idx) => (
               <S.RankBox key={item.companyId.id}>
@@ -86,7 +86,7 @@ const RankList = ({ category, title }: Props) => {
                     {item.companyDetails.name}
                   </CompanyName>
 
-                  <CompanyDescriptionAndAddress>
+                  <Column $rowGap={"6px"}>
                     <CompanyDescription>
                       {item.companyDetails.description}
                     </CompanyDescription>
@@ -99,16 +99,16 @@ const RankList = ({ category, title }: Props) => {
                     <CompanyCreatedAt>
                       {getDateText(new Date(item.createdAt))}
                     </CompanyCreatedAt>
-                  </CompanyDescriptionAndAddress>
+                  </Column>
                 </CompanyContent>
               </S.RankBox>
             ))
           ) : (
             <S.NoneData>데이터가 없습니다.</S.NoneData>
           )}
-        </S.Content>
+        </Row>
       </S.Wrapper>
-    </S.Container>
+    </Column>
   );
 };
 

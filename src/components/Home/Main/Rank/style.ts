@@ -1,16 +1,9 @@
+import { Flex } from "@src/styles/flex";
 import { RollingPalette } from "@stubee2/stubee2-rolling-design-token";
 import styled from "styled-components";
 
-export const RankCategoriesContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-`;
-
 export const RankCategoriesUl = styled.ul`
-  display: flex;
-  column-gap: 15px;
-  align-items: center;
+  ${Flex({ alignItems: "center", columnGap: "15px" })}
 
   overflow-x: hidden;
   overflow-y: hidden;
@@ -34,9 +27,7 @@ export const RankCategoryLi = styled.li<{ isSelect: boolean }>`
   background-color: ${({ isSelect }) => isSelect && RollingPalette.main.Base};
   cursor: pointer;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${Flex({ alignItems: "center", justifyContent: "center" })}
   border-radius: 10px;
 
   transform: scale(1);
@@ -49,9 +40,4 @@ export const RankCategoryLi = styled.li<{ isSelect: boolean }>`
   &:active {
     background-color: ${({ isSelect }) => (isSelect ? "#2b3f94" : "#dddddd")};
   }
-`;
-
-export const TitleContainer = styled.div`
-  display: flex;
-  column-gap: 3px;
 `;

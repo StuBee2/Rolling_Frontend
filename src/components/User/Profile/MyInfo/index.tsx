@@ -5,6 +5,7 @@ import { Explain, Title } from "../../style";
 import { convertToGithubLink } from "@src/utils/github/convertToGithubLink";
 import { useRecoilValue } from "recoil";
 import { MyMemberInfo } from "@src/stores/member/member.store";
+import { Row } from "@src/styles/flex";
 
 const MyInfo = () => {
   const myInfo = useRecoilValue(MyMemberInfo);
@@ -13,12 +14,12 @@ const MyInfo = () => {
     <S.Container>
       <S.Wrapper>
         <S.TextContainer>
-          <div>
+          <Row $alignItems={"flex-end"} $columnGap={"5px"}>
             <Title>기본 정보</Title>
             {!myInfo?.details.nickName && (
               <S.SetUpNickNameText>닉네임을 설정하세요!</S.SetUpNickNameText>
             )}
-          </div>
+          </Row>
           <Explain>
             롤링에서 제공되는 맞춤 콘텐츠의 기본 데이터로 활용됩니다.
           </Explain>
